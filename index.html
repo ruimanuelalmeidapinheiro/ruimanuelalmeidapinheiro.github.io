@@ -17,7 +17,8 @@
 
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background: #f6f4f0;
+      background: #f6f4f0 url('back.gif') repeat;
+      background-size: auto;
       color: #1e1e2a;
       line-height: 1.5;
       scroll-behavior: smooth;
@@ -29,6 +30,70 @@
       padding: 2rem 1.5rem 4rem;
     }
 
+    /* TOP HEADER - DOUBLED SIZE */
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background: #ffffffcc;
+      backdrop-filter: blur(4px);
+      border-radius: 3rem;
+      padding: 1.6rem 3rem;
+      margin-bottom: 3rem;
+      border: 1px solid #ebe9e4;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+    .logo-name {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .logo-name img {
+      height: 260px;
+      width: auto;
+      border-radius: 28px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      background: #fefcf7;
+      padding: 8px;
+      border: 1px solid #e9e2d4;
+    }
+    .logo-name span {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #2c2b2a, #6b4e2e);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .cv-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: #f9f7f3;
+      border-radius: 4rem;
+      padding: 0.8rem 2rem;
+      transition: all 0.2s;
+      border: 1px solid #e7dfd2;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #4a3f2e;
+    }
+    .cv-link img {
+      height: 48px;
+      width: auto;
+      border-radius: 12px;
+    }
+    .cv-link:hover {
+      background: #fef7ea;
+      border-color: #c9ad7a;
+      transform: translateY(-3px);
+    }
+
+    /* Hero section */
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -42,12 +107,10 @@
       box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.05);
       border: 1px solid #ebe9e4;
     }
-
     .portrait-area {
       flex: 1.2;
       min-width: 180px;
     }
-
     .portrait-card {
       background: #fefcf7;
       border-radius: 1.5rem;
@@ -56,11 +119,9 @@
       transition: transform 0.2s ease;
       border: 1px solid #e9e2d4;
     }
-
     .portrait-card:hover {
       transform: translateY(-3px);
     }
-
     .portrait-card img {
       width: auto;
       max-height: 400px;
@@ -77,31 +138,22 @@
       text-align: center;
       font-weight: 500;
     }
-
     .hero-text {
       flex: 2.5;
     }
-
-    .hero-text h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #2c2b2a, #6b4e2e);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      margin-bottom: 0.35rem;
-    }
-
     .hero-tagline {
-      font-size: 1rem;
+      font-size: 1.3rem;
+      font-weight: 500;
       color: #7b6b54;
       border-left: 3px solid #c9ad7a;
       padding-left: 1rem;
-      margin: 1rem 0 1rem 0;
-      font-weight: 400;
+      margin: 0 0 1rem 0;
     }
-
+    .hero-text p {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
     .contact-bar {
       display: flex;
       flex-wrap: wrap;
@@ -113,7 +165,6 @@
       width: fit-content;
       align-items: center;
     }
-
     .contact-item {
       display: inline-flex;
       align-items: center;
@@ -124,11 +175,9 @@
       font-weight: 500;
       transition: color 0.2s;
     }
-
     .contact-item:hover {
       color: #b2773c;
     }
-
     .bio-link {
       background: #e8e0d4;
       padding: 0.4rem 1rem;
@@ -143,13 +192,13 @@
       background: #d6cbbc;
     }
 
+    /* bio grid */
     .bio-grid {
       display: grid;
       grid-template-columns: 1fr 280px;
       gap: 2rem;
       margin-top: 2rem;
     }
-
     @media (max-width: 780px) {
       .bio-grid {
         grid-template-columns: 1fr;
@@ -158,12 +207,30 @@
         flex-direction: column;
         text-align: center;
       }
-      .hero-text h1 {
-        font-size: 1.9rem;
-      }
       .contact-bar {
         justify-content: center;
         width: 100%;
+      }
+      .top-header {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        padding: 1.2rem;
+      }
+      .logo-name {
+        flex-direction: column;
+      }
+      .logo-name img {
+        height: 80px;
+      }
+      .logo-name span {
+        font-size: 1.6rem;
+      }
+      .hero-tagline {
+        font-size: 1.1rem;
+      }
+      .hero-text p {
+        font-size: 0.95rem;
       }
     }
 
@@ -174,7 +241,6 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
       border: 1px solid #eee7df;
     }
-
     .timeline h2 {
       font-size: 1.6rem;
       font-weight: 600;
@@ -182,14 +248,12 @@
       border-left: 5px solid #c6a15b;
       padding-left: 1rem;
     }
-
     .bio-entry {
       margin-bottom: 1.6rem;
       position: relative;
       padding-left: 1rem;
       border-left: 2px solid #e2d9ce;
     }
-
     .bio-year {
       font-weight: 700;
       font-size: 1rem;
@@ -197,12 +261,10 @@
       letter-spacing: -0.2px;
       margin-bottom: 0.25rem;
     }
-
     .bio-text {
       font-size: 0.95rem;
       color: #2e2d2c;
     }
-
     .special-note {
       background: #fff6ea;
       padding: 1rem 1.2rem;
@@ -217,7 +279,6 @@
       flex-direction: column;
       gap: 1.8rem;
     }
-
     .house-card {
       background: white;
       border-radius: 1.5rem;
@@ -225,7 +286,6 @@
       border: 1px solid #eee7df;
       box-shadow: 0 8px 20px rgba(0,0,0,0.02);
     }
-
     .house-card img {
       width: 100%;
       height: auto;
@@ -233,7 +293,6 @@
       object-fit: cover;
       aspect-ratio: 4 / 3;
     }
-
     .house-caption {
       padding: 1rem;
       text-align: center;
@@ -242,7 +301,6 @@
       border-top: 1px solid #efeadf;
       font-weight: 500;
     }
-
     .skills-block {
       background: #ffffffcc;
       backdrop-filter: blur(2px);
@@ -250,19 +308,16 @@
       padding: 1.4rem;
       border: 1px solid #e2d9ce;
     }
-
     .skills-block h3 {
       font-size: 1.2rem;
       margin-bottom: 0.8rem;
       font-weight: 600;
     }
-
     .tech-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
-
     .tech-tags span {
       background: #f0ebe2;
       padding: 0.2rem 0.8rem;
@@ -271,11 +326,100 @@
       font-weight: 500;
       color: #4d3c26;
     }
-
     hr {
       margin: 1.8rem 0 0.5rem;
       border: none;
       border-top: 1px solid #e4dbcf;
+    }
+
+    .domains-list {
+      margin-left: 1.2rem;
+      font-size: 0.85rem;
+      color: #302e2a;
+      columns: 2;
+      column-gap: 1.5rem;
+      list-style-type: disc;
+    }
+    .domains-list li {
+      margin-bottom: 0.4rem;
+      break-inside: avoid;
+    }
+    .domains-list li a {
+      text-decoration: none;
+      color: #2b2b2a;
+      font-weight: 500;
+      transition: color 0.2s, border-bottom 0.2s;
+      border-bottom: 1px dotted transparent;
+    }
+    .domains-list li a:hover {
+      color: #b2773c;
+      border-bottom: 1px dotted #c9ad7a;
+    }
+
+    .vault-block {
+      background: #fff8ef;
+      border-radius: 1.5rem;
+      padding: 1.4rem;
+      border: 1px solid #e2d5c2;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+    .vault-block:hover {
+      background: #fef5e8;
+    }
+    .vault-block h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      pointer-events: none;
+    }
+    .vault-list {
+      list-style: none;
+      padding-left: 0;
+      pointer-events: none;
+    }
+    .vault-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #efe5d8;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #4a3e2c;
+    }
+    .vault-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* mob.jpg overlay inside vault */
+    .mob-overlay {
+      margin-top: 1rem;
+      text-align: center;
+      display: none;
+    }
+    .mob-overlay img {
+      max-width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Publications & digital presence - hover image 200% */
+    .social-img-card, .social-img-static {
+      position: relative;
+      overflow: visible;
+    }
+    .social-img-card img, .social-img-static img {
+      transition: transform 0.2s ease;
+      display: inline-block;
+    }
+    .social-img-card:hover img, .social-img-static:hover img {
+      transform: scale(2);
+      z-index: 1000;
+      position: relative;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     .publications {
@@ -286,7 +430,6 @@
       border: 1px solid #eee7df;
       box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     }
-
     .publications h2 {
       font-size: 1.6rem;
       font-weight: 600;
@@ -294,19 +437,17 @@
       border-left: 5px solid #c6a15b;
       padding-left: 1rem;
     }
-
-    .social-grid {
+    .social-row {
       display: flex;
       flex-wrap: wrap;
       gap: 1.2rem;
+      margin-bottom: 1.2rem;
       align-items: center;
-      justify-content: flex-start;
     }
-
-    .social-card {
+    .social-img-card {
       background: #faf8f4;
       border-radius: 1.2rem;
-      padding: 0.7rem 1.2rem;
+      padding: 0.6rem 1rem;
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
@@ -317,25 +458,36 @@
       font-weight: 500;
       font-size: 0.9rem;
     }
-
-    .social-card:hover {
+    .social-img-card img {
+      max-height: 32px;
+      width: auto;
+      display: block;
+      border-radius: 6px;
+    }
+    .social-img-card:hover {
       background: #fef7ea;
       border-color: #c9ad7a;
       transform: translateY(-2px);
     }
-
-    .social-icon {
-      font-size: 1.3rem;
+    .social-img-static {
+      background: #faf8f4;
+      border-radius: 1.2rem;
+      padding: 0.6rem 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: 1px solid #e7dfd2;
+      color: #2f2e2a;
+      font-weight: 500;
+      font-size: 0.9rem;
+      cursor: default;
+      opacity: 0.9;
     }
-
-    .note-html {
-      margin-top: 1.2rem;
-      font-size: 0.75rem;
-      color: #8f846f;
-      background: #fef5ea;
-      padding: 0.5rem 1rem;
-      border-radius: 2rem;
-      display: inline-block;
+    .social-img-static img {
+      max-height: 32px;
+      width: auto;
+      display: block;
+      border-radius: 6px;
     }
 
     footer {
@@ -350,41 +502,42 @@
 </head>
 <body>
 <div class="container">
-  <!-- Hero section with your picture -->
+  <!-- TOP HEADER - DOUBLED -->
+  <div class="top-header">
+    <div class="logo-name">
+      <img src="logo.jpg" alt="Logo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23dbd3c4%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3Elogo%3C%2Ftext%3E%3C%2Fsvg%3E';">
+      <span>Rui Manuel de Almeida Pinheiro</span>
+    </div>
+    <a href="#" class="cv-link" target="_blank" rel="noopener">
+      <img src="cur.jpg" alt=" " onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%23dbd3c4%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3ECV%3C%2Ftext%3E%3C%2Fsvg%3E';">
+      Curriculum Vitae
+    </a>
+  </div>
+
+  <!-- Hero section -->
   <div class="hero">
     <div class="portrait-area">
       <div class="portrait-card">
-        <!-- REPLACE "portrait.jpg" WITH YOUR ACTUAL IMAGE FILE NAME OR URL -->
         <img src="portrait.jpg" alt="Rui Manuel de Almeida Pinheiro portrait" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23dbd3c4%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3Ephoto%3A%20add%20portrait.jpg%3C%2Ftext%3E%3C%2Fsvg%3E';">
-        <div class="img-caption">
-          Rui Manuel de Almeida Pinheiro · Lisbon, Arroios
-        </div>
+        <div class="img-caption">Rui Manuel de Almeida Pinheiro · Lisbon, Arroios</div>
       </div>
     </div>
     <div class="hero-text">
-      <h1>Rui Manuel de Almeida Pinheiro</h1>
-      <div class="hero-tagline">
-        From mainframe DB2 to AI Workflow Management · Content Engineering Strategist
-      </div>
-      <p style="margin-bottom: 1rem;">Born in Lisbon, Arroios, on Sunday, August 2, 1953, at 6:00 a.m. — a journey through medicine, stock exchange revolutions, IBM mainframes, and the frontier of generative AI.</p>
+      <div class="hero-tagline">From mainframe DB2 to AI Workflow Management · Content Engineering Strategist</div>
+      <p>Born in Lisbon, Arroios, on Sunday, August 2, 1953, at 6:00 a.m. — a journey through medicine, stock exchange revolutions, IBM mainframes, and the frontier of generative AI.</p>
       <div class="contact-bar">
-        <a href="mailto:ruialmeidapinheiro@gmail.com" class="contact-item">
-          <span>✉️</span> ruialmeidapinheiro@gmail.com
-        </a>
-        <a href="tel:+351962783072" class="contact-item">
-          <span>📞</span> +351 962 783 072
-        </a>
-        <span class="contact-item"><span>📍</span> Lisbon · Arroios</span>
+        <a href="mailto:ruialmeidapinheiro@gmail.com" class="contact-item">✉️ ruialmeidapinheiro@gmail.com</a>
+        <a href="tel:+351962783072" class="contact-item">📞 +351 962 783 072</a>
+        <span class="contact-item">📍 Lisbon · Arroios</span>
         <a href="bio.html" class="bio-link">📖 BIO (Extended)</a>
       </div>
     </div>
   </div>
 
-  <!-- main biography and side visual (house view) -->
+  <!-- main bio grid -->
   <div class="bio-grid">
     <div class="timeline">
       <h2>📖 Life & career journey</h2>
-
       <div class="bio-entry"><div class="bio-year">1953 · Birth</div><div class="bio-text">Born in Arroios, Lisbon. Early years in a city full of light and transformation.</div></div>
       <div class="bio-entry"><div class="bio-year">1969 · Medical school fascination</div><div class="bio-text">At 16, entered the Faculty of Medicine in Lisbon. After six months, left fascinated by DNA & RNA discoveries — the early sparks of structural logic.</div></div>
       <div class="bio-entry"><div class="bio-year">1970s · Stock exchange intensity</div><div class="bio-text">Worked at a brokerage firm on the Lisbon stock exchange. "Wow, what a life! The work was intense, but the money came in fast and easy."</div></div>
@@ -398,98 +551,45 @@
       <div class="bio-entry"><div class="bio-year">Aug 2022 · Prompt engineering</div><div class="bio-text">Took several courses in prompt engineering — became fluent with LLMs. "Indispensable tools for development and knowledge acquisition."</div></div>
       <div class="bio-entry"><div class="bio-year">Jan 2025 · Content Engineering</div><div class="bio-text">Defining the strategic blueprint for structured content. Purpose, audience, core messages, modular components, governance workflows, and scalable content models.</div></div>
       <div class="bio-entry"><div class="bio-year">Oct 2025 · AI workflow management</div><div class="bio-text">Applying artificial intelligence to automate, optimize, and govern business processes. Real-time adaptation, predictive analytics, self-improving systems.</div></div>
-
-      <!-- 2026 ENTRY (already approved) -->
-      <div class="bio-entry">
-        <div class="bio-year">2026 · Foundational physics, epistemic pipelines, book and social media</div>
-        <div class="bio-text">
-          <p>In 2026 I proceed my formation in physics, biology, and computer science, dedicating about fourteen hours per day. This is not a return to school but a deepening of the work I began with AI workflow management and content engineering.</p>
-          <p>I am developing a personal theoretical framework that questions where mainstream physics assumes rather than proves. For that framework I have designed a set of stress tests, detailed in a Zenodo paper. I have designed six stress tests: derivation, asymmetry, quantization, binding, effectiveness. The paper is lean; the tests are cruel. Any framework that bends to them survives.</p>
-          <p>Alongside the framework, I am building an epistemic‑first arXiv ingestion pipeline with mainstream accepted physics domain taxonomy. The pipeline ingests preprints nightly, classifying them by how they ground claims: empirical, mathematical, analogical, or mystical. It outputs a map of what physics actually trusts — and where it hides its ambiguities.</p>
-          <p>I am writing a book about mainstream assumptions, perceptual limits, and wave function collapse. The book has no equations. It walks through each assumption — objectivity, locality, separability — and then maps the limits of human perception. The final third treats collapse not as a problem to solve but as a residue of description.</p>
-          <p>I am also developing a custom LLM from first principles, one that aims to be useful. Useful means it reads my arXiv pipeline output, highlights structural gaps in my framework, and helps rewrite the book’s arguments against their own weaknesses. It is built token by token, not fine‑tuned from anyone else's weights.</p>
-          <p>I maintain an active written presence across Substack, Medium, and other social media and European Countries sites.</p>
-        </div>
-      </div>
-
-      <div class="special-note">
-        💡 <strong>Ethos:</strong> Always worked in project areas — “I always hated maintenance.” Structural aspects of systems, passion for programming from Assembler to modern LLM pipelines.
-      </div>
+      <div class="bio-entry"><div class="bio-year">2026 · Foundational physics, epistemic pipelines, book and social media</div><div class="bio-text"><p>In 2026 I proceed my formation in physics, biology, and computer science, dedicating about fourteen hours per day. This is not a return to school but a deepening of the work I began with AI workflow management and content engineering.</p><p>I am developing a personal theoretical framework that questions where mainstream physics assumes rather than proves. For that framework I have designed a set of stress tests, detailed in a Zenodo paper. I have designed six stress tests: derivation, asymmetry, quantization, binding, effectiveness. The paper is lean; the tests are cruel. Any framework that bends to them survives.</p><p>Alongside the framework, I am building an epistemic‑first arXiv ingestion pipeline with mainstream accepted physics domain taxonomy. The pipeline ingests preprints nightly, classifying them by how they ground claims: empirical, mathematical, analogical, or mystical. It outputs a map of what physics actually trusts — and where it hides its ambiguities.</p><p>I am writing a book about mainstream assumptions, perceptual limits, and wave function collapse. The book has no equations. It walks through each assumption — objectivity, locality, separability — and then maps the limits of human perception. The final third treats collapse not as a problem to solve but as a residue of description.</p><p>I am also developing a custom LLM from first principles, one that aims to be useful. Useful means it reads my arXiv pipeline output, highlights structural gaps in my framework, and helps rewrite the book’s arguments against their own weaknesses. It is built token by token, not fine‑tuned from anyone else's weights.</p><p>I maintain an active written presence across Substack, Medium, and other social media and European Countries sites.</p></div></div>
+      <div class="special-note">💡 <strong>Ethos:</strong> Always worked in project areas — “I always hated maintenance.” Structural aspects of systems, passion for programming from Assembler to modern LLM pipelines.</div>
     </div>
 
-    <!-- right column: house view picture & skills -->
     <div class="side-panel">
       <div class="house-card">
-        <!-- REPLACE "house-view.jpg" WITH YOUR ACTUAL IMAGE -->
         <img src="house-view.jpg" alt="View from Rui's house in Arroios, Lisbon" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23cfc3ae%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3Ehouse%20view%3A%20add%20house-view.jpg%3C%2Ftext%3E%3C%2Fsvg%3E';">
-        <div class="house-caption">
-          🌄 The light of Arroios · Lisbon — view from my house<br>
-          <span style="font-size:0.7rem;">historical neighborhood, constant renewal</span>
-        </div>
+        <div class="house-caption">🌄 The light of Arroios · Lisbon — view from my house<br><span style="font-size:0.7rem;">historical neighborhood, constant renewal</span></div>
       </div>
-
-      <div class="skills-block">
-        <h3>⚙️ Core expertise & tools</h3>
-        <div class="tech-tags">
-          <span>IBM Mainframe / z/OS</span><span>Db2</span><span>COBOL</span><span>Assembler</span>
-          <span>PROLOG</span><span>ISPF</span><span>VSAM</span><span>Prompt Engineering</span>
-          <span>LLMs (GPT, Claude, Llama)</span><span>Content Engineering</span><span>AI Workflow Orchestration</span>
-          <span>Business Process Automation</span><span>Structured Content Models</span>
-        </div>
-        <hr>
-        <div style="margin-top: 1rem;">
-          <p style="font-size:0.85rem; margin-bottom: 0.5rem;">📌 <strong>Current focus (2025–2026)</strong><br>Content Engineering strategic design · AI governance · real-time adaptive workflows</p>
-          <p style="font-size:0.85rem;">🔹 From mainframe logic to cognitive automation — building systems that think ahead.</p>
-        </div>
-      </div>
-
-      <!-- UPDATED: replaced personal milestones with the requested domains list -->
-      <div class="skills-block" style="background:#faf7f0;">
-        <h3>📚 Domains of study & reflection</h3>
-        <ul style="margin-left: 1.2rem; font-size:0.85rem; color: #302e2a; columns: 2; column-gap: 1.5rem;">
-          <li>Artificial Intelligence</li>
-          <li>Biography</li>
-          <li>Biology</li>
-          <li>Computing</li>
-          <li>Conscious — the Hard Problem</li>
-          <li>Economics</li>
-          <li>History</li>
-          <li>Philosophy</li>
-          <li>Psychology</li>
-          <li>Qualia</li>
-          <li>Quantum Spacetime</li>
-          <li>Sociology</li>
+      <div class="skills-block"><h3>⚙️ Core expertise & tools</h3><div class="tech-tags"><span>IBM Mainframe / z/OS</span><span>Db2</span><span>COBOL</span><span>Assembler</span><span>PROLOG</span><span>ISPF</span><span>VSAM</span><span>Prompt Engineering</span><span>LLMs (GPT, Claude, Llama)</span><span>Content Engineering</span><span>AI Workflow Orchestration</span><span>Business Process Automation</span><span>Structured Content Models</span></div><hr><div style="margin-top: 1rem;"><p style="font-size:0.85rem; margin-bottom: 0.5rem;">📌 <strong>Current focus (2025–2026)</strong><br>Content Engineering strategic design · AI governance · real-time adaptive workflows</p><p style="font-size:0.85rem;">🔹 From mainframe logic to cognitive automation — building systems that think ahead.</p></div></div>
+      
+      <div class="skills-block" style="background:#faf7f0;"><h3>📚 Domains of study & reflection</h3><ul class="domains-list"><li><a href="#">Artificial Intelligence</a></li><li><a href="#">Biography</a></li><li><a href="#">Biology</a></li><li><a href="#">Computing</a></li><li><a href="#">Conscious — the Hard Problem</a></li><li><a href="#">Economics</a></li><li><a href="#">History</a></li><li><a href="#">Philosophy</a></li><li><a href="#">Psychology</a></li><li><a href="#">Qualia</a></li><li><a href="#">Quantum Spacetime</a></li><li><a href="#">Sociology</a></li></ul></div>
+      
+      <!-- Personal Vault with music and mob.jpg -->
+      <div class="vault-block" id="vaultBlock">
+        <h3>🔐 Personal Vault</h3>
+        <ul class="vault-list">
+          <li>📍 Places I have Been</li>
+          <li>📸 My Personal Photos and Videos</li>
+          <li>💬 My Personal WhatsApp Conversations</li>
+          <li>✉️ My Personal Emails</li>
+          <li>🏦 My Bank Accounts</li>
+          <li>👨‍👩‍👧 My Close Family</li>
+          <li>❤️ My Past Wives</li>
+          <li>🌳 My ancestors</li>
         </ul>
+        <div id="mobOverlay" class="mob-overlay">
+          <img src="mob.jpg" alt="mob image" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Crect%20width%3D%22300%22%20height%3D%22200%22%20fill%3D%22%23ddd2c0%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3Emob.jpg%3C%2Ftext%3E%3C%2Fsvg%3E';">
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Publications & Social Channels -->
+  <!-- Publications & digital presence -->
   <div class="publications">
     <h2>📢 Publications & digital presence</h2>
-    <div class="social-grid">
-      <a href="https://www.linkedin.com/in/rui-manuel-de-almeida-pinheiro-97168b195/" class="social-card" target="_blank" rel="noopener">
-        <span class="social-icon">🔗</span> LinkedIn
-      </a>
-      <a href="Substack.html" class="social-card" target="_blank" rel="noopener">
-        <span class="social-icon">📰</span> Substack
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61577584372216" class="social-card" target="_blank" rel="noopener">
-        <span class="social-icon">📘</span> Facebook
-      </a>
-      <a href="https://www.instagram.com/ruimanueldealmeidapinheiro/" class="social-card" target="_blank" rel="noopener">
-        <span class="social-icon">📸</span> Instagram
-      </a>
-      <a href="https://www.threads.com/@ruimanueldealmeidapinheiro" class="social-card" target="_blank" rel="noopener">
-        <span class="social-icon">🧵</span> Threads
-      </a>
-      <a href="https://medium.com/@ruialmeidapinheiro" class="social-card" target="_blank" rel="noopener">
-        <span class="social-icon">📝</span> Medium
-      </a>
-    </div>
-    <div class="note-html">
-      💡 <strong>Note:</strong> Substack link points to <code>Substack.html</code> (you can replace with your custom URL later). All other channels are active with your real profiles.
-    </div>
+    <div class="social-row"><span class="social-img-static"><img src="arxiv.jpg" alt="arXiv" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22%23ddd2c0%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3EarXiv%3C%2Ftext%3E%3C%2Fsvg%3E';"> arXiv</span><span class="social-img-static"><img src="Zenodo.jpg" alt="Zenodo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22%23ddd2c0%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3EZenodo%3C%2Ftext%3E%3C%2Fsvg%3E';"> Zenodo</span><span class="social-img-static"><img src="Google_Scholar.jpg" alt="Google Scholar" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22%23ddd2c0%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3EScholar%3C%2Ftext%3E%3C%2Fsvg%3E';"> Google Scholar</span><span class="social-img-static"><img src="github.jpg" alt="GitHub" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22%23ddd2c0%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3EGitHub%3C%2Ftext%3E%3C%2Fsvg%3E';"> GitHub</span></div>
+    <div class="social-row"><a href="https://www.linkedin.com/in/rui-manuel-de-almeida-pinheiro-97168b195/" class="social-img-card" target="_blank" rel="noopener"><img src="linkedln.jpg" alt="LinkedIn" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22%23ddd2c0%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3ELinkedIn%3C%2Ftext%3E%3C%2Fsvg%3E';"> LinkedIn</a><a href="Substack.html" class="social-img-card" target="_blank" rel="noopener"><img src="substack.jpg" alt="Substack" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22%23ddd2c0%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3ESubstack%3C%2Ftext%3E%3C%2Fsvg%3E';"> Substack</a><a href="https://medium.com/@ruialmeidapinheiro" class="social-img-card" target="_blank" rel="noopener"><img src="medium.jpg" alt="Medium" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22%23ddd2c0%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3EMedium%3C%2Ftext%3E%3C%2Fsvg%3E';"> Medium</a></div>
+    <div class="social-row"><a href="https://www.facebook.com/profile.php?id=61577584372216" class="social-img-card" target="_blank" rel="noopener"><img src="facebook.jpg" alt="Facebook" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22%23ddd2c0%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3EFacebook%3C%2Ftext%3E%3C%2Fsvg%3E';"> Facebook</a><a href="https://www.instagram.com/ruimanueldealmeidapinheiro/" class="social-img-card" target="_blank" rel="noopener"><img src="instagram.jpg" alt="Instagram" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22%23ddd2c0%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3EInstagram%3C%2Ftext%3E%3C%2Fsvg%3E';"> Instagram</a><a href="https://www.threads.com/@ruimanueldealmeidapinheiro" class="social-img-card" target="_blank" rel="noopener"><img src="threads.jpg" alt="Threads" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22%23ddd2c0%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3EThreads%3C%2Ftext%3E%3C%2Fsvg%3E';"> Threads</a></div>
   </div>
 
   <footer>
@@ -497,5 +597,68 @@
     “Structural systems, intelligent content, and the beauty of automation.”
   </footer>
 </div>
+
+<script>
+  const vaultBlock = document.getElementById('vaultBlock');
+  const mobOverlay = document.getElementById('mobOverlay');
+  let audio = null;
+  let isPlaying = false;
+  let mobTimeout = null;
+
+  function hideMob() {
+    if (mobOverlay) mobOverlay.style.display = 'none';
+    if (mobTimeout) {
+      clearTimeout(mobTimeout);
+      mobTimeout = null;
+    }
+  }
+
+  function showMobFor10Seconds() {
+    if (mobOverlay) {
+      mobOverlay.style.display = 'block';
+      if (mobTimeout) clearTimeout(mobTimeout);
+      mobTimeout = setTimeout(() => {
+        if (mobOverlay) mobOverlay.style.display = 'none';
+        mobTimeout = null;
+      }, 10000);
+    }
+  }
+
+  function startMusic() {
+    if (audio) {
+      audio.pause();
+      audio = null;
+    }
+    audio = new Audio('imagine.mp3');
+    audio.play().catch(e => console.log('Audio play failed:', e));
+    isPlaying = true;
+    audio.onended = () => {
+      isPlaying = false;
+      audio = null;
+    };
+  }
+
+  function stopMusicAndShowMob() {
+    if (audio) {
+      audio.pause();
+      audio = null;
+    }
+    isPlaying = false;
+    showMobFor10Seconds();
+  }
+
+  if (vaultBlock) {
+    vaultBlock.addEventListener('click', function() {
+      if (isPlaying) {
+        // second click: stop music, show mob.jpg
+        stopMusicAndShowMob();
+      } else {
+        // first click or after mob: start music, hide mob if visible
+        hideMob();
+        startMusic();
+      }
+    });
+  }
+</script>
 </body>
 </html>
