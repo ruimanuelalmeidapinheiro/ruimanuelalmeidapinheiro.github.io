@@ -28,7 +28,6 @@ margin: 0 auto;
 padding: 2rem 1.5rem 4rem;
 }
 /* TOP HEADER */
-/* TOP HEADER */
 .top-header {
   background: #ffffffcc;
   backdrop-filter: blur(4px);
@@ -51,9 +50,6 @@ padding: 2rem 1.5rem 4rem;
   display: block;
   border-radius: 24px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  background: #fefcf7;
-  padding: 8px;
-  border: 1px solid #e9e2d4;
   object-fit: contain;
 }
 .cv-link {
@@ -69,16 +65,18 @@ padding: 2rem 1.5rem 4rem;
 /* Responsive Header */
 @media (max-width: 850px) {
   .header-triad { gap: 1.2rem; }
-  .header-img { height: 160px; border-radius: 18px; padding: 6px; }
+  .header-img { height: 160px; border-radius: 18px; }
 }
 @media (max-width: 600px) {
   .top-header { padding: 1rem; border-radius: 2rem; }
   .header-triad { flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
-  .header-img { height: 120px; border-radius: 14px; padding: 5px; }
+  .header-img { height: 120px; border-radius: 14px; }
 }
 @media (max-width: 400px) {
   .header-img { height: 90px; }
-}/* Hero section */
+}
+
+/* Hero section */
 .hero {
 display: flex;
 flex-wrap: wrap;
@@ -91,28 +89,27 @@ border-radius: 2rem;
 padding: 2rem;
 box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.05);
 border: 1px solid #ebe9e4;
-}
-.portrait-area {
+}.portrait-area {
 flex: 1.2;
 min-width: 180px;
 }
 .portrait-card {
 background: #fefcf7;
-border-radius: 1.5rem;
-overflow: hidden;
+/* overflow: hidden;  ← DELETE or comment out */
 box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 transition: transform 0.2s ease;
-border: 1px solid #e9e2d4;
 }
 .portrait-card:hover {
 transform: translateY(-3px);
 }
 .portrait-card img {
-width: auto;
+max-width: 100%;
 max-height: 400px;
+width: auto;
 height: auto;
 display: block;
 margin: 0 auto;
+object-fit: contain;
 }
 .img-caption {
 padding: 0.75rem 1rem;
@@ -200,15 +197,6 @@ flex-direction: column;
 text-align: center;
 justify-content: center;
 padding: 1.2rem;
-}
-.logo-name {
-flex-direction: column;
-}
-.logo-name img {
-height: 80px;
-}
-.logo-name span {
-font-size: 1.6rem;
 }
 .hero-tagline {
 font-size: 1.1rem;
@@ -336,6 +324,16 @@ border-bottom: 1px dotted transparent;
 color: #b2773c;
 border-bottom: 1px dotted #c9ad7a;
 }
+.projects-list {
+margin-left: 1.2rem;
+font-size: 0.9rem;
+color: #2e2d2c;
+list-style-type: square;
+}
+.projects-list li {
+margin-bottom: 0.5rem;
+font-weight: 500;
+}
 .vault-block {
 background: #fff8ef;
 border-radius: 1.5rem;
@@ -371,7 +369,6 @@ color: #4a3e2c;
 .vault-list li:last-child {
 border-bottom: none;
 }
-/* mob.jpg overlay inside vault */
 .mob-overlay {
 margin-top: 1rem;
 text-align: center;
@@ -474,7 +471,8 @@ color: #8f846f;
 border-top: 1px solid #e2d9cd;
 padding-top: 2rem;
 }
-/* ===== ENHANCEMENTS (NON-DESTRUCTIVE) ===== */
+
+/* ===== DARK MODE FIXES ===== */
 .theme-toggle-btn {
 position: fixed; bottom: 1.5rem; right: 1.5rem; width: 44px; height: 44px;
 border-radius: 50%; border: 1px solid #e2d9cd; background: rgba(255,255,255,0.85);
@@ -488,52 +486,97 @@ place-items: center; transition: transform 0.2s;
 [data-theme="dark"] .publications, [data-theme="dark"] .portrait-card { background: #151b2b; color: #e5e7eb; border-color: #2d3748; }
 [data-theme="dark"] .img-caption, [data-theme="dark"] .house-caption { background: #151b2b; color: #cbd5e1; border-color: #334155; }
 [data-theme="dark"] .tech-tags span { background: #1e293b; color: #cbd5e1; }
-[data-theme="dark"] .domains-list li a { color: #cbd5e1; }
-[data-theme="dark"] .domains-list li a:hover { color: #93c5fd; }
+
+/* Domains of study & reflection - dark mode visibility */
+[data-theme="dark"] .domains-list,
+[data-theme="dark"] .domains-list li,
+[data-theme="dark"] .domains-list li a {
+  color: #cbd5e1 !important;
+}
+[data-theme="dark"] .domains-list li a:hover {
+  color: #93c5fd !important;
+}
+
+/* Projects list dark mode */
+[data-theme="dark"] .projects-list,
+[data-theme="dark"] .projects-list li {
+  color: #cbd5e1 !important;
+}
+
+/* Personal Vault - dark mode visibility */
+[data-theme="dark"] .vault-list li {
+  color: #cbd5e1 !important;
+  border-bottom-color: #334155 !important;
+}
+[data-theme="dark"] .vault-block {
+  background: #1e293b !important;
+  border-color: #475569 !important;
+}
+[data-theme="dark"] .vault-block:hover {
+  background: #2d3a4f !important;
+}
+[data-theme="dark"] .vault-block h3 {
+  color: #f0b86e !important;
+}
+
 [data-theme="dark"] .social-img-card, [data-theme="dark"] .social-img-static { background: #1e293b; border-color: #334155; color: #cbd5e1; }
 [data-theme="dark"] .social-img-card:hover { background: #334155; border-color: #60a5fa; }
 [data-theme="dark"] .social-img-card:hover img, [data-theme="dark"] .social-img-static:hover img { background: #1e293b; }
 [data-theme="dark"] .theme-toggle-btn { background: rgba(21,27,43,0.9); border-color: #475569; color: #cbd5e1; }
-@media print { .theme-toggle-btn { display: none !important; } body { font-size: 11pt; line-height: 1.4; } a { color: #000; text-decoration: underline; } .social-img-card:hover img { transform: none; } }
-.w-image {
-height: 260px; /* Matches logo.jpg height */
-width: auto;
-display: block;
-border-radius: 28px; /* Matches logo curvature */
-box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-background: #fefcf7;
-padding: 8px;
-border: 1px solid #e9e2d4;
+
+/* Timeline & bio entries dark mode */
+[data-theme="dark"] .bio-year {
+  color: #f0b86e !important;
 }
+[data-theme="dark"] .bio-text {
+  color: #d1d5db !important;
+}
+[data-theme="dark"] .special-note {
+  background: #1e2a3a !important;
+  color: #e2e8f0 !important;
+  border-left-color: #f0b86e !important;
+}
+[data-theme="dark"] .bio-entry {
+  border-left-color: #4b5563 !important;
+}
+
+@media print { .theme-toggle-btn { display: none !important; } body { font-size: 11pt; line-height: 1.4; } a { color: #000; text-decoration: underline; } .social-img-card:hover img { transform: none; } }
 </style>
 </head>
 <body>
-<!-- ENHANCEMENT: Dark/Light Toggle -->
 <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode">◑</button>
 <div class="container">
-<!-- TOP HEADER -->
+<!-- TOP HEADER - cv link now opens in same window -->
 <div class="top-header">
   <div class="header-triad">
     <img src="logo.jpg" alt="Logo" class="header-img" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23dbd3c4%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3Elogo%3C%2Ftext%3E%3C%2Fsvg%3E';">
     <img src="w.png" alt="" class="header-img">
-    <a href="cv.html" class="cv-link" target="_blank" rel="noopener">
+    <!-- CV link opens in same window (no target="_blank") -->
+    <a href="cv.html" class="cv-link">
       <img src="cur.jpg" alt="Curriculum Vitae" class="header-img" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%23dbd3c4%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3ECV%3C%2Ftext%3E%3C%2Fsvg%3E';">
     </a>
   </div>
 </div>
-<!-- Hero section -->
+<!-- Hero section with random portrait -->
 <div class="hero">
 <div class="portrait-area">
-<div class="portrait-card"><img src="portrait.jpg" alt="Rui Manuel de Almeida Pinheiro portrait" />
-<div class="img-caption">Rui Manuel de Almeida Pinheiro · Lisbon, Arroios</div>
+<div class="portrait-card">
+  <img id="randomPortrait" alt="Rui Manuel de Almeida Pinheiro portrait" />
+  <div class="img-caption">Rui Manuel de Almeida Pinheiro · Lisbon, Arroios</div>
 </div>
 </div>
 <div class="hero-text">
 <div class="hero-tagline">From mainframe DB2 to AI Workflow Management · Content Engineering Strategist</div>
 <p>Born in Lisbon, Arroios, on Sunday, August 2, 1953, at 6:00 a.m. — a journey through medicine, stock exchange revolutions, IBM mainframes, and the frontier of generative AI.</p>
-<div class="contact-bar"><a class="contact-item" href="mailto:ruialmeidapinheiro@gmail.com">✉️ ruialmeidapinheiro@gmail.com</a> <a class="contact-item" href="tel:+351962783072">📞 +351 962 783 072</a> <span class="contact-item">📍 Lisbon · Arroios</span> <a class="bio-link" href="bio.html">📖 BIO (Extended)</a></div>
+<div class="contact-bar">
+  <a class="contact-item" href="mailto:ruialmeidapinheiro@gmail.com">✉️ ruialmeidapinheiro@gmail.com</a>
+  <a class="contact-item" href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+  <span class="contact-item">📍 Lisbon · Arroios</span>
 </div>
-</div>
+<div style="margin-top: 0.8rem;">
+  <a class="bio-link" href="bio.html">📖 BIO (Extended)</a>
+</div></div></div>
+</div>portrait-card
 <!-- main bio grid -->
 <div class="bio-grid">
 <div class="timeline">
@@ -560,7 +603,7 @@ border: 1px solid #e9e2d4;
 </div>
 <div class="bio-entry">
 <div class="bio-year">1978 · Organization &amp; IT department</div>
-<div class="bio-text" style="text-align: justify;">Selected among 12 candidates. The gateway to Business Science and IBM mainframes — a lifelong passion.</div>
+<div class="bio-text" style="text-align: justify;">We were 12 candidates and we entered. The gateway to Business Science and IBM mainframes — a lifelong passion.</div>
 </div>
 <div class="bio-entry">
 <div class="bio-year">1984 · DB2 Mainframe development</div>
@@ -634,7 +677,22 @@ border: 1px solid #e9e2d4;
 </div>
 <div class="skills-block">
 <h3>⚙️ Core expertise &amp; tools</h3>
-<div class="tech-tags">IBM Mainframe / z/OSDb2COBOLAssemblerPROLOGISPFVSAMPrompt EngineeringLLMs (GPT, Claude, Llama)Content EngineeringAI Workflow OrchestrationBusiness Process AutomationStructured Content Models</div>
+<div class="tech-tags">
+<span>IBM Mainframe</span>
+<span>z/OS</span>
+<span>DB2</span>
+<span>COBOL</span>
+<span>Assembler</span>
+<span>PROLOG</span>
+<span>ISPF</span>
+<span>VSAM</span>
+<span>Prompt Engineering</span>
+<span>LLMs (GPT, Claude, Llama)</span>
+<span>Content Engineering</span>
+<span>AI Workflow Orchestration</span>
+<span>Business Process Automation</span>
+<span>Structured Content Models</span>
+</div>
 <hr />
 <div style="margin-top: 1rem;">
 <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">📌 <strong>Current focus (2025–2026)</strong><br />Content Engineering strategic design · AI governance · real-time adaptive workflows</p>
@@ -658,6 +716,19 @@ border: 1px solid #e9e2d4;
 <li><a href="#">Sociology</a></li>
 </ul>
 </div>
+
+<!-- NEW: Projects section -->
+<div class="skills-block" style="background: #faf7f0;">
+<h3>🚀 Projects</h3>
+<ul class="projects-list">
+<li>V-Framework</li>
+<li>14 Matrices</li>
+<li>Foundations</li>
+<li>The Pocket Book of Theoretical Physics</li>
+<li>Domain Specific LLM</li>
+</ul>
+</div>
+
 <!-- Personal Vault with music and mob.jpg -->
 <div id="vaultBlock" class="vault-block">
 <h3>🔐 Personal Vault</h3>
@@ -675,24 +746,44 @@ border: 1px solid #e9e2d4;
 </div>
 </div>
 </div>
-<!-- Publications & digital presence -->
+<!-- Publications & digital presence (unchanged) -->
 <div class="publications">
 <h2>📢 Publications &amp; digital presence</h2>
 <div class="social-row"><span class="social-img-static"><img src="arxiv.jpg" alt="arXiv" /> arXiv</span><span class="social-img-static"><img src="zenodo.jpg" alt="Zenodo" /> Zenodo</span><span class="social-img-static"><img src="Google_Scholar.jpg" alt="Google Scholar" /> Google Scholar</span><span class="social-img-static"><img src="github.jpg" alt="GitHub" /> GitHub</span></div>
 <div class="social-row"><a class="social-img-card" href="https://www.linkedin.com/in/rui-manuel-de-almeida-pinheiro-97168b195/" target="_blank" rel="noopener"><img src="linkedln.jpg" alt="LinkedIn" /> LinkedIn</a><a class="social-img-card" href="Substack.html" target="_blank" rel="noopener"><img src="substack.jpg" alt="Substack" /> Substack</a><a class="social-img-card" href="https://medium.com/@ruialmeidapinheiro" target="_blank" rel="noopener"><img src="medium.jpg" alt="Medium" /> Medium</a></div>
 <div class="social-row"><a class="social-img-card" href="https://www.facebook.com/profile.php?id=61577584372216" target="_blank" rel="noopener"><img src="facebook.jpg" alt="Facebook" /> Facebook</a><a class="social-img-card" href="https://www.instagram.com/ruimanueldealmeidapinheiro/" target="_blank" rel="noopener"><img src="instagram.jpg" alt="Instagram" /> Instagram</a><a class="social-img-card" href="https://www.threads.com/@ruimanueldealmeidapinheiro" target="_blank" rel="noopener"><img src="threads.jpg" alt="Threads" /> Threads</a></div>
 </div>
-<!-- Education -->
+<!-- Reference Sites -->
 <div class="publications">
 <h2>📢 Reference Sites</h2>
-<div class="social-row"><span class="social-img-static"><img src="arxiv.jpg" alt="arXiv" /> arXiv</span><span class="social-img-static"><img src="zenodo.jpg" alt="Zenodo" /> Zenodo</span><span class="social-img-static"><img src="Google_Scholar.jpg" alt="Google Scholar" /> Google Scholar</span><span class="social-img-static"><img src="github.jpg" alt="GitHub" /> GitHub</span></div>
-<div class="social-row"><a class="social-img-card" href="https://www.linkedin.com/in/rui-manuel-de-almeida-pinheiro-97168b195/" target="_blank" rel="noopener"><img src="linkedln.jpg" alt="LinkedIn" /> LinkedIn</a><a class="social-img-card" href="Substack.html" target="_blank" rel="noopener"><img src="substack.jpg" alt="Substack" /> Substack</a><a class="social-img-card" href="https://medium.com/@ruialmeidapinheiro" target="_blank" rel="noopener"><img src="medium.jpg" alt="Medium" /> Medium</a></div>
-<div class="social-row"><a class="social-img-card" href="https://www.facebook.com/profile.php?id=61577584372216" target="_blank" rel="noopener"><img src="facebook.jpg" alt="Facebook" /> Facebook</a><a class="social-img-card" href="https://www.instagram.com/ruimanueldealmeidapinheiro/" target="_blank" rel="noopener"><img src="instagram.jpg" alt="Instagram" /> Instagram</a><a class="social-img-card" href="https://www.threads.com/@ruimanueldealmeidapinheiro" target="_blank" rel="noopener"><img src="threads.jpg" alt="Threads" /> Threads</a></div>
-</div><footer>
+<div class="social-row">
+  <a class="social-img-card" href="https://ccsenet.org/" target="_blank" rel="noopener">CCSENet</a>
+  <a class="social-img-card" href="https://www.ase.org.uk/" target="_blank" rel="noopener">ASE</a>
+  <a class="social-img-card" href="https://www.sorbonne-universite.fr/en" target="_blank" rel="noopener">Sorbonne Université</a>
+  <a class="social-img-card" href="https://www.harvard.edu/" target="_blank" rel="noopener">Harvard University</a>
+  <a class="social-img-card" href="https://www.cam.ac.uk/" target="_blank" rel="noopener">University of Cambridge</a>
+</div>
+</div>
+<footer>
 © Rui Manuel de Almeida Pinheiro — From mainframe assembler to AI workflow architect · Lisbon, Arroios<br>
 “Structural systems, intelligent content, and the beauty of automation.”
 </footer>
 </div>
+
+<script>
+// Random portrait from 70 images in ME folder
+const totalPortraits = 70;
+const randomIndex = Math.floor(Math.random() * totalPortraits) + 1;
+const portraitNumber = randomIndex.toString().padStart(2, '0');
+const portraitSrc = `ME/Rui-Manuel-de-Almeida-Pinheiro-${portraitNumber}.jpg`;
+const portraitImg = document.getElementById('randomPortrait');
+portraitImg.src = portraitSrc;
+
+// Fallback if image fails to load (e.g., file missing)
+portraitImg.onerror = function() {
+  this.src = 'portrait.jpg'; // fallback to default portrait.jpg in root
+};</script>
+
 <script>
 const vaultBlock = document.getElementById('vaultBlock');
 const mobOverlay = document.getElementById('mobOverlay');
@@ -740,16 +831,15 @@ showMobFor10Seconds();
 if (vaultBlock) {
 vaultBlock.addEventListener('click', function() {
 if (isPlaying) {
-// second click: stop music, show mob.jpg
 stopMusicAndShowMob();
 } else {
-// first click or after mob: start music, hide mob if visible
 hideMob();
 startMusic();
 }
 });
 }
 </script>
+
 <script>
 const themeBtn = document.getElementById('themeToggle');
 const root = document.documentElement;
