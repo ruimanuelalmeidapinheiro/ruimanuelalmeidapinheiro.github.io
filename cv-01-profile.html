@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Profile & Expertise · Rui Manuel de Almeida Pinheiro</title>
   <style>
     :root { --sidebar-width: 260px; --bg-primary: #ffffff; --bg-secondary: #f8f9fa; --text-primary: #111827; --text-secondary: #4b5563; --border-color: #e5e7eb; --accent-color: #2563eb; --font-stack: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
@@ -12,12 +12,12 @@
     .sidebar { width: var(--sidebar-width); background: var(--bg-secondary); border-right: 1px solid var(--border-color); padding: 2.5rem 1.5rem; position: fixed; height: 100vh; overflow-y: auto; }
     .sidebar h1 { font-size: 1.25rem; margin-bottom: 0.5rem; }
     .sidebar .subtitle { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.4; }
-    .sidebar-back { display: block; margin: 0 0 1.25rem 0; color: var(--accent-color); font-weight: 500; text-decoration: none; transition: opacity 0.2s; }
-    .sidebar-back:hover { text-decoration: underline; }
-    .sidebar nav ul { list-style: none; }
+    .sidebar nav ul { list-style: none; margin-top: 1rem; }
     .sidebar nav li { margin-bottom: 0.6rem; }
     .sidebar nav a { text-decoration: none; color: var(--text-secondary); font-weight: 500; padding: 0.5rem 0.8rem; border-radius: 6px; display: block; transition: all 0.2s; }
     .sidebar nav a:hover, .sidebar nav a.active { background: #e0e7ff; color: var(--accent-color); }
+    .btn-print { background: none; border: 1px solid var(--border-color); padding: 0.5rem 0.8rem; border-radius: 6px; width: 100%; text-align: left; font-weight: 500; cursor: pointer; margin-top: 2rem; color: var(--text-secondary); font-family: inherit; font-size: inherit; transition: all 0.2s; }
+    .btn-print:hover { background: var(--accent-color); color: white; border-color: var(--accent-color); }
     .main { margin-left: var(--sidebar-width); flex: 1; padding: 3.5rem 4rem 5rem; max-width: 920px; }
     .main h2 { font-size: 1.85rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem; }
     .main h3 { font-size: 1.35rem; margin: 2.5rem 0 0.75rem; color: var(--text-primary); }
@@ -25,127 +25,121 @@
     .main p { margin-bottom: 1rem; color: var(--text-secondary); }
     .main ul, .main ol { margin: 0.5rem 0 1.5rem 1.5rem; color: var(--text-secondary); }
     .main li { margin-bottom: 0.4rem; }
-    
-    /* Skill Scale & Tables */
     .skill-scale { margin: 1rem 0 2rem; padding: 1rem; background: var(--bg-secondary); border-radius: 8px; border-left: 3px solid var(--accent-color); }
     .skill-scale ul { list-style: none; margin: 0; padding: 0; }
-    .skill-scale li { margin-bottom: 0.35rem; color: var(--text-secondary); }
+    .skill-scale li { margin-bottom: 0.35rem; }
     .skill-table { width: 100%; border-collapse: collapse; margin: 0.5rem 0 1.5rem; font-size: 0.95rem; }
     .skill-table th, .skill-table td { padding: 0.65rem 1rem; text-align: left; border-bottom: 1px solid var(--border-color); }
     .skill-table th { background: var(--bg-secondary); font-weight: 600; color: var(--text-primary); }
     .skill-table td:last-child { font-weight: 500; color: var(--text-primary); width: 35%; }
-
     .footer-note { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--text-secondary); text-align: center; }
-    @media (max-width: 768px) { .sidebar { display: none; } .main { margin-left: 0; padding: 2rem 1.5rem; } }
+    .mobile-nav { display: none; }
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      .main { margin-left: 0; padding: 1.5rem; max-width: 100%; }
+      .mobile-nav { display: flex; flex-wrap: wrap; gap: 0.75rem; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); padding: 0.75rem 1rem; margin-bottom: 1.5rem; position: sticky; top: 0; z-index: 100; align-items: center; }
+      .mobile-nav a, .mobile-nav button { background: none; border: none; color: var(--accent-color); font-weight: 500; padding: 0.4rem 0; font-size: 0.9rem; cursor: pointer; font-family: inherit; text-decoration: none; }
+      .mobile-nav button { background: transparent; border: none; color: var(--accent-color); }
+      .mobile-nav span { margin-right: auto; }
+      .skill-table th, .skill-table td { padding: 0.4rem 0.5rem; font-size: 0.85rem; }
+    }
     @media print {
-      .sidebar { display: none !important; }
+      .sidebar, .mobile-nav, .btn-print { display: none !important; }
       .main { margin-left: 0; padding: 0; max-width: 100%; }
-      body { background: #fff; }
-      h2, h3, h4 { page-break-after: avoid; color: #000; border-color: #000; }
-      .skill-table, .skill-table th, .skill-table td { border: 1px solid #000 !important; background: #fff !important; page-break-inside: avoid; }
-      a { color: #000; text-decoration: underline; }
-      .footer-note { margin-top: 2rem; }
+      .skill-table, .skill-table th, .skill-table td { border: 1px solid #000 !important; background: #fff !important; }
     }
   </style>
 </head>
 <body>
-  <div class="layout">
-    <aside class="sidebar">
-      <h1>Rui Manuel de Almeida Pinheiro</h1>
-      <p class="subtitle">Senior Mainframe Developer & Systems Analyst · 21 Years Experience</p>
-      <a href="index.html" class="sidebar-back">← Back to Main Page</a>
-      <nav>
-        <ul>
-          <li><a href="cv.html">Overview</a></li>
-          <li><a href="cv-01-profile.html" class="active">Profile & Expertise</a></li>
-          <li><a href="cv-02-projects.html">Project Portfolio</a></li>
-          <li><a href="cv-03-personality.html">Personality Analysis</a></li>
-        </ul>
-      </nav>
-    </aside>
-    <main class="main">
-      <h2>Profile & Technical Expertise</h2>
-      
-      <h3>Professional Profile</h3>
-      <p>A highly experienced and dedicated mainframe professional with a career spanning 21 years, specializing in the analysis, design, development, and architecture of mission-critical core banking systems.</p>
-      <p>My career began at Caixa Geral de Depositos (CGD), where I progressed from Administrative to Functional Analyst and ultimately to Lead Developer and Architect.</p>
-      <p>I possess deep, expert-level knowledge of the IBM mainframe ecosystem (COBOL II, CICS, DB2, VSAM, MVS) and a proven ability to lead complex projects from conception through implementation.</p>
-      <p>My strength lies in transforming intricate business requirements into robust, high-performance, and scalable technical solutions.</p>
+<div class="layout">
+  <aside class="sidebar">
+    <h1>Rui Manuel de Almeida Pinheiro</h1>
+    <p class="subtitle">Senior Mainframe Developer & Systems Analyst · 21 Years Experience</p>
+    <nav>
+      <ul>
+        <li><a href="cv.html">Overview</a></li>
+        <li><a href="cv-01-profile.html" class="active">Profile & Expertise</a></li>
+        <li><a href="cv-02-projects.html">Project Portfolio</a></li>
+        <li><a href="cv-03-personality.html">Personality Analysis</a></li>
+      </ul>
+    </nav>
+    <button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    <div style="margin-top: 1.5rem;"><a href="index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">← Back to Main Page</a></div>
+  </aside>
+  <main class="main">
+    <div class="mobile-nav">
+      <span></span>
+      <a href="index.html">← Home</a>
+      <a href="cv.html">Overview</a>
+      <a href="cv-02-projects.html">Projects</a>
+      <a href="cv-03-personality.html">Personality</a>
+      <button onclick="window.print()">📄 PDF</button>
+    </div>
+    <h2>Profile & Technical Expertise</h2>
+    <h3>Professional Profile</h3>
+    <p>A highly experienced and dedicated mainframe professional with a career spanning 21 years, specializing in the analysis, design, development, and architecture of mission-critical core banking systems. My career began at Caixa Geral de Depositos (CGD), where I progressed from Administrative to Functional Analyst and ultimately to Lead Developer and Architect. I possess deep, expert-level knowledge of the IBM mainframe ecosystem (COBOL II, CICS, DB2, VSAM, MVS) and a proven ability to lead complex projects from conception through implementation. My strength lies in transforming intricate business requirements into robust, high-performance, and scalable technical solutions.</p>
 
-      <h3>Core Competencies & Technical Expertise</h3>
-      <p>I assess my skills using the following professional scale:</p>
-      <div class="skill-scale">
-        <ul>
-          <li><strong>1</strong> – Beginner: Academic / Training</li>
-          <li><strong>2</strong> – Intermediate: Small Projects</li>
-          <li><strong>3</strong> – Advanced: Project Experience</li>
-          <li><strong>4</strong> – Professional: Wide Experience</li>
-          <li><strong>5</strong> – Expert</li>
-        </ul>
-      </div>
+    <h3>Core Competencies & Technical Expertise</h3>
+    <p>I assess my skills using the following professional scale:</p>
+    <div class="skill-scale">
+      <ul>
+        <li><strong>1</strong> – Beginner: Academic / Training</li>
+        <li><strong>2</strong> – Intermediate: Small Projects</li>
+        <li><strong>3</strong> – Advanced: Project Experience</li>
+        <li><strong>4</strong> – Professional: Wide Experience</li>
+        <li><strong>5</strong> – Expert</li>
+      </ul>
+    </div>
 
-      <h4>Programming Languages & Environments</h4>
-      <table class="skill-table">
-        <thead><tr><th>Technology</th><th>Level</th></tr></thead>
-        <tbody>
-          <tr><td>COBOL II (IBM Mainframe)</td><td>4 – Professional</td></tr>
-          <tr><td>CICS</td><td>4 – Professional</td></tr>
-          <tr><td>SQL (DB2)</td><td>4 – Professional</td></tr>
-          <tr><td>JCL</td><td>3 – Advanced</td></tr>
-          <tr><td>Assembler (IBM Mainframe)</td><td>2 – Intermediate</td></tr>
-          <tr><td>TPS (Olivetti)</td><td>3 – Advanced</td></tr>
-          <tr><td>ISPF</td><td>2 – Intermediate</td></tr>
-          <tr><td>Visual Basic</td><td>4 – Professional</td></tr>
-          <tr><td>BASIC</td><td>2 – Intermediate</td></tr>
-          <tr><td>Java</td><td>2 – Intermediate</td></tr>
-          <tr><td>HTML/CSS</td><td>2 – Intermediate</td></tr>
-          <tr><td>PHP</td><td>1 – Beginner</td></tr>
-        </tbody>
-      </table>
+    <h4>Programming Languages & Environments</h4>
+    <table class="skill-table"><thead><tr><th>Technology</th><th>Level</th></tr></thead><tbody>
+      <tr><td>COBOL II (IBM Mainframe)</td><td>4 – Professional</td></tr>
+      <tr><td>CICS</td><td>4 – Professional</td></tr>
+      <tr><td>SQL (DB2)</td><td>4 – Professional</td></tr>
+      <tr><td>JCL</td><td>3 – Advanced</td></tr>
+      <tr><td>Assembler (IBM Mainframe)</td><td>2 – Intermediate</td></tr>
+      <tr><td>TPS (Olivetti)</td><td>3 – Advanced</td></tr>
+      <tr><td>ISPF</td><td>2 – Intermediate</td></tr>
+      <tr><td>Visual Basic</td><td>4 – Professional</td></tr>
+      <tr><td>BASIC</td><td>2 – Intermediate</td></tr>
+      <tr><td>Java</td><td>2 – Intermediate</td></tr>
+      <tr><td>HTML/CSS</td><td>2 – Intermediate</td></tr>
+      <tr><td>PHP</td><td>1 – Beginner</td></tr>
+    </tbody></table>
 
-      <h4>Data Management & Databases</h4>
-      <table class="skill-table">
-        <thead><tr><th>Technology</th><th>Level</th></tr></thead>
-        <tbody>
-          <tr><td>DB2 (IBM Mainframe)</td><td>4 – Professional</td></tr>
-          <tr><td>MySQL</td><td>4 – Professional</td></tr>
-          <tr><td>VSAM</td><td>4 – Professional</td></tr>
-          <tr><td>Microsoft Access</td><td>4 – Professional</td></tr>
-          <tr><td>Message Queueing</td><td>1 – Beginner</td></tr>
-        </tbody>
-      </table>
+    <h4>Data Management & Databases</h4>
+    <table class="skill-table"><thead><tr><th>Technology</th><th>Level</th></tr></thead><tbody>
+      <tr><td>DB2 (IBM Mainframe)</td><td>4 – Professional</td></tr>
+      <tr><td>MySQL</td><td>4 – Professional</td></tr>
+      <tr><td>VSAM</td><td>4 – Professional</td></tr>
+      <tr><td>Microsoft Access</td><td>4 – Professional</td></tr>
+      <tr><td>Message Queueing</td><td>1 – Beginner</td></tr>
+    </tbody></table>
 
-      <h4>Development Tools & Operating Systems</h4>
-      <table class="skill-table">
-        <thead><tr><th>Technology</th><th>Level</th></tr></thead>
-        <tbody>
-          <tr><td>TSO</td><td>4 – Professional</td></tr>
-          <tr><td>DESIGN/1</td><td>4 – Professional</td></tr>
-          <tr><td>INSTALL/1</td><td>4 – Professional</td></tr>
-          <tr><td>MVS</td><td>4 – Professional</td></tr>
-          <tr><td>MS Windows</td><td>2 – Intermediate</td></tr>
-        </tbody>
-      </table>
+    <h4>Development Tools & Operating Systems</h4>
+    <table class="skill-table"><thead><tr><th>Technology</th><th>Level</th></tr></thead><tbody>
+      <tr><td>TSO</td><td>4 – Professional</td></tr>
+      <tr><td>DESIGN/1</td><td>4 – Professional</td></tr>
+      <tr><td>INSTALL/1</td><td>4 – Professional</td></tr>
+      <tr><td>MVS</td><td>4 – Professional</td></tr>
+      <tr><td>MS Windows</td><td>2 – Intermediate</td></tr>
+    </tbody></table>
 
-      <h4>Analyst & Professional Abilities</h4>
-      <table class="skill-table">
-        <thead><tr><th>Ability</th><th>Level</th></tr></thead>
-        <tbody>
-          <tr><td>Requirements Elicitation</td><td>4 – Professional</td></tr>
-          <tr><td>Process Mapping</td><td>4 – Professional</td></tr>
-          <tr><td>Data Modeling</td><td>4 – Professional</td></tr>
-          <tr><td>System Performance Analysis</td><td>4 – Professional</td></tr>
-          <tr><td>Technical Problem Solving</td><td>4 – Professional</td></tr>
-          <tr><td>Testing Skills</td><td>4 – Professional</td></tr>
-          <tr><td>Documentation</td><td>4 – Professional</td></tr>
-          <tr><td>Systemic & Business Vision</td><td>4 – Professional</td></tr>
-          <tr><td>Project Leadership</td><td>4 – Professional</td></tr>
-          <tr><td>Team Spirit</td><td>5 – Expert</td></tr>
-        </tbody>
-      </table>
-
-      <div class="footer-note">Career History & Documentation · Lisbon, December 18, 2023</div>
-    </main>
-  </div>
+    <h4>Analyst & Professional Abilities</h4>
+    <table class="skill-table"><thead><tr><th>Ability</th><th>Level</th></tr></thead><tbody>
+      <tr><td>Requirements Elicitation</td><td>4 – Professional</td></tr>
+      <tr><td>Process Mapping</td><td>4 – Professional</td></tr>
+      <tr><td>Data Modeling</td><td>4 – Professional</td></tr>
+      <tr><td>System Performance Analysis</td><td>4 – Professional</td></tr>
+      <tr><td>Technical Problem Solving</td><td>4 – Professional</td></tr>
+      <tr><td>Testing Skills</td><td>4 – Professional</td></tr>
+      <tr><td>Documentation</td><td>4 – Professional</td></tr>
+      <tr><td>Systemic & Business Vision</td><td>4 – Professional</td></tr>
+      <tr><td>Project Leadership</td><td>4 – Professional</td></tr>
+      <tr><td>Team Spirit</td><td>5 – Expert</td></tr>
+    </tbody></table>
+    <div class="footer-note">Career History & Documentation · Lisbon, December 18, 2023</div>
+  </main>
+</div>
 </body>
 </html>
