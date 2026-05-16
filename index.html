@@ -341,6 +341,42 @@ list-style-type: square;
 margin-bottom: 0.5rem;
 font-weight: 500;
 }
+
+/* Data Transformer Inner Framework Component Rules */
+.transformer-block {
+background: #ffffffcc;
+backdrop-filter: blur(2px);
+border-radius: 1.5rem;
+padding: 1.4rem;
+border: 1px solid #e2d9ce;
+}
+.transformer-textarea {
+width: 100%;
+height: 90px;
+padding: 0.6rem;
+border-radius: 0.8rem;
+border: 1px solid #e4dbcf;
+font-family: 'Inter', sans-serif;
+font-size: 0.8rem;
+background: #fefcf7;
+resize: vertical;
+margin-top: 0.4rem;
+color: #1e1e2a;
+}
+.transformer-box {
+background: #fff6ea;
+padding: 0.8rem 1rem;
+border-radius: 1rem;
+margin-top: 0.5rem;
+border-left: 4px solid #c6a15b;
+font-family: monospace;
+font-size: 0.8rem;
+white-space: pre-wrap;
+word-wrap: break-word;
+min-height: 44px;
+color: #2e2d2c;
+}
+
 .vault-block {
 background: #fff8ef;
 border-radius: 1.5rem;
@@ -444,6 +480,13 @@ gap: 1.2rem;
 margin-bottom: 1.2rem;
 align-items: center;
 }
+.social-row {
+display: flex;
+flex-wrap: wrap;
+gap: 1.2rem;
+margin-bottom: 1.2rem;
+align-items: center;
+}
 .social-img-card {
 background: #faf8f4;
 border-radius: 1.2rem;
@@ -539,7 +582,7 @@ place-items: center; transition: transform 0.2s;
 .theme-toggle-btn:hover { transform: scale(1.05); }
 [data-theme="dark"] body, [data-theme="dark"] .container { background: #0b0f19; color: #e5e7eb; }
 [data-theme="dark"] .top-header, [data-theme="dark"] .hero, [data-theme="dark"] .timeline,
-[data-theme="dark"] .skills-block,
+[data-theme="dark"] .skills-block, [data-theme="dark"] .transformer-block,
 [data-theme="dark"] .vault-block {
   background: #1e293b !important;
   border-color: #475569 !important;
@@ -553,6 +596,10 @@ place-items: center; transition: transform 0.2s;
   background: transparent !important;
 }[data-theme="dark"] .img-caption, [data-theme="dark"] .house-caption { background: #151b2b; color: #cbd5e1; border-color: #334155; }
 [data-theme="dark"] .tech-tags span { background: #1e293b; color: #cbd5e1; }
+
+/* Transformer dark mode alignment */
+[data-theme="dark"] .transformer-textarea { background: #151b2b; border-color: #334155; color: #e5e7eb; }
+[data-theme="dark"] .transformer-box { background: #1e2a3a; color: #e2e8f0; border-left-color: #f0b86e; }
 
 /* Domains of study & reflection - dark mode visibility */
 [data-theme="dark"] .domains-list,
@@ -623,7 +670,6 @@ place-items: center; transition: transform 0.2s;
 <body>
 <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode">◑</button>
 <div class="container">
-<!-- TOP HEADER -->
 <div class="top-header">
   <div class="header-triad">
     <img src="Pi/logo.jpg" alt="Logo" class="header-img" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23dbd3c4%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3Elogo%3C%2Ftext%3E%3C%2Fsvg%3E';">
@@ -633,7 +679,6 @@ place-items: center; transition: transform 0.2s;
     </a>
   </div>
 </div>
-<!-- Hero section -->
 <div class="hero">
 <div class="portrait-area">
 <div class="portrait-card">
@@ -660,7 +705,6 @@ place-items: center; transition: transform 0.2s;
 
 </div>
 </div>
-<!-- main bio grid -->
 <div class="bio-grid">
 <div class="timeline">
 <h2>📖 Life &amp; career journey</h2>
@@ -730,7 +774,7 @@ place-items: center; transition: transform 0.2s;
 <p style="text-align: justify;">Alongside the framework, I am building an epistemic‑first arXiv ingestion pipeline with mainstream accepted physics domain taxonomy.</p>
 <p> </p>
 <p style="text-align: justify;">The pipeline ingests preprints nightly, classifying them by how they ground claims: empirical, mathematical, analogical, or mystical.</p>
-<p style="text-align: justify;"> </p>
+<p> </p>
 <p style="text-align: justify;">It outputs a map of what physics actually trusts — and where it hides its ambiguities.</p>
 <p style="text-align: justify;"> </p>
 <p style="text-align: justify;">I am writing a book about mainstream assumptions, perceptual limits, and wave function collapse.</p>
@@ -800,7 +844,6 @@ place-items: center; transition: transform 0.2s;
 </ul>
 </div>
 
-<!-- Projects section -->
 <div class="skills-block">
 <h3>🚀 Projects</h3>
 <ul class="projects-list">
@@ -812,7 +855,12 @@ place-items: center; transition: transform 0.2s;
 </ul>
 </div>
 
-<!-- Personal Vault -->
+<div class="transformer-block">
+  <h3>🔄 Data Transformer</h3>
+  <textarea id="transformerInput" class="transformer-textarea" placeholder="Type data loop payload..."></textarea>
+  <div id="transformerOutput" class="transformer-box"></div>
+</div>
+
 <div id="vaultBlock" class="vault-block">
 <h3>🔐 Personal Vault</h3>
 <ul class="vault-list">
@@ -829,7 +877,6 @@ place-items: center; transition: transform 0.2s;
 </div>
 </div>
 </div>
-<!-- Publications & digital presence -->
 <div class="publications">
 <h2>📢 Publications &amp; digital presence</h2>
 <div class="skills-block"><span class="social-img-static"><img src="Pi/arxiv.jpg" alt="arXiv" /> arXiv</span><span class="social-img-static"><img src="Pi/zenodo.jpg" alt="Zenodo" /> Zenodo</span><span class="social-img-static"><img src="Pi/Google_Scholar.jpg" alt="Google Scholar" /> Google Scholar</span><span class="social-img-static"><img src="Pi/github.jpg" alt="GitHub" /> GitHub</span></div>
@@ -837,7 +884,6 @@ place-items: center; transition: transform 0.2s;
 <div class="social-row"><a class="social-img-card" href="https://www.facebook.com/profile.php?id=61577584372216" target="_blank" rel="noopener"><img src="Pi/facebook.jpg" alt="Facebook" /> Facebook</a><a class="social-img-card" href="https://www.instagram.com/ruimanueldealmeidapinheiro/" target="_blank" rel="noopener"><img src="Pi/instagram.jpg" alt="Instagram" /> Instagram</a><a class="social-img-card" href="https://www.threads.com/@ruimanueldealmeidapinheiro" target="_blank" rel="noopener"><img src="Pi/threads.jpg" alt="Threads" /> Threads</a></div>
 </div>
 
-<!-- Reference Sites - images only, enlarge on hover -->
 <div class="skills-block">
   <h2 style="font-size: 1.1rem; border-left-color: #c6a15b;">Reference Sites</h2>
   <div class="social-row">
@@ -879,6 +925,30 @@ portraitImg.src = portraitSrc;
 portraitImg.onerror = function() {
   this.src = 'Pi/portrait.jpg';
 };
+</script>
+
+<script>
+// Live execution runtime loop for Transformer module
+(function() {
+  const inputEl = document.getElementById('transformerInput');
+  const outputEl = document.getElementById('transformerOutput');
+
+  inputEl.addEventListener('input', () => {
+    try {
+      const rawText = inputEl.value;
+      if (!rawText.trim()) {
+        outputEl.textContent = 'Awaiting real-time loop execution...';
+        return;
+      }
+      const bytes = new TextEncoder().encode(rawText);
+      const binaryString = String.fromCodePoint(...bytes);
+      outputEl.textContent = btoa(binaryString);
+    } catch (error) {
+      outputEl.textContent = 'Data parse error...';
+    }
+  });
+  outputEl.textContent = 'Awaiting real-time loop execution...';
+})();
 </script>
 
 <script>
