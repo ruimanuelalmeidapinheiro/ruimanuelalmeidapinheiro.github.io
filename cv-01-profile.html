@@ -143,5 +143,28 @@
     <div class="footer-note">Career History & Documentation · Lisbon, December 18, 2023</div>
   </main>
 </div>
+
+<script>
+(function() {
+  if (window.Transformer) return;
+  window.Transformer = {
+    encode: function(rawText) {
+      try {
+        if (!rawText) return '';
+        const bytes = new TextEncoder().encode(rawText);
+        return btoa(String.fromCodePoint(...bytes));
+      } catch (e) { console.error('Encoding thread exception:', e); return null; }
+    },
+    decode: function(base64Text) {
+      try {
+        if (!base64Text) return '';
+        const binary = atob(base64Text);
+        const bytes = Uint8Array.from(binary, (m) => m.codePointAt(0));
+        return new TextDecoder().decode(bytes);
+      } catch (e) { console.error('Decoding thread exception:', e); return null; }
+    }
+  };
+})();
+</script>
 </body>
 </html>
