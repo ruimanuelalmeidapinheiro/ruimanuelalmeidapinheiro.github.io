@@ -342,41 +342,6 @@ margin-bottom: 0.5rem;
 font-weight: 500;
 }
 
-/* Data Transformer Inner Framework Component Rules */
-.transformer-block {
-background: #ffffffcc;
-backdrop-filter: blur(2px);
-border-radius: 1.5rem;
-padding: 1.4rem;
-border: 1px solid #e2d9ce;
-}
-.transformer-textarea {
-width: 100%;
-height: 90px;
-padding: 0.6rem;
-border-radius: 0.8rem;
-border: 1px solid #e4dbcf;
-font-family: 'Inter', sans-serif;
-font-size: 0.8rem;
-background: #fefcf7;
-resize: vertical;
-margin-top: 0.4rem;
-color: #1e1e2a;
-}
-.transformer-box {
-background: #fff6ea;
-padding: 0.8rem 1rem;
-border-radius: 1rem;
-margin-top: 0.5rem;
-border-left: 4px solid #c6a15b;
-font-family: monospace;
-font-size: 0.8rem;
-white-space: pre-wrap;
-word-wrap: break-word;
-min-height: 44px;
-color: #2e2d2c;
-}
-
 .vault-block {
 background: #fff8ef;
 border-radius: 1.5rem;
@@ -480,13 +445,6 @@ gap: 1.2rem;
 margin-bottom: 1.2rem;
 align-items: center;
 }
-.social-row {
-display: flex;
-flex-wrap: wrap;
-gap: 1.2rem;
-margin-bottom: 1.2rem;
-align-items: center;
-}
 .social-img-card {
 background: #faf8f4;
 border-radius: 1.2rem;
@@ -533,7 +491,6 @@ display: block;
 border-radius: 6px;
 }
 
-
 /* Reference site image buttons */
 .ref-link {
   display: inline-block;
@@ -574,16 +531,18 @@ footer * {
 
 /* ===== DARK MODE FIXES ===== */
 .theme-toggle-btn {
-position: fixed; bottom: 1.5rem; right: 1.5rem; width: 44px; height: 44px;
+position: fixed;
+bottom: 1.5rem; right: 1.5rem; width: 44px; height: 44px;
 border-radius: 50%; border: 1px solid #e2d9cd; background: rgba(255,255,255,0.85);
-cursor: pointer; font-size: 1.2rem; z-index: 10000; display: grid;
+cursor: pointer; font-size: 1.2rem;
+z-index: 10000; display: grid;
 place-items: center; transition: transform 0.2s;
 }
 .theme-toggle-btn:hover { transform: scale(1.05); }
-[data-theme="dark"] body, [data-theme="dark"] .container { background: #0b0f19; color: #e5e7eb; }
+[data-theme="dark"] body, [data-theme="dark"] .container { background: #0b0f19;
+color: #e5e7eb; }
 [data-theme="dark"] .top-header, [data-theme="dark"] .hero, [data-theme="dark"] .timeline,
-[data-theme="dark"] .skills-block, [data-theme="dark"] .transformer-block,
-[data-theme="dark"] .vault-block {
+[data-theme="dark"] .skills-block, [data-theme="dark"] .vault-block {
   background: #1e293b !important;
   border-color: #475569 !important;
   color: #e5e7eb;
@@ -594,12 +553,9 @@ place-items: center; transition: transform 0.2s;
 }
 [data-theme="dark"] .publications .skills-block {
   background: transparent !important;
-}[data-theme="dark"] .img-caption, [data-theme="dark"] .house-caption { background: #151b2b; color: #cbd5e1; border-color: #334155; }
+}[data-theme="dark"] .img-caption, [data-theme="dark"] .house-caption { background: #151b2b; color: #cbd5e1; border-color: #334155;
+}
 [data-theme="dark"] .tech-tags span { background: #1e293b; color: #cbd5e1; }
-
-/* Transformer dark mode alignment */
-[data-theme="dark"] .transformer-textarea { background: #151b2b; border-color: #334155; color: #e5e7eb; }
-[data-theme="dark"] .transformer-box { background: #1e2a3a; color: #e2e8f0; border-left-color: #f0b86e; }
 
 /* Domains of study & reflection - dark mode visibility */
 [data-theme="dark"] .domains-list,
@@ -633,9 +589,11 @@ place-items: center; transition: transform 0.2s;
   color: #f0b86e !important;
 }
 
-[data-theme="dark"] .social-img-card, [data-theme="dark"] .social-img-static { background: #1e293b; border-color: #334155; color: #cbd5e1; }
+[data-theme="dark"] .social-img-card, [data-theme="dark"] .social-img-static { background: #1e293b; border-color: #334155; color: #cbd5e1;
+}
 [data-theme="dark"] .social-img-card:hover { background: #334155; border-color: #60a5fa; }
-[data-theme="dark"] .social-img-card:hover img, [data-theme="dark"] .social-img-static:hover img { background: #1e293b; }
+[data-theme="dark"] .social-img-card:hover img, [data-theme="dark"] .social-img-static:hover img { background: #1e293b;
+}
 [data-theme="dark"] .theme-toggle-btn { background: rgba(21,27,43,0.9); border-color: #475569; color: #cbd5e1; }
 
 /* Timeline & bio entries dark mode */
@@ -664,7 +622,9 @@ place-items: center; transition: transform 0.2s;
   width: 100%;
 }
 
-@media print { .theme-toggle-btn { display: none !important; } body { font-size: 11pt; line-height: 1.4; } a { color: #000; text-decoration: underline; } .social-img-card:hover img { transform: none; } }
+@media print { .theme-toggle-btn { display: none !important; } body { font-size: 11pt; line-height: 1.4;
+} a { color: #000; text-decoration: underline; } .social-img-card:hover img { transform: none;
+} }
 </style>
 </head>
 <body>
@@ -855,12 +815,6 @@ place-items: center; transition: transform 0.2s;
 </ul>
 </div>
 
-<div class="transformer-block">
-  <h3>🔄 Data Transformer</h3>
-  <textarea id="transformerInput" class="transformer-textarea" placeholder="Type data loop payload..."></textarea>
-  <div id="transformerOutput" class="transformer-box"></div>
-</div>
-
 <div id="vaultBlock" class="vault-block">
 <h3>🔐 Personal Vault</h3>
 <ul class="vault-list">
@@ -885,7 +839,8 @@ place-items: center; transition: transform 0.2s;
 </div>
 
 <div class="skills-block">
-  <h2 style="font-size: 1.1rem; border-left-color: #c6a15b;">Reference Sites</h2>
+  <h2 style="font-size: 1.1rem;
+ border-left-color: #c6a15b;">Reference Sites</h2>
   <div class="social-row">
     <a class="ref-link" href="https://ccsenet.org/" target="_blank" rel="noopener">
       <img src="Pi/link01.png" alt="CCSENet" class="ref-site-img">
@@ -900,7 +855,7 @@ place-items: center; transition: transform 0.2s;
       <img src="Pi/link04.png" alt="Harvard University" class="ref-site-img">
     </a>
     <a class="ref-link" href="https://www.cam.ac.uk/" target="_blank" rel="noopener">
-      <img src="Pi/link05.png" alt="University of Cambridge" class="ref-site-img">
+       <img src="Pi/link05.png" alt="University of Cambridge" class="ref-site-img">
     </a>
   </div>
 </div>
@@ -925,30 +880,6 @@ portraitImg.src = portraitSrc;
 portraitImg.onerror = function() {
   this.src = 'Pi/portrait.jpg';
 };
-</script>
-
-<script>
-// Live execution runtime loop for Transformer module
-(function() {
-  const inputEl = document.getElementById('transformerInput');
-  const outputEl = document.getElementById('transformerOutput');
-
-  inputEl.addEventListener('input', () => {
-    try {
-      const rawText = inputEl.value;
-      if (!rawText.trim()) {
-        outputEl.textContent = 'Awaiting real-time loop execution...';
-        return;
-      }
-      const bytes = new TextEncoder().encode(rawText);
-      const binaryString = String.fromCodePoint(...bytes);
-      outputEl.textContent = btoa(binaryString);
-    } catch (error) {
-      outputEl.textContent = 'Data parse error...';
-    }
-  });
-  outputEl.textContent = 'Awaiting real-time loop execution...';
-})();
 </script>
 
 <script>
