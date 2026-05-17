@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="icon" href="logo.jpg" type="image/jpeg">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewfit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Project Portfolio · Rui Manuel de Almeida Pinheiro</title>
   <style>
     :root { --sidebar-width: 260px; --bg-primary: #ffffff; --bg-secondary: #f8f9fa; --text-primary: #111827; --text-secondary: #4b5563; --border-color: #e5e7eb; --accent-color: #2563eb; --font-stack: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
@@ -49,30 +49,31 @@
   <aside class="sidebar">
     <h1>Rui Manuel de Almeida Pinheiro</h1>
     <p class="subtitle">Senior Mainframe Developer & Systems Analyst · 21 Years Experience</p>
-<nav>
-  <ul>
-    <li><a href="cv.html">Overview</a></li>
-    <li><a href="cv-01-profile.html">Profile & Expertise</a></li>
-    <li><a href="cv-02-projects.html">Project Portfolio</a></li>
-    <li><a href="cv-03-personality.html">Personality Analysis</a></li>
-    <li><a href="cv-04-personal-professional-code-of-conduct.html">Code of Conduct</a></li>
-    <li><a href="cv-05-my-core-living-discipline.html">Living Discipline</a></li>
-  </ul>
-</nav>    <button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    <nav>
+      <ul>
+        <li><a href="cv.html">Overview</a></li>
+        <li><a href="cv-01-profile.html">Profile & Expertise</a></li>
+        <li><a href="cv-02-projects.html" class="active">Project Portfolio</a></li>
+        <li><a href="cv-03-personality.html">Personality Analysis</a></li>
+        <li><a href="cv-04-personal-professional-code-of-conduct.html">Code of Conduct</a></li>
+        <li><a href="cv-05-my-core-living-discipline.html">Living Discipline</a></li>
+      </ul>
+    </nav>
+    <button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
     <div style="margin-top: 1.5rem;"><a href="index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">← Back to Main Page</a></div>
   </aside>
   <main class="main">
-<div class="mobile-nav">
-  <span></span>
-  <a href="index.html">← Home</a>
-  <a href="cv.html">Overview</a>
-  <a href="cv-01-profile.html">Profile</a>
-  <a href="cv-02-projects.html">Projects</a>
-  <a href="cv-03-personality.html">Personality</a>
-  <a href="cv-04-personal-professional-code-of-conduct.html">Conduct</a>
-  <a href="cv-05-my-core-living-discipline.html">Discipline</a>
-  <button onclick="window.print()">📄 PDF</button>
-</div>
+    <div class="mobile-nav">
+      <span></span>
+      <a href="index.html">← Home</a>
+      <a href="cv.html">Overview</a>
+      <a href="cv-01-profile.html">Profile</a>
+      <a href="cv-03-personality.html">Personality</a>
+      <a href="cv-04-personal-professional-code-of-conduct.html">Conduct</a>
+      <a href="cv-05-my-core-living-discipline.html">Discipline</a>
+      <button onclick="window.print()">📄 PDF</button>
+    </div>
+    
     <h2>Project Portfolio</h2>
     
     <h3>Early Career & Foundation (1970s)</h3>
@@ -88,7 +89,7 @@
 
     <div class="project-block"><h4>Project 5: Bank Deposit Management</h4><p><strong>Role:</strong> Developer</p><p><strong>Description:</strong> Developed a series of LU2 online transactions to streamline and validate the processing of various types of bank deposits from branch terminals.</p><p><strong>Technologies:</strong> CICS, COBOL II, BMS 3270, VSAM KSDS, TSO.</p></div>
 
-    <div class="project-block"><h4>Project 6: 3270 Value Transfer Control Project</h4><p><strong>Role:</strong> Lead Developer</p><p><strong>Description:</strong> Led the migration of the entire batch-based "Values in Transit" application (from Project 1) to a modern, online CICS/3270 environment, enabling real-time control and status updates from branch terminals.</p><p><strong>Technologies:</strong> CICS, COBOL II, BMS 3270, VSAM KSDS, TSO.</p></div>
+        <div class="project-block"><h4>Project 6: 3270 Value Transfer Control Project</h4><p><strong>Role:</strong> Lead Developer</p><p><strong>Description:</strong> Led the migration of the entire batch-based "Values in Transit" application (from Project 1) to a modern, online CICS/3270 environment, enabling real-time control and status updates from branch terminals.</p><p><strong>Technologies:</strong> CICS, COBOL II, BMS 3270, VSAM KSDS, TSO.</p></div>
 
     <div class="project-block"><h4>Project 7: Customer Management Project</h4><p><strong>Role:</strong> Lead Designer & Programmer (My First DB2 Project)</p><p><strong>Description:</strong> A major initiative to eliminate severe data duplication. Transformed approximately 12 million customer-account records into a clean DB2 database of about 4 million unique customers. Collaborated with consultants using INSTALL/1. Designed the customer/account relationship models and programmed all LU3 outputs for branch printers and terminals.</p><p><strong>Technologies:</strong> DB2, CICS (via INSTALL/1), COBOL II, DESIGN/1, VSAM, BMS 3270, LU3, Office Tools.</p></div>
 
@@ -98,5 +99,4 @@
 
     <div class="project-block"><h4>Project 10: Passive Operations Management System</h4><p><strong>Role:</strong> Lead Architect</p><p><strong>Description:</strong> The pinnacle project: architected a unified, 24/7 clientserver system to manage all passive banking products (current accounts, deposits, savings, forex). Designed a three-tier architecture: 1. Interface Tier (decode LU0 transaction data), 2. Business Logic Tier (COBOL II/CICS), 3. Data Access Tier (dedicated DB2 CRUD modules).</p><p><strong>Key Innovation:</strong> Designed and maintained a central Application Data Dictionary to ensure consistency and enable comprehensive testing.</p><p><strong>Technologies:</strong> CICS, COBOL II, DB2, VSAM, HLLAPI, JCL, LU0/LU2, TSO/ISPF.</p></div>
 
-    <h3>Languages</h3>
-    <ul><li><strong>English:</strong> Understanding C1 (Advanced) | Speaking C1 (Advanced) | Writing B2 (Independent)</li><li><strong>French:</strong> Understanding B2 (Independent) | Speaking B1 (Independent) | Writing A1 (Basic)</li><li><strong>Castilian (Spanish):</strong> Understanding A1 (Basic) | Speaking A1 (Basic) |
+    <div class="footer-note">Lisbon · December 18, 2023</div>
