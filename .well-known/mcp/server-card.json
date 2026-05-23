@@ -1,0 +1,14 @@
+{
+  "serverInfo": {
+    "name": "static-profile",
+    "version": "1.0.0"
+  },
+  "transport": {
+    "type": "none",
+    "url": ""
+  },
+  "capabilities": {
+    "tools": {},
+    "resources": {}
+  }
+}

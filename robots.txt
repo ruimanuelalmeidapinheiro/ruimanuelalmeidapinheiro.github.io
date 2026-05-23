@@ -1,4 +1,7 @@
 User-agent: *
-Allow: /
+Disallow: /private/
+
+# AI Content Signals
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 Sitemap: https://ruimanuelalmeidapinheiro.work/sitemap.xml
