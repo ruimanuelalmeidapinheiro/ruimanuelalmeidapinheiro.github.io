@@ -686,7 +686,7 @@ footer * {
 <!-- BACKGROUND VIDEO (DOM method with explicit play script) -->
 <div id="video-container">
   <video id="intro-video" autoplay muted loop playsinline>
-    <source src="slice1.mp4" type="video/mp4">
+    <source src="./Pi/slice1.mp4" type="video/mp4">
     REG_ERROR: Video playback not supported by hardware.
   </video>
 </div>
@@ -808,7 +808,7 @@ footer * {
         <h3>📚 Domains of study &amp; reflection</h3>
         <ul class="domains-list">
           <li><a href="#">Artificial Intelligence</a></li><li><a href="#">Biography</a></li><li><a href="#">Biology</a></li><li><a href="#">Computing</a></li>
-          <li><a href="#">Conscious — the Hard Problem</a></li><li><a href="#">Economics</a></li><li><a href="#">History</a></li><li><a href="#">Philosophy</a></li>
+          <li><a href="#">Consciousness</a></li><li><a href="#">Economics</a></li><li><a href="#">History</a></li><li><a href="#">Philosophy</a></li>
           <li><a href="#">Psychology</a></li><li><a href="#">Qualia</a></li><li><a href="#">Quantum Spacetime</a></li><li><a href="#">Sociology</a></li>
         </ul>
       </div>
@@ -900,7 +900,7 @@ function showMobFor10Seconds() {
 }
 function startMusic() {
   if (audio) { audio.pause(); audio = null; }
-  audio = new Audio('imagine.mp3');
+  audio = new Audio('./Pi/imagine.mp3');
   audio.play().catch(e => console.log('Audio play failed:', e));
   isPlaying = true;
   audio.onended = () => { isPlaying = false; audio = null; };
