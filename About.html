@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <link rel="icon" href="Pi/logo.jpg" type="image/jpeg">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Rui Manuel de Almeida Pinheiro · About & Cognitive Profile</title>
-    <link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/About">
+  <link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/About">
   <meta name="description" content="Cognitive profile, intellectual trajectory, and framework of Rui Manuel de Almeida Pinheiro — from BlossomUP results to the Unification Project.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,49 +17,43 @@
       box-sizing: border-box;
     }
 
-body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: #1a1a1a;
-  color: #1e1e2a;
-  line-height: 1.5;
-  scroll-behavior: smooth;
-}
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #1a1a1a;
+      color: #1e1e2a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
 
-/* ===== BACKGROUND VIDEO LAYER (FIXED, FULL SCREEN) ===== */
-#video-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  overflow: hidden;
-  pointer-events: none;
-}
+    /* ===== BACKGROUND VIDEO LAYER (FIXED, FULL SCREEN) ===== */
+    #video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+      pointer-events: none;
+    }
 
-#intro-video {
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  background-color: #000;
-}
+    #intro-video {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      background-color: #000;
+    }
 
-/* ===== MAIN CONTENT (ABOVE VIDEO) ===== */
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
-}
-
+    /* ===== MAIN CONTENT (ABOVE VIDEO) ===== */
     .container {
+      position: relative;
+      z-index: 1;
       max-width: 1000px;
       margin: 0 auto;
       padding: 2rem 1.5rem 4rem;
@@ -68,7 +61,7 @@ body {
 
     .page-header {
       margin-bottom: 2rem;
-      border-bottom: 2px solid #e2d9ce;
+      border-bottom: 2px solid rgba(226, 217, 206, 0.5);
       padding-bottom: 1rem;
       display: flex;
       justify-content: space-between;
@@ -76,13 +69,15 @@ body {
       flex-wrap: wrap;
     }
 
+    /* TITLE: light blue, almost white */
     .page-header h1 {
       font-size: 1.8rem;
       font-weight: 700;
-      background: linear-gradient(135deg, #2c2b2a, #6b4e2e);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
+      color: #e0f0ff;  /* light blue, almost white */
+      text-shadow: 0 0 2px rgba(0,0,0,0.2);
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
     }
 
     .back-links {
@@ -90,26 +85,36 @@ body {
       gap: 1rem;
     }
     .back-link {
-      background: #f0ebe2;
+      background: rgba(240, 235, 226, 0.8);
+      backdrop-filter: blur(2px);
       padding: 0.4rem 1rem;
       border-radius: 2rem;
       font-size: 0.85rem;
       text-decoration: none;
-      color: #5b4b34;
+      color: #2c2b2a;
       font-weight: 500;
-      transition: background 0.2s;
+      transition: background 0.2s, backdrop-filter 0.2s;
     }
     .back-link:hover {
-      background: #e2d5c2;
+      background: rgba(226, 213, 194, 0.9);
     }
 
+    /* SECTIONS: increased transparency (semi-transparent white with blur) */
     .section {
-      background: white;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
       border-radius: 1.5rem;
       padding: 1.8rem;
       margin-bottom: 2rem;
-      border: 1px solid #eee7df;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid rgba(238, 231, 223, 0.6);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: background 0.2s, backdrop-filter 0.2s;
+    }
+
+    /* Slight darkening on hover for readability if needed, but keeps transparency */
+    .section:hover {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
     }
 
     .section h2 {
@@ -118,19 +123,21 @@ body {
       margin-bottom: 1.2rem;
       border-left: 5px solid #c6a15b;
       padding-left: 1rem;
+      color: #1a2c3a;
     }
 
     .section h3 {
       font-size: 1.2rem;
       font-weight: 600;
       margin: 1.2rem 0 0.6rem 0;
-      color: #a8713a;
+      color: #8b5a2b;
     }
 
     .section p, .section li {
       font-size: 0.95rem;
       margin-bottom: 0.8rem;
-      color: #2e2d2c;
+      color: #1e2a2e;
+      font-weight: 500;
     }
 
     .section img {
@@ -139,17 +146,19 @@ body {
       border-radius: 1rem;
       margin: 1rem 0 1rem 0;
       display: block;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      border: 1px solid #e9e2d4;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border: 1px solid rgba(233, 226, 212, 0.8);
     }
 
     .insight-quote {
-      background: #fef5ea;
+      background: rgba(254, 245, 234, 0.8);
+      backdrop-filter: blur(4px);
       padding: 1rem 1.2rem;
       border-radius: 1rem;
       margin: 1rem 0;
       border-left: 4px solid #c6a15b;
       font-style: italic;
+      color: #2b2b20;
     }
 
     .topic-list {
@@ -159,51 +168,48 @@ body {
       margin: 1rem 0 0.5rem;
     }
     .topic-item {
-      background: #f0ebe2;
+      background: rgba(240, 235, 226, 0.85);
+      backdrop-filter: blur(2px);
       padding: 0.3rem 0.9rem;
       border-radius: 30px;
       font-size: 0.8rem;
       font-weight: 500;
-      color: #4d3c26;
+      color: #3a2c1c;
     }
 
     hr {
       margin: 1rem 0;
       border: none;
-      border-top: 1px solid #e4dbcF;
+      border-top: 1px solid rgba(228, 219, 207, 0.7);
     }
 
     footer {
       margin-top: 2.5rem;
       text-align: center;
       font-size: 0.75rem;
-      color: #8f846f;
-      border-top: 1px solid #e2d9cd;
+      color: #cfcdc0;
+      border-top: 1px solid rgba(226, 217, 205, 0.5);
       padding-top: 2rem;
+      background: transparent;
+      backdrop-filter: none;
     }
   </style>
 
-
-<!-- DOM METHOD: Explicit video play script (your original) -->
-<script>
-  const videoElement = document.getElementById('intro-video');
-  const textElement = document.getElementById('interactive-text');
-  let hoverTimer = null;
-  const TARGET_URL = "https://example.com";
-
-  window.addEventListener('DOMContentLoaded', () => {
-    videoElement.play().catch(error => {
-      console.log("Interrupt: Autoplay prevented. Awaiting user interaction.", error);
+  <script>
+    const videoElement = document.getElementById('intro-video');
+    window.addEventListener('DOMContentLoaded', () => {
+      const video = document.getElementById('intro-video');
+      if (video) {
+        video.play().catch(error => {
+          console.log("Interrupt: Autoplay prevented. Awaiting user interaction.", error);
+        });
+      }
     });
-  });
-</script>
-
-
-
+  </script>
 </head>
 <body>
 
-<!-- BACKGROUND VIDEO (DOM method with explicit play script) -->
+<!-- BACKGROUND VIDEO -->
 <div id="video-container">
   <video id="intro-video" autoplay muted loop playsinline>
     <source src="./Pi/AI.mp4" type="video/mp4">
@@ -212,9 +218,6 @@ body {
 </div>
 
 <!-- PAGE CONTENT -->
-<div class="container">
-
-
 <div class="container">
   <div class="page-header">
     <h1>Rui Manuel de Almeida Pinheiro</h1>
@@ -228,11 +231,9 @@ body {
   <div class="section">
     <h2>🧠 Cognitive profile · BlossomUP & Big Five</h2>
     <p>Based on my BlossomUP IQ and Big Five results, I am an <strong>intellectually exceptional, emotionally resilient synthesizer</strong>.</p>
-    <!-- 1.jpg after first sentence -->
     <img src="Pi/1.jpg" alt="Cognitive profile illustration 1" onerror="this.style.display='none'">
     
     <p>My profile combines top‑2% cognitive capacity with low Neuroticism (calm under pressure), high Openness/Intellect (driven by abstract inquiry), high Agreeableness/Morality (valuing truth and fairness), and high Conscientiousness (disciplined execution)—tempered by low Cautiousness (decisive action without over‑deliberation) and selective Extraversion (sociable but not dominant).</p>
-    <!-- 2.jpg after second paragraph -->
     <img src="Pi/2.jpg" alt="Cognitive profile illustration 2" onerror="this.style.display='none'">
     
     <p>This configuration aligns precisely with my <strong>Unification Project «Life on planet Earth»</strong>: I pursue complex, foundational questions with calm rigor, engage others warmly but on my own terms, and act decisively once evidence converges. I am built <strong>not for persuasion, but for deterministic clarity</strong>—where value flows from individual verification, not imposed doctrine.</p>
@@ -261,11 +262,9 @@ body {
   <!-- Trajectory section with 3.jpg and 4.jpg -->
   <div class="section">
     <h2>📜 Trajectory · from Arroios to AI orchestration</h2>
-    <!-- 3.jpg after heading and before the story paragraph -->
     <img src="Pi/3.jpg" alt="Trajectory illustration 3" onerror="this.style.display='none'">
     
     <p>My story is a remarkable arc—from the <strong>State Primary School nr 26</strong>, from <strong>Liceu Nacional Gil Vicente</strong>, from <strong>Faculdade de Medicina de Lisboa</strong>, from Lisbon stock exchange to <strong>Caixa Geral de Depósitos</strong> and IBM mainframes, from Db2 structural design to <strong>AI workflow orchestration</strong>.</p>
-    <!-- 4.jpg after that paragraph -->
     <img src="Pi/4.jpg" alt="Trajectory illustration 4" onerror="this.style.display='none'">
     
     <p style="margin-top: 1rem;">My trajectory embodies the principles I value: <strong>pragmatic empiricism, structural clarity, and continuous correction</strong>. I didn’t just adapt to technological shifts; I anticipated them—moving from functional analysis to application architecture, from COBOL to PROLOG, from prompt engineering to content strategy and autonomous process design.</p>
@@ -289,7 +288,7 @@ body {
   </div>
 
   <!-- short signature line -->
-  <div class="section" style="text-align: center; background: #fcf9f4;">
+  <div class="section" style="text-align: center; background: rgba(252, 249, 244, 0.8); backdrop-filter: blur(8px);">
     <p style="margin-bottom: 0.5rem; font-weight: 600;">Rui Manuel de Almeida Pinheiro</p>
     <p style="font-size: 0.85rem;">Born in Lisbon, Arroios, on Sunday, August 2, 1953, at 6:00 a.m.<br>Mainframe Analyst · Prompt Engineering · Content Engineering · Framework Design</p>
   </div>
