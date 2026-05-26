@@ -9,7 +9,6 @@
 </head>
 <body>
 
-<!-- BACKGROUND VIDEO -->
 <div id="video-container">
   <video id="bg-video" autoplay muted loop playsinline>
     <source src="../Pi/bf.mp4" type="video/mp4">
@@ -17,7 +16,6 @@
 </div>
 
 <div class="container">
-  <!-- GRID NAVIGATION - BOX STYLE -->
   <div class="nav-grid">
     <a href="c1.html" class="nav-box active">
       <span class="nav-num">01</span>
@@ -55,12 +53,16 @@
       <span class="nav-num">09</span>
       <span class="nav-title">Conclusion</span>
     </a>
+
     <div class="nav-box nav-print">
       <button onclick="window.print()">🖨️ Print / Save as PDF</button>
     </div>
+
+    <div class="nav-box nav-back">
+      <button onclick="window.location.href='../index.html'">← Back to Main Page</button>
+    </div>
   </div>
 
-  <!-- MAIN CONTENT CARD -->
   <div class="content-card">
     <h1>1 - Personality Analysis Approach</h1>
 
@@ -183,24 +185,18 @@
     <p>This is a <strong>balanced, creative, sociable, and reliable</strong> profile with great potential in areas requiring <strong>collaboration, innovation, and consistent execution</strong>. Their low emotional instability and high conscientiousness make them a stable and productive partner, while their openness and agreeableness favor diverse and human-centric environments. However, they may need to pay attention to situations requiring <strong>higher assertiveness, deeper risk analysis, or adaptation to very traditional environments</strong>.</p>
   </div>
 
-  <!-- BACK LINK BOX -->
-  <a href="../index.html" class="back-box">← Back to Main Page</a>
-
-  <!-- BLACK CONTACT BAR -->
   <div class="contact-mini">
     <a href="mailto:ruialmeidapinheiro@gmail.com">✉️ ruialmeidapinheiro@gmail.com</a>
     <a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
     <span>📍 Lisbon · Arroios</span>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     © Rui Manuel de Almeida Pinheiro — From mainframe assembler to AI workflow architect · Lisbon, Arroios<br>
     “Structural systems, intelligent content, and the beauty of automation.”
   </footer>
 </div>
 
-<!-- THEME TOGGLE BUTTON -->
 <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode">🌓</button>
 
 <script>

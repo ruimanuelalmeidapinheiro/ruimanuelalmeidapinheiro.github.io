@@ -15,7 +15,7 @@
 #bg-video {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   background-color: #000;
   position: absolute;
   top: 50%;
@@ -23,7 +23,6 @@
   transform: translate(-50%, -50%);
 }
 
-/* This darkens the underlying video stream to protect text contrast */
 #video-container::after {
   content: '';
   position: absolute;
@@ -40,40 +39,34 @@
    2. GLOBAL DESIGN SYSTEM VARIABLES (LIGHT MODE DEFAULT)
    ========================================================================== */
 :root { 
-  /* Semi-transparent divisions optimized from 0.40 to 0.82 for legibility */
   --bg-primary: rgba(255, 255, 255, 0.82); 
-  --bg-nav-box: rgba(255, 255, 255, 0.75);
-  --bg-nav-active: #2563eb;
-  
-  /* Typography & Accents */
-  --text-primary: #1e3a8a;
-  --text-secondary: #1e40af;
-  --text-muted: #4b5563;
-  --border-color: rgba(59, 130, 246, 0.3);
-  --accent-color: #2563eb;
-  --font-stack: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --blur-radius: 16px; /* Enhanced blur layer to diffuse background video artifacts */
+  --bg-nav-box: rgba(255, 255, 255, 0.65);
+  --bg-secondary: rgba(248, 249, 250, 0.85);
+  --text-primary: #111827; 
+  --text-secondary: #374151;
+  --border-color: rgba(229, 231, 235, 0.7);
+  --accent-color: #2563eb; 
+  --accent-hover: #1d4ed8;
+  --focus-ring: rgba(37, 99, 235, 0.35);
 }
 
 /* ==========================================================================
-   3. DARK MODE RECONFIGURATION MATRIX
+   3. DARK MODE ENGINE (DOM TARGETED VARIABLES)
    ========================================================================== */
 [data-theme="dark"] {
-  /* Translucent dark panels optimized for dark text legibility */
-  --bg-primary: rgba(15, 23, 42, 0.85);
-  --bg-nav-box: rgba(30, 41, 59, 0.70);
-  --bg-nav-active: #3b82f6;
-  
-  /* Dark Mode Typography */
+  --bg-primary: rgba(26, 26, 36, 0.88);
+  --bg-nav-box: rgba(30, 41, 59, 0.55);
+  --bg-secondary: rgba(15, 23, 42, 0.8);
   --text-primary: #f8fafc;
-  --text-secondary: #e2e8f0;
-  --text-muted: #94a3b8;
-  --border-color: rgba(96, 165, 250, 0.25);
-  --accent-color: #60a5fa;
+  --text-secondary: #cbd5e1;
+  --border-color: rgba(51, 65, 85, 0.7);
+  --accent-color: #3b82f6;
+  --accent-hover: #60a5fa;
+  --focus-ring: rgba(59, 130, 246, 0.5);
 }
 
 /* ==========================================================================
-   4. BASE RESET & STRUCTURAL INTEGRITY
+   4. BASE DOCUMENT RESET & BODY PIPELINE
    ========================================================================== */
 * {
   margin: 0;
@@ -82,249 +75,180 @@
 }
 
 body {
-  font-family: var(--font-stack);
-  background-color: #0f172a;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   color: var(--text-primary);
-  line-height: 1.6;
-  padding: 2rem;
   min-height: 100vh;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-
-/* ==========================================================================
-   5. NAVIGATION MATRIX GRID (BOX STYLE)
-   ========================================================================== */
-.nav-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
-  margin-bottom: 2rem;
-}
-
-.nav-box {
-  background: var(--bg-nav-box);
-  backdrop-filter: blur(var(--blur-radius));
-  -webkit-backdrop-filter: blur(var(--blur-radius));
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  padding: 0.85rem;
-  text-align: center;
-  text-decoration: none;
-  color: var(--text-secondary);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: all 0.2s ease-in-out;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 2.5rem 1.5rem;
+  line-height: 1.6;
 }
 
-.nav-box:hover {
-  transform: translateY(-2px);
+/* ==========================================================================
+   5. LAYOUT CONTAINER WRAPPER
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.content-card {
+  background: var(--bg-primary);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  border-radius: 32px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* ==========================================================================
+   6. TYPOGRAPHIC HIERARCHY & CONTENT STYLES
+   ========================================================================== */
+.content-card h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+blockquote {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+p, ol, ul {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-left: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+/* ==========================================================================
+   7. NAVIGATION GRID ENGINE
+   ========================================================================== */
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.nav-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-nav-box);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 0.75rem 0.5rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+.nav-box:hover, .nav-box.active {
+  background: var(--bg-secondary);
   border-color: var(--accent-color);
-  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
 }
 
-[data-theme="dark"] .nav-box:hover {
-  background: rgba(30, 41, 59, 0.9);
-}
-
-.nav-box.active {
-  background: var(--bg-nav-active);
-  color: #ffffff !important;
-  border-color: var(--bg-nav-active);
-  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
-}
-
-.nav-box.active .nav-num,
 .nav-box.active .nav-title {
-  color: #ffffff !important;
+  color: var(--accent-color);
+  font-weight: 700;
 }
 
 .nav-num {
-  font-size: 0.8rem;
-  font-weight: 700;
-  opacity: 0.8;
-  color: var(--accent-color);
-  margin-bottom: 2px;
+  font-size: 0.7rem;
+  opacity: 0.6;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
 }
 
 .nav-title {
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-.nav-print {
-  grid-column: span 1;
+/* Utility Containers: Full Width Grid Rows */
+.nav-print, .nav-back {
+  grid-column: span 4;
+  padding: 0;
+  overflow: hidden;
 }
 
-.nav-print button {
+/* Unified Interactive Button Architectures */
+.nav-print button, .nav-back button {
   width: 100%;
   height: 100%;
-  background: none;
   border: none;
-  color: var(--text-primary);
-  font-family: var(--font-stack);
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* ==========================================================================
-   6. CORE CONTENT WRAPPER (THE HIGH-READABILITY GLASS)
-   ========================================================================== */
-.content-card {
-  background: var(--bg-primary);
-  backdrop-filter: blur(var(--blur-radius));
-  -webkit-backdrop-filter: blur(var(--blur-radius));
-  border: 1px solid var(--border-color);
-  border-radius: 28px;
-  padding: 3rem;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  margin-bottom: 2rem;
-  transition: background 0.3s ease;
-}
-
-/* Semantic Content Layout Framework */
-.content-card h1 {
-  font-size: 2.25rem;
+  font-family: inherit;
+  font-size: 0.85rem;
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid var(--border-color);
-  padding-bottom: 0.75rem;
+  padding: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.content-card h2 {
-  font-size: 1.5rem;
-  color: var(--text-primary);
-  margin: 2rem 0 1rem 0;
+/* Print Specific Colors */
+.nav-print button {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(37, 99, 235, 0.02) 100%);
+  color: var(--accent-color);
 }
 
-.content-card h3 {
-  font-size: 1.2rem;
+.nav-print:hover button {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(37, 99, 235, 0.04) 100%);
+}
+
+/* Back Button Specific Colors */
+.nav-back button {
+  background: linear-gradient(135deg, rgba(156, 163, 175, 0.08) 0%, rgba(156, 163, 175, 0.02) 100%);
   color: var(--text-secondary);
-  margin: 1.5rem 0 0.75rem 0;
 }
 
-.content-card p {
-  color: var(--text-primary);
-  margin-bottom: 1.25rem;
-  font-size: 1.05rem;
-  font-weight: 400;
-}
-
-.content-card strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-.content-card blockquote {
-  background: rgba(59, 130, 246, 0.08);
-  border-left: 4px solid var(--accent-color);
-  padding: 1rem 1.5rem;
-  margin: 1.75rem 0;
-  border-radius: 4px 12px 12px 4px;
-}
-
-.content-card blockquote strong {
-  font-size: 1.1rem;
-}
-
-/* Modular Lists Architecture */
-.content-card ul, 
-.content-card ol {
-  margin-bottom: 1.5rem;
-  padding-left: 1.75rem;
-}
-
-.content-card li {
-  margin-bottom: 0.65rem;
-  color: var(--text-primary);
-  font-size: 1.05rem;
-}
-
-.content-card li ul {
-  margin-top: 0.5rem;
-  margin-bottom: 0;
-}
-
-/* Formatted Tables Infrastructure */
-.content-card table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-}
-
-.content-card th, 
-.content-card td {
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--border-color);
-  text-align: left;
-}
-
-.content-card th {
-  background: rgba(59, 130, 246, 0.1);
-  color: var(--text-primary);
-  font-weight: 600;
+.nav-back:hover button {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(37, 99, 235, 0.02) 100%);
+  color: var(--accent-color);
 }
 
 /* ==========================================================================
-   7. SECTOR BACK NAVIGATION BUTTON
-   ========================================================================== */
-.back-box {
-  display: inline-block;
-  background: var(--bg-nav-box);
-  backdrop-filter: blur(var(--blur-radius));
-  -webkit-backdrop-filter: blur(var(--blur-radius));
-  border: 1px solid var(--border-color);
-  padding: 0.75rem 1.5rem;
-  border-radius: 16px;
-  color: var(--text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 2rem;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.back-box:hover {
-  transform: translateX(-4px);
-  background: var(--accent-color);
-  color: #ffffff !important;
-  border-color: var(--accent-color);
-}
-
-/* ==========================================================================
-   8. BLACK CONTACT INFRASTRUCTURE BAR
+   8. MINI CONTACT BAR
    ========================================================================== */
 .contact-mini {
-  background: rgba(0, 0, 0, 0.82);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 1rem 2rem;
-  border-radius: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 0.75rem 1.25rem;
+  gap: 12px;
 }
 
-.contact-mini a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 0.9rem;
+.contact-mini a, .contact-mini span {
+  font-size: 0.85rem;
   font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
@@ -332,45 +256,38 @@ body {
   color: var(--accent-color);
 }
 
-.contact-mini span {
-  color: #94a3b8;
-  font-size: 0.9rem;
-}
-
 /* ==========================================================================
-   9. SITE FOOTER SPECIFICATION
+   9. STRUCTURAL FOOTER UTILITY
    ========================================================================== */
 footer {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
   text-align: center;
-  padding: 1.5rem 0;
-  font-size: 0.85rem;
-  color: var(--text-muted);
   line-height: 1.5;
-  border-top: 1px solid var(--border-color);
-  margin-top: 1rem;
 }
 
 /* ==========================================================================
-   10. FLOATING THEME TOGGLE CONTROLLER
+   10. LIGHT/DARK THEME SWITCH FAB UI MODULE
    ========================================================================== */
 .theme-toggle-btn {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 50px;
-  height: 50px;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: var(--bg-nav-box);
-  backdrop-filter: blur(var(--blur-radius));
-  -webkit-backdrop-filter: blur(var(--blur-radius));
+  background: var(--bg-primary);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  font-size: 1.3rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.25rem;
   z-index: 1000;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
 }
@@ -388,23 +305,23 @@ footer {
   .nav-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  .nav-print {
+  .nav-print, .nav-back {
     grid-column: span 3;
   }
 }
 
 @media (max-width: 600px) {
   body {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
   }
   
   .content-card {
     padding: 1.75rem;
-    border-radius: 20px;
+    border-radius: 24px;
   }
   
   .content-card h1 {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
   }
   
   .nav-grid {
@@ -412,38 +329,56 @@ footer {
     gap: 8px;
   }
   
-  .nav-print {
+  .nav-print, .nav-back {
     grid-column: span 2;
   }
   
   .contact-mini {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1.25rem;
+    padding: 1rem 1.25rem;
+    gap: 8px;
   }
 }
 
 /* ==========================================================================
-   12. PRINT RULES MATRIX
+   12. HIGH-FIDELITY PRINT ARCHITECTURE
    ========================================================================== */
 @media print {
-  #video-container, 
-  .nav-grid, 
-  .theme-toggle-btn, 
-  .back-box {
+  #video-container, .theme-toggle-btn, .nav-grid {
     display: none !important;
   }
   
   body {
-    background: #ffffff !important;
-    color: #000000 !important;
+    background: #fff !important;
+    color: #000 !important;
     padding: 0;
   }
   
+  .container {
+    max-width: 100% !important;
+  }
+  
   .content-card {
-    background: #ffffff !important;
+    background: transparent !important;
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  .contact-mini {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    gap: 24px !important;
+  }
+  
+  footer {
+    color: #555 !important;
+    margin-top: 3rem;
   }
 }
