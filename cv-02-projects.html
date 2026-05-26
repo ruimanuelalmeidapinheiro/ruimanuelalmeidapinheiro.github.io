@@ -2,102 +2,189 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="logo.jpg" type="image/jpeg">
+  <link rel="icon" href="Pi/logo.jpg" type="image/jpeg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Project Portfolio · Rui Manuel de Almeida Pinheiro</title>
-    <link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/cv-02-projects">
+  <link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/cv-02-projects">
+  <link rel="stylesheet" href="cv-styles.css">
+  <!-- Page-specific styles for project blocks -->
   <style>
-    :root { --sidebar-width: 260px; --bg-primary: #ffffff; --bg-secondary: #f8f9fa; --text-primary: #111827; --text-secondary: #4b5563; --border-color: #e5e7eb; --accent-color: #2563eb; --font-stack: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font-stack); color: var(--text-primary); line-height: 1.65; background: var(--bg-primary); }
-    .layout { display: flex; min-height: 100vh; }
-    .sidebar { width: var(--sidebar-width); background: var(--bg-secondary); border-right: 1px solid var(--border-color); padding: 2.5rem 1.5rem; position: fixed; height: 100vh; overflow-y: auto; }
-    .sidebar h1 { font-size: 1.25rem; margin-bottom: 0.5rem; }
-    .sidebar .subtitle { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.4; }
-    .sidebar nav ul { list-style: none; margin-top: 1rem; }
-    .sidebar nav li { margin-bottom: 0.6rem; }
-    .sidebar nav a { text-decoration: none; color: var(--text-secondary); font-weight: 500; padding: 0.5rem 0.8rem; border-radius: 6px; display: block; transition: all 0.2s; }
-    .sidebar nav a:hover, .sidebar nav a.active { background: #e0e7ff; color: var(--accent-color); }
-    .btn-print { background: none; border: 1px solid var(--border-color); padding: 0.5rem 0.8rem; border-radius: 6px; width: 100%; text-align: left; font-weight: 500; cursor: pointer; margin-top: 2rem; color: var(--text-secondary); font-family: inherit; font-size: inherit; transition: all 0.2s; }
-    .btn-print:hover { background: var(--accent-color); color: white; border-color: var(--accent-color); }
-    .main { margin-left: var(--sidebar-width); flex: 1; padding: 3.5rem 4rem 5rem; max-width: 920px; }
-    .main h2 { font-size: 1.85rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem; }
-    .main h3 { font-size: 1.35rem; margin: 2.5rem 0 0.75rem; color: var(--text-primary); }
-    .main h4 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--text-primary); }
-    .main p { margin-bottom: 1rem; color: var(--text-secondary); text-align: justify; }
-    .main ul, .main ol { margin: 0.5rem 0 1.5rem 1.5rem; color: var(--text-secondary); text-align: justify; }
-    .main li { margin-bottom: 0.4rem; }
-    .project-block { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); page-break-inside: avoid; }
-    .footer-note { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--text-secondary); text-align: center; }
-    .mobile-nav { display: none; }
-    @media (max-width: 768px) {
-      .sidebar { display: none; }
-      .main { margin-left: 0; padding: 1.5rem; max-width: 100%; }
-      .mobile-nav { display: flex; flex-wrap: wrap; gap: 0.75rem; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); padding: 0.75rem 1rem; margin-bottom: 1.5rem; position: sticky; top: 0; z-index: 100; align-items: center; }
-      .mobile-nav a, .mobile-nav button { background: none; border: none; color: var(--accent-color); font-weight: 500; padding: 0.4rem 0; font-size: 0.9rem; cursor: pointer; font-family: inherit; text-decoration: none; }
-      .mobile-nav button { background: transparent; border: none; color: var(--accent-color); }
-      .mobile-nav span { margin-right: auto; }
+    .project-block { 
+      margin-bottom: 2rem; 
+      padding-bottom: 1.5rem; 
+      border-bottom: 1px solid var(--border-color); 
+      page-break-inside: avoid; 
     }
+    .project-block h4 {
+      color: var(--accent-color);
+      margin-bottom: 0.75rem;
+    }
+    
+    /* Dark mode overrides for project blocks */
+    [data-theme="dark"] .project-block { 
+      border-bottom-color: rgba(59, 130, 246, 0.3); 
+    }
+    
     @media print {
-      .sidebar, .mobile-nav, .btn-print { display: none !important; }
-      .main { margin-left: 0; padding: 0; max-width: 100%; }
-      .project-block { page-break-inside: avoid; border-bottom: 1px solid #000; }
+      .project-block { 
+        page-break-inside: avoid; 
+        border-bottom: 1px solid #000; 
+      }
     }
   </style>
 </head>
 <body>
+
+<!-- BACKGROUND VIDEO -->
+<div id="video-container">
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="./Pi/AUujfOEGX65409.mp4" type="video/mp4">
+  </video>
+</div>
+
 <div class="layout">
   <aside class="sidebar">
     <h1>Rui Manuel de Almeida Pinheiro</h1>
-    <p class="subtitle">Senior Mainframe Developer & Systems Analyst · 21 Years Experience</p>
+    <p class="subtitle">Senior Mainframe Developer & Systems Analyst<br>21 Years Experience</p>
     <nav>
       <ul>
-        <li><a href="cv.html">Overview</a></li>
-        <li><a href="cv-01-profile.html">Profile & Expertise</a></li>
-        <li><a href="cv-02-projects.html" class="active">Project Portfolio</a></li>
-        <li><a href="cv-03-personality.html">Personality Analysis</a></li>
-        <li><a href="cv-04-personal-professional-code-of-conduct.html">Code of Conduct</a></li>
-        <li><a href="cv-05-my-core-living-discipline.html">Living Discipline</a></li>
+        <li><a href="cv.html">📋 Overview</a></li>
+        <li><a href="cv-01-profile.html">📊 Profile & Expertise</a></li>
+        <li><a href="cv-02-projects.html" class="active">🚀 Project Portfolio</a></li>
+        <li><a href="cv-03-personality.html">🧠 Personality Analysis</a></li>
+        <li><a href="cv-04-personal-professional-code-of-conduct.html">⚖️ Code of Conduct</a></li>
+        <li><a href="cv-05-my-core-living-discipline.html">✨ Living Discipline</a></li>
       </ul>
     </nav>
     <button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
-    <div style="margin-top: 1.5rem;"><a href="index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">← Back to Main Page</a></div>
+    <div class="back-link">
+      <a href="index.html">← Back to Main Page</a>
+    </div>
   </aside>
+  
   <main class="main">
     <div class="mobile-nav">
-      <span></span>
-      <a href="index.html">← Home</a>
+      <span>🚀 Project Portfolio</span>
+      <a href="index.html">Home</a>
       <a href="cv.html">Overview</a>
       <a href="cv-01-profile.html">Profile</a>
       <a href="cv-03-personality.html">Personality</a>
       <a href="cv-04-personal-professional-code-of-conduct.html">Conduct</a>
       <a href="cv-05-my-core-living-discipline.html">Discipline</a>
-      <button onclick="window.print()">📄 PDF</button>
+      <button onclick="window.print()">PDF</button>
     </div>
     
-    <h2>Project Portfolio</h2>
-    
-    <h3>Early Career & Foundation (1970s)</h3>
-    <ol><li><strong>1969:</strong> Attended Faculty of Medicine of Lisbon.</li><li><strong>1972:</strong> Worked in securities registration for a Lisbon stock exchange broker.</li><li><strong>1975:</strong> Joined Caixa Geral de Depósitos (CGD) as an Administrative for Portuguese State accounts.</li></ol>
+    <div class="content-card">
+      <h2>Project Portfolio</h2>
+      
+      <h3>Early Career & Foundation (1970s)</h3>
+      <ol>
+        <li><strong>1969:</strong> Attended Faculty of Medicine of Lisbon.</li>
+        <li><strong>1972:</strong> Worked in securities registration for a Lisbon stock exchange broker.</li>
+        <li><strong>1975:</strong> Joined Caixa Geral de Depósitos (CGD) as an Administrative for Portuguese State accounts.</li>
+      </ol>
 
-    <div class="project-block"><h4>Project 1: Value Transfer Control Between Branches</h4><p><strong>Role:</strong> Team Programmer / Analyst</p><p><strong>Description:</strong> Worked within a team to automate inter-branch fund transfers. Business logic was contained in existing Assembler programs. Following functional specifications, all new programming was executed in COBOL II. Data for magnetic Tapes was prepared by an external company.</p><p><strong>Technologies:</strong> COBOL II, Assembler, VSAM KSDS, SAM, JCL, TSO.</p><p><strong>People:</strong> I worked on this one with a programmer and the users. We got the initial idea from another bank and start the adaptation to our reality. In conjunction with the programmer, we reverse engineer the assembler programs, alter as needed and put the thing in production.</p></div>
+      <div class="project-block">
+        <h4>Project 1: Value Transfer Control Between Branches</h4>
+        <p><strong>Role:</strong> Team Programmer / Analyst</p>
+        <p><strong>Description:</strong> Worked within a team to automate inter-branch fund transfers. Business logic was contained in existing Assembler programs. Following functional specifications, all new programming was executed in COBOL II. Data for magnetic Tapes was prepared by an external company.</p>
+        <p><strong>Technologies:</strong> COBOL II, Assembler, VSAM KSDS, SAM, JCL, TSO.</p>
+        <p><strong>People:</strong> I worked on this one with a programmer and the users. We got the initial idea from another bank and start the adaptation to our reality. In conjunction with the programmer, we reverse engineer the assembler programs, alter as needed and put the thing in production.</p>
+      </div>
 
-    <div class="project-block"><h4>Project 2: Employee Management System</h4><p><strong>Role:</strong> Designer & Analyst</p><p><strong>Description:</strong> Designed a structured data system functioning as an early "database" using a VSAM KSDS. Worked directly with programmers to implement a centralized solution for HR staff record management.</p><p><strong>Technologies:</strong> VSAM KSDS, SAM, JCL, COBOL II, TSO.</p><p><strong>People:</strong> I worked on this one with an organic analyst, a team of programmers, a team of users. Everything came from scratch. The direction of employees wanted tv screens, to show people how advanced they are. 3270 was on the early days, the amount of information was too much. There is an option for intermediate computing which I never believed too much. So, we went batch. To refer, in the first run, lots of paper, and lots of errors. So, we introduce the concept of a 4 stages development architecture: 1. Individual test 2. System test 3. Quality Control. 4. Production. And that lasts until 1999.</p></div>
+      <div class="project-block">
+        <h4>Project 2: Employee Management System</h4>
+        <p><strong>Role:</strong> Designer & Analyst</p>
+        <p><strong>Description:</strong> Designed a structured data system functioning as an early "database" using a VSAM KSDS. Worked directly with programmers to implement a centralized solution for HR staff record management.</p>
+        <p><strong>Technologies:</strong> VSAM KSDS, SAM, JCL, COBOL II, TSO.</p>
+        <p><strong>People:</strong> I worked on this one with an organic analyst, a team of programmers, a team of users. Everything came from scratch. The direction of employees wanted tv screens, to show people how advanced they are. 3270 was on the early days, the amount of information was too much. There is an option for intermediate computing which I never believed too much. So, we went batch. To refer, in the first run, lots of paper, and lots of errors. So, we introduce the concept of a 4 stages development architecture: 1. Individual test 2. System test 3. Quality Control. 4. Production. And that lasts until 1999.</p>
+      </div>
 
-    <div class="project-block"><h4>Project 3: Debit Authorizations for Money Transfers</h4><p><strong>Role:</strong> Developer</p><p><strong>Description:</strong> Developed a batch system to receive, validate, and process high-volume debit authorizations from corporate clients, received via magnetic tape, before posting to accounts.</p><p><strong>Technologies:</strong> VSAM KSDS, SAM, JCL, COBOL II, TSO.</p><p><strong>People:</strong> I worked with 2 programmers. The first one makes a bit mess of it. He doesn't use books for layouts, so in one program it was CHAR in the next one it was Decimal. The second one comes form operator, and he really has done a good job at tapes mounting. In the functional side, I introduce the concept on debt authorizations of a limit. And that was adopted later by all Portuguese banks.</p></div>
+      <div class="project-block">
+        <h4>Project 3: Debit Authorizations for Money Transfers</h4>
+        <p><strong>Role:</strong> Developer</p>
+        <p><strong>Description:</strong> Developed a batch system to receive, validate, and process high-volume debit authorizations from corporate clients, received via magnetic tape, before posting to accounts.</p>
+        <p><strong>Technologies:</strong> VSAM KSDS, SAM, JCL, COBOL II, TSO.</p>
+        <p><strong>People:</strong> I worked with 2 programmers. The first one makes a bit mess of it. He doesn't use books for layouts, so in one program it was CHAR in the next one it was Decimal. The second one comes form operator, and he really has done a good job at tapes mounting. In the functional side, I introduce the concept on debt authorizations of a limit. And that was adopted later by all Portuguese banks.</p>
+      </div>
 
-    <div class="project-block"><h4>Project 4: Home Savings Accounts</h4><p><strong>Role:</strong> Analyst & Designer (My First Online Project)</p><p><strong>Description:</strong> Played a key role in launching the bank's first online savings product. Was responsible for specifications and for designing the user interface (BMS grids for 3270 terminals), working directly with the programming team.</p><p><strong>Technologies:</strong> CICS, COBOL II, BMS 3270, VSAM KSDS, SAM, JCL, TSO.</p></div>
+      <div class="project-block">
+        <h4>Project 4: Home Savings Accounts</h4>
+        <p><strong>Role:</strong> Analyst & Designer (My First Online Project)</p>
+        <p><strong>Description:</strong> Played a key role in launching the bank's first online savings product. Was responsible for specifications and for designing the user interface (BMS grids for 3270 terminals), working directly with the programming team.</p>
+        <p><strong>Technologies:</strong> CICS, COBOL II, BMS 3270, VSAM KSDS, SAM, JCL, TSO.</p>
+      </div>
 
-    <div class="project-block"><h4>Project 5: Bank Deposit Management</h4><p><strong>Role:</strong> Developer</p><p><strong>Description:</strong> Developed a series of LU2 online transactions to streamline and validate the processing of various types of bank deposits from branch terminals.</p><p><strong>Technologies:</strong> CICS, COBOL II, BMS 3270, VSAM KSDS, TSO.</p></div>
+      <div class="project-block">
+        <h4>Project 5: Bank Deposit Management</h4>
+        <p><strong>Role:</strong> Developer</p>
+        <p><strong>Description:</strong> Developed a series of LU2 online transactions to streamline and validate the processing of various types of bank deposits from branch terminals.</p>
+        <p><strong>Technologies:</strong> CICS, COBOL II, BMS 3270, VSAM KSDS, TSO.</p>
+      </div>
 
-        <div class="project-block"><h4>Project 6: 3270 Value Transfer Control Project</h4><p><strong>Role:</strong> Lead Developer</p><p><strong>Description:</strong> Led the migration of the entire batch-based "Values in Transit" application (from Project 1) to a modern, online CICS/3270 environment, enabling real-time control and status updates from branch terminals.</p><p><strong>Technologies:</strong> CICS, COBOL II, BMS 3270, VSAM KSDS, TSO.</p></div>
+      <div class="project-block">
+        <h4>Project 6: 3270 Value Transfer Control Project</h4>
+        <p><strong>Role:</strong> Lead Developer</p>
+        <p><strong>Description:</strong> Led the migration of the entire batch-based "Values in Transit" application (from Project 1) to a modern, online CICS/3270 environment, enabling real-time control and status updates from branch terminals.</p>
+        <p><strong>Technologies:</strong> CICS, COBOL II, BMS 3270, VSAM KSDS, TSO.</p>
+      </div>
 
-    <div class="project-block"><h4>Project 7: Customer Management Project</h4><p><strong>Role:</strong> Lead Designer & Programmer (My First DB2 Project)</p><p><strong>Description:</strong> A major initiative to eliminate severe data duplication. Transformed approximately 12 million customer-account records into a clean DB2 database of about 4 million unique customers. Collaborated with consultants using INSTALL/1. Designed the customer/account relationship models and programmed all LU3 outputs for branch printers and terminals.</p><p><strong>Technologies:</strong> DB2, CICS (via INSTALL/1), COBOL II, DESIGN/1, VSAM, BMS 3270, LU3, Office Tools.</p></div>
+      <div class="project-block">
+        <h4>Project 7: Customer Management Project</h4>
+        <p><strong>Role:</strong> Lead Designer & Programmer (My First DB2 Project)</p>
+        <p><strong>Description:</strong> A major initiative to eliminate severe data duplication. Transformed approximately 12 million customer-account records into a clean DB2 database of about 4 million unique customers. Collaborated with consultants using INSTALL/1. Designed the customer/account relationship models and programmed all LU3 outputs for branch printers and terminals.</p>
+        <p><strong>Technologies:</strong> DB2, CICS (via INSTALL/1), COBOL II, DESIGN/1, VSAM, BMS 3270, LU3, Office Tools.</p>
+      </div>
 
-    <div class="project-block"><h4>Project 8: Checks Available at ATMs</h4><p><strong>Role:</strong> Developer</p><p><strong>Description:</strong> Developed the online system to manage check numbering and inventory, enabling the new service of distributing personalized checkbooks via the bank's ATM network.</p><p><strong>Technologies:</strong> CICS, COBOL II, DB2, JCL, Office Tools.</p></div>
+      <div class="project-block">
+        <h4>Project 8: Checks Available at ATMs</h4>
+        <p><strong>Role:</strong> Developer</p>
+        <p><strong>Description:</strong> Developed the online system to manage check numbering and inventory, enabling the new service of distributing personalized checkbooks via the bank's ATM network.</p>
+        <p><strong>Technologies:</strong> CICS, COBOL II, DB2, JCL, Office Tools.</p>
+      </div>
 
-    <div class="project-block"><h4>Project 9: Corporate Credit Risk Analysis</h4><p><strong>Role:</strong> Developer</p><p><strong>Description:</strong> Automated the risk assessment process for corporate loans. Developed the system to import financial statements from Excel into DB2 and implemented COBOL II algorithms to perform standardized financial analysis and generate risk scores.</p><p><strong>Technologies:</strong> CICS, COBOL II, DB2, 3270, Office Tools.</p></div>
+      <div class="project-block">
+        <h4>Project 9: Corporate Credit Risk Analysis</h4>
+        <p><strong>Role:</strong> Developer</p>
+        <p><strong>Description:</strong> Automated the risk assessment process for corporate loans. Developed the system to import financial statements from Excel into DB2 and implemented COBOL II algorithms to perform standardized financial analysis and generate risk scores.</p>
+        <p><strong>Technologies:</strong> CICS, COBOL II, DB2, 3270, Office Tools.</p>
+      </div>
 
-    <div class="project-block"><h4>Project 10: Passive Operations Management System</h4><p><strong>Role:</strong> Lead Architect</p><p><strong>Description:</strong> The pinnacle project: architected a unified, 24/7 clientserver system to manage all passive banking products (current accounts, deposits, savings, forex). Designed a three-tier architecture: 1. Interface Tier (decode LU0 transaction data), 2. Business Logic Tier (COBOL II/CICS), 3. Data Access Tier (dedicated DB2 CRUD modules).</p><p><strong>Key Innovation:</strong> Designed and maintained a central Application Data Dictionary to ensure consistency and enable comprehensive testing.</p><p><strong>Technologies:</strong> CICS, COBOL II, DB2, VSAM, HLLAPI, JCL, LU0/LU2, TSO/ISPF.</p></div>
+      <div class="project-block">
+        <h4>Project 10: Passive Operations Management System</h4>
+        <p><strong>Role:</strong> Lead Architect</p>
+        <p><strong>Description:</strong> The pinnacle project: architected a unified, 24/7 clientserver system to manage all passive banking products (current accounts, deposits, savings, forex). Designed a three-tier architecture: 1. Interface Tier (decode LU0 transaction data), 2. Business Logic Tier (COBOL II/CICS), 3. Data Access Tier (dedicated DB2 CRUD modules).</p>
+        <p><strong>Key Innovation:</strong> Designed and maintained a central Application Data Dictionary to ensure consistency and enable comprehensive testing.</p>
+        <p><strong>Technologies:</strong> CICS, COBOL II, DB2, VSAM, HLLAPI, JCL, LU0/LU2, TSO/ISPF.</p>
+      </div>
+    </div>
 
-    <div class="footer-note">Lisbon · December 18, 2023</div>
+    <!-- BLACK CONTACT BAR -->
+    <div class="contact-mini">
+      <a href="mailto:ruialmeidapinheiro@gmail.com">✉️ ruialmeidapinheiro@gmail.com</a>
+      <a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+      <span>📍 Lisbon · Arroios</span>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      © Rui Manuel de Almeida Pinheiro — From mainframe assembler to AI workflow architect · Lisbon, Arroios<br>
+      “Structural systems, intelligent content, and the beauty of automation.”
+    </footer>
+  </main>
+</div>
+
+<script>
+  const videoElement = document.getElementById('bg-video');
+  window.addEventListener('DOMContentLoaded', () => {
+    videoElement.play().catch(error => {
+      console.log("Autoplay prevented. Awaiting user interaction.", error);
+    });
+  });
+
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+</script>
+
+</body>
+</html>

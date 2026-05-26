@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../Pi/logo.jpg" type="image/jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Conscientiousness · Big Five Personality · Rui Manuel de Almeida Pinheiro</title>
+  <link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/c/conscientiousness">
+  <meta name="description" content="Big Five personality assessment: Conscientiousness score 93. High self-discipline, organization, goal-oriented, and reliable.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== BACKGROUND VIDEO LAYER ===== */
+    #video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    #bg-video {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      background-color: #000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #1a1a1a;
+      color: #1e1e2a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .page-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(226, 217, 206, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .page-header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #e0f0ff, #cbd5e1);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .back-link {
+      background: rgba(240, 235, 226, 0.8);
+      backdrop-filter: blur(4px);
+      padding: 0.4rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: #5b4b34;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .back-link:hover {
+      background: rgba(226, 213, 194, 0.9);
+    }
+
+    /* Score Card */
+    .score-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(238, 231, 223, 0.6);
+      text-align: center;
+    }
+
+    .score-number {
+      font-size: 4rem;
+      font-weight: 800;
+      color: #c6a15b;
+      line-height: 1;
+    }
+
+    .score-label {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1a2c3a;
+      margin-top: 0.5rem;
+    }
+
+    .score-level {
+      display: inline-block;
+      background: rgba(198, 161, 91, 0.2);
+      padding: 0.3rem 1.2rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #c6a15b;
+      margin-top: 0.75rem;
+    }
+
+    .score-raw {
+      font-size: 0.85rem;
+      color: #7b6b54;
+      margin-top: 0.5rem;
+    }
+
+    /* Sections */
+    .section {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(238, 231, 223, 0.6);
+      transition: background 0.2s;
+    }
+    .section:hover {
+      background: rgba(255, 255, 255, 0.85);
+    }
+    .section h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      border-left: 4px solid #c6a15b;
+      padding-left: 1rem;
+      color: #1a2c3a;
+    }
+    .section h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 1rem 0 0.5rem;
+      color: #a8713a;
+    }
+    .section p {
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+      color: #2e2d2c;
+      text-align: left;
+    }
+    .section ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .section li {
+      font-size: 0.92rem;
+      margin-bottom: 0.4rem;
+      color: #2e2d2c;
+    }
+
+    /* Sub-scores grid */
+    .subscores {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .subscore-item {
+      background: rgba(248, 249, 250, 0.8);
+      border-radius: 1rem;
+      padding: 0.8rem 1rem;
+    }
+    .subscore-name {
+      font-weight: 600;
+      color: #1a2c3a;
+      margin-bottom: 0.3rem;
+    }
+    .subscore-value {
+      font-size: 0.85rem;
+      color: #c6a15b;
+      font-weight: 600;
+    }
+    .subscore-description {
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      color: #4b5563;
+    }
+
+    /* Image */
+    .trait-image {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    .trait-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .original-link {
+      font-size: 0.7rem;
+      word-break: break-all;
+      margin-top: 0.5rem;
+    }
+    .original-link a {
+      color: #c6a15b;
+      text-decoration: none;
+    }
+    .original-link a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #cfcdc0;
+      border-top: 1px solid rgba(226, 217, 205, 0.5);
+      padding-top: 2rem;
+    }
+
+    hr {
+      margin: 1rem 0;
+      border: none;
+      border-top: 1px solid rgba(228, 219, 207, 0.5);
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 1rem; }
+      .score-number { font-size: 2.5rem; }
+      .subscores { grid-template-columns: 1fr; }
+      .page-header h1 { font-size: 1.3rem; }
+    }
+
+    @media print {
+      #video-container { display: none; }
+      body { background: white; }
+      .section, .score-card { background: white; backdrop-filter: none; border: 1px solid #ccc; }
+      .back-link { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- BACKGROUND VIDEO -->
+<div id="video-container">
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="../Pi/bf.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="container">
+  <div class="page-header">
+    <h1>Conscientiousness · Big Five Personality</h1>
+    <a href="index.html" class="back-link">← Back to Index</a>
+  </div>
+
+  <!-- Main Score Card -->
+  <div class="score-card">
+    <div class="score-number">93</div>
+    <div class="score-label">Conscientiousness</div>
+    <div class="score-level">📊 High · Disciplined, organized, goal-oriented, reliable</div>
+    <div class="score-raw">Raw score: 93 (sum of 6 facets)</div>
+  </div>
+
+  <!-- Description - ALL TEXT from DOC -->
+  <div class="section">
+    <h2>📌 Conscientiousness</h2>
+    <p>Conscientiousness concerns <strong>the way in which we control, regulate, and direct our impulses</strong>.</p>
+    <p>Impulses are not inherently bad; occasionally time constraints require a snap decision, and acting on our first impulse can be an effective response. Also, in times of play rather than work, acting spontaneously and impulsively can be fun. Impulsive individuals can be seen by others as colorful, fun-to-be-with, and zany.</p>
+    <p>Nonetheless, acting on impulse can lead to trouble in a number of ways. Some impulses are antisocial. Uncontrolled antisocial acts not only harm other members of society, but also can result in retribution toward the perpetrator of such impulsive acts. Another problem with impulsive acts is that they often produce immediate rewards but undesirable, long-term consequences. Examples include excessive socializing that leads to being fired from one's job, hurling an insult that causes the breakup of an important relationship, or using pleasure-inducing drugs that eventually destroy one's health.</p>
+    <p>Impulsive behavior, even when not seriously destructive, diminishes a person's effectiveness in significant ways. Acting impulsively disallows contemplating alternative courses of action, some of which would have been wiser than the impulsive choice. Impulsivity also sidetracks people during projects that require organized sequences of steps or stages. Accomplishments of an impulsive person are therefore small, scattered, and inconsistent.</p>
+    <p>A hallmark of intelligence, what potentially separates human beings from earlier life forms, is the ability to think about future consequences before acting on an impulse. Intelligent activity involves contemplation of long-range goals, organizing and planning routes to these goals, and persisting toward one's goals in the face of short-lived impulses to the contrary. The idea that intelligence involves impulse control is nicely captured by the term prudence, an alternative label for the Conscientiousness domain. Prudent means both wise and cautious.</p>
+    <p>Persons who score high on the Conscientiousness scale are, in fact, perceived by others as intelligent. The benefits of high conscientiousness are obvious. Conscientious individuals avoid trouble and achieve high levels of success through purposeful planning and persistence. They are also positively regarded by others as intelligent and reliable. On the negative side, they can be compulsive perfectionists and workaholics. Furthermore, extremely conscientious individuals might be regarded as stuffy and boring.</p>
+    <p>Unconscientious people may be criticized for their unreliability, lack of ambition, and failure to stay within the lines, but they will experience many short-lived pleasures and they will never be called stuffy.</p>
+    <p>Your score on Conscientiousness is high. This means you set clear goals and pursue them with determination. People regard you as reliable and hard-working.</p>
+    <div class="original-link">
+      🔗 <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Conscientiousness" target="_blank">https://bigfive-test.com/result/6844163be5daed64a23b2e15#Conscientiousness</a>
+    </div>
+  </div>
+
+  <!-- Trait Image -->
+  <div class="trait-image">
+    <img src="../Pi/Conscientiousness.png" alt="Conscientiousness chart" onerror="this.style.display='none'">
+  </div>
+
+  <!-- Sub-scores with COMPLETE TEXT from DOC -->
+  <div class="section">
+    <h2>📋 Facets of Conscientiousness</h2>
+    
+    <div class="subscores">
+      
+      <!-- Self-Efficacy -->
+      <div class="subscore-item">
+        <div class="subscore-name">Self-Efficacy</div>
+        <div class="subscore-value">Score: 17 (high)</div>
+        <div class="subscore-description">Self-Efficacy describes confidence in one's ability to accomplish things. High scorers believe they have the intelligence (common sense), drive, and self-control necessary for achieving success. Low scorers do not feel effective, and may have a sense that they are not in control of their lives.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Self-Efficacy" target="_blank">View original →</a>
+        </div>
+      </div>
+
+      <!-- Orderliness -->
+      <div class="subscore-item">
+        <div class="subscore-name">Orderliness</div>
+        <div class="subscore-value">Score: 14 (high)</div>
+        <div class="subscore-description">Persons with high scores on orderliness are well-organized. They like to live according to routines and schedules. They keep lists and make plans. Low scorers tend to be disorganized and scattered.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Orderliness" target="_blank">View original →</a>
+        </div>
+      </div>
+
+      <!-- Dutifulness -->
+      <div class="subscore-item">
+        <div class="subscore-name">Dutifulness</div>
+        <div class="subscore-value">Score: 16 (high)</div>
+        <div class="subscore-description">This scale reflects the strength of a person's sense of duty and obligation. Those who score high on this scale have a strong sense of moral obligation. Low scorers find contracts, rules, and regulations overly confining. They are likely to be seen as unreliable or even irresponsible.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Dutifulness" target="_blank">View original →</a>
+        </div>
+      </div>
+
+      <!-- Achievement-Striving -->
+      <div class="subscore-item">
+        <div class="subscore-name">Achievement-Striving</div>
+        <div class="subscore-value">Score: 17 (high)</div>
+        <div class="subscore-description">Individuals who score high on this scale strive hard to achieve excellence. Their drive to be recognized as successful keeps them on track toward their lofty goals. They often have a strong sense of direction in life, but extremely high scores may be too single-minded and obsessed with their work. Low scorers are content to get by with a minimal amount of work, and might be seen by others as lazy.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Achievement-Striving" target="_blank">View original →</a>
+        </div>
+      </div>
+
+      <!-- Self-Discipline -->
+      <div class="subscore-item">
+        <div class="subscore-name">Self-Discipline</div>
+        <div class="subscore-value">Score: 18 (high)</div>
+        <div class="subscore-description">Self-discipline — what many people call will-power — refers to the ability to persist at difficult or unpleasant tasks until they are completed. People who possess high self-discipline are able to overcome reluctance to begin tasks and stay on track despite distractions. Those with low self-discipline procrastinate and show poor follow-through, often failing to complete tasks — even tasks they want very much to complete.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Self-Discipline" target="_blank">View original →</a>
+        </div>
+      </div>
+
+      <!-- Cautiousness -->
+      <div class="subscore-item">
+        <div class="subscore-name">Cautiousness</div>
+        <div class="subscore-value">Score: 11 (low)</div>
+        <div class="subscore-description">Cautiousness describes the disposition to think through possibilities before acting. High scorers on the Cautiousness scale take their time when making decisions. Low scorers often say or do first thing that comes to mind without deliberating alternatives and the probable consequences of those alternatives.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Cautiousness" target="_blank">View original →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <hr>
+    <p>Rui Manuel de Almeida Pinheiro</p>
+    <p>Lisbon, Portugal</p>
+    <p>December 2025</p>
+  </div>
+</div>
+
+<script>
+  const videoElement = document.getElementById('bg-video');
+  window.addEventListener('DOMContentLoaded', () => {
+    videoElement.play().catch(error => {
+      console.log("Autoplay prevented. Awaiting user interaction.", error);
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -2,133 +2,247 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="logo.jpg" type="image/jpeg">
+  <link rel="icon" href="Pi/logo.jpg" type="image/jpeg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>My Core Living Discipline · Rui Manuel de Almeida Pinheiro</title>
-    <link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/cv-05-my-core-living-discipline">
+  <link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/cv-05-my-core-living-discipline">
+  <link rel="stylesheet" href="cv-styles.css">
+  <!-- Page-specific styles for living discipline page -->
   <style>
-    :root { --sidebar-width: 260px; --bg-primary: #ffffff; --bg-secondary: #f8f9fa; --text-primary: #111827; --text-secondary: #4b5563; --border-color: #e5e7eb; --accent-color: #2563eb; --font-stack: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font-stack); color: var(--text-primary); line-height: 1.65; background: var(--bg-primary); }
-    .layout { display: flex; min-height: 100vh; }
-    .sidebar { width: var(--sidebar-width); background: var(--bg-secondary); border-right: 1px solid var(--border-color); padding: 2.5rem 1.5rem; position: fixed; height: 100vh; overflow-y: auto; }
-    .sidebar h1 { font-size: 1.25rem; margin-bottom: 0.5rem; }
-    .sidebar .subtitle { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.4; }
-    .sidebar nav ul { list-style: none; margin-top: 1rem; }
-    .sidebar nav li { margin-bottom: 0.6rem; }
-    .sidebar nav a { text-decoration: none; color: var(--text-secondary); font-weight: 500; padding: 0.5rem 0.8rem; border-radius: 6px; display: block; transition: all 0.2s; }
-    .sidebar nav a:hover, .sidebar nav a.active { background: #e0e7ff; color: var(--accent-color); }
-    .btn-print { background: none; border: 1px solid var(--border-color); padding: 0.5rem 0.8rem; border-radius: 6px; width: 100%; text-align: left; font-weight: 500; cursor: pointer; margin-top: 2rem; color: var(--text-secondary); font-family: inherit; font-size: inherit; transition: all 0.2s; }
-    .btn-print:hover { background: var(--accent-color); color: white; border-color: var(--accent-color); }
-    .main { margin-left: var(--sidebar-width); flex: 1; padding: 3.5rem 4rem 5rem; max-width: 920px; }
-    .main h2 { font-size: 1.85rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem; }
-    .main h3 { font-size: 1.35rem; margin: 2rem 0 1rem; color: var(--text-primary); }
-    .main h4 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--accent-color); }
-    .main p { margin-bottom: 1rem; color: var(--text-secondary); text-align: justify; }
-    .main ul, .main ol { margin: 0.5rem 0 1.5rem 1.5rem; color: var(--text-secondary); text-align: justify; }
-    .main li { margin-bottom: 0.5rem; }
-    .reject-box { background: #fef2f2; border-left: 4px solid #dc2626; padding: 1.25rem; margin: 1.5rem 0; border-radius: 8px; }
-    .reject-box h4 { color: #dc2626; margin-top: 0; }
-    .path-box { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.25rem; margin: 1.5rem 0; border-radius: 8px; }
-    .path-box h4 { color: #16a34a; margin-top: 0; }
-    .principle-list { list-style: none; margin-left: 0; padding-left: 0; }
-    .principle-list li { background: var(--bg-secondary); margin-bottom: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; border-left: 3px solid var(--accent-color); }
-    .synthesis-box { background: var(--bg-primary); border: 2px solid var(--accent-color); padding: 1.5rem; margin: 1.5rem 0; border-radius: 12px; }
-    .footer-note { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--text-secondary); text-align: center; }
-    .mobile-nav { display: none; }
-    @media (max-width: 768px) {
-      .sidebar { display: none; }
-      .main { margin-left: 0; padding: 1.5rem; max-width: 100%; }
-      .mobile-nav { display: flex; flex-wrap: wrap; gap: 0.75rem; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); padding: 0.75rem 1rem; margin-bottom: 1.5rem; position: sticky; top: 0; z-index: 100; align-items: center; }
-      .mobile-nav a, .mobile-nav button { background: none; border: none; color: var(--accent-color); font-weight: 500; padding: 0.4rem 0; font-size: 0.85rem; cursor: pointer; font-family: inherit; text-decoration: none; }
-      .mobile-nav button { background: transparent; border: none; color: var(--accent-color); }
-      .mobile-nav span { margin-right: auto; }
+    /* Reject Box - Red themed for things rejected */
+    .reject-box { 
+      background: rgba(220, 38, 38, 0.12); 
+      border-left: 4px solid #dc2626; 
+      padding: 1.25rem; 
+      margin: 1.5rem 0; 
+      border-radius: 16px; 
     }
+    .reject-box h4 { color: #dc2626; margin-top: 0; }
+    .reject-box ul { margin-bottom: 0; }
+    .reject-box li { color: var(--text-secondary); }
+    
+    /* Path Box - Green themed for philosophical path */
+    .path-box { 
+      background: rgba(22, 163, 74, 0.1); 
+      border-left: 4px solid #16a34a; 
+      padding: 1.25rem; 
+      margin: 1.5rem 0; 
+      border-radius: 16px; 
+    }
+    .path-box h4 { color: #16a34a; margin-top: 0; }
+    .path-box ol { margin-bottom: 0; }
+    .path-box li { color: var(--text-secondary); }
+    
+    /* Principle List - Styled list items */
+    .principle-list { 
+      list-style: none; 
+      margin-left: 0; 
+      padding-left: 0; 
+    }
+    .principle-list li { 
+      background: rgba(248, 249, 250, 0.85); 
+      margin-bottom: 0.75rem; 
+      padding: 0.75rem 1rem; 
+      border-radius: 12px; 
+      border-left: 3px solid var(--accent-color); 
+      color: var(--text-secondary);
+    }
+    .principle-list li strong {
+      color: var(--text-primary);
+    }
+    
+    /* Synthesis Box - Highlighted conclusion */
+    .synthesis-box { 
+      background: rgba(255, 255, 255, 0.85); 
+      border: 2px solid var(--accent-color); 
+      padding: 1.5rem; 
+      margin: 1.5rem 0; 
+      border-radius: 20px; 
+    }
+    .synthesis-box h3 { 
+      margin-top: 0; 
+      border-bottom: none; 
+      color: var(--accent-color); 
+    }
+    .synthesis-box p {
+      color: var(--text-secondary);
+    }
+    .synthesis-box strong {
+      color: var(--text-primary);
+    }
+    
+    /* Dark mode overrides */
+    [data-theme="dark"] .reject-box { 
+      background: rgba(220, 38, 38, 0.15); 
+    }
+    [data-theme="dark"] .reject-box li { 
+      color: #fca5a5; 
+    }
+    [data-theme="dark"] .path-box { 
+      background: rgba(34, 197, 94, 0.1); 
+    }
+    [data-theme="dark"] .path-box li { 
+      color: #86efac; 
+    }
+    [data-theme="dark"] .principle-list li { 
+      background: rgba(15, 25, 45, 0.7); 
+      color: #cbd5e1;
+    }
+    [data-theme="dark"] .principle-list li strong {
+      color: #bfdbfe;
+    }
+    [data-theme="dark"] .synthesis-box { 
+      background: rgba(15, 25, 45, 0.8); 
+      border-color: #60a5fa; 
+    }
+    [data-theme="dark"] .synthesis-box h3 { 
+      color: #60a5fa; 
+    }
+    [data-theme="dark"] .synthesis-box p {
+      color: #cbd5e1;
+    }
+    [data-theme="dark"] .synthesis-box strong {
+      color: #bfdbfe;
+    }
+    
     @media print {
-      .sidebar, .mobile-nav, .btn-print { display: none !important; }
-      .main { margin-left: 0; padding: 0; max-width: 100%; }
-      .reject-box, .path-box, .synthesis-box, .principle-list li { page-break-inside: avoid; }
+      .reject-box, .path-box, .synthesis-box, .principle-list li { 
+        page-break-inside: avoid; 
+      }
+      .reject-box { 
+        border-left-color: #dc2626; 
+        background: #fee2e2 !important;
+      }
+      .path-box { 
+        border-left-color: #16a34a; 
+        background: #dcfce7 !important;
+      }
+      .synthesis-box { 
+        border: 1px solid #000; 
+        background: #f5f5f5 !important;
+      }
+      .principle-list li {
+        background: #f5f5f5 !important;
+        border-left-color: #2563eb !important;
+      }
     }
   </style>
 </head>
 <body>
+
+<!-- BACKGROUND VIDEO -->
+<div id="video-container">
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="./Pi/KSU6737cdwo.mp4" type="video/mp4">
+  </video>
+</div>
+
 <div class="layout">
   <aside class="sidebar">
     <h1>Rui Manuel de Almeida Pinheiro</h1>
-    <p class="subtitle">Senior Mainframe Developer & Systems Analyst · 21 Years Experience</p>
+    <p class="subtitle">Senior Mainframe Developer & Systems Analyst<br>21 Years Experience</p>
     <nav>
       <ul>
-        <li><a href="cv.html">Overview</a></li>
-        <li><a href="cv-01-profile.html">Profile & Expertise</a></li>
-        <li><a href="cv-02-projects.html">Project Portfolio</a></li>
-        <li><a href="cv-03-personality.html">Personality Analysis</a></li>
-        <li><a href="cv-04-personal-professional-code-of-conduct.html">Code of Conduct</a></li>
-        <li><a href="cv-05-my-core-living-discipline.html" class="active">Living Discipline</a></li>
+        <li><a href="cv.html">📋 Overview</a></li>
+        <li><a href="cv-01-profile.html">📊 Profile & Expertise</a></li>
+        <li><a href="cv-02-projects.html">🚀 Project Portfolio</a></li>
+        <li><a href="cv-03-personality.html">🧠 Personality Analysis</a></li>
+        <li><a href="cv-04-personal-professional-code-of-conduct.html">⚖️ Code of Conduct</a></li>
+        <li><a href="cv-05-my-core-living-discipline.html" class="active">✨ Living Discipline</a></li>
       </ul>
     </nav>
     <button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
-    <div style="margin-top: 1.5rem;"><a href="index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">← Back to Main Page</a></div>
+    <div class="back-link">
+      <a href="index.html">← Back to Main Page</a>
+    </div>
   </aside>
+  
   <main class="main">
     <div class="mobile-nav">
-      <span></span>
-      <a href="index.html">← Home</a>
+      <span>✨ Living Discipline</span>
+      <a href="index.html">Home</a>
       <a href="cv.html">Overview</a>
       <a href="cv-01-profile.html">Profile</a>
       <a href="cv-02-projects.html">Projects</a>
       <a href="cv-03-personality.html">Personality</a>
       <a href="cv-04-personal-professional-code-of-conduct.html">Conduct</a>
-      <button onclick="window.print()">📄 PDF</button>
+      <button onclick="window.print()">PDF</button>
     </div>
     
-    <h2>My Core Living Discipline</h2>
-    
-    <div class="reject-box">
-      <h4>Types of mental control I reject:</h4>
-      <ul>
-        <li><strong>Lack or inhibition of ataraxia</strong></li>
-        <li><strong>Gaslighting</strong></li>
-        <li><strong>Logical fallacies</strong></li>
-        <li><strong>False social approval</strong></li>
-        <li><strong>Concealment of information</strong></li>
-        <li><strong>Appeal to fear</strong></li>
-        <li><strong>Blame game</strong></li>
-        <li><strong>False compliments</strong></li>
-        <li><strong>Victimization</strong></li>
+    <div class="content-card">
+      <h2>My Core Living Discipline</h2>
+      
+      <div class="reject-box">
+        <h4>Types of mental control I reject:</h4>
+        <ul>
+          <li><strong>Lack or inhibition of ataraxia</strong></li>
+          <li><strong>Gaslighting</strong></li>
+          <li><strong>Logical fallacies</strong></li>
+          <li><strong>False social approval</strong></li>
+          <li><strong>Concealment of information</strong></li>
+          <li><strong>Appeal to fear</strong></li>
+          <li><strong>Blame game</strong></li>
+          <li><strong>False compliments</strong></li>
+          <li><strong>Victimization</strong></li>
+        </ul>
+      </div>
+      
+      <div class="path-box">
+        <h4>My Philosophical Path</h4>
+        <ol>
+          <li><strong>Stoic philosophy</strong></li>
+          <li><strong>Jungian individuation</strong></li>
+          <li><strong>Gnosticism</strong></li>
+        </ol>
+      </div>
+      
+      <h3>Key Principles</h3>
+      <ul class="principle-list">
+        <li><strong>1. No judgment allowed</strong> — Not in the sense of not discerning, but of not condemning. Observing without contaminating with prejudice.</li>
+        <li><strong>2. Awakening every morning is the most rewarding goal for a living being to achieve</strong> — Consciousness is the prize itself. Life is measured in acts of awakening, not in external achievements.</li>
+        <li><strong>3. Acquiring knowledge is something you have to do everyday</strong> — Knowledge as daily nutrition, not accumulation. Continuous growth as an ethical obligation to oneself.</li>
+        <li><strong>4. Inside are all the answers, not in the dream</strong> — Jungian gnosis. Answers are not in external projections (the American "dream," status, religion), but in interior exploration.</li>
+        <li><strong>5. Impermanence in knowledge is the most important aspect; the capability of doing the shift from right to wrong</strong> — Radical epistemological humility. The ability to change one's mind is more valuable than being right. Anti-dogmatism as a supreme virtue.</li>
+        <li><strong>6. Life is diversity: the universe experimenting new ways, on the path to complexity</strong> — Cosmic and evolutionary vision. You see yourself as part of a universal process of experimentation.</li>
       </ul>
+      
+      <div class="synthesis-box">
+        <h3 style="margin-top: 0; border-bottom: none;">Meaning & Synthesis</h3>
+        <p><strong>Identified Core: Anti-Control as Superior Control</strong></p>
+        <p>The types of mental control you loathe are, largely, tools of external domination and self-deception. By rejecting them, you are not rejecting discipline itself; rather, you are choosing a deeper discipline: that of self-governance based on clear perception.</p>
+        <p><strong>The "Enemies" (What you reject):</strong> These are mechanisms that corrupt cognitive clarity and autonomy. You are protecting the instrument of your consciousness from corruption. This is not negativity; it is radical cognitive hygiene.</p>
+        <p><strong>Your Path (Stoicism, Jungian Individuation, Gnosticism):</strong> This is a powerful and deliberately paradoxical triad — Stoicism (disciplined action), Jung (dialogue with the shadow), Gnosticism (truth beyond illusion). You are not following schools, but extracting tools from each for a greater end: becoming a self-evolving conscious system.</p>
+        <p><strong>The final meaning:</strong> You are executing a program of cognitive and spiritual emancipation in real-time. At 72, this discipline is not a hobby — it is the architecture that keeps your consciousness growing when other systems (social, financial, relational) have failed.</p>
+        <p><strong>Why This is Powerful (and Rare):</strong> It is self-validating, anti-fragile, adaptive, and cosmic in scale yet personal in practice. You are not "just living." You are running a conscious experiment in the laboratory of your own existence, with rigorous protocols to avoid contamination. The "meaning" lies in the execution of the protocol itself.</p>
+      </div>
     </div>
-    
-    <div class="path-box">
-      <h4>My Philosophical Path</h4>
-      <ol>
-        <li><strong>Stoic philosophy</strong></li>
-        <li><strong>Jungian individuation</strong></li>
-        <li><strong>Gnosticism</strong></li>
-      </ol>
+
+    <!-- BLACK CONTACT BAR -->
+    <div class="contact-mini">
+      <a href="mailto:ruialmeidapinheiro@gmail.com">✉️ ruialmeidapinheiro@gmail.com</a>
+      <a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+      <span>📍 Lisbon · Arroios</span>
     </div>
-    
-    <h3>Key Principles</h3>
-    <ul class="principle-list">
-      <li><strong>1. No judgment allowed</strong> — Not in the sense of not discerning, but of not condemning. Observing without contaminating with prejudice.</li>
-      <li><strong>2. Awakening every morning is the most rewarding goal for a living being to achieve</strong> — Consciousness is the prize itself. Life is measured in acts of awakening, not in external achievements.</li>
-      <li><strong>3. Acquiring knowledge is something you have to do everyday</strong> — Knowledge as daily nutrition, not accumulation. Continuous growth as an ethical obligation to oneself.</li>
-      <li><strong>4. Inside are all the answers, not in the dream</strong> — Jungian gnosis. Answers are not in external projections (the American "dream," status, religion), but in interior exploration.</li>
-      <li><strong>5. Impermanence in knowledge is the most important aspect; the capability of doing the shift from right to wrong</strong> — Radical epistemological humility. The ability to change one's mind is more valuable than being right. Anti-dogmatism as a supreme virtue.</li>
-      <li><strong>6. Life is diversity: the universe experimenting new ways, on the path to complexity</strong> — Cosmic and evolutionary vision. You see yourself as part of a universal process of experimentation.</li>
-    </ul>
-    
-    <div class="synthesis-box">
-      <h3 style="margin-top: 0; border-bottom: none; color: var(--accent-color);">Meaning & Synthesis</h3>
-      <p><strong>Identified Core: Anti-Control as Superior Control</strong></p>
-      <p>The types of mental control you loathe are, largely, tools of external domination and self-deception. By rejecting them, you are not rejecting discipline itself; rather, you are choosing a deeper discipline: that of self-governance based on clear perception.</p>
-      <p><strong>The "Enemies" (What you reject):</strong> These are mechanisms that corrupt cognitive clarity and autonomy. You are protecting the instrument of your consciousness from corruption. This is not negativity; it is radical cognitive hygiene.</p>
-      <p><strong>Your Path (Stoicism, Jungian Individuation, Gnosticism):</strong> This is a powerful and deliberately paradoxical triad — Stoicism (disciplined action), Jung (dialogue with the shadow), Gnosticism (truth beyond illusion). You are not following schools, but extracting tools from each for a greater end: becoming a self-evolving conscious system.</p>
-      <p><strong>The final meaning:</strong> You are executing a program of cognitive and spiritual emancipation in real-time. At 72, this discipline is not a hobby — it is the architecture that keeps your consciousness growing when other systems (social, financial, relational) have failed.</p>
-      <p><strong>Why This is Powerful (and Rare):</strong> It is self-validating, anti-fragile, adaptive, and cosmic in scale yet personal in practice. You are not "just living." You are running a conscious experiment in the laboratory of your own existence, with rigorous protocols to avoid contamination. The "meaning" lies in the execution of the protocol itself.</p>
-    </div>
-    
-    <div class="footer-note">Lisbon · December 18, 2025</div>
+
+    <!-- FOOTER -->
+    <footer>
+      © Rui Manuel de Almeida Pinheiro — From mainframe assembler to AI workflow architect · Lisbon, Arroios<br>
+      “Structural systems, intelligent content, and the beauty of automation.”
+    </footer>
   </main>
 </div>
+
+<script>
+  const videoElement = document.getElementById('bg-video');
+  window.addEventListener('DOMContentLoaded', () => {
+    videoElement.play().catch(error => {
+      console.log("Autoplay prevented. Awaiting user interaction.", error);
+    });
+  });
+
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+</script>
+
 </body>
 </html>

@@ -7,10 +7,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>My Path</title>
-    <link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/c//">
+<link rel="icon" href="../Pi/logo.jpg" type="image/jpeg">
+<link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/c/">
 
 <style>
 
+/* ===== BACKGROUND VIDEO LAYER ===== */
+#video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+}
+#bg-video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  background-color: #000;
+}
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -18,34 +42,59 @@ body {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f4f9fc;
+    background-color: #1a1a1a;
     color: #222;
+    overflow-x: hidden;
 }
-
 
 h1 {
     text-align: center;
     margin-top: 20px;
+    color: #e0f0ff;
+    font-size: 2rem;
 }
 
 h2 {
     margin-top: 40px;
+    color: #e0f0ff;
 }
 
-h3 {
-    margin-top: 30px;
+/* Subtitle style: bigger and white */
+.subtitle {
+    text-align: center;
+    font-size: 1.35rem;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    margin-bottom: 1.8rem;
 }
 
-p {
-    margin-bottom: 15px;
+/* Box style for both Contents and Appendix */
+.box {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 1.5rem;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(238, 231, 223, 0.6);
+    overflow-x: visible;
 }
 
-img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+.box h2 {
+    color: #3366cc;
+    margin-top: 0;
+    border-left: 4px solid #3366cc;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.box h3 {
+    color: #3366cc;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #3366cc;
+    padding-left: 1rem;
+    font-size: 1.2rem;
 }
 
 .contents ul {
@@ -60,27 +109,330 @@ img {
 .contents a {
     text-decoration: none;
     color: #003366;
+    font-size: 1rem;
+    display: inline-block;
+    transition: transform 0.2s ease;
+    transform-origin: left center;
 }
 
 .contents a:hover {
-    text-decoration: underline;
+    transform: scale(2);
+    color: #003366;
 }
 
+.btn-print {
+    background: rgba(255,255,255,0.8);
+    border: 1px solid #ccc;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+.btn-print:hover {
+    background: #c6a15b;
+    color: white;
+}
 
-    .btn-print { background: none; border: 1px solid var(--border-color); padding: 0.5rem 0.8rem; border-radius: 6px; width: 100%; text-align: left; font-weight: 500; cursor: pointer; margin-top: 2rem; color: var(--text-secondary); font-family: inherit; font-size: inherit; transition: all 0.2s; }
-    .btn-print:hover { background: var(--accent-color); color: Blue; border-color: var(--accent-color); }
+/* Interactive Bar Chart */
+.interactive-chart {
+    background: #faf7f0;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border: 1px solid #e0d5c0;
+    overflow-x: auto;
+}
 
+.bars-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    height: 320px;
+    padding: 0.5rem;
+    background: #faf7f0;
+    border-radius: 0.8rem;
+}
 
+.labels-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 12px;
+    padding: 0.5rem;
+}
+
+.bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+}
+
+.bar {
+    width: 100%;
+    border-radius: 8px 8px 4px 4px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.bar:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+.bar-label {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #4a3a20;
+    width: 120px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: inline-block;
+    transform-origin: center center;
+}
+
+.bar-label:hover {
+    color: #c6a15b;
+    transform: scale(2);
+}
+
+.bar-score {
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 4px;
+    color: #8b6914;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: inline-block;
+    transform-origin: center center;
+}
+
+.bar-score:hover {
+    color: #c6a15b;
+    transform: scale(2);
+}
+
+.bar-neuroticism {
+    background-color: #2e8b8b;
+    height: 96px;
+}
+.bar-extraversion {
+    background-color: #4a7db4;
+    height: 182px;
+}
+.bar-openness {
+    background-color: #5a9e4e;
+    height: 224px;
+}
+.bar-agreeableness {
+    background-color: #d4953a;
+    height: 187px;
+}
+.bar-conscientiousness {
+    background-color: #8b6db4;
+    height: 217px;
+}
 
 .footer {
     margin-top: 50px;
     text-align: center;
-    color: #555;
+    color: #cfcdc0;
 }
 
 hr {
     margin-top: 40px;
     margin-bottom: 40px;
+    border: none;
+    border-top: 1px solid rgba(226, 217, 205, 0.5);
+}
+
+.section-divider {
+    margin: 1.5rem 0;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.back-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.back-link:hover {
+    color: #c6a15b;
+}
+
+.appendix img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* APPENDIX TEXT STYLES: color #003366, justified, NO white background */
+.appendix p {
+    text-align: justify;
+    color: #003366;
+}
+
+/* The entire line containing link + description becomes a single hover unit — scale 130% */
+.appendix .assessment-line {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    transform-origin: left center;
+    text-align: justify;
+    width: 100%;
+}
+
+.appendix .assessment-line:hover {
+    transform: scale(1.3);
+}
+
+/* IQ link and description inside the hoverable line */
+.iq-link {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.iq-description {
+    color: #003366;
+    display: inline;
+}
+
+/* Remove any extra background from spans */
+.appendix span, .appendix a {
+    background: transparent;
+}
+
+/* Big Five supporting text */
+.appendix p:last-of-type {
+    text-align: justify;
+    color: #003366;
+}
+
+/* Headings in appendix remain distinct */
+.appendix h2 {
+    color: #003366;
+    margin-top: 0;
+    border-left: 4px solid #003366;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.appendix h3 {
+    color: #003366;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #003366;
+    padding-left: 1rem;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .bars-container {
+        gap: 12px;
+        height: 260px;
+    }
+    .labels-container {
+        gap: 12px;
+    }
+    .bar-wrapper {
+        width: 90px;
+    }
+    .bar-label {
+        font-size: 11px;
+        width: 90px;
+    }
+    .bar-label:hover {
+        transform: scale(1.5);
+    }
+    .bar-score {
+        font-size: 10px;
+    }
+    .bar-score:hover {
+        transform: scale(1.5);
+    }
+    .contents a:hover {
+        transform: scale(1.5);
+    }
+    .bar-neuroticism { height: 78px; }
+    .bar-extraversion { height: 148px; }
+    .bar-openness { height: 182px; }
+    .bar-agreeableness { height: 152px; }
+    .bar-conscientiousness { height: 176px; }
+    .box h3 { font-size: 1rem; }
+    .contents a { font-size: 0.85rem; }
+    .appendix .assessment-line:hover {
+        transform: scale(1.2);
+    }
+    .subtitle {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .bars-container {
+        gap: 8px;
+        height: 220px;
+    }
+    .labels-container {
+        gap: 8px;
+    }
+    .bar-wrapper {
+        width: 70px;
+    }
+    .bar-label {
+        font-size: 9px;
+        width: 70px;
+    }
+    .bar-label:hover {
+        transform: scale(1.3);
+    }
+    .bar-score {
+        font-size: 9px;
+    }
+    .bar-score:hover {
+        transform: scale(1.3);
+    }
+    .contents a:hover {
+        transform: scale(1.3);
+    }
+    .bar-neuroticism { height: 66px; }
+    .bar-extraversion { height: 125px; }
+    .bar-openness { height: 154px; }
+    .bar-agreeableness { height: 128px; }
+    .bar-conscientiousness { height: 149px; }
+    .appendix .assessment-line:hover {
+        transform: scale(1.15);
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media print {
+    #video-container { display: none; }
+    body { background: white; }
+    .box, .interactive-chart { background: white; backdrop-filter: none; }
+    .bar, .bar-label, .bar-score { cursor: default; }
+    .bar:hover, .bar-label:hover, .bar-score:hover, .iq-link:hover, .contents a:hover {
+        transform: none;
+    }
+    .btn-print { display: none; }
+    h1, h2, h3, p { color: black; }
+    .back-link { color: black; }
+    .iq-link, .iq-description, .appendix p { color: #003366; }
+    .appendix .assessment-line:hover { transform: none; }
+    .subtitle {
+        color: #222;
+        font-size: 1.2rem;
+    }
 }
 
 </style>
@@ -89,91 +441,156 @@ hr {
 
 <body>
 
+<!-- BACKGROUND VIDEO -->
+<div id="video-container">
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="../Pi/bf.mp4" type="video/mp4">
+  </video>
+</div>
+
 <h1>MY PATH</h1>
 
-<p style="text-align:center;">
-A personal journey through personality analysis,
-technical life, systems thinking, consciousness,
-and the search for coherence.
-</p>
-
-    <button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
-    <div style="margin-top: 1.5rem;"><a href=".\..\index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">← Back to Main Page</a></div>
-
-
-
-
-<div class="contents">
-
-
-<h2>Contents</h2>
-
-<ul>
-
-<li><a href="c1.html">1 - Personality Analysis Approach</a></li>
-
-<li><a href="c2.html">2 - Updated Analysis</a></li>
-
-<li><a href="c3.html">3 - Revised Personality Analysis Report — Technical and Critical Profile</a></li>
-
-<li><a href="c4.html">4 - Reflecting on the Profile: The Integrity Trap</a></li>
-
-<li><a href="c5.html">5 - Objective Analysis of the Profile</a></li>
-
-<li><a href="c6.html">6 - Clarification</a></li>
-
-<li><a href="c7.html">7 - Synthesis of the Ongoing Analysis: The Dominant Pattern</a></li>
-
-<li><a href="c8.html">8 - My Line of Thought</a></li>
-
-<li><a href="c9.html">9 - Conclusion</a></li>
-
-</ul>
-
+<!-- Subtitle: bigger and white (updated) -->
+<div class="subtitle">
+  A personal journey through personality analysis, technical life, systems thinking, consciousness, and the search for coherence.
 </div>
 
-<hr>
+<button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+<div style="margin-top: 1.5rem; margin-bottom: 2rem;">
+  <a href="../index.html" class="back-link">← Back to Main Page</a>
+</div>
 
-<h2>Appendix</h2>
+<!-- CONTENTS BOX -->
+<div class="box contents">
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="c1.html">1 - Personality Analysis Approach</a></li>
+    <li><a href="c2.html">2 - Updated Analysis</a></li>
+    <li><a href="c3.html">3 - Revised Personality Analysis Report — Technical and Critical Profile</a></li>
+    <li><a href="c4.html">4 - Reflecting on the Profile: The Integrity Trap</a></li>
+    <li><a href="c5.html">5 - Objective Analysis of the Profile</a></li>
+    <li><a href="c6.html">6 - Clarification</a></li>
+    <li><a href="c7.html">7 - Synthesis of the Ongoing Analysis: The Dominant Pattern</a></li>
+    <li><a href="c8.html">8 - My Line of Thought</a></li>
+    <li><a href="c9.html">9 - Conclusion</a></li>
+  </ul>
+</div>
 
-<p>
-The analyses presented in this work are supported by
-the following assessments performed in December 2025.
-</p>
+<!-- APPENDIX BOX — all text justified, color #003366, no white background, date corrected to June 2025 -->
+<div class="box appendix">
+  <h2>Appendix</h2>
 
-<h3>Figure 1 — IQ Assessment</h3>
+  <p>The analyses presented in this work are supported by the following assessments performed in June 2025.</p>
 
-<img src="iq-130.jpg" alt="IQ Assessment">
+  <h3>Figure 1 — IQ Assessment</h3>
 
-<p>
-Result: IQ 130.
-</p>
+  <img src="../Pi/2.jpg" alt="IQ Assessment">
 
-<h3>Figure 2 — Big Five Personality Assessment</h3>
+  <hr class="section-divider">
 
-<img src="big5-analysis.jpg" alt="Big Five Personality Analysis">
+  <!-- Whole line expands together on hover (130%) -->
+  <p><span class="assessment-line"><a href="wdm.html" class="iq-link"><strong>What Does It Measure?</strong></a><span class="iq-description"> — The IQ Test (General Intelligence Quotient) measures multiple cognitive dimensions including Pattern Recognition, Spatial Orientation, Visual Perception, Analytical Thinking, and Abstract Reasoning.</span></span></p>
 
-<p>
-Big Five personality profile used as supporting material.
-</p>
+  <hr class="section-divider">
+
+  <p><span class="assessment-line"><a href="or.html" class="iq-link"><strong>Results</strong></a><span class="iq-description"> — Overall score: 130 (Gifted). Click to view complete report including Cognitive Dimensions, Gifted Classification, and Neuroscientific Insights.</span></span></p>
+
+  <h3>Figure 2 — Big Five Personality Assessment</h3>
+
+  <!-- INTERACTIVE BAR CHART -->
+  <div class="interactive-chart">
+    
+    <div class="bars-container">
+      <div class="bar-wrapper">
+        <div class="bar bar-neuroticism" data-url="neuroticism.html" data-trait="neuroticism"></div>
+      </div>
+      <div class="bar-wrapper">
+        <div class="bar bar-extraversion" data-url="extraversion.html" data-trait="extraversion"></div>
+      </div>
+      <div class="bar-wrapper">
+        <div class="bar bar-openness" data-url="openness.html" data-trait="openness"></div>
+      </div>
+      <div class="bar-wrapper">
+        <div class="bar bar-agreeableness" data-url="agreeableness.html" data-trait="agreeableness"></div>
+      </div>
+      <div class="bar-wrapper">
+        <div class="bar bar-conscientiousness" data-url="conscientiousness.html" data-trait="conscientiousness"></div>
+      </div>
+    </div>
+
+    <div class="labels-container">
+      <div class="bar-wrapper">
+        <div class="bar-label" data-url="neuroticism.html" data-trait="neuroticism">Neuroticism</div>
+        <div class="bar-score" data-url="neuroticism.html" data-trait="neuroticism">41</div>
+      </div>
+      <div class="bar-wrapper">
+        <div class="bar-label" data-url="extraversion.html" data-trait="extraversion">Extraversion</div>
+        <div class="bar-score" data-url="extraversion.html" data-trait="extraversion">78</div>
+      </div>
+      <div class="bar-wrapper">
+        <div class="bar-label" data-url="openness.html" data-trait="openness">Openness to Experience</div>
+        <div class="bar-score" data-url="openness.html" data-trait="openness">96</div>
+      </div>
+      <div class="bar-wrapper">
+        <div class="bar-label" data-url="agreeableness.html" data-trait="agreeableness">Agreeableness</div>
+        <div class="bar-score" data-url="agreeableness.html" data-trait="agreeableness">80</div>
+      </div>
+      <div class="bar-wrapper">
+        <div class="bar-label" data-url="conscientiousness.html" data-trait="conscientiousness">Conscientiousness</div>
+        <div class="bar-score" data-url="conscientiousness.html" data-trait="conscientiousness">93</div>
+      </div>
+    </div>
+  </div>
+
+  <p>Big Five personality profile used as supporting material.</p>
+</div>
 
 <div class="footer">
-
-<hr>
-
-<p>
-Rui Manuel de Almeida Pinheiro
-</p>
-
-<p>
-Lisbon, Portugal
-</p>
-
-<p>
-December 2025
-</p>
-
+  <hr>
+  <p>Rui Manuel de Almeida Pinheiro</p>
+  <p>Lisbon, Portugal</p>
+  <p>June 2025</p>
 </div>
+
+<script>
+  // Video autoplay
+  const videoElement = document.getElementById('bg-video');
+  window.addEventListener('DOMContentLoaded', () => {
+    videoElement.play().catch(error => {
+      console.log("Autoplay prevented.", error);
+    });
+  });
+
+  // 2 second hover navigation for bar elements
+  const clickableElements = document.querySelectorAll('.bar, .bar-label, .bar-score');
+
+  let hoverTimer = null;
+  let activeUrl = null;
+
+  clickableElements.forEach(element => {
+    const url = element.dataset.url;
+
+    if (!url) return;
+
+    element.addEventListener('mouseenter', () => {
+      if (hoverTimer) clearTimeout(hoverTimer);
+      activeUrl = url;
+      hoverTimer = setTimeout(() => {
+        if (activeUrl === url) {
+          window.location.href = url;
+        }
+      }, 2000);
+    });
+
+    element.addEventListener('mouseleave', () => {
+      if (hoverTimer) {
+        clearTimeout(hoverTimer);
+        hoverTimer = null;
+      }
+      activeUrl = null;
+    });
+  });
+</script>
 
 </body>
 

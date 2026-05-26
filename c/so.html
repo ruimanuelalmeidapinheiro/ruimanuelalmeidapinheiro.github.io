@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IQ Test · Spatial Orientation · Rui Manuel de Almeida Pinheiro</title>
+<link rel="icon" href="../Pi/logo.jpg" type="image/jpeg">
+<link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/c/so">
+<style>
+  #video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  #bg-video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    background-color: #000;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: #222;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #e0f0ff;
+    font-size: 2rem;
+  }
+  .score-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(238, 231, 223, 0.6);
+    text-align: center;
+  }
+  .score-percent {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #c6a15b;
+  }
+  .score-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a2c3a;
+  }
+  .section {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 1.5rem;
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(238, 231, 223, 0.6);
+  }
+  .section h2 {
+    color: #3366cc;
+    margin-top: 0;
+    border-left: 4px solid #c6a15b;
+    padding-left: 1rem;
+  }
+  .section p {
+    color: #2e2d2c;
+    margin-bottom: 0.8rem;
+    text-align: justify;
+    font-size: 1rem;
+  }
+  .graph-image {
+    text-align: center;
+    margin: 1rem 0;
+  }
+  .graph-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  .back-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .back-link:hover {
+    color: #c6a15b;
+  }
+  .footer {
+    margin-top: 50px;
+    text-align: center;
+    color: #cfcdc0;
+  }
+  hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: none;
+    border-top: 1px solid rgba(226, 217, 205, 0.5);
+  }
+  .btn-print {
+    background: rgba(255,255,255,0.8);
+    border: 1px solid #ccc;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s;
+    margin-bottom: 1.5rem;
+  }
+  .btn-print:hover {
+    background: #c6a15b;
+    color: white;
+  }
+  @media print {
+    #video-container { display: none; }
+    body { background: white; }
+    .score-card, .section { background: white; backdrop-filter: none; }
+    .btn-print { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="video-container">
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="../Pi/bf.mp4" type="video/mp4">
+  </video>
+</div>
+
+<h1>Spatial Orientation</h1>
+
+<button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+<div style="margin-bottom: 2rem;">
+  <a href="or.html" class="back-link">← Back to Overall Score</a>
+</div>
+
+<div class="score-card">
+  <div class="score-percent">73%</div>
+  <div class="score-label">Spatial Orientation</div>
+</div>
+
+<div class="graph-image">
+  <img src="../Pi/iqa.png" alt="Spatial Orientation graph">
+</div>
+
+<div class="section">
+  <h2>📊 Detailed Analysis</h2>
+  <p>Spatial Orientation is the cognitive skill that enables you to comprehend spatial relationships, specifically the ability to recognize, visualize, and understand the orientation of objects in space and their various interactions within a particular environment. The questions designed to evaluate your Spatial Orientation skills aim to measure the clarity with which you perceive spatial configurations and the positions or movements of objects within them.</p>
+  <p>In this context, the Spatial Orientation question set tests your "raw intelligence," which refers to cognitive abilities that do not depend on previously acquired knowledge. Consequently, your performance on this assessment is a crucial indicator of your overall intelligence.</p>
+</div>
+
+<div class="footer">
+  <hr>
+  <p>Rui Manuel de Almeida Pinheiro</p>
+  <p>Lisbon, Portugal</p>
+  <p>December 2025</p>
+</div>
+
+<script>
+  const videoElement = document.getElementById('bg-video');
+  window.addEventListener('DOMContentLoaded', () => {
+    videoElement.play().catch(error => console.log("Autoplay prevented.", error));
+  });
+</script>
+</body>
+</html>

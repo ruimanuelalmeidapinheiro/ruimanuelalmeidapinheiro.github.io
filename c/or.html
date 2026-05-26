@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IQ Test · Overall Score · Rui Manuel de Almeida Pinheiro</title>
+<link rel="icon" href="../Pi/logo.jpg" type="image/jpeg">
+<link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/c/or">
+<style>
+  #video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  #bg-video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    background-color: #000;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: #222;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #e0f0ff;
+    font-size: 2rem;
+  }
+  .section {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 1.5rem;
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(238, 231, 223, 0.6);
+  }
+  .section h2 {
+    color: #3366cc;
+    margin-top: 0;
+    border-left: 4px solid #c6a15b;
+    padding-left: 1rem;
+  }
+  .section p {
+    color: #2e2d2c;
+    margin-bottom: 0.8rem;
+    text-align: justify;
+  }
+  
+  /* Header section with 3 columns */
+  .header-section {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 1.5rem;
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(238, 231, 223, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .header-left {
+    flex: 1;
+    min-width: 150px;
+  }
+  .header-left h2 {
+    color: #3366cc;
+    margin: 0 0 0.5rem 0;
+    border-left: 4px solid #c6a15b;
+    padding-left: 1rem;
+  }
+  .classification-badge {
+    display: inline-block;
+    background: rgba(198, 161, 91, 0.2);
+    padding: 0.3rem 1.2rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #c6a15b;
+  }
+  .header-center {
+    flex: 2;
+    text-align: center;
+    min-width: 200px;
+  }
+  .header-center .name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a2c3a;
+    margin: 0 0 0.3rem 0;
+  }
+  .header-center .score {
+    font-size: 1.1rem;
+    color: #c6a15b;
+    font-weight: 600;
+    margin: 0;
+  }
+  .header-right {
+    flex: 0 0 auto;
+  }
+  .header-right img {
+    max-width: 80px;
+    height: auto;
+    border-radius: 12px;
+  }
+  
+  /* Cognitive Dimensions Table */
+  .scores-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  .scores-table th,
+  .scores-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #e0d5c0;
+  }
+  .scores-table th {
+    background: rgba(198, 161, 91, 0.15);
+    color: #1a2c3a;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .scores-table td {
+    color: #2e2d2c;
+    font-size: 1rem;
+  }
+  .scores-table td a {
+    font-weight: 700;
+    color: #2e2d2c;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .scores-table td a:hover {
+    color: #c6a15b;
+  }
+  .score-value {
+    font-weight: 700;
+    color: #c6a15b;
+    text-align: right;
+  }
+  
+  .back-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .back-link:hover {
+    color: #c6a15b;
+  }
+  .footer {
+    margin-top: 50px;
+    text-align: center;
+    color: #cfcdc0;
+  }
+  hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: none;
+    border-top: 1px solid rgba(226, 217, 205, 0.5);
+  }
+  .btn-print {
+    background: rgba(255,255,255,0.8);
+    border: 1px solid #ccc;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s;
+    margin-bottom: 1.5rem;
+  }
+  .btn-print:hover {
+    background: #c6a15b;
+    color: white;
+  }
+  @media print {
+    #video-container { display: none; }
+    body { background: white; }
+    .section, .header-section { background: white; backdrop-filter: none; }
+    .btn-print { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="video-container">
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="../Pi/bf.mp4" type="video/mp4">
+  </video>
+</div>
+
+<h1>IQ Test · Overall Score for Rui Manuel de Almeida Pinheiro</h1>
+
+<button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+<div style="margin-bottom: 2rem;">
+  <a href="index.html" class="back-link">← Back to Index</a>
+</div>
+
+<!-- HEADER SECTION: 3 columns -->
+<div class="header-section">
+  <div class="header-left">
+    <h2>📊 Your Results</h2>
+    <div class="classification-badge">Gifted</div>
+  </div>
+  <div class="header-center">
+    <div class="name">📊 Rui Manuel de Almeida Pinheiro</div>
+    <div class="score">Overall Score: 130 — Gifted</div>
+  </div>
+  <div class="header-right">
+    <img src="../Pi/ts.png" alt="Gifted">
+  </div>
+</div>
+
+<!-- SECTION 1: Learning and Memory Styles -->
+<div class="section">
+  <h2>📚 Learning and Memory Styles</h2>
+  <p>Gifted learners often possess the ability to learn quickly and retain information with little repetition. They thrive in environments that present intellectually challenging and creative tasks. Techniques that involve active exploration and application of knowledge, such as project-based learning and independent research projects, are particularly effective. Additionally, employing advanced mnemonic techniques that involve creating elaborate mental associations can help manage the vast amounts of information they can absorb and recall.</p>
+</div>
+
+<!-- SECTION 2: Neuroscientific Insights -->
+<div class="section">
+  <h2>🧠 Neuroscientific Insights</h2>
+  <p>Individuals within the gifted IQ range exhibit exceptional neural efficiency, especially in areas associated with pattern recognition, logical reasoning, and abstract thinking. This heightened neural activity allows for rapid assimilation of complex information and the ability to engage with advanced conceptual material at an early age.</p>
+  <p>To further enhance their cognitive capabilities, it is crucial to engage these individuals in tasks that challenge their intellect beyond the standard curriculum. Enrichment activities such as advanced science and math courses, programming, and participation in high-level problem-solving competitions can provide the necessary stimulation to foster continued brain development.</p>
+</div>
+
+<!-- SECTION 3: Cognitive Dimensions (bold links, no underline) -->
+<div class="section">
+  <h2>🧠 Cognitive Dimensions</h2>
+  <p>The IQ Test (General Intelligence Quotient) measures multiple cognitive dimensions:</p>
+  
+  <table class="scores-table">
+    <thead>
+      <tr>
+        <th>Cognitive Dimension</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="pr.html">Pattern Recognition</a></a></td>
+        <td class="score-value">69%</a></td>
+      </tr>
+      <tr>
+        <td><a href="so.html">Spatial Orientation</a></a></td>
+        <td class="score-value">73%</a></td>
+      </tr>
+      <tr>
+        <td><a href="vp.html">Visual Perception</a></a></td>
+        <td class="score-value">75%</a></td>
+      </tr>
+      <tr>
+        <td><a href="at.html">Analytical Thinking</a></a></td>
+        <td class="score-value">90%</a></td>
+      </tr>
+      <tr>
+        <td><a href="ar.html">Abstract Reasoning</a></a></td>
+        <td class="score-value">86%</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECTION 4: Characteristics -->
+<div class="section">
+  <h2>✨ Characteristics</h2>
+  <p>Those with gifted intelligence have robust reasoning abilities and are often proficient in abstract reasoning. They can understand and integrate new information quickly and effectively, which allows them to excel in complex cognitive tasks.</p>
+</div>
+
+<!-- SECTION 5: Implications -->
+<div class="section">
+  <h2>🎯 Implications</h2>
+  <p>This group often achieves high levels of education and occupies professional and managerial positions that make use of their analytical skills and strategic thinking. They are likely to be leaders and innovators in their chosen fields.</p>
+</div>
+
+<!-- SECTION 6: Challenges -->
+<div class="section">
+  <h2>⚠️ Challenges</h2>
+  <p>The main challenge for individuals with gifted intelligence is the potential for boredom and dissatisfaction with routine tasks. They may also encounter high expectations from others, who assume they can handle any intellectual challenge effortlessly.</p>
+</div>
+
+<div class="footer">
+  <hr>
+  <p>Rui Manuel de Almeida Pinheiro</p>
+  <p>Lisbon, Portugal</p>
+  <p>December 2025</p>
+</div>
+
+<script>
+  const videoElement = document.getElementById('bg-video');
+  window.addEventListener('DOMContentLoaded', () => {
+    videoElement.play().catch(error => console.log("Autoplay prevented.", error));
+  });
+</script>
+</body>
+</html>

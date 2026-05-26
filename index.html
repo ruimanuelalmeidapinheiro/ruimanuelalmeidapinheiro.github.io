@@ -207,30 +207,8 @@ body {
   margin-bottom: 1rem;
   line-height: 1.5;
 }
-.contact-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-  margin-top: 1.2rem;
-  background: rgba(249, 247, 243, 0.9);
-  border-radius: 2rem;
-  padding: 0.8rem 1.2rem;
-  width: fit-content;
-  align-items: center;
-}
-.contact-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
-  color: #2b2b2e;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.contact-item:hover {
-  color: #b2773c;
-}
+
+/* Bio links - vertical stack with 170% hover */
 .bio-link {
   background: #e8e0d4;
   padding: 0.4rem 1rem;
@@ -239,10 +217,14 @@ body {
   font-weight: 600;
   font-size: 0.85rem;
   color: #4a3f2e;
-  transition: background 0.2s;
+  transition: transform 0.2s, background 0.2s;
+  display: inline-block;
+  margin-top: 0.8rem;
 }
 .bio-link:hover {
   background: #d6cbbc;
+  transform: scale(1.7);
+  transform-origin: left center;
 }
 
 /* bio grid */
@@ -260,10 +242,6 @@ body {
     flex-direction: column;
     text-align: center;
   }
-  .contact-bar {
-    justify-content: center;
-    width: 100%;
-  }
   .top-header {
     flex-direction: column;
     text-align: center;
@@ -275,6 +253,9 @@ body {
   }
   .hero-text p {
     font-size: 0.95rem;
+  }
+  .bio-link:hover {
+    transform-origin: center;
   }
 }
 .timeline {
@@ -543,10 +524,48 @@ hr {
   transform: scale(1.5);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
+/* ===== CONTACT MINI (bottom section) ===== */
+.contact-mini {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #e0e0e0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.contact-mini a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.contact-mini a:hover {
+  color: #f0b86e;
+  text-decoration: underline;
+}
+
+.contact-mini span {
+  color: #e0e0e0;
+}
+
 footer {
   text-align: center;
   color: #ffffff !important;
   border-top-color: rgba(255,255,255,0.2);
+  margin-top: 1rem;
 }
 footer * {
   color: #ffffff !important;
@@ -647,20 +666,29 @@ footer * {
 [data-theme="dark"] .bio-entry {
   border-left-color: #4b5563 !important;
 }
-[data-theme="dark"] .contact-bar {
-  background: rgba(30, 41, 59, 0.85);
-}
-[data-theme="dark"] .contact-item {
-  color: #cbd5e1;
-}
-[data-theme="dark"] .contact-item:hover {
-  color: #f0b86e;
-}
 [data-theme="dark"] .portrait-card {
   background: rgba(30, 41, 59, 0.9);
 }
 [data-theme="dark"] .house-card {
   background: rgba(30, 41, 59, 0.85);
+}
+[data-theme="dark"] .bio-link {
+  background: #1e293b;
+  color: #cbd5e1;
+}
+[data-theme="dark"] .bio-link:hover {
+  background: #334155;
+}
+[data-theme="dark"] .contact-mini {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: #475569;
+}
+[data-theme="dark"] .contact-mini a,
+[data-theme="dark"] .contact-mini span {
+  color: #cbd5e1;
+}
+[data-theme="dark"] .contact-mini a:hover {
+  color: #f0b86e;
 }
 
 @media print {
@@ -683,10 +711,10 @@ footer * {
 </head>
 <body>
 
-<!-- BACKGROUND VIDEO (DOM method with explicit play script) -->
+<!-- BACKGROUND VIDEO -->
 <div id="video-container">
   <video id="intro-video" autoplay muted loop playsinline>
-    <source src="./Pi/bf.mp4" type="video/mp4">
+    <source src="./Pi/I.mp4" type="video/mp4">
     REG_ERROR: Video playback not supported by hardware.
   </video>
 </div>
@@ -694,7 +722,7 @@ footer * {
 <!-- PAGE CONTENT -->
 <div class="container">
 
-  <!-- TOP HEADER with dark mode button inside (bottom-right) -->
+  <!-- TOP HEADER -->
   <div class="top-header">
     <div class="header-triad">
       <img src="Pi/logo.jpg" alt="Logo" class="header-img" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23dbd3c4%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%234a3f2e%22%3Elogo%3C%2Ftext%3E%3C%2Fsvg%3E';">
@@ -706,7 +734,7 @@ footer * {
     <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode">◑</button>
   </div>
 
-  <!-- Hero section -->
+  <!-- Hero section (contact bar removed from hero) -->
   <div class="hero">
     <div class="portrait-area">
       <div class="portrait-card">
@@ -717,11 +745,8 @@ footer * {
     <div class="hero-text">
       <div class="hero-tagline">From mainframe DB2 to AI Workflow Management · Content Engineering Strategist</div>
       <p>Born in Lisbon, Arroios, on Sunday, August 2, 1953, at 6:00 a.m. — a journey through medicine, stock exchange revolutions, IBM mainframes, and the frontier of generative AI.</p>
-      <div class="contact-bar">
-        <a class="contact-item" href="mailto:ruialmeidapinheiro@gmail.com">✉️ ruialmeidapinheiro@gmail.com</a>
-        <a class="contact-item" href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
-        <span class="contact-item">📍 Lisbon · Arroios</span>
-      </div>
+      
+      <!-- 4 links - vertical stack with 170% hover -->
       <div style="margin-top: 0.8rem;">
         <a class="bio-link" href="bio.html">📖 BIO (Extended)</a>
       </div>
@@ -730,6 +755,9 @@ footer * {
       </div>
       <div style="margin-top: 0.8rem;">
         <a class="bio-link" href="./c/index.html">📖 My Path</a>
+      </div>
+      <div style="margin-top: 0.8rem;">
+        <a class="bio-link" href="Substack.html">📖 Publications</a>
       </div>
     </div>
   </div>
@@ -863,6 +891,13 @@ footer * {
     </div>
   </div>
 
+  <!-- CONTACT MINI SECTION - bottom only (hero contact bar removed) -->
+  <div class="contact-mini">
+    <a href="mailto:ruialmeidapinheiro@gmail.com">✉️ ruialmeidapinheiro@gmail.com</a>
+    <a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+    <span>📍 Lisbon · Arroios</span>
+  </div>
+
   <footer>
     © Rui Manuel de Almeida Pinheiro — From mainframe assembler to AI workflow architect · Lisbon, Arroios<br>
     “Structural systems, intelligent content, and the beauty of automation.”
@@ -931,13 +966,8 @@ themeBtn?.addEventListener('click', () => {
 });
 </script>
 
-<!-- DOM METHOD: Explicit video play script (your original) -->
 <script>
   const videoElement = document.getElementById('intro-video');
-  const textElement = document.getElementById('interactive-text');
-  let hoverTimer = null;
-  const TARGET_URL = "https://example.com";
-
   window.addEventListener('DOMContentLoaded', () => {
     videoElement.play().catch(error => {
       console.log("Interrupt: Autoplay prevented. Awaiting user interaction.", error);

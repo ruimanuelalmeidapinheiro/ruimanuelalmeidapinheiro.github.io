@@ -2,138 +2,215 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="logo.jpg" type="image/jpeg">
+  <link rel="icon" href="Pi/logo.jpg" type="image/jpeg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Personal & Professional Code of Conduct · Rui Manuel de Almeida Pinheiro</title>
-    <link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/cv-04-personal-professional-code-of-conduct">
+  <link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/cv-04-personal-professional-code-of-conduct">
+  <link rel="stylesheet" href="cv-styles.css">
+  <!-- Page-specific styles for code of conduct page -->
   <style>
-    :root { --sidebar-width: 260px; --bg-primary: #ffffff; --bg-secondary: #f8f9fa; --text-primary: #111827; --text-secondary: #4b5563; --border-color: #e5e7eb; --accent-color: #2563eb; --font-stack: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font-stack); color: var(--text-primary); line-height: 1.65; background: var(--bg-primary); }
-    .layout { display: flex; min-height: 100vh; }
-    .sidebar { width: var(--sidebar-width); background: var(--bg-secondary); border-right: 1px solid var(--border-color); padding: 2.5rem 1.5rem; position: fixed; height: 100vh; overflow-y: auto; }
-    .sidebar h1 { font-size: 1.25rem; margin-bottom: 0.5rem; }
-    .sidebar .subtitle { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.4; }
-    .sidebar nav ul { list-style: none; margin-top: 1rem; }
-    .sidebar nav li { margin-bottom: 0.6rem; }
-    .sidebar nav a { text-decoration: none; color: var(--text-secondary); font-weight: 500; padding: 0.5rem 0.8rem; border-radius: 6px; display: block; transition: all 0.2s; }
-    .sidebar nav a:hover, .sidebar nav a.active { background: #e0e7ff; color: var(--accent-color); }
-    .btn-print { background: none; border: 1px solid var(--border-color); padding: 0.5rem 0.8rem; border-radius: 6px; width: 100%; text-align: left; font-weight: 500; cursor: pointer; margin-top: 2rem; color: var(--text-secondary); font-family: inherit; font-size: inherit; transition: all 0.2s; }
-    .btn-print:hover { background: var(--accent-color); color: white; border-color: var(--accent-color); }
-    .main { margin-left: var(--sidebar-width); flex: 1; padding: 3.5rem 4rem 5rem; max-width: 920px; }
-    .main h2 { font-size: 1.85rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem; }
-    .main h3 { font-size: 1.35rem; margin: 2rem 0 1rem; color: var(--text-primary); }
-    .main h4 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--accent-color); }
-    .main p { margin-bottom: 1rem; color: var(--text-secondary); text-align: justify; }
-    .main ul, .main ol { margin: 0.5rem 0 1.5rem 1.5rem; color: var(--text-secondary); text-align: justify; }
-    .main li { margin-bottom: 0.5rem; }
-    .domain-card { margin: 1.5rem 0; padding: 1.25rem; background: var(--bg-secondary); border-radius: 10px; border-left: 4px solid var(--accent-color); }
-    .domain-card h4 { margin-top: 0; color: var(--text-primary); }
-    .insight-box { background: #e0e7ff; padding: 1.25rem; border-radius: 10px; margin: 1.5rem 0; }
+    .domain-card { 
+      margin: 1.5rem 0; 
+      padding: 1.25rem; 
+      background: rgba(248, 249, 250, 0.9); 
+      border-radius: 16px; 
+      border-left: 4px solid var(--accent-color); 
+    }
+    .domain-card h4 { 
+      margin-top: 0; 
+      color: var(--text-primary); 
+    }
+    
+    .insight-box { 
+      background: rgba(37, 99, 235, 0.08); 
+      padding: 1.25rem; 
+      border-radius: 16px; 
+      margin: 1.5rem 0; 
+    }
     .insight-box p { margin-bottom: 0.5rem; }
     .insight-box strong { color: var(--accent-color); }
-    .footer-note { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--text-secondary); text-align: center; }
-    .mobile-nav { display: none; }
-    .separator-2025-header { margin-bottom: 2rem; padding: 1rem 1.5rem; background: linear-gradient(135deg, #e0e7ff 0%, #f8f9fa 100%); border-radius: 12px; border-left: 4px solid var(--accent-color); }
-    .separator-2025-header p { margin: 0; text-align: left; }
-    .separator-2025-header .badge { display: inline-block; background: var(--accent-color); color: white; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-bottom: 0.5rem; }
-    @media (max-width: 768px) {
-      .sidebar { display: none; }
-      .main { margin-left: 0; padding: 1.5rem; max-width: 100%; }
-      .mobile-nav { display: flex; flex-wrap: wrap; gap: 0.75rem; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); padding: 0.75rem 1rem; margin-bottom: 1.5rem; position: sticky; top: 0; z-index: 100; align-items: center; }
-      .mobile-nav a, .mobile-nav button { background: none; border: none; color: var(--accent-color); font-weight: 500; padding: 0.4rem 0; font-size: 0.85rem; cursor: pointer; font-family: inherit; text-decoration: none; }
-      .mobile-nav button { background: transparent; border: none; color: var(--accent-color); }
-      .mobile-nav span { margin-right: auto; }
+    
+    .separator-2025-header { 
+      margin-bottom: 2rem; 
+      padding: 1rem 1.5rem; 
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(248, 249, 250, 0.4) 100%); 
+      border-radius: 20px; 
+      border-left: 4px solid var(--accent-color); 
     }
+    .separator-2025-header p { margin: 0; text-align: left; }
+    .separator-2025-header .badge { 
+      display: inline-block; 
+      background: var(--accent-color); 
+      color: white; 
+      padding: 0.2rem 0.8rem; 
+      border-radius: 20px; 
+      font-size: 0.75rem; 
+      font-weight: bold; 
+      margin-bottom: 0.5rem; 
+    }
+    
+    /* Dark mode overrides */
+    [data-theme="dark"] .domain-card { 
+      background: rgba(15, 25, 45, 0.7); 
+    }
+    [data-theme="dark"] .domain-card h4 { 
+      color: #e5e7eb; 
+    }
+    [data-theme="dark"] .domain-card p { 
+      color: #93c5fd; 
+    }
+    [data-theme="dark"] .insight-box { 
+      background: rgba(59, 130, 246, 0.12); 
+    }
+    [data-theme="dark"] .insight-box p { 
+      color: #cbd5e1; 
+    }
+    [data-theme="dark"] .insight-box strong { 
+      color: #60a5fa; 
+    }
+    [data-theme="dark"] .separator-2025-header { 
+      background: rgba(15, 25, 45, 0.6); 
+      border-left-color: #60a5fa;
+    }
+    [data-theme="dark"] .separator-2025-header .badge {
+      background: #3b82f6;
+    }
+    [data-theme="dark"] .separator-2025-header p {
+      color: #cbd5e1;
+    }
+    
     @media print {
-      .sidebar, .mobile-nav, .btn-print { display: none !important; }
-      .main { margin-left: 0; padding: 0; max-width: 100%; }
-      .domain-card { page-break-inside: avoid; border-left-color: #000; }
-      .insight-box { page-break-inside: avoid; }
-      .separator-2025-header { background: none; border-left: 2px solid #000; }
+      .domain-card { 
+        page-break-inside: avoid; 
+        border-left-color: #000; 
+      }
+      .insight-box { 
+        page-break-inside: avoid; 
+      }
+      .separator-2025-header { 
+        background: none; 
+        border-left: 2px solid #000; 
+      }
     }
   </style>
 </head>
 <body>
+
+<!-- BACKGROUND VIDEO -->
+<div id="video-container">
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="./Pi/3498184765a934jndjiayDOGN.mp4" type="video/mp4">
+  </video>
+</div>
+
 <div class="layout">
   <aside class="sidebar">
     <h1>Rui Manuel de Almeida Pinheiro</h1>
-    <p class="subtitle">Senior Mainframe Developer & Systems Analyst · 21 Years Experience</p>
+    <p class="subtitle">Senior Mainframe Developer & Systems Analyst<br>21 Years Experience</p>
     <nav>
       <ul>
-        <li><a href="cv.html">Overview</a></li>
-        <li><a href="cv-01-profile.html">Profile & Expertise</a></li>
-        <li><a href="cv-02-projects.html">Project Portfolio</a></li>
-        <li><a href="cv-03-personality.html">Personality Analysis</a></li>
-        <li><a href="cv-04-personal-professional-code-of-conduct.html" class="active">Code of Conduct</a></li>
-        <li><a href="cv-05-my-core-living-discipline.html">Living Discipline</a></li>
+        <li><a href="cv.html">📋 Overview</a></li>
+        <li><a href="cv-01-profile.html">📊 Profile & Expertise</a></li>
+        <li><a href="cv-02-projects.html">🚀 Project Portfolio</a></li>
+        <li><a href="cv-03-personality.html">🧠 Personality Analysis</a></li>
+        <li><a href="cv-04-personal-professional-code-of-conduct.html" class="active">⚖️ Code of Conduct</a></li>
+        <li><a href="cv-05-my-core-living-discipline.html">✨ Living Discipline</a></li>
       </ul>
     </nav>
     <button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
-    <div style="margin-top: 1.5rem;"><a href="index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">← Back to Main Page</a></div>
+    <div class="back-link">
+      <a href="index.html">← Back to Main Page</a>
+    </div>
   </aside>
+  
   <main class="main">
     <div class="mobile-nav">
-      <span></span>
-      <a href="index.html">← Home</a>
+      <span>⚖️ Code of Conduct</span>
+      <a href="index.html">Home</a>
       <a href="cv.html">Overview</a>
       <a href="cv-01-profile.html">Profile</a>
       <a href="cv-02-projects.html">Projects</a>
       <a href="cv-03-personality.html">Personality</a>
       <a href="cv-05-my-core-living-discipline.html">Discipline</a>
-      <button onclick="window.print()">📄 PDF</button>
+      <button onclick="window.print()">PDF</button>
     </div>
     
-    <div class="separator-2025-header">
-      <span class="badge">2025 — Philosophical Integration</span>
-      <p><strong>Context:</strong> This document extends the personality analysis and presents the ethical and professional framework that guides my decision-making. It integrates the technical discipline of mainframe development with the cognitive flexibility required for LLM prompting and the systemic analysis of business organizations.</p>
+    <div class="content-card">
+      <div class="separator-2025-header">
+        <span class="badge">2025 — Philosophical Integration</span>
+        <p><strong>Context:</strong> This document extends the personality analysis and presents the ethical and professional framework that guides my decision-making. It integrates the technical discipline of mainframe development with the cognitive flexibility required for LLM prompting and the systemic analysis of business organizations.</p>
+      </div>
+      
+      <h2>Personal & Professional Code of Conduct</h2>
+      
+      <p>My work is guided by a commitment to <strong>balance</strong> and <strong>self-awareness</strong>: managing intellect and emotion, practicing self-criticism and resilience, and employing empathy, brainstorming, charisma, and creative intuition to lead effectively and develop innovative solutions.</p>
+      
+      <h3>Domain Integration & Philosophy</h3>
+      
+      <div class="domain-card">
+        <h4>🔷 Mainframe (Domain)</h4>
+        <p><strong>Key Driver:</strong> Integrity and Stability.</p>
+        <p><strong>Interaction with Your Profile:</strong> Your inherent discipline serves as the backbone that maintains the system's operational integrity. However, because you lack the drive for "status-seeking," you tend to remain in the background, ensuring the mission-critical infrastructure functions without seeking the social or corporate visibility that often accompanies such responsibility.</p>
+      </div>
+      
+      <div class="domain-card">
+        <h4>🧠 LLM/Prompting (Domain)</h4>
+        <p><strong>Key Driver:</strong> Pattern Recognition.</p>
+        <p><strong>Interaction with Your Profile:</strong> Leveraging your high I.Q. and high level of Openness, you possess the cognitive flexibility required to master the "Black Box" of Artificial Intelligence. Unlike those who require a structured academic path, your autodidactic nature allows you to decode and manipulate complex language models through direct, intuitive experimentation and logical deduction.</p>
+      </div>
+      
+      <div class="domain-card">
+        <h4>🏢 Business Organization (Domain)</h4>
+        <p><strong>Key Driver:</strong> Systemic Efficiency.</p>
+        <p><strong>Interaction with Your Profile:</strong> You possess the analytical clarity to identify the "bugs" within an organization—specifically manifested as dishonesty, misinformation, or ignorance. However, your low level of assertiveness acts as a technical constraint; it prevents you from "patching" these systemic human failures by force or through political maneuvering, leaving the identified inefficiencies unresolved despite your awareness of them.</p>
+      </div>
+      
+      <h3>Refining the Big Five Interpretation</h3>
+      <p>Given these strong convictions, we must refine the "Big Five" interpretation. While the scores suggest high Agreeableness and Extraversion, your specific values provide a more complex "filter" for those traits:</p>
+      
+      <div class="insight-box">
+        <p><strong>🔹 Selective Agreeableness:</strong> While you score high in cooperation, it is clearly bound by a strict moral code. Your hatred for dishonesty means your "Agreeableness" is likely reserved for those who meet your standards of integrity. You are not "nice" for the sake of social convention; you are cooperative for the sake of ethical alignment.</p>
+      </div>
+      
+      <div class="insight-box">
+        <p><strong>🔹 Intellectual Non-Conformity:</strong> Your rejection of the "American Dream" and religion confirms a very high <strong>Openness to Experience</strong>, but specifically in the Intellectual and Liberalism facets (in the psychological sense of questioning tradition). You prioritize logical systems (Mainframes, LLMs) over social constructs.</p>
+      </div>
+      
+      <div class="insight-box">
+        <p><strong>🔹 The "Assertiveness" Paradox:</strong> The initial test suggested low assertiveness, but your rhetoric is incredibly firm. This suggests that while you may not care to lead a social club (low gregariousness), you are <strong>highly assertive regarding your principles and expertise.</strong></p>
+      </div>
+      
+      <div class="insight-box">
+        <p><strong>🔹 Technical Integrity:</strong> Your specialization in IBM Mainframes and Prompt Engineering combined with your "loathing of money as a goal" suggests you are a <strong>Purist</strong>. You likely value the elegance and efficiency of a system more than its commercial exploitation.</p>
+      </div>
     </div>
-    
-    <h2>Personal & Professional Code of Conduct</h2>
-    
-    <p>My work is guided by a commitment to <strong>balance</strong> and <strong>self-awareness</strong>: managing intellect and emotion, practicing self-criticism and resilience, and employing empathy, brainstorming, charisma, and creative intuition to lead effectively and develop innovative solutions.</p>
-    
-    <h3>Domain Integration & Philosophy</h3>
-    
-    <div class="domain-card">
-      <h4>🔷 Mainframe (Domain)</h4>
-      <p><strong>Key Driver:</strong> Integrity and Stability.</p>
-      <p><strong>Interaction with Your Profile:</strong> Your inherent discipline serves as the backbone that maintains the system's operational integrity. However, because you lack the drive for "status-seeking," you tend to remain in the background, ensuring the mission-critical infrastructure functions without seeking the social or corporate visibility that often accompanies such responsibility.</p>
+
+    <!-- BLACK CONTACT BAR -->
+    <div class="contact-mini">
+      <a href="mailto:ruialmeidapinheiro@gmail.com">✉️ ruialmeidapinheiro@gmail.com</a>
+      <a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+      <span>📍 Lisbon · Arroios</span>
     </div>
-    
-    <div class="domain-card">
-      <h4>🧠 LLM/Prompting (Domain)</h4>
-      <p><strong>Key Driver:</strong> Pattern Recognition.</p>
-      <p><strong>Interaction with Your Profile:</strong> Leveraging your high I.Q. and high level of Openness, you possess the cognitive flexibility required to master the "Black Box" of Artificial Intelligence. Unlike those who require a structured academic path, your autodidactic nature allows you to decode and manipulate complex language models through direct, intuitive experimentation and logical deduction.</p>
-    </div>
-    
-    <div class="domain-card">
-      <h4>🏢 Business Organization (Domain)</h4>
-      <p><strong>Key Driver:</strong> Systemic Efficiency.</p>
-      <p><strong>Interaction with Your Profile:</strong> You possess the analytical clarity to identify the "bugs" within an organization—specifically manifested as dishonesty, misinformation, or ignorance. However, your low level of assertiveness acts as a technical constraint; it prevents you from "patching" these systemic human failures by force or through political maneuvering, leaving the identified inefficiencies unresolved despite your awareness of them.</p>
-    </div>
-    
-    <h3>Refining the Big Five Interpretation</h3>
-    <p>Given these strong convictions, we must refine the "Big Five" interpretation. While the scores suggest high Agreeableness and Extraversion, your specific values provide a more complex "filter" for those traits:</p>
-    
-    <div class="insight-box">
-      <p><strong>🔹 Selective Agreeableness:</strong> While you score high in cooperation, it is clearly bound by a strict moral code. Your hatred for dishonesty means your "Agreeableness" is likely reserved for those who meet your standards of integrity. You are not "nice" for the sake of social convention; you are cooperative for the sake of ethical alignment.</p>
-    </div>
-    
-    <div class="insight-box">
-      <p><strong>🔹 Intellectual Non-Conformity:</strong> Your rejection of the "American Dream" and religion confirms a very high <strong>Openness to Experience</strong>, but specifically in the Intellectual and Liberalism facets (in the psychological sense of questioning tradition). You prioritize logical systems (Mainframes, LLMs) over social constructs.</p>
-    </div>
-    
-    <div class="insight-box">
-      <p><strong>🔹 The "Assertiveness" Paradox:</strong> The initial test suggested low assertiveness, but your rhetoric is incredibly firm. This suggests that while you may not care to lead a social club (low gregariousness), you are <strong>highly assertive regarding your principles and expertise.</strong></p>
-    </div>
-    
-    <div class="insight-box">
-      <p><strong>🔹 Technical Integrity:</strong> Your specialization in IBM Mainframes and Prompt Engineering combined with your "loathing of money as a goal" suggests you are a <strong>Purist</strong>. You likely value the elegance and efficiency of a system more than its commercial exploitation.</p>
-    </div>
-    
-    <div class="footer-note">Lisbon · December 18, 2025</div>
+
+    <!-- FOOTER -->
+    <footer>
+      © Rui Manuel de Almeida Pinheiro — From mainframe assembler to AI workflow architect · Lisbon, Arroios<br>
+      “Structural systems, intelligent content, and the beauty of automation.”
+    </footer>
   </main>
 </div>
+
+<script>
+  const videoElement = document.getElementById('bg-video');
+  window.addEventListener('DOMContentLoaded', () => {
+    videoElement.play().catch(error => {
+      console.log("Autoplay prevented. Awaiting user interaction.", error);
+    });
+  });
+
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+</script>
+
 </body>
 </html>

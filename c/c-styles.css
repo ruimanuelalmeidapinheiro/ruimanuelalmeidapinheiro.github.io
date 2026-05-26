@@ -1,0 +1,449 @@
+/* ==========================================================================
+   1. BACKGROUND VIDEO LAYER & OVERLAY
+   ========================================================================== */
+#video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* This darkens the underlying video stream to protect text contrast */
+#video-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   2. GLOBAL DESIGN SYSTEM VARIABLES (LIGHT MODE DEFAULT)
+   ========================================================================== */
+:root { 
+  /* Semi-transparent divisions optimized from 0.40 to 0.82 for legibility */
+  --bg-primary: rgba(255, 255, 255, 0.82); 
+  --bg-nav-box: rgba(255, 255, 255, 0.75);
+  --bg-nav-active: #2563eb;
+  
+  /* Typography & Accents */
+  --text-primary: #1e3a8a;
+  --text-secondary: #1e40af;
+  --text-muted: #4b5563;
+  --border-color: rgba(59, 130, 246, 0.3);
+  --accent-color: #2563eb;
+  --font-stack: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --blur-radius: 16px; /* Enhanced blur layer to diffuse background video artifacts */
+}
+
+/* ==========================================================================
+   3. DARK MODE RECONFIGURATION MATRIX
+   ========================================================================== */
+[data-theme="dark"] {
+  /* Translucent dark panels optimized for dark text legibility */
+  --bg-primary: rgba(15, 23, 42, 0.85);
+  --bg-nav-box: rgba(30, 41, 59, 0.70);
+  --bg-nav-active: #3b82f6;
+  
+  /* Dark Mode Typography */
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --border-color: rgba(96, 165, 250, 0.25);
+  --accent-color: #60a5fa;
+}
+
+/* ==========================================================================
+   4. BASE RESET & STRUCTURAL INTEGRITY
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-stack);
+  background-color: #0f172a;
+  color: var(--text-primary);
+  line-height: 1.6;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   5. NAVIGATION MATRIX GRID (BOX STYLE)
+   ========================================================================== */
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.nav-box {
+  background: var(--bg-nav-box);
+  backdrop-filter: blur(var(--blur-radius));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 0.85rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.nav-box:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .nav-box:hover {
+  background: rgba(30, 41, 59, 0.9);
+}
+
+.nav-box.active {
+  background: var(--bg-nav-active);
+  color: #ffffff !important;
+  border-color: var(--bg-nav-active);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+}
+
+.nav-box.active .nav-num,
+.nav-box.active .nav-title {
+  color: #ffffff !important;
+}
+
+.nav-num {
+  font-size: 0.8rem;
+  font-weight: 700;
+  opacity: 0.8;
+  color: var(--accent-color);
+  margin-bottom: 2px;
+}
+
+.nav-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.nav-print {
+  grid-column: span 1;
+}
+
+.nav-print button {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-stack);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   6. CORE CONTENT WRAPPER (THE HIGH-READABILITY GLASS)
+   ========================================================================== */
+.content-card {
+  background: var(--bg-primary);
+  backdrop-filter: blur(var(--blur-radius));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  border: 1px solid var(--border-color);
+  border-radius: 28px;
+  padding: 3rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+  transition: background 0.3s ease;
+}
+
+/* Semantic Content Layout Framework */
+.content-card h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+.content-card h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin: 2rem 0 1rem 0;
+}
+
+.content-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin: 1.5rem 0 0.75rem 0;
+}
+
+.content-card p {
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+.content-card strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.content-card blockquote {
+  background: rgba(59, 130, 246, 0.08);
+  border-left: 4px solid var(--accent-color);
+  padding: 1rem 1.5rem;
+  margin: 1.75rem 0;
+  border-radius: 4px 12px 12px 4px;
+}
+
+.content-card blockquote strong {
+  font-size: 1.1rem;
+}
+
+/* Modular Lists Architecture */
+.content-card ul, 
+.content-card ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.75rem;
+}
+
+.content-card li {
+  margin-bottom: 0.65rem;
+  color: var(--text-primary);
+  font-size: 1.05rem;
+}
+
+.content-card li ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* Formatted Tables Infrastructure */
+.content-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.content-card th, 
+.content-card td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.content-card th {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   7. SECTOR BACK NAVIGATION BUTTON
+   ========================================================================== */
+.back-box {
+  display: inline-block;
+  background: var(--bg-nav-box);
+  backdrop-filter: blur(var(--blur-radius));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 16px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.back-box:hover {
+  transform: translateX(-4px);
+  background: var(--accent-color);
+  color: #ffffff !important;
+  border-color: var(--accent-color);
+}
+
+/* ==========================================================================
+   8. BLACK CONTACT INFRASTRUCTURE BAR
+   ========================================================================== */
+.contact-mini {
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.contact-mini a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.contact-mini a:hover {
+  color: var(--accent-color);
+}
+
+.contact-mini span {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   9. SITE FOOTER SPECIFICATION
+   ========================================================================== */
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  border-top: 1px solid var(--border-color);
+  margin-top: 1rem;
+}
+
+/* ==========================================================================
+   10. FLOATING THEME TOGGLE CONTROLLER
+   ========================================================================== */
+.theme-toggle-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-nav-box);
+  backdrop-filter: blur(var(--blur-radius));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1) rotate(15deg);
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+/* ==========================================================================
+   11. MOBILE RESPONSIVE MEDIA PIPELINES
+   ========================================================================== */
+@media (max-width: 850px) {
+  .nav-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .nav-print {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .content-card {
+    padding: 1.75rem;
+    border-radius: 20px;
+  }
+  
+  .content-card h1 {
+    font-size: 1.75rem;
+  }
+  
+  .nav-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .nav-print {
+    grid-column: span 2;
+  }
+  
+  .contact-mini {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+  }
+}
+
+/* ==========================================================================
+   12. PRINT RULES MATRIX
+   ========================================================================== */
+@media print {
+  #video-container, 
+  .nav-grid, 
+  .theme-toggle-btn, 
+  .back-box {
+    display: none !important;
+  }
+  
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0;
+  }
+  
+  .content-card {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+}

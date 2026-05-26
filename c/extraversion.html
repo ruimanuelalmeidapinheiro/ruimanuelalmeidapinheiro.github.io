@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../Pi/logo.jpg" type="image/jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Extraversion · Big Five Personality · Rui Manuel de Almeida Pinheiro</title>
+  <link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/c/extraversion">
+  <meta name="description" content="Big Five personality assessment: Extraversion score 78. Sociable, positive, enjoys excitement and meaningful interactions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== BACKGROUND VIDEO LAYER ===== */
+    #video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    #bg-video {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      background-color: #000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #1a1a1a;
+      color: #1e1e2a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .page-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(226, 217, 206, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .page-header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #e0f0ff, #cbd5e1);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .back-link {
+      background: rgba(240, 235, 226, 0.8);
+      backdrop-filter: blur(4px);
+      padding: 0.4rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: #5b4b34;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .back-link:hover {
+      background: rgba(226, 213, 194, 0.9);
+    }
+
+    /* Score Card */
+    .score-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(238, 231, 223, 0.6);
+      text-align: center;
+    }
+
+    .score-number {
+      font-size: 4rem;
+      font-weight: 800;
+      color: #c6a15b;
+      line-height: 1;
+    }
+
+    .score-label {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1a2c3a;
+      margin-top: 0.5rem;
+    }
+
+    .score-level {
+      display: inline-block;
+      background: rgba(198, 161, 91, 0.2);
+      padding: 0.3rem 1.2rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #c6a15b;
+      margin-top: 0.75rem;
+    }
+
+    .score-raw {
+      font-size: 0.85rem;
+      color: #7b6b54;
+      margin-top: 0.5rem;
+    }
+
+    /* Sections */
+    .section {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(238, 231, 223, 0.6);
+      transition: background 0.2s;
+    }
+    .section:hover {
+      background: rgba(255, 255, 255, 0.85);
+    }
+    .section h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      border-left: 4px solid #c6a15b;
+      padding-left: 1rem;
+      color: #1a2c3a;
+    }
+    .section h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 1rem 0 0.5rem;
+      color: #a8713a;
+    }
+    .section p {
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+      color: #2e2d2c;
+      text-align: left;
+    }
+    .section ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .section li {
+      font-size: 0.92rem;
+      margin-bottom: 0.4rem;
+      color: #2e2d2c;
+    }
+
+    /* Sub-scores grid */
+    .subscores {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .subscore-item {
+      background: rgba(248, 249, 250, 0.8);
+      border-radius: 1rem;
+      padding: 0.8rem 1rem;
+    }
+    .subscore-name {
+      font-weight: 600;
+      color: #1a2c3a;
+      margin-bottom: 0.3rem;
+    }
+    .subscore-value {
+      font-size: 0.85rem;
+      color: #c6a15b;
+      font-weight: 600;
+    }
+    .subscore-description {
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      color: #4b5563;
+    }
+
+    /* Image */
+    .trait-image {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    .trait-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .original-link {
+      font-size: 0.7rem;
+      word-break: break-all;
+      margin-top: 0.5rem;
+    }
+    .original-link a {
+      color: #c6a15b;
+      text-decoration: none;
+    }
+    .original-link a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #cfcdc0;
+      border-top: 1px solid rgba(226, 217, 205, 0.5);
+      padding-top: 2rem;
+    }
+
+    hr {
+      margin: 1rem 0;
+      border: none;
+      border-top: 1px solid rgba(228, 219, 207, 0.5);
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 1rem; }
+      .score-number { font-size: 2.5rem; }
+      .subscores { grid-template-columns: 1fr; }
+      .page-header h1 { font-size: 1.3rem; }
+    }
+
+    @media print {
+      #video-container { display: none; }
+      body { background: white; }
+      .section, .score-card { background: white; backdrop-filter: none; border: 1px solid #ccc; }
+      .back-link { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- BACKGROUND VIDEO -->
+<div id="video-container">
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="../Pi/bf.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="container">
+  <div class="page-header">
+    <h1>Extraversion · Big Five Personality</h1>
+    <a href="index.html" class="back-link">← Back to Index</a>
+  </div>
+
+  <!-- Main Score Card -->
+  <div class="score-card">
+    <div class="score-number">78</div>
+    <div class="score-label">Extraversion</div>
+    <div class="score-level">📊 High · Sociable, positive, energetic</div>
+    <div class="score-raw">Raw score: 78 (sum of 6 facets)</div>
+  </div>
+
+  <!-- Description - ALL TEXT from DOC -->
+  <div class="section">
+    <h2>🌟 Extraversion</h2>
+    <p>Extraversion is marked by pronounced <strong>engagement with the external world</strong>.</p>
+    <p>Extraverts enjoy being with people, are full of energy, and often experience positive emotions. They tend to be enthusiastic, action-oriented, individuals who are likely to say "Yes!" or "Let's go!" to opportunities for excitement. In groups they like to talk, assert themselves, and draw attention to themselves.</p>
+    <p>Introverts lack the exuberance, energy, and activity levels of extraverts. They tend to be quiet, low-key, deliberate, and disengaged from the social world. Their lack of social involvement should not be interpreted as shyness or depression; the introvert simply needs less stimulation than an extravert and prefers to be alone.</p>
+    <p>The independence and reserve of the introvert is sometimes mistaken as unfriendliness or arrogance. In reality, an introvert who scores high on the agreeableness dimension will not seek others out but will be quite pleasant when approached.</p>
+    <div class="original-link">
+      🔗 <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Extraversion" target="_blank">https://bigfive-test.com/result/6844163be5daed64a23b2e15#Extraversion</a>
+    </div>
+  </div>
+
+  <!-- Trait Image -->
+  <div class="trait-image">
+    <img src="../Pi/extraversion.png" alt="Extraversion chart" onerror="this.style.display='none'">
+  </div>
+
+  <!-- Sub-scores with COMPLETE TEXT from DOC -->
+  <div class="section">
+    <h2>📋 Facets of Extraversion</h2>
+    
+    <div class="subscores">
+      
+      <!-- Friendliness -->
+      <div class="subscore-item">
+        <div class="subscore-name">Friendliness</div>
+        <div class="subscore-value">Score: 17 (high)</div>
+        <div class="subscore-description">Friendly people genuinely like other people and openly demonstrate positive feelings toward others. They make friends quickly and it is easy for them to form close, intimate relationships. Low scorers on Friendliness are not necessarily cold and hostile, but they do not reach out to others and are perceived as distant and reserved.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Friendliness" target="_blank">View original →</a>
+        </div>
+      </div>
+
+      <!-- Gregariousness -->
+      <div class="subscore-item">
+        <div class="subscore-name">Gregariousness</div>
+        <div class="subscore-value">Score: 10 (low)</div>
+        <div class="subscore-description">Gregarious people find the company of others pleasantly stimulating and rewarding. They enjoy the excitement of crowds. Low scorers tend to feel overwhelmed by, and therefore actively avoid, large crowds. They do not necessarily dislike being with people sometimes, but their need for privacy and time to themselves is much greater than for individuals who score high on this scale.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Gregariousness" target="_blank">View original →</a>
+        </div>
+      </div>
+
+      <!-- Assertiveness -->
+      <div class="subscore-item">
+        <div class="subscore-name">Assertiveness</div>
+        <div class="subscore-value">Score: 8 (low)</div>
+        <div class="subscore-description">High scorers Assertiveness like to speak out, take charge, and direct the activities of others. They tend to be leaders in groups. Low scorers tend not to talk much and let others control the activities of groups.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Assertiveness" target="_blank">View original →</a>
+        </div>
+      </div>
+
+      <!-- Activity Level -->
+      <div class="subscore-item">
+        <div class="subscore-name">Activity Level</div>
+        <div class="subscore-value">Score: 9 (low)</div>
+        <div class="subscore-description">Active individuals lead fast-paced, busy lives. They move about quickly, energetically, and vigorously, and they are involved in many activities. People who score low on this scale follow a slower and more leisurely, relaxed pace.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Activity%20Level" target="_blank">View original →</a>
+        </div>
+      </div>
+
+      <!-- Excitement-Seeking -->
+      <div class="subscore-item">
+        <div class="subscore-name">Excitement-Seeking</div>
+        <div class="subscore-value">Score: 14 (high)</div>
+        <div class="subscore-description">High scorers on this scale are easily bored without high levels of stimulation. They love bright lights and hustle and bustle. They are likely to take risks and seek thrills. Low scorers are overwhelmed by noise and commotion and are adverse to thrill-seeking.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Excitement-Seeking" target="_blank">View original →</a>
+        </div>
+      </div>
+
+      <!-- Cheerfulness -->
+      <div class="subscore-item">
+        <div class="subscore-name">Cheerfulness</div>
+        <div class="subscore-value">Score: 20 (high)</div>
+        <div class="subscore-description">This scale measures positive mood and feelings, not negative emotions (which are a part of the Neuroticism domain). Persons who score high on this scale typically experience a range of positive feelings, including happiness, enthusiasm, optimism, and joy. Low scorers are not as prone to such energetic, high spirits.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Cheerfulness" target="_blank">View original →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <hr>
+    <p>Rui Manuel de Almeida Pinheiro</p>
+    <p>Lisbon, Portugal</p>
+    <p>December 2025</p>
+  </div>
+</div>
+
+<script>
+  const videoElement = document.getElementById('bg-video');
+  window.addEventListener('DOMContentLoaded', () => {
+    videoElement.play().catch(error => {
+      console.log("Autoplay prevented. Awaiting user interaction.", error);
+    });
+  });
+</script>
+
+</body>
+</html>

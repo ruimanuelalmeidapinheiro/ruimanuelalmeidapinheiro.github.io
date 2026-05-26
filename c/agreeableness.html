@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../Pi/logo.jpg" type="image/jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Agreeableness · Big Five Personality · Rui Manuel de Almeida Pinheiro</title>
+  <link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/c/agreeableness">
+  <meta name="description" content="Big Five personality assessment: Agreeableness score 86. High concern with cooperation, social harmony, trust, morality, and altruism.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== BACKGROUND VIDEO LAYER ===== */
+    #video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    #bg-video {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      background-color: #000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #1a1a1a;
+      color: #1e1e2a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .page-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(226, 217, 206, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .page-header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #e0f0ff, #cbd5e1);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .back-link {
+      background: rgba(240, 235, 226, 0.8);
+      backdrop-filter: blur(4px);
+      padding: 0.4rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: #5b4b34;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .back-link:hover {
+      background: rgba(226, 213, 194, 0.9);
+    }
+
+    /* Score Card */
+    .score-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(238, 231, 223, 0.6);
+      text-align: center;
+    }
+
+    .score-number {
+      font-size: 4rem;
+      font-weight: 800;
+      color: #c6a15b;
+      line-height: 1;
+    }
+
+    .score-label {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1a2c3a;
+      margin-top: 0.5rem;
+    }
+
+    .score-level {
+      display: inline-block;
+      background: rgba(198, 161, 91, 0.2);
+      padding: 0.3rem 1.2rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #c6a15b;
+      margin-top: 0.75rem;
+    }
+
+    .score-raw {
+      font-size: 0.85rem;
+      color: #7b6b54;
+      margin-top: 0.5rem;
+    }
+
+    /* Sections */
+    .section {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(238, 231, 223, 0.6);
+      transition: background 0.2s;
+    }
+    .section:hover {
+      background: rgba(255, 255, 255, 0.85);
+    }
+    .section h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      border-left: 4px solid #c6a15b;
+      padding-left: 1rem;
+      color: #1a2c3a;
+    }
+    .section h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 1rem 0 0.5rem;
+      color: #a8713a;
+    }
+    .section p {
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+      color: #2e2d2c;
+      text-align: left;
+    }
+    .section ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .section li {
+      font-size: 0.92rem;
+      margin-bottom: 0.4rem;
+      color: #2e2d2c;
+    }
+
+    /* Sub-scores grid */
+    .subscores {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .subscore-item {
+      background: rgba(248, 249, 250, 0.8);
+      border-radius: 1rem;
+      padding: 0.8rem 1rem;
+    }
+    .subscore-name {
+      font-weight: 600;
+      color: #1a2c3a;
+      margin-bottom: 0.3rem;
+    }
+    .subscore-value {
+      font-size: 0.85rem;
+      color: #c6a15b;
+      font-weight: 600;
+    }
+    .subscore-description {
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      color: #4b5563;
+    }
+
+    /* Image */
+    .trait-image {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    .trait-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .original-link {
+      font-size: 0.7rem;
+      word-break: break-all;
+      margin-top: 0.5rem;
+    }
+    .original-link a {
+      color: #c6a15b;
+      text-decoration: none;
+    }
+    .original-link a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #cfcdc0;
+      border-top: 1px solid rgba(226, 217, 205, 0.5);
+      padding-top: 2rem;
+    }
+
+    hr {
+      margin: 1rem 0;
+      border: none;
+      border-top: 1px solid rgba(228, 219, 207, 0.5);
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 1rem; }
+      .score-number { font-size: 2.5rem; }
+      .subscores { grid-template-columns: 1fr; }
+      .page-header h1 { font-size: 1.3rem; }
+    }
+
+    @media print {
+      #video-container { display: none; }
+      body { background: white; }
+      .section, .score-card { background: white; backdrop-filter: none; border: 1px solid #ccc; }
+      .back-link { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- BACKGROUND VIDEO -->
+<div id="video-container">
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="../Pi/bf.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="container">
+  <div class="page-header">
+    <h1>Agreeableness · Big Five Personality</h1>
+    <a href="index.html" class="back-link">← Back to Index</a>
+  </div>
+
+  <!-- Main Score Card -->
+  <div class="score-card">
+    <div class="score-number">86</div>
+    <div class="score-label">Agreeableness</div>
+    <div class="score-level">📊 High · Cooperative, sympathetic, trusting, and ethical</div>
+    <div class="score-raw">Raw score: 86 (sum of 6 facets)</div>
+  </div>
+
+  <!-- Description - ALL TEXT from DOC -->
+  <div class="section">
+    <h2>🤝 Agreeableness</h2>
+    <p>Agreeableness reflects <strong>individual differences in concern with cooperation and social harmony</strong>. Agreeable individuals value getting along with others.</p>
+    <p>They are therefore considerate, friendly, generous, helpful, and willing to compromise their interests with others'. Agreeable people also have an optimistic view of human nature. They believe people are basically honest, decent, and trustworthy.</p>
+    <p>Disagreeable individuals place self-interest above getting along with others. They are generally unconcerned with others' well-being, and therefore are unlikely to extend themselves for other people. Sometimes their skepticism about others' motives causes them to be suspicious, unfriendly, and uncooperative.</p>
+    <p>Agreeableness is obviously advantageous for attaining and maintaining popularity. Agreeable people are better liked than disagreeable people. On the other hand, agreeableness is not useful in situations that require tough or absolute objective decisions. Disagreeable people can make excellent scientists, critics, or soldiers.</p>
+    <p>Your high level of Agreeableness indicates a strong interest in others' needs and well-being. You are pleasant, sympathetic, and cooperative.</p>
+    <div class="original-link">
+      🔗 <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Agreeableness" target="_blank">https://bigfive-test.com/result/6844163be5daed64a23b2e15#Agreeableness</a>
+    </div>
+  </div>
+
+  <!-- Trait Image -->
+  <div class="trait-image">
+    <img src="../Pi/agreeableness.png" alt="Agreeableness chart" onerror="this.style.display='none'">
+  </div>
+
+  <!-- Sub-scores with COMPLETE TEXT from DOC -->
+  <div class="section">
+    <h2>📋 Facets of Agreeableness</h2>
+    
+    <div class="subscores">
+      
+      <!-- Trust -->
+      <div class="subscore-item">
+        <div class="subscore-name">Trust</div>
+        <div class="subscore-value">Score: 17 (high)</div>
+        <div class="subscore-description">A person with high trust assumes that most people are fair, honest, and have good intentions. Persons low in trust see others as selfish, devious, and potentially dangerous.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Trust" target="_blank">View original →</a>
+        </div>
+      </div>
+
+      <!-- Morality -->
+      <div class="subscore-item">
+        <div class="subscore-name">Morality</div>
+        <div class="subscore-value">Score: 17 (high)</div>
+        <div class="subscore-description">High scorers on this scale see no need for pretense or manipulation when dealing with others and are therefore candid, frank, and sincere. Low scorers believe that a certain amount of deception in social relationships is necessary. People find it relatively easy to relate to the straightforward high-scorers on this scale. They generally find it more difficult to relate to the unstraightforward low-scorers on this scale. It should be made clear that low scorers are not unprincipled or immoral; they are simply more guarded and less willing to openly reveal the whole truth.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Morality" target="_blank">View original →</a>
+        </div>
+      </div>
+
+      <!-- Altruism -->
+      <div class="subscore-item">
+        <div class="subscore-name">Altruism</div>
+        <div class="subscore-value">Score: 13 (high)</div>
+        <div class="subscore-description">Altruistic people find helping other people genuinely rewarding. Consequently, they are generally willing to assist those who are in need. Altruistic people find that doing things for others is a form of self-fulfillment rather than self-sacrifice. Low scorers on this scale do not particularly like helping those in need. Requests for help feel like an imposition rather than an opportunity for self-fulfillment.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Altruism" target="_blank">View original →</a>
+        </div>
+      </div>
+
+      <!-- Cooperation -->
+      <div class="subscore-item">
+        <div class="subscore-name">Cooperation</div>
+        <div class="subscore-value">Score: 15 (high)</div>
+        <div class="subscore-description">Individuals who score high on this scale dislike confrontations. They are perfectly willing to compromise or to deny their own needs in order to get along with others. Those who score low on this scale are more likely to intimidate others to get their way.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Cooperation" target="_blank">View original →</a>
+        </div>
+      </div>
+
+      <!-- Modesty -->
+      <div class="subscore-item">
+        <div class="subscore-name">Modesty</div>
+        <div class="subscore-value">Score: 8 (low)</div>
+        <div class="subscore-description">High scorers on this scale do not like to claim that they are better than other people. In some cases this attitude may derive from low self-confidence or self-esteem. Nonetheless, some people with high self-esteem find immodesty unseemly. Those who are willing to describe themselves as superior tend to be seen as disagreeably arrogant by other people.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Modesty" target="_blank">View original →</a>
+        </div>
+      </div>
+
+      <!-- Sympathy -->
+      <div class="subscore-item">
+        <div class="subscore-name">Sympathy</div>
+        <div class="subscore-value">Score: 16 (high)</div>
+        <div class="subscore-description">People who score high on this scale are tenderhearted and compassionate. They feel the pain of others vicariously and are easily moved to pity. Low scorers are not affected strongly by human suffering. They pride themselves on making objective judgments based on reason. They are more concerned with truth and impartial justice than with mercy.</div>
+        <div class="original-link">
+          <a href="https://bigfive-test.com/result/6844163be5daed64a23b2e15#Sympathy" target="_blank">View original →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <hr>
+    <p>Rui Manuel de Almeida Pinheiro</p>
+    <p>Lisbon, Portugal</p>
+    <p>December 2025</p>
+  </div>
+</div>
+
+<script>
+  const videoElement = document.getElementById('bg-video');
+  window.addEventListener('DOMContentLoaded', () => {
+    videoElement.play().catch(error => {
+      console.log("Autoplay prevented. Awaiting user interaction.", error);
+    });
+  });
+</script>
+
+</body>
+</html>

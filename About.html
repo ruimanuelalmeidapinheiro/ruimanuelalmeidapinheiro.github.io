@@ -138,6 +138,7 @@
       margin-bottom: 0.8rem;
       color: #1e2a2e;
       font-weight: 500;
+      text-align: justify;
     }
 
     .section img {
@@ -159,6 +160,7 @@
       border-left: 4px solid #c6a15b;
       font-style: italic;
       color: #2b2b20;
+      text-align: justify;
     }
 
     .topic-list {
@@ -181,6 +183,42 @@
       margin: 1rem 0;
       border: none;
       border-top: 1px solid rgba(228, 219, 207, 0.7);
+    }
+
+    /* CONTACT MINI - identical to index.html */
+    .contact-mini {
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: #e0e0e0;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(4px);
+      padding: 0.8rem 1.5rem;
+      border-radius: 2rem;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .contact-mini a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .contact-mini a:hover {
+      color: #f0b86e;
+      text-decoration: underline;
+    }
+
+    .contact-mini span {
+      color: #e0e0e0;
     }
 
     footer {
@@ -267,7 +305,7 @@
     <p>My story is a remarkable arc—from the <strong>State Primary School nr 26</strong>, from <strong>Liceu Nacional Gil Vicente</strong>, from <strong>Faculdade de Medicina de Lisboa</strong>, from Lisbon stock exchange to <strong>Caixa Geral de Depósitos</strong> and IBM mainframes, from Db2 structural design to <strong>AI workflow orchestration</strong>.</p>
     <img src="Pi/4.jpg" alt="Trajectory illustration 4" onerror="this.style.display='none'">
     
-    <p style="margin-top: 1rem;">My trajectory embodies the principles I value: <strong>pragmatic empiricism, structural clarity, and continuous correction</strong>. I didn’t just adapt to technological shifts; I anticipated them—moving from functional analysis to application architecture, from COBOL to PROLOG, from prompt engineering to content strategy and autonomous process design.</p>
+    <p style="margin-top: 1rem;">My trajectory embodies the principles I value: <strong>pragmatic empiricism, structural clarity, and continuous correction</strong>. I didn't just adapt to technological shifts; I anticipated them—moving from functional analysis to application architecture, from COBOL to PROLOG, from prompt engineering to content strategy and autonomous process design.</p>
   </div>
 
   <!-- Structural observations -->
@@ -280,7 +318,7 @@
     <p>Retirement in 1999 could have been an endpoint. Instead, I treated it as a <strong>state transition</strong>—using the next decade to re‑calibrate, then re‑engage with LLMs, content engineering, and AI governance. This is error‑correction at the personal scale: observing drift, updating the model, re‑executing.</p>
     
     <h3>The informational substrate</h3>
-    <p>My current work—<strong>Content Engineering and AI workflow management</strong>—is essentially applied epistemology. I am designing protocols for <strong>how knowledge is structured, validated, and propagated</strong> across systems. This is not “content creation” in the trivial sense; it is the engineering of reproducible meaning.</p>
+    <p>My current work—<strong>Content Engineering and AI workflow management</strong>—is essentially applied epistemology. I am designing protocols for <strong>how knowledge is structured, validated, and propagated</strong> across systems. This is not "content creation" in the trivial sense; it is the engineering of reproducible meaning.</p>
     
     <div class="insight-quote">
       “I am not just a participant in the digital evolution; I am one of its architects—building the scaffolding that allows others to reason, create, and verify with greater fidelity.”
@@ -289,8 +327,15 @@
 
   <!-- short signature line -->
   <div class="section" style="text-align: center; background: rgba(252, 249, 244, 0.8); backdrop-filter: blur(8px);">
-    <p style="margin-bottom: 0.5rem; font-weight: 600;">Rui Manuel de Almeida Pinheiro</p>
-    <p style="font-size: 0.85rem;">Born in Lisbon, Arroios, on Sunday, August 2, 1953, at 6:00 a.m.<br>Mainframe Analyst · Prompt Engineering · Content Engineering · Framework Design</p>
+    <p style="margin-bottom: 0.5rem; font-weight: 600; text-align: center;">Rui Manuel de Almeida Pinheiro</p>
+    <p style="font-size: 0.85rem; text-align: center;">Born in Lisbon, Arroios, on Sunday, August 2, 1953, at 6:00 a.m.<br>Mainframe Analyst · Prompt Engineering · Content Engineering · Framework Design</p>
+  </div>
+
+  <!-- CONTACT MINI - added at bottom -->
+  <div class="contact-mini">
+    <a href="mailto:ruialmeidapinheiro@gmail.com">✉️ ruialmeidapinheiro@gmail.com</a>
+    <a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+    <span>📍 Lisbon · Arroios</span>
   </div>
 
   <footer>
