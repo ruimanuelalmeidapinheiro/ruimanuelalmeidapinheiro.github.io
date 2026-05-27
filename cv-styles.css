@@ -1,4 +1,4 @@
-/* ===== BACKGROUND VIDEO LAYER - ENLARGED & LESS CROPPED ===== */
+/* ===== BACKGROUND VIDEO LAYER - FIXED ENGINE ===== */
 #video-container {
   position: fixed;
   top: 0;
@@ -9,12 +9,11 @@
   overflow: hidden;
   pointer-events: none;
 }
+
 #bg-video {
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: cover; /* Forces the video to cover the entire space smoothly */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Smoothly forces coverage without clipping distortively */
   background-color: #000;
   position: absolute;
   top: 50%;
@@ -29,7 +28,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35); /* Kept your cv-styles opacity layer */
   z-index: 1;
   pointer-events: none;
 }

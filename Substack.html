@@ -7,6 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rui Manuel de Almeida Pinheiro — Substack</title>
     <link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/Substack">
+
+
+<style>
+        /* ... Todos os seus estilos CSS atuais que já estão na página ... */
+
+
+        /* INSERIR ESTE BLOCO NO FINAL DA TAG STYLE */
+        /* ===== BLOCO DO VÍDEO DE FUNDO ===== */
+        #video-container {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+          overflow: hidden;
+          pointer-events: none;
+        }
+
+        #bg-video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          background-color: #000;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        #video-container::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.35);
+          z-index: 1;
+          pointer-events: none;
+        }
+    </style>
+
+
     <style>
         :root {
             --bg: #eff6ff;
@@ -226,13 +270,23 @@
 <body>
 
 <header>
+
     <h1>Rui Manuel de Almeida Pinheiro</h1>
     <p>Substack Archive — <a href="https://ruimanuelalmeidapinheiro.substack.com" target="_blank">Visit Live Site ↗</a></p>
 <div style="margin-top: 0.8rem; display: flex; justify-content: center; gap: 1rem;">
     <a href="index.html" style="background: #f0ebe2; padding: 0.3rem 1rem; border-radius: 2rem; text-decoration: none; color: #5b4b34; font-weight: 500;">← Back to Main Page</a>
     <a href="About.html" style="background: #f0ebe2; padding: 0.3rem 1rem; border-radius: 2rem; text-decoration: none; color: #5b4b34; font-weight: 500;">📄 About</a>
 </div>
+
 </header>
+
+<div id="video-container">
+        <video id="bg-video" autoplay loop muted playsinline>
+            <source src="Pi/uw.mp4" type="video/mp4">
+            O seu navegador não suporta a reprodução deste vídeo.
+        </video>
+ </div>
+
 
 <div class="container">
     <nav class="month-nav">
