@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IQ Test · Cognitive Dimensions · Rui Manuel de Almeida Pinheiro</title>
-<link rel="icon" href="../Pi/logo.jpg" type="image/jpeg">
-<link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/c/2">
+<title>IQ Test · Pattern Recognition · Rui Manuel de Almeida Pinheiro</title>
+<link rel="icon" href="Pi/logo.jpg" type="image/jpeg">
+<link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/pr">
 <style>
   #video-container {
     position: fixed;
@@ -44,6 +44,25 @@
     color: #e0f0ff;
     font-size: 2rem;
   }
+  .score-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(238, 231, 223, 0.6);
+    text-align: center;
+  }
+  .score-percent {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #c6a15b;
+  }
+  .score-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a2c3a;
+  }
   .section {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(8px);
@@ -58,18 +77,20 @@
     border-left: 4px solid #c6a15b;
     padding-left: 1rem;
   }
-  .section p, .section li {
+  .section p {
     color: #2e2d2c;
     margin-bottom: 0.8rem;
+    text-align: justify;
+    font-size: 1rem;
   }
-  .dimension-list {
-    list-style: none;
-    padding-left: 0;
+  .graph-image {
+    text-align: center;
+    margin: 1rem 0;
   }
-  .dimension-list li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #e0d5c0;
-    font-weight: 500;
+  .graph-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
   }
   .back-link {
     color: #cbd5e1;
@@ -109,7 +130,7 @@
   @media print {
     #video-container { display: none; }
     body { background: white; }
-    .section { background: white; backdrop-filter: none; }
+    .score-card, .section { background: white; backdrop-filter: none; }
     .btn-print { display: none; }
   }
 </style>
@@ -118,27 +139,30 @@
 
 <div id="video-container">
   <video id="bg-video" autoplay muted loop playsinline>
-    <source src="../Pi/1r.mp4" type="video/mp4">
+    <source src="Pi/pwvfhtn65DTity.mp4" type="video/mp4">
   </video>
 </div>
 
-<h1>IQ Test · What Does It Measure?</h1>
+<h1>Pattern Recognition</h1>
 
 <button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
 <div style="margin-bottom: 2rem;">
-  <a href="index.html" class="back-link">← Back to Index</a>
+  <a href="or.html" class="back-link">← Back to Overall Score</a>
+</div>
+
+<div class="score-card">
+  <div class="score-percent">69%</div>
+  <div class="score-label">Pattern Recognition</div>
+</div>
+
+<div class="graph-image">
+  <img src="../Pi/iqa.png" alt="Pattern Recognition graph">
 </div>
 
 <div class="section">
-  <h2>📊 IQ Test (General Intelligence Quotient)</h2>
-  <p>The IQ Test measures multiple cognitive dimensions that contribute to overall intelligence:</p>
-  <ul class="dimension-list">
-    <li><strong>Pattern Recognition</strong> — Identifying and categorizing sensory arrangements into organized patterns</li>
-    <li><strong>Spatial Orientation</strong> — Understanding spatial relationships and object positions in space</li>
-    <li><strong>Visual Perception</strong> — Organizing, processing, and interpreting visual information</li>
-    <li><strong>Analytical Thinking</strong> — Dissecting information into components and developing logical solutions</li>
-    <li><strong>Abstract Reasoning</strong> — Handling abstract concepts and grasping new ideas independently</li>
-  </ul>
+  <h2>📊 Detailed Analysis</h2>
+  <p>Pattern Recognition involves recognizing, identifying, and categorizing complex sensory arrangements into organized patterns that aid in memory storage and retrieval. This process is both spontaneous and automatic, defining your ability to discern order in chaotic settings. Pattern recognition is closely associated with your overall level of intelligence, as it is crucial for logical thinking and the ability to understand and interpret logical sequences.</p>
+  <p>The "Pattern Recognition" set of questions is designed to assess how swiftly and effortlessly you can perceive the underlying mechanics of various scenarios and identify connections between different elements.</p>
 </div>
 
 <div class="footer">

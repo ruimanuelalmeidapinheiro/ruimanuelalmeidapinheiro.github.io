@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" href="Pi/logo.jpg" type="image/jpeg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/Schrödinger-equation-explained">
+
+
+<title>Everything is Waves: Hz Only | Reality as Frequency, Solitons, and Fourier</title>
+
+<meta name="description" content="A premium exploration of reality as Hz: solitons replace particles, Fourier transform as dictionary, time/space/mass in Hz, superposition, entanglement, collapse, and the cosmic climb from H to He.">
+<meta name="keywords" content="waves, Hz, solitons, Fourier transform, quantum mechanics, physics, CPT, superposition, entanglement, entropy, Mendeleev, frequency">
+<meta name="author" content="Insight Collective">
+<meta property="og:title" content="Everything is Waves: Hz Only">
+<meta property="og:description" content="Reality = Hz. Particles are coherent wave modes. Explore solitons, Fourier dictionaries, and the dissipation-to-complexity trend.">
+<meta property="og:type" content="article">
+<meta name="theme-color" content="#0a0a0f">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg-elev: #11111a;
+    --bg-elev-2: #1a1a28;
+    --text: #e8e8f0;
+    --text-muted: #9ca3af;
+    --accent: #7c3aed;
+    --accent-2: #22d3ee;
+    --border: rgba(124, 58, 237, 0.2);
+    --glow: 0 0 80px rgba(124, 58, 237, 0.15);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(34, 211, 238, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.04) 0%, transparent 70%);
+    background-attachment: fixed;
+  }
+  
+  .glass {
+    background: rgba(17, 17, 26, 0.6);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid var(--border);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .glow-border {
+    position: relative;
+  }
+  
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+  }
+  
+  .toc-link {
+    transition: all 0.2s ease;
+    border-left: 2px solid transparent;
+  }
+  
+  .toc-link:hover, .toc-link.active {
+    border-left-color: var(--accent);
+    color: var(--accent-2);
+    transform: translateX(4px);
+  }
+  
+  .prose h2 {
+    position: relative;
+    padding-bottom: 0.75rem;
+    margin-top: 3rem;
+  }
+  
+  .prose h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+  }
+  
+  .prose h3 {
+    color: var(--accent-2);
+    margin-top: 2rem;
+  }
+  
+  .prose code {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--bg-elev-2);
+    padding: 0.15em 0.4em;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+  }
+  
+  .prose ol li::marker {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  
+  .prose ul li::marker {
+    color: var(--accent-2);
+  }
+  
+  .katex {
+    font-size: 1.05em;
+  }
+  
+  .katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1rem 0;
+    margin: 1.5rem 0;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @media (max-width: 1024px) {
+    #toc {
+      position: static !important;
+    }
+  }
+</style>
+</head>
+<body class="min-h-screen antialiased">
+  <!-- Header -->
+  <header class="relative overflow-hidden border-b border-[var(--border)]">
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-6 py-20 lg:py-32 text-center">
+      <div class="inline-block mb-6 px-4 py-1.5 glass rounded-full text-sm text-[var(--text-muted)]">
+        <span class="gradient-text font-medium">Ontology Reframe</span> • Fields First, Particles Never
+      </div>
+      <h1 class="text-5xl lg:text-7xl font-bold tracking-tight mb-6">
+        Everything is <span class="gradient-text">Waves</span>
+      </h1>
+      <p class="text-xl lg:text-2xl text-[var(--text-muted)] max-w-3xl mx-auto font-light leading-relaxed">
+        Reality = Hz. Particles are coherent phase-locked wave modes. The universe computes in Fourier space and renders in bandwidth-limited conscious frames.
+      </p>
+      <div class="mt-10 flex items-center justify-center gap-4 text-sm text-[var(--text-muted)]">
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse"></div>
+          <span>Field Theory</span>
+        </div>
+        <div class="w-1 h-1 rounded-full bg-[var(--text-muted)]"></div>
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 rounded-full bg-[var(--accent-2)] animate-pulse"></div>
+          <span>Information Physics</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-12">
+      <!-- Sticky Table of Contents -->
+      <aside class="lg:col-span-3 mb-12 lg:mb-0">
+        <nav id="toc" class="lg:sticky lg:top-8 glass rounded-2xl p-6 glow-border">
+          <h2 class="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-4">Table of Contents</h2>
+          <ul class="space-y-1 text-sm" id="toc-list">
+            <li><a href="#preamble" class="toc-link block py-2 pl-4 -ml-4">Preamble: 25 Dec 2025</a></li>
+            <li><a href="#reality-hz" class="toc-link block py-2 pl-4 -ml-4">1. Reality = Hz</a></li>
+            <li><a href="#solitons" class="toc-link block py-2 pl-4 -ml-4">2. Solitons Replace Particles</a></li>
+            <li><a href="#fourier" class="toc-link block py-2 pl-4 -ml-4">3. Fourier Transform as Dictionary</a></li>
+            <li><a href="#units" class="toc-link block py-2 pl-4 -ml-4">4. Time / Space / Mass in Hz</a></li>
+            <li><a href="#superposition" class="toc-link block py-2 pl-4 -ml-4">5. Superposition & Entanglement</a></li>
+            <li><a href="#collapse" class="toc-link block py-2 pl-4 -ml-4">6. Collapse = Human Bandwidth</a></li>
+            <li><a href="#second-law" class="toc-link block py-2 pl-4 -ml-4">7. Second Law & Information</a></li>
+            <li><a href="#stars" class="toc-link block py-2 pl-4 -ml-4">8. Stars: H to He to Mendeleev</a></li>
+            <li><a href="#complexity" class="toc-link block py-2 pl-4 -ml-4">9. Dissipation → Complexity</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="lg:col-span-9">
+        <article class="prose prose-invert max-w-none">
+          
+          <!-- Preamble Section -->
+          <section id="preamble" class="glass rounded-3xl p-8 lg:p-12 mb-16 glow-border">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--accent)] to-[var(--accent-2)] flex items-center justify-center float-animation">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div>
+                <h2 class="!mt-0 !mb-2">Preamble: 25 December 2025 Insight</h2>
+                <p class="text-[var(--text-muted)] text-sm">Last year insight: 25 12 2025</p>
+              </div>
+            </div>
+            
+            <div class="space-y-6 text-base leading-relaxed">
+              <p>
+                What we name “particle” is nothing more (and nothing less) than a coherent, approximately non-dispersive patch of phase-locked wave modes whose crests and nodes intersect our detectors in a way our cognitive apparatus immediately tags as “localized object.” The tag is so fast and so compelling that we forget it is a user-interface construct, not an ontological ding-an-sich.
+              </p>
+              
+              <p class="font-medium text-[var(--accent-2)]">A few concrete handles to keep the insight from drifting into mere mysticism:</p>
+              
+              <ol class="space-y-6">
+                <li>
+                  <strong class="text-[var(--text)]">Detector-level:</strong><br>
+                  A single ionization pulse in a silicon pixel is not evidence of a little billiard ball. It is evidence that the spatially-integrated phase relationship of the field met the criterion
+                  <div>$$ \int d^3x \; E(x) \cdot j_{\text{det}}(x) > E_{\text{threshold}} $$</div>
+                  for a brief window \(\Delta t \approx \hbar/\Delta E\). The “click” is the detector’s non-linear threshold crossing, not the arrival of a marble.
+                </li>
+                
+                <li>
+                  <strong class="text-[var(--text)]">Field-level:</strong><br>
+                  Take a free scalar field \(\phi(x)\). Its Fourier components are eternal plane waves. Superpose them with coefficients chosen so that the phase is stationary around a world-line \(x = x_0 + vt\). The resulting wave-packet looks like a particle—its centroid follows \(\ddot{x} = 0\)—but the packet can be made arbitrarily wide (cosmic neutrinos) or arbitrarily narrow (LHC b-jets). The particle-ness is in the interference geometry, not in a substratum.
+                </li>
+                
+                <li>
+                  <strong class="text-[var(--text)]">Interaction-level:</strong><br>
+                  In a \(2 \to 2\) scattering amplitude the only thing we ever compute is the relative phase shift between incoming and outgoing wave-fronts. The “particle” labels (momentum, spin, flavour) are book-keeping indices on the asymptotic coefficients of those waves. When the relative phase is \(\pi/2\) we call it “elastic”; when it is \(3\pi/2\) we call it “inelastic”; but nowhere does a bead hop a rail.
+                </li>
+                
+                <li>
+                  <strong class="text-[var(--text)]">CPT corollary:</strong><br>
+                  Since CPT is a global phase rotation on the whole field configuration, it acts on the intersection pattern itself, not on any imagined bead. That is why the theorem is so robust: it is a statement about the analyticity of wave phases, not about the constitution of miniature objects.
+                </li>
+                
+                <li>
+                  <strong class="text-[var(--text)]">Cognitive corollary:</strong><br>
+                  The brain evolved to track predators and projectiles—solids that persist. When the retina meets a phase singularity (a high-amplitude, roughly stable wave crest) the visual cortex reifies it into a persistent entity. The reification is useful for staying alive, but it is a compression artifact, not a discovery.
+                </li>
+              </ol>
+              
+              <p class="pt-4 border-t border-[var(--border)]">
+                So you are in good company: from Schrödinger (“particles are wave packets that do not dissipate”) to Weinberg (“particles are simply irreducible representations of the Poincaré group acting on fields”) the working ontology has been <em class="text-[var(--accent-2)]">waves first, particles never</em>. The syllable “particle” survives only as a convenient shorthand for “asymptotically separable phase-coherent excitation of the field.”
+              </p>
+            </div>
+          </section>
+
+          <!-- Section 1 -->
+          <section id="reality-hz" class="mb-16">
+            <h2>1. Reality = Hz</h2>
+            <p>
+              If the fundamental substrate is a field, then the only primitive is oscillation. Every physical quantity reduces to cycles per second. There is no separate “stuff” that waves. The wave <em>is</em> the stuff, and its frequency <em>is</em> its existence.
+            </p>
+            <p>
+              Planck–Einstein: \(E = hf\). De Broglie: \(p = \hbar k\). Spatial frequency \(k\) and temporal frequency \(f\) are not descriptions of a particle; they define it. Change the frequency distribution and you change what the thing “is.” Mass, charge, spin — all are labels for how a mode pattern transforms under symmetries, i.e. how its phases rotate.
+            </p>
+            <div class="glass rounded-xl p-6 my-6">
+              <p class="text-sm text-[var(--text-muted)] mb-2">Key Reframe</p>
+              <p class="!my-0 font-medium">We do not observe things that have frequencies. We observe frequencies and call the stable ones “things”.</p>
+            </div>
+          </section>
+
+          <!-- Section 2 -->
+          <section id="solitons" class="mb-16">
+            <h2>2. Solitons Replace Particles</h2>
+            <p>
+              In nonlinear field theory, certain wave packets balance dispersion against nonlinearity and propagate without changing shape: solitons. They scatter elastically, retain identity, and obey conservation laws — exactly the behaviour we attribute to particles.
+            </p>
+            <p>
+              The electron is not a point. It is the lowest-energy, phase-coherent soliton of the electron-positron field coupled to the photon field such that its total energy satisfies \(E^2 = p^2c^2 + m^2c^4\). The “mass” is the rest-frame frequency: \(m = hf_0/c^2\).
+            </p>
+            <p>
+              Protons, atoms, molecules, you — nested solitons of increasing complexity. Stable because their phase relationships are locked by conservation laws. Unstable isotopes are solitons whose internal frequency relations permit decay channels: phase slips that radiate excess modes.
+            </p>
+          </section>
+
+          <!-- Section 3 -->
+          <section id="fourier" class="mb-16">
+            <h2>3. Fourier Transform as Dictionary</h2>
+            <p>
+              The Fourier transform is not a mathematical trick. It is the dictionary between the universe’s source code and the rendered frame.
+            </p>
+            <div>$$ \tilde{\phi}(k) = \int d^4x \; e^{ik \cdot x} \phi(x) $$</div>
+            <p>
+              Position space \(\phi(x)\) is the UI. Momentum space \(\tilde{\phi}(k)\) is the backend where dynamics are algebraic. Free propagation is just phase rotation: \(\tilde{\phi}(k, t) = e^{-i\omega_k t} \tilde{\phi}(k, 0)\) with \(\omega_k^2 = k^2 + m^2\).
+            </p>
+            <p>
+              Interactions are convolutions in \(k\)-space: wave modes exchanging energy-frequency. Feynman diagrams are bookkeeping for which frequency components can trade quanta while preserving total phase. “Virtual particles” are off-shell frequencies in the Fourier integral that never make it to a detector’s threshold.
+            </p>
+            <div class="glass rounded-xl p-6 my-6">
+              <p class="text-sm text-[var(--text-muted)] mb-2">Analogy</p>
+              <p class="!my-0">MP3 decoder → speaker. Fourier modes → detector click. Both are basis changes. The “song” exists as long as the frequency coefficients exist, even when no speaker is active.</p>
+            </div>
+          </section>
+
+          <!-- Section 4 -->
+          <section id="units" class="mb-16">
+            <h2>4. Time / Space / Mass in Hz</h2>
+            <p>Using natural units \(c = \hbar = 1\), everything collapses to inverse seconds, i.e. Hz.</p>
+            <ul>
+              <li><strong>Time:</strong> \(1 \text{ s}^{-1} = 1 \text{ Hz}\). Period \(T = 1/f\).</li>
+              <li><strong>Space:</strong> \(k = 2\pi/\lambda\) has units \(\text{s}^{-1}\) since \(c=1\). Length is measured by how many wave crests fit in a clock tick.</li>
+              <li><strong>Mass:</strong> \(m = hf/c^2 \to m[f] = \text{Hz}\). The electron rest mass is \(1.235 \times 10^{20} \text{ Hz}\).</li>
+              <li><strong>Energy:</strong> \(E = hf\) so energy is also Hz.</li>
+              <li><strong>Action:</strong> \(\hbar\) sets the exchange rate: 1 quantum of action per \(2\pi\) radians of phase.</li>
+            </ul>
+            <p>
+              There is one dimension. The rest are human canonical choices for decomposing cycles-per-second into spatially vs. temporally oriented projections.
+            </p>
+          </section>
+
+          <!-- Section 5 -->
+          <section id="superposition" class="mb-16">
+            <h2>5. Superposition & Entanglement</h2>
+            <p>
+              Superposition is literal: \(\psi = \alpha \psi_1 + \beta \psi_2\). Two radio stations can share the airwaves because their Fourier modes are orthogonal. Their sum exists until a nonlinear detector picks one via resonance.
+            </p>
+            <p>
+              Entanglement is shared phase information across spatially separated modes. For a Bell pair:
+            </p>
+            <div>$$ |\Psi\rangle = \frac{1}{\sqrt{2}} \left( |k, \uparrow\rangle_{-k, \downarrow} + |k, \downarrow\rangle_{-k, \uparrow} \right) $$</div>
+            <p>
+              The two detections are correlated because they are samplings of one global mode function. No signal travels; the phase correlation was in the boundary condition when the mode pair was created. Violates “locality” only if you assume beads existed. Waves were always extended.
+            </p>
+          </section>
+
+          <!-- Section 6 -->
+          <section id="collapse" class="mb-16">
+            <h2>6. Collapse = Human Bandwidth</h2>
+            <p>
+              The Schrödinger equation is linear and unitary: \(|\psi(t)\rangle = U(t)|\psi(0)\rangle\). No collapse term exists. “Collapse” is the act of gaining information when a macroscopic, irreversible amplification occurs in a detector.
+            </p>
+            <p>
+              Your brain cannot process \(10^{80}\) complex amplitudes. It evolved to compress the field into pointer states: positions of dials, pixels, and biomarkers. Decoherence guarantees that when the detector’s \(10^{23}\) modes correlate with the system, the interference terms become exponentially inaccessible. You experience one branch because you are inside it, made of the same bandwidth-limited phase relations.
+            </p>
+            <div class="glass rounded-xl p-6 my-6">
+              <p class="text-sm text-[var(--text-muted)] mb-2">Inference Rule</p>
+              <p class="!my-0">Collapse ≡ “My sensory apparatus now shares mutual information with a subspace of the global wavefunction, and I discard the orthogonal remainder for compression.”</p>
+            </div>
+          </section>
+
+          <!-- Section 7 -->
+          <section id="second-law" class="mb-16">
+            <h2>7. Second Law & Information</h2>
+            <p>
+              Entropy \(S = -k_B \sum_i p_i \ln p_i\) counts the number of hidden Fourier coefficients you cannot track. Second law: \(dS/dt \geq 0\) because phase information leaks from low-dimensional macroscopic variables into the \(10^{80}\) bath modes we call “environment.”
+            </p>
+            <p>
+              Maxwell’s demon fails because erasing one bit requires dissipating \(k_B T \ln 2\) of energy: you must pump that Fourier mode back into the bath. Information is physical because waves are physical. There is no dualism.
+            </p>
+            <p>
+              Black hole entropy \(S = A/4 \ell_p^2\) is the ultimate statement: the information capacity of a region scales with frequency cutoff at the horizon. Grades into Hz-only ontology: a Planck area can store ~1 bit per mode.
+            </p>
+          </section>
+
+          <!-- Section 8 -->
+          <section id="stars" class="mb-16">
+            <h2>8. Stars: H to He and Climbing the Mendeleev Chart</h2>
+            <p>
+              Fusion is frequency upconversion. Hydrogen: proton = uud soliton, \(f_0 \approx 2.27 \times 10^{23} \text{ Hz}\). In a stellar core, thermal kHz-scale bath modes squeeze four proton solitons until their phases merge into one He-4 soliton.
+            </p>
+            <div>$$ 4p \to {}^4\text{He} + 2e^+ + 2\nu_e + 26.7 \text{ MeV} $$</div>
+            <p>
+              The 26.7 MeV is freed frequency: \(\Delta E = h \Delta f\). Those gammas cascade, thermalize, and become sunlight. Stars are nonlinear mode-conversion engines, pumping the universe from low-\(f\) hydrogen toward the iron peak: the most tightly phase-locked soliton per nucleon.
+            </p>
+            <p>
+              Past Fe, you need supernova shock: a single broadband Fourier pulse that momentarily gives heavy nuclei enough workspace to lock into higher-frequency solitons. The Mendeleev chart is a resonant frequency table. Chemistry is the study of how soliton orbitals —— electron phase patterns —— fit together like Fourier harmonics.
+            </p>
+          </section>
+
+          <!-- Section 9 -->
+          <section id="complexity" class="mb-16">
+            <h2>9. Dissipation → Complexity Trend</h2>
+            <p>
+              Gradient + nonlinearity + boundary condition ⇒ spontaneous structure. This is not philosophy; it is the constructive side of the second law. While global entropy increases, local subsystems can export entropy and import negentropy to build coherent modes.
+            </p>
+            <ol>
+              <li><strong>Stars:</strong> Gravitational potential gradient drives H → He, releasing low-entropy photons.</li>
+              <li><strong>Planets:</strong> Those photons give Earth a 290K to 3K frequency gradient.</li>
+              <li><strong>Biology:</strong> Photosystem II is a mode-locked antenna that converts 680nm waves into chemical solitons: ATP.</li>
+              <li><strong>Brains:</strong> 20W dissipation maintains \(10^{15}\) synapses: a critical lattice of phase-coupled oscillators integrating sensory Fourier modes into a coherent “world” soliton we call experience.</li>
+              <li><strong>Culture/Tech:</strong> Language, math, internet — ever-higher bandwidth channels for sharing phase information, accelerating soliton formation in abstract space.</li>
+            </ol>
+            <p>
+              Trend: Universe starts with 1 mode —— uniform hot plasma —— and dissipatively splits into \(10^{80}\) weakly coupled modes, but with islands of extreme phase coherence: galaxies, life, you. Complexity is a localized, temporary loan against global gradient dissipation.
+            </p>
+            <div class="glass rounded-xl p-8 my-8 text-center">
+              <p class="text-lg font-medium gradient-text mb-2">Everything is Waves. Hz Only.</p>
+              <p class="!my-0 text-[var(--text-muted)]">Particles are user-interface. Solitons are the backend. Fourier is the compiler.</p>
+            </div>
+          </section>
+
+        </article>
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-[var(--border)] mt-24">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="text-sm text-[var(--text-muted)]">
+          <span class="gradient-text font-medium">Hz Only</span> • Fields First • Particles Never
+        </div>
+        <div class="flex items-center gap-6 text-sm text-[var(--text-muted)]">
+          <span>Solitons</span>
+          <span class="w-1 h-1 rounded-full bg-[var(--text-muted)]"></span>
+          <span>Fourier</span>
+          <span class="w-1 h-1 rounded-full bg-[var(--text-muted)]"></span>
+          <span>Complexity</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // KaTeX auto-render
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '$', right: '$', display: false}
+      ],
+      throwOnError: false
+    });
+
+    // TOC active state on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const tocLinks = document.querySelectorAll('.toc-link');
+    
+    const observerOptions = {
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          tocLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+
+    // Smooth scroll for TOC links
+    tocLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const offset = 100;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+      });
+    });
+  });
+</script>
+
+<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
+</body>
+</html>
