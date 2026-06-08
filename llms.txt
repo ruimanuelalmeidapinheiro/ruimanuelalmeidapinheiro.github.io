@@ -13,7 +13,7 @@ Strategic bio, content engineering, AI workflow management, theoretical physics,
 ## Topics
 - Mainframe DB2 → AI workflow
 - Content engineering & governance
-- Quantum foundations, ν‑framework
+- Quantum foundations, ν-framework
 - Big Five personality (Openness 96, Conscientiousness 93, etc.)
 - IQ: 130 (gifted)
 - Epistemic arXiv pipeline, custom LLM
