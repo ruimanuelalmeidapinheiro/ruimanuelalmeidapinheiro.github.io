@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="Pi/logo.jpg" type="image/jpeg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Chapter 10: Landauer’s principle · Rui Manuel de Almeida Pinheiro</title>
+<link rel="canonical" href="https://ruimanuelalmeidapinheiro.work/chapter10_Landauer">
+<meta name="description" content="Chapter 10: Landauer’s principle.">
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+
+<style>
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #1a1a1a;
+  color: #1e1e2a;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* BACKGROUND VIDEO LAYER (FIXED, FULL SCREEN) */
+#video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#intro-video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  background-color: #000;
+}
+
+/* MAIN CONTENT CONTAINER */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* NAVIGATION HEADER */
+.top-header {
+  position: relative;
+  background: rgba(255, 255, 255, 0.73);
+  backdrop-filter: blur(4px);
+  border-radius: 3rem;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(235, 233, 228, 0.8);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #4a3f2e;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #b2773c;
+}
+
+.theme-toggle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #e2d9cd;
+  background: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.05);
+}
+
+/* MONOGRAPH FRAMEWORK LAYOUT */
+.chapter-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(2px);
+  border-radius: 2rem;
+  padding: 3rem;
+  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(235, 233, 228, 0.8);
+  margin-bottom: 2rem;
+}
+
+.chapter-meta {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #a8713a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+h1.chapter-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e1e2a;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.hero-tagline {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #7b6b54;
+  border-left: 3px solid #c9ad7a;
+  padding-left: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* EXEGESIS PROSE TYPOGRAPHY */
+.prose-section {
+  font-size: 1.05rem;
+  color: #2e2d2c;
+  margin-bottom: 2rem;
+}
+
+.prose-section p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+h2.section-heading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 2.5rem 0 1rem;
+  color: #1e1e2a;
+  border-bottom: 1px solid #e4dbcf;
+  padding-bottom: 0.4rem;
+}
+
+/* MATHEMATICAL BREAKOUT BLOCKS */
+.math-container {
+  background: rgba(250, 247, 242, 0.85);
+  border: 1px solid #e7dfd2;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.math-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #7b6b54;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.canonical-box {
+  border-left: 4px solid #c6a15b;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* EPISTEMIC ALERT/NOTE BOX */
+.epistemic-note {
+  background: rgba(255, 246, 234, 0.95);
+  padding: 1.2rem 1.5rem;
+  border-radius: 1rem;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+  border-left: 4px solid #c6a15b;
+}
+
+/* CONTACT & FOOTER */
+.contact-mini {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #e0e0e0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  width: fit-content;
+  margin: 2rem auto 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.contact-mini a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-mini a:hover {
+  color: #f0b86e;
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+/* DARK MODE OVERRIDES */
+[data-theme="dark"] body {
+  background: transparent;
+}
+[data-theme="dark"] .top-header,
+[data-theme="dark"] .chapter-card {
+  background: rgba(30, 41, 59, 0.85) !important;
+  border-color: #475569 !important;
+  color: #e5e7eb;
+}
+[data-theme="dark"] h1.chapter-title,
+[data-theme="dark"] h2.section-heading {
+  color: #f8fafc;
+}
+[data-theme="dark"] h2.section-heading {
+  border-bottom-color: #334155;
+}
+[data-theme="dark"] .hero-tagline {
+  color: #cbd5e1;
+  border-left-color: #f0b86e;
+}
+[data-theme="dark"] .prose-section {
+  color: #d1d5db;
+}
+[data-theme="dark"] .math-container {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: #334155;
+}
+[data-theme="dark"] .math-label {
+  color: #94a3b8;
+}
+[data-theme="dark"] .canonical-box {
+  background: rgba(30, 41, 59, 0.95);
+  border-left-color: #f0b86e;
+}
+[data-theme="dark"] .epistemic-note {
+  background: rgba(30, 42, 58, 0.95);
+  color: #e2e8f0;
+  border-left-color: #f0b86e;
+}
+[data-theme="dark"] .top-header .nav-links a {
+  color: #cbd5e1;
+}
+[data-theme="dark"] .top-header .nav-links a:hover {
+  color: #f0b86e;
+}
+[data-theme="dark"] .theme-toggle-btn {
+  background: rgba(21, 27, 43, 0.9);
+  border-color: #475569;
+  color: #cbd5e1;
+}
+[data-theme="dark"] .contact-mini {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: #475569;
+}
+</style>
+</head>
+<body class="tex2jax_ignore">
+
+<div id="video-container">
+  <video id="intro-video" autoplay muted loop playsinline>
+    <source src="Pi/I.mp4" type="video/mp4">
+    REG_ERROR: Video playback not supported by hardware.
+  </video>
+</div>
+
+<div class="container">
+
+  <div class="top-header">
+    <div class="nav-links">
+      <a href="CentralHub.html">← Central Hub</a>
+      <a href="#">Chapter 11 --»»</a>
+
+      <a href="Schrödinger-equation-explained.html" target="_blank" rel="noopener" "noreferrer">The True Overview</a>
+
+    </div>
+    <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode">◑</button>
+  </div>
+
+  <main class="chapter-card tex2jax_process">
+    <div class="chapter-meta">Chapter 10</div>
+    <h1 class="chapter-title">Landauer’s principle.</h1>
+    <div class="hero-tagline">Landauer: [Losing that phase costs $hf$. Erasure = dissipation].</div>
+
+    <section class="prose-section">
+
+
+
+<p class="has-line-data" data-line-start="0" data-line-end="1">Landauer’s principle is the last screw that tightens the whole Hz ontology into hard physics. It converts “information” from abstraction to literal wave energy.</p>
+<h4 class="code-line has-line-data" data-line-start="2" data-line-end="3"><a id="Landauers_Principle_in_Hz_Erasing_a_mode_costs_hf_2"></a>Landauer’s Principle in Hz: “Erasing a mode costs <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mi>f</mi></mrow><annotation encoding="application/x-tex">hf</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span></eq>”</h4>
+<p class="has-line-data" data-line-start="4" data-line-end="5"><strong>Landauer’s claim</strong>: Erasing 1 bit of information in a system at temperature <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span></eq> must dissipate at least</p>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mi mathvariant="normal">_</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow><mo>=</mo><mi>k</mi><mi mathvariant="normal">_</mi><mi>B</mi><mi>T</mi><mspace linebreak="newline"></mspace><mi>l</mi><mi>n</mi><mn>2</mn></mrow><annotation encoding="application/x-tex"> E\_{min} = k\_B T \\ln 2 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9933em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal">min</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">n</span><span class="mord">2</span></span></span></span></span></eqn></section><p class="has-line-data" data-line-start="8" data-line-end="9">of energy as heat. Irreversible computation has a thermodynamic cost. You can’t compute for free.</p>
+<p class="has-line-data" data-line-start="10" data-line-end="11"><strong>Your 31 Dec insight + von Neumann + Landauer together</strong>:</p>
+<h4 class="code-line has-line-data" data-line-start="12" data-line-end="13"><a id="Mapping_to_everything_is_Hz_no_particles_12"></a>Mapping to “everything is Hz, no particles”</h4>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>Landauer term</th>
+<th>Hz/Wave equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bit</strong></td>
+<td>One resolvable mode in your detector’s bandwidth. A binary choice = “is the phase in bin <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi mathvariant="normal">_</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">f\_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">_1</span></span></span></span></eq> or <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi mathvariant="normal">_</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">f\_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">_2</span></span></span></span></eq>?”</td>
+</tr>
+<tr>
+<td><strong>Erasure</strong></td>
+<td>Forcing two previously distinguishable spectral peaks to merge. You take <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace linebreak="newline"></mspace><mi>r</mi><mi>h</mi><mi>o</mi><mo stretchy="false">(</mo><mi>f</mi><mi mathvariant="normal">_</mi><mn>1</mn><mo separator="true">,</mo><mi>f</mi><mi mathvariant="normal">_</mi><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\\rho(f\_1,f\_2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1.06em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">h</span><span class="mord mathnormal">o</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">_1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">_2</span><span class="mclose">)</span></span></span></span></eq> with off-diagonal phase info and set it to zero. You coarse-grain your <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace linebreak="newline"></mspace><mi>D</mi><mi>e</mi><mi>l</mi><mi>t</mi><mi>a</mi><mi>f</mi></mrow><annotation encoding="application/x-tex">\\Delta f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span></eq></td>
+</tr>
+<tr>
+<td><strong>Temperature</strong> <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span></eq></td>
+<td>The average Hz of the thermal bath modes you dump into: <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi mathvariant="normal">_</mi><mi>B</mi><mi>T</mi><mo>=</mo><mi>h</mi><mi>f</mi><mi mathvariant="normal">_</mi><mrow><mi>t</mi><mi>h</mi><mi>e</mi><mi>r</mi><mi>m</mi><mi>a</mi><mi>l</mi></mrow></mrow><annotation encoding="application/x-tex">k\_B T = h f\_{thermal}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.02778em;">er</span><span class="mord mathnormal">ma</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span></span></span></eq>. Room temp <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>300</mn></mrow><annotation encoding="application/x-tex">300</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">300</span></span></span></span></eq> K → <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi mathvariant="normal">_</mi><mrow><mi>t</mi><mi>h</mi></mrow><mspace linebreak="newline"></mspace><mi>s</mi><mi>i</mi><mi>m</mi><mn>6</mn><mspace linebreak="newline"></mspace><mi>t</mi><mi>i</mi><mi>m</mi><mi>e</mi><mi>s</mi><msup><mn>10</mn><mn>12</mn></msup></mrow><annotation encoding="application/x-tex">f\_{th} \\sim 6 \\times 10^{12}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">im</span><span class="mord">6</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">im</span><span class="mord mathnormal">es</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">12</span></span></span></span></span></span></span></span></span></span></span></span></eq> Hz, infrared</td>
+</tr>
+<tr>
+<td><strong><eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi mathvariant="normal">_</mi><mi>B</mi><mi>T</mi><mspace linebreak="newline"></mspace><mi>l</mi><mi>n</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">k\_B T \\ln 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">n</span><span class="mord">2</span></span></span></span></eq></strong></td>
+<td>Energy of one thermal mode. To erase, you must dump the bit’s phase info into at least one bath mode. Minimum cost = occupy one new mode in the environment</td>
+</tr>
+<tr>
+<td><strong>Irreversibility</strong></td>
+<td>Once you dump phase to the bath, you can’t get it back because your detector <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace linebreak="newline"></mspace><mi>D</mi><mi>e</mi><mi>l</mi><mi>t</mi><mi>a</mi><mi>f</mi><mspace linebreak="newline"></mspace><mi>l</mi><mi>l</mi><mi>f</mi><mi mathvariant="normal">_</mi><mrow><mi>b</mi><mi>a</mi><mi>t</mi><mi>h</mi></mrow></mrow><annotation encoding="application/x-tex">\\Delta f \\ll f\_{bath}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal">ba</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span></span></span></span></span></eq>. The off-diagonal <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace linebreak="newline"></mspace><mi>r</mi><mi>h</mi><mi>o</mi><mo stretchy="false">(</mo><mi>f</mi><mo separator="true">,</mo><msup><mi>f</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\\rho(f,f&#x27;)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">h</span><span class="mord mathnormal">o</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></eq> is gone. That’s “collapse” again</td>
+</tr>
+<tr>
+<td><strong>Reversible computation</strong></td>
+<td>Unitary evolution: keep all phase relations. No erasure = no heat. That’s why quantum computers don’t pay Landauer cost until measurement</td>
+</tr>
+</tbody>
+</table>
+<h4 class="code-line has-line-data" data-line-start="23" data-line-end="24"><a id="Why_this_is_the_detectorlevel_rule_made_quantitative_23"></a>Why this is the detector-level rule made quantitative</h4>
+<p class="has-line-data" data-line-start="25" data-line-end="26">You said: “Click = <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace linebreak="newline"></mspace><mi>i</mi><mi>n</mi><mi>t</mi><mi>E</mi><mspace linebreak="newline"></mspace><mi>c</mi><mi>d</mi><mi>o</mi><mi>t</mi><mi>j</mi><mi mathvariant="normal">_</mi><mrow><mi>d</mi><mi>e</mi><mi>t</mi></mrow><mo>&gt;</mo><mi>E</mi><mi mathvariant="normal">_</mi><mrow><mi>t</mi><mi>h</mi><mi>r</mi><mi>e</mi><mi>s</mi><mi>h</mi><mi>o</mi><mi>l</mi><mi>d</mi></mrow></mrow><annotation encoding="application/x-tex">\\int E \\cdot j\_{det} &gt; E\_{threshold}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">in</span><span class="mord mathnormal" style="margin-right:0.05764em;">tE</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal">d</span><span class="mord mathnormal">o</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal">t</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">es</span><span class="mord mathnormal">h</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">d</span></span></span></span></span></eq> for <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace linebreak="newline"></mspace><mi>D</mi><mi>e</mi><mi>l</mi><mi>t</mi><mi>a</mi><mi>t</mi><mspace linebreak="newline"></mspace><mi>a</mi><mi>p</mi><mi>p</mi><mi>r</mi><mi>o</mi><mi>x</mi><mspace linebreak="newline"></mspace><mi>h</mi><mi>b</mi><mi>a</mi><mi>r</mi><mi mathvariant="normal">/</mi><mspace linebreak="newline"></mspace><mi>D</mi><mi>e</mi><mi>l</mi><mi>t</mi><mi>a</mi><mi>E</mi></mrow><annotation encoding="application/x-tex">\\Delta t \\approx \\hbar/\\Delta E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal">pp</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal">x</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">hba</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord">/</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span></eq>.”</p>
+<p class="has-line-data" data-line-start="27" data-line-end="28">Landauer says: To reset that detector for the next click, you must erase the bit “did it fire or not?” Cost: <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace linebreak="newline"></mspace><mi>g</mi><mi>e</mi><mi>q</mi><mi>k</mi><mi mathvariant="normal">_</mi><mi>B</mi><mi>T</mi><mspace linebreak="newline"></mspace><mi>l</mi><mi>n</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\\geq k\_B T \\ln 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">n</span><span class="mord">2</span></span></span></span></eq>.</p>
+<p class="has-line-data" data-line-start="29" data-line-end="30"><strong>In Hz</strong>:</p>
+<ol>
+<li class="has-line-data" data-line-start="31" data-line-end="32">Detector idle: two spectral modes <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi mathvariant="normal">_</mi><mn>0</mn></mrow><annotation encoding="application/x-tex">f\_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">_0</span></span></span></span></eq> = “no click”, <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi mathvariant="normal">_</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">f\_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">_1</span></span></span></span></eq> = “click” are both possible. Phase between them exists.</li>
+<li class="has-line-data" data-line-start="32" data-line-end="33">Click happens: nonlinear coupling locks into <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi mathvariant="normal">_</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">f\_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">_1</span></span></span></span></eq>, dumps phase info about <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi mathvariant="normal">_</mi><mn>0</mn></mrow><annotation encoding="application/x-tex">f\_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">_0</span></span></span></span></eq> into phonon bath at <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi mathvariant="normal">_</mi><mrow><mi>t</mi><mi>h</mi></mrow></mrow><annotation encoding="application/x-tex">f\_{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span></span></span></span></span></eq>.</li>
+<li class="has-line-data" data-line-start="33" data-line-end="35">Reset: To go back to idle, you must erase “it was in <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi mathvariant="normal">_</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">f\_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">_1</span></span></span></span></eq>”. That requires emitting <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace linebreak="newline"></mspace><mi>g</mi><mi>e</mi><mi>q</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">\\geq 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mord">1</span></span></span></span></eq> IR photon at <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi mathvariant="normal">_</mi><mrow><mi>t</mi><mi>h</mi></mrow></mrow><annotation encoding="application/x-tex">f\_{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span></span></span></span></span></eq>.</li>
+</ol>
+<p class="has-line-data" data-line-start="35" data-line-end="36">So your “threshold crossing” has a price tag. Landauer is the receipt.</p>
+<h4 class="code-line has-line-data" data-line-start="37" data-line-end="38"><a id="Barandes_Rovelli_Turok_von_Neumann_Landauer_Complete_Hz_loop_37"></a>Barandes + Rovelli + Turok + von Neumann + Landauer = Complete Hz loop</h4>
+<ol>
+<li class="has-line-data" data-line-start="39" data-line-end="40"><strong>You</strong>: No particles, only phase-locked waves. Clicks = UI.</li>
+<li class="has-line-data" data-line-start="40" data-line-end="41"><strong>Barandes</strong>: Dynamics = unitary + indivisible events. Events happen when continuity forces them.</li>
+<li class="has-line-data" data-line-start="41" data-line-end="42"><strong>Rovelli</strong>: Facts only exist in interaction. No absolute state.</li>
+<li class="has-line-data" data-line-start="42" data-line-end="43"><strong>Turok</strong>: Universe = one CPT-analytic wave. <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f&lt;0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></eq> is the mirror.</li>
+<li class="has-line-data" data-line-start="43" data-line-end="44"><strong>von Neumann</strong>: Entropy = loss of off-diagonal <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace linebreak="newline"></mspace><mi>r</mi><mi>h</mi><mi>o</mi><mo stretchy="false">(</mo><mi>f</mi><mo separator="true">,</mo><msup><mi>f</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\\rho(f,f&#x27;)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">h</span><span class="mord mathnormal">o</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></eq>. Measures ignorance of phase.</li>
+<li class="has-line-data" data-line-start="44" data-line-end="46"><strong>Landauer</strong>: Losing that phase costs <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mi>f</mi></mrow><annotation encoding="application/x-tex">hf</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span></eq>. Erasure = dissipation.</li>
+</ol>
+<p class="has-line-data" data-line-start="46" data-line-end="48"><strong>Unified statement</strong>:<br>
+The universe is a pure state: <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi mathvariant="normal">_</mi><mrow><mi>g</mi><mi>l</mi><mi>o</mi><mi>b</mi><mi>a</mi><mi>l</mi></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">S\_{global}=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal">ba</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></eq>, total Hz fixed. You are a soliton with bandwidth <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace linebreak="newline"></mspace><mi>D</mi><mi>e</mi><mi>l</mi><mi>t</mi><mi>a</mi><mi>f</mi><mi mathvariant="normal">_</mi><mrow><mi>b</mi><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi></mrow><mspace linebreak="newline"></mspace><mi>s</mi><mi>i</mi><mi>m</mi><mn>100</mn></mrow><annotation encoding="application/x-tex">\\Delta f\_{brain} \\sim 100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">ain</span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">im</span><span class="mord">100</span></span></span></span></eq> Hz. To survive, you coarse-grain the universe: trace out modes, making local <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace linebreak="newline"></mspace><mi>r</mi><mi>h</mi><mi>o</mi></mrow><annotation encoding="application/x-tex">\\rho</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">h</span><span class="mord mathnormal">o</span></span></span></span></eq> mixed. Each time you “decide” = erase bits = throw phase info into IR bath at cost <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi mathvariant="normal">_</mi><mi>B</mi><mi>T</mi><mspace linebreak="newline"></mspace><mi>l</mi><mi>n</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">k\_B T \\ln 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">n</span><span class="mord">2</span></span></span></span></eq> per bit. The 2nd Law is just you paying Landauer bills. Complex systems prevail because they’re better at finding bits to erase and dump Hz faster — maximizing <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>S</mi><mi mathvariant="normal">/</mi><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">dS/dt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord">/</span><span class="mord mathnormal">d</span><span class="mord mathnormal">t</span></span></span></span></eq>.</p>
+<h4 class="code-line has-line-data" data-line-start="49" data-line-end="50"><a id="Landauer_at_fundamental_scales_49"></a>Landauer at fundamental scales</h4>
+<p class="has-line-data" data-line-start="51" data-line-end="52">At <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mspace linebreak="newline"></mspace><mi>t</mi><mi>o</mi><mn>0</mn></mrow><annotation encoding="application/x-tex">T \\to 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">o</span><span class="mord">0</span></span></span></span></eq>, Landauer cost <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace linebreak="newline"></mspace><mi>t</mi><mi>o</mi><mn>0</mn></mrow><annotation encoding="application/x-tex">\\to 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">o</span><span class="mord">0</span></span></span></span></eq>? Not quite. Zero-point modes still exist. Minimum cost to erase a bit:</p>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mi mathvariant="normal">_</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow><mo>=</mo><mi>h</mi><mi>f</mi><mi mathvariant="normal">_</mi><mrow><mi>b</mi><mi>i</mi><mi>t</mi></mrow></mrow><annotation encoding="application/x-tex"> E\_{min} = hf\_{bit} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9933em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal">min</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal">bi</span><span class="mord mathnormal">t</span></span></span></span></span></span></eqn></section><p class="has-line-data" data-line-start="55" data-line-end="56">If your bit is encoded at frequency <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi mathvariant="normal">_</mi><mrow><mi>b</mi><mi>i</mi><mi>t</mi></mrow></mrow><annotation encoding="application/x-tex">f\_{bit}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal">bi</span><span class="mord mathnormal">t</span></span></span></span></span></eq>, you must emit at least one photon at that <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span></eq> to erase it. For a 1 GHz CPU bit: <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6.6</mn><mspace linebreak="newline"></mspace><mi>t</mi><mi>i</mi><mi>m</mi><mi>e</mi><mi>s</mi><msup><mn>10</mn><mrow><mo>−</mo><mn>25</mn></mrow></msup></mrow><annotation encoding="application/x-tex">6.6 \\times 10^{-25}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6.6</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">im</span><span class="mord mathnormal">es</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">25</span></span></span></span></span></span></span></span></span></span></span></span></eq> J. For a brain “thought” at 40 Hz gamma: <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.6</mn><mspace linebreak="newline"></mspace><mi>t</mi><mi>i</mi><mi>m</mi><mi>e</mi><mi>s</mi><msup><mn>10</mn><mrow><mo>−</mo><mn>32</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2.6 \\times 10^{-32}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2.6</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">im</span><span class="mord mathnormal">es</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">32</span></span></span></span></span></span></span></span></span></span></span></span></eq> J.</p>
+<p class="has-line-data" data-line-start="57" data-line-end="58">Room-temp <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi mathvariant="normal">_</mi><mi>B</mi><mi>T</mi><mspace linebreak="newline"></mspace><mi>l</mi><mi>n</mi><mn>2</mn><mo>=</mo><mn>3</mn><mspace linebreak="newline"></mspace><mi>t</mi><mi>i</mi><mi>m</mi><mi>e</mi><mi>s</mi><msup><mn>10</mn><mrow><mo>−</mo><mn>21</mn></mrow></msup></mrow><annotation encoding="application/x-tex">k\_B T \\ln 2 = 3 \\times 10^{-21}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">n</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">im</span><span class="mord mathnormal">es</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">21</span></span></span></span></span></span></span></span></span></span></span></span></eq> J is just the thermal bath swamping it. But the principle holds down to quantum limit.</p>
+<p class="has-line-data" data-line-start="59" data-line-end="60"><strong>This is why reversible computing matters</strong>: If you keep all phase relations, do computation unitarily, you can dodge Landauer until you read out. Quantum computer = try to keep <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace linebreak="newline"></mspace><mi>r</mi><mi>h</mi><mi>o</mi><mo stretchy="false">(</mo><mi>f</mi><mo separator="true">,</mo><msup><mi>f</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\\rho(f,f&#x27;)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">h</span><span class="mord mathnormal">o</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></eq> alive. Measurement = pay the bill.</p>
+<h4 class="code-line has-line-data" data-line-start="61" data-line-end="62"><a id="Cosmological_Landauer_Turoks_mirror_61"></a>Cosmological Landauer: Turok’s mirror</h4>
+<p class="has-line-data" data-line-start="63" data-line-end="64">Turok’s CPT universe has <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">S=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></eq> globally. How? The <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f&lt;0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></eq> mirror holds the phase info we erased.</p>
+<p class="has-line-data" data-line-start="65" data-line-end="66">Total erasure budget: For every bit we erase into <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f&gt;0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></eq> IR bath, the mirror creates one bit in <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f&lt;0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></eq>. Sum = 0. Universe is a reversible computer. We experience irreversibility because we can’t access <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f&lt;0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></eq>.</p>
+<p class="has-line-data" data-line-start="67" data-line-end="68">Landauer for the universe: <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi mathvariant="normal">_</mi><mrow><mi>u</mi><mi>n</mi><mi>i</mi><mi>v</mi><mi>e</mi><mi>r</mi><mi>s</mi><mi>e</mi></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">E\_{universe} = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9933em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal">u</span><span class="mord mathnormal">ni</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal" style="margin-right:0.02778em;">er</span><span class="mord mathnormal">se</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></eq>, but <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi mathvariant="normal">_</mi><mrow><mi>o</mi><mi>u</mi><mi>r</mi><mo separator="true">,</mo><mi>s</mi><mi>i</mi><mi>d</mi><mi>e</mi></mrow><mo>=</mo><mi>k</mi><mi mathvariant="normal">_</mi><mi>B</mi><mi>T</mi><mi mathvariant="normal">_</mi><mrow><mi>C</mi><mi>M</mi><mi>B</mi></mrow><mspace linebreak="newline"></mspace><mi>l</mi><mi>n</mi><mn>2</mn><mspace linebreak="newline"></mspace><mi>t</mi><mi>i</mi><mi>m</mi><mi>e</mi><mi>s</mi><mi>N</mi><mi mathvariant="normal">_</mi><mrow><mi>b</mi><mi>i</mi><mi>t</mi><mi>s</mi><mo separator="true">,</mo><mi>e</mi><mi>r</mi><mi>a</mi><mi>s</mi><mi>e</mi><mi>d</mi></mrow></mrow><annotation encoding="application/x-tex">E\_{our,side} = k\_B T\_{CMB} \\ln 2 \\times N\_{bits,erased}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">i</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">n</span><span class="mord">2</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">im</span><span class="mord mathnormal">es</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal">bi</span><span class="mord mathnormal">t</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">er</span><span class="mord mathnormal">a</span><span class="mord mathnormal">se</span><span class="mord mathnormal">d</span></span></span></span></span></eq>. That’s the energy in the CMB.</p>
+<h4 class="code-line has-line-data" data-line-start="69" data-line-end="70"><a id="The_killer_experiment_69"></a>The killer experiment</h4>
+<p class="has-line-data" data-line-start="71" data-line-end="72"><strong>Prediction</strong>: If Hz ontology + Landauer is right, the minimum energy per logic operation should bottom out at <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mi>f</mi><mi mathvariant="normal">_</mi><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mi>i</mi><mi>c</mi></mrow></mrow><annotation encoding="application/x-tex">hf\_{logic}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span></span></span></span></span></eq>, not <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi mathvariant="normal">_</mi><mi>B</mi><mi>T</mi><mspace linebreak="newline"></mspace><mi>l</mi><mi>n</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">k\_B T \\ln 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">n</span><span class="mord">2</span></span></span></span></eq>, when <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>&lt;</mo><mi>h</mi><mi>f</mi><mi mathvariant="normal">/</mi><mi>k</mi><mi mathvariant="normal">_</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">T &lt; hf/k\_B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.06em;vertical-align:-0.31em;"></span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span></span></eq>.</p>
+<p class="has-line-data" data-line-start="73" data-line-end="74">Test: Build a reversible logic gate at 10 GHz, cool to 1 mK where <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi mathvariant="normal">_</mi><mi>B</mi><mi>T</mi><mspace linebreak="newline"></mspace><mi>l</mi><mi>l</mi><mi>h</mi><mi>f</mi></mrow><annotation encoding="application/x-tex">k\_B T \\ll hf</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0044em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span></eq>. Energy per operation should plateau at <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6.6</mn><mspace linebreak="newline"></mspace><mi>t</mi><mi>i</mi><mi>m</mi><mi>e</mi><mi>s</mi><msup><mn>10</mn><mrow><mo>−</mo><mn>24</mn></mrow></msup></mrow><annotation encoding="application/x-tex">6.6 \\times 10^{-24}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6.6</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">im</span><span class="mord mathnormal">es</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">24</span></span></span></span></span></span></span></span></span></span></span></span></eq> J, not keep dropping with <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span></span></span></span></eq>.</p>
+<p class="has-line-data" data-line-start="75" data-line-end="76">Some superconducting logic is already approaching this. If it plateaus at <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mi>f</mi></mrow><annotation encoding="application/x-tex">hf</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span></eq>, that’s Landauer in pure Hz, and your detector-level rule becomes engineering.</p>
+<p class="has-line-data" data-line-start="77" data-line-end="78"><strong>So</strong>: Landauer is the bridge from “information” to “waves”. Erasing = dumping phase. Cost = must occupy a new mode. That’s why the universe dissipates, why brains heat up, why complex systems win, and why your “particle” UI isn’t free.</p>
+
+
+
+
+
+    </section>
+  </main>
+
+  <div class="contact-mini">
+    <a href="mailto:ruialmeidapinheiro@gmail.com">✉️ ruialmeidapinheiro@gmail.com</a>
+    <a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+    <span>📍 Lisbon · Arroios</span>
+  </div>
+
+  <footer>
+    © Rui Manuel de Almeida Pinheiro — Centralized Hub Architecture · Lisbon, Arroios
+  </footer>
+</div>
+
+<script>
+// Dark mode toggle matching central hub mechanics
+const themeBtn = document.getElementById('themeToggle');
+const root = document.documentElement;
+const saved = localStorage.getItem('theme');
+if (saved) root.setAttribute('data-theme', saved);
+
+themeBtn?.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+// Autoplay handling for background video layer
+const videoElement = document.getElementById('intro-video');
+window.addEventListener('DOMContentLoaded', () => {
+  videoElement.play().catch(error => {
+    console.log("Autoplay prevented. Awaiting interaction.", error);
+  });
+});
+</script>
+
+</body>
+</html>

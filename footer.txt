@@ -1,0 +1,38 @@
+    </section>
+  </main>
+
+  <div class="contact-mini">
+    <a href="mailto:ruialmeidapinheiro@gmail.com">✉️ ruialmeidapinheiro@gmail.com</a>
+    <a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+    <span>📍 Lisbon · Arroios</span>
+  </div>
+
+  <footer>
+    © Rui Manuel de Almeida Pinheiro — Centralized Hub Architecture · Lisbon, Arroios
+  </footer>
+</div>
+
+<script>
+// Dark mode toggle matching central hub mechanics
+const themeBtn = document.getElementById('themeToggle');
+const root = document.documentElement;
+const saved = localStorage.getItem('theme');
+if (saved) root.setAttribute('data-theme', saved);
+
+themeBtn?.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+// Autoplay handling for background video layer
+const videoElement = document.getElementById('intro-video');
+window.addEventListener('DOMContentLoaded', () => {
+  videoElement.play().catch(error => {
+    console.log("Autoplay prevented. Awaiting interaction.", error);
+  });
+});
+</script>
+
+</body>
+</html>
