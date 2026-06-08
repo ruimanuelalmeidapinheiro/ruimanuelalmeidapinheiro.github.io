@@ -1,0 +1,31 @@
+# Rui Manuel de Almeida Pinheiro
+
+Strategic bio, content engineering, AI workflow management, theoretical physics, personality analysis, and IQ assessment.
+
+## Core pages
+- Home: https://ruimanuelalmeidapinheiro.work/
+- Extended bio: https://ruimanuelalmeidapinheiro.work/bio.html
+- Cognitive profile: https://ruimanuelalmeidapinheiro.work/About.html
+- Personality overview: https://ruimanuelalmeidapinheiro.work/personality-overview.html
+- Substack archive (257+ posts): https://ruimanuelalmeidapinheiro.work/Substack.html
+- Curriculum Vitae sections: https://ruimanuelalmeidapinheiro.work/cv.html and cv-*.html
+
+## Topics
+- Mainframe DB2 → AI workflow
+- Content engineering & governance
+- Quantum foundations, ν‑framework
+- Big Five personality (Openness 96, Conscientiousness 93, etc.)
+- IQ: 130 (gifted)
+- Epistemic arXiv pipeline, custom LLM
+
+## Contact
+Email: ruialmeidapinheiro@gmail.com (Cloudflare protected)
+WhatsApp: +351 962783072
+Location: Lisbon, Arroios, Portugal
+
+## Social / academic
+- Substack: https://ruimanuelalmeidapinheiro.substack.com
+- Medium: https://medium.com/@ruialmeidapinheiro
+- LinkedIn: https://www.linkedin.com/in/rui-manuel-de-almeida-pinheiro-97168b195/
+- GitHub: https://github.com/ruimanuelalmeidapinheiro
+- Google Scholar, arXiv, Zenodo (links on homepage)

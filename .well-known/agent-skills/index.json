@@ -1,4 +1,25 @@
 {
   "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
-  "skills": []
+  "skills": [
+    {
+      "name": "content-engineering-strategy",
+      "description": "Strategic content engineering, AI workflow automation, and structured content governance.",
+      "documentation": "https://ruimanuelalmeidapinheiro.work/"
+    },
+    {
+      "name": "theoretical-physics-framework",
+      "description": "ν‑framework, epistemic arXiv pipeline, and critique of mainstream physics assumptions.",
+      "documentation": "https://ruimanuelalmeidapinheiro.work/CentralHub.html"
+    },
+    {
+      "name": "personality-and-iq-analysis",
+      "description": "Big Five personality profile (Openness 96, Conscientiousness 93, etc.) and IQ assessment (130 gifted).",
+      "documentation": "https://ruimanuelalmeidapinheiro.work/personality-overview.html"
+    },
+    {
+      "name": "substack-archive",
+      "description": "257+ posts on quantum physics, politics, philosophy, and personal essays.",
+      "documentation": "https://ruimanuelalmeidapinheiro.work/Substack.html"
+    }
+  ]
 }
