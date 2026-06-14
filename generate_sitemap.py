@@ -12,6 +12,13 @@ def generate_sitemap():
     # Skip directories that shouldn't be indexed
     excluded_dirs = {'.git', '.well-known', 'ME', 'Pi'}
     
+    # Skip specific files (add any others you want to exclude)
+    excluded_files = {
+        'google8af3e8699578313a.html',  # Google Search Console verification
+        # Add other files to exclude here if needed
+        # 'example.html',
+    }
+    
     # Create the root element with the correct namespace
     urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     
@@ -21,8 +28,8 @@ def generate_sitemap():
         dirnames[:] = [d for d in dirnames if d not in excluded_dirs]
         
         for filename in filenames:
-            # Only include HTML files
-            if filename.lower().endswith('.html'):
+            # Only include HTML files, excluding unwanted specific files
+            if filename.lower().endswith('.html') and filename not in excluded_files:
                 # Calculate relative path
                 rel_dir = os.path.relpath(dirpath, root_dir)
                 if rel_dir == '.':
@@ -48,7 +55,19 @@ def generate_sitemap():
                 loc_el.text = page_url
                 lastmod_el = ET.SubElement(url_el, "lastmod")
                 lastmod_el.text = lastmod
-
+                
+                # Optional: Add changefreq and priority (uncomment if desired)
+                # changefreq_el = ET.SubElement(url_el, "changefreq")
+                # changefreq_el.text = "monthly"
+                # priority_el = ET.SubElement(url_el, "priority")
+                # if rel_path == 'index.html':
+                #     priority_el.text = "1.0"
+                # else:
+                #     priority_el.text = "0.8"
+    
+    # Count URLs for verification
+    url_count = len(urlset.findall('url'))
+    
     # Format the XML into a readable string
     xml_str = ET.tostring(urlset, encoding='utf-8')
     parsed_xml = minidom.parseString(xml_str)
@@ -59,7 +78,9 @@ def generate_sitemap():
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(pretty_xml)
         
-    print(f"Success: {sitemap_filename} updated successfully with current timestamps.")
+    print(f"Success: {sitemap_filename} updated successfully.")
+    print(f"Total URLs included: {url_count}")
+    print(f"Excluded files: {', '.join(excluded_files) if excluded_files else 'none'}")
 
 if __name__ == "__main__":
     generate_sitemap()
