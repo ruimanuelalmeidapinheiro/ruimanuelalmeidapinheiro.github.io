@@ -41,13 +41,89 @@
   };
 </script>
 <script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- End MathJax Configuration for LaTeX Rendering -->
+
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&amp;display=swap" rel="stylesheet"/>
+<!-- End Google Fonts -->
 
-<link href="wave-ontology-styles.css" rel="stylesheet">
+<style>
+
+/* BACKGROUND VIDEO LAYER (FIXED, FULL SCREEN) */
+#video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#intro-video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  background-color: #000;
+}
+
+/* BACKGROUND VIDEO LAYER (FIXED, FULL SCREEN) */
+
+  body { font-family: 'Inter', system-ui, sans-serif; background: #1a1a1a; color: #e5e7eb; line-height: 1.6; padding: 2rem; max-width: 800px; margin: 0 auto; }
+  main { padding: 2rem 0; }
+  h1 { color: #f8fafc; margin-bottom: 2rem; }
+  .chapter-list { list-style: none; padding: 0; }
+  .chapter-item { background: rgba(30, 41, 59, 0.8); border: 1px solid #475569; padding: 1.5rem; margin-bottom: 1rem; border-radius: 1rem; transition: transform 0.2s; }
+  .chapter-item:hover { transform: scale(1.02); }
+  .chapter-item a { text-decoration: none; color: #f0b86e; font-weight: 600; font-size: 1.2rem; }
+  .chapter-desc { color: #cbd5e1; font-size: 0.95rem; margin-top: 0.5rem; }
+
+/* CONTACT & FOOTER */
+.contact-mini {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #e0e0e0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  width: fit-content;
+  margin: 2rem auto 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.contact-mini a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-mini a:hover {
+  color: #f0b86e;
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+</style>
 
 </head>
 <body>
