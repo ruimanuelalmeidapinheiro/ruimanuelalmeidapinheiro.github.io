@@ -1,3 +1,81 @@
+/* ============================================================
+   ADDITIONS FOR CentralHub.html (missing from consolidated file)
+   ============================================================ */
+
+/* Main content area for CentralHub */
+main {
+  padding: 2rem 0;
+}
+
+/* Chapter list styles */
+.chapter-list {
+  list-style: none;
+  padding: 0;
+}
+
+.chapter-item {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid #475569;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  transition: transform 0.2s;
+}
+
+.chapter-item:hover {
+  transform: scale(1.02);
+}
+
+.chapter-item a {
+  text-decoration: none;
+  color: #f0b86e;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.chapter-desc {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+/* CentralHub heading */
+main h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #f8fafc;
+  text-align: center;
+}
+
+/* Fix for body on CentralHub - ensure content has margins */
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Dark mode overrides for chapter items */
+[data-theme="dark"] .chapter-item {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: #334155;
+}
+
+[data-theme="dark"] .chapter-item a {
+  color: #f0b86e;
+}
+
+[data-theme="dark"] .chapter-desc {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] main h1 {
+  color: #e0f0ff;
+}
+
+
+
+
 /* RESET & BASE */
 * {
   margin: 0;
