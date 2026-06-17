@@ -1,79 +1,6 @@
 /* ============================================================
-   ADDITIONS FOR CentralHub.html (missing from consolidated file)
+   GLOBAL RESET, BASE, & FLEXIBLE LAYOUT
    ============================================================ */
-
-/* Main content area for CentralHub */
-main {
-  padding: 2rem 0;
-}
-
-/* Chapter list styles */
-.chapter-list {
-  list-style: none;
-  padding: 0;
-}
-
-.chapter-item {
-  background: rgba(30, 41, 59, 0.8);
-  border: 1px solid #475569;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  border-radius: 1rem;
-  transition: transform 0.2s;
-}
-
-.chapter-item:hover {
-  transform: scale(1.02);
-}
-
-.chapter-item a {
-  text-decoration: none;
-  color: #f0b86e;
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-.chapter-desc {
-  color: #cbd5e1;
-  font-size: 0.95rem;
-  margin-top: 0.5rem;
-}
-
-/* CentralHub heading */
-main h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  color: #f8fafc;
-  text-align: center;
-}
-
-/* ============================================================*/
-
-
-
-/* Dark mode overrides for chapter items */
-[data-theme="dark"] .chapter-item {
-  background: rgba(15, 23, 42, 0.8);
-  border-color: #334155;
-}
-
-[data-theme="dark"] .chapter-item a {
-  color: #f0b86e;
-}
-
-[data-theme="dark"] .chapter-desc {
-  color: #94a3b8;
-}
-
-[data-theme="dark"] main h1 {
-  color: #e0f0ff;
-}
-
-
-
-
-/* RESET & BASE */
 * {
   margin: 0;
   padding: 0;
@@ -92,7 +19,7 @@ body {
   scroll-behavior: smooth;
   max-width: 100%;
   margin: 0;
-  padding: 2rem 5%;  /* FLEXIBLE: uses percentage for responsive side spacing */
+  padding: 2rem 10px;  /* Tiny, flexible 10px fixed margin to the edge of the screen */
 }
 
 /* BACKGROUND VIDEO LAYER (FIXED, FULL SCREEN) */
@@ -120,13 +47,63 @@ body {
   background-color: #000;
 }
 
-/* MAIN CONTENT CONTAINER */
+/* STRUCTURAL CONTENT CONTAINERS (FULL WIDTH) */
 .container {
   position: relative;
   z-index: 1;
+  width: 100%;
   max-width: 100%;
   margin: 0;
   padding: 2rem 0 4rem;
+}
+
+main {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 2rem 0;
+}
+
+/* CENTRAL HUB SPECIFIC HEADINGS & LISTS */
+main h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #f8fafc;
+  text-align: center;
+}
+
+.chapter-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.chapter-item {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid #475569;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  transition: transform 0.2s;
+  width: 100%;
+}
+
+.chapter-item:hover {
+  transform: scale(1.01);
+}
+
+.chapter-item a {
+  text-decoration: none;
+  color: #f0b86e;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.chapter-desc {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
 }
 
 /* NAVIGATION HEADER */
@@ -142,6 +119,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .nav-links {
@@ -188,6 +166,7 @@ body {
   box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(235, 233, 228, 0.8);
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .chapter-meta {
@@ -237,6 +216,16 @@ h2.section-heading {
   padding-bottom: 0.4rem;
 }
 
+/* LISTS INSIDE PROSE SECTION */
+.prose-section ul, 
+.prose-section ol {
+  margin: 1rem 0 1rem 2rem;
+}
+
+.prose-section li {
+  margin-bottom: 0.5rem;
+}
+
 /* MATHEMATICAL BREAKOUT BLOCKS */
 .math-container {
   background: rgba(250, 247, 242, 0.85);
@@ -245,6 +234,7 @@ h2.section-heading {
   padding: 1.5rem;
   margin: 1.5rem 0;
   overflow-x: auto;
+  width: 100%;
 }
 
 .math-label {
@@ -263,12 +253,13 @@ h2.section-heading {
   margin-top: 0.5rem;
 }
 
-/* METRIC CONVERSION GRID COMPONENT (for chapter2) */
+/* METRIC CONVERSION GRID COMPONENT */
 .metric-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   margin: 2rem 0;
+  width: 100%;
 }
 
 .metric-card {
@@ -306,9 +297,10 @@ h2.section-heading {
   margin: 2rem 0;
   font-size: 0.95rem;
   border-left: 4px solid #c6a15b;
+  width: 100%;
 }
 
-/* TABLE STYLES (for chapter6-10 comparison tables) */
+/* TABLE STYLES */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -369,89 +361,117 @@ footer {
   margin-top: 1rem;
 }
 
-/* LISTS INSIDE PROSE SECTION */
-.prose-section ul, 
-.prose-section ol {
-  margin: 1rem 0 1rem 2rem;
-}
-
-.prose-section li {
-  margin-bottom: 0.5rem;
-}
-
-/* DARK MODE OVERRIDES */
+/* ============================================================
+   DARK MODE OVERRIDES
+   ============================================================ */
 [data-theme="dark"] body {
   background: transparent;
 }
+
+[data-theme="dark"] .chapter-item {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: #334155;
+}
+
+[data-theme="dark"] .chapter-item a {
+  color: #f0b86e;
+}
+
+[data-theme="dark"] .chapter-desc {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] main h1 {
+  color: #e0f0ff;
+}
+
 [data-theme="dark"] .top-header,
 [data-theme="dark"] .chapter-card {
   background: rgba(30, 41, 59, 0.85) !important;
   border-color: #475569 !important;
   color: #e5e7eb;
 }
+
 [data-theme="dark"] h1.chapter-title,
 [data-theme="dark"] h2.section-heading {
   color: #f8fafc;
 }
+
 [data-theme="dark"] h2.section-heading {
   border-bottom-color: #334155;
 }
+
 [data-theme="dark"] .hero-tagline {
   color: #cbd5e1;
   border-left-color: #f0b86e;
 }
+
 [data-theme="dark"] .prose-section {
   color: #d1d5db;
 }
+
 [data-theme="dark"] .math-container {
   background: rgba(15, 23, 42, 0.6);
   border-color: #334155;
 }
+
 [data-theme="dark"] .math-label {
   color: #94a3b8;
 }
+
 [data-theme="dark"] .canonical-box {
   background: rgba(30, 41, 59, 0.95);
   border-left-color: #f0b86e;
 }
+
 [data-theme="dark"] .epistemic-note {
   background: rgba(30, 42, 58, 0.95);
   color: #e2e8f0;
   border-left-color: #f0b86e;
 }
+
 [data-theme="dark"] .top-header .nav-links a {
   color: #cbd5e1;
 }
+
 [data-theme="dark"] .top-header .nav-links a:hover {
   color: #f0b86e;
 }
+
 [data-theme="dark"] .theme-toggle-btn {
   background: rgba(21, 27, 43, 0.9);
   border-color: #475569;
   color: #cbd5e1;
 }
+
 [data-theme="dark"] .contact-mini {
   background: rgba(0, 0, 0, 0.8);
   border-color: #475569;
 }
+
 [data-theme="dark"] .metric-card {
   background: rgba(15, 23, 42, 0.5);
   border-color: #334155;
 }
+
 [data-theme="dark"] .metric-card h3 {
   color: #f0b86e;
 }
+
 [data-theme="dark"] .metric-card p {
   color: #cbd5e1;
 }
+
 [data-theme="dark"] table {
   background: rgba(30, 41, 59, 0.95);
 }
+
 [data-theme="dark"] th, 
 [data-theme="dark"] td {
   border-bottom-color: #334155;
   color: #cbd5e1;
 }
+
 [data-theme="dark"] th {
   background: rgba(240, 184, 110, 0.15);
   color: #f0b86e;
