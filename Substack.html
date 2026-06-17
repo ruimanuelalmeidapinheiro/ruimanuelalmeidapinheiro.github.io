@@ -78,16 +78,20 @@
             color: var(--text);
             line-height: 1.55;
         }
-        header {
-            background: var(--card);
-            border-bottom: 1px solid var(--border);
-            padding: 1.5rem 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 200;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-        }
+ 
+header {
+    background: rgba(255, 255, 255, 0.7); /* Replaced var(--card) */
+    backdrop-filter: blur(4px);            /* Added blur effect */
+    -webkit-backdrop-filter: blur(4px);    /* Safari Support */
+    border-bottom: 1px solid rgba(235, 233, 228, 0.8); /* Replaced solid border */
+    padding: 1.5rem 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); /* Replaced default shadow */
+}
+
         header h1 {
             font-size: 1.5rem;
             font-weight: 700;
@@ -109,21 +113,24 @@
             margin: 0 auto;
             padding: 1.5rem 1rem 3rem;
         }
-        .month-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-            margin-bottom: 2rem;
-            padding: 0.9rem 1rem;
-            background: var(--card);
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            position: sticky;
-            top: 85px;
-            z-index: 150;
-            box-shadow: var(--shadow);
-        }
+
+.month-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    padding: 0.9rem 1rem;
+    background: rgba(255, 255, 255, 0.7); /* Replaced var(--card) to match index.html */
+    backdrop-filter: blur(4px);            /* Added blur effect for background video layer */
+    -webkit-backdrop-filter: blur(4px);    /* Safari support */
+    border-radius: 12px;
+    border: 1px solid rgba(235, 233, 228, 0.8); /* Replaced solid border with index.html signature border */
+    position: sticky;
+    top: 85px;
+    z-index: 150;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); /* Unified shadow with top-header style */
+}
         .month-nav a {
             padding: 0.35rem 0.9rem;
             border-radius: 20px;
@@ -158,11 +165,13 @@
             font-weight: 700;
             letter-spacing: -0.3px;
         }
-        .month-header .count {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
+        
+.month-header .count {
+    color: #ffffff; /* Explicitly forced to white */
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
         .post-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -256,14 +265,18 @@
             overflow: hidden;
             flex-grow: 1;
         }
-        footer {
-            text-align: center;
-            padding: 2.5rem 1rem;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border);
-            background: var(--card);
-        }
+
+ footer {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.7); /* Replaced var(--card) */
+    backdrop-filter: blur(4px);            /* Added blur effect */
+    -webkit-backdrop-filter: blur(4px);    /* Safari Support */
+    border-top: 1px solid rgba(235, 233, 228, 0.8); /* Replaced solid border */
+}
+
         @media (max-width: 640px) {
             header h1 { font-size: 1.25rem; }
             .month-nav { top: 78px; padding: 0.7rem; gap: 0.4rem; }
@@ -275,7 +288,7 @@
             .post-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
-<meta content="Substack Archive —Visit Live Site ↗" name="description"/></head>
+<meta content="Substack Archive — Visit Live Site ↗" name="description"/></head>
 <body>
 <header>
 <h1>Publications of Rui Manuel de Almeida Pinheiro on Substack</h1>

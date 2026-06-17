@@ -48,12 +48,6 @@ main h1 {
   text-align: center;
 }
 
-/* Fix for body on CentralHub - ensure content has margins */
-body {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-}
 /* ============================================================*/
 
 
@@ -96,6 +90,9 @@ body {
   color: #1e1e2a;
   line-height: 1.6;
   scroll-behavior: smooth;
+  max-width: 100%;
+  margin: 0;
+  padding: 2rem 5%;  /* FLEXIBLE: uses percentage for responsive side spacing */
 }
 
 /* BACKGROUND VIDEO LAYER (FIXED, FULL SCREEN) */
@@ -127,9 +124,9 @@ body {
 .container {
   position: relative;
   z-index: 1;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 2rem 0 4rem;
 }
 
 /* NAVIGATION HEADER */

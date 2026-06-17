@@ -1,0 +1,378 @@
+/* ===== BACKGROUND VIDEO LAYER ===== */
+#video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#video-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ===== CORE SYSTEM LAYOUT ===== */
+:root {
+    --bg: #eff6ff;
+    --card: #ffffff;
+    --text: #1a1a2e;
+    --text-secondary: #555;
+    --accent: #ff6719;
+    --border: #d7dde6;
+    --hover: #fff8f5;
+    --shadow: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-hover: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-bottom: 1px solid rgba(235, 233, 228, 0.8);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.3px;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+header a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+header a:hover { text-decoration: underline; }
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+    padding-top: 120px;
+}
+
+/* ===== SUBDOMAIN NAVIGATION & HEADERS ===== */
+.subdomain-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    padding: 0.9rem 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 12px;
+    border: 1px solid rgba(235, 233, 228, 0.8);
+    position: sticky;
+    top: 105px;
+    z-index: 150;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.subdomain-nav a {
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    background: var(--bg);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.subdomain-nav a:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.subdomain-section {
+    margin-bottom: 3.5rem;
+}
+
+.subdomain-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding: 0 0.25rem 0.6rem;
+    border-bottom: 2.5px solid var(--accent);
+    color: #f79405;
+}
+
+.subdomain-header h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.subdomain-header .count {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ===== PUBLICATION CONTAINERS & CARDS ===== */
+.publication-container {
+    margin-bottom: 2rem;
+}
+
+.publication-container:last-child {
+    margin-bottom: 0;
+}
+
+.publication-card {
+    display: flex;
+    gap: 28px;
+    min-height: 340px;
+    padding: 28px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(235, 233, 228, 0.2);
+    margin-bottom: 24px;
+    color: var(--text);
+}
+
+.publication-card:last-child {
+    margin-bottom: 0;
+}
+
+.publication-card > img {
+    flex: 0 0 34%;
+    width: 34%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.publication-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.publication-header {
+    margin-bottom: 0px;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    position: static !important;
+    text-align: left !important;
+}
+
+.publication-title {
+    margin: 0;
+    line-height: 1.2;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.publication-title a {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
+    transform-origin: left center;
+}
+
+.publication-title a:hover {
+    color: #ff6719;
+    transform: scale(2.0);
+    text-decoration: none;
+}
+
+.publication-date {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #3b82f6 !important;
+    font-weight: 600;
+}
+
+.publication-body {
+    flex: 1;
+    margin-top: 20px;
+}
+
+.publication-reading {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+.publication-summary {
+    line-height: 1.75;
+    text-align: left;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ===== RECONSTRUCTED METRICS ANALYTICS TABLE ===== */
+.publication-views-table {
+    width: 100%;
+    margin-top: 24px;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Individual Cell Layout */
+.publication-views-table td {
+    padding: 18px 14px;
+    width: 25%;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    vertical-align: top;
+}
+
+.publication-views-table td:last-child {
+    border-right: none;
+}
+
+/* Metric Icon Wrappers (v1.png, v2.png, v3.png, v4.png) */
+ 
+.metric-icon-wrapper {
+    display: block !important;
+    margin-bottom: 12px;
+    height: auto !important; /* Removes vertical height restriction entirely */
+}
+
+.metric-pic {
+    display: block !important;
+    width: 30% !important;   /* Scale factor set to 50% of the container width */
+    max-width: 130px;        /* Safety boundary lock for large resolution screens */
+    height: auto !important;  /* Calculates vertical scaling naturally from your original aspect ratio */
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+/* Label & Numeric Typography */
+.metric-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #a0aec0;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
+
+.metric-value {
+    display: block;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #ffffff;
+}
+
+footer {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-top: 1px solid rgba(235, 233, 228, 0.8);
+}
+
+/* ===== RESPONSIVENESS ===== */
+@media (max-width: 900px) {
+    .subdomain-nav { top: 100px; padding: 0.7rem; gap: 0.4rem; }
+    .subdomain-nav a { font-size: 0.78rem; padding: 0.3rem 0.6rem; }
+    .subdomain-header h2 { font-size: 1.15rem; }
+    
+    .publication-card {
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px;
+    }
+    
+    .publication-card > img {
+        width: 100%;
+        flex: none;
+        max-height: 260px;
+    }
+    
+    .publication-title a:hover {
+        transform: none;
+    }
+    
+    .publication-views-table td {
+        padding: 8px 10px;
+    }
+    
+    .metric-value {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .publication-views-table tbody tr {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .publication-views-table td {
+        width: 100%;
+        border-right: 1px solid rgba(255, 255, 255, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    
+    .publication-views-table td:nth-child(2n) {
+        border-right: none;
+    }
+    
+    .publication-views-table td:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+}

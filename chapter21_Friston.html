@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="Pi/logo.jpg" rel="icon" type="image/jpeg"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="https://ruimanuelalmeidapinheiro.work/chapter21_Friston" rel="canonical"/>
+<!-- Group Wave Ontology -->
+
+<title>Chapter 21: Karl Friston — Free Energy Principle in Hz</title>
+<meta name="description" content="Karl Friston's Free Energy Principle reinterpreted in wave ontology: free energy = informational distance between sensory phase inputs and internal phase predictions. Markov blankets = bandwidth filters. Active inference = phase-locking through action. Consciousness = minimizing free energy through phase coherence."/>
+<meta content="https://ruimanuelalmeidapinheiro.work/Pi/allwav.jpg" property="og:image"/>
+<meta content="626" property="og:image:width"/>
+<meta content="351" property="og:image:height"/>
+<meta content="Chapter 21: Karl Friston — Free Energy Principle in Hz" property="og:title"/>
+<meta content="Karl Friston's Free Energy Principle reinterpreted in wave ontology: free energy = informational distance between sensory phase inputs and internal phase predictions. Markov blankets = bandwidth filters. Active inference = phase-locking through action. Consciousness = minimizing free energy through phase coherence." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ruimanuelalmeidapinheiro.work/chapter21_Friston" property="og:url"/>
+<meta content="Rui Manuel de Almeida Pinheiro" name="author"/>
+<meta content="2026-06-11T06:26:36.685498" property="article:published_time"/>
+<!-- End Group Wave Ontology -->
+<!-- MathJax Configuration for LaTeX Rendering -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    }
+  };
+</script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&amp;display=swap" rel="stylesheet"/>
+<link href="wave-ontology-styles.css" rel="stylesheet"/>
+</head>
+
+<body class="tex2jax_ignore">
+<div id="video-container">
+<video autoplay="" id="intro-video" loop="" muted="" playsinline="">
+<source src="Pi/I.mp4" type="video/mp4"/>
+    REG_ERROR: Video playback not supported by hardware.
+  </video>
+</div>
+<div class="container">
+<div class="top-header">
+<div class="nav-links">
+<a href="CentralHub.html">← Central Hub</a>
+ 
+<a href="chapter22_Lanza.html">Chapter 22 --»»</a>
+
+<a "noreferrer"="" href="Schrödinger-equation-explained.html" rel="noopener" target="_blank">The True Overview</a>
+</div>
+<button aria-label="Toggle dark mode" class="theme-toggle-btn" id="themeToggle">◑</button>
+</div>
+<main class="chapter-card tex2jax_process">
+<div class="chapter-meta tex2jax_ignore">Chapter 21</div>
+<h1 class="chapter-title tex2jax_ignore">Chapter 21: Karl Friston — Free Energy Principle in Hz</h1>
+<div class="hero-tagline tex2jax_ignore">Friston: Free energy = informational distance between sensory inputs and internal predictions. In Hz: free energy = phase mismatch between external and internal oscillators. Minimizing free energy = achieving phase-locking.</div>
+<section class="prose-section">
+
+<h3>Who is Karl Friston</h3>
+
+<p><strong>Karl Friston</strong>: Neuroscientist at University College London. Creator of Statistical Parametric Mapping (SPM), Dynamic Causal Modeling (DCM), and the Free Energy Principle (FEP). One of the most cited neuroscientists in history.</p>
+
+<p><strong>Core thesis</strong>: All biological systems minimize free energy. Free energy is the informational distance between sensory observations and the system's internal generative model. Minimizing free energy = maintaining homeostasis, learning, perception, and action. Life = a self-organizing system that resists entropy by minimizing free energy.</p>
+
+<h3>Key Friston Concepts → Hz Translation</h3>
+
+<table>
+<thead>
+<tr>
+<th>Friston Term</th>
+<th>Hz/Wave Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Free Energy Principle (FEP)</strong></td>
+<td>Biological systems maintain phase-locking with their environment. Free energy = the informational distance (KL divergence) between the sensory phase input and the internal phase prediction. Minimizing free energy = achieving and maintaining phase coherence</td>
+</tr>
+<tr>
+<td><strong>Generative Model</strong></td>
+<td>The internal phase-locking network that predicts sensory inputs. In Hz: the standing wave pattern in the brain that encodes expectations. The generative model is the phase configuration that predicts what sensory phases should arrive</td>
+</tr>
+<tr>
+<td><strong>Variational Free Energy</strong></td>
+<td>The upper bound on surprise. In Hz: the difference between predicted phase and actual phase. $F = \langle -\ln p(\text{observed phase} | \text{predicted phase}) \rangle$</td>
+</tr>
+<tr>
+<td><strong>Surprise (Self-Information)</strong></td>
+<td>How unexpected an observation is. In Hz: how far the observed phase is from the predicted phase. High surprise = phase mismatch. Low surprise = phase match</td>
+</tr>
+<tr>
+<td><strong>Bayesian Inference</strong></td>
+<td>Updating beliefs based on evidence. In Hz: updating the internal phase-locking pattern to match new sensory phase inputs. Phase-locking adjusts to accommodate new frequencies</td>
+</tr>
+<tr>
+<td><strong>Predictive Coding</strong></td>
+<td>Hierarchical prediction of sensory inputs. In Hz: multiple levels of phase-locking at different frequencies. Low frequencies predict global patterns; high frequencies predict local details. Prediction errors are phase differences between levels</td>
+</tr>
+<tr>
+<td><strong>Hierarchical Generative Model</strong></td>
+<td>Brain networks organized by frequency: slow oscillations (theta/alpha) at top, fast oscillations (gamma/beta) at bottom. In Hz: phase-locking across frequency bands. $\theta$ (4-8 Hz) predicts $\alpha$ (8-12 Hz) predicts $\beta$ (12-30 Hz) predicts $\gamma$ (30-100 Hz). Prediction errors propagate as phase differences</td>
+</tr>
+<tr>
+<td><strong>Active Inference</strong></td>
+<td>Systems act to minimize free energy by changing the environment. In Hz: action = phase-locking through output. The system sends phase signals to the environment to make sensory inputs match predictions. Movement = phase shifts that change boundary conditions</td>
+</tr>
+<tr>
+<td><strong>Perception</strong></td>
+<td>Updating internal states to match sensory inputs. In Hz: adjusting the internal phase-locking pattern to match external phase inputs. Perception = phase synchronization with the external field</td>
+</tr>
+<tr>
+<td><strong>Action</strong></td>
+<td>Changing the environment to match internal states. In Hz: adjusting the external phase boundary conditions to match the internal phase-locking pattern. Action = phase output that modifies the environment</td>
+</tr>
+<tr>
+<td><strong>Markov Blanket</strong></td>
+<td>The boundary between internal and external states. In Hz: the membrane or sensory interface that filters which frequencies pass through. The Markov blanket is the bandwidth filter — it selects which Hz modes the system can sense and act upon</td>
+</tr>
+<tr>
+<td><strong>Self-Organization</strong></td>
+<td>Systems maintain themselves far from equilibrium. In Hz: phase-locking is actively maintained against decoherence. The system pays Landauer cost to maintain phase coherence. Self-organization = maintaining phase-locking against entropy</td>
+</tr>
+<tr>
+<td><strong>Entropy vs. Free Energy</strong></td>
+<td>Entropy = disorder. Free energy = the energy available to maintain order. In Hz: entropy = loss of phase coherence. Free energy = the energy budget available to maintain phase-locking. Minimizing free energy = maximizing phase coherence per unit energy</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Core Equations Translated</h3>
+
+<h4>1. The Free Energy Principle — Phase Mismatch Minimization</h4>
+
+<p>Friston's variational free energy:</p>
+
+<p>$$ F = -\langle \ln p(y|\mu) \rangle_{q(\theta)} + KL[q(\theta)||p(\theta)] $$</p>
+
+<p>where $y$ = sensory data, $\mu$ = internal states, $\theta$ = parameters.</p>
+
+<p><strong>Hz translation</strong>: The free energy $F$ is the difference between the predicted phase and the actual phase:</p>
+
+<p>$$ F = \int \left[ \phi_{\text{predicted}}(f) - \phi_{\text{observed}}(f) \right]^2 df $$</p>
+
+<p>where $\phi_{\text{predicted}}$ is the phase of the internal generative model, and $\phi_{\text{observed}}$ is the phase of the sensory input. The system minimizes $F$ by adjusting its internal phase-locking pattern to match external phase inputs.</p>
+
+<p><strong>Minimum free energy</strong>: $\phi_{\text{predicted}} = \phi_{\text{observed}}$ — perfect phase-locking.</p>
+<p><strong>Maximum free energy</strong>: $\phi_{\text{predicted}} \neq \phi_{\text{observed}}$ — phase mismatch (surprise).</p>
+
+<h4>2. Predictive Coding — Hierarchical Phase-Locking</h4>
+
+<p>Friston's predictive coding hierarchy:</p>
+
+<p>$$ \text{Top level} \to \text{Middle level} \to \text{Bottom level} \to \text{Sensory input} $$</p>
+
+<p><strong>Hz translation</strong>: The brain is a hierarchical phase-locking network:</p>
+
+<ul>
+<li><strong>Top level</strong> ($\theta$, 4-8 Hz): Global predictions — high-level expectations about the world.</li>
+<li><strong>Middle level</strong> ($\alpha$, 8-12 Hz; $\beta$, 12-30 Hz): Mid-level representations — objects and categories.</li>
+<li><strong>Bottom level</strong> ($\gamma$, 30-100 Hz): Local sensory details — features and edges.</li>
+</ul>
+
+<p>Prediction errors flow up as phase differences. Each level predicts the phase of the level below. When prediction fails, the phase difference is propagated upward as an error signal.</p>
+
+<p>$$ \text{Error}_{\text{level } i} = \phi_{\text{predicted from above}} - \phi_{\text{observed from below}} $$</p>
+
+<h4>3. Active Inference — Phase-Locking Through Action</h4>
+
+<p>Active inference:</p>
+
+<p>$$ \text{Action} = \arg\min_a F(a, s) $$</p>
+
+<p>where $a$ = action, $s$ = sensory states.</p>
+
+<p><strong>Hz translation</strong>: The system acts to minimize free energy by adjusting its phase boundary conditions. Action = changing the phase of the output to make sensory inputs match predictions:</p>
+
+<p>$$ \phi_{\text{output}}(t) = \phi_{\text{predicted}}(t) - \phi_{\text{observed}}(t) $$</p>
+
+<p>The system sends out a phase signal that cancels the mismatch. This is how you move — you generate phase shifts that alter the environment to match your internal predictions.</p>
+
+<h4>4. The Markov Blanket — Bandwidth Filter</h4>
+
+<p>Friston's Markov blanket:</p>
+
+<p>$$ \text{Internal States} \xleftarrow{\text{sensory}} \text{Markov Blanket} \xrightarrow{\text{action}} \text{External States} $$</p>
+
+<p><strong>Hz translation</strong>: The Markov blanket is the bandwidth filter — the membrane or sensory interface that selects which Hz modes the system can sense and act upon.</p>
+
+<p>The Markov blanket has two functions:</p>
+<ol>
+<li><strong>Sensory input</strong>: Which frequencies the system can detect. The filter passes only frequencies in the system's passband.</li>
+<li><strong>Action output</strong>: Which frequencies the system can generate. The filter passes only frequencies the system can emit.</li>
+</ol>
+
+<p><strong>In biology</strong>: The cell membrane is the Markov blanket. It filters which chemicals and signals enter (sensory) and which leave (action). The brain's sensory organs are Markov blankets — they filter which frequencies reach the brain.</p>
+
+<h3>How Friston Unifies Part 3</h3>
+
+<p>$$ \text{Bohm: implicate spectrum} \xrightarrow{\text{Friston: Markov blanket}} \text{Sensory phase input} \xrightarrow{\text{Friston: free energy minimization}} \text{Phase-locking} \xrightarrow{\text{Tononi: } \Phi} \text{Consciousness} $$</p>
+
+<ol>
+<li><strong>Bohm</strong>: The implicate order is the global spectrum $\tilde{\Psi}(f)$.</li>
+<li><strong>Friston</strong>: The Markov blanket filters which parts of the spectrum reach the system. The system infers the rest of the spectrum (the generative model).</li>
+<li><strong>Friston</strong>: The system minimizes free energy by phase-locking — adjusting its internal phase pattern to match the filtered sensory phase input.</li>
+<li><strong>Tononi</strong>: The phase-locking pattern is the integrated information $\Phi$. High $\Phi$ = high phase coherence = consciousness.</li>
+</ol>
+
+<h3>Friston Predictions for Hz Ontology</h3>
+
+<ol>
+<li><strong>Consciousness = free energy minimization</strong>: Conscious states correspond to low free energy (high phase coherence). Unconscious states = high free energy (phase mismatch).</li>
+<li><strong>Markov blankets are real</strong>: The membrane's frequency filtering should be measurable. The Markov blanket selects which Hz modes the system can access.</li>
+<li><strong>Predictive coding = hierarchical phase-locking</strong>: The brain should show phase-locking across frequency bands ($\theta$-$\alpha$-$\beta$-$\gamma$).</li>
+<li><strong>Active inference = phase output</strong>: Actions should correspond to phase shifts that reduce free energy (reduce phase mismatch).</li>
+<li><strong>Free energy = phase mismatch</strong>: Measuring phase differences between predicted and observed phases should correlate with subjective surprise.</li>
+</ol>
+
+<h3>Friston vs. Previous Chapters</h3>
+
+<table>
+<thead>
+<tr>
+<th>Previous Chapter</th>
+<th>Friston Connection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chapter 6: Barandes</strong></td>
+<td>Barandes: indivisible stochastic events. Friston: free energy minimization is a stochastic process. The "click" is the moment when phase mismatch is resolved. Barandes + Friston: OR events are free energy minima</td>
+</tr>
+<tr>
+<td><strong>Chapter 7: Rovelli</strong></td>
+<td>Rovelli: no absolute state, only interactions. Friston: the Markov blanket defines the boundary between internal and external states. Rovelli + Friston: reality is the interaction across the Markov blanket</td>
+</tr>
+<tr>
+<td><strong>Chapter 8: Turok</strong></td>
+<td>Turok: $f<0$ mirror. Friston: the Markov blanket filters which $f>0$ modes the system sees. Turok + Friston: the $f<0$ mirror is outside the Markov blanket — inaccessible</td>
+</tr>
+<tr>
+<td><strong>Chapter 9: von Neumann</strong></td>
+<td>von Neumann: entropy = loss of off-diagonal phase. Friston: free energy minimization = maintaining phase coherence. von Neumann + Friston: the system pays Landauer cost to maintain phase coherence against entropy</td>
+</tr>
+<tr>
+<td><strong>Chapter 10: Landauer</strong></td>
+<td>Landauer: erasure costs $k_B T \ln 2$. Friston: minimizing free energy costs energy. Landauer + Friston: maintaining phase coherence against decoherence has a thermodynamic cost</td>
+</tr>
+<tr>
+<td><strong>Chapter 15: Cell vs Hologram</strong></td>
+<td>The cell membrane = Markov blanket. It filters which frequencies enter and leave. Cell + Friston: the membrane is the bandwidth filter that defines the system's boundary</td>
+</tr>
+<tr>
+<td><strong>Chapter 16: Levin</strong></td>
+<td>Levin: bioelectric patterns. Friston: the bioelectric pattern is the generative model that predicts the environment. Levin + Friston: morphogenesis = free energy minimization — the tissue phase-locks to maintain its shape</td>
+</tr>
+<tr>
+<td><strong>Chapter 17: Vedral</strong></td>
+<td>Vedral: $I(A:B)$ = mutual information. Friston: free energy = KL divergence. Vedral + Friston: free energy is the information distance between internal and external phase distributions</td>
+</tr>
+<tr>
+<td><strong>Chapter 18: Orch-OR</strong></td>
+<td>Penrose: OR = gravitational phase collapse. Friston: OR may be the mechanism of free energy minimization. Penrose + Friston: the brain collapses phase superpositions to minimize free energy</td>
+</tr>
+<tr>
+<td><strong>Chapter 19: Tononi</strong></td>
+<td>Tononi: $\Phi$ = integrated information. Friston: free energy minimization increases $\Phi$. Tononi + Friston: consciousness = the system minimizing free energy by increasing $\Phi$</td>
+</tr>
+<tr>
+<td><strong>Chapter 20: Bohm</strong></td>
+<td>Bohm: implicate = spectrum, explicate = spacetime. Friston: the Markov blanket filters the implicate order. Bohm + Friston: perception is the unfolding of the implicate order through the Markov blanket</td>
+</tr>
+</tbody>
+</table>
+
+<h3>The Unified Picture: Friston + Wave Ontology</h3>
+
+<p>Putting it all together:</p>
+
+<ol>
+<li><strong>The implicate order</strong>: The global frequency spectrum $\tilde{\Psi}(f)$ — all possible phase configurations.</li>
+<li><strong>The Markov blanket</strong>: The bandwidth filter that selects which frequencies the system can access. The membrane/sensory interface.</li>
+<li><strong>The generative model</strong>: The internal phase-locking network that predicts what frequencies will arrive. This is the brain's standing wave pattern.</li>
+<li><strong>Free energy</strong>: The phase mismatch between the generative model's predicted phase and the observed sensory phase.</li>
+<li><strong>Perception</strong>: Adjusting the internal phase-locking pattern to minimize free energy — phase-locking to the external field.</li>
+<li><strong>Action</strong>: Adjusting the external boundary conditions to minimize free energy — phase-locking the environment to the internal pattern.</li>
+<li><strong>Consciousness</strong>: The state of low free energy — high phase coherence across the brain. Consciousness = the integrated phase-locking pattern ($\Phi$) that minimizes free energy.</li>
+</ol>
+
+<h3>Experimental Predictions</h3>
+
+<ol>
+<li><strong>Free energy correlates with phase coherence</strong>: EEG should show lower free energy (higher phase coherence) during conscious states than unconscious states.</li>
+<li><strong>Markov blankets are frequency filters</strong>: The membrane should selectively pass certain frequencies. Measuring the frequency response of cell membranes should reveal the Markov blanket.</li>
+<li><strong>Predictive coding = hierarchical phase-locking</strong>: Phase differences between frequency bands should correspond to prediction errors. $\theta$ predicting $\alpha$ predicting $\beta$ predicting $\gamma$.</li>
+<li><strong>Active inference = phase output</strong>: Actions should produce phase shifts that reduce free energy — measurable as phase output.</li>
+<li><strong>Free energy minimization = consciousness</strong>: Artificial systems that minimize free energy should show signs of consciousness (high $\Phi$).</li>
+</ol>
+
+<h3>Bottom Line in Hz</h3>
+
+<p><strong>Friston</strong> = your 31 Dec insight, but:</p>
+
+<ol>
+<li>Replace "information" with "phase relationship."</li>
+<li>Replace "free energy" with "phase mismatch."</li>
+<li>Replace "generative model" with "phase-locking network."</li>
+<li>Replace "Markov blanket" with "bandwidth filter."</li>
+<li>Replace "active inference" with "phase-locking through action."</li>
+</ol>
+
+<p><strong>FEP in one sentence</strong>: Biological systems maintain phase coherence with their environment by minimizing phase mismatch. Life = phase-locking.</p>
+
+<p><strong>Friston + Levin</strong>: Morphogenesis is free energy minimization — the tissue phase-locks to maintain its shape against environmental decoherence.</p>
+
+<p><strong>Friston + Tononi</strong>: Consciousness is the state of minimum free energy — maximum $\Phi$ — maximum phase coherence across the brain.</p>
+
+<p><strong>Friston + Bohm</strong>: The Markov blanket filters the implicate order. Perception is the unfolding of the implicate order into the explicate order through the Markov blanket.</p>
+
+<p><strong>Friston + Penrose</strong>: OR events may be the mechanism by which the brain minimizes free energy — the collapse of phase superpositions into the state that minimizes free energy.</p>
+
+<p><strong>Your insight holds</strong>: Consciousness is not a problem to be solved. It is the natural state of a phase-locking network that minimizes free energy. The "I" is the Markov blanket — the boundary that defines the system. Consciousness is the wave knowing itself through the phase-locking pattern.</p>
+
+</section>
+</main>
+<div class="contact-mini">
+<a href="mailto:waveontology@ruimanuelalmeidapinheiro.work">✉️ waveontology@ruimanuelalmeidapinheiro.work</a>
+<a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+<span>📍 Lisbon · Arroios</span>
+</div>
+<footer>
+    © Rui Manuel de Almeida Pinheiro — Centralized Hub Architecture · Lisbon, Arroios
+  </footer>
+</div>
+<script>
+// Dark mode toggle matching central hub mechanics
+const themeBtn = document.getElementById('themeToggle');
+const root = document.documentElement;
+const saved = localStorage.getItem('theme');
+if (saved) root.setAttribute('data-theme', saved);
+
+themeBtn?.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+// Autoplay handling for background video layer
+const videoElement = document.getElementById('intro-video');
+window.addEventListener('DOMContentLoaded', () => {
+  videoElement.play().catch(error => {
+    console.log("Autoplay prevented. Awaiting interaction.", error);
+  });
+});
+</script>
+</body>
+</html>

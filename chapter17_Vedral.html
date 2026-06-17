@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="Pi/logo.jpg" rel="icon" type="image/jpeg"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="https://ruimanuelalmeidapinheiro.work/chapter17_Vedral" rel="canonical"/>
+<!-- Group Wave Ontology -->
+
+<title>Chapter 17: Vlatko Vedral — Information as the Primary Wave</title>
+<meta name="description" content="Vlatko Vedral's quantum information theory reinterpreted in wave ontology: reality as mutual information, entanglement as phase-locking, and mass as frozen information. Information erasure is physical — Landauer cost is the price of collapsing a Hz mode."/>
+<meta content="https://ruimanuelalmeidapinheiro.work/Pi/allwav.jpg" property="og:image"/>
+<meta content="626" property="og:image:width"/>
+<meta content="351" property="og:image:height"/>
+<meta content="Chapter 17: Vlatko Vedral — Information as the Primary Wave" property="og:title"/>
+<meta content="Vlatko Vedral's quantum information theory reinterpreted in wave ontology: reality as mutual information, entanglement as phase-locking, and mass as frozen information. Information erasure is physical — Landauer cost is the price of collapsing a Hz mode." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ruimanuelalmeidapinheiro.work/chapter17_Vedral" property="og:url"/>
+<meta content="Rui Manuel de Almeida Pinheiro" name="author"/>
+<meta content="2026-06-11T06:26:36.685498" property="article:published_time"/>
+<!-- End Group Wave Ontology -->
+<!-- MathJax Configuration for LaTeX Rendering -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    }
+  };
+</script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&amp;display=swap" rel="stylesheet"/>
+<link href="wave-ontology-styles.css" rel="stylesheet"/>
+</head>
+
+<body class="tex2jax_ignore">
+<div id="video-container">
+<video autoplay="" id="intro-video" loop="" muted="" playsinline="">
+<source src="Pi/I.mp4" type="video/mp4"/>
+    REG_ERROR: Video playback not supported by hardware.
+  </video>
+</div>
+<div class="container">
+<div class="top-header">
+<div class="nav-links">
+<a href="CentralHub.html">← Central Hub</a>
+<a href="chapter18_OrchOR.html">Chapter 18 --»»</a>
+
+<a "noreferrer"="" href="Schrödinger-equation-explained.html" rel="noopener" target="_blank">The True Overview</a>
+</div>
+<button aria-label="Toggle dark mode" class="theme-toggle-btn" id="themeToggle">◑</button>
+</div>
+<main class="chapter-card tex2jax_process">
+<div class="chapter-meta tex2jax_ignore">Chapter 17</div>
+<h1 class="chapter-title tex2jax_ignore">Chapter 17: Vlatko Vedral — Information as the Primary Wave</h1>
+<div class="hero-tagline tex2jax_ignore">Vedral: Reality = mutual information. Erasure = collapsing a Hz mode. Mass = frozen information.</div>
+<section class="prose-section">
+
+<h3>Who is Vlatko Vedral</h3>
+
+<p>Professor of Quantum Information Science at Oxford. Author of <em>Decoding Reality</em> and <em>Introduction to Quantum Information Science</em>.</p>
+
+<p><strong>Core thesis</strong>: The universe is made of information, and information is quantum. Physics = information processing.</p>
+
+<h3>Key Vedral Concepts → Hz Translation</h3>
+
+<table>
+<thead>
+<tr>
+<th>Vedral Term</th>
+<th>Hz/Wave Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>"It from bit" + Landauer</strong></td>
+<td>Every bit erased costs $k_B T \ln 2$. Erasure = collapsing a Hz mode. Reality = what survives erasure</td>
+</tr>
+<tr>
+<td><strong>Mutual information = reality</strong></td>
+<td>$I(A:B) = S(A) + S(B) - S(AB)$. High $I$ = phase-locking between modes A and B. Reality = phase-coherent regions</td>
+</tr>
+<tr>
+<td><strong>Entanglement = correlation</strong></td>
+<td>Non-separable wave: $\Psi_{AB} \neq \psi_A \psi_B$. Same as Tononi's $\Phi > 0$. Same as Levin's gap junctions</td>
+</tr>
+<tr>
+<td><strong>Quantum Darwinism</strong></td>
+<td>Only information that can be copied into many Hz modes becomes "classical". Pointer states = stable solitons</td>
+</tr>
+<tr>
+<td><strong>Vacuum = superposition of all bits</strong></td>
+<td>Hz vacuum = sum over all $k,\omega$ modes. $|\Omega\rangle = \sum_{k} c_k |k\rangle$. Matter = excited modes</td>
+</tr>
+<tr>
+<td><strong>Maxwell's demon = biology</strong></td>
+<td>Life uses information to reduce entropy locally. In Hz: cells pump specific $k$-modes to fight decoherence</td>
+</tr>
+<tr>
+<td><strong>Matter = frozen information</strong></td>
+<td>$E=mc^2$ → $m = E/c^2 = \hbar\omega/c^2$. Mass = trapped Hz mode. Stable soliton</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Core Equations Translated</h3>
+
+<h4>1. Landauer Limit = Click Cost</h4>
+
+<p>Vedral: Information erasure is physical. Minimum cost per bit:</p>
+
+<p>$$ E_{Landauer} = k_B T \ln 2 $$</p>
+
+<p><strong>Hz</strong>: Erasing a bit = forcing a Hz mode from superposition to one eigenstate. Same "click" as Penrose OR. Detector bandwidth $B$ requires $E \geq \hbar B$. For $T=300$K: $k_B T/\hbar \sim 10^{13}$ Hz.</p>
+
+<p><strong>Levin connection</strong>: Rewriting bioelectric memory pays $N_{bits} k_B T \ln 2$. 1-head → 2-head planaria ≈ pJ.</p>
+
+<h4>2. Mutual Information = Phase-Locking</h4>
+
+<p>Von Neumann entropy: $S(\rho) = -\text{Tr}[\rho \ln \rho]$</p>
+
+<p>For systems A,B:</p>
+
+<p>$$ I(A:B) = S(A) + S(B) - S(A,B) $$</p>
+
+<p><strong>Hz</strong>: Independent oscillators: $\rho_{AB} = \rho_A \otimes \rho_B$, $I=0$. Phase-locked: $\phi_A = \phi_B + \phi_0$, $I = 2S(A) > 0$.</p>
+
+<p><strong>Tononi</strong>: $I$ = $\varphi$. Vedral: universe maximizes $I$. Tononi: consciousness maximizes $\Phi$. <strong>Levin</strong>: Gap junctions $G_{ij} > 0$ → $I(cell_i : cell_j) > 0$ → tissue "knows" itself.</p>
+
+<h4>3. Everything is Quantum Information</h4>
+
+<p>Margolus-Levitin bound for system with energy $E$:</p>
+
+<p>$$ E \geq \frac{\pi \hbar}{2 \Delta t} N $$</p>
+
+<p>To exist for time $\Delta t$, need energy. For stable particle: $\Delta t \to \infty$ → locked by interaction → $E = mc^2$.</p>
+
+<p><strong>Hz</strong>: Stable particle = Hz soliton with $\omega^2 = k^2c^2 + m^2c^4$. For $k=0$: $\omega = mc^2/\hbar$ → $E=\hbar\omega = mc^2$.</p>
+
+<p><strong>Penrose OR</strong>: OR when superposition of solitons costs $E_G$. Vedral: $E_G = k_B T_{grav} I_{geom}$, $T_{grav} = \hbar/g$.</p>
+
+<h4>4. Quantum Darwinism = Stable Bioelectric Patterns</h4>
+
+<p>Environment copies pointer states:</p>
+
+<p>$$ \rho_S \to \sum_k p_k |\pi_k\rangle\langle\pi_k| \otimes |\mathcal{E}_k\rangle\langle\mathcal{E}_k| $$</p>
+
+<p>$|\pi_k\rangle$ = pointer states. $|\mathcal{E}_k\rangle$ = environment records.</p>
+
+<p><strong>Hz</strong>: Extracellular matrix + water = environment. Only measures certain $k$-modes of $V(x,t)$. Levin's bioelectric code = pointer states. Cancer = environment stops copying organ mode.</p>
+
+<h3>How Vedral Unifies Part 3</h3>
+
+<p>$$ \text{Vedral: } I(A:B) \xrightarrow{G_{ij}>0} \text{Levin: phase-lock} \xrightarrow{\sum I} \text{Tononi: } \Phi \xrightarrow{E_G \sim I^2} \text{Penrose: OR} $$</p>
+
+<ol>
+<li><strong>Vedral</strong>: Reality = network of mutual information. $I > 0$ = things exist for each other.</li>
+<li><strong>Levin</strong>: Bioelectricity raises $I$ between cells. Gap junctions = channel for $I$.</li>
+<li><strong>Tononi</strong>: $\Phi$ = total $I$ that can't be partitioned. Measures unity.</li>
+<li><strong>Orch-OR</strong>: When $I$ between mass distributions → $E_G \propto I^2$ → OR. Picks one reality.</li>
+</ol>
+
+<h3>Vedral Predictions for Hz Ontology</h3>
+
+<ol>
+<li><strong>Landauer for morphogenesis</strong>: Changing anatomy dissipates $E \geq k_B T \ln 2 \times N_{modes}$. Testable heat spikes.</li>
+<li><strong>Entanglement in tissue</strong>: Gap junctions should show quantum discord at 300K. Discord = min quantum mutual info.</li>
+<li><strong>Mass from information</strong>: Erasing $10^{23}$ bits → $E = mc^2$. Primordial BH = mass dumps from cosmic info erasure.</li>
+<li><strong>Consciousness = max $I$</strong>: Brain maximizes mutual info per Landauer cost. Efficiency $I/E$. Meditation = reduce $E$, keep $I$.</li>
+</ol>
+
+<h3>Information Has Mass</h3>
+
+<p>Vedral + Landauer + $E=mc^2$:</p>
+
+<p>$$ m_{bit} = \frac{k_B T \ln 2}{c^2} \approx 10^{-38}\,\text{kg} \text{ at 300K} $$</p>
+
+<p>Delete 1 TB → release $10^{-26}$ kg as heat.</p>
+
+<p><strong>Hz implication</strong>: Bioelectric code $\tilde{V}(k)$ has mass. 2-headed worm weighs more than 1-headed by $\Delta m = \Delta I \times m_{bit}$. ~$10^6$ bits → $10^{-32}$ kg.</p>
+
+<p><strong>Penrose</strong>: $E_G$ in OR = gravitational energy of information differences. OR when info difference ≈ 1 Planck mass.</p>
+
+<h3>Next Derivations</h3>
+
+<ol>
+<li><strong>Margolus-Levitin for bioelectric fields</strong>: Max compute rate = $2E/(\pi\hbar)$. Does Levin's tissue saturate it?</li>
+<li><strong>Quantum discord in gap junctions</strong>: Use Vedral's formulas.</li>
+<li><strong>Landauer cost of Orch-OR</strong>: Show it equals Penrose's $E_G$.</li>
+</ol>
+
+</section>
+</main>
+<div class="contact-mini">
+<a href="mailto:waveontology@ruimanuelalmeidapinheiro.work">✉️ waveontology@ruimanuelalmeidapinheiro.work</a>
+<a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+<span>📍 Lisbon · Arroios</span>
+</div>
+<footer>
+    © Rui Manuel de Almeida Pinheiro — Centralized Hub Architecture · Lisbon, Arroios
+  </footer>
+</div>
+<script>
+// Dark mode toggle matching central hub mechanics
+const themeBtn = document.getElementById('themeToggle');
+const root = document.documentElement;
+const saved = localStorage.getItem('theme');
+if (saved) root.setAttribute('data-theme', saved);
+
+themeBtn?.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+// Autoplay handling for background video layer
+const videoElement = document.getElementById('intro-video');
+window.addEventListener('DOMContentLoaded', () => {
+  videoElement.play().catch(error => {
+    console.log("Autoplay prevented. Awaiting interaction.", error);
+  });
+});
+</script>
+</body>
+</html>
