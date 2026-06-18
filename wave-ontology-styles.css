@@ -19,7 +19,8 @@ body {
   scroll-behavior: smooth;
   max-width: 100%;
   margin: 0;
-  padding: 2rem 10px;  /* Tiny, flexible 10px fixed margin to the edge of the screen */
+  /* Matches index.html padding precisely to ensure aligned side distances */
+  padding: 2rem max(20px, 5%); 
 }
 
 /* BACKGROUND VIDEO LAYER (FIXED, FULL SCREEN) */
@@ -47,24 +48,17 @@ body {
   background-color: #000;
 }
 
-/* STRUCTURAL CONTENT CONTAINERS (FULL WIDTH) */
-.container {
+/* STRUCTURAL CONTENT CONTAINERS (MATCHES INDEX LAYOUT PROPORTIONS) */
+.container, main {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 2rem 0 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
 }
 
-main {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 2rem 0;
-}
-
-/* CENTRAL HUB SPECIFIC HEADINGS & LISTS */
+/* CENTRAL HUB LAYOUT & HEADINGS */
 main h1 {
   font-size: 1.8rem;
   font-weight: 700;
@@ -104,6 +98,25 @@ main h1 {
   color: #cbd5e1;
   font-size: 0.95rem;
   margin-top: 0.5rem;
+}
+
+/* BUTTON COMPONENTS */
+.menu-return-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: rgba(240, 184, 110, 0.15);
+  border: 1px solid #f0b86e;
+  color: #f0b86e;
+  padding: 0.6rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-return-btn:hover {
+  background: rgba(240, 184, 110, 0.3);
+  transform: translateY(-1px);
 }
 
 /* NAVIGATION HEADER */
@@ -216,7 +229,6 @@ h2.section-heading {
   padding-bottom: 0.4rem;
 }
 
-/* LISTS INSIDE PROSE SECTION */
 .prose-section ul, 
 .prose-section ol {
   margin: 1rem 0 1rem 2rem;
