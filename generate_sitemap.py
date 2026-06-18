@@ -2,7 +2,6 @@ from pathlib import Path
 from datetime import datetime, timezone
 import xml.etree.ElementTree as ET
 import secrets
-import json
 
 ROOT = Path(__file__).parent
 
@@ -28,27 +27,30 @@ KEY_FILE = ROOT / "indexnow.key"
 
 
 # -----------------------------------------
-# INDEXNOW KEY
+# INDEXNOW KEY MANAGEMENT & CLEANUP
 # -----------------------------------------
 
-def load_key():
+def load_and_clean_keys():
+    current_key = None
 
     if KEY_FILE.exists():
-        return KEY_FILE.read_text().strip()
+        current_key = KEY_FILE.read_text().strip()
+    else:
+        current_key = secrets.token_hex(16)
+        KEY_FILE.write_text(current_key, encoding="utf-8")
+        (ROOT / f"{current_key}.txt").write_text(current_key, encoding="utf-8")
 
-    key = secrets.token_hex(16)
+    # Clean up any orphaned verification text files in the root
+    for txt_file in ROOT.glob("*.txt"):
+        if txt_file.name in ["robots.txt", "header.txt", "footer.txt", "llms.txt"]:
+            continue
+        if txt_file.name != f"{current_key}.txt":
+            try:
+                txt_file.unlink()
+            except OSError:
+                pass
 
-    KEY_FILE.write_text(
-        key,
-        encoding="utf-8"
-    )
-
-    (ROOT / f"{key}.txt").write_text(
-        key,
-        encoding="utf-8"
-    )
-
-    return key
+    return current_key
 
 
 # -----------------------------------------
@@ -166,53 +168,12 @@ def update_robots():
 
 
 # -----------------------------------------
-# INDEXNOW PACKAGE
-# -----------------------------------------
 
-def write_indexnow(urls, key):
-
-    payload = {
-        "host":
-        "ruimanuelalmeidapinheiro.work",
-
-        "key":
-        key,
-
-        "keyLocation":
-        f"{DOMAIN}/{key}.txt",
-
-        "urlList":
-        urls
-    }
-
-    (
-        ROOT /
-        "indexnow.json"
-    ).write_text(
-
-        json.dumps(
-            payload,
-            indent=2
-        ),
-
-        encoding="utf-8"
-    )
-
-
-# -----------------------------------------
-
-key = load_key()
-
+key = load_and_clean_keys()
 urls = build_sitemap()
-
 update_robots()
-
-write_indexnow(
-    urls,
-    key
-)
 
 print()
 print("Done")
-print("Pages:", len(urls))
-print("IndexNow key:", key)
+print("Pages compiled to sitemap:", len(urls))
+print("Active IndexNow key verified:", key)
