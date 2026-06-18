@@ -1,6 +1,4 @@
-# Allow all bots
 User-agent: *
 Allow: /
 
-# Sitemap location
 Sitemap: https://ruimanuelalmeidapinheiro.work/sitemap.xml

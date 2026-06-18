@@ -1,86 +1,218 @@
-import os
-from datetime import datetime
+from pathlib import Path
+from datetime import datetime, timezone
 import xml.etree.ElementTree as ET
-from xml.dom import minidom
+import secrets
+import json
 
-def generate_sitemap():
-    # Configuration
-    base_url = "https://ruimanuelalmeidapinheiro.work"
-    root_dir = os.getcwd()
-    sitemap_filename = "sitemap.xml"
-    
-    # Skip directories that shouldn't be indexed
-    excluded_dirs = {'.git', '.well-known', 'ME', 'Pi'}
-    
-    # Skip specific files (add any others you want to exclude)
-    excluded_files = {
-        'google8af3e8699578313a.html',  # Google Search Console verification
-        # Add other files to exclude here if needed
-        # 'example.html',
+ROOT = Path(__file__).parent
+
+DOMAIN = "https://ruimanuelalmeidapinheiro.work"
+
+SITEMAP = ROOT / "sitemap.xml"
+ROBOTS = ROOT / "robots.txt"
+
+EXCLUDED_DIRS = {
+    ".git",
+    ".github",
+    ".well-known",
+    "ME",
+    "Pi",
+    "assets"
+}
+
+EXCLUDED_FILES = {
+    "404.html"
+}
+
+KEY_FILE = ROOT / "indexnow.key"
+
+
+# -----------------------------------------
+# INDEXNOW KEY
+# -----------------------------------------
+
+def load_key():
+
+    if KEY_FILE.exists():
+        return KEY_FILE.read_text().strip()
+
+    key = secrets.token_hex(16)
+
+    KEY_FILE.write_text(
+        key,
+        encoding="utf-8"
+    )
+
+    (ROOT / f"{key}.txt").write_text(
+        key,
+        encoding="utf-8"
+    )
+
+    return key
+
+
+# -----------------------------------------
+# URL BUILD
+# -----------------------------------------
+
+def canonical(page):
+
+    rel = page.relative_to(ROOT).as_posix()
+
+    if rel.lower() == "index.html":
+        return DOMAIN
+
+    return (
+        DOMAIN
+        + "/"
+        + rel[:-5]
+    )
+
+
+# -----------------------------------------
+# PAGE DISCOVERY
+# -----------------------------------------
+
+def pages():
+
+    out = []
+
+    for f in ROOT.rglob("*.html"):
+
+        if any(
+            p in EXCLUDED_DIRS
+            for p in f.parts
+        ):
+            continue
+
+        if f.name in EXCLUDED_FILES:
+            continue
+
+        out.append(f)
+
+    return sorted(out)
+
+
+# -----------------------------------------
+# SITEMAP
+# -----------------------------------------
+
+def build_sitemap():
+
+    urls = []
+
+    root = ET.Element(
+        "urlset",
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    )
+
+    for page in pages():
+
+        url = canonical(page)
+
+        urls.append(url)
+
+        item = ET.SubElement(
+            root,
+            "url"
+        )
+
+        ET.SubElement(
+            item,
+            "loc"
+        ).text = url
+
+        ts = datetime.fromtimestamp(
+            page.stat().st_mtime,
+            timezone.utc
+        )
+
+        ET.SubElement(
+            item,
+            "lastmod"
+        ).text = ts.strftime(
+            "%Y-%m-%d"
+        )
+
+    tree = ET.ElementTree(root)
+
+    ET.indent(tree)
+
+    tree.write(
+        SITEMAP,
+        encoding="utf-8",
+        xml_declaration=True
+    )
+
+    return urls
+
+
+# -----------------------------------------
+# ROBOTS
+# -----------------------------------------
+
+def update_robots():
+
+    content = (
+        "User-agent: *\n"
+        "Allow: /\n\n"
+        f"Sitemap: {DOMAIN}/sitemap.xml\n"
+    )
+
+    ROBOTS.write_text(
+        content,
+        encoding="utf-8"
+    )
+
+
+# -----------------------------------------
+# INDEXNOW PACKAGE
+# -----------------------------------------
+
+def write_indexnow(urls, key):
+
+    payload = {
+        "host":
+        "ruimanuelalmeidapinheiro.work",
+
+        "key":
+        key,
+
+        "keyLocation":
+        f"{DOMAIN}/{key}.txt",
+
+        "urlList":
+        urls
     }
-    
-    # Create the root element with the correct namespace
-    urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
-    
-    # Walk through the directory
-    for dirpath, dirnames, filenames in os.walk(root_dir):
-        # Modify dirnames in-place to skip excluded directories
-        dirnames[:] = [d for d in dirnames if d not in excluded_dirs]
-        
-        for filename in filenames:
-            # Only include HTML files, excluding unwanted specific files
-            if filename.lower().endswith('.html') and filename not in excluded_files:
-                # Calculate relative path
-                rel_dir = os.path.relpath(dirpath, root_dir)
-                if rel_dir == '.':
-                    rel_path = filename
-                else:
-                    rel_path = os.path.join(rel_dir, filename).replace('\\', '/')
-                
-                # Canonical URL mapping
-                # If it's index.html, map it to the bare directory/root domain
-                if rel_path == 'index.html':
-                    page_url = base_url + "/"
-                else:
-                    page_url = f"{base_url}/{rel_path}"
-                
-                # Get last modification time
-                full_path = os.path.join(dirpath, filename)
-                mtime = os.path.getmtime(full_path)
-                lastmod = datetime.fromtimestamp(mtime).strftime('%Y-%m-%d')
-                
-                # Build XML structure
-                url_el = ET.SubElement(urlset, "url")
-                loc_el = ET.SubElement(url_el, "loc")
-                loc_el.text = page_url
-                lastmod_el = ET.SubElement(url_el, "lastmod")
-                lastmod_el.text = lastmod
-                
-                # Optional: Add changefreq and priority (uncomment if desired)
-                # changefreq_el = ET.SubElement(url_el, "changefreq")
-                # changefreq_el.text = "monthly"
-                # priority_el = ET.SubElement(url_el, "priority")
-                # if rel_path == 'index.html':
-                #     priority_el.text = "1.0"
-                # else:
-                #     priority_el.text = "0.8"
-    
-    # Count URLs for verification
-    url_count = len(urlset.findall('url'))
-    
-    # Format the XML into a readable string
-    xml_str = ET.tostring(urlset, encoding='utf-8')
-    parsed_xml = minidom.parseString(xml_str)
-    pretty_xml = parsed_xml.toprettyxml(indent="  ", encoding="UTF-8").decode("utf-8")
-    
-    # Write to sitemap.xml
-    output_path = os.path.join(root_dir, sitemap_filename)
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write(pretty_xml)
-        
-    print(f"Success: {sitemap_filename} updated successfully.")
-    print(f"Total URLs included: {url_count}")
-    print(f"Excluded files: {', '.join(excluded_files) if excluded_files else 'none'}")
 
-if __name__ == "__main__":
-    generate_sitemap()
+    (
+        ROOT /
+        "indexnow.json"
+    ).write_text(
+
+        json.dumps(
+            payload,
+            indent=2
+        ),
+
+        encoding="utf-8"
+    )
+
+
+# -----------------------------------------
+
+key = load_key()
+
+urls = build_sitemap()
+
+update_robots()
+
+write_indexnow(
+    urls,
+    key
+)
+
+print()
+print("Done")
+print("Pages:", len(urls))
+print("IndexNow key:", key)
