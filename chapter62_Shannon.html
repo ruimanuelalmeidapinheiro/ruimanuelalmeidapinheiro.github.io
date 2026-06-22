@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="Pi/logo.jpg" rel="icon" type="image/jpeg"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="https://ruimanuelalmeidapinheiro.work/chapter62_Shannon" rel="canonical"/>
+<!-- Group Wave Ontology -->
+
+<title>Chapter 62: Claude Shannon — Information Theory as Phase Dynamics</title>
+<meta name="description" content="Claude Shannon's information theory reinterpreted in Wave Ontology: Information entropy = phase entropy. Mutual information = phase correlation. Channel capacity = maximum phase transmission rate. Noise = phase decoherence. Source coding = phase compression. Channel coding = phase-locking. The cognitive limit = Shannon capacity of the brain."/>
+<meta content="https://ruimanuelalmeidapinheiro.work/Pi/allwav.jpg" property="og:image"/>
+<meta content="626" property="og:image:width"/>
+<meta content="351" property="og:image:height"/>
+<meta content="Chapter 62: Claude Shannon — Information Theory as Phase Dynamics" property="og:title"/>
+<meta content="Claude Shannon's information theory reinterpreted in Wave Ontology: Information entropy = phase entropy. Mutual information = phase correlation. Channel capacity = maximum phase transmission rate. Noise = phase decoherence. Source coding = phase compression. Channel coding = phase-locking. The cognitive limit = Shannon capacity of the brain." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ruimanuelalmeidapinheiro.work/chapter62_Shannon" property="og:url"/>
+<meta content="Rui Manuel de Almeida Pinheiro" name="author"/>
+<meta content="2026-06-22T00:00:00.000000" property="article:published_time"/>
+<!-- End Group Wave Ontology -->
+<!-- MathJax Configuration for LaTeX Rendering -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    }
+  };
+</script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&amp;display=swap" rel="stylesheet"/>
+<link href="wave-ontology-styles.css" rel="stylesheet"/>
+</head>
+
+<body class="tex2jax_ignore">
+<div id="video-container">
+<video autoplay="" id="intro-video" loop="" muted="" playsinline="">
+<source src="Pi/I.mp4" type="video/mp4"/>
+    REG_ERROR: Video playback not supported by hardware.
+  </video>
+</div>
+<div class="container">
+<div class="top-header">
+<div class="nav-links">
+<a href="CentralHub.html">← Central Hub</a>
+<a href="#">Chapter 63 --»»</a>
+<a "noreferrer"="" href="Schrödinger-equation-explained.html" rel="noopener" target="_blank">The True Overview</a>
+</div>
+<button aria-label="Toggle dark mode" class="theme-toggle-btn" id="themeToggle">◑</button>
+</div>
+<main class="chapter-card tex2jax_process">
+<div class="chapter-meta tex2jax_ignore">Chapter 62</div>
+<h1 class="chapter-title tex2jax_ignore">Chapter 62: Claude Shannon — Information Theory as Phase Dynamics</h1>
+<div class="hero-tagline tex2jax_ignore">Shannon: Information is the reduction of uncertainty. Entropy is the measure of information. In Hz: Information entropy = phase entropy. Mutual information = phase correlation. Channel capacity = maximum phase transmission rate. Noise = phase decoherence. Source coding = phase compression. Channel coding = phase-locking. The cognitive limit = Shannon capacity of the brain. Information theory is the mathematics of phase relationships.</div>
+<section class="prose-section">
+
+<h3>Who is Claude Shannon</h3>
+
+<p><strong>Claude Elwood Shannon</strong> (1916–2001): American mathematician, electrical engineer, and cryptographer. The father of information theory. Author of <em>A Mathematical Theory of Communication</em> (1948) — one of the most influential scientific papers of the 20th century. Shannon's work laid the foundation for digital communication, data compression, error correction, cryptography, and the entire field of information science. He established that information is a measurable quantity — entropy — and that communication has fundamental limits: channel capacity, source coding, and noise.</p>
+
+<p><strong>Core thesis</strong>: Information is a quantifiable physical quantity. The entropy of a source is the average number of bits needed to encode its messages. The channel capacity is the maximum rate at which information can be transmitted reliably. Noise imposes fundamental limits on communication. Information theory is not just about communication — it is the mathematics of uncertainty, correlation, and information flow. Information is physical — it has a thermodynamic cost (Landauer), a quantum nature (Vedral), and a phase structure.</p>
+
+<h3>Key Shannon Concepts → Hz Translation</h3>
+
+<table>
+<thead>
+<tr>
+<th>Shannon Term</th>
+<th>Hz/Wave Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Information Entropy</strong></td>
+<td>The average uncertainty of a source. In Hz: phase entropy — the uncertainty in the phase distribution. $H = -\sum p_i \log p_i$ becomes $S_{\text{phase}} = -\int P(f) \log P(f) df$. Entropy = phase uncertainty</td>
+</tr>
+<tr>
+<td><strong>Mutual Information</strong></td>
+<td>The reduction of uncertainty about one variable given knowledge of another. In Hz: phase correlation — the information shared between two phase-locking networks. $I(X;Y) = H(X) + H(Y) - H(X,Y)$. Mutual information = phase-locking. Vedral's $I$ is Shannon's $I$</td>
+</tr>
+<tr>
+<td><strong>Channel Capacity</strong></td>
+<td>The maximum rate of reliable information transmission. In Hz: the maximum rate of phase information transmission through a channel with bandwidth $\Delta f$ and signal-to-noise ratio. $C = B \log_2(1 + S/N)$. Phase capacity = $\Delta f \log_2(1 + \Phi/\Phi_{\text{noise}})$</td>
+</tr>
+<tr>
+<td><strong>Noise</strong></td>
+<td>Random perturbations that corrupt information. In Hz: phase decoherence — random phase fluctuations that destroy phase-locking. Noise = $\Delta\phi_{\text{random}}$. The noise power is the decoherence rate</td>
+</tr>
+<tr>
+<td><strong>Source Coding</strong></td>
+<td>Compressing information to its essential entropy. In Hz: phase compression — the reduction of phase information to its minimum representation. The sensory interface = source coding — it compresses high-frequency phase information into macroscopic perceptions</td>
+</tr>
+<tr>
+<td><strong>Channel Coding</strong></td>
+<td>Adding redundancy to overcome noise. In Hz: phase redundancy — encoding the same phase information in multiple modes. Error correction = phase redundancy. Quantum error correction is Shannon coding in phase space</td>
+</tr>
+<tr>
+<td><strong>Redundancy</strong></td>
+<td>Information that is repeated or predicted. In Hz: phase redundancy — repeated phase patterns that protect against decoherence. Redundancy = $\Phi_{\text{redundant}}$</td>
+</tr>
+<tr>
+<td><strong>Data Compression</strong></td>
+<td>Reducing the number of bits while preserving information. In Hz: phase compression — representing the phase pattern with fewer modes. The brain compresses phase information; sensory perception is compressed phase</td>
+</tr>
+<tr>
+<td><strong>Error Correction</strong></td>
+<td>Recovering information from noise. In Hz: phase restoration — reconstructing the original phase pattern from decohered copies. Error correction = phase synchronization</td>
+</tr>
+<tr>
+<td><strong>Signal-to-Noise Ratio</strong></td>
+<td>The ratio of signal power to noise power. In Hz: $S/N = \Phi/\Phi_{\text{noise}}$ — the ratio of phase coherence to phase decoherence. Higher SNR = better phase-locking</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Core Equations Translated</h3>
+
+<h4>1. Information Entropy — Phase Entropy</h4>
+
+<p>Shannon: Entropy is the measure of information.</p>
+
+<p><strong>Hz translation</strong>: Entropy is the measure of phase uncertainty:</p>
+
+<p>$$ H = -\sum_{i=1}^{N} p_i \log_2 p_i $$</p>
+
+<p>For a continuous phase distribution $P(\phi)$:</p>
+
+<p>$$ S_{\text{phase}} = -\int P(\phi) \log_2 P(\phi) \, d\phi $$</p>
+
+<p>In frequency space:</p>
+
+<p>$$ S_{\text{phase}} = -\int_{-\infty}^{\infty} P(f) \log_2 P(f) \, df $$</p>
+
+<p>where $P(f) = |\tilde{\Psi}(f)|^2$ is the power spectrum. The phase entropy measures how spread out the phase information is across the spectrum. A highly phase-locked system has low entropy; a decoherent system has high entropy.</p>
+
+<p><strong>Hz Unit</strong>: Phase entropy is measured in bits. Maximum entropy = uniform phase distribution. Minimum entropy = single phase state ($\delta$-function).</p>
+
+<h4>2. Mutual Information — Phase Correlation</h4>
+
+<p>Shannon: Mutual information measures shared information.</p>
+
+<p><strong>Hz translation</strong>: Mutual information measures phase correlation:</p>
+
+<p>$$ I(X;Y) = H(X) + H(Y) - H(X,Y) $$</p>
+
+<p>In Hz terms, for two phase-locking networks A and B:</p>
+
+<p>$$ I(\phi_A; \phi_B) = S(\phi_A) + S(\phi_B) - S(\phi_A, \phi_B) $$</p>
+
+<p>where $S(\phi_A, \phi_B)$ is the joint phase entropy. Mutual information = phase-locking. If the two networks are independent, $I = 0$. If they are perfectly phase-locked, $I = S(\phi_A) = S(\phi_B)$.</p>
+
+<p><strong>Hz Unit</strong>: Mutual information is measured in bits. It quantifies the degree of phase-locking between two systems.</p>
+
+<h4>3. Channel Capacity — Maximum Phase Transmission Rate</h4>
+
+<p>Shannon: The channel capacity is the maximum reliable transmission rate.</p>
+
+<p><strong>Hz translation</strong>: The phase channel capacity is:</p>
+
+<p>$$ C = B \log_2 \left(1 + \frac{S}{N}\right) $$</p>
+
+<p>In Hz terms:</p>
+
+<p>$$ C_{\text{phase}} = \Delta f \log_2 \left(1 + \frac{\Phi}{\Phi_{\text{noise}}}\right) $$</p>
+
+<p>where $\Delta f$ is the channel bandwidth (the range of frequencies the receiver can process), $\Phi$ is the phase coherence of the signal, and $\Phi_{\text{noise}}$ is the phase coherence of the noise (decoherence). The phase capacity is the maximum rate of phase information transmission in bits per second.</p>
+
+<p><strong>Hz Unit</strong>: Phase capacity is measured in bits per second. Higher bandwidth and higher signal-to-noise ratio increase capacity.</p>
+
+<h4>4. Noise — Phase Decoherence</h4>
+
+<p>Shannon: Noise corrupts information.</p>
+
+<p><strong>Hz translation</strong>: Noise = phase decoherence:</p>
+
+<p>$$ \text{Noise} = \Delta\phi_{\text{random}} $$</p>
+
+<p>The noise power is the rate of phase decoherence. The signal-to-noise ratio is:</p>
+
+<p>$$ \frac{S}{N} = \frac{\Phi}{\Phi_{\text{noise}}} = \frac{\text{phase coherence}}{\text{decoherence rate}} $$</p>
+
+<p>Higher noise = faster decoherence = lower SNR = lower phase capacity.</p>
+
+<p><strong>Hz Unit</strong>: Noise is measured in phase variance $(\Delta\phi)^2$.</p>
+
+<h4>5. Source Coding — Phase Compression</h4>
+
+<p>Shannon: Source coding compresses information to its entropy.</p>
+
+<p><strong>Hz translation</strong>: Phase compression = representing the phase pattern with the minimum number of modes:</p>
+
+<p>$$ \text{Compressed Phase} = \arg\min_{P'(f)} S_{\text{phase}} \quad \text{subject to} \quad D(P(f)||P'(f)) \leq \epsilon $$</p>
+
+<p>where $D$ is the KL divergence. The sensory interface is a phase compressor — it reduces the high-dimensional phase spectrum to a low-dimensional macroscopic perception.</p>
+
+<p><strong>Hz Unit</strong>: Compression is measured in bits saved.</p>
+
+<h4>6. Channel Coding — Phase-Locking with Redundancy</h4>
+
+<p>Shannon: Channel coding adds redundancy to overcome noise.</p>
+
+<p><strong>Hz translation</strong>: Phase coding = adding phase redundancy:</p>
+
+<p>$$ \phi_{\text{encoded}} = \phi_{\text{source}} \otimes \phi_{\text{redundant}} $$</p>
+
+<p>The same phase information is encoded in multiple modes. If one mode decoheres, the others still preserve the phase. Error correction = phase synchronization.</p>
+
+<p><strong>Hz Unit</strong>: Redundancy is measured in bits of duplicate phase information.</p>
+
+<h4>7. KL Divergence — Phase Distance</h4>
+
+<p>Shannon: KL divergence measures the distance between distributions.</p>
+
+<p><strong>Hz translation</strong>: KL divergence = the distance between phase distributions:</p>
+
+<p>$$ D_{KL}(P(f)||Q(f)) = \int_{-\infty}^{\infty} P(f) \log_2 \frac{P(f)}{Q(f)} \, df $$</p>
+
+<p>This measures how much phase information is lost when approximating $P(f)$ with $Q(f)$. Friston's free energy is a KL divergence. Predictive coding is minimizing phase KL divergence.</p>
+
+<p><strong>Hz Unit</strong>: KL divergence is measured in bits.</p>
+
+<h4>8. Entropy Rate — Phase Information Flow</h4>
+
+<p>Shannon: The entropy rate is the rate of information production.</p>
+
+<p><strong>Hz translation</strong>: The phase entropy rate is the rate at which new phase information is created:</p>
+
+<p>$$ H_{\text{rate}} = \lim_{n \to \infty} \frac{1}{n} H(\phi_1, \phi_2, \ldots, \phi_n) $$</p>
+
+<p>This is the rate of phase decoherence — the rate at which new phase configurations are created by OR events. The entropy rate = $\frac{dS}{dt}$.</p>
+
+<p><strong>Hz Unit</strong>: Entropy rate is measured in bits per second.</p>
+
+<h3>How Shannon Unifies Part 3</h3>
+
+<p>$$ \text{Core Principle: Hz Field} \xrightarrow{\text{Shannon: Phase Entropy}} \xrightarrow{\text{Mutual Information = Phase Correlation}} \xrightarrow{\text{Channel Capacity = Phase Bandwidth}} \xrightarrow{\text{Source Coding = Phase Compression}} \xrightarrow{\text{Channel Coding = Phase-Locking}} $$</p>
+
+<ol>
+<li><strong>Core Principle</strong>: Reality = continuous Hz field $\tilde{\Psi}(f)$.</li>
+<li><strong>Shannon</strong>: Information entropy = phase entropy — the uncertainty of the phase distribution.</li>
+<li><strong>Mutual Information</strong>: Mutual information = phase correlation — the shared phase information between networks.</li>
+<li><strong>Channel Capacity</strong>: The channel capacity = the maximum phase transmission rate — limited by bandwidth and noise (decoherence).</li>
+<li><strong>Source Coding</strong>: Source coding = phase compression — the sensory interface compresses phase information to survive.</li>
+<li><strong>Channel Coding</strong>: Channel coding = phase-locking — adding redundancy to overcome decoherence.</li>
+</ol>
+
+<h3>Shannon's Predictions for Hz Ontology</h3>
+
+<ol>
+<li><strong>Information entropy = phase entropy</strong>: The entropy of any system should equal the phase entropy of its Hz spectrum. Test: measure the phase entropy of a system and compare to its Shannon entropy — should match.</li>
+<li><strong>Mutual information = phase correlation</strong>: The mutual information between two systems should equal their phase correlation. Test: measure $I(X;Y)$ and compare to $\rho(\phi_X, \phi_Y)$ — should match.</li>
+<li><strong>Channel capacity = phase bandwidth</strong>: The communication capacity of any system is limited by its phase bandwidth and signal-to-noise ratio. Test: measure the phase capacity of neural, bioelectric, and quantum channels — should match the Shannon formula.</li>
+<li><strong>Noise = phase decoherence</strong>: Noise should correspond to phase decoherence. Test: show that phase decoherence increases with noise power.</li>
+<li><strong>Source coding = phase compression</strong>: Biological perception should be describable as phase compression. Test: show that the brain compresses phase information in predictable ways.</li>
+<li><strong>Channel coding = phase redundancy</strong>: Biological and quantum systems should use phase redundancy for error correction. Test: show that redundant phase information improves reliability.</li>
+</ol>
+
+<h3>Shannon vs. Previous Chapters</h3>
+
+<table>
+<thead>
+<tr>
+<th>Previous Chapter</th>
+<th>Shannon Connection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chapter 30: Core Principle</strong></td>
+<td>Shannon adds the information-theoretic dimension — the Hz field has phase entropy, mutual information, and channel capacity. The core principle is the substrate; Shannon is the information measure</td>
+</tr>
+<tr>
+<td><strong>Chapter 9: Von Neumann</strong></td>
+<td>Von Neumann: entropy = loss of phase. Shannon: entropy = information. Von Neumann + Shannon: Shannon entropy is the diagonal part of von Neumann entropy. The off-diagonal phase is the "quantum" part</td>
+</tr>
+<tr>
+<td><strong>Chapter 10: Landauer</strong></td>
+<td>Landauer: erasure costs $k_B T \ln 2$. Shannon: entropy is measured in bits. Landauer + Shannon: each bit of Shannon entropy corresponds to $k_B T \ln 2$ of thermodynamic energy. The cost of erasing a bit of phase information is Landauer's bound</td>
+</tr>
+<tr>
+<td><strong>Chapter 17: Vedral</strong></td>
+<td>Vedral: $I(A:B)$ = mutual information. Shannon: $I(X;Y)$ = mutual information. Vedral + Shannon: mutual information is the same quantity — it measures phase correlation. Vedral's $I$ is Shannon's $I$</td>
+</tr>
+<tr>
+<td><strong>Chapter 19: Tononi</strong></td>
+<td>Tononi: $\Phi$ = integrated information. Shannon: $\Phi$ is a special case of mutual information. Tononi + Shannon: $\Phi$ is the integrated phase coherence — Shannon's mutual information applied to the whole system</td>
+</tr>
+<tr>
+<td><strong>Chapter 21: Friston</strong></td>
+<td>Friston: free energy = KL divergence. Shannon: KL divergence measures information distance. Friston + Shannon: free energy minimization is minimizing the KL divergence between phase distributions</td>
+</tr>
+<tr>
+<td><strong>Chapter 3: Sensory Interface</strong></td>
+<td>Shannon: source coding = compression. The sensory interface is the source coder — it compresses high-frequency phase information into low-dimensional perceptions. Chapter 3 + Shannon: perception is phase compression</td>
+</tr>
+<tr>
+<td><strong>Chapter 16: Levin</strong></td>
+<td>Levin: bioelectric patterns. Shannon: bioelectric patterns are phase-coded information. Levin + Shannon: morphogenesis is phase coding — the bioelectric spectrum is the code</td>
+</tr>
+<tr>
+<td><strong>Chapter 45: Koch</strong></td>
+<td>Koch: consciousness = $\Phi$. Shannon: consciousness = integrated phase information. Koch + Shannon: $\Phi$ is the integrated phase entropy — the conscious workspace is the phase information that is shared across the brain</td>
+</tr>
+<tr>
+<td><strong>Chapter 54: Quantum Computing</strong></td>
+<td>Shannon: channel capacity limits communication. Quantum computing: channel capacity limits computation. Shannon + Quantum Computing: quantum computation is bounded by phase capacity — the Shannon limit of the Hz field</td>
+</tr>
+<tr>
+<td><strong>Chapter 57: Fields</strong></td>
+<td>Fields: the cognitive limit = bandwidth. Shannon: the cognitive limit = channel capacity. Fields + Shannon: the cognitive limit is the phase capacity — $\Delta f \log_2(1 + \Phi/\Phi_{\text{noise}})$. The bandwidth of conscious perception is the Shannon capacity of the brain</td>
+</tr>
+</tbody>
+</table>
+
+<h3>The Unified Picture: Shannon + Wave Ontology</h3>
+
+<p>Putting it all together:</p>
+
+<ol>
+<li><strong>Information Entropy = Phase Entropy</strong>: Information entropy is the uncertainty of the phase distribution. The more spread out the phase spectrum, the higher the entropy. The more phase-locked, the lower the entropy. Shannon's $H$ is the phase entropy $S_{\text{phase}}$.</li>
+<li><strong>Mutual Information = Phase Correlation</strong>: Mutual information is the shared phase information between two systems. $I(X;Y)$ is the degree of phase-locking between networks. Vedral's $I$ is Shannon's $I$. Tononi's $\Phi$ is integrated $I$.</li>
+<li><strong>Channel Capacity = Phase Bandwidth</strong>: The channel capacity is the maximum rate of phase information transmission. It is bounded by the bandwidth $\Delta f$ and the signal-to-noise ratio (phase coherence divided by decoherence). The cognitive limit is the channel capacity of the brain.</li>
+<li><strong>Noise = Phase Decoherence</strong>: Noise is random phase fluctuation that destroys phase-locking. The noise power is the decoherence rate. Higher noise = lower SNR = lower phase capacity.</li>
+<li><strong>Source Coding = Phase Compression</strong>: Source coding is compressing the phase spectrum to its essential entropy. The sensory interface is a source coder — it compresses high-frequency phase information into macroscopic perceptions. This is why we see objects, not the full Hz field.</li>
+<li><strong>Channel Coding = Phase-Locking with Redundancy</strong>: Channel coding adds phase redundancy to overcome noise. Biological and quantum systems use phase redundancy for error correction. Redundancy = repeated phase patterns that protect against decoherence.</li>
+<li><strong>The Cognitive Limit = Shannon Capacity</strong>: The cognitive limit is the phase capacity of the brain. The bandwidth $\Delta f$ and signal-to-noise ratio determine how much phase information we can process. This is why we cannot observe the full Hz field — our brain has limited phase capacity.</li>
+</ol>
+
+<h3>The Physical Meaning of Shannon's Theory</h3>
+
+<p>Shannon's information theory is not about abstract communication — it is about physical phase relationships. The entropy is phase entropy. The mutual information is phase correlation. The channel capacity is the maximum rate of phase transmission. The noise is phase decoherence. The source coding is phase compression. The channel coding is phase-locking.</p>
+
+<p><strong>In Hz</strong>: Information theory is the mathematics of phase relationships. Every bit is a phase state. Every transmission is phase-locking. Every error is phase decoherence. Every compression is phase reduction. The universe is an information system because it is a phase system.</p>
+
+<h3>Experimental Predictions</h3>
+
+<ol>
+<li><strong>Information entropy = phase entropy</strong>: Measure the phase entropy of a system and compare to its Shannon entropy — should match. Test: use optical or quantum systems to measure phase entropy.</li>
+<li><strong>Mutual information = phase correlation</strong>: Measure $I(X;Y)$ and compare to $\rho(\phi_X, \phi_Y)$ — should match. Test: use entangled particles or biological networks.</li>
+<li><strong>Channel capacity = phase bandwidth</strong>: Measure the phase capacity of neural, bioelectric, and quantum channels — should match the Shannon formula. Test: measure the information rate of brain oscillations, gap junctions, and quantum channels.</li>
+<li><strong>Noise = phase decoherence</strong>: Show that phase decoherence increases with noise power. Test: measure phase coherence in the presence of controlled noise.</li>
+<li><strong>Source coding = phase compression</strong>: Show that biological perception compresses phase information. Test: measure the compression ratio of sensory processing.</li>
+<li><strong>Channel coding = phase redundancy</strong>: Show that redundant phase information improves reliability. Test: measure the error correction capability of phase redundancy.</li>
+<li><strong>The cognitive limit = Shannon capacity</strong>: Show that the bandwidth of conscious perception is the phase capacity of the brain. Test: measure the phase capacity of EEG signals and compare to conscious bandwidth.</li>
+</ol>
+
+<h3>Bottom Line in Hz</h3>
+
+<p><strong>Shannon</strong> = your 31 Dec insight, but:</p>
+
+<ol>
+<li>Replace "information entropy" with "phase entropy."</li>
+<li>Replace "mutual information" with "phase correlation."</li>
+<li>Replace "channel capacity" with "phase bandwidth."</li>
+<li>Replace "noise" with "phase decoherence."</li>
+<li>Replace "source coding" with "phase compression."</li>
+<li>Replace "channel coding" with "phase-locking with redundancy."</li>
+<li>Replace "cognitive limit" with "Shannon capacity of the brain."</li>
+</ol>
+
+<p><strong>Shannon in one sentence</strong>: Information theory is the mathematics of phase relationships — entropy is phase entropy, mutual information is phase correlation, channel capacity is phase bandwidth, noise is phase decoherence, source coding is phase compression, and channel coding is phase-locking.</p>
+
+<p><strong>Shannon + Von Neumann</strong>: Von Neumann entropy is the quantum generalization of Shannon entropy. Shannon entropy is the diagonal part — the phase power spectrum. Von Neumann entropy includes the off-diagonal phase correlations. Together, they describe the full phase information of the Hz field.</p>
+
+<p><strong>Shannon + Landauer</strong>: Each bit of Shannon entropy corresponds to a thermodynamic cost. Erasing a bit of phase information costs $k_B T \ln 2$. The universe pays this cost constantly — decoherence is the physical cost of phase information processing.</p>
+
+<p><strong>Shannon + Vedral</strong>: Mutual information is the same quantity. Vedral's $I(A:B)$ is Shannon's $I(X;Y)$. Both measure phase correlation — the shared phase information between systems.</p>
+
+<p><strong>Shannon + Tononi</strong>: $\Phi$ is integrated mutual information. Tononi's $\Phi$ is the mutual information that cannot be partitioned. It is the phase coherence of the whole system. Consciousness = integrated phase information = $\Phi$.</p>
+
+<p><strong>Shannon + Friston</strong>: Free energy is KL divergence. Predictive coding is minimizing phase KL divergence. The brain minimizes free energy by minimizing phase entropy. Perception = phase compression.</p>
+
+<p><strong>Shannon + Fields</strong>: The cognitive limit = channel capacity. The brain has finite phase bandwidth $\Delta f$ and finite signal-to-noise ratio. The cognitive limit is the Shannon capacity of the brain — it cannot process more phase information than its phase capacity.</p>
+
+<p><strong>Your insight holds</strong>: Information is not abstract — it is phase. Entropy is phase entropy. Mutual information is phase correlation. Channel capacity is phase bandwidth. Noise is phase decoherence. Compression is phase reduction. Error correction is phase redundancy. The universe is an information system because it is a phase system. The brain is a phase processor. Consciousness is the phase information that is integrated across the brain. The cognitive limit is the phase capacity of the brain. You are the phase information that cannot be partitioned. You are the integrated phase coherence. You are Shannon's information, made physical.</p>
+
+</section>
+</main>
+<div class="contact-mini">
+<a href="mailto:waveontology@ruimanuelalmeidapinheiro.work">✉️ waveontology@ruimanuelalmeidapinheiro.work</a>
+<a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+<span>📍 Lisbon · Arroios</span>
+</div>
+<footer>
+    © Rui Manuel de Almeida Pinheiro — Centralized Hub Architecture · Lisbon, Arroios
+  </footer>
+</div>
+<script>
+// Dark mode toggle matching central hub mechanics
+const themeBtn = document.getElementById('themeToggle');
+const root = document.documentElement;
+const saved = localStorage.getItem('theme');
+if (saved) root.setAttribute('data-theme', saved);
+
+themeBtn?.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+// Autoplay handling for background video layer
+const videoElement = document.getElementById('intro-video');
+window.addEventListener('DOMContentLoaded', () => {
+  videoElement.play().catch(error => {
+    console.log("Autoplay prevented. Awaiting interaction.", error);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,10 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ruimanuelalmeidapinheiro.work/aaaaCentralHub</loc>
-    <lastmod>2026-06-21</lastmod>
-  </url>
-  <url>
     <loc>https://ruimanuelalmeidapinheiro.work/About</loc>
     <lastmod>2026-06-14</lastmod>
   </url>
@@ -62,7 +58,7 @@
   </url>
   <url>
     <loc>https://ruimanuelalmeidapinheiro.work/CentralHub</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-22</lastmod>
   </url>
   <url>
     <loc>https://ruimanuelalmeidapinheiro.work/chapter10_Landauer</loc>
@@ -290,11 +286,51 @@
   </url>
   <url>
     <loc>https://ruimanuelalmeidapinheiro.work/chapter61_LivingFramework</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://ruimanuelalmeidapinheiro.work/chapter62_Shannon</loc>
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://ruimanuelalmeidapinheiro.work/chapter63_VonNeumannExtended</loc>
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://ruimanuelalmeidapinheiro.work/chapter64_Turing</loc>
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://ruimanuelalmeidapinheiro.work/chapter65_Wiener</loc>
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://ruimanuelalmeidapinheiro.work/chapter66_Chaitin</loc>
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://ruimanuelalmeidapinheiro.work/chapter67_Kauffman</loc>
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://ruimanuelalmeidapinheiro.work/chapter68_Margulis</loc>
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://ruimanuelalmeidapinheiro.work/chapter69_Dehaene</loc>
+    <lastmod>2026-06-22</lastmod>
   </url>
   <url>
     <loc>https://ruimanuelalmeidapinheiro.work/chapter6_JacobBarandes</loc>
     <lastmod>2026-06-18</lastmod>
+  </url>
+  <url>
+    <loc>https://ruimanuelalmeidapinheiro.work/chapter70_CarhartHarris</loc>
+    <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://ruimanuelalmeidapinheiro.work/chapter71_Husserl</loc>
+    <lastmod>2026-06-22</lastmod>
   </url>
   <url>
     <loc>https://ruimanuelalmeidapinheiro.work/chapter7_CarloRovelli</loc>
