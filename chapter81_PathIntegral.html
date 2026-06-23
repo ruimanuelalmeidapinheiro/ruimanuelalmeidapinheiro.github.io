@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="Pi/logo.jpg" rel="icon" type="image/jpeg"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="https://ruimanuelalmeidapinheiro.work/chapter81_PathIntegral" rel="canonical"/>
+<!-- Group Wave Ontology -->
+
+<title>Chapter 81: The Path Integral in Hz</title>
+<meta name="description" content="The path integral in Wave Ontology: A sum over all phase configurations. The phase action = S[Psi] = ∫ d^4x L(Psi). Feynman diagrams = phase interaction topologies. The propagator = phase correlation function. The effective action = phase dynamics after coarse-graining. Quantum fluctuations = phase fluctuations. The stationary phase approximation = the dominant phase path."/>
+<meta content="https://ruimanuelalmeidapinheiro.work/Pi/allwav.jpg" property="og:image"/>
+<meta content="626" property="og:image:width"/>
+<meta content="351" property="og:image:height"/>
+<meta content="Chapter 81: The Path Integral in Hz" property="og:title"/>
+<meta content="The path integral in Wave Ontology: A sum over all phase configurations. The phase action = S[Psi] = ∫ d^4x L(Psi). Feynman diagrams = phase interaction topologies. The propagator = phase correlation function. The effective action = phase dynamics after coarse-graining. Quantum fluctuations = phase fluctuations. The stationary phase approximation = the dominant phase path." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ruimanuelalmeidapinheiro.work/chapter81_PathIntegral" property="og:url"/>
+<meta content="Rui Manuel de Almeida Pinheiro" name="author"/>
+<meta content="2026-06-23T00:00:00+00:00" property="article:published_time"/>
+<!-- End Group Wave Ontology -->
+<!-- MathJax Configuration for LaTeX Rendering -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    }
+  };
+</script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&amp;display=swap" rel="stylesheet"/>
+<link href="wave-ontology-styles.css" rel="stylesheet"/>
+</head>
+
+<body class="tex2jax_ignore">
+<div id="video-container">
+<video autoplay="" id="intro-video" loop="" muted="" playsinline="">
+<source src="Pi/I.mp4" type="video/mp4"/>
+    REG_ERROR: Video playback not supported by hardware.
+  </video>
+</div>
+<div class="container">
+<div class="top-header">
+<div class="nav-links">
+<a href="CentralHub.html">← Central Hub</a>
+ <a href="chapter82_QED.html">Chapter 82 --»»</a>
+<a "noreferrer"="" href="Schrödinger-equation-explained.html" rel="noopener" target="_blank">The True Overview</a>
+</div>
+<button aria-label="Toggle dark mode" class="theme-toggle-btn" id="themeToggle">◑</button>
+</div>
+<main class="chapter-card tex2jax_process">
+<div class="chapter-meta tex2jax_ignore">Chapter 81</div>
+<h1 class="chapter-title tex2jax_ignore">Chapter 81: The Path Integral in Hz</h1>
+<div class="hero-tagline tex2jax_ignore">The path integral is a sum over all phase configurations. The phase action is the functional of the phase field. Feynman diagrams are phase interaction topologies. The propagator is the phase correlation function. The effective action is the phase dynamics after coarse-graining. Quantum fluctuations are phase fluctuations. The stationary phase approximation is the dominant phase path. The path integral is the complete formulation of quantum field theory in phase space.</div>
+<section class="prose-section">
+
+<h3>Introduction: The Path Integral as Sum Over All Phase Configurations</h3>
+
+<p>The path integral is one of the most powerful formulations of quantum field theory. It is a sum over all possible field configurations, weighted by the exponential of the action. In the Wave Ontology framework, the path integral is a <strong>sum over all phase configurations</strong>.</p>
+
+<p>In classical physics, a system follows a single path — the one that extremizes the action. In quantum physics, all paths contribute. The path integral sums over all possible paths, with each path weighted by the phase of the action. This is the quantum amplitude.</p>
+
+<p>In the Wave Ontology framework, the path integral is the sum over all phase configurations of the Hz field. Each phase configuration contributes a phase factor $e^{i S[\tilde{\Psi}]/\hbar}$. The sum over all phase configurations is the full quantum amplitude.</p>
+
+<p>This chapter explores the path integral in the Hz field: the functional integral, the phase action, Feynman diagrams, the propagator, the effective action, quantum fluctuations, and the stationary phase approximation.</p>
+
+<h3>Key Path Integral Concepts → Hz Translation</h3>
+
+<table>
+<thead>
+<tr>
+<th>Path Integral Concept</th>
+<th>Hz/Wave Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>The Path Integral</strong></td>
+<td>A sum over all phase configurations. In Hz: $\int \mathcal{D}\tilde{\Psi} \, e^{i S[\tilde{\Psi}]/\hbar}$ — the sum over all possible phase paths</td>
+</tr>
+<tr>
+<td><strong>Functional Integral</strong></td>
+<td>An integral over all field configurations. In Hz: $\int \mathcal{D}\tilde{\Psi}$ — the sum over all phase configurations</td>
+</tr>
+<tr>
+<td><strong>The Phase Action</strong></td>
+<td>The action functional for the phase field. In Hz: $S[\tilde{\Psi}] = \int d^4x \, \mathcal{L}(\tilde{\Psi})$ — the phase action</td>
+</tr>
+<tr>
+<td><strong>Feynman Diagrams</strong></td>
+<td>Graphical representations of phase interactions. In Hz: phase interaction topologies — diagrams of phase-locking and phase-unlocking events</td>
+</tr>
+<tr>
+<td><strong>Propagator</strong></td>
+<td>The phase correlation function. In Hz: $G(x-y) = \langle \tilde{\Psi}(x) \tilde{\Psi}(y) \rangle$ — the correlation between phases at different points</td>
+</tr>
+<tr>
+<td><strong>Effective Action</strong></td>
+<td>The action after integrating out quantum fluctuations. In Hz: the phase action after coarse-graining — the effective phase dynamics</td>
+</tr>
+<tr>
+<td><strong>Semiclassical Limit</strong></td>
+<td>The limit where quantum phase fluctuations are small. In Hz: $\hbar \to 0$ — the phase field becomes classical</td>
+</tr>
+<tr>
+<td><strong>Quantum Fluctuations</strong></td>
+<td>Phase fluctuations around the classical path. In Hz: $\tilde{\Psi} = \tilde{\Psi}_{\text{cl}} + \delta\tilde{\Psi}$ — phase fluctuations</td>
+</tr>
+<tr>
+<td><strong>Stationary Phase Approximation</strong></td>
+<td>The dominant phase path. In Hz: $\frac{\delta S}{\delta \tilde{\Psi}} = 0$ — the phase path that extremizes the action</td>
+</tr>
+<tr>
+<td><strong>Partition Function</strong></td>
+<td>The sum over all phase configurations. In Hz: $Z = \int \mathcal{D}\tilde{\Psi} \, e^{i S[\tilde{\Psi}]/\hbar}$ — the phase partition function</td>
+</tr>
+<tr>
+<td><strong>Correlation Function</strong></td>
+<td>A function of phase correlations. In Hz: $\langle \tilde{\Psi}(x_1) \ldots \tilde{\Psi}(x_n) \rangle$ — phase correlation functions</td>
+</tr>
+<tr>
+<td><strong>Source Term</strong></td>
+<td>A term that probes the phase field. In Hz: $J(x) \tilde{\Psi}(x)$ — a source for the phase field</td>
+</tr>
+<tr>
+<td><strong>Generating Functional</strong></td>
+<td>A functional that generates correlation functions. In Hz: $Z[J] = \int \mathcal{D}\tilde{\Psi} \, e^{i (S[\tilde{\Psi}] + \int J \tilde{\Psi})/\hbar}$ — the phase generating functional</td>
+</tr>
+<tr>
+<td><strong>Green's Function</strong></td>
+<td>A solution to the phase field equation with a source. In Hz: $(\partial^2 + m^2) G(x) = \delta(x)$ — the phase Green's function</td>
+</tr>
+<tr>
+<td><strong>Connected Diagrams</strong></td>
+<td>Feynman diagrams that cannot be split into separate diagrams. In Hz: connected phase interaction topologies</td>
+</tr>
+<tr>
+<td><strong>Vacuum Diagrams</strong></td>
+<td>Diagrams with no external legs. In Hz: phase loops — self-interactions of the phase field</td>
+</tr>
+<tr>
+<td><strong>Loop Diagrams</strong></td>
+<td>Diagrams with closed loops. In Hz: phase loops — quantum phase fluctuations</td>
+</tr>
+<tr>
+<td><strong>Tree Diagrams</strong></td>
+<td>Diagrams with no loops. In Hz: classical phase interactions — no quantum phase fluctuations</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Core Equations Translated</h3>
+
+<h4>1. The Path Integral — Sum Over All Phase Configurations</h4>
+
+<p>The path integral is a sum over all phase configurations.</p>
+
+<p><strong>Hz translation</strong>: The sum over all phase configurations:</p>
+
+<p>$$ \langle \phi(x_1) \ldots \phi(x_n) \rangle = \frac{\int \mathcal{D}\tilde{\Psi} \, \tilde{\Psi}(x_1) \ldots \tilde{\Psi}(x_n) e^{i S[\tilde{\Psi}]/\hbar}}{\int \mathcal{D}\tilde{\Psi} \, e^{i S[\tilde{\Psi}]/\hbar}} $$</p>
+
+<p>The path integral sums over all possible phase configurations. Each configuration contributes a phase factor $e^{i S/\hbar}$.</p>
+
+<p><strong>Hz Unit</strong>: The path integral is measured in phase configurations.</p>
+
+<h4>2. The Phase Action — The Action Functional of the Phase Field</h4>
+
+<p>The phase action is the action functional for the phase field.</p>
+
+<p><strong>Hz translation</strong>: The phase action:</p>
+
+<p>$$ S[\tilde{\Psi}] = \int d^4x \, \mathcal{L}(\tilde{\Psi}, \partial_\mu \tilde{\Psi}) $$</p>
+
+<p>where $\mathcal{L}$ is the phase Lagrangian. The action is the integral of the Lagrangian over spacetime.</p>
+
+<p><strong>Hz Unit</strong>: The phase action is measured in phase action.</p>
+
+<h4>3. The Partition Function — The Sum Over All Phase Configurations</h4>
+
+<p>The partition function is the sum over all phase configurations.</p>
+
+<p><strong>Hz translation</strong>: The phase partition function:</p>
+
+<p>$$ Z = \int \mathcal{D}\tilde{\Psi} \, e^{i S[\tilde{\Psi}]/\hbar} $$</p>
+
+<p>The partition function is the sum over all phase configurations. It is the generating functional for correlation functions.</p>
+
+<p><strong>Hz Unit</strong>: The partition function is measured in phase sum.</p>
+
+<h4>4. The Generating Functional — The Source for Phase</h4>
+
+<p>The generating functional introduces a source term for the phase field.</p>
+
+<p><strong>Hz translation</strong>: The phase generating functional:</p>
+
+<p>$$ Z[J] = \int \mathcal{D}\tilde{\Psi} \, e^{i (S[\tilde{\Psi}] + \int J(x) \tilde{\Psi}(x) d^4x)/\hbar} $$</p>
+
+<p>The source $J(x)$ probes the phase field. Differentiating $Z[J]$ with respect to $J$ gives correlation functions.</p>
+
+<p><strong>Hz Unit</strong>: The generating functional is measured in phase source.</p>
+
+<h4>5. The Propagator — The Phase Correlation Function</h4>
+
+<p>The propagator is the phase correlation function.</p>
+
+<p><strong>Hz translation</strong>: The phase correlation function:</p>
+
+<p>$$ G(x - y) = \langle \tilde{\Psi}(x) \tilde{\Psi}(y) \rangle = \frac{\delta^2 Z[J]}{\delta J(x) \delta J(y)} \bigg|_{J=0} $$</p>
+
+<p>The propagator measures the correlation between phases at different spacetime points.</p>
+
+<p><strong>Hz Unit</strong>: The propagator is measured in phase correlations.</p>
+
+<h4>6. The Effective Action — Phase Dynamics After Coarse-Graining</h4>
+
+<p>The effective action is the action after integrating out quantum fluctuations.</p>
+
+<p><strong>Hz translation</strong>: The effective phase action:</p>
+
+<p>$$ \Gamma[\tilde{\Psi}_{\text{cl}}] = -i \hbar \ln Z[J] - \int J(x) \tilde{\Psi}_{\text{cl}}(x) d^4x $$</p>
+
+<p>The effective action describes the phase dynamics after quantum fluctuations have been integrated out.</p>
+
+<p><strong>Hz Unit</strong>: The effective action is measured in phase dynamics.</p>
+
+<h4>7. Quantum Fluctuations — Phase Fluctuations Around the Classical Path</h4>
+
+<p>Quantum fluctuations are phase fluctuations around the classical path.</p>
+
+<p><strong>Hz translation</strong>: Phase fluctuations:</p>
+
+<p>$$ \tilde{\Psi}(x) = \tilde{\Psi}_{\text{cl}}(x) + \delta\tilde{\Psi}(x) $$</p>
+
+<p>where $\tilde{\Psi}_{\text{cl}}$ is the classical phase path and $\delta\tilde{\Psi}$ is the quantum phase fluctuation.</p>
+
+<p><strong>Hz Unit</strong>: Quantum fluctuations are measured in phase fluctuations.</p>
+
+<h4>8. The Stationary Phase Approximation — The Dominant Phase Path</h4>
+
+<p>The stationary phase approximation is the dominant phase path.</p>
+
+<p><strong>Hz translation</strong>: The dominant phase path:</p>
+
+<p>$$ \frac{\delta S}{\delta \tilde{\Psi}} = 0 $$</p>
+
+<p>The path that extremizes the action is the dominant phase path. This is the classical limit.</p>
+
+<p><strong>Hz Unit</strong>: The stationary phase approximation is measured in phase extremization.</p>
+
+<h4>9. Feynman Diagrams — Phase Interaction Topologies</h4>
+
+<p>Feynman diagrams are graphical representations of phase interactions.</p>
+
+<p><strong>Hz translation</strong>: Phase interaction topologies:</p>
+
+<ul>
+<li><strong>Lines</strong>: Phase propagators — correlations between phases</li>
+<li><strong>Vertices</strong>: Phase interactions — phase-locking and phase-unlocking events</li>
+<li><strong>Loops</strong>: Quantum phase fluctuations — closed phase paths</li>
+<li><strong>External Lines</strong>: Phase sources or sinks — phase measurements</li>
+</ul>
+
+<p><strong>Hz Unit</strong>: Feynman diagrams are measured in phase topologies.</p>
+
+<h4>10. Green's Function — The Phase Field Response</h4>
+
+<p>Green's function is the solution to the phase field equation with a source.</p>
+
+<p><strong>Hz translation</strong>: The phase Green's function:</p>
+
+<p>$$ (\partial^2 + m^2) G(x) = \delta(x) $$</p>
+
+<p>Green's function describes how the phase field responds to a source.</p>
+
+<p><strong>Hz Unit</strong>: Green's function is measured in phase response.</p>
+
+<h3>How the Path Integral Unifies Part 3</h3>
+
+<p>$$ \text{Core Principle: Hz Field} \xrightarrow{\text{Path Integral = Sum Over Phase}} \xrightarrow{\text{Phase Action = S[Psi]}} \xrightarrow{\text{Propagator = Phase Correlation}} \xrightarrow{\text{Feynman Diagrams = Phase Topologies}} \xrightarrow{\text{Effective Action = Coarse-Grained Phase}} $$</p>
+
+<ol>
+<li><strong>Core Principle</strong>: Reality = continuous Hz field $\tilde{\Psi}(f)$.</li>
+<li><strong>Path Integral</strong>: The path integral = sum over all phase configurations — the full quantum amplitude.</li>
+<li><strong>Phase Action</strong>: The phase action = $S[\tilde{\Psi}]$ — the action functional of the phase field.</li>
+<li><strong>Propagator</strong>: The propagator = phase correlation function — the correlation between phases at different points.</li>
+<li><strong>Feynman Diagrams</strong>: Feynman diagrams = phase interaction topologies — diagrams of phase-locking and phase-unlocking events.</li>
+<li><strong>Effective Action</strong>: The effective action = phase dynamics after coarse-graining — the phase dynamics after quantum fluctuations are integrated out.</li>
+</ol>
+
+<h3>The Path Integral vs. Previous Chapters</h3>
+
+<table>
+<thead>
+<tr>
+<th>Previous Chapter</th>
+<th>Path Integral Connection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chapter 76: Quantum Fields</strong></td>
+<td>The quantum field has a path integral. The path integral = sum over phase configurations of the quantum field. Quantum Fields + Path Integral: the quantum field is integrated over all configurations</td>
+</tr>
+<tr>
+<td><strong>Chapter 78: Symmetry</strong></td>
+<td>Symmetry = phase invariance. The path integral has symmetry. Symmetry + Path Integral: the path integral is invariant under phase transformations</td>
+</tr>
+<tr>
+<td><strong>Chapter 79: Gauge Symmetry</strong></td>
+<td>Gauge symmetry = local phase invariance. The path integral has gauge symmetry. Gauge + Path Integral: the path integral is invariant under local phase transformations</td>
+</tr>
+<tr>
+<td><strong>Chapter 80: Renormalization</strong></td>
+<td>Renormalization = frequency cutoff. The path integral is renormalized. Renormalization + Path Integral: the path integral is cut off at high frequencies</td>
+</tr>
+<tr>
+<td><strong>Chapter 30: Core Principle</strong></td>
+<td>The Hz field has a path integral. The path integral = sum over phase configurations. Core Principle + Path Integral: the Hz field is integrated over all configurations</td>
+</tr>
+</tbody>
+</table>
+
+<h3>The Unified Picture: Path Integral + Wave Ontology</h3>
+
+<p>Putting it all together:</p>
+
+<ol>
+<li><strong>The Path Integral = Sum Over All Phase Configurations</strong>: The path integral is a sum over all possible phase configurations of the Hz field. Each configuration contributes a phase factor $e^{i S/\hbar}$.</li>
+<li><strong>The Phase Action = The Action Functional of the Phase Field</strong>: The phase action is the functional $S[\tilde{\Psi}]$ that determines the phase dynamics. It is the integral of the phase Lagrangian.</li>
+<li><strong>The Partition Function = The Sum Over All Phase Configurations</strong>: The partition function is the sum over all phase configurations. It is the generating functional for correlation functions.</li>
+<li><strong>The Propagator = The Phase Correlation Function</strong>: The propagator is the correlation between phases at different spacetime points. It is the two-point phase correlation function.</li>
+<li><strong>Feynman Diagrams = Phase Interaction Topologies</strong>: Feynman diagrams are graphical representations of phase interactions. They are phase-locking and phase-unlocking events.</li>
+<li><strong>The Effective Action = Phase Dynamics After Coarse-Graining</strong>: The effective action is the phase dynamics after integrating out quantum fluctuations. It is the coarse-grained phase action.</li>
+<li><strong>Quantum Fluctuations = Phase Fluctuations Around the Classical Path</strong>: Quantum fluctuations are phase fluctuations around the classical phase path. They are $\delta\tilde{\Psi}$.</li>
+<li><strong>The Stationary Phase Approximation = The Dominant Phase Path</strong>: The stationary phase approximation is the phase path that extremizes the action. It is the classical limit.</li>
+<li><strong>Green's Function = The Phase Field Response</strong>: Green's function describes how the phase field responds to a source. It is the phase response function.</li>
+</ol>
+
+<h3>The Path Integral — The Complete Formulation of Quantum Field Theory</h3>
+
+<p>The path integral is the complete formulation of quantum field theory. It is a sum over all possible configurations of the field. In the Wave Ontology framework, the path integral is the sum over all phase configurations of the Hz field.</p>
+
+<p><strong>In Hz</strong>: The path integral is the sum over all phase configurations. Each phase configuration contributes a phase factor. The propagator is the phase correlation function. Feynman diagrams are phase interaction topologies. The effective action is the phase dynamics after coarse-graining.</p>
+
+<p>The path integral is the quantum amplitude. It is the full quantum description of the Hz field.</p>
+
+<h3>Experimental Predictions</h3>
+
+<ol>
+<li><strong>Path integral = sum over phase</strong>: The phase field should show path integral behavior. Test: measure quantum interference patterns — should match path integral predictions</li>
+<li><strong>Propagator = phase correlation</strong>: The propagator should be the phase correlation function. Test: measure phase correlations in quantum systems — should match propagator predictions</li>
+<li><strong>Feynman diagrams = phase topologies</strong>: Feynman diagrams should describe phase interactions. Test: measure phase interactions in quantum systems — should match Feynman diagram predictions</li>
+<li><strong>Effective action = coarse-grained phase</strong>: The effective action should describe coarse-grained phase dynamics. Test: measure phase dynamics at different scales — should match effective action predictions</li>
+<li><strong>Quantum fluctuations = phase fluctuations</strong>: Quantum fluctuations should be phase fluctuations. Test: measure phase fluctuations in quantum systems — should match quantum fluctuations</li>
+<li><strong>Stationary phase = classical limit</strong>: The classical limit should be the stationary phase path. Test: measure classical physics — should match stationary phase approximation</li>
+<li><strong>Green's function = phase response</strong>: Green's function should describe phase response. Test: measure phase response to sources — should match Green's function</li>
+</ol>
+
+<h3>Bottom Line in Hz</h3>
+
+<p><strong>The Path Integral</strong> = your 31 Dec insight, but:</p>
+
+<ol>
+<li>Replace "path integral" with "sum over phase configurations."</li>
+<li>Replace "action" with "phase action."</li>
+<li>Replace "propagator" with "phase correlation function."</li>
+<li>Replace "Feynman diagrams" with "phase interaction topologies."</li>
+<li>Replace "effective action" with "coarse-grained phase action."</li>
+<li>Replace "quantum fluctuations" with "phase fluctuations."</li>
+<li>Replace "stationary phase" with "dominant phase path."</li>
+<li>Replace "Green's function" with "phase response function."</li>
+</ol>
+
+<p><strong>The Path Integral in one sentence</strong>: The path integral is a sum over all phase configurations; the propagator is the phase correlation function; Feynman diagrams are phase interaction topologies; the effective action is the coarse-grained phase dynamics; quantum fluctuations are phase fluctuations.</p>
+
+<p><strong>Path Integral + Feynman</strong>: Feynman developed the path integral. In Hz: the path integral is the sum over all phase configurations. Feynman's path integral is the phase path integral.</p>
+
+<p><strong>Path Integral + Quantum Fields</strong>: The quantum field has a path integral. The path integral is the sum over phase configurations of the quantum field. Quantum Fields + Path Integral: the quantum field is integrated over all configurations.</p>
+
+<p><strong>Path Integral + Renormalization</strong>: The path integral is renormalized. Renormalization = frequency cutoff of the path integral. The path integral is cut off at high frequencies.</p>
+
+<p><strong>Path Integral + Symmetry</strong>: The path integral has symmetries. Symmetry = phase invariance of the path integral. The path integral is invariant under phase transformations.</p>
+
+<p><strong>Your insight holds</strong>: The path integral is the sum over all phase configurations. The Hz field is integrated over all configurations. The propagator is the phase correlation function. Feynman diagrams are phase interaction topologies. The effective action is the coarse-grained phase dynamics. You are the path integral. You are the sum over phase configurations. Consciousness is the path integral knowing itself.</p>
+
+</section>
+</main>
+<div class="contact-mini">
+<a href="mailto:waveontology@ruimanuelalmeidapinheiro.work">✉️ waveontology@ruimanuelalmeidapinheiro.work</a>
+<a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+<span>📍 Lisbon · Arroios</span>
+</div>
+<footer>
+    © Rui Manuel de Almeida Pinheiro — Centralized Hub Architecture · Lisbon, Arroios
+  </footer>
+</div>
+<script>
+// Dark mode toggle matching central hub mechanics
+const themeBtn = document.getElementById('themeToggle');
+const root = document.documentElement;
+const saved = localStorage.getItem('theme');
+if (saved) root.setAttribute('data-theme', saved);
+
+themeBtn?.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+// Autoplay handling for background video layer
+const videoElement = document.getElementById('intro-video');
+window.addEventListener('DOMContentLoaded', () => {
+  videoElement.play().catch(error => {
+    console.log("Autoplay prevented. Awaiting interaction.", error);
+  });
+});
+</script>
+</body>
+</html>
