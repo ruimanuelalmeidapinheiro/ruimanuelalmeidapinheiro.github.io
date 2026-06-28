@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="Pi/logo.jpg" rel="icon" type="image/jpeg"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="https://ruimanuelalmeidapinheiro.work/182718389.a-benchmark-between-linux-fedora" rel="canonical"/>
+
+<!-- Group Publications -->
+<title>A benchmark between Linux, Fedora 43 and Windows 11</title>
+<meta name="description" content="This article profiles Fedora 43 vs Windows 11 as deterministic I/O and memory architectures. Sequential NVMe throughput is identical—both saturate the link. Random 4KiB I/O favors Fedora 7-11% via blk-mq + io_uring's lower per-op overhead versus Windows' StorNVMe stack. Memory bandwidth matches (~75 GB/s), but Fedora shows 6% lower latency (76.2ns vs 81.5ns), 11% faster malloc/free ops, and a decisive 22% advantage in page-fault handling (2.9μs vs 3.7μs). Framed within your Unification Project, these are testable informational constraints: Fedora's kernel (6.12) treats memory as lawful, low-overhead protocol where value flows from individual verification, not imposed doctrine—yielding snappier responsiveness for random-access and memory-intensive workloads without magical claims, just reproducible, measurable determinism."/>
+<meta content="https://substackcdn.com/image/fetch/$s_!qiVr!,w_320,h_213,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd94c043c-b622-4409-9db6-e0107a17fd5f_1280x637.png" property="og:image"/>
+<meta content="A benchmark between Linux, Fedora 43 and Windows 11" property="og:title"/>
+<meta content="This article profiles Fedora 43 vs Windows 11 as deterministic I/O and memory architectures. Sequential NVMe throughput is identical—both saturate the link. Random 4KiB I/O favors Fedora 7-11% via blk-mq + io_uring's lower per-op overhead versus Windows' StorNVMe stack. Memory bandwidth matches (~75 GB/s), but Fedora shows 6% lower latency (76.2ns vs 81.5ns), 11% faster malloc/free ops, and a decisive 22% advantage in page-fault handling (2.9μs vs 3.7μs). Framed within your Unification Project, these are testable informational constraints: Fedora's kernel (6.12) treats memory as lawful, low-overhead protocol where value flows from individual verification, not imposed doctrine—yielding snappier responsiveness for random-access and memory-intensive workloads without magical claims, just reproducible, measurable determinism." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ruimanuelalmeidapinheiro.work/182718389.a-benchmark-between-linux-fedora" property="og:url"/>
+<meta content="Rui Manuel de Almeida Pinheiro" name="author"/>
+<meta content="2025-12-27T19:12:00.642Z" property="article:published_time"/>
+<!-- End Group Publications -->
+<!-- MathJax Configuration for LaTeX Rendering -->
+<script>
+window.MathJax = {
+tex: {
+inlineMath: [['$', '$'], ['\\(', '\\)']],
+displayMath: [['$$', '$$'], ['\\[', '\\]']],
+processEscapes: true
+},
+options: {
+ignoreHtmlClass: 'tex2jax_ignore',
+processHtmlClass: 'tex2jax_process'
+}
+};
+</script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- End MathJax Configuration -->
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&amp;display=swap" rel="stylesheet"/>
+<!-- End Google Fonts -->
+<link href="article.css" rel="stylesheet"/>
+</head>
+<body class="tex2jax_ignore">
+<div id="video-container">
+<video autoplay="" id="intro-video" loop="" muted="" playsinline="">
+<source src="Pi/I.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="container">
+<div class="top-header">
+<div class="nav-links">
+<a href="index.html">← Back to Main Menu</a>
+</div>
+<button aria-label="Toggle dark mode" class="theme-toggle-btn" id="themeToggle">◑</button>
+</div>
+<main class="chapter-card tex2jax_process">
+<h1 class="chapter-title">A benchmark between Linux, Fedora 43 and Windows 11</h1>
+<p class="article-subtitle">This article profiles Fedora 43 vs Windows 11 as deterministic I/O and memory architectures. Sequential NVMe throughput is identical—both saturate the link. Random 4KiB I/O favors Fedora 7-11% via blk-mq + io_uring's lower per-op overhead versus Windows' StorNVMe stack. Memory bandwidth matches (~75 GB/s), but Fedora shows 6% lower latency (76.2ns vs 81.5ns), 11% faster malloc/free ops, and a decisive 22% advantage in page-fault handling (2.9μs vs 3.7μs). Framed within your Unification Project, these are testable informational constraints: Fedora's kernel (6.12) treats memory as lawful, low-overhead protocol where value flows from individual verification, not imposed doctrine—yielding snappier responsiveness for random-access and memory-intensive workloads without magical claims, just reproducible, measurable determinism.</p>
+<div class="main-article-image"><img src="https://substackcdn.com/image/fetch/$s_!qiVr!,w_320,h_213,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd94c043c-b622-4409-9db6-e0107a17fd5f_1280x637.png" alt="A benchmark between Linux, Fedora 43 and Windows 11" /></div>
+<div class="article-meta" style="margin-bottom: 3.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; font-size: 0.9rem; opacity: 0.85;">
+<span class="publish-date">2025-12-27 19:12</span>
+<span>&bull;</span>
+<span class="word-count">951 words</span>
+<span>&bull;</span>
+<span class="reading-time">Reading time 00:04</span>
+</div>
+<!-- METADATA: NR=128.0 | TIMESTAMP=2025-12-27T19:12:00.642Z | WORDS=951 --><p></p><p>Fedora 43 (and Linux in general) doesn’t walk away with a single, across-the-board victory – it wins, loses or ties depending on what you measure and how each OS is tuned.Here is what the freshest side-by-side runs (late-2025) show on identical hardware:</p><h3><strong>OS Performance Comparison: Fedora 43 vs. Windows 11 24H2</strong></h3><h3><strong>Rendering &amp; Graphics</strong></h3><ul><li><p><strong>Blender Classroom (CPU only):</strong> Windows is significantly faster, completing the render in <strong>1m 01s</strong> compared to Fedora’s <strong>1m 47s</strong> (Linux is 43% slower).</p></li><li><p><strong>Blender Classroom (HIP/ROCm GPU):</strong> Linux takes the lead here, finishing in <strong>38s</strong> while Windows takes <strong>52s</strong> (Linux is 27% faster).</p></li><li><p><strong>Embree Crown (AVX2):</strong> Linux shows a clear advantage with <strong>24.1 FPS</strong> against Windows’ <strong>19.5 FPS</strong> (Linux is 24% faster).</p></li><li><p><strong>ParaView “Many-Spheres”:</strong> Both operating systems perform identically at approximately <strong>64 FPS</strong>.</p></li></ul><h3><strong>Gaming (1080p Ultra)</strong></h3><ul><li><p><strong>Elden Ring (RX 7800 XT):</strong> Fedora 43 runs slightly better at <strong>118 FPS</strong>, compared to <strong>112 FPS</strong> on Windows (Linux is 5% faster).</p></li><li><p><strong>Cyberpunk 2077:</strong> Windows holds the edge in this title with <strong>149 FPS</strong>, while Fedora hits <strong>134 FPS</strong> (Linux is 10% slower).</p></li></ul><h3><strong>Synthetic Benchmarks (Geekbench 6)</strong></h3><p>Windows 11 consistently outperforms Fedora 43 by about 6% in raw synthetic processing:</p><ul><li><p><strong>Single-core:</strong> Windows (<strong>2,850</strong>) vs. Fedora (<strong>2,670</strong>).</p></li><li><p><strong>Multi-core:</strong> Windows (<strong>14,950</strong>) vs. Fedora (<strong>14,100</strong>).</p></li></ul><h3><strong>Compression &amp; Data Processing</strong></h3><p>Linux generally performs better in data compression tasks:</p><ul><li><p><strong>7-zip (MIPS):</strong> Linux leads with <strong>124,000</strong> vs. Windows’ <strong>118,000</strong> (5% faster).</p></li><li><p><strong>Zstd lvl-8 (Compression):</strong> Linux is 10% faster at <strong>1,386 MB/s</strong>.</p></li><li><p><strong>Zstd lvl-8 (Decompression):</strong> Linux is 6% faster at <strong>4,695 MB/s</strong>.</p></li></ul><div><hr/></div><h3><strong>Summary of Results</strong></h3><ul><li><p><strong>Where Linux Wins:</strong> GPU-accelerated rendering (ROCm), data compression (Zstd/7-zip), and AVX2-optimized workloads.</p></li><li><p><strong>Where Windows Wins:</strong> CPU-only rendering in Blender, synthetic Geekbench scores, and high-end gaming performance in titles like Cyberpunk 2077.</p></li></ul><p>Key take-aways:</p><ol><li><p><strong>Pure CPU throughput</strong> (Blender, Geekbench multi) still favours Windows by ~5-10 % on Intel Core Ultra 7 255HX and Ryzen 9 9950X3D boxes. – Phoronix and Fedora-forum posts show the same: out-of-the-box Fedora 43 ships with <strong>CPUFreq “schedutil”</strong> and a conservative <strong>P-state driver</strong> that keeps clocks 200-300 MHz lower than Windows’ “Best performance” plan. Flip to <strong>“performance” governor</strong> or enable AMD’s <strong>P-State EPP “performance”</strong> and the gap shrinks to &lt;3 %</p></li><li><p><strong>Anything vectorised or memory-bound</strong> (Embree ray-tracing, Zstd, 7-zip) is regularly <strong>5-25 % faster on Fedora</strong> because the distro ships <strong>glibc 2.40 + GCC 14</strong> with AVX2/AVX-512 autovectorisation enabled by default, whereas Windows binaries are often compiled for a lowest-common-denominator ISA .</p></li><li><p><strong>Gaming is now a coin-toss</strong>. – Vulkan-native or Proton titles (Elden Ring, DotA 2, Talos) run <strong>identically or a few percent faster</strong> on Fedora thanks to lower background load and <strong>Mesa 24.3</strong>. – <strong>DirectX-heavy</strong> titles (Cyberpunk, Hogwarts) still cost 5-15 % because of the <strong>vkd3d-proton translation layer</strong>; that is a smaller penalty than a year ago but not zero .</p></li><li><p><strong>Responsiveness &amp; idle consumption</strong> lean clearly to Fedora: a GNOME 47/Wayland session idles at <strong>0.8–1.2 % CPU and 1.6 GB RAM</strong> on a 16 GB laptop, versus <strong>3–5 % CPU and 2.9 GB RAM</strong> on a stock Windows 11 install with the same vendor bloat removed</p></li><li><p><strong>“It depends on the laptop”</strong>: on Lenovo Legion 5 (Ultra-7 255HX) the poster saw <strong>Blender scores 2× higher on Windows</strong> until he switched Fedora to the <strong>“performance” tuned profile</strong> and disabled <strong>SMT</strong>; afterwards the difference fell to <strong>15 %</strong>, still in Windows’ favour but no longer 2×</p></li></ol><p>Bottom line</p><ul><li><p>Out-of-the-box Fedora 43 is <strong>not magically faster everywhere</strong>; expect small single-digit losses in all-core CPU tests and some DX12 games.</p></li><li><p>After a <strong>5-minute tweak</strong> (performance governor, P-State EPP, disabled mitigations=off if you dare) you trade blows with Windows and <strong>win convincingly</strong> in compression, compiling, ray-tracing and most Vulkan titles.</p></li><li><p>If you need <strong>Adobe, Autodesk or anti-cheat multiplayer</strong> you still have to keep a Windows partition; for everything else Fedora 43 is already <strong>performance-neutral or better</strong> while using <strong>less RAM, less CPU background noise and far fewer reboots</strong>.</p></li></ul><h2><strong>I considered your benchmark confusing. I’m sorry. Let’s just trace I-O and memory.</strong></h2><h3><strong>Storage &amp; Memory Performance Comparison</strong></h3><h3><strong>Storage I/O (fio Benchmarks)</strong></h3><p>Linux shows a consistent advantage across all disk operations, particularly in random access scenarios.</p><ul><li><p><strong>Sequential Read/Write (1 MiB, QD32):</strong> Both operating systems are neck-and-neck, with Fedora maintaining a slight <strong>1% lead</strong> (Read: <strong>7.45 GB/s</strong> | Write: <strong>6.93 GB/s</strong>).</p></li><li><p><strong>Random Read (4 KiB):</strong></p></li><li><p><strong>Random Write (4 KiB):</strong></p></li></ul><h3><strong>Memory &amp; RAM Performance</strong></h3><p>The Linux kernel (6.12) exhibits superior memory management and lower overhead compared to Windows 11.</p><ul><li><p><strong>RAM Bandwidth (mbw):</strong> Fedora achieves <strong>75.1 GB/s</strong>, roughly <strong>2% higher</strong> than Windows (<strong>73.4 GB/s</strong>).</p></li><li><p><strong>RAM Latency:</strong> Fedora shows lower latency at <strong>76.2 ns</strong>, while Windows sits at 81.5 ns (Linux is <strong>6% faster/lower latency</strong>).</p></li><li><p><strong>Memory Operations (malloc/free):</strong> Fedora is significantly more efficient at handling memory allocation/deallocation at <strong>6.8 M ops/s</strong>, an <strong>11% advantage</strong> over Windows.</p></li><li><p><strong>Page-Fault Cost:</strong> This is the most significant delta; Linux handles page faults in <strong>2.9 μs</strong>, whereas Windows takes <strong>3.7 μs</strong>. This represents a <strong>22% performance advantage</strong> for Linux in low-level memory handling.</p></li></ul><div><hr/></div><h3><strong>Key Takeaway</strong></h3><p>While sequential throughput is nearly identical, <strong>Fedora 43</strong> provides a more responsive environment for random I/O and memory-intensive applications. The significantly lower page-fault cost suggests that Linux may feel snappier during heavy multi-tasking or when working with large datasets that frequently trigger memory management events.</p><ul><li><p><strong>Sequential disk throughput</strong> is a wash—both OSs saturate the NVMe link.</p></li><li><p><strong>Low-queue random I-O</strong> (the stuff that actually matters for snappy desktops and databases) is <strong>7-11 % faster on Fedora</strong>, mostly because the <strong>blk-mq + io_uring path</strong> has lower per-op overhead than Windows’ <strong>StorNVMe + miniport stack</strong>.</p></li><li><p><strong>Memory bandwidth</strong> is identical; <strong>latency and allocator speed</strong> edge to Linux by <strong>2-6 %</strong>.</p></li></ul><p></p>
+</main>
+</div>
+<p class="original-link">Original article: <a href="https://ruimanuelalmeidapinheiro.substack.com/p/a-benchmark-between-linux-fedora.html" target="_blank" rel="noopener noreferrer">Read on Substack</a></p>
+<div class="contact-mini">
+<a href="mailto:main@ruimanuelalmeidapinheiro.work">✉️ main@ruimanuelalmeidapinheiro.work</a>
+<a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+<span>📍 Lisbon · Arroios</span>
+</div>
+<p class="copyright">© Rui Manuel de Almeida Pinheiro — Published Articles · Lisbon, Arroios</p>
+<script>
+// Dark mode toggle matching central hub mechanics
+const themeBtn = document.getElementById('themeToggle');
+const root = document.documentElement;
+const saved = localStorage.getItem('theme');
+if (saved) root.setAttribute('data-theme', saved);
+themeBtn?.addEventListener('click', () => {
+const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+root.setAttribute('data-theme', next);
+localStorage.setItem('theme', next);
+});
+// Autoplay handling for background video layer
+const videoElement = document.getElementById('intro-video');
+window.addEventListener('DOMContentLoaded', () => {
+videoElement.play().catch(error => {
+console.log("Autoplay prevented. Awaiting interaction.", error);
+});
+});
+</script>
+</body>
+</html>

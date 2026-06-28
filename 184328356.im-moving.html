@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="Pi/logo.jpg" rel="icon" type="image/jpeg"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="https://ruimanuelalmeidapinheiro.work/184328356.im-moving" rel="canonical"/>
+
+<!-- Group Publications -->
+<title>I'm Moving</title>
+<meta content="https://substackcdn.com/image/fetch/$s_!8CMg!,w_320,h_213,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7ba80a0c-f62b-4f46-901c-8e2a98d8728e_1600x900.jpeg" property="og:image"/>
+<meta content="I'm Moving" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ruimanuelalmeidapinheiro.work/184328356.im-moving" property="og:url"/>
+<meta content="Rui Manuel de Almeida Pinheiro" name="author"/>
+<meta content="2026-01-12T15:58:38.422Z" property="article:published_time"/>
+<!-- End Group Publications -->
+<!-- MathJax Configuration for LaTeX Rendering -->
+<script>
+window.MathJax = {
+tex: {
+inlineMath: [['$', '$'], ['\\(', '\\)']],
+displayMath: [['$$', '$$'], ['\\[', '\\]']],
+processEscapes: true
+},
+options: {
+ignoreHtmlClass: 'tex2jax_ignore',
+processHtmlClass: 'tex2jax_process'
+}
+};
+</script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- End MathJax Configuration -->
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&amp;display=swap" rel="stylesheet"/>
+<!-- End Google Fonts -->
+<link href="article.css" rel="stylesheet"/>
+</head>
+<body class="tex2jax_ignore">
+<div id="video-container">
+<video autoplay="" id="intro-video" loop="" muted="" playsinline="">
+<source src="Pi/I.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="container">
+<div class="top-header">
+<div class="nav-links">
+<a href="index.html">← Back to Main Menu</a>
+</div>
+<button aria-label="Toggle dark mode" class="theme-toggle-btn" id="themeToggle">◑</button>
+</div>
+<main class="chapter-card tex2jax_process">
+<h1 class="chapter-title">I'm Moving</h1>
+<div class="main-article-image"><img src="https://substackcdn.com/image/fetch/$s_!8CMg!,w_320,h_213,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7ba80a0c-f62b-4f46-901c-8e2a98d8728e_1600x900.jpeg" alt="I'm Moving" /></div>
+<div class="article-meta" style="margin-bottom: 3.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; font-size: 0.9rem; opacity: 0.85;">
+<span class="publish-date">2026-01-12 15:58</span>
+<span>&bull;</span>
+<span class="word-count">16 words</span>
+<span>&bull;</span>
+<span class="reading-time">Reading time 00:01</span>
+</div>
+<!-- METADATA: NR=150.0 | TIMESTAMP=2026-01-12T15:58:38.422Z | WORDS=16 --><p></p><p>Just look at what I’ve found. My access card to the mainframe world.</p><p>27 years ago.</p>
+</main>
+</div>
+<p class="original-link">Original article: <a href="https://ruimanuelalmeidapinheiro.substack.com/p/im-moving.html" target="_blank" rel="noopener noreferrer">Read on Substack</a></p>
+<div class="contact-mini">
+<a href="mailto:main@ruimanuelalmeidapinheiro.work">✉️ main@ruimanuelalmeidapinheiro.work</a>
+<a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+<span>📍 Lisbon · Arroios</span>
+</div>
+<p class="copyright">© Rui Manuel de Almeida Pinheiro — Published Articles · Lisbon, Arroios</p>
+<script>
+// Dark mode toggle matching central hub mechanics
+const themeBtn = document.getElementById('themeToggle');
+const root = document.documentElement;
+const saved = localStorage.getItem('theme');
+if (saved) root.setAttribute('data-theme', saved);
+themeBtn?.addEventListener('click', () => {
+const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+root.setAttribute('data-theme', next);
+localStorage.setItem('theme', next);
+});
+// Autoplay handling for background video layer
+const videoElement = document.getElementById('intro-video');
+window.addEventListener('DOMContentLoaded', () => {
+videoElement.play().catch(error => {
+console.log("Autoplay prevented. Awaiting interaction.", error);
+});
+});
+</script>
+</body>
+</html>
