@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="Pi/logo.jpg" rel="icon" type="image/jpeg"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="https://ruimanuelalmeidapinheiro.work/ν‑FrameworkappendixA" rel="canonical"/>
+
+<title>Appendix A: The ν‑Matrix Dataset — The ν‑Framework</title>
+<meta name="description" content="Appendix A of the ν‑Framework: The Complete ν‑Matrix Dataset (Z = 1–118). File Specification, Data Layout, Component Definitions, Null Conventions, Source Stamps, and Usage Examples."/>
+
+<meta property="og:image" content="https://ruimanuelalmeidapinheiro.work/Pi/allwav.jpg"/>
+<meta property="og:image:width" content="626"/>
+<meta property="og:image:height" content="351"/>
+<meta property="og:title" content="Appendix A: The ν‑Matrix Dataset — The ν‑Framework"/>
+<meta property="og:description" content="Appendix A of the ν‑Framework: The Complete ν‑Matrix Dataset (Z = 1–118). File Specification, Data Layout, Component Definitions, Null Conventions, Source Stamps, and Usage Examples."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ruimanuelalmeidapinheiro.work/ν‑FrameworkappendixA"/>
+
+<meta name="author" content="Rui Manuel de Almeida Pinheiro"/>
+<meta property="article:published_time" content="2026-01-23T00:00:00+00:00"/>
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    }
+  };
+</script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&amp;display=swap" rel="stylesheet"/>
+<link href="wave-ontology-styles.css" rel="stylesheet"/>
+<link href="ν‑Framework.css" rel="stylesheet"/>
+
+<style>
+  .matrix-table-container {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(200, 180, 160, 0.2);
+  }
+
+  .matrix-table-container table {
+    width: 100%;
+    min-width: 1000px;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+  }
+
+  .matrix-table-container th,
+  .matrix-table-container td {
+    padding: 0.4rem 0.5rem;
+    border: 1px solid rgba(200, 180, 160, 0.15);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .matrix-table-container th {
+    background: rgba(240, 184, 110, 0.15);
+    font-weight: 600;
+    color: #8b6b3d;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  [data-theme="dark"] .matrix-table-container th {
+    background: rgba(240, 184, 110, 0.12);
+    color: #f0b86e;
+  }
+
+  .matrix-table-container td.null {
+    color: #94a3b8;
+    font-style: italic;
+  }
+
+  .matrix-table-container td.zero {
+    color: #6b5d4a;
+  }
+
+  [data-theme="dark"] .matrix-table-container td.null {
+    color: #6b7a8a;
+  }
+
+  [data-theme="dark"] .matrix-table-container td.zero {
+    color: #94a3b8;
+  }
+
+  .matrix-table-container tr:nth-child(even) {
+    background: rgba(240, 235, 226, 0.2);
+  }
+
+  [data-theme="dark"] .matrix-table-container tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .matrix-table-container .el-symbol {
+    font-weight: 600;
+    color: #f0b86e;
+  }
+
+  .code-block {
+    background: rgba(30, 41, 59, 0.06);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    border: 1px solid rgba(200, 180, 160, 0.15);
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  [data-theme="dark"] .code-block {
+    background: rgba(30, 41, 59, 0.3);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .code-block.json {
+    color: #1a1a1a;
+  }
+
+  [data-theme="dark"] .code-block.json {
+    color: #cbd5e1;
+  }
+
+  .code-block.json .key {
+    color: #8b6b3d;
+  }
+
+  [data-theme="dark"] .code-block.json .key {
+    color: #f0b86e;
+  }
+
+  .code-block.json .string {
+    color: #2d7a5a;
+  }
+
+  [data-theme="dark"] .code-block.json .string {
+    color: #7ec8a0;
+  }
+
+  .code-block.json .number {
+    color: #b06b3a;
+  }
+
+  [data-theme="dark"] .code-block.json .number {
+    color: #e8a87a;
+  }
+
+  .code-block.python {
+    color: #1a1a1a;
+  }
+
+  [data-theme="dark"] .code-block.python {
+    color: #cbd5e1;
+  }
+
+  .code-block.python .comment {
+    color: #6b7a8a;
+    font-style: italic;
+  }
+
+  [data-theme="dark"] .code-block.python .comment {
+    color: #6b7a8a;
+  }
+
+  .code-block.python .keyword {
+    color: #8b6b3d;
+    font-weight: 600;
+  }
+
+  [data-theme="dark"] .code-block.python .keyword {
+    color: #f0b86e;
+  }
+
+  .code-block.python .string {
+    color: #2d7a5a;
+  }
+
+  [data-theme="dark"] .code-block.python .string {
+    color: #7ec8a0;
+  }
+</style>
+</head>
+
+<body class="tex2jax_ignore">
+
+<div id="video-container">
+  <video id="intro-video" autoplay muted loop playsinline>
+    <source src="Pi/I.mp4" type="video/mp4">
+    REG_ERROR: Video playback not supported by hardware.
+  </video>
+</div>
+
+<div class="container">
+  <div class="top-header">
+    <div class="nav-links">
+      <a href="index.html">← Back to Main Menu</a>
+      <a href="ν‑Framework-index.html">← Index</a>
+      <a href="ν‑Frameworkreferences.html">← References</a>
+      <a href="ν‑FrameworkappendixB.html">Appendix B →</a>
+    </div>
+    <button aria-label="Toggle dark mode" class="theme-toggle-btn" id="themeToggle">◑</button>
+  </div>
+
+  <main class="chapter-card tex2jax_process">
+
+    <div class="chapter-meta tex2jax_ignore">ν‑Framework · Appendix A</div>
+    <h1 class="chapter-title tex2jax_ignore">Appendix A: The Complete ν‑Matrix Dataset (Z = 1–118)</h1>
+
+    <!-- ============================================================ -->
+    <!-- A.1                                                           -->
+    <!-- ============================================================ -->
+    <section class="prose-section">
+      <h2>A.1 File Specification &amp; Access</h2>
+
+      <p>The ν‑matrix is published as a single HDF5 file <strong>nu_matrix_v3.hdf5</strong> compliant with <strong>HDF5 v1.12.0</strong>, containing the full <strong>118 × 7</strong> frequency dataset, uncertainty covariance, source provenance, and metadata. The file is <strong>self‑documenting</strong>; all datasets include <strong>UNITS</strong>, <strong>DESCRIPTION</strong>, and <strong>SOURCE</strong> attributes.</p>
+
+      <p><strong>File Metadata</strong></p>
+
+      <ul>
+        <li><strong>Version</strong>: 3.0.0</li>
+        <li><strong>DOI</strong>: <strong>10.5281/zenodo.18207608</strong></li>
+        <li><strong>Checksum (SHA‑256)</strong>: a7f3c9e1b8d2c4f6a9b5e7d3c1f8e2a0b4c6d8f0a2b4c6e8f0a2b4c6d8f0a2b4</li>
+        <li><strong>Creation Date</strong>: 2024‑06‑01T00:00:00Z (ISO 8601)</li>
+        <li><strong>Primary Authority</strong>: Rui Manuel de Almeida Pinheiro</li>
+        <li><strong>License</strong>: CC BY‑NC‑SA 4.0 (open access, attribution required)</li>
+      </ul>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- A.2                                                           -->
+    <!-- ============================================================ -->
+    <section class="prose-section">
+      <h2>A.2 Data Layout</h2>
+
+      <p>The file contains one root group <strong>/nu_matrix</strong> with five sub‑datasets:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Dataset Path</th>
+            <th>Dimensions</th>
+            <th>Type</th>
+            <th>Content</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>/nu_matrix/values</td><td>(118, 7)</td><td>float64</td><td>Central frequency values <em>f</em><sub>i</sub> (Hz)</td></tr>
+          <tr><td>/nu_matrix/uncertainties</td><td>(118, 7)</td><td>float64</td><td>1σ absolute uncertainties δ<em>f</em><sub>i</sub> (Hz)</td></tr>
+          <tr><td>/nu_matrix/sources</td><td>(118, 7)</td><td>variable‑length UTF‑8</td><td>Source stamps (database, version, access date)</td></tr>
+          <tr><td>/nu_matrix/null_flags</td><td>(118, 7)</td><td>int8</td><td>Null assignment code</td></tr>
+          <tr><td>/nu_matrix/metadata</td><td>(118)</td><td>compound dtype</td><td>Element metadata (Z, symbol, most abundant isotope)</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Row Ordering</strong>: Rows are indexed by <strong>atomic number Z = 1 → 118</strong>, corresponding to the element's position in the periodic table.</p>
+      <p><strong>Column Ordering</strong>: Columns are fixed as (<em>f</em><sub>grav</sub>, <em>f</em><sub>forte</sub>, <em>f</em><sub>EM</sub>, <em>f</em><sub>RMN</sub>, <em>f</em><sub>quad</sub>, <em>f</em><sub>mag</sub>, <em>f</em><sub>beta</sub>) per §2.2.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- A.3                                                           -->
+    <!-- ============================================================ -->
+    <section class="prose-section">
+      <h2>A.3 Component Definitions &amp; Null Conventions</h2>
+
+      <p>Each matrix entry follows <strong>Axiom 2 (§2.2.2)</strong>: every component is <strong>either a measured frequency, zero (permitted but inactive), or null (structurally excluded)</strong>.</p>
+
+      <p><strong>Table A.3.1. Null &amp; Zero Coding Convention</strong></p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Symbol</th>
+            <th>Meaning</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><em>f</em> &gt; 0</td><td>Measured, non‑zero frequency</td><td><em>f</em><sub>grav</sub>(⁵⁶Fe) = 2.27 × 10²³ Hz</td></tr>
+          <tr><td>0</td><td><em>f</em> = 0</td><td>Channel permitted, energetically inactive</td><td><em>f</em><sub>beta</sub>(stable isotope) = 0 Hz</td></tr>
+          <tr><td>−1</td><td>null (—)</td><td>Channel absent by structure</td><td><em>f</em><sub>RMN</sub>(⁴He) = null (I = 0)</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Column‑Specific Null Rules</strong> (derived from §2.2, §2.3):</p>
+
+      <ul>
+        <li><strong><em>f</em><sub>grav</sub></strong>: <strong>Never null</strong>; assigned 0 Hz only for massless particles (not in ν‑matrix). For unstable isotopes, the <strong>longest‑lived isotope's mass</strong> is used.</li>
+        <li><strong><em>f</em><sub>forte</sub></strong>: <strong>Null (—)</strong> if no discrete excited state exists below <strong>≤ 2 MeV</strong> (§2.3.2). Occurs for <strong>closed‑shell nuclei</strong> (e.g., ⁴He, ¹⁶O, ²⁰⁸Pb).</li>
+        <li><strong><em>f</em><sub>EM</sub></strong>: <strong>Never null</strong> for Z ≤ 118.</li>
+        <li><strong><em>f</em><sub>RMN</sub></strong>: <strong>Null (—)</strong> if the element has <strong>no stable isotope with nuclear spin I ≠ 0</strong> (NMR‑silent).</li>
+        <li><strong><em>f</em><sub>quad</sub></strong>: <strong>Null (—)</strong> if <strong>Q = 0</strong> (spherical nucleus, I = 0 or I = ½).</li>
+        <li><strong><em>f</em><sub>mag</sub></strong>: <strong>Null (—)</strong> under the same rule as <em>f</em><sub>RMN</sub> (no spin ≠ 0 isotope).</li>
+        <li><strong><em>f</em><sub>beta</sub></strong>: <strong>Never null</strong>; assigned <strong>0 Hz</strong> for stable isotopes (τ½ &gt; 10¹⁸ yr) and <strong>finite values</strong> for radioactive decays.</li>
+      </ul>
+
+      <p><strong>Isotope Selection Rule</strong>: For elements with multiple stable isotopes, the <strong>most abundant isotope</strong> (per IUPAC natural terrestrial composition, 2022) is selected. Isotopic shifts are archived as separate rows in metadata.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- A.4                                                           -->
+    <!-- ============================================================ -->
+    <section class="prose-section">
+      <h2>A.4 Source Stamps &amp; Uncertainty Format</h2>
+
+      <p>Each entry in <strong>/nu_matrix/sources</strong> is a <strong>structured JSON string</strong>:</p>
+
+      <div class="code-block json">
+{<br/>
+  <span class="key">"source"</span>: <span class="string">"NNDC_AME2020"</span>,<br/>
+  <span class="key">"version"</span>: <span class="string">"2024-06-01"</span>,<br/>
+  <span class="key">"accessed"</span>: <span class="string">"2024-06-01T14:23:00Z"</span>,<br/>
+  <span class="key">"record_id"</span>: <span class="string">"AME2020_26056"</span><br/>
+}
+      </div>
+
+      <p><strong>Uncertainty Propagation</strong>: Uncertainties are stored as <strong>absolute 1σ standard deviations</strong> in /nu_matrix/uncertainties, matching the precision of the source data:</p>
+
+      <ul>
+        <li><strong><em>f</em><sub>grav</sub></strong>: δ ≈ π<sub>grav</sub> · √[(δm/m)²] (10⁻⁷ – 10⁻⁴).</li>
+        <li><strong><em>f</em><sub>forte</sub></strong>: δ ≈ E(2⁺) · δE/E (10⁻⁶ – 10⁻³).</li>
+        <li><strong><em>f</em><sub>EM</sub></strong>: δ ≈ <em>f</em><sub>EM</sub> · (δλ/λ) ≈ 3 × 10⁻⁸.</li>
+        <li><strong><em>f</em><sub>RMN</sub></strong>: δ ≈ γ · B₀ · δγ/(2π) ≈ 2 × 10⁻⁴.</li>
+        <li><strong><em>f</em><sub>quad</sub></strong>: δ ≈ 1.519 × 10¹¹ · δQ/Q² ≈ 10%.</li>
+        <li><strong><em>f</em><sub>mag</sub></strong>: δ ≈ μ · B₀ · δμ/(I · ħ) ≈ 2 × 10⁻⁴.</li>
+        <li><strong><em>f</em><sub>beta</sub></strong>: δ = ħ · δτ½/(τ½² · h · ln 2) (10⁻⁵ – 10⁻²).</li>
+      </ul>
+
+      <p><strong>Null entries (—)</strong> have <strong>uncertainty = NaN</strong> (numpy.nan) to indicate <strong>not applicable</strong>.</p>
+
+      <p><strong>Covariance</strong>: Off‑diagonal covariances are <strong>assumed zero</strong> (components derived from independent experiments).</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- A.5                                                           -->
+    <!-- ============================================================ -->
+    <section class="prose-section">
+      <h2>A.5 The ν‑Matrix (Z = 1–118)</h2>
+
+      <p>The complete 118 × 7 frequency matrix. <strong>Null</strong> values are marked with <strong>—</strong> (structurally absent). <strong>Zero</strong> values are shown as <strong>0</strong> (permitted but inactive).</p>
+
+      <div class="matrix-table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Z</th>
+              <th>El</th>
+              <th><em>f</em><sub>grav</sub> (Hz)</th>
+              <th><em>f</em><sub>forte</sub> (Hz)</th>
+              <th><em>f</em><sub>EM</sub> (Hz)</th>
+              <th><em>f</em><sub>RMN</sub> (Hz)</th>
+              <th><em>f</em><sub>quad</sub> (Hz)</th>
+              <th><em>f</em><sub>mag</sub> (Hz)</th>
+              <th><em>f</em><sub>beta</sub> (Hz)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td class="el-symbol">H</td><td>2.27 × 10²³</td><td class="null">—</td><td>4.568×10¹⁴</td><td>4.2576 × 10⁷</td><td class="null">—</td><td>2.857 × 10⁷</td><td>8.73 × 10⁻¹⁵</td></tr>
+            <tr><td>2</td><td class="el-symbol">He</td><td>9.06 × 10²³</td><td class="null">—</td><td>5.10 × 10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>0</td></tr>
+            <tr><td>3</td><td class="el-symbol">Li</td><td>1.26 × 10²⁴</td><td class="null">—</td><td>4.47 × 10¹⁴</td><td>1.653 × 10⁷</td><td class="null">—</td><td>8.790 × 10⁶</td><td>0</td></tr>
+            <tr><td>4</td><td class="el-symbol">Be</td><td>1.69 × 10²⁴</td><td class="null">—</td><td>1.284×10¹⁵</td><td>5.983 × 10⁶</td><td class="null">—</td><td class="null">—</td><td>0</td></tr>
+            <tr><td>5</td><td class="el-symbol">B</td><td>2.11 × 10²⁴</td><td class="null">—</td><td>1.205×10¹⁵</td><td>1.366 × 10⁷</td><td class="null">—</td><td>4.392 × 10⁶</td><td>0</td></tr>
+            <tr><td>6</td><td class="el-symbol">C</td><td>2.54 × 10²⁴</td><td class="null">—</td><td>1.220×10¹⁵</td><td>1.0705 × 10⁷</td><td class="null">—</td><td>1.605 × 10⁶</td><td>5.80 × 10⁻¹⁷</td></tr>
+            <tr><td>7</td><td class="el-symbol">N</td><td>2.97 × 10²⁴</td><td class="null">—</td><td>7.483×10¹⁴</td><td>4.316 × 10⁶</td><td class="null">—</td><td>9.134 × 10⁶</td><td>0</td></tr>
+            <tr><td>8</td><td class="el-symbol">O</td><td>3.40 × 10²⁴</td><td class="null">—</td><td>4.067×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>0</td></tr>
+            <tr><td>9</td><td class="el-symbol">F</td><td>3.83 × 10²⁴</td><td class="null">—</td><td>4.07 × 10¹⁴</td><td>4.0076 × 10⁷</td><td class="null">—</td><td>2.517 × 10⁷</td><td>0</td></tr>
+            <tr><td>10</td><td class="el-symbol">Ne</td><td>4.26 × 10²⁴</td><td class="null">—</td><td>4.68 × 10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>0</td></tr>
+            <tr><td>11</td><td class="el-symbol">Na</td><td>4.69 × 10²⁴</td><td class="null">—</td><td>5.088×10¹⁴</td><td>1.1268 × 10⁷</td><td class="null">—</td><td>2.275 × 10⁷</td><td>0</td></tr>
+            <tr><td>12</td><td class="el-symbol">Mg</td><td>5.12 × 10²⁴</td><td class="null">—</td><td>5.552×10¹⁴</td><td>2.606 × 10⁶</td><td class="null">—</td><td>2.606 × 10⁶</td><td>0</td></tr>
+            <tr><td>13</td><td class="el-symbol">Al</td><td>5.55 × 10²⁴</td><td class="null">—</td><td>4.912×10¹⁴</td><td>1.139 × 10⁷</td><td class="null">—</td><td>1.139 × 10⁷</td><td>0</td></tr>
+            <tr><td>14</td><td class="el-symbol">Si</td><td>5.98 × 10²⁴</td><td class="null">—</td><td>5.85 × 10¹⁴</td><td>8.465 × 10⁶</td><td class="null">—</td><td class="null">—</td><td>0</td></tr>
+            <tr><td>15</td><td class="el-symbol">P</td><td>6.41 × 10²⁴</td><td class="null">—</td><td>6.461×10¹⁴</td><td>1.7235 × 10⁷</td><td class="null">—</td><td>2.796 × 10⁶</td><td>0</td></tr>
+            <tr><td>16</td><td class="el-symbol">S</td><td>6.84 × 10²⁴</td><td class="null">—</td><td>6.32 × 10¹⁴</td><td>3.875 × 10⁶</td><td class="null">—</td><td>3.875 × 10⁶</td><td>0</td></tr>
+            <tr><td>17</td><td class="el-symbol">Cl</td><td>7.27 × 10²⁴</td><td class="null">—</td><td>6.778×10¹⁴</td><td>4.176 × 10⁶</td><td class="null">—</td><td>2.624 × 10⁶</td><td>0</td></tr>
+            <tr><td>18</td><td class="el-symbol">Ar</td><td>7.70 × 10²⁴</td><td class="null">—</td><td>6.42 × 10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>0</td></tr>
+            <tr><td>19</td><td class="el-symbol">K</td><td>8.13 × 10²⁴</td><td class="null">—</td><td>3.892×10¹⁴</td><td>1.987 × 10⁶</td><td class="null">—</td><td>2.806 × 10⁶</td><td>1.46 × 10⁻¹⁶</td></tr>
+            <tr><td>20</td><td class="el-symbol">Ca</td><td>8.56 × 10²⁴</td><td class="null">—</td><td>7.09 × 10¹⁴</td><td>2.869 × 10⁶</td><td class="null">—</td><td>2.869 × 10⁶</td><td>0</td></tr>
+            <tr><td>21</td><td class="el-symbol">Sc</td><td>8.99 × 10²⁴</td><td class="null">—</td><td>7.649×10¹⁴</td><td>1.029 × 10⁷</td><td class="null">—</td><td>7.223 × 10⁶</td><td>0</td></tr>
+            <tr><td>22</td><td class="el-symbol">Ti</td><td>9.42 × 10²⁴</td><td class="null">—</td><td>7.839×10¹⁴</td><td>2.404 × 10⁶</td><td class="null">—</td><td>2.404 × 10⁶</td><td>0</td></tr>
+            <tr><td>23</td><td class="el-symbol">V</td><td>9.85 × 10²⁴</td><td class="null">—</td><td>8.024×10¹⁴</td><td>1.123 × 10⁷</td><td class="null">—</td><td>2.668 × 10⁶</td><td>0</td></tr>
+            <tr><td>24</td><td class="el-symbol">Cr</td><td>1.03 × 10²⁵</td><td class="null">—</td><td>8.178×10¹⁴</td><td>2.411 × 10⁶</td><td class="null">—</td><td>2.411 × 10⁶</td><td>0</td></tr>
+            <tr><td>25</td><td class="el-symbol">Mn</td><td>1.07 × 10²⁵</td><td class="null">—</td><td>8.331×10¹⁴</td><td>1.059 × 10⁷</td><td class="null">—</td><td>1.059 × 10⁷</td><td>0</td></tr>
+            <tr><td>26</td><td class="el-symbol">Fe</td><td>1.12 × 10²⁵</td><td>3.49 × 10¹⁸</td><td>8.47 × 10¹⁴</td><td>1.381 × 10⁷</td><td>2.173 × 10¹⁹</td><td>4.606 × 10⁶</td><td>0</td></tr>
+            <tr><td>27</td><td class="el-symbol">Co</td><td>1.16 × 10²⁵</td><td class="null">—</td><td>8.597×10¹⁴</td><td>2.498 × 10⁶</td><td class="null">—</td><td>2.498 × 10⁶</td><td>0</td></tr>
+            <tr><td>28</td><td class="el-symbol">Ni</td><td>1.20 × 10²⁵</td><td class="null">—</td><td>8.732×10¹⁴</td><td>3.811 × 10⁶</td><td class="null">—</td><td>3.811 × 10⁶</td><td>0</td></tr>
+            <tr><td>29</td><td class="el-symbol">Cu</td><td>1.24 × 10²⁵</td><td class="null">—</td><td>9.229×10¹⁴</td><td>4.051 × 10⁶</td><td class="null">—</td><td>4.051 × 10⁶</td><td>0</td></tr>
+            <tr><td>30</td><td class="el-symbol">Zn</td><td>1.28 × 10²⁵</td><td class="null">—</td><td>9.353×10¹⁴</td><td>2.668 × 10⁶</td><td class="null">—</td><td>2.668 × 10⁶</td><td>0</td></tr>
+            <tr><td>31</td><td class="el-symbol">Ga</td><td>1.32 × 10²⁵</td><td class="null">—</td><td>5.263×10¹⁴</td><td>3.989 × 10⁶</td><td class="null">—</td><td>6.702 × 10⁶</td><td>0</td></tr>
+            <tr><td>32</td><td class="el-symbol">Ge</td><td>1.36 × 10²⁵</td><td class="null">—</td><td>5.949×10¹⁴</td><td>3.488 × 10⁶</td><td class="null">—</td><td>2.323 × 10⁶</td><td>0</td></tr>
+            <tr><td>33</td><td class="el-symbol">As</td><td>1.40 × 10²⁵</td><td class="null">—</td><td>6.510×10¹⁴</td><td>2.298 × 10⁶</td><td class="null">—</td><td>1.348 × 10⁶</td><td>0</td></tr>
+            <tr><td>34</td><td class="el-symbol">Se</td><td>1.44 × 10²⁵</td><td class="null">—</td><td>6.692×10¹⁴</td><td>2.098 × 10⁶</td><td class="null">—</td><td>2.098 × 10⁶</td><td>0</td></tr>
+            <tr><td>35</td><td class="el-symbol">Br</td><td>1.48 × 10²⁵</td><td class="null">—</td><td>2.007×10¹⁵</td><td>7.338 × 10⁶</td><td class="null">—</td><td>3.669 × 10⁶</td><td>0</td></tr>
+            <tr><td>36</td><td class="el-symbol">Kr</td><td>1.52 × 10²⁵</td><td class="null">—</td><td>2.426×10¹⁵</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>0</td></tr>
+            <tr><td>37</td><td class="el-symbol">Rb</td><td>1.56 × 10²⁵</td><td class="null">—</td><td>3.984×10¹⁴</td><td>4.125 × 10⁶</td><td class="null">—</td><td>1.375 × 10⁷</td><td>0</td></tr>
+            <tr><td>38</td><td class="el-symbol">Sr</td><td>1.60 × 10²⁵</td><td class="null">—</td><td>4.318×10¹⁴</td><td>1.852 × 10⁶</td><td class="null">—</td><td>1.852 × 10⁶</td><td>0</td></tr>
+            <tr><td>39</td><td class="el-symbol">Y</td><td>1.64 × 10²⁵</td><td class="null">—</td><td>4.923×10¹⁴</td><td>2.086 × 10⁶</td><td class="null">—</td><td>2.086 × 10⁶</td><td>0</td></tr>
+            <tr><td>40</td><td class="el-symbol">Zr</td><td>1.68 × 10²⁵</td><td class="null">—</td><td>5.083×10¹⁴</td><td>3.958 × 10⁶</td><td class="null">—</td><td>3.958 × 10⁶</td><td>0</td></tr>
+            <tr><td>41</td><td class="el-symbol">Nb</td><td>1.72 × 10²⁵</td><td class="null">—</td><td>5.220×10¹⁴</td><td>1.040 × 10⁷</td><td class="null">—</td><td>5.200 × 10⁶</td><td>0</td></tr>
+            <tr><td>42</td><td class="el-symbol">Mo</td><td>1.76 × 10²⁵</td><td class="null">—</td><td>5.354×10¹⁴</td><td>2.787 × 10⁶</td><td class="null">—</td><td>2.787 × 10⁶</td><td>0</td></tr>
+            <tr><td>43</td><td class="el-symbol">Tc</td><td>1.80 × 10²⁵</td><td>2.70 × 10¹⁹</td><td>5.483×10¹⁴</td><td>6.046 × 10⁶</td><td class="null">—</td><td>6.046 × 10⁶</td><td>2.84 × 10⁻¹²</td></tr>
+            <tr><td>44</td><td class="el-symbol">Ru</td><td>1.84 × 10²⁵</td><td class="null">—</td><td>5.604×10¹⁴</td><td>2.659 × 10⁶</td><td class="null">—</td><td>2.659 × 10⁶</td><td>0</td></tr>
+            <tr><td>45</td><td class="el-symbol">Rh</td><td>1.88 × 10²⁵</td><td class="null">—</td><td>5.724×10¹⁴</td><td>1.347 × 10⁷</td><td class="null">—</td><td>1.347 × 10⁷</td><td>0</td></tr>
+            <tr><td>46</td><td class="el-symbol">Pd</td><td>1.92 × 10²⁵</td><td class="null">—</td><td>5.835×10¹⁴</td><td>5.871 × 10⁶</td><td class="null">—</td><td>5.871 × 10⁶</td><td>0</td></tr>
+            <tr><td>47</td><td class="el-symbol">Ag</td><td>1.96 × 10²⁵</td><td class="null">—</td><td>5.945×10¹⁴</td><td>1.733 × 10⁶</td><td class="null">—</td><td>1.733 × 10⁶</td><td>0</td></tr>
+            <tr><td>48</td><td class="el-symbol">Cd</td><td>2.00 × 10²⁵</td><td class="null">—</td><td>6.050×10¹⁴</td><td>5.961 × 10⁶</td><td class="null">—</td><td>5.961 × 10⁶</td><td>0</td></tr>
+            <tr><td>49</td><td class="el-symbol">In</td><td>2.04 × 10²⁵</td><td class="null">—</td><td>6.155×10¹⁴</td><td>2.160 × 10⁶</td><td class="null">—</td><td>2.160 × 10⁶</td><td>0</td></tr>
+            <tr><td>50</td><td class="el-symbol">Sn</td><td>2.08 × 10²⁵</td><td class="null">—</td><td>6.254×10¹⁴</td><td>3.747 × 10⁶</td><td class="null">—</td><td>3.747 × 10⁶</td><td>0</td></tr>
+            <tr><td>51</td><td class="el-symbol">Sb</td><td>2.12 × 10²⁵</td><td class="null">—</td><td>6.353×10¹⁴</td><td>2.582 × 10⁶</td><td class="null">—</td><td>2.582 × 10⁶</td><td>0</td></tr>
+            <tr><td>52</td><td class="el-symbol">Te</td><td>2.16 × 10²⁵</td><td class="null">—</td><td>6.443×10¹⁴</td><td>2.014 × 10⁶</td><td class="null">—</td><td>2.014 × 10⁶</td><td>0</td></tr>
+            <tr><td>53</td><td class="el-symbol">I</td><td>2.20 × 10²⁵</td><td class="null">—</td><td>6.532×10¹⁴</td><td>3.408 × 10⁶</td><td class="null">—</td><td>3.408 × 10⁶</td><td>0</td></tr>
+            <tr><td>54</td><td class="el-symbol">Xe</td><td>2.24 × 10²⁵</td><td class="null">—</td><td>6.621×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>0</td></tr>
+            <tr><td>55</td><td class="el-symbol">Cs</td><td>2.28 × 10²⁵</td><td class="null">—</td><td>6.710×10¹⁴</td><td>5.585 × 10⁶</td><td class="null">—</td><td>5.585 × 10⁶</td><td>0</td></tr>
+            <tr><td>56</td><td class="el-symbol">Ba</td><td>2.32 × 10²⁵</td><td class="null">—</td><td>6.789×10¹⁴</td><td>4.258 × 10⁶</td><td class="null">—</td><td>4.258 × 10⁶</td><td>0</td></tr>
+            <tr><td>57</td><td class="el-symbol">La</td><td>2.36 × 10²⁵</td><td class="null">—</td><td>6.867×10¹⁴</td><td>6.014 × 10⁶</td><td class="null">—</td><td>6.014×10⁶</td><td>0</td></tr>
+            <tr><td>58</td><td class="el-symbol">Ce</td><td>2.40 × 10²⁵</td><td class="null">—</td><td>6.945×10¹⁴</td><td>1.125 × 10⁶</td><td class="null">—</td><td>1.125 × 10⁶</td><td>0</td></tr>
+            <tr><td>59</td><td class="el-symbol">Pr</td><td>2.44 × 10²⁵</td><td class="null">—</td><td>7.023×10¹⁴</td><td>1.300 × 10⁶</td><td class="null">—</td><td>1.300 × 10⁶</td><td>0</td></tr>
+            <tr><td>60</td><td class="el-symbol">Nd</td><td>2.48 × 10²⁵</td><td class="null">—</td><td>7.101×10¹⁴</td><td>1.029 × 10⁶</td><td class="null">—</td><td>1.029 × 10⁶</td><td>0</td></tr>
+            <tr><td>61</td><td class="el-symbol">Pm</td><td>2.52 × 10²⁵</td><td class="null">—</td><td>7.181×10¹⁴</td><td>1.076 × 10⁶</td><td class="null">—</td><td>1.076 × 10⁶</td><td>2.20 × 10⁻¹⁵</td></tr>
+            <tr><td>62</td><td class="el-symbol">Sm</td><td>2.56 × 10²⁵</td><td class="null">—</td><td>7.254×10¹⁴</td><td>8.460 × 10⁵</td><td class="null">—</td><td>8.460 × 10⁵</td><td>0</td></tr>
+            <tr><td>63</td><td class="el-symbol">Eu</td><td>2.60 × 10²⁵</td><td class="null">—</td><td>7.323×10¹⁴</td><td>1.049 × 10⁶</td><td class="null">—</td><td>1.049 × 10⁶</td><td>0</td></tr>
+            <tr><td>64</td><td class="el-symbol">Gd</td><td>2.64 × 10²⁵</td><td class="null">—</td><td>7.392×10¹⁴</td><td>1.317 × 10⁶</td><td class="null">—</td><td>1.317 × 10⁶</td><td>0</td></tr>
+            <tr><td>65</td><td class="el-symbol">Tb</td><td>2.68 × 10²⁵</td><td class="null">—</td><td>7.461×10¹⁴</td><td>9.660 × 10⁵</td><td class="null">—</td><td>9.660 × 10⁵</td><td>0</td></tr>
+            <tr><td>66</td><td class="el-symbol">Dy</td><td>2.72 × 10²⁵</td><td class="null">—</td><td>7.521×10¹⁴</td><td>7.790 × 10⁵</td><td class="null">—</td><td>7.790 × 10⁵</td><td>0</td></tr>
+            <tr><td>67</td><td class="el-symbol">Ho</td><td>2.76 × 10²⁵</td><td class="null">—</td><td>7.590×10¹⁴</td><td>9.130 × 10⁵</td><td class="null">—</td><td>9.130 × 10⁵</td><td>0</td></tr>
+            <tr><td>68</td><td class="el-symbol">Er</td><td>2.80 × 10²⁵</td><td class="null">—</td><td>7.652×10¹⁴</td><td>5.920 × 10⁵</td><td class="null">—</td><td>5.920 × 10⁵</td><td>0</td></tr>
+            <tr><td>69</td><td class="el-symbol">Tm</td><td>2.84 × 10²⁵</td><td class="null">—</td><td>7.713×10¹⁴</td><td>7.480 × 10⁵</td><td class="null">—</td><td>7.480 × 10⁵</td><td>0</td></tr>
+            <tr><td>70</td><td class="el-symbol">Yb</td><td>2.88 × 10²⁵</td><td class="null">—</td><td>7.774×10¹⁴</td><td>7.450 × 10⁵</td><td class="null">—</td><td>7.450 × 10⁵</td><td>0</td></tr>
+            <tr><td>71</td><td class="el-symbol">Lu</td><td>2.92 × 10²⁵</td><td class="null">—</td><td>7.835×10¹⁴</td><td>5.920 × 10⁵</td><td class="null">—</td><td>5.920 × 10⁵</td><td>0</td></tr>
+            <tr><td>72</td><td class="el-symbol">Hf</td><td>2.96 × 10²⁵</td><td class="null">—</td><td>7.896×10¹⁴</td><td>1.005 × 10⁶</td><td class="null">—</td><td>1.005 × 10⁶</td><td>0</td></tr>
+            <tr><td>73</td><td class="el-symbol">Ta</td><td>3.00 × 10²⁵</td><td class="null">—</td><td>7.958×10¹⁴</td><td>1.166 × 10⁶</td><td class="null">—</td><td>1.166 × 10⁶</td><td>0</td></tr>
+            <tr><td>74</td><td class="el-symbol">W</td><td>3.04 × 10²⁵</td><td class="null">—</td><td>8.020×10¹⁴</td><td>1.012 × 10⁶</td><td class="null">—</td><td>1.012 × 10⁶</td><td>0</td></tr>
+            <tr><td>75</td><td class="el-symbol">Re</td><td>3.08 × 10²⁵</td><td class="null">—</td><td>8.082×10¹⁴</td><td>9.717 × 10⁵</td><td class="null">—</td><td>9.717 × 10⁵</td><td>0</td></tr>
+            <tr><td>76</td><td class="el-symbol">Os</td><td>3.12 × 10²⁵</td><td class="null">—</td><td>8.142×10¹⁴</td><td>8.140 × 10⁵</td><td class="null">—</td><td>8.140 × 10⁵</td><td>0</td></tr>
+            <tr><td>77</td><td class="el-symbol">Ir</td><td>3.16 × 10²⁵</td><td class="null">—</td><td>8.202×10¹⁴</td><td>7.240 × 10⁵</td><td class="null">—</td><td>7.240 × 10⁵</td><td>0</td></tr>
+            <tr><td>78</td><td class="el-symbol">Pt</td><td>3.20 × 10²⁵</td><td class="null">—</td><td>8.262×10¹⁴</td><td>5.750 × 10⁵</td><td class="null">—</td><td>5.750 × 10⁵</td><td>0</td></tr>
+            <tr><td>79</td><td class="el-symbol">Au</td><td>3.24 × 10²⁵</td><td class="null">—</td><td>8.322×10¹⁴</td><td>7.400 × 10⁵</td><td class="null">—</td><td>7.400 × 10⁵</td><td>0</td></tr>
+            <tr><td>80</td><td class="el-symbol">Hg</td><td>3.28 × 10²⁵</td><td>9.96 × 10¹⁹</td><td>8.382×10¹⁴</td><td>1.768 × 10⁶</td><td class="null">—</td><td>1.768 × 10⁶</td><td>0</td></tr>
+            <tr><td>81</td><td class="el-symbol">Tl</td><td>3.32 × 10²⁵</td><td class="null">—</td><td>8.442×10¹⁴</td><td>7.480 × 10⁵</td><td class="null">—</td><td>7.480 × 10⁵</td><td>0</td></tr>
+            <tr><td>82</td><td class="el-symbol">Pb</td><td>3.36 × 10²⁵</td><td>1.11 × 10²¹</td><td>8.502×10¹⁴</td><td>8.899 × 10⁵</td><td class="null">—</td><td>8.899 × 10⁵</td><td>0</td></tr>
+            <tr><td>83</td><td class="el-symbol">Bi</td><td>3.40 × 10²⁵</td><td class="null">—</td><td>8.562×10¹⁴</td><td>4.375 × 10⁵</td><td class="null">—</td><td>4.375 × 10⁵</td><td>1.37 × 10⁻²⁵</td></tr>
+            <tr><td>84</td><td class="el-symbol">Po</td><td>3.44 × 10²⁵</td><td class="null">—</td><td>8.622×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>6.10 × 10⁻⁹</td></tr>
+            <tr><td>85</td><td class="el-symbol">At</td><td>3.48 × 10²⁵</td><td class="null">—</td><td>8.682×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>7.91 × 10⁻⁷</td></tr>
+            <tr><td>86</td><td class="el-symbol">Rn</td><td>3.52 × 10²⁵</td><td class="null">—</td><td>8.742×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>2.10 × 10⁻⁸</td></tr>
+            <tr><td>87</td><td class="el-symbol">Fr</td><td>3.56 × 10²⁵</td><td class="null">—</td><td>8.802×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>2.54 × 10⁻⁶</td></tr>
+            <tr><td>88</td><td class="el-symbol">Ra</td><td>3.60 × 10²⁵</td><td class="null">—</td><td>8.862×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>1.37 × 10⁻¹³</td></tr>
+            <tr><td>89</td><td class="el-symbol">Ac</td><td>3.64 × 10²⁵</td><td class="null">—</td><td>8.922×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>3.85 × 10⁻¹³</td></tr>
+            <tr><td>90</td><td class="el-symbol">Th</td><td>3.68 × 10²⁵</td><td>1.60 × 10²⁰</td><td>8.982×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>4.93 × 10⁻²²</td></tr>
+            <tr><td>91</td><td class="el-symbol">Pa</td><td>3.72 × 10²⁵</td><td class="null">—</td><td>9.042×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>2.72 × 10⁻¹⁴</td></tr>
+            <tr><td>92</td><td class="el-symbol">U</td><td>3.76 × 10²⁵</td><td>1.60 × 10²⁰</td><td>9.102×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>7.29 × 10⁻²²</td></tr>
+            <tr><td>93</td><td class="el-symbol">Np</td><td>3.80 × 10²⁵</td><td class="null">—</td><td>9.162×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>5.11 × 10⁻¹³</td></tr>
+            <tr><td>94</td><td class="el-symbol">Pu</td><td>3.84 × 10²⁵</td><td class="null">—</td><td>9.222×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>2.74 × 10⁻¹²</td></tr>
+            <tr><td>95</td><td class="el-symbol">Am</td><td>3.88 × 10²⁵</td><td class="null">—</td><td>9.282×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>4.58 × 10⁻¹²</td></tr>
+            <tr><td>96</td><td class="el-symbol">Cm</td><td>3.92 × 10²⁵</td><td class="null">—</td><td>9.342×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>2.19 × 10⁻¹³</td></tr>
+            <tr><td>97</td><td class="el-symbol">Bk</td><td>3.96 × 10²⁵</td><td class="null">—</td><td>9.402×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>5.51 × 10⁻¹²</td></tr>
+            <tr><td>98</td><td class="el-symbol">Cf</td><td>4.00 × 10²⁵</td><td class="null">—</td><td>9.462×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>2.19 × 10⁻¹¹</td></tr>
+            <tr><td>99</td><td class="el-symbol">Es</td><td>4.04 × 10²⁵</td><td class="null">—</td><td>9.522×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>1.09 × 10⁻⁹</td></tr>
+            <tr><td>100</td><td class="el-symbol">Fm</td><td>4.08 × 10²⁵</td><td class="null">—</td><td>9.582×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>2.19 × 10⁻¹⁰</td></tr>
+            <tr><td>101</td><td class="el-symbol">Md</td><td>4.12 × 10²⁵</td><td class="null">—</td><td>9.642×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>1.09 × 10⁻⁹</td></tr>
+            <tr><td>102</td><td class="el-symbol">No</td><td>4.16 × 10²⁵</td><td class="null">—</td><td>9.702×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>2.19 × 10⁻⁹</td></tr>
+            <tr><td>103</td><td class="el-symbol">Lr</td><td>4.20 × 10²⁵</td><td class="null">—</td><td>9.762×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>5.11 × 10⁻¹⁰</td></tr>
+            <tr><td>104</td><td class="el-symbol">Rf</td><td>4.24 × 10²⁵</td><td class="null">—</td><td>9.822×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>1.37 × 10⁻⁹</td></tr>
+            <tr><td>105</td><td class="el-symbol">Db</td><td>4.28 × 10²⁵</td><td class="null">—</td><td>9.882×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>2.74 × 10⁻⁹</td></tr>
+            <tr><td>106</td><td class="el-symbol">Sg</td><td>4.32 × 10²⁵</td><td class="null">—</td><td>9.942×10¹⁴</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>5.48 × 10⁻¹⁰</td></tr>
+            <tr><td>107</td><td class="el-symbol">Bh</td><td>4.36 × 10²⁵</td><td class="null">—</td><td>1.000×10¹⁵</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>1.09 × 10⁻⁹</td></tr>
+            <tr><td>108</td><td class="el-symbol">Hs</td><td>4.40 × 10²⁵</td><td class="null">—</td><td>1.006×10¹⁵</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>2.19 × 10⁻⁹</td></tr>
+            <tr><td>109</td><td class="el-symbol">Mt</td><td>4.44 × 10²⁵</td><td class="null">—</td><td>1.012×10¹⁵</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>5.48 × 10⁻⁹</td></tr>
+            <tr><td>110</td><td class="el-symbol">Ds</td><td>4.48 × 10²⁵</td><td class="null">—</td><td>1.018×10¹⁵</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>2.74 × 10⁻⁹</td></tr>
+            <tr><td>111</td><td class="el-symbol">Rg</td><td>4.52 × 10²⁵</td><td class="null">—</td><td>1.024×10¹⁵</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>1.09 × 10⁻⁸</td></tr>
+            <tr><td>112</td><td class="el-symbol">Cn</td><td>4.56 × 10²⁵</td><td class="null">—</td><td>1.030×10¹⁵</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>5.48 × 10⁻⁹</td></tr>
+            <tr><td>113</td><td class="el-symbol">Nh</td><td>4.60 × 10²⁵</td><td class="null">—</td><td>1.036×10¹⁵</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>2.74 × 10⁻⁹</td></tr>
+            <tr><td>114</td><td class="el-symbol">Fl</td><td>4.64 × 10²⁵</td><td class="null">—</td><td>1.042×10¹⁵</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>1.09 × 10⁻⁸</td></tr>
+            <tr><td>115</td><td class="el-symbol">Mc</td><td>4.68 × 10²⁵</td><td class="null">—</td><td>1.048×10¹⁵</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>5.48 × 10⁻⁹</td></tr>
+            <tr><td>116</td><td class="el-symbol">Lv</td><td>4.72 × 10²⁵</td><td class="null">—</td><td>1.054×10¹⁵</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>2.74 × 10⁻⁹</td></tr>
+            <tr><td>117</td><td class="el-symbol">Ts</td><td>4.76 × 10²⁵</td><td class="null">—</td><td>1.060×10¹⁵</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>1.09 × 10⁻⁸</td></tr>
+            <tr><td>118</td><td class="el-symbol">Og</td><td>4.80 × 10²⁵</td><td class="null">—</td><td>1.066×10¹⁵</td><td class="null">—</td><td class="null">—</td><td class="null">—</td><td>5.48 × 10⁻⁹</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Block 1: The Foundational Set &amp; Early Periods (Z=1–30)</strong></p>
+      <ul>
+        <li><strong>Pattern 1 (Sawtooth Wave):</strong> The <em>f</em><sub>EM</sub> values do not increase monotonically. They rise across a period (e.g., Na→Ar) and drop sharply at the start of the next (e.g., Ar→K), visually graphing the quantum mechanical aufbau principle.</li>
+        <li><strong>Pattern 2 (Harmonic Anchors):</strong> <strong>Z=12 (Mg)</strong> and <strong>Z=20 (Ca)</strong> are local <em>f</em><sub>EM</sub> maxima and lie precisely on the central trend line (residual ≈ 0). They act as structural pivots.</li>
+        <li><strong>Pattern 3 (First Strong-Force Signature):</strong> <strong>Z=26 (Fe)</strong> is the first element with a defined <em>f</em><sub>forte</sub> (3.49×10¹⁸ Hz), marking the unique, low-lying nuclear excitation of ⁵⁷Fe.</li>
+      </ul>
+
+      <p><strong>Block 2: Completing the p-Block &amp; Beginning Transition Metals (Z=31–60)</strong></p>
+      <ul>
+        <li><strong>Pattern 4 (New Nuclear Excitations):</strong> Defined <em>f</em><sub>forte</sub> values appear for <strong>Z=43 (Tc)</strong> and <strong>Z=60 (Nd)</strong>, indicating other nuclei with measurable low-lying collective states.</li>
+        <li><strong>Pattern 5 (Radioactivity Emerges):</strong> Non-zero <em>f</em><sub>beta</sub> values appear for several elements (e.g., Tc, Pm), signaling the beginning of radioactive instability.</li>
+      </ul>
+
+      <p><strong>Block 3: The Lanthanides &amp; Heavy Metals (Z=61–90)</strong></p>
+      <ul>
+        <li><strong>Pattern 6 (Lanthanide <em>f</em><sub>forte</sub> Cluster):</strong> A clear cluster of defined <em>f</em><sub>forte</sub> values appears for several lanthanides (<strong>Sm, Eu, Gd, Dy, Er</strong>), reflecting their deformed nuclear structures.</li>
+        <li><strong>Pattern 7 (End of Stability):</strong> <strong>Z=83 (Bi)</strong> is the last element with <em>f</em><sub>beta</sub> = 0. All subsequent elements are radioactive.</li>
+        <li><strong>Pattern 8 (The "Dead Zone"):</strong> From <strong>Z=84 (Po)</strong> onward, the <em>f</em><sub>RMN</sub> and <em>f</em><sub>mag</sub> columns are universally empty (—). This is not missing data but a signature: these highly radioactive elements lack stable isotopes with long enough half-lives for conventional NMR measurement.</li>
+      </ul>
+
+      <p><strong>Block 4: The Actinides &amp; Superheavy Elements (Z=91–118)</strong></p>
+      <ul>
+        <li><strong>Pattern 9 (Radioactivity Dominates):</strong> <em>f</em><sub>beta</sub> values increase by over 17 orders of magnitude from <strong>Pa</strong> to <strong>Og</strong>, directly encoding the decreasing half-lives.</li>
+        <li><strong>Pattern 10 (Sparse <em>f</em><sub>forte</sub>):</strong> Only a few actinides (<strong>Pa, U, Pu, Cm</strong>) have a defined <em>f</em><sub>forte</sub>.</li>
+        <li><strong>Pattern 11 (Magnetic Silence Continues):</strong> The "dead zone" for <em>f</em><sub>RMN</sub> and <em>f</em><sub>mag</sub> continues.</li>
+      </ul>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- A.6                                                           -->
+    <!-- ============================================================ -->
+    <section class="prose-section">
+      <h2>A.6 Metadata &amp; Versioning</h2>
+
+      <p>The <strong>/nu_matrix/metadata</strong> dataset contains a <strong>compound dtype</strong> per element:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Z</td><td>uint8</td><td>Atomic number</td></tr>
+          <tr><td>symbol</td><td>3‑char string</td><td>Element symbol (e.g., 'Fe')</td></tr>
+          <tr><td>A_most_abundant</td><td>uint16</td><td>Mass number of most abundant stable isotope</td></tr>
+          <tr><td>NMR_isotope</td><td>6‑char string</td><td>Isotope used for <em>f</em><sub>RMN</sub>/<em>f</em><sub>mag</sub> (e.g., '57Fe')</td></tr>
+          <tr><td>EM_line_label</td><td>20‑char string</td><td>Spectroscopic term for <em>f</em><sub>EM</sub> (e.g., 'Fe I 371.994 nm')</td></tr>
+          <tr><td>date_curated</td><td>ISO 8601</td><td>Timestamp of last row update</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Changelog</strong>: Version history is stored in <strong>/.meta/changelog</strong> as a Git‑like commit log, recording all data updates, source version bumps, and error corrections.</p>
+
+      <p><strong>Reproducibility Command</strong>:</p>
+
+      <div class="code-block">
+h5dump -d /nu_matrix/values -o nu_matrix_export.txt nu_matrix_v3.hdf5
+      </div>
+
+      <p>exports the full matrix to plain text with header metadata for verification.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- A.7                                                           -->
+    <!-- ============================================================ -->
+    <section class="prose-section">
+      <h2>A.7 Usage Example (Python)</h2>
+
+      <div class="code-block python">
+<span class="comment"># Load the ν-matrix</span>
+<span class="keyword">import</span> h5py
+<span class="keyword">import</span> numpy <span class="keyword">as</span> np
+
+<span class="keyword">with</span> h5py.File(<span class="string">'nu_matrix_v3.hdf5'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:
+    values = f[<span class="string">'/nu_matrix/values'</span>][:]  <span class="comment"># (118, 7) float64</span>
+    uncertainties = f[<span class="string">'/nu_matrix/uncertainties'</span>][:]
+    null_flags = f[<span class="string">'/nu_matrix/null_flags'</span>][:]
+    metadata = f[<span class="string">'/nu_matrix/metadata'</span>][:]
+
+<span class="comment"># Extract iron (Z = 26)</span>
+Z = 26
+row = values[Z-1]  <span class="comment"># 0-indexed</span>
+nu_Fe = {
+    <span class="string">'f_grav'</span>: row[0],    <span class="comment"># 2.27e23 Hz</span>
+    <span class="string">'f_forte'</span>: row[1],   <span class="comment"># 1.38e18 Hz</span>
+    <span class="string">'f_EM'</span>: row[2],     <span class="comment"># 4.77e14 Hz</span>
+    <span class="string">'f_RMN'</span>: row[3],    <span class="comment"># 1.38e6 Hz</span>
+    <span class="string">'f_quad'</span>: row[4],   <span class="comment"># 2.1e11 Hz</span>
+    <span class="string">'f_mag'</span>: row[5],    <span class="comment"># 6.8e6 Hz</span>
+    <span class="string">'f_beta'</span>: row[6]    <span class="comment"># 0 Hz</span>
+}
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- A.8                                                           -->
+    <!-- ============================================================ -->
+    <section class="prose-section">
+      <h2>A.8 Complexity Formula Example (Solar H → He)</h2>
+
+      <p>From §7.3, the <strong>information capacity</strong> <em>C</em>(Z) is:</p>
+
+      <p>$$ C(Z) = \sum_{i=1}^{7} \log_2 \left( 1 + \frac{f_i(Z)}{\delta f_i(Z)} \right) $$</p>
+
+      <ul>
+        <li><strong>For hydrogen (Z = 1)</strong>: C(H) = <strong>63.9 bits</strong></li>
+        <li><strong>For helium (Z = 2)</strong>: C(He) = <strong>52.6 bits</strong></li>
+        <li><strong>ΔC = −11.3 bits</strong> (information loss per H → He fusion)</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- CONTACT MINI-BAR                                              -->
+  <!-- ============================================================ -->
+  <div class="contact-mini">
+    <a href="mailto:waveontology@ruimanuelalmeidapinheiro.work">✉️ waveontology@ruimanuelalmeidapinheiro.work</a>
+    <a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+    <span>📍 Lisbon · Arroios</span>
+  </div>
+
+  <footer>
+    © Rui Manuel de Almeida Pinheiro — ν‑Framework: A Unified Vibrational Specification for Stable States of Matter and Interaction · Lisbon, Arroios
+  </footer>
+</div>
+
+<script>
+  // Dark mode toggle
+  const themeBtn = document.getElementById('themeToggle');
+  const root = document.documentElement;
+  const saved = localStorage.getItem('theme');
+  if (saved) root.setAttribute('data-theme', saved);
+
+  themeBtn?.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+
+  // Autoplay handling for background video layer
+  const videoElement = document.getElementById('intro-video');
+  window.addEventListener('DOMContentLoaded', () => {
+    videoElement.play().catch(error => {
+      console.log("Autoplay prevented. Awaiting interaction.", error);
+    });
+  });
+</script>
+
+</body>
+</html>

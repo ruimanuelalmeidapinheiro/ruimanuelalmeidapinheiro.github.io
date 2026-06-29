@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="Pi/logo.jpg" rel="icon" type="image/jpeg"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="https://ruimanuelalmeidapinheiro.work/ν‑Frameworkchapter2" rel="canonical"/>
+
+<title>Chapter 2: Core Formalism — The ν‑Framework</title>
+<meta name="description" content="Chapter 2 of the ν‑Framework: Core Formalism. The Fundamental Relation (E = hf), Composite State Vector ν, Component Definitions, Elementary State Vector π, and Symmetry Transformations C, P, T."/>
+
+<meta property="og:image" content="https://ruimanuelalmeidapinheiro.work/Pi/allwav.jpg"/>
+<meta property="og:image:width" content="626"/>
+<meta property="og:image:height" content="351"/>
+<meta property="og:title" content="Chapter 2: Core Formalism — The ν‑Framework"/>
+<meta property="og:description" content="Chapter 2 of the ν‑Framework: Core Formalism. The Fundamental Relation (E = hf), Composite State Vector ν, Component Definitions, Elementary State Vector π, and Symmetry Transformations C, P, T."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ruimanuelalmeidapinheiro.work/ν‑Frameworkchapter2"/>
+
+<meta name="author" content="Rui Manuel de Almeida Pinheiro"/>
+<meta property="article:published_time" content="2026-01-23T00:00:00+00:00"/>
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    }
+  };
+</script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&amp;display=swap" rel="stylesheet"/>
+<link href="wave-ontology-styles.css" rel="stylesheet"/>
+<link href="ν‑Framework.css" rel="stylesheet"/>
+</head>
+
+<body class="tex2jax_ignore">
+
+<div id="video-container">
+  <video id="intro-video" autoplay muted loop playsinline>
+    <source src="Pi/I.mp4" type="video/mp4">
+    REG_ERROR: Video playback not supported by hardware.
+  </video>
+</div>
+
+<div class="container">
+  <div class="top-header">
+    <div class="nav-links">
+      <a href="index.html">← Back to Main Menu</a>
+      <a href="ν‑Framework-index.html">← Index</a>
+      <a href="ν‑Frameworkchapter1.html">← Chapter 1</a>
+      <a href="ν‑Frameworkchapter3.html">Chapter 3 →</a>
+    </div>
+    <button aria-label="Toggle dark mode" class="theme-toggle-btn" id="themeToggle">◑</button>
+  </div>
+
+  <main class="chapter-card tex2jax_process">
+
+    <div class="chapter-meta tex2jax_ignore">ν‑Framework · Chapter 2</div>
+    <h1 class="chapter-title tex2jax_ignore">2. Core Formalism</h1>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2.1                                                   -->
+    <!-- ============================================================ -->
+    <section class="prose-section">
+      <h2>2.1 The Fundamental Relation</h2>
+
+      <h3>2.1.1 Primitive (1)</h3>
+
+      <p>The framework erects upon the experimentally unassailable primitive:</p>
+
+      <p>$$ E = h f $$</p>
+
+      <p>where <em>E</em> is a quantum of energy, <strong>h = 6.62607015 × 10⁻³⁴ J·s</strong> (CODATA 2022) is the Planck constant, and <em>f</em> is the associated frequency. Equation (1) holds across 12 orders of magnitude for photons and has been validated for matter waves to <strong>10⁻⁶ precision via neutron interferometry</strong> (Rauch &amp; Werner, <em>Neutron Interferometry</em>, 2015, Chap. 4).</p>
+
+      <h3>2.1.2 Equation (2): <em>f = E/h</em> (Framework Primitive)</h3>
+
+      <p>The methodological innovation is treating the <strong>inverse relation</strong> as the primitive symbolic act:</p>
+
+      <p>$$ f = \frac{E}{h} $$</p>
+
+      <p>This inversion performs a <strong>dimensional and conceptual shift</strong>: every quantitative description of a stable state — mass-energy, binding energy, excitation energy, or decay width — is <em>translated</em> into the common currency of <strong>Hertz</strong>.</p>
+
+      <p>Equation (2) is therefore the <strong>Rosetta stone</strong> of the ν‑framework: it converts domain‑specific quantities (eV, MeV, atomic units) into a single, additive, frequency‑space representation that can be tabulated, compared, and operated upon without loss of physical information.</p>
+
+      <p><strong>Key Consequences</strong>:</p>
+
+      <ul>
+        <li><strong>Loss-lessness</strong>: The mapping is deterministic and invertible: given <em>f</em>, one recovers <em>E</em> = <em>f</em> · <em>h</em> to within experimental uncertainty δ<em>E</em>. No information is discarded.</li>
+        <li><strong>Logarithmic compression</strong>: Frequency turns multiplicative relationships into additive differences, making hierarchical structures (e.g., the 10¹¹ span from atomic to Planck scales) algebraically linear and visually accessible.</li>
+        <li><strong>Operational nature</strong>: The re‑centering is <strong>operational, not ontological</strong>. Equation (2) does not claim energy "is" frequency, but that frequency provides a loss-less, manipulable encoding. This distinction is <strong>critical</strong>: the framework is a coordinate system, not a new physical law.</li>
+      </ul>
+
+      <h3>2.1.3 Axiom 1: Scope and Domain of Applicability</h3>
+
+      <p><strong>Axiom 1</strong> — Any measurable, characteristic energy <em>E</em>₀ associated with a <strong>stable, identifiable physical state</strong> (rest mass, nuclear transition, atomic line, decay width) <strong>shall</strong> be expressed as a characteristic frequency <em>f</em>₀ via Equation (2). This frequency becomes a component of that state's ν‑ or π‑vector.</p>
+
+      <p><strong>Domain Boundary</strong>: "Stable" means <strong>τ½ &gt; 10⁻⁸ s</strong>, the practical temporal resolution limit for tabulated nuclear and atomic data (e.g., ENSDF, NIST ASD). Shorter‑lived resonances are excluded because their characteristic frequencies would be broadened beyond measurability (Δ<em>f</em> ≈ 1/Δ<em>t</em>) and are not required for the taxonomy of persistent states.</p>
+
+      <p><strong>Completeness</strong>: No stable property is excluded <em>a priori</em>. Mass-energy from gravity, excitation from the strong force, optical lines from electromagnetism, Larmor precession from magnetism, quadrupole deformation from shape, and beta‑decay from the weak force are all admissible. The axiom asserts that all resonant channels of a state can be encoded simultaneously, rendering the ν‑matrix informationally complete.</p>
+
+      <p><strong>Uniqueness</strong>: Within experimental precision δ<em>E</em>, the derived frequency <em>f</em>₀ = <em>E</em>₀/<em>h</em> is the sole admissible value for that component. No adjustable parameters, alternative conventions, or theoretical corrections beyond δ<em>E</em> are permitted. This enforces a one‑to‑one mapping between measured energy and frequency space.</p>
+
+      <h3>2.1.4 Dimensional Consistency: Why Hertz?</h3>
+
+      <p>Choosing <strong>Hz</strong> as the universal unit is non‑trivial. It makes all components of ν‑vectors and π‑vectors <strong>dimensionally homogeneous</strong> even when the underlying physics is not: <em>f</em><sub>grav</sub> (derived from GeV‑scale mass) and <em>f</em><sub>RMN</sub> (derived from μeV‑scale Zeeman splitting) both appear as ordinary real numbers, enabling <strong>direct algebraic comparison, clustering, and distance metrics</strong> in ℝⁿ — an operation impossible in energy‑space.</p>
+
+      <p>The price is a <strong>vast dynamic range</strong> (10¹⁴ Hz to 10²⁵ Hz across the matrices), but that range is exactly where the <strong>hierarchy problem</strong> becomes visually manifest. Logarithmic scaling turns this range into a manageable coordinate axis where order‑of‑magnitude is the natural metric, and multiplicative relationships become additive differences.</p>
+
+      <p>This dimensional unification is the enabling step for the isomorphism proof (§4.5): without it, categorical separation (Δ<em>f</em> ≈ 10²³ Hz) would be obscured by unit conversions and scaling conventions.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2.2                                                   -->
+    <!-- ============================================================ -->
+    <section class="prose-section">
+      <h2>2.2 Composite State Vector ν</h2>
+
+      <p>A stable composite state — operationally defined as an atomic nucleus in a defined ionization stage together with its electron cloud — is represented by an <strong>ordered 7‑tuple</strong>:</p>
+
+      <p>$$ \nu = (f_{grav}, f_{forte}, f_{EM}, f_{RMN}, f_{quad}, f_{mag}, f_{beta}) $$</p>
+
+      <p>The dimension <strong>d = 7</strong> is <strong>finite and closed</strong> for all known stable states (Z = 1–118).</p>
+
+      <p>Each component <em>f</em><sub>i</sub> is a positive real number or exactly zero:</p>
+
+      <ul>
+        <li><strong><em>f</em><sub>i</sub> &gt; 0</strong>: Measured, active resonant channel</li>
+        <li><strong><em>f</em><sub>i</sub> = 0</strong>: Permitted channel that is energetically inactive (e.g., <em>f</em><sub>beta</sub> = 0 for stable isotopes)</li>
+        <li><strong>Null entries are prohibited</strong>: Structural absence is encoded by zero, not omission, preserving algebraic closure</li>
+      </ul>
+
+      <p>The 118 × 7 ν‑matrix (App. A) empirically verifies this construction: no two rows are identical within combined 3σ uncertainties.</p>
+
+      <h3>2.2.1 Axiom 2: Uniqueness of Signature</h3>
+
+      <p>Axiom 2 elevates ν from data container to <strong>state‑space coordinate</strong>:</p>
+
+      <p><em>For any two distinct stable states s₁ ≠ s₂, the Mahalanobis distance must exceed the 3σ uncertainty ellipsoid:</em></p>
+
+      <p>$$ \left\| \overrightarrow{\nu}(s_1) - \overrightarrow{\nu}(s_2) \right\|_{\Sigma^{-1}} > 3 $$</p>
+
+      <p>This ensures experimentally resolvable uniqueness. <strong>Any future measurement violating (4) would require framework revision</strong>.</p>
+
+      <p><strong>Extensibility and Component Admission Criteria</strong></p>
+
+      <p>A new component (e.g., <em>f</em><sub>oct</sub> for octupole vibrations) may be appended only if it satisfies:</p>
+
+      <ol>
+        <li><strong>Measurability</strong>: Observable for &gt;10% of elements with δ<em>f</em>/<em>f</em> &lt; 10%</li>
+        <li><strong>Distinctness</strong>: Encodes a physically independent resonant mode (not a linear combination of existing components)</li>
+        <li><strong>Empirical Utility</strong>: Reduces cosmic curve residual variance by &gt;5% (§3.3.3)</li>
+      </ol>
+
+      <p>Admission triggers a <strong>framework version increment</strong> (e.g., ν‑matrix v3 → v4) and retroactive updates of all existing vectors with zero entries for the new channel.</p>
+
+      <h3>2.2.2 Link to Elementary π‑Vectors and Domain Consistency</h3>
+
+      <p>While ν encodes macroscopic properties, its origin is hypothesized to be <strong>generative</strong>: composite states arise from the frequency‑algebraic combination of constituent elementary π‑vectors (see §5.3).</p>
+
+      <p>Per Axiom 1 (§2.1.3), the ν‑matrix includes isotopes with <strong>τ½ &gt; 10⁻⁸ s</strong>, matching the practical resolution limit of ENSDF and NIST databases. This operational threshold ensures all tabulated frequencies are resolvable; shorter‑lived resonances are excluded from the taxonomy.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2.3                                                   -->
+    <!-- ============================================================ -->
+    <section class="prose-section">
+      <h2>2.3 Component Definitions</h2>
+
+      <p>Each component of the ν‑vector is derived from a specific measurable property via the primitive <em>f</em> = <em>E</em>/<em>h</em> (Eq. 2). Below are the formal definitions, sourcing protocols, and uncertainty propagation for all seven channels.</p>
+
+      <h3>2.3.1 <em>f</em><sub>grav</sub> (Gravitational/Mass‑Energy Frequency)</h3>
+
+      <p><strong>Definition</strong>: The frequency corresponding to the total rest mass‑energy of the nucleus:</p>
+
+      <p>$$ f_{grav} = \frac{m_{nucleus} c^2}{h} $$</p>
+
+      <p>where the nuclear mass is obtained from the atomic mass evaluation by:</p>
+
+      <p>$$ m_{nucleus} = M_{atom} - Z \cdot m_e + E_B(e^-)/c^2 $$</p>
+
+      <p><em>M</em><sub>atom</sub> is the atomic mass from AME2020 (NNDC), <em>m</em><sub>e</sub> is the electron mass, and <em>E</em><sub>B</sub>(e⁻) is the total electron binding energy (≈ 0.1% correction, calculated via Dirac‑Fock).</p>
+
+      <p><strong>Physical Interpretation</strong>: This component represents the <strong>Compton frequency</strong> of the nucleus as a whole — the fastest internal "tick rate" associated with the state's existence, scaling linearly with its mass‑energy.</p>
+
+      <p><strong>Derivation Source</strong>: Atomic mass data from the <strong>Atomic Mass Evaluation (AME2020)</strong> via the National Nuclear Data Center (NNDC), accessed 2024‑06‑01. Masses of short‑lived isotopes are taken from the most recent mass‑excess evaluations in ENSDF.</p>
+
+      <p><strong>Uncertainty Propagation</strong>:</p>
+
+      <p>$$ \frac{\delta f_{grav}}{f_{grav}} = \sqrt{\left(\frac{\delta M}{M}\right)^2 + \left(\frac{\delta c}{c}\right)^2 + \left(\frac{\delta h}{h}\right)^2} $$</p>
+
+      <p>Since <em>c</em> and <em>h</em> are exact (CODATA 2022), the dominant term is <strong>δ<em>M</em>/<em>M</em></strong>, ranging from <strong>10⁻⁷</strong> for stable isotopes to <strong>10⁻⁴</strong> for short‑lived species (τ½ ≈ 10⁻⁸ s).</p>
+
+      <p><strong>Null Assignment</strong>: <strong>Never null</strong>. For unbound isotopes (mass excess &gt; 0), <em>f</em><sub>grav</sub> is set to <strong>0 Hz</strong> (no stable state exists), but the row is retained in the matrix for completeness.</p>
+
+      <h3>2.3.2 <em>f</em><sub>forte</sub> (Strong‑Force/Nuclear Excitation Frequency)</h3>
+
+      <p><strong>Definition</strong>: The frequency corresponding to the energy of the <strong>first collective excited state</strong> with natural spin‑parity, typically the lowest <strong>2⁺</strong> or <strong>3⁻</strong> vibration:</p>
+
+      <p>$$ f_{forte} = \frac{E(2_1^+)}{h} $$</p>
+
+      <p>where <strong>E(2₁⁺)</strong> is the energy (in joules) of the first 2⁺ state above the ground state, a direct signature of nuclear deformation under the strong force. For even‑even nuclei, this is often the <strong>quadrupole vibrational mode</strong>.</p>
+
+      <p><strong>Physical Interpretation</strong>: <em>f</em><sub>forte</sub> quantifies the <strong>lowest‑energy resonant vibration</strong> of the nucleus itself. A defined value signals a deformed mid‑shell nucleus; a <strong>null</strong> entry marks structural rigidity (closed‑shell configuration).</p>
+
+      <p><strong>Derivation Source</strong>: Nuclear energy‑level data from the <strong>Evaluated Nuclear Structure Data File (ENSDF)</strong> (NNDC, 2024‑06‑01). The <strong>≤ 2 MeV</strong> <strong>threshold</strong> is applied to distinguish collective excitations from high‑lying single‑particle states, based on systematic studies showing that quadrupole collectivity emerges below this scale (Casten, <em>Nuclear Structure</em>, 2000).</p>
+
+      <p><strong>Uncertainty</strong>: δ<em>f</em><sub>forte</sub>/<em>f</em><sub>forte</sub> = δ<em>E</em>/<em>E</em> from ENSDF level‑width data, ranging from <strong>10⁻⁶</strong> for narrow states to <strong>10⁻³</strong> for broad resonances.</p>
+
+      <p><strong>Null Assignment</strong>: <strong>Null (—)</strong> if no discrete state exists <strong>≤ 2 MeV</strong> or if the nucleus is <strong>spherical</strong> (closed‑shell). This occurs for <strong>magic nuclei</strong> (Z = 2, 8, 20, 28, 50, 82) and many even‑even isotopes, yielding the <strong>sparse pattern</strong> analyzed in §3.2.3.</p>
+
+      <h3>2.3.3 <em>f</em><sub>EM</sub> (Electromagnetic/Optical Transition Frequency)</h3>
+
+      <p><strong>Definition</strong>: The frequency of the <strong>strongest allowed atomic emission line</strong> for the neutral atom in the visible or near‑visible spectrum:</p>
+
+      <p>$$ f_{EM} = \frac{c}{\lambda_{air}} $$</p>
+
+      <p>where <em>c</em> is the speed of light (exact) and <strong>λ<sub>air</sub></strong> is the wavelength <strong>in air</strong> at standard conditions (20 °C, 101.325 kPa). The <strong>air refractivity correction</strong> is applied via Ciddor's formula (NIST ASD spectrometer protocol v5.8), contributing <strong>&lt; 3 × 10⁻⁶</strong> relative uncertainty.</p>
+
+      <p><strong>Physical Interpretation</strong>: This component identifies the element's <strong>dominant optical voice</strong> — its most characteristic resonance with the EM field in the optical regime, simplifying complex spectra to a single signature frequency.</p>
+
+      <p><strong>Derivation Source</strong>: Spectral line data from the <strong>NIST Atomic Spectra Database (ASD) v5.8</strong> (2023‑12‑15). For each element, the line with the highest intensity flag (Int) in 300 nm &lt; λ &lt; 900 nm is selected; VUV/IR lines are used only if no visible line exists (e.g., Kr I at 557 nm).</p>
+
+      <p><strong>Uncertainty</strong>: δ<em>f</em><sub>EM</sub>/<em>f</em><sub>EM</sub> = δλ/λ ≈ 3 × 10⁻⁸ (NIST Ritz wavelength uncertainty). The air correction adds negligible error (&lt; 10⁻⁹).</p>
+
+      <p><strong>Null Assignment</strong>: <strong>Never null</strong> for Z ≤ 118. For future superheavy elements (Z &gt; 118) where optical data are absent, <em>f</em><sub>EM</sub> will be set to <strong>null</strong> until measured.</p>
+
+      <h3>2.3.4 <em>f</em><sub>RMN</sub> (Nuclear Magnetic Resonance Frequency)</h3>
+
+      <p><strong>Definition</strong>: The Larmor precession frequency for the most abundant NMR‑active isotope in a <strong>reference magnetic field B₀ = 1 Tesla (exact)</strong>:</p>
+
+      <p>$$ f_{RMN} = \frac{\gamma B_0}{2\pi} $$</p>
+
+      <p>where <strong>γ</strong> is the nuclear gyromagnetic ratio (rad·s⁻¹·T⁻¹) and <strong>B₀ = 1 T</strong> is a defined reference enabling comparison across elements.</p>
+
+      <p><strong>Physical Interpretation</strong>: This quantifies the <strong>intrinsic resonant interaction</strong> between the nuclear magnetic moment and an external field, defining the "radio‑frequency note" for the nucleus.</p>
+
+      <p><strong>Derivation Source</strong>: γ values from the compilation by <strong>Harris et al., <em>Pure Appl. Chem.</em> 80, 59 (2008)</strong>, Tables 1–2, accessed 2024‑01‑10. Data are cross‑checked against NIST magnetic moment tables.</p>
+
+      <p><strong>Uncertainty</strong>: δ<em>f</em><sub>RMN</sub>/<em>f</em><sub>RMN</sub> = δγ/γ ≈ 2 × 10⁻⁴, dominated by systematic uncertainties in γ ratios.</p>
+
+      <p><strong>Null Assignment</strong>: <strong>Null (—)</strong> if the element has <strong>no stable isotope with nuclear spin I ≠ 0</strong>. This renders <strong>76 elements</strong> NMR‑silent, forming the "dead zone" (Z ≥ 84) analyzed in §3.2.3.</p>
+
+      <h3>2.3.5 <em>f</em><sub>quad</sub> (Electric Quadrupole Deformation Frequency)</h3>
+
+      <p><strong>Definition</strong>: The frequency associated with the interaction energy of the nuclear electric quadrupole moment <em>Q</em> with an electric field gradient <em>V</em><sub>zz</sub>:</p>
+
+      <p>$$ f_{quad} = \frac{e \cdot Q \langle V_{zz} \rangle}{h \cdot 4I(2I - 1)} $$</p>
+
+      <p>where:</p>
+
+      <ul>
+        <li><em>e</em> = 1.602 × 10⁻¹⁹ C (elementary charge)</li>
+        <li><strong>Q</strong> is the nuclear electric quadrupole moment in barns (1 b = 10⁻²⁸ m²)</li>
+        <li><strong>⟨V<sub>zz</sub>⟩</strong> is the mean electric field gradient in the measurement environment (≈ 10²¹ V/m² for solid‑state hosts)</li>
+        <li><em>I</em> is the nuclear spin quantum number</li>
+      </ul>
+
+      <p><strong>Physical Interpretation</strong>: <em>f</em><sub>quad</sub> quantifies the <strong>static "shape deformation"</strong> of a non‑spherical nucleus. A non‑zero value (typically <strong>10⁸‑10⁹ Hz</strong>) indicates prolate/oblate deformation complementary to the dynamic vibration probed by <em>f</em><sub>forte</sub>.</p>
+
+      <p><strong>Derivation Source</strong>: Quadrupole moments <em>Q</em> from ENSDF hyperfine‑structure evaluations and specialized measurements via Perturbed Angular Correlation (PAC) or quadrupole‑resonance NMR. ⟨V<sub>zz</sub>⟩ is estimated from DFT calculations for the host crystal (e.g., α‑Fe, TiO₂).</p>
+
+      <p><strong>Uncertainty</strong>: δ<em>f</em><sub>quad</sub>/<em>f</em><sub>quad</sub> ≈ 10%, dominated by <strong>systematic uncertainty in ⟨V<sub>zz</sub>⟩</strong> (±30% typical) rather than δ<em>Q</em>.</p>
+
+      <p><strong>Null Assignment</strong>: <strong>Null (—)</strong> if <strong>Q = 0</strong> (spherical nucleus: I = 0, I = ½, or closed‑shell configuration). Occurs for <strong>62%</strong> of elements.</p>
+
+      <h3>2.3.6 <em>f</em><sub>mag</sub> (Magnetic Moment Interaction Frequency)</h3>
+
+      <p><strong>Definition</strong>: The frequency associated with the interaction energy of the nuclear magnetic moment <em>μ</em> with the reference field B₀ = 1 T:</p>
+
+      <p>$$ f_{mag} = \frac{\mu \cdot B_0}{I \cdot \hbar} $$</p>
+
+      <p>where <strong>μ</strong> is the nuclear magnetic moment in nuclear magnetons (μ<sub>N</sub>) and <em>I</em> is the spin quantum number. This captures the <strong>static magnetic "strength"</strong>, distinct from the Larmor precession rate (<em>f</em><sub>RMN</sub>).</p>
+
+      <p><strong>Physical Interpretation</strong>: <em>f</em><sub>mag</sub> quantifies the <strong>intrinsic magnetic "strength"</strong> of the nucleus at a standard field. For I = ½ nuclei, <em>f</em><sub>mag</sub> and <em>f</em><sub>RMN</sub> are proportional; for I &gt; ½, they differ due to the non‑linear μ‑γ relationship.</p>
+
+      <p><strong>Derivation Source</strong>: Magnetic moments μ from the same compilations as γ (Harris et al., 2008, Table 2).</p>
+
+      <p><strong>Uncertainty</strong>: δ<em>f</em><sub>mag</sub>/<em>f</em><sub>mag</sub> = δμ/μ ≈ 2 × 10⁻⁴ (systematic from μ fits).</p>
+
+      <p><strong>Null Assignment</strong>: <strong>Null (—)</strong> under the same rule as <em>f</em><sub>RMN</sub> (no I ≠ 0 isotope).</p>
+
+      <h3>2.3.7 <em>f</em><sub>beta</sub> (Weak‑Force Beta‑Decay Frequency)</h3>
+
+      <p><strong>Definition</strong>: The frequency associated with the total decay width Γ<sub>β</sub> of the ground‑state beta‑decay process for the longest‑lived isotope of the element:</p>
+
+      <p>$$ f_{beta} = \frac{\Gamma_{\beta}}{h} = \frac{\hbar}{\tau_{1/2} \cdot h \cdot \ln 2} $$</p>
+
+      <p>which yields the practical numerical form:</p>
+
+      <p>$$ \frac{f_{beta}}{\text{Hz}} = \frac{1.519267 \times 10^{11}}{\tau_{1/2} (\text{fs})} $$</p>
+
+      <p>where τ½ is the partial half‑life in femtoseconds.</p>
+
+      <p><strong>Physical Interpretation</strong>: <em>f</em><sub>beta</sub> quantifies the <strong>rate of transmutation</strong> via the weak nuclear force — the "tick" of quantum instability. It is the <strong>only component defined for all 118 elements</strong>: <em>f</em><sub>beta</sub> = 0 Hz for stable isotopes, &gt; 0 Hz for radioactive ones.</p>
+
+      <p><strong>Derivation Source</strong>: Beta‑decay half‑lives from ENSDF decay‑data evaluations (NNDC, 2024‑06‑01). For stable isotopes (τ½ &gt; 10¹⁸ yr), <strong><em>f</em><sub>beta</sub> ≡ 0 Hz</strong>.</p>
+
+      <p><strong>Uncertainty</strong>: δ<em>f</em><sub>beta</sub>/<em>f</em><sub>beta</sub> = δτ½/τ½, ranging from <strong>10⁻⁵</strong> for long‑lived isotopes (e.g., ⁴⁰K) to <strong>10⁻²</strong> for prompt decays (e.g., ¹³⁸Sn).</p>
+
+      <p><strong>Null Assignment</strong>: <strong>Never null</strong>. Zero indicates stability; finite values encode decay rates. This makes <em>f</em><sub>beta</sub> a <strong>structural clock</strong> for the periodic table.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2.4                                                   -->
+    <!-- ============================================================ -->
+    <section class="prose-section">
+      <h2>2.4 Elementary State Vector π</h2>
+
+      <h3>2.4.1 π<sub>grav</sub> (Elementary Mass‑Energy Frequency)</h3>
+
+      <p><strong>Definition</strong>:</p>
+
+      <p>The gravitational component of the elementary state vector is the particle's <strong>Compton frequency</strong>, derived from its invariant rest mass:</p>
+
+      <p>$$ \pi_{grav} \equiv \frac{m_{particle} \cdot c^2}{h} $$</p>
+
+      <p>where <em>m</em><sub>particle</sub> is the pole mass (for quarks) or the directly measured mass (for leptons and bosons), <em>c</em> = 299792458 m·s⁻¹ (exact), and <em>h</em> = 6.62607015 × 10⁻³⁴ J·s (exact). This frequency represents the <strong>existential tick rate</strong> of the particle — the fastest internal vibration associated with its mass‑energy.</p>
+
+      <p><strong>Physical Interpretation</strong>:</p>
+
+      <p>π<sub>grav</sub> spans <strong>five orders of magnitude</strong> across the Standard Model (SM), from the electron (1.235 × 10²⁰ Hz) to the top quark (4.18 × 10²⁵ Hz). This range <strong>embeds the SM mass hierarchy problem geometrically</strong>: multiplicative mass ratios become <strong>additive intervals</strong> in log‑frequency space, reframing the hierarchy as a coordinate effect rather than a dimensionless tuning puzzle (see §5.2).</p>
+
+      <p><strong>Key Features &amp; Special Cases</strong></p>
+
+      <ul>
+        <li><strong>Massless gauge bosons.</strong> Photons (γ) and gluons (g) have π<sub>grav</sub> ≡ 0 exactly, as required by gauge invariance.</li>
+        <li><strong>Neutrinos.</strong> Active neutrinos carry a <strong>one‑sided upper bound</strong>: π<sub>grav</sub>(ν) &lt; 2.9 × 10¹³ Hz (95% CL) from Planck 2018 + BAO cosmology, or the more conservative laboratory bound π<sub>grav</sub>(ν) &lt; 1.9 × 10¹⁴ Hz from KATRIN tritium endpoint data.</li>
+        <li><strong>Generation scaling (charged leptons).</strong> π<sub>grav</sub>(e) : π<sub>grav</sub>(μ) : π<sub>grav</sub>(τ) = 1 : 206.768 : 3477.15, which is <strong>linear</strong> in log₁₀(π<sub>grav</sub>) space: log₁₀(π<sub>grav</sub>) = 20.091 + 2.004·g (where g = 1, 2, 3), R² = 0.999997.</li>
+      </ul>
+
+      <p><strong>Derivation Source &amp; Uncertainty Propagation</strong></p>
+
+      <ul>
+        <li><strong>PDG 2024 pole masses</strong> for quarks (Quark Masses review, arXiv:2310.17021).</li>
+        <li><strong>Penning‑trap masses</strong> for charged leptons (CODATA 2022).</li>
+        <li><strong>Cosmological + laboratory bounds</strong> for neutrinos (Planck 2018, KATRIN 2022).</li>
+        <li><strong>Direct mass measurements</strong> for gauge and scalar bosons (PDG 2024).</li>
+      </ul>
+
+      <p><strong>Uncertainty</strong>: δπ<sub>grav</sub>/π<sub>grav</sub> = δm/m (dominant).</p>
+
+      <ul>
+        <li>Quarks: ≈ 0.5% (systematic from lattice QCD pole‑mass extraction).</li>
+        <li>Charged leptons: &lt; 10⁻⁹% (sub‑ppb Penning‑trap precision).</li>
+        <li>Neutrinos: <strong>one‑sided</strong>, upper‑limit only.</li>
+        <li>Bosons: 10⁻⁴% – 10⁻⁵% (LHC electroweak precision).</li>
+      </ul>
+
+      <h3>2.4.2 π<sub>EM</sub> (Elementary Electromagnetic Charge Frequency)</h3>
+
+      <p><strong>Definition</strong>:</p>
+
+      <p>The electromagnetic component of the elementary state vector encodes the <strong>magnitude and sign of electric charge</strong> as a complex frequency‑scale:</p>
+
+      <p>$$ \pi_{EM} \equiv \alpha \cdot Q^2 \cdot e^{(i\phi_{EM})} $$</p>
+
+      <p>where <strong>α = 7.297352569 × 10⁻³</strong> is the fine‑structure constant (CODATA 2022), <strong>Q</strong> is the electric charge in units of the elementary charge <em>e</em> (exact for SM particles), and the phase <strong>φ<sub>EM</sub></strong> is defined as:</p>
+
+      <ul>
+        <li><strong>φ<sub>EM</sub> = 0</strong> for Q &gt; 0 (positive charge)</li>
+        <li><strong>φ<sub>EM</sub> = π</strong> for Q &lt; 0 (negative charge)</li>
+        <li><strong>Undefined</strong> for Q = 0 (neutral particles), with <strong>π<sub>EM</sub> ≡ 0</strong>.</li>
+      </ul>
+
+      <p>The magnitude <strong>|π<sub>EM</sub>| = α · Q²</strong> quantifies the <strong>squared coupling strength</strong> to the electromagnetic field, independent of mass scale.</p>
+
+      <p><strong>Physical Interpretation</strong>:</p>
+
+      <p>π<sub>EM</sub> serves as the <strong>electromagnetic fingerprint</strong> of an elementary particle, distinguishing charged from neutral states and encoding charge conjugation symmetry geometrically. Unlike a dimensionless coupling, its <strong>units of frequency</strong> enable direct algebraic comparison with other π‑components, a feature essential for the isomorphism proof (§4.5).</p>
+
+      <h3>2.4.3 π<sub>strong</sub> (Elementary Strong Charge Frequency)</h3>
+
+      <p><strong>Definition</strong>:</p>
+
+      <p>The strong‑interaction component of the elementary state vector encodes <strong>colour‑charge participation</strong> as a binary frequency‑scale:</p>
+
+      <p>$$ \pi_{strong} \equiv \begin{cases} \Lambda_{QCD}/h & \text{for particles carrying colour charge} \\ 0 & \text{for colour-singlets} \end{cases} $$</p>
+
+      <p>where <strong>Λ<sub>QCD</sub> = 200 ± 10 MeV</strong> is the low‑energy QCD confinement scale from lattice evaluations (PDG 2024), and <em>h</em> is the Planck constant.</p>
+
+      <p>This component is <strong>categorically, not continuously, valued</strong>: a particle either couples to the strong force (π<sub>strong</sub> ≈ 2.5 × 10²³ Hz) or does not (π<sub>strong</sub> = 0). There is <strong>no continuum</strong> of strong couplings in the SM.</p>
+
+      <p><strong>Physical Interpretation</strong>:</p>
+
+      <p>π<sub>strong</sub> serves as the <strong>strong‑interaction flag</strong> — the most powerful discriminator in π‑space. It creates a <strong>near‑perfect segregation</strong> between coloured particles (six quark flavors, eight gluons) and the colourless sector (leptons, electroweak bosons, Higgs).</p>
+
+      <h3>2.4.4 π<sub>weak</sub> (Elementary Weak Charge Frequency)</h3>
+
+      <p><strong>Definition</strong>:</p>
+
+      <p>The weak‑interaction component encodes participation in the weak force via the Fermi coupling:</p>
+
+      <p>$$ \pi_{weak} = \frac{G_F \cdot E_{weak}^2}{\hbar \cdot h} $$</p>
+
+      <p>where <strong>G<sub>F</sub> = 1.1663787 × 10⁻⁵ GeV⁻²</strong> is the Fermi constant (muon decay), and <strong>E<sub>weak</sub> = 174.104 ± 0.083 GeV</strong> is the Higgs vacuum expectation value (vev) from electroweak precision data. This yields:</p>
+
+      <ul>
+        <li><strong>Left-handed SM fermions</strong>: π<sub>weak</sub> ≈ <strong>+2.915 × 10⁷ Hz</strong> (T₃ = −½) or <strong>−2.915 × 10⁷ Hz</strong> (T₃ = +½, antiparticles)</li>
+        <li><strong>Massive weak bosons</strong> (W±, Z⁰): π<sub>weak</sub> ≈ <strong>±1.166 × 10⁸ Hz</strong> (maximal weak charge)</li>
+        <li><strong>Right-handed fermions</strong>: <strong>π<sub>weak</sub> = 0</strong> (sterile)</li>
+      </ul>
+
+      <p>The sign encodes <strong>chirality</strong> and <strong>weak isospin</strong> T₃; the magnitude quantifies the <strong>universal weak coupling</strong> below the electroweak scale.</p>
+
+      <h3>2.4.5 π<sub>spin</sub> (Elementary Magnetic Frequency)</h3>
+
+      <p><strong>Definition</strong>:</p>
+
+      <p>The magnetic‑dipole component of the elementary state vector encodes the <strong>intrinsic magnetic moment interaction</strong> for particles with non‑zero spin, evaluated in a <strong>reference magnetic field B₀ = 1 Tesla (exact)</strong>:</p>
+
+      <p>$$ \pi_{spin} = \frac{g \cdot \left( \frac{e\hbar}{2m} \right) \cdot B_0}{h} $$</p>
+
+      <p>where <strong>μ = g·(eħ/2m)</strong> is the magnetic moment in J·T⁻¹, <strong>g</strong> is the g‑factor (including full QED loop corrections), <em>e</em> is the elementary charge, <em>m</em> is the particle mass, and <em>ħ</em> = h/2π. This frequency represents the <strong>Larmor precession rate</strong> of the particle's magnetic dipole in the standard field B₀, distinct from the nuclear resonance frequency <em>f</em><sub>RMN</sub> (§2.3.4) which is defined per unit field (γ/2π).</p>
+
+      <p><strong>Physical Interpretation</strong>:</p>
+
+      <p>π<sub>spin</sub> quantifies the <strong>magnetic "strength"</strong> at the elementary level — the <strong>anomalous magnetic moment</strong> converted into Hz. For the electron, the <strong>g‑factor anomaly</strong> Δg = g − 2 ≈ 0.002319 translates directly into a measurable frequency shift Δπ<sub>spin</sub> ≈ 1.76 × 10⁴ Hz, detectable via Penning‑trap spectroscopy.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2.5                                                   -->
+    <!-- ============================================================ -->
+    <section class="prose-section">
+      <h2>2.5 Symmetry Transformations: C, P, T</h2>
+
+      <p><strong>Status.</strong> The π‑schema must <strong>commute exactly</strong> with the discrete symmetries of the Standard Model: <strong>charge conjugation (C)</strong>, <strong>parity (P)</strong>, and <strong>time reversal (T)</strong>. Any failure would indicate that π‑space introduces spurious symmetry violations beyond SM physics, invalidating the isomorphism claim. This section derives the transformation matrices from the SM's gauge structure and Wigner's anti‑unitary theorem, then validates them against PDG 2024 data.</p>
+
+      <h3>2.5.1 Transformation Rules (Table 2.1)</h3>
+
+      <p>The action of C, P, and T on the five‑component π‑vector is summarized below. All transformations are <strong>linear operators</strong> acting in ℂ⁵.</p>
+
+      <p><strong>Table 2.1. Transformation of π‑vector components under C, P, T</strong></p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Charge Conjugation (C)</th>
+            <th>Parity (P)</th>
+            <th>Time Reversal (T)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>π<sub>grav</sub></td>
+            <td>π<sub>grav</sub> (unchanged)</td>
+            <td>π<sub>grav</sub> (unchanged)</td>
+            <td>π<sub>grav</sub> (unchanged)</td>
+          </tr>
+          <tr>
+            <td>π<sub>EM</sub></td>
+            <td><strong>π<sub>EM</sub></strong> · e^(iπ) (phase flips 0 ↔ π)</td>
+            <td>π<sub>EM</sub> (unchanged)</td>
+            <td><strong>π<sub>EM</sub></strong>* (complex conjugate)</td>
+          </tr>
+          <tr>
+            <td>π<sub>strong</sub></td>
+            <td><strong>π<sub>strong</sub></strong>* (colour ↔ anti‑colour in metadata)</td>
+            <td>π<sub>strong</sub> (unchanged)</td>
+            <td><strong>π<sub>strong</sub></strong>* (complex conjugate)</td>
+          </tr>
+          <tr>
+            <td>π<sub>weak</sub></td>
+            <td><strong>−π<sub>weak</sub></strong> (sign flip)</td>
+            <td>π<sub>weak</sub> (unchanged)</td>
+            <td><strong>π<sub>weak</sub></strong>* · e^(iπ·J) (spin‑phase factor)</td>
+          </tr>
+          <tr>
+            <td>π<sub>spin</sub></td>
+            <td><strong>−π<sub>spin</sub></strong> (μ → −μ)</td>
+            <td>−π<sub>spin</sub> (spin reverses)</td>
+            <td><strong>π<sub>spin</sub></strong>* (complex conjugate)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><em>Notes.</em></p>
+      <ul>
+        <li>Phases are <strong>real</strong> (0 or π) for SM particles; complex conjugation is trivial.</li>
+        <li><strong>J</strong> is total angular momentum quantum number (0 for scalars, ½ for spin‑½ fermions, 1 for vectors). For SM fermions (J = ½), T flips π<sub>weak</sub> sign; for bosons (J = 0, 1), T leaves π<sub>weak</sub> invariant.</li>
+        <li><strong>Colour structure</strong>: For off‑diagonal gluons (r ḡ, etc.), C permutes colour labels in metadata; diagonal gluons (r r̄ − b b̄) are <strong>strictly invariant</strong>.</li>
+      </ul>
+
+      <h3>2.5.2 Matrix Representations</h3>
+
+      <p>The discrete symmetries act as <strong>5 × 5 matrices</strong> on the π‑vector space. Let <strong>π</strong> = (π<sub>grav</sub>, π<sub>EM</sub>, π<sub>strong</sub>, π<sub>weak</sub>, π<sub>spin</sub>). Then:</p>
+
+      <p><strong>Charge Conjugation (C)</strong></p>
+
+      <p>$$ C\left( \overrightarrow{\pi} \right) = M_C \cdot \overrightarrow{\pi}, \quad \text{where } M_C = \text{diag}(1, -1, 1, -1, -1) $$</p>
+
+      <p>The −1 entries act on the <strong>complex phase</strong> of π<sub>EM</sub> and the <strong>real sign</strong> of π<sub>weak</sub> and π<sub>spin</sub>. Colour permutation for quarks/gluons is handled in metadata, not in M<sub>C</sub>.</p>
+
+      <p><strong>Parity (P)</strong></p>
+
+      <p>$$ P(\overrightarrow{\pi}) = M_P \cdot \overrightarrow{\pi}, \quad \text{where } M_P = \text{diag}(1, 1, 1, 1, -1) $$</p>
+
+      <p>Only π<sub>spin</sub> (axial vector) changes sign under spatial inversion; all gauge charges (π<sub>EM</sub>, π<sub>strong</sub>, π<sub>weak</sub>) are parity‑even.</p>
+
+      <p><strong>Time Reversal (T)</strong></p>
+
+      <p>$$ T(\overrightarrow{\pi}) = M_T \cdot \overrightarrow{\pi}, \quad \text{where } M_T = \text{diag}(1, -1, -1, -1, 1) $$</p>
+
+      <p>The anti‑unitary operator <strong>conjugates complex phases</strong> and applies a spin‑dependent phase <strong>e^(iπ·J)</strong> to π<sub>weak</sub>.</p>
+
+      <p>For SM particles:</p>
+      <ul>
+        <li><strong>Fermions (J = ½)</strong>: T(π<sub>weak</sub>) = −π<sub>weak</sub>*</li>
+        <li><strong>Bosons (J = 0, 1)</strong>: T(π<sub>weak</sub>) = π<sub>weak</sub>*</li>
+      </ul>
+
+      <p>Since π<sub>weak</sub> is <strong>real</strong>, this reduces to <strong>sign flip for fermions only</strong>, matching the SM's T‑transformation structure.</p>
+    </section>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- CONTACT MINI-BAR                                              -->
+  <!-- ============================================================ -->
+  <div class="contact-mini">
+    <a href="mailto:waveontology@ruimanuelalmeidapinheiro.work">✉️ waveontology@ruimanuelalmeidapinheiro.work</a>
+    <a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+    <span>📍 Lisbon · Arroios</span>
+  </div>
+
+  <footer>
+    © Rui Manuel de Almeida Pinheiro — ν‑Framework: A Unified Vibrational Specification for Stable States of Matter and Interaction · Lisbon, Arroios
+  </footer>
+</div>
+
+<script>
+  // Dark mode toggle
+  const themeBtn = document.getElementById('themeToggle');
+  const root = document.documentElement;
+  const saved = localStorage.getItem('theme');
+  if (saved) root.setAttribute('data-theme', saved);
+
+  themeBtn?.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+
+  // Autoplay handling for background video layer
+  const videoElement = document.getElementById('intro-video');
+  window.addEventListener('DOMContentLoaded', () => {
+    videoElement.play().catch(error => {
+      console.log("Autoplay prevented. Awaiting interaction.", error);
+    });
+  });
+</script>
+
+</body>
+</html>

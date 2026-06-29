@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="Pi/logo.jpg" rel="icon" type="image/jpeg"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="https://ruimanuelalmeidapinheiro.work/ν‑FrameworkappendixD" rel="canonical"/>
+
+<title>Appendix D: Glossary — The ν‑Framework</title>
+<meta name="description" content="Appendix D of the ν‑Framework: Glossary of Terms & Symbols. Latin Symbols, Greek Symbols, Subscript & Functional Notation, Operational Axioms & Criteria, Specialized Terms, and Acronyms."/>
+
+<meta property="og:image" content="https://ruimanuelalmeidapinheiro.work/Pi/allwav.jpg"/>
+<meta property="og:image:width" content="626"/>
+<meta property="og:image:height" content="351"/>
+<meta property="og:title" content="Appendix D: Glossary — The ν‑Framework"/>
+<meta property="og:description" content="Appendix D of the ν‑Framework: Glossary of Terms & Symbols. Latin Symbols, Greek Symbols, Subscript & Functional Notation, Operational Axioms & Criteria, Specialized Terms, and Acronyms."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ruimanuelalmeidapinheiro.work/ν‑FrameworkappendixD"/>
+
+<meta name="author" content="Rui Manuel de Almeida Pinheiro"/>
+<meta property="article:published_time" content="2026-01-23T00:00:00+00:00"/>
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    }
+  };
+</script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&amp;display=swap" rel="stylesheet"/>
+<link href="wave-ontology-styles.css" rel="stylesheet"/>
+<link href="ν‑Framework.css" rel="stylesheet"/>
+
+<style>
+  .glossary-section {
+    margin: 1.5rem 0;
+  }
+
+  .glossary-section h3 {
+    color: #8b6b3d;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(200, 180, 160, 0.2);
+    padding-bottom: 0.25rem;
+  }
+
+  [data-theme="dark"] .glossary-section h3 {
+    color: #f0b86e;
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .glossary-item {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(200, 180, 160, 0.06);
+  }
+
+  .glossary-item .term {
+    font-weight: 600;
+    min-width: 100px;
+    color: #3e3220;
+    font-size: 0.9rem;
+  }
+
+  [data-theme="dark"] .glossary-item .term {
+    color: #f0b86e;
+  }
+
+  .glossary-item .definition {
+    color: #4a3f33;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  [data-theme="dark"] .glossary-item .definition {
+    color: #cbd5e1;
+  }
+
+  .glossary-item .definition code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    background: rgba(200, 180, 160, 0.12);
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.25rem;
+    color: #8b6b3d;
+  }
+
+  [data-theme="dark"] .glossary-item .definition code {
+    background: rgba(255, 255, 255, 0.06);
+    color: #f0b86e;
+  }
+
+  @media (max-width: 600px) {
+    .glossary-item {
+      flex-direction: column;
+      gap: 0.2rem;
+      padding: 0.5rem 0;
+    }
+    .glossary-item .term {
+      min-width: auto;
+    }
+  }
+</style>
+</head>
+
+<body class="tex2jax_ignore">
+
+<div id="video-container">
+  <video id="intro-video" autoplay muted loop playsinline>
+    <source src="Pi/I.mp4" type="video/mp4">
+    REG_ERROR: Video playback not supported by hardware.
+  </video>
+</div>
+
+<div class="container">
+  <div class="top-header">
+    <div class="nav-links">
+      <a href="index.html">← Back to Main Menu</a>
+      <a href="ν‑Framework-index.html">← Index</a>
+      <a href="ν‑FrameworkappendixC.html">← Appendix C</a>
+      <a href="ν‑FrameworkappendixE.html">Appendix E →</a>
+    </div>
+    <button aria-label="Toggle dark mode" class="theme-toggle-btn" id="themeToggle">◑</button>
+  </div>
+
+  <main class="chapter-card tex2jax_process">
+
+    <div class="chapter-meta tex2jax_ignore">ν‑Framework · Appendix D</div>
+    <h1 class="chapter-title tex2jax_ignore">Appendix D: Glossary of ν‑Framework Terms &amp; Symbols</h1>
+
+    <p><em>All definitions are operational — no ontological commitment implied.</em></p>
+
+    <!-- ============================================================ -->
+    <!-- D.1                                                           -->
+    <!-- ============================================================ -->
+    <section class="glossary-section">
+      <h3>D.1 Latin Symbols</h3>
+
+      <div class="glossary-item">
+        <span class="term"><em>A</em></span>
+        <span class="definition">Mass number (nucleon count) of a nuclide; integer 1 ≤ <em>A</em> ≤ 295 in ν‑matrix.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>B</em>₀</span>
+        <span class="definition">Reference magnetic field, defined as 1 T exactly, used to fix π<sub>spin</sub> and <em>f</em><sub>RMN</sub> scales.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>C</em></span>
+        <span class="definition">Charge-conjugation operator; acts on π‑space as <em>M</em><sub>C</sub> = diag(1, −1, 1, −1, −1).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>c</em></span>
+        <span class="definition">Speed of light in vacuum; exact value 299 792 458 m·s⁻¹ (CODATA 2022).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>E</em></span>
+        <span class="definition">Measurable energy (rest, binding, excitation, or decay width) expressed in joules.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>e</em></span>
+        <span class="definition">Elementary charge; exact value 1.602 176 634 × 10⁻¹⁹ C (CODATA 2022).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>f</em></span>
+        <span class="definition">Frequency in hertz (Hz) obtained by <em>f</em> = <em>E</em>/<em>h</em>; universal currency of ν/π‑vectors.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>G</em><sub>F</sub></span>
+        <span class="definition">Fermi coupling constant; 1.166 378 7 × 10⁻⁵ GeV⁻² (PDG 2024).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>g</em></span>
+        <span class="definition">g‑factor (dimensionless) relating magnetic moment to spin.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>h</em></span>
+        <span class="definition">Planck constant; exact value 6.626 070 15 × 10⁻³⁴ J·Hz⁻¹ (CODATA 2022).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>ħ</em></span>
+        <span class="definition">Reduced Planck constant; <em>ħ</em> = <em>h</em> / 2π.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>I</em></span>
+        <span class="definition">Nuclear spin quantum number (integer or half-integer).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>J</em></span>
+        <span class="definition">Total angular momentum quantum number (used in T‑transformation phase).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>m</em></span>
+        <span class="definition">Mass in kilograms; converted to frequency via π<sub>grav</sub> = <em>m</em> <em>c</em>² / <em>h</em>.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>n</em></span>
+        <span class="definition">Principal quantum number (referenced in saw‑tooth discussion).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>P</em></span>
+        <span class="definition">Parity operator; acts on π‑space as <em>M</em><sub>P</sub> = diag(1, 1, 1, 1, −1).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>Q</em></span>
+        <span class="definition">Electric quadrupole moment in barns (1 b = 10⁻²⁸ m²).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>Q</em>²</span>
+        <span class="definition">Squared electric charge in units of <em>e</em>² (<em>Q</em> = +2/3 → <em>Q</em>² = 4/9).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>T</em></span>
+        <span class="definition">Time-reversal operator; anti-unitary with spin-phase factor <em>e</em><sup>(<em>i</em>π<em>J</em>)</sup>.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>Z</em></span>
+        <span class="definition">Proton number (atomic number); integer 1 ≤ <em>Z</em> ≤ 118 in ν‑matrix.</span>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- D.2                                                           -->
+    <!-- ============================================================ -->
+    <section class="glossary-section">
+      <h3>D.2 Greek Symbols</h3>
+
+      <div class="glossary-item">
+        <span class="term">α</span>
+        <span class="definition">Fine-structure constant; α = <em>e</em>² / (4π ε₀ ħ <em>c</em>) ≈ 7.297 × 10⁻³ (CODATA 2022).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">α′</span>
+        <span class="definition">Kinetic-mixing parameter for dark-photon models; 0 ≤ α′ ≪ α.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">δ</span>
+        <span class="definition">Residual or relative uncertainty; δ<em>x</em> / <em>x</em> denotes fractional 1σ error.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">Δ<em>s</em></span>
+        <span class="definition">Uniform logarithmic spacing of cosmic curve; Δ<em>s</em> = 0.102 ± 0.008 dex per proton.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">ε₀</span>
+        <span class="definition">Vacuum permittivity; exact value via <em>c</em> and μ₀.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">Λ<sub>QCD</sub></span>
+        <span class="definition">QCD confinement scale; 200 ± 10 MeV (PDG 2024).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">μ</span>
+        <span class="definition">Magnetic moment in J·T⁻¹; related to π<sub>spin</sub> via μ = <em>g</em> (<em>e</em> ħ / 2<em>m</em>).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">μ<sub>B</sub></span>
+        <span class="definition">Bohr magneton; μ<sub>B</sub> = <em>e</em> ħ / (2 <em>m</em><sub>e</sub>) ≈ 9.274 × 10⁻²⁴ J·T⁻¹.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">μ<sub>N</sub></span>
+        <span class="definition">Nuclear magneton; μ<sub>N</sub> = <em>e</em> ħ / (2 <em>m</em><sub>p</sub>) ≈ 5.051 × 10⁻²⁷ J·T⁻¹.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">ν</span>
+        <span class="definition">Composite state vector; 7‑tuple (<em>f</em><sub>grav</sub>, <em>f</em><sub>forte</sub>, <em>f</em><sub>EM</sub>, <em>f</em><sub>RMN</sub>, <em>f</em><sub>quad</sub>, <em>f</em><sub>mag</sub>, <em>f</em><sub>beta</sub>).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">π</span>
+        <span class="definition">Elementary state vector; 5‑tuple (π<sub>grav</sub>, π<sub>EM</sub>, π<sub>strong</sub>, π<sub>weak</sub>, π<sub>spin</sub>).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">φ<sub>EM</sub></span>
+        <span class="definition">EM phase angle; 0 for <em>Q</em> &gt; 0, π for <em>Q</em> &lt; 0, undefined for <em>Q</em> = 0.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">γ</span>
+        <span class="definition">Gyromagnetic ratio in rad·s⁻¹·T⁻¹; <em>f</em><sub>RMN</sub> = γ <em>B</em>₀ / (2π).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">Γ</span>
+        <span class="definition">Decay width in joules; <em>f</em><sub>beta</sub> = Γ / <em>h</em>.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">τ½</span>
+        <span class="definition">Partial half-life in seconds; related to Γ via Γ = ħ ln 2 / τ½.</span>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- D.3                                                           -->
+    <!-- ============================================================ -->
+    <section class="glossary-section">
+      <h3>D.3 Subscript &amp; Functional Notation</h3>
+
+      <div class="glossary-item">
+        <span class="term"><em>f</em><sub>grav</sub></span>
+        <span class="definition">Gravitational/mass‑energy frequency of nucleus; <em>f</em><sub>grav</sub> = <em>m</em><sub>nucleus</sub> <em>c</em>² / <em>h</em>.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>f</em><sub>forte</sub></span>
+        <span class="definition">Strong‑force excitation frequency; <em>f</em><sub>forte</sub> = <em>E</em>(2₁⁺) / <em>h</em> ≤ 2 MeV.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>f</em><sub>EM</sub></span>
+        <span class="definition">Electromagnetic/optical frequency; <em>f</em><sub>EM</sub> = <em>c</em> / λ<sub>air</sub> (strongest visible line).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>f</em><sub>RMN</sub></span>
+        <span class="definition">Nuclear magnetic resonance frequency at <em>B</em>₀ = 1 T; <em>f</em><sub>RMN</sub> = γ <em>B</em>₀ / (2π).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>f</em><sub>quad</sub></span>
+        <span class="definition">Electric quadrupole interaction frequency; <em>f</em><sub>quad</sub> = <em>e</em> · <em>Q</em> · ⟨<em>V</em><sub>zz</sub>⟩ / [<em>h</em> · 4<em>I</em>(2<em>I</em> − 1)].</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>f</em><sub>mag</sub></span>
+        <span class="definition">Magnetic moment interaction frequency at <em>B</em>₀ = 1 T; <em>f</em><sub>mag</sub> = μ · <em>B</em>₀ / (<em>I</em> · ħ).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>f</em><sub>beta</sub></span>
+        <span class="definition">Weak‑decay frequency; <em>f</em><sub>beta</sub> = Γ<sub>β</sub> / <em>h</em> = ħ / (τ½ · <em>h</em> · ln 2).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">π<sub>grav</sub></span>
+        <span class="definition">Elementary mass‑energy frequency; π<sub>grav</sub> = <em>m</em><sub>particle</sub> · <em>c</em>² / <em>h</em>.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">π<sub>EM</sub></span>
+        <span class="definition">Elementary EM coupling frequency; π<sub>EM</sub> = α · <em>Q</em>² · <em>e</em><sup>(<em>i</em>φ<sub>EM</sub>)</sup>.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">π<sub>strong</sub></span>
+        <span class="definition">Elementary strong‑charge frequency; binary flag Λ<sub>QCD</sub> / <em>h</em> or 0.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">π<sub>weak</sub></span>
+        <span class="definition">Elementary weak‑charge frequency; π<sub>weak</sub> = <em>G</em><sub>F</sub> · <em>E</em><sub>weak</sub>² / (ħ · <em>h</em>).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">π<sub>spin</sub></span>
+        <span class="definition">Elementary magnetic frequency; π<sub>spin</sub> = <em>g</em> · (<em>e</em> ħ / 2<em>m</em>) · <em>B</em>₀ / <em>h</em> (leptons only).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">ν(<em>Z</em>)</span>
+        <span class="definition">Cosmic‑curve function; parametric 1‑D trajectory through ν‑space.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">φ</span>
+        <span class="definition">Mapping φ : SM → π‑space; deterministic, invertible, parameter‑free.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term"><em>F</em></span>
+        <span class="definition">Unknown frequency‑algebraic function; postulated ν = <em>F</em>(π₁, π₂, ..., π<sub><em>A</em></sub>; κ).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">κ</span>
+        <span class="definition">Binding kernel encoding many‑body correlations in <em>F</em> (non‑perturbative).</span>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- D.4                                                           -->
+    <!-- ============================================================ -->
+    <section class="glossary-section">
+      <h3>D.4 Operational Axioms &amp; Criteria</h3>
+
+      <div class="glossary-item">
+        <span class="term">Axiom 1</span>
+        <span class="definition">Every measurable energy <em>E</em> of a stable state (τ½ &gt; 10⁻⁸ s) shall be expressed as <em>f</em> = <em>E</em> / <em>h</em>.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">Axiom 2</span>
+        <span class="definition">Uniqueness of signature: ‖ν(<em>s</em>₁) − ν(<em>s</em>₂)‖<sub>Σ⁻¹</sub> &gt; 3 for any two distinct states.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">Axiom 3</span>
+        <span class="definition">Frequency‑space components are closed under C, P, T transformations (Table 2.1).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">Criterion 1</span>
+        <span class="definition">Injectivity: no two SM particles share indistinguishable π‑vectors within 3σ.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">Criterion 2</span>
+        <span class="definition">Categorical separation: SI &gt; 3σ between quarks/leptons, charged/neutral, bosons/fermions.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">Criterion 3</span>
+        <span class="definition">Symmetry preservation: residuals δ &lt; 10⁻⁴% under C, P, T operations.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">Criterion 4</span>
+        <span class="definition">Completeness: 37 unique π‑vectors cover entire SM census (30 types + 7 gluon colours).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">Criterion 5</span>
+        <span class="definition">Residue‑free antiparticle duality: C(π) = π(antiparticle) within 10⁻⁴%.</span>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- D.5                                                           -->
+    <!-- ============================================================ -->
+    <section class="glossary-section">
+      <h3>D.5 Specialized &amp; Model‑Independent Terms</h3>
+
+      <div class="glossary-item">
+        <span class="term">BSM</span>
+        <span class="definition">Beyond Standard Model; any particle not in PDG 2024 census.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">CMB</span>
+        <span class="definition">Cosmic microwave background; used to constrain ν<sub>s</sub> and A′ masses.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">dex</span>
+        <span class="definition">Decimal exponent; 1 dex = factor 10; used for logarithmic spacing Δ<em>s</em>.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">FAP</span>
+        <span class="definition">False‑alarm probability in Lomb‑Scargle test; p &lt; 10⁻⁶ implies &gt; 5σ significance.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">HDF5</span>
+        <span class="definition">Hierarchical Data Format v5; archival format for ν‑ and π‑matrices.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">IUPAC</span>
+        <span class="definition">International Union of Pure and Applied Chemistry; defines terrestrial isotopic abundances.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">LISA</span>
+        <span class="definition">Laser Interferometer Space Antenna; future gravitational‑wave probe of Planck‑scale ν₀.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">NMR‑silent</span>
+        <span class="definition">Element with no stable isotope having <em>I</em> ≠ 0; <em>f</em><sub>RMN</sub> = null.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">null vs. zero</span>
+        <span class="definition"><strong>null</strong> = structurally excluded channel; <strong>zero</strong> = permitted but inactive (<em>f</em><sub>i</sub> = 0).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">PDG</span>
+        <span class="definition">Particle Data Group; authoritative 2024 compilation used for π‑vector derivation.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">SI</span>
+        <span class="definition">Separation Index = ‖μ<sub>A</sub> − μ<sub>B</sub>‖ / (σ<sub>A</sub> + σ<sub>B</sub>); metric for categorical disjointness.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">saw‑tooth</span>
+        <span class="definition">8.07‑unit periodic modulation in log₁₀(<em>f</em><sub>EM</sub>) versus <em>Z</em>; encodes aufbau principle.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">sterile neutrino</span>
+        <span class="definition">Hypothetical ν<sub>s</sub> with π<sub>weak</sub> = 0, π<sub>EM</sub> = 0, π<sub>grav</sub> &lt; 10¹⁴ Hz.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">dark photon</span>
+        <span class="definition">Hypothetical A′ with π<sub>EM</sub> ≠ 0, π<sub>weak</sub> = 0, π<sub>strong</sub> = 0; forbidden in SM π‑space.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">cosmic curve</span>
+        <span class="definition">1‑D manifold capturing 89.3% of variance in {<em>f</em><sub>grav</sub>, <em>f</em><sub>EM</sub>, <em>f</em><sub>mag</sub>}; slope Δ<em>s</em> = 0.102 dex/proton.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">harmonic anchors</span>
+        <span class="definition"><em>Z</em> = 12 (Mg) and 20 (Ca) where saw‑tooth residuals vanish within 0.5%.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">binding kernel κ</span>
+        <span class="definition">Unknown non‑perturbative operator in <em>F</em> that produces 100‑fold mass cancellation.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">frequency algebra <em>F</em></span>
+        <span class="definition">Postulated map ν = <em>F</em>(π₁, π₂, ..., π<sub><em>A</em></sub>; κ); constrained but not yet solved.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">ν₀‑vector</span>
+        <span class="definition">Speculative vacuum boundary vector at <em>f</em><sub>Hubble</sub> ≈ 2.3 × 10⁻¹⁸ Hz.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">Planck frequency</span>
+        <span class="definition"><em>f</em><sub>Planck</sub> = <em>E</em><sub>Planck</sub> / <em>h</em> = 1.856 × 10⁴³ Hz; upper bound for physical frequencies.</span>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- D.6                                                           -->
+    <!-- ============================================================ -->
+    <section class="glossary-section">
+      <h3>D.6 Acronyms &amp; Database Identifiers</h3>
+
+      <div class="glossary-item">
+        <span class="term">AME2020</span>
+        <span class="definition">Atomic Mass Evaluation 2020 via NNDC (<em>f</em><sub>grav</sub> source).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">ASD v5.8</span>
+        <span class="definition">NIST Atomic Spectra Database v5.8 (<em>f</em><sub>EM</sub> source).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">ENSDF</span>
+        <span class="definition">Evaluated Nuclear Structure Data File (<em>f</em><sub>forte</sub>, <em>f</em><sub>beta</sub>, <em>Q</em> values).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">CODATA</span>
+        <span class="definition">Committee on Data of the International Science Council (fundamental constants).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">ETCSL</span>
+        <span class="definition">Electronic Text Corpus of Sumerian Literature (historical cross‑check).</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">LHC</span>
+        <span class="definition">Large Hadron Collider; probes dark‑photon resonances.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">DUNE</span>
+        <span class="definition">Deep Underground Neutrino Experiment; tests π<sub>weak</sub> = 0 for ν<sub>s</sub>.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">KATRIN</span>
+        <span class="definition">Karlsruhe Tritium Neutrino Experiment; kinematic ν‑mass bound.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="term">CMB‑S4</span>
+        <span class="definition">Stage‑4 CMB survey; acoustic‑peak constraint on A′ mass.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- CONTACT MINI-BAR                                              -->
+  <!-- ============================================================ -->
+  <div class="contact-mini">
+    <a href="mailto:waveontology@ruimanuelalmeidapinheiro.work">✉️ waveontology@ruimanuelalmeidapinheiro.work</a>
+    <a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+    <span>📍 Lisbon · Arroios</span>
+  </div>
+
+  <footer>
+    © Rui Manuel de Almeida Pinheiro — ν‑Framework: A Unified Vibrational Specification for Stable States of Matter and Interaction · Lisbon, Arroios
+  </footer>
+</div>
+
+<script>
+  // Dark mode toggle
+  const themeBtn = document.getElementById('themeToggle');
+  const root = document.documentElement;
+  const saved = localStorage.getItem('theme');
+  if (saved) root.setAttribute('data-theme', saved);
+
+  themeBtn?.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+
+  // Autoplay handling for background video layer
+  const videoElement = document.getElementById('intro-video');
+  window.addEventListener('DOMContentLoaded', () => {
+    videoElement.play().catch(error => {
+      console.log("Autoplay prevented. Awaiting interaction.", error);
+    });
+  });
+</script>
+
+</body>
+</html>
