@@ -488,3 +488,215 @@ footer {
   background: rgba(240, 184, 110, 0.15);
   color: #f0b86e;
 }
+
+
+/* ============================== */
+/* Domain Hub Navigation          */
+/* ============================== */
+.hub-nav-container {
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(226, 217, 206, 0.3);
+}
+
+.hub-nav-container .back-link {
+  background: rgba(240, 235, 226, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #5b4b34;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+  display: inline-block;
+}
+
+.hub-nav-container .back-link:hover {
+  background: rgba(226, 213, 194, 0.9);
+  color: #3e3220;
+}
+
+/* ============================== */
+/* Section Divider (domain hubs)  */
+/* ============================== */
+.section-divider {
+  text-align: center;
+  margin: 2.5rem 0 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(240, 184, 110, 0.15);
+  border-left: 4px solid #f0b86e;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #f0b86e;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.section-divider .status {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 400;
+  text-transform: none;
+}
+
+[data-theme="dark"] .section-divider {
+  background: rgba(240, 184, 110, 0.08);
+  border-left-color: #f0b86e;
+}
+
+/* ============================== */
+/* Chapter List (domain hubs)     */
+/* 2026-04-07                     */
+/* ============================== */
+.chapter-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.chapter-item {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid #475569;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  transition: transform 0.2s;
+  width: 100%;
+  list-style: none;
+}
+
+.chapter-item:hover {
+  transform: scale(1.01);
+}
+
+.chapter-item a {
+  text-decoration: none;
+  color: #f0b86e;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.chapter-desc {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+[data-theme="dark"] .chapter-item {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: #334155;
+}
+
+[data-theme="dark"] .chapter-item a {
+  color: #f0b86e;
+}
+
+[data-theme="dark"] .chapter-desc {
+  color: #94a3b8;
+}
+
+/* ============================== */
+/* Central Hub Grid & Cards       */
+/* ============================== */
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.hub-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(240, 184, 110, 0.3);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(4px);
+  transition: border-color 0.2s, transform 0.2s;
+  text-decoration: none;
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 180px;
+}
+
+.hub-card:hover {
+  border-color: #f0b86e;
+  transform: translateY(-4px);
+}
+
+.hub-card .title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f0b86e;
+  margin-bottom: 0.5rem;
+}
+
+.hub-card .desc {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.hub-card .chapters {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-top: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(240, 184, 110, 0.15);
+}
+
+[data-theme="dark"] .hub-card {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+/* ============================== */
+/* Teaser Box (Central Hub only)  */
+/* ============================== */
+.teaser-box {
+  text-align: center;
+  margin: 3rem auto 2rem;
+  padding: 1.5rem 2rem;
+  max-width: 700px;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid #f0b86e;
+  border-radius: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.teaser-box p {
+  margin: 0.25rem 0;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.teaser-box .title {
+  color: #f0b86e;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.teaser-box .desc {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.teaser-box .footer-text {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+
+
+

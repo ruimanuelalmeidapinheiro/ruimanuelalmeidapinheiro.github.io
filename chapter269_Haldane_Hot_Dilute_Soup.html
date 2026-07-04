@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="Pi/logo.jpg" rel="icon" type="image/jpeg"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="https://ruimanuelalmeidapinheiro.work/chapter269_Haldane_Hot_Dilute_Soup" rel="canonical"/>
+<!-- Group Wave Ontology -->
+<title>Chapter 269: Haldane's Hot Dilute Soup (1929) — The Hz Pump Formalism</title>
+<meta name="description" content="A full-depth analysis of J.B.S. Haldane's 1929 'hot dilute soup' hypothesis through the Hz framework. Haldane proposed that UV light acting on water, carbon dioxide, and ammonia produced sugars and proteins. The Hz framework translates UV as a broadband Hz pump that kicks molecules above activation frequency ν_a, and the 'soup' as a bulk medium where many weak phase-locks accumulate. Haldane coined the term and established the energy input formalism. Includes falsification criteria and open questions."/>
+<meta content="https://ruimanuelalmeidapinheiro.work/Pi/allwav.jpg" property="og:image"/>
+<meta content="626" property="og:image:width"/>
+<meta content="351" property="og:image:height"/>
+<meta content="Chapter 269: Haldane's Hot Dilute Soup (1929) — The Hz Pump Formalism" property="og:title"/>
+<meta content="A full-depth analysis of J.B.S. Haldane's 1929 'hot dilute soup' hypothesis through the Hz framework. Haldane proposed that UV light acting on water, carbon dioxide, and ammonia produced sugars and proteins. The Hz framework translates UV as a broadband Hz pump that kicks molecules above activation frequency ν_a, and the 'soup' as a bulk medium where many weak phase-locks accumulate. Haldane coined the term and established the energy input formalism. Includes falsification criteria and open questions." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ruimanuelalmeidapinheiro.work/chapter269_Haldane_Hot_Dilute_Soup" property="og:url"/>
+<meta content="Rui Manuel de Almeida Pinheiro" name="author"/>
+<meta content="2026-07-03T00:00:00+00:00" property="article:published_time"/>
+<!-- End Group Wave Ontology -->
+<!-- MathJax Configuration -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    }
+  };
+</script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&amp;display=swap" rel="stylesheet"/>
+<link href="wave-ontology-styles.css" rel="stylesheet"/>
+</head>
+
+<body class="tex2jax_ignore">
+<div id="video-container">
+<video autoplay="" id="intro-video" loop="" muted="" playsinline="">
+<source src="Pi/I.mp4" type="video/mp4"/>
+    REG_ERROR: Video playback not supported by hardware.
+  </video>
+</div>
+<div class="container">
+<div class="top-header">
+<div class="nav-links">
+<a href="CentralHub.html">← Central Hub</a>
+<a href="chapter270_Oparin_Haldane_Synthesis.html">Chapter 270 —»»</a>
+<a "noreferrer"="" href="Schrödinger-equation-explained.html" rel="noopener" target="_blank">The True Overview</a>
+</div>
+<button aria-label="Toggle dark mode" class="theme-toggle-btn" id="themeToggle">◑</button>
+</div>
+<main class="chapter-card tex2jax_process">
+<div class="chapter-meta tex2jax_ignore">Chapter 269 · 2026‑07‑03</div>
+<h1 class="chapter-title tex2jax_ignore">Chapter 269: Haldane's Hot Dilute Soup (1929) — The Hz Pump Formalism</h1>
+<div class="hero-tagline tex2jax_process">In 1929, J.B.S. Haldane independently proposed that <strong>UV light</strong> acting on water, carbon dioxide, and ammonia produced organic substances, including sugars and protein building blocks. He coined the term <strong>"hot dilute soup"</strong> for the accumulated organic material in primitive oceans. The Hz framework translates UV as a <strong>broadband Hz pump</strong> that kicks molecules above activation frequency $\nu_a$; the "soup" is a <strong>bulk medium</strong> where many weak phase‑locks accumulate. Haldane's formalism established that <strong>energy input frequency matters</strong> — not just the presence of energy, but its specific Hz spectrum.</div>
+
+<section class="prose-section">
+
+<h3>1. Historical Account — Haldane's Hot Dilute Soup</h3>
+
+ <!-- START: J.B.S. Haldane Profile -->
+<section id="haldane-profile">
+    <h2>Profile: J.B.S. Haldane</h2>
+    <p>John Burdon Sanderson Haldane (1892–1964) was a British-Indian polymath, evolutionary biologist, geneticist, and statistician who acted as one of the primary architects of the modern synthesis in evolutionary biology. Alongside Ronald Fisher and Sewall Wright, Haldane mathematically unified Darwinian natural selection with Mendelian genetics, translating evolutionary theory into a rigorous science of population dynamics. Renowned for his fierce intellectual independence and sweeping contributions across biochemistry, physiology, and cosmology, Haldane also independently co-formulated the primordial soup theory of chemical evolution, permanently altering the historical trajectory of prebiotic science.</p>
+    
+    <hr />
+
+    <h3>Academic Trajectory &amp; Research Affiliations</h3>
+    <ul>
+        <li><strong>Early Training and Unconventional Education:</strong> Born in Oxford into an aristocratic, hyper-intellectual family, Haldane served as a childhood research assistant to his father, the legendary respiratory physiologist John Scott Haldane. He attended Eton College and subsequently entered the University of Oxford, graduating from New College with a degree in mathematics and humanities (Greats) in 1914, notably completing his entire life’s work without a formal university degree in biology.</li>
+        <li><strong>Wartime Exploits &amp; Cambridge Biochemistry:</strong> Served on the front lines during World War I in the Black Watch, surviving multiple wounds and acquiring a reputation for tactical audacity and explosives expertise. Post-war, he conducted defining research at the University of Cambridge (1922–1932) under Frederick Gowland Hopkins, spearheading foundational advancements in enzyme kinetics and physiological regulation.</li>
+        <li><strong>The London Professorships:</strong> Relocated to London, holding chairs as Professor of Genetics and subsequently Professor of Biometry at University College London (UCL) from 1933 to 1957. During this era, he combined dense statistical genetics with aggressive political writing, serving as a prominent Marxist intellectual and the editorial chairman of <em>The Daily Worker</em>. He ultimately split from the Communist Party due to the rise of Lysenkoism, which he rigorously rejected on scientific grounds.</li>
+        <li><strong>Emigration and Indian Citizenship:</strong> Outraged by Western foreign policy and the British military intervention in the Suez Crisis, Haldane renounced his ties to the United Kingdom and emigrated to India in 1957. Invited by Prasanta Chandra Mahalanobis, he joined the Indian Statistical Institute (ISI) in Calcutta. He formally became an Indian citizen in 1961 and established the Genetics and Biometry Laboratory in Bhubaneswar, Odisha, mentoring a final generation of Indian field biologists and statisticians before his death.</li>
+    </ul>
+
+    <hr />
+
+    <h3>Core Research Areas &amp; Structural Frameworks</h3>
+    <p>Haldane’s analytical architecture treated biology as a systems problem governed by physical chemistry, deterministic mathematics, and conservation laws.</p>
+    <ul>
+        <li><strong>Mathematical Population Genetics and the Modern Synthesis:</strong> Haldane dismantled the conceptual wall dividing discrete Mendelian genetic mutations from continuous Darwinian selection. In a monumental series of papers, he constructed deterministic mathematical models tracking how the frequency of a single gene changes within a breeding population over generations under varying selection pressures, mutation rates, and migration factors, proving that natural selection can act effectively on small variations.</li>
+        <li><strong>The Primordial Soup and Chemical Evolution:</strong> In 1929, entirely independent of Alexander Oparin, Haldane published a revolutionary thesis proposing that Earth's prebiotic atmosphere possessed zero free oxygen. He hypothesized that solar ultraviolet radiation drove chemical reactions between water, carbon dioxide, and ammonia, converting the primitive oceans into a highly concentrated, organic matrix—which he famously termed a **"hot dilute soup."** Within this matrix, he argued, the earliest primitive lipid membranes self-assembled, enclosing metabolic networks.</li>
+        <li><strong>Enzyme Kinetics (The Briggs-Haldane Equation):</strong> Partnering with G.E. Briggs in 1925, Haldane fundamentally transformed biochemistry by introducing the **quasi-steady-state approximation** to enzyme kinetics. They demonstrated that the concentration of the intermediate enzyme-substrate complex remains relatively invariant over the timescale of the reaction. This insight corrected the earlier, restrictive Michaelis-Menten equations, establishing the definitive Briggs-Haldane equation as an un-bypasable standard for pharmacological and metabolic tracking.</li>
+        <li><strong>Haldane’s Rule on Hybrid Sterility:</strong> Analyzing the boundaries of speciation, Haldane isolated a structural law governing animal hybridization: "When in the offspring of two different animal races one sex is absent, rare, or sterile, that sex is the heterozygous (heterogametic) sex." This rule correctly identified why male hybrids are sterile in mammals (XY) while female hybrids are sterile in birds and butterflies (ZW), establishing a clear link between chromosomal architecture and evolutionary isolation.</li>
+        <li><strong>Haldane’s Dilemma (The Cost of Natural Selection):</strong> Haldane calculated the absolute thermodynamic and reproductive toll required for an advantageous mutation to completely replace an old allele within a population. He proved that this process requires a mandatory minimum allocation of "genetic deaths" (differential reproductive failures), meaning that if an environment shifts too rapidly across multiple axes, a species cannot evolve fast enough to avoid extinction, a fundamental limit in evolutionary optimization theory.</li>
+        <li><strong>Kin Selection Intuition:</strong> Decades before William Hamilton formalized inclusive fitness equations, Haldane mapped the genetic math of altruism. When asked in a tavern if he would lay down his life for his brother, he famously calculated that he would do so to save "two brothers or eight cousins," highlighting that evolutionary advantage can be quantified through shared genetic coefficients.</li>
+    </ul>
+
+    <hr />
+
+    <h3>Key Seminal &amp; Philosophical Publications</h3>
+    <ul>
+        <li><em>Daedalus; or, Science and the Future</em> (Kegan Paul, 1923) – A fiercely visionary, prophetic philosophical essay that predicted the development of in vitro fertilization ("ectogenesis"), industrial genetic engineering, and widespread human reliance on hydrogen-based renewable energy grid systems.</li>
+        <li><em>A Note on the Kinetics of Enzyme Action</em> (with G.E. Briggs, Biochemical Journal, 1925) – The foundational physical chemistry paper that established the quasi-steady-state mathematical proof for modern biochemical kinetics.</li>
+        <li><em>The Origin of Life</em> (The Rationalist Annual, 1929) – The historic essay that independently outlined the reducing prebiotic atmosphere and introduced the "hot dilute soup" paradigm of chemical abiogenesis.</li>
+        <li><em>The Causes of Evolution</em> (Longmans, Green &amp; Co., 1932) – His definitive mathematical masterpiece. It synthesized his quantitative population papers into a cohesive framework, permanently establishing the mathematical foundation of the Modern Evolutionary Synthesis.</li>
+        <li><em>The Biochemistry of Genetics</em> (George Allen &amp; Unwin, 1954) – An early, highly influential attempt to map classical gene frequencies directly onto underlying metabolic pathways, anticipating the molecular biology explosion.</li>
+    </ul>
+</section>
+<!-- END: J.B.S. Haldane Profile -->
+
+<p><strong>Context:</strong> In 1929, Haldane published an essay entitled "The Origin of Life" in <em>The Rationalist Annual</em>. He was unaware of Oparin's 1924 work (published in Russian) and developed his ideas independently. Haldane proposed:</p>
+
+<ol>
+<li><strong>UV radiation</strong> as the primary energy source, acting on a primitive atmosphere of water, carbon dioxide, and ammonia.</li>
+<li><strong>Organic synthesis</strong> — UV light would drive the formation of sugars, amino acids, and other organic compounds from simple inorganic precursors.</li>
+<li><strong>Accumulation:</strong> These organics would accumulate in the primitive oceans, forming a <strong>"hot dilute soup"</strong> — the term he coined.</li>
+<li><strong>Coacervate-like structures:</strong> Haldane suggested that these organic molecules would eventually form colloidal aggregates, akin to Oparin's coacervates, which could undergo primitive metabolism and replication.</li>
+</ol>
+
+<p><strong>Significance:</strong> Haldane's contribution was twofold:</p>
+<ol>
+<li>He coined the term <strong>"hot dilute soup"</strong> — a vivid image that captured the imagination of scientists and the public.</li>
+<li>He explicitly identified <strong>UV radiation</strong> as the energy source — he was the first to propose a specific frequency range (UV) for prebiotic synthesis.</li>
+</ol>
+
+<p>Haldane acknowledged Oparin's priority after learning of his work, and the two ideas merged into the <strong>Oparin‑Haldane hypothesis</strong> (Chapter 270).</p>
+
+<hr/>
+
+<h3>2. Wave Ontology Translation — Haldane's Soup in Hz</h3>
+
+<h4>2.1 UV as a Broadband Hz Pump</h4>
+<p>Haldane identified <strong>UV light</strong> as the primary energy source. In Hz terms, UV is a <strong>broadband Hz pump</strong> — it injects a wide range of frequencies into the chemical system:</p>
+
+<ul>
+<li><strong>UV‑C (100–280 nm):</strong> $\nu \sim 1.1 \times 10^{15}$ to $3.0 \times 10^{15}$ Hz. This range has enough energy to break strong bonds (e.g., C‑H, C‑C, N‑H) and create radicals.</li>
+<li><strong>UV‑B (280–315 nm):</strong> $\nu \sim 9.5 \times 10^{14}$ to $1.1 \times 10^{15}$ Hz. This range drives photochemical reactions without complete dissociation.</li>
+<li><strong>UV‑A (315–400 nm):</strong> $\nu \sim 7.5 \times 10^{14}$ to $9.5 \times 10^{14}$ Hz. This range is less energetic but can still drive some reactions.</li>
+</ul>
+
+<p>The key insight is that <strong>UV radiation has frequencies that match or exceed the activation frequencies $\nu_a$ of many prebiotic reactions</strong>. For example, the C‑H bond has $\nu_D \sim 1.09 \times 10^{15}$ Hz; UV‑C photons (with $\nu \sim 1.5 \times 10^{15}$ Hz) can break these bonds, creating reactive radicals that then form new bonds.</p>
+
+<p>Haldane's UV pump is a <strong>broadband Hz injection</strong> — it drives molecules over activation barriers, enabling reactions that would be thermally inaccessible at lower temperatures ($\nu_T \ll \nu_a$).</p>
+
+<h4>2.2 The "Hot Dilute Soup" — Bulk Accumulation of Weak Phase‑Locks</h4>
+<p>Haldane's "soup" is a <strong>bulk medium</strong> where organic molecules accumulate over time. In Hz terms, the soup is a <strong>phase‑locking reservoir</strong> — a large volume where many weak phase‑locks (individual molecules) accumulate and persist.</p>
+
+<p>The soup has the following Hz properties:</p>
+<ul>
+<li><strong>Dilute:</strong> The concentration of organics is low — but not zero. The molecules are spread out, so collisions are relatively rare.</li>
+<li><strong>Hot:</strong> The temperature is elevated (relative to the environment), giving $\nu_T$ high enough for some reactions, but not high enough to break the bonds once formed.</li>
+<li><strong>Accumulative:</strong> Over time, the soup accumulates more and more phase‑locked structures. This is <strong>phase accumulation</strong> — the Hz field builds up a reservoir of organised structures.</li>
+</ul>
+
+<p>Haldane's soup is a <strong>bulk phase‑locking environment</strong> — the opposite of a confined, concentrated environment like Darwin's pond or Oparin's coacervates. The soup is <strong>dilute</strong> (low local concentration), but over geological timescales, the total inventory of organics grows.</p>
+
+<h4>2.3 The Hz Pump → Soup → Coacervate Sequence</h4>
+<p>Haldane's full model was:</p>
+<ol>
+<li><strong>UV Hz pump</strong> drives organic synthesis from simple precursors.</li>
+<li><strong>Soup accumulation</strong> — organic molecules accumulate in the primitive ocean.</li>
+<li><strong>Concentration and aggregation</strong> — organic molecules eventually form coacervate‑like structures (similar to Oparin's coacervates).</li>
+<li><strong>Evolution</strong> — these aggregates undergo primitive metabolism and replication.</li>
+</ol>
+
+<p>In Hz terms, this is a <strong>phase‑locking cascade</strong> from the high‑frequency UV pump (energetic) to the low‑frequency coacervate structures (stable, persistent). The soup is the <strong>intermediate reservoir</strong> — the phase‑locking buffer that accumulates the products of the high‑Hz pump and feeds them into the low‑Hz coacervate structures.</p>
+
+<hr/>
+
+<h3>3. Link to Previous Chapters</h3>
+
+<h4>3.1 Connection to Chapters 257–264 (Molecular Formation)</h4>
+<p>Haldane's UV pump is a <strong>terrestrial version</strong> of the energy sources that drive molecular formation in the ISM. In space, UV radiation from stars drives photochemistry. On Earth, UV radiation from the Sun drives prebiotic synthesis.</p>
+
+<p>In both cases, the same Hz mechanism applies: <strong>UV photons with $\nu \sim 10^{15}$ Hz drive molecules over activation barriers, creating reactive radicals that form new bonds</strong>.</p>
+
+<h4>3.2 Connection to Chapters 265–266 (Aqueous Geochemistry)</h4>
+<p>Haldane's soup is an <strong>aqueous environment</strong> — the primitive ocean. Water's Hz field ($\nu_{\rm water} \sim 10^{13}$–$10^{14}$ Hz) provides the solvent matrix. The UV pump operates on the surface of the ocean, where photons penetrate the water and drive photochemistry.</p>
+
+<p>The soup is <strong>dilute</strong>, but the Hz framework shows that even dilute solutions can support phase‑locking over long timescales — because the total number of molecules is large, and collisions eventually occur.</p>
+
+<hr/>
+
+<h3>4. Test the Framework — Predictions</h3>
+
+<p>The Hz framework, applied to Haldane's soup, makes the following predictions:</p>
+
+<ol>
+<li><strong>Prediction 1:</strong> UV radiation (specifically, frequencies $\nu \sim 10^{15}$ Hz) will drive organic synthesis from simple precursors (CO₂, H₂O, NH₃) in aqueous solution.</li>
+<li><strong>Prediction 2:</strong> The yield of organic molecules is proportional to the UV flux (photon rate) — more UV leads to more synthesis.</li>
+<li><strong>Prediction 3:</strong> The specific UV frequency determines which products are formed. Different $\nu$ values break different bonds, leading to different reaction pathways.</li>
+<li><strong>Prediction 4:</strong> Organic molecules will accumulate in aqueous solution over time, even in the absence of confinement or concentration mechanisms, because the Hz field of water stabilises them.</li>
+<li><strong>Prediction 5:</strong> Eventually, the accumulated organics will spontaneously aggregate to form coacervate‑like structures (phase‑knots), as the phase‑locking of organic Hz modes becomes favourable.</li>
+</ol>
+
+<hr/>
+
+<h3>5. Falsification Criteria</h3>
+
+<p>The Hz framework's interpretation of Haldane's soup would be falsified by the following observations:</p>
+
+<ol>
+<li><strong>If UV radiation does not drive organic synthesis</strong> — i.e., if no organic molecules are produced from CO₂, H₂O, NH₃ under UV exposure. The Miller‑Urey experiment (Chapter 273) used electrical discharge, not UV, but subsequent UV experiments have confirmed organic synthesis. The framework passes this test.</li>
+<li><strong>If the yield of organic molecules is independent of UV frequency</strong> — i.e., if any photon energy (from IR to X‑ray) produces the same products in the same proportions. This would falsify the Hz‑specific prediction.</li>
+<li><strong>If organic molecules do not accumulate in aqueous solution</strong> — i.e., if they are rapidly destroyed (e.g., by hydrolysis or photolysis) faster than they are synthesised. This would falsify the soup accumulation prediction.</li>
+<li><strong>If accumulated organics do not spontaneously aggregate to form coacervate‑like structures</strong> — i.e., if they remain as individual molecules in solution indefinitely. This would falsify the phase‑knot emergence prediction.</li>
+<li><strong>If UV‑A radiation (lower frequency) produces the same yield as UV‑C (higher frequency)</strong> — this would falsify the frequency‑specificity of bond breaking.</li>
+</ol>
+
+<p><strong>Current Status:</strong> The framework is <strong>supported</strong> by UV photochemistry experiments and the known role of UV in prebiotic synthesis. The frequency‑specific predictions are partially supported (different wavelengths produce different radicals). The accumulation and aggregation predictions are supported by coacervate studies.</p>
+
+<hr/>
+
+<h3>6. Open Questions</h3>
+
+<ol>
+<li>What is the exact Hz spectrum of the early Earth's surface UV flux? How much UV reached the surface through the primitive atmosphere (with no ozone layer)? How did this affect prebiotic yields?</li>
+<li>What is the relationship between UV frequency and the specific products formed? Can we predict the product distribution from the UV spectrum?</li>
+<li>How long did it take for the "hot dilute soup" to accumulate to significant concentrations? What is the Hz timescale for soup formation?</li>
+<li>Is the soup model compatible with the hydrothermal vent model (Chapter 282)? Or are they competing hypotheses? Could both have operated simultaneously?</li>
+<li>How does the Hz framework account for the fact that UV radiation also destroys organic molecules? What is the balance between synthesis and destruction in Hz terms?</li>
+</ol>
+
+<hr/>
+
+<h3>7. Conclusion — Haldane's Hz Pump Formalism</h3>
+
+<p>Haldane's 1929 "hot dilute soup" hypothesis was the <strong>first explicit Hz pump formalism</strong> in origin‑of‑life research. He identified <strong>UV radiation</strong> as the primary energy source and described its action in terms of energy input (which we now translate to specific frequencies).</p>
+
+<p>The Hz framework reveals:</p>
+<ul>
+<li><strong>UV is a broadband Hz pump</strong> — it injects frequencies $\nu \sim 10^{15}$ Hz that drive molecules over activation barriers $\nu_a$.</li>
+<li><strong>The soup is a bulk phase‑locking reservoir</strong> — a dilute medium where organic phase‑locked structures accumulate over time.</li>
+<li><strong>The cascade is:</strong> Hz pump → soup accumulation → coacervate formation — a sequence from high‑frequency injection to low‑frequency phase‑locking.</li>
+</ul>
+
+<p><strong>Falsification:</strong> The framework would be falsified if UV does not drive organic synthesis, if yield is independent of UV frequency, if organics do not accumulate in solution, or if they do not spontaneously aggregate into coacervates.</p>
+
+<p>Haldane's soup is a <strong>bulk phase‑locking environment</strong> — a complement to Darwin's pond (confined) and Oparin's coacervates (concentrated). The Hz framework shows that all three are different phase‑locking strategies: pond = spatial confinement, soup = temporal accumulation, coacervates = phase separation. Together, they form the conceptual foundation of origin‑of‑life research.</p>
+
+</section>
+</main>
+<div class="contact-mini">
+<a href="mailto:waveontology@ruimanuelalmeidapinheiro.work">✉️ waveontology@ruimanuelalmeidapinheiro.work</a>
+<a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+<span>📍 Lisbon · Arroios</span>
+</div>
+<footer>
+    © Rui Manuel de Almeida Pinheiro — Centralized Hub Architecture · Lisbon, Arroios
+  </footer>
+</div>
+<script>
+// Dark mode toggle
+const themeBtn = document.getElementById('themeToggle');
+const root = document.documentElement;
+const saved = localStorage.getItem('theme');
+if (saved) root.setAttribute('data-theme', saved);
+
+themeBtn?.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+// Autoplay handling for background video layer
+const videoElement = document.getElementById('intro-video');
+window.addEventListener('DOMContentLoaded', () => {
+  videoElement.play().catch(error => {
+    console.log("Autoplay prevented. Awaiting interaction.", error);
+  });
+});
+</script>
+</body>
+</html>
