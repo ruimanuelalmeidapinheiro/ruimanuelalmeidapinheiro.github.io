@@ -15,6 +15,8 @@
 <meta content="website" property="og:type"/>
 <meta content="https://ruimanuelalmeidapinheiro.work/Hub_MathematicalFoundations" property="og:url"/>
 <meta name="author" content="Rui Manuel de Almeida Pinheiro"/>
+
+<!-- MathJax configuration – untouched -->
 <script>
   window.MathJax = {
     tex: {
@@ -28,19 +30,24 @@
     }
   };
 </script>
-<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&amp;display=swap" rel="stylesheet"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet"/>
+
+<!-- EXTERNAL CSS – unchanged, as in the original file -->
 <link href="wave-ontology-styles.css" rel="stylesheet"/>
 </head>
 <body>
+
 <div id="video-container">
   <video id="intro-video" autoplay muted loop playsinline>
     <source src="Pi/I.mp4" type="video/mp4"/>
     REG_ERROR: Video playback not supported by hardware.
   </video>
 </div>
+
 <main>
   <h1>Mathematical Foundations Hub · Rui Manuel de Almeida Pinheiro · Wave Only Ontology</h1>
   <div class="hub-nav-container">
@@ -48,56 +55,62 @@
     <a class="back-link" href="CentralHub.html">← Central Hub</a>
     <a class="back-link" href="references.html">References &amp; Author</a>
   </div>
+
   <ul class="chapter-list">
     <li class="section-divider">
       Mathematical Foundations · Chapters 291–296
       <span class="status">✅ Complete</span>
     </li>
 
-    <li class="chapter-item tex2jax_ignore">
+    <!-- 
+      FIX: removed class="tex2jax_ignore" from every <li class="chapter-item"> 
+      so MathJax processes the LaTeX inside titles and descriptions.
+    -->
+    <li class="chapter-item">
       <a href="chapter291_Empty_State.html">Chapter 291: The |∅⟩ State — Information-Completeness and the Genesis of Phase-Locking</a>
       <p class="chapter-desc">A comprehensive formalization of the |∅⟩ state — the absolute informational nothing from which spacetime and matter emerge through phase-locking. Based on ICQFT (Information-Complete Quantum Field Theory), this chapter establishes the foundation of the Wave Only Ontology: a trinary description of fermions, gauge fields, and gravity as an indivisible quantum trinity unified by spacetime-matter entanglement. The Hz framework translates this into operational frequencies, phase-locking, and mutual information.</p>
     </li>
 
-    <li class="chapter-item tex2jax_ignore">
+    <li class="chapter-item">
       <a href="chapter292_Gravity_from_Entanglement.html">Chapter 292: Gravity from Entanglement — Van Raamsdonk, Jacobson, ER=EPR in Hz</a>
-      <p class="chapter-desc">A comprehensive formalization of gravity as emergent from quantum entanglement. Based on Van Raamsdonk (2010: entanglement disconnects spacetime), Jacobson (1995: Einstein equations from entanglement entropy), and the ER=EPR conjecture (Maldacena & Susskind). The ICQFT framework unifies matter and spacetime through entanglement. The Hz framework translates this into operational frequencies, phase-locking, and mutual information networks. This chapter establishes gravity as the macroscopic shadow of phase decoherence.</p>
+      <p class="chapter-desc">A comprehensive formalization of gravity as emergent from quantum entanglement. Based on Van Raamsdonk (2010: entanglement disconnects spacetime), Jacobson (1995: Einstein equations from entanglement entropy), and the ER=EPR conjecture (Maldacena &amp; Susskind). The ICQFT framework unifies matter and spacetime through entanglement. The Hz framework translates this into operational frequencies, phase-locking, and mutual information networks. This chapter establishes gravity as the macroscopic shadow of phase decoherence.</p>
     </li>
 
-    <li class="chapter-item tex2jax_ignore">
+    <li class="chapter-item">
       <a href="chapter293_Emergent_Metric.html">Chapter 293: The Emergent Metric — $g_{\mu\nu}$ from Phase Mutual Information</a>
       <p class="chapter-desc">A comprehensive derivation of the spacetime metric from the Quantum Fisher Information Metric of the phase field. Spacetime is not fundamental — it emerges from phase mutual information. Distance is inverse mutual information: $d(A,B) \propto 1 / \nu_{I(A:B)}$. The invariant interval $ds^2$ is a measure of phase decoherence. This chapter establishes the mathematical foundation of the Hz framework: gravity is the geometry of phase-locking, and spacetime is the macroscopic shadow of phase decoherence.</p>
     </li>
 
-    <li class="chapter-item tex2jax_ignore">
+    <li class="chapter-item">
       <a href="chapter294_Entropy_Information_Hz.html">Chapter 294: Entropy and Information in Hz — The Bridge from Thermodynamics to Phase-Locking</a>
       <p class="chapter-desc">A comprehensive formalization of entropy and information in the Hz framework. Phase entropy is the measure of unpaired phase modes. Mutual information is the degree of phase-locking. The entropy-energy relation $S_{\text{ent}} = \gamma \langle \hat{H} \rangle$ reveals the memory of the initial configuration. Dark energy is the phase energy of the vacuum's entanglement structure. This chapter bridges thermodynamics and phase-locking, establishing the thermodynamic foundation of the Wave Only Ontology.</p>
     </li>
 
-    <li class="chapter-item tex2jax_ignore">
+    <li class="chapter-item">
       <a href="chapter295_Falsifiable_Criteria.html">Chapter 295: Falsifiable Criteria — Testing the Hz Framework</a>
       <p class="chapter-desc">A comprehensive set of falsifiable criteria for the Wave Only Ontology. Based on the ICQFT predictions (spacetime-matter entanglement encodes complete physical predictions), dark spacetime predictions (Lorentz violations, new decoherence sources), and the Hz framework's own predictions (CMB entanglement remnant, gravitational decoherence threshold, calcium phase-locking resonance). This chapter establishes the testable foundation of the Hz framework: the universe is a phase-locking network, and its predictions can be empirically verified or falsified.</p>
     </li>
 
-    <li class="chapter-item tex2jax_ignore">
+    <li class="chapter-item">
       <a href="chapter296_Hz_of_Intuition.html">Chapter 296: The Hz of Intuition — Dark Matter, Quantum Teleportation, and the Phase-Locking Network</a>
       <p class="chapter-desc">A reflective synthesis of the insight that dark matter is information, quantum teleportation is phase-locking transfer, and the universe is a phase-locking network. This chapter bridges the Mathematical Foundations domain and the next domain: Biology and Consciousness. It captures the intuition that the entire framework is built on the simple principle that information is phase-locking, and reality is the geometry of mutual information. Includes a complete summary of Chapters 291–296.</p>
     </li>
-
   </ul>
 </main>
+
 <div class="contact-mini">
   <a href="mailto:waveontology@ruimanuelalmeidapinheiro.work">✉️ waveontology@ruimanuelalmeidapinheiro.work</a>
   <a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
   <span>📍 Lisbon · Arroios</span>
 </div>
-<footer style="margin-bottom: 3rem; padding-bottom: 1rem;">
+<footer>
   © Rui Manuel de Almeida Pinheiro — Centralized Hub Architecture · Lisbon, Arroios
 </footer>
+
 <script>
 const videoElement = document.getElementById('intro-video');
 window.addEventListener('DOMContentLoaded', () => {
-  videoElement.play().catch(error => console.log("Autoplay prevented.", error));
+  videoElement.play().catch(() => {});
 });
 </script>
 </body>
