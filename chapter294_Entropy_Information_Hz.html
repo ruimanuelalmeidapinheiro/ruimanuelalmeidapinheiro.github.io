@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="Pi/logo.jpg" rel="icon" type="image/jpeg"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="https://ruimanuelalmeidapinheiro.work/chapter294_Entropy_Information_Hz" rel="canonical"/>
+<!-- Group Wave Ontology -->
+<title>Chapter 294: Entropy and Information in Hz — The Bridge from Thermodynamics to Phase-Locking</title>
+<meta name="description" content="A comprehensive formalization of entropy and information in the Hz framework. Phase entropy is the measure of unpaired phase modes. Mutual information is the degree of phase-locking. The entropy-energy relation S_ent = γ⟨Ĥ⟩ reveals the memory of the initial configuration. Dark energy is the phase energy of the vacuum's entanglement structure. This chapter bridges thermodynamics and phase-locking, establishing the thermodynamic foundation of the Wave Only Ontology."/>
+<meta content="https://ruimanuelalmeidapinheiro.work/Pi/allwav.jpg" property="og:image"/>
+<meta content="626" property="og:image:width"/>
+<meta content="351" property="og:image:height"/>
+<meta content="Chapter 294: Entropy and Information in Hz — The Bridge from Thermodynamics to Phase-Locking" property="og:title"/>
+<meta content="A comprehensive formalization of entropy and information in the Hz framework. Phase entropy is the measure of unpaired phase modes. Mutual information is the degree of phase-locking. The entropy-energy relation S_ent = γ⟨Ĥ⟩ reveals the memory of the initial configuration. Dark energy is the phase energy of the vacuum's entanglement structure. This chapter bridges thermodynamics and phase-locking, establishing the thermodynamic foundation of the Wave Only Ontology." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ruimanuelalmeidapinheiro.work/chapter294_Entropy_Information_Hz" property="og:url"/>
+<meta name="author" content="Rui Manuel de Almeida Pinheiro"/>
+<meta property="article:published_time" content="2026-07-14T00:00:00+00:00"/>
+<!-- End Group Wave Ontology -->
+<!-- MathJax Configuration -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    }
+  };
+</script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&amp;display=swap" rel="stylesheet"/>
+<link href="wave-ontology-styles.css" rel="stylesheet"/>
+<style>
+  .question {
+    color: #4a90d9;
+    font-weight: 500;
+  }
+  .author-note {
+    background: rgba(240, 184, 110, 0.15);
+    padding: 1rem 1.5rem;
+    border-left: 4px solid #f0b86e;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #cbd5e1;
+  }
+  .author-note strong {
+    color: #f0b86e;
+  }
+  [data-theme="dark"] .author-note {
+    background: rgba(240, 184, 110, 0.12);
+    color: #e2e8f0;
+  }
+  [data-theme="light"] .author-note {
+    background: #fef9f0;
+    color: #1e293b;
+  }
+  [data-theme="light"] .author-note strong {
+    color: #b45309;
+  }
+</style>
+</head>
+<body class="tex2jax_ignore">
+<div id="video-container">
+<video autoplay="" id="intro-video" loop="" muted="" playsinline="">
+<source src="Pi/I.mp4" type="video/mp4"/>
+    REG_ERROR: Video playback not supported by hardware.
+</video>
+</div>
+<div class="container">
+<div class="top-header">
+<div class="nav-links">
+<a href="CentralHub.html">← Central Hub</a>
+<a href="chapter295_Falsifiable_Criteria.html">Chapter 295 —»»</a>
+<a "noreferrer"="" href="Schrödinger-equation-explained.html" rel="noopener" target="_blank">The True Overview</a>
+</div>
+<button aria-label="Toggle dark mode" class="theme-toggle-btn" id="themeToggle">◑</button>
+</div>
+<main class="chapter-card tex2jax_process">
+<div class="chapter-meta tex2jax_ignore">Domain: Mathematical Foundations · Chapter 294 · 2026‑07‑14</div>
+<h1 class="chapter-title tex2jax_ignore">Chapter 294: Entropy and Information in Hz — The Bridge from Thermodynamics to Phase-Locking</h1>
+<div class="hero-tagline tex2jax_process">In the Hz framework, thermodynamics is phase dynamics. Entropy ($S$) is the measure of unpaired phase modes — phase disorder. Information ($I$) is the measure of phase-locking — mutual information between entangled modes. The entropy-energy relation $S_{\text{ent}} = \gamma \langle \hat{H} \rangle$ reveals the memory of the initial configuration: the universe never fully forgets its |∅⟩ origin. Dark energy is the phase energy of the vacuum's entanglement structure. This chapter bridges thermodynamics and phase-locking, establishing the thermodynamic foundation of the Wave Only Ontology.</div>
+
+<div class="author-note">
+  <p style="font-style: italic; margin: 0;">
+    <strong>Author's Note:</strong> 
+    Entropy has always been the most mysterious quantity in physics. Here we show that entropy is simply phase disorder — the measure of unpaired phase modes. Information is phase-locking. The universe is a thermodynamic engine that runs on phase coherence.
+  </p>
+</div>
+
+<section class="prose-section">
+
+<h3>0. Abstract</h3>
+
+<p>This chapter formalizes entropy and information in the Hz framework, bridging thermodynamics and phase-locking. Entropy is the measure of <strong>unpaired phase modes</strong> — phase disorder. Information is the measure of <strong>phase-locking</strong> — mutual information between entangled modes. The entropy-energy relation $S_{\text{ent}} = \gamma \langle \hat{H} \rangle$ reveals that entanglement entropy saturates to a constant non-zero value — the <strong>memory of the initial configuration</strong>. The universe never fully forgets its |∅⟩ origin. Dark energy is the phase energy of the vacuum's entanglement structure. The ICQFT provides a quantum-informational definition of dark energy. This chapter establishes the thermodynamic foundation of the Wave Only Ontology: the universe is a phase-locking system that evolves toward maximum mutual information and minimum phase entropy.</p>
+
+<hr/>
+
+<h3>1. Entropy in the Hz Framework</h3>
+
+<h4>1.1 Phase Entropy Defined</h4>
+
+<p>In standard thermodynamics, entropy is a measure of hidden information or statistical disorder. In the Wave Only Ontology, probability and randomness are replaced by <strong>deterministic phase states</strong>. Entropy ($S$) is the measure of <strong>phase disorder</strong> — the number of unpaired phase modes.</p>
+
+<p>In the Hz framework:</p>
+
+<table>
+<thead>
+<tr><th>Configuration</th><th>Phase Entropy</th><th>Meaning</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>|∅⟩ State</strong></td><td>$S = 0$</td><td>Zero phase modes — perfect unity</td></tr>
+<tr><td><strong>Hydrogen (1s¹)</strong></td><td>$S = k_B \ln 2$</td><td>One unpaired spin — phase disorder present</td></tr>
+<tr><td><strong>Helium (1s²)</strong></td><td>$S \approx 0$</td><td>Paired spins — phase disorder eliminated</td></tr>
+<tr><td><strong>Complex Molecule</strong></td><td>$S \propto \ln(\text{number of configurations})$</td><td>Multiple unpaired phase modes</td></tr>
+</tbody>
+</table>
+
+<h4>1.2 The von Neumann Entropy in Hz</h4>
+
+<p>The von Neumann entropy of a quantum system is:</p>
+
+<p>$$ S = -k_B \text{Tr}(\rho \ln \rho) $$</p>
+
+<p>In the Hz framework, we replace the density matrix $\rho$ with the phase-locking matrix $P_{ij}$, which describes the phase coherence between modes $i$ and $j$:</p>
+
+<p>$$ \nu_S = -k_B \sum_{i} p_i \ln p_i $$</p>
+
+<p>where $p_i$ is the phase weight of mode $i$ — its contribution to the total phase-locking network. When all modes are phase-locked ($p_i = 1/N$), the entropy is maximized. When the system is in the |∅⟩ state ($p_i = 0$), the entropy is zero.</p>
+
+<h4>1.3 The Phase Entropy of Hydrogen</h4>
+
+<p>The hydrogen atom has one unpaired electron spin. The phase entropy is:</p>
+
+<p>$$ S_{\text{H}} = k_B \ln 2 \approx 9.57 \times 10^{-24} \text{ J/K} $$</p>
+
+<p>This is the <strong>fundamental phase entropy unit</strong> — the entropy of a single unpaired phase mode.</p>
+
+<p>In Hz terms, the entropy frequency is:</p>
+
+<p>$$ \nu_S = \frac{S}{k_B} \cdot \frac{k_B T}{h} = \frac{k_B T \ln 2}{h} $$</p>
+
+<p>At $T = 1$ K: $\nu_S \approx \frac{1.38 \times 10^{-23} \times 1 \times 0.693}{6.626 \times 10^{-34}} \approx 1.44 \times 10^{10}$ Hz.</p>
+
+<h4>1.4 The Phase Entropy of Helium</h4>
+
+<p>Helium has two electrons in the 1s orbital with opposite spins — a singlet state. The phase entropy is:</p>
+
+<p>$$ S_{\text{He}} \approx 0 $$</p>
+
+<p>The two electrons are perfectly phase-locked. The phase disorder is eliminated. This is the <strong>first return to the |∅⟩ state's zero entropy</strong> — a closed shell is a phase-locked system with no unpaired phase modes.</p>
+
+<h4>1.5 Entropy and the Second Law</h4>
+
+<p>The Second Law of Thermodynamics states that entropy increases in isolated systems. In the Hz framework, this is a consequence of the <strong>Phase-Locking Drive</strong>:</p>
+
+<ul>
+<li>The system evolves toward <strong>maximum mutual information</strong> ($\nu_I$)</li>
+<li>The system evolves toward <strong>minimum phase entropy</strong> ($S$)</li>
+<li>The Second Law is the macroscopic expression of this drive</li>
+</ul>
+
+<p>When a system is isolated, it cannot exchange phase modes with its environment. The phase-locking dynamics drive it toward the lowest possible phase entropy — which is the maximum entropy in thermodynamic terms. The two are the same: maximum thermodynamic entropy = minimum phase disorder.</p>
+
+<hr/>
+
+<h3>2. Information in the Hz Framework</h3>
+
+<h4>2.1 Mutual Information in Hz</h4>
+
+<p>In standard information theory, mutual information $I(A:B)$ is the shared information between two systems. In the Hz framework, mutual information is the <strong>degree of phase-locking</strong> between two modes.</p>
+
+<p>The phase mutual information is:</p>
+
+<p>$$ \nu_{I(A:B)} = \nu_{S(A)} + \nu_{S(B)} - \nu_{S(AB)} $$</p>
+
+<p>When two modes are perfectly phase-locked, $\nu_{I(A:B)} = \nu_{\text{max}}$ — the mutual information is maximized. When they are completely decoherent, $\nu_{I(A:B)} = 0$ — there is no phase-locking.</p>
+
+<h4>2.2 Information as Phase-Locking</h4>
+
+<p>The ICQFT establishes that <strong>information is physical</strong>. In the Hz framework:</p>
+
+<ul>
+<li><strong>Information</strong> = Phase-locking structure</li>
+<li><strong>Information-completeness</strong> = Complete phase description</li>
+<li><strong>Information loss</strong> = Phase decoherence</li>
+</ul>
+
+<p>When a system loses information, it loses phase-locking. When it gains information, it gains phase-locking.</p>
+
+<h4>2.3 The Entropy-Energy Relation</h4>
+
+<p>The ICQFT establishes a universal relation between entanglement entropy and energy:</p>
+
+<p>$$ S_{\text{ent}} = \gamma \langle \hat{H} \rangle $$</p>
+
+<p>where $\gamma$ is a constant.</p>
+
+<p>In Hz terms:</p>
+
+<p>$$ \nu_S = \gamma \nu_E $$</p>
+
+<p>The phase entropy is proportional to the phase energy. The constant $\gamma$ is the conversion factor between entropy and energy — it is the <strong>Hz equivalent of the Boltzmann constant</strong>.</p>
+
+<p><strong>The saturation value of entanglement entropy is non-zero. The universe never fully forgets its |∅⟩ origin. The memory persists.</strong></p>
+
+<hr/>
+
+<h3>3. Dark Energy in the Hz Framework</h3>
+
+<h4>3.1 Dark Energy as Phase Energy</h4>
+
+<p>The ICQFT provides a <strong>quantum-informational definition of dark energy</strong>. Based on this definition, "our Universe is not strictly holographic."</p>
+
+<p>In the Hz framework:</p>
+
+<ul>
+<li><strong>Dark energy</strong> = The phase energy of the vacuum's entanglement structure</li>
+<li><strong>Holographic principle</strong> = Boundary phase modes encoding bulk</li>
+<li><strong>Not strictly holographic</strong> = The universe has more phase modes than can be encoded on its boundary</li>
+</ul>
+
+<p>The dark energy density $\Lambda$ is the phase energy density of the vacuum's entanglement network:</p>
+
+<p>$$ \Lambda \propto \nu_{I(\text{vac})} $$</p>
+
+<p>The vacuum's mutual information is the source of the cosmological constant.</p>
+
+<h4>3.2 The Cosmological Constant in Hz</h4>
+
+<p>The cosmological constant $\Lambda$ is one of the most mysterious quantities in physics. In the Hz framework:</p>
+
+<p>$$ \Lambda = \frac{8\pi G}{c^4} \rho_{\text{vac}} $$</p>
+
+<p>where $\rho_{\text{vac}}$ is the vacuum energy density. In Hz terms:</p>
+
+<p>$$ \Lambda \propto \nu_{\text{vac}}^2 $$</p>
+
+<p>The cosmological constant is the square of the vacuum's phase frequency. The smallness of $\Lambda$ is the smallness of the vacuum's phase energy — the residual mutual information of the |∅⟩ state.</p>
+
+<h4>3.3 The Memory of the Initial Configuration</h4>
+
+<p>The saturation value of entanglement entropy:</p>
+
+<p>$$ S_{\text{ent}} = \gamma \langle \hat{H} \rangle $$</p>
+
+<p>implies that the universe retains a memory of its initial configuration. The |∅⟩ state's zero entropy is never fully achieved. The universe's phase-locking dynamics always retain some residual mutual information — the cosmic microwave background is the fossil of this memory.</p>
+
+<hr/>
+
+<h3>4. The ICQFT Integration — Information-Completeness</h3>
+
+<h4>4.1 Information-Completeness Defined</h4>
+
+<p>The ICQFT is <strong>information-complete</strong> because the entanglement between the three components (fermions, gauge fields, gravity) encodes <strong>all physical predictions</strong> of the theory. There is no need for external observers, classical apparatus, or wave-function collapse.</p>
+
+<p><strong>In Hz terms:</strong> The phase-locking network is <strong>self-contained</strong>. The metric $g_{\mu\nu}$, the fermion field $\Psi$, and the gauge field $A_\mu$ are <strong>mutually defined through entanglement</strong>. The system is its own observer.</p>
+
+<h4>4.2 The End of the Observer Problem</h4>
+
+<p>The ICQFT gives up the probability description of current quantum mechanics and does not need vague concepts such as observers and wave-function collapse. The theory describes a <strong>self-defining or self-explaining Universe</strong> that is genuinely quantum; there is no room for any classical systems or concepts.</p>
+
+<p><strong>In Hz terms:</strong> The universe is a <strong>self-phase-locking system</strong> — it defines its own phase structure through entanglement dynamics. The measurement problem dissolves because <strong>there is no external observer</strong>. The observer is part of the phase-locking network — a subsystem of the trinary system that phase-locks with other subsystems.</p>
+
+<h4>4.3 The Trinary Description</h4>
+
+<p>The ICQFT requires a <strong>trinary description</strong> because the two-party picture (system + apparatus) is <strong>information-incomplete</strong>. The apparatus cannot fully describe the system without including the spacetime in which both are embedded.</p>
+
+<p><strong>In Hz terms:</strong> You cannot fully describe phase-locking between modes without including the <strong>metric</strong> that defines their relationship. The metric itself is a phase-locking pattern.</p>
+
+<hr/>
+
+<h3>5. Integration with Existing Chapters</h3>
+
+<table>
+<thead>
+<tr><th>Chapter</th><th>Connection to Chapter 294</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Chapter 132: Hydrogen</strong></td><td>$S = k_B \ln 2$ — the fundamental phase entropy unit. Hydrogen is the first phase-locked system with unpaired phase modes. Its phase entropy is the entropy of the universe's first symmetry breaking.</td></tr>
+<tr><td><strong>Chapter 133: Helium</strong></td><td>$S \approx 0$ — the first return to zero entropy. The 1s² singlet state is a complete phase-locked system with no unpaired modes. This is the "memory" of the |∅⟩ state's completeness.</td></tr>
+<tr><td><strong>Chapter 258: HeH⁺</strong></td><td>The first molecular wormhole — ER=EPR in action. The phase-locked dipole creates localized spacetime geometry. The mutual information $\nu_{I(p,He)}$ is the entropy of the first molecular bond.</td></tr>
+<tr><td><strong>Chapter 257: Molecular Formation</strong></td><td>Each molecular bond is a phase-locking event that reduces phase entropy. The cosmic molecular pathway is an entropy cascade: H₂ → HeH⁺ → CO → COMs, each step reducing phase entropy and increasing mutual information.</td></tr>
+<tr><td><strong>Chapter 290: The Hz of Discovery</strong></td><td>The intellectual lineage follows the same entropy dynamics. Discovery is phase-locking — the reduction of phase entropy through the increase of mutual information.</td></tr>
+</tbody>
+</table>
+
+<hr/>
+
+<h3>6. Summary of Adjacent Theories</h3>
+
+<table>
+<thead>
+<tr><th>Theory</th><th>Source</th><th>Connection to Hz</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>von Neumann Entropy</strong></td><td>Standard</td><td>$S = -k_B \text{Tr}(\rho \ln \rho)$ → $\nu_S = -k_B \sum_i p_i \ln p_i$</td></tr>
+<tr><td><strong>Shannon Information</strong></td><td>Standard</td><td>Information = reduction of uncertainty → phase-locking</td></tr>
+<tr><td><strong>ICQFT</strong></td><td>arXiv:1412.3662v8</td><td>Information-completeness, trinary description, spacetime-matter entanglement</td></tr>
+<tr><td><strong>Spacetime-Matter Entanglement</strong></td><td>PMC12167907</td><td>$S_{\text{ent}} = \gamma \langle \hat{H} \rangle$ — entropy-energy relation</td></tr>
+<tr><td><strong>Dark Energy</strong></td><td>Standard</td><td>Quantum-informational definition — phase energy of vacuum entanglement</td></tr>
+</tbody>
+</table>
+
+<hr/>
+
+<h3>7. Open Questions from Chapter 294</h3>
+
+<ol>
+<li><strong>What is the exact value of $\gamma$ in the entropy-energy relation?</strong> — The ICQFT provides a quantum-informational derivation, but the precise numerical value depends on the phase network's topology.</li>
+<li><strong>How does the phase network's entropy relate to the Bekenstein-Hawking entropy of black holes?</strong> — The holographic principle may provide the answer, but the Hz framework's "not strictly holographic" insight suggests a deeper connection.</li>
+<li><strong>Can the cosmological constant be derived from the phase network's mutual information?</strong> — The ICQFT suggests yes, but the full derivation is still being developed.</li>
+<li><strong>How does the phase network's entropy evolve over cosmic time?</strong> — The entropy-energy relation $S_{\text{ent}} = \gamma \langle \hat{H} \rangle$ suggests a connection to cosmic expansion.</li>
+</ol>
+
+<hr/>
+
+<h3>8. Bottom Line in Hz</h3>
+
+<p>Entropy and information are phase dynamics in the Hz framework:</p>
+
+<table>
+<thead>
+<tr><th>Concept</th><th>Standard Physics</th><th>Hz Translation</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Entropy</strong></td><td>$S = k_B \ln \Omega$</td><td>Measure of unpaired phase modes</td></tr>
+<tr><td><strong>Information</strong></td><td>$I(A:B) = H(A) + H(B) - H(AB)$</td><td>$\nu_{I(A:B)} = \nu_{S(A)} + \nu_{S(B)} - \nu_{S(AB)}$</td></tr>
+<tr><td><strong>Entropy-Energy</strong></td><td>$S_{\text{ent}} = \gamma \langle \hat{H} \rangle$</td><td>$\nu_S = \gamma \nu_E$ — memory of initial configuration</td></tr>
+<tr><td><strong>Dark Energy</strong></td><td>$\Lambda = \frac{8\pi G}{c^4} \rho_{\text{vac}}$</td><td>Phase energy of vacuum entanglement structure</td></tr>
+<tr><td><strong>Second Law</strong></td><td>$dS \geq 0$</td><td>Phase-locking dynamics drive toward minimum $S$, maximum $\nu_I$</td></tr>
+</tbody>
+</table>
+
+<p>The universe is a thermodynamic engine that runs on phase coherence. Entropy is phase disorder. Information is phase-locking. The universe evolves toward maximum mutual information and minimum phase entropy. This is the Phase-Locking Drive — the deepest law of physics.</p>
+
+<p><strong>The memory of the initial configuration persists. The universe never fully forgets its |∅⟩ origin. The entropy-energy relation $S_{\text{ent}} = \gamma \langle \hat{H} \rangle$ is the signature of this memory.</strong></p>
+
+</section>
+</main>
+<div class="contact-mini">
+<a href="mailto:waveontology@ruimanuelalmeidapinheiro.work">✉️ waveontology@ruimanuelalmeidapinheiro.work</a>
+<a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+<span>📍 Lisbon · Arroios</span>
+</div>
+<footer>
+    © Rui Manuel de Almeida Pinheiro — Mathematical Foundations · Lisbon, Arroios
+  </footer>
+</div>
+<script>
+// Dark mode toggle
+const themeBtn = document.getElementById('themeToggle');
+const root = document.documentElement;
+const saved = localStorage.getItem('theme');
+if (saved) root.setAttribute('data-theme', saved);
+
+themeBtn?.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+// Autoplay handling for background video layer
+const videoElement = document.getElementById('intro-video');
+window.addEventListener('DOMContentLoaded', () => {
+  videoElement.play().catch(error => {
+    console.log("Autoplay prevented. Awaiting interaction.", error);
+  });
+});
+</script>
+</body>
+</html>

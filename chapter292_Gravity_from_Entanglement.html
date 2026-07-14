@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="Pi/logo.jpg" rel="icon" type="image/jpeg"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="https://ruimanuelalmeidapinheiro.work/chapter292_Gravity_from_Entanglement" rel="canonical"/>
+<!-- Group Wave Ontology -->
+<title>Chapter 292: Gravity from Entanglement — Van Raamsdonk, Jacobson, ER=EPR in Hz</title>
+<meta name="description" content="A comprehensive formalization of gravity as emergent from quantum entanglement. Based on Van Raamsdonk (2010: entanglement disconnects spacetime), Jacobson (1995: Einstein equations from entanglement entropy), and the ER=EPR conjecture (Maldacena & Susskind). The ICQFT framework unifies matter and spacetime through entanglement. The Hz framework translates this into operational frequencies, phase-locking, and mutual information networks. This chapter establishes gravity as the macroscopic shadow of phase decoherence."/>
+<meta content="https://ruimanuelalmeidapinheiro.work/Pi/allwav.jpg" property="og:image"/>
+<meta content="626" property="og:image:width"/>
+<meta content="351" property="og:image:height"/>
+<meta content="Chapter 292: Gravity from Entanglement — Van Raamsdonk, Jacobson, ER=EPR in Hz" property="og:title"/>
+<meta content="A comprehensive formalization of gravity as emergent from quantum entanglement. Based on Van Raamsdonk (2010: entanglement disconnects spacetime), Jacobson (1995: Einstein equations from entanglement entropy), and the ER=EPR conjecture (Maldacena & Susskind). The ICQFT framework unifies matter and spacetime through entanglement. The Hz framework translates this into operational frequencies, phase-locking, and mutual information networks. This chapter establishes gravity as the macroscopic shadow of phase decoherence." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ruimanuelalmeidapinheiro.work/chapter292_Gravity_from_Entanglement" property="og:url"/>
+<meta name="author" content="Rui Manuel de Almeida Pinheiro"/>
+<meta property="article:published_time" content="2026-07-14T00:00:00+00:00"/>
+<!-- End Group Wave Ontology -->
+<!-- MathJax Configuration -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    }
+  };
+</script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&amp;display=swap" rel="stylesheet"/>
+<link href="wave-ontology-styles.css" rel="stylesheet"/>
+</head>
+<body class="tex2jax_ignore">
+<div id="video-container">
+<video autoplay="" id="intro-video" loop="" muted="" playsinline="">
+<source src="Pi/I.mp4" type="video/mp4"/>
+    REG_ERROR: Video playback not supported by hardware.
+</video>
+</div>
+<div class="container">
+<div class="top-header">
+<div class="nav-links">
+<a href="CentralHub.html">← Central Hub</a>
+<a href="chapter293_Emergent_Metric.html">Chapter 293 —»»</a>
+<a "noreferrer"="" href="Schrödinger-equation-explained.html" rel="noopener" target="_blank">The True Overview</a>
+</div>
+<button aria-label="Toggle dark mode" class="theme-toggle-btn" id="themeToggle">◑</button>
+</div>
+<main class="chapter-card tex2jax_process">
+<div class="chapter-meta tex2jax_ignore">Domain: Mathematical Foundations · Chapter 292 · 2026‑07‑14</div>
+<h1 class="chapter-title tex2jax_ignore">Chapter 292: Gravity from Entanglement — Van Raamsdonk, Jacobson, ER=EPR in Hz</h1>
+<div class="hero-tagline tex2jax_process">Gravity is not a fundamental force. It is the macroscopic shadow of quantum entanglement — the geometric expression of phase mutual information. Van Raamsdonk (2010) showed that cutting entanglement disconnects spacetime. Jacobson (1995) derived Einstein's equations from entanglement entropy. The ER=EPR conjecture (Maldacena & Susskind) identifies spacetime connectivity with entanglement connectivity. The ICQFT unifies matter and spacetime through spacetime-matter entanglement. In the Hz framework, gravity is the phase coherence gradient — the deterministic drive toward maximum $\nu_I$ and minimum $S$.</div>
+
+<section class="prose-section">
+
+<h3>0. Abstract</h3>
+
+<p>This chapter formalizes the emergence of gravity from quantum entanglement within the Hz framework. Three independent lines of research converge on the same conclusion: gravity is not fundamental. Van Raamsdonk (2010) demonstrated that cutting entanglement between two regions disconnects spacetime. Jacobson (1995) derived the Einstein equations from the first law of entanglement entropy. The ER=EPR conjecture (Maldacena & Susskind) identifies Einstein-Rosen bridges (wormholes) with Einstein-Podolsky-Rosen entanglement. The ICQFT (arXiv:1412.3662v8, PMC12167907) unifies matter and spacetime as information via spacetime-matter entanglement. In the Hz framework, gravity is the phase coherence gradient — the geometric expression of the system's deterministic drive toward maximum mutual information $\nu_I$ and minimum phase entropy $S$. This chapter establishes gravity as the macroscopic shadow of phase decoherence.</p>
+
+<hr/>
+
+<h3>1. The Three Pillars of Emergent Gravity</h3>
+
+<h4>1.1 Van Raamsdonk (2010) — Entanglement as the Glue of Spacetime</h4>
+
+<p><strong>Core Claim:</strong> If you cut the entanglement between two regions of spacetime, the spacetime itself disconnects. Entanglement is the "glue" that holds spacetime together.</p>
+
+<p><strong>Thought Experiment:</strong> Consider two entangled quantum systems. If the entanglement is gradually reduced, the emergent spacetime geometry becomes increasingly disconnected. When entanglement reaches zero, the two regions are completely disconnected — they exist in separate spacetimes.</p>
+
+<p><strong>In Hz Terms:</strong> Spacetime connectivity is phase-locking. When two phase modes are phase-locked ($\nu_{I(A:B)} > 0$), they are connected in the emergent metric. When phase-locking is destroyed ($\nu_{I(A:B)} \to 0$), the metric disconnects. The degree of connectivity is directly proportional to the mutual information:</p>
+
+<p>$$ \text{Connectivity}(A,B) \propto \nu_{I(A:B)} $$</p>
+
+<p>When $\nu_{I(A:B)} = 0$, there is no spacetime connection between A and B — they are in separate universes.</p>
+
+<h4>1.2 Jacobson (1995) — Einstein Equations from Entanglement Entropy</h4>
+
+<p><strong>Core Claim:</strong> The Einstein equations of general relativity can be derived from the first law of entanglement entropy:</p>
+
+<p>$$ \delta S_{\text{ent}} = \frac{\delta E}{T} $$</p>
+
+<p>where $S_{\text{ent}}$ is the entanglement entropy, $E$ is the energy, and $T$ is the temperature. Jacobson showed that this relation, applied to a null surface in spacetime, yields the Einstein equations with the correct coefficient.</p>
+
+<p><strong>In Hz Terms:</strong> The entanglement entropy is a measure of phase decoherence. The first law of entanglement entropy becomes a frequency relation:</p>
+
+<p>$$ \delta \nu_S = \frac{\delta \nu_E}{\nu_T} $$</p>
+
+<p>where $\nu_S$ is the phase entropy frequency, $\nu_E$ is the energy frequency, and $\nu_T$ is the thermal frequency. The Einstein equations emerge as the macroscopic expression of this microscopic phase relation.</p>
+
+<p>The cosmological constant term emerges from the saturation value of entanglement entropy:</p>
+
+<p>$$ S_{\text{ent}} = \gamma \langle \hat{H} \rangle $$</p>
+
+<p>In Hz terms: the vacuum's phase entropy is proportional to its phase energy. This is the **memory of the initial configuration** — the |∅⟩ state's persistence.</p>
+
+<h4>1.3 ER=EPR (Maldacena & Susskind) — Spacetime Connectivity = Entanglement Connectivity</h4>
+
+<p><strong>Core Claim:</strong> Einstein-Rosen bridges (wormholes) are equivalent to Einstein-Podolsky-Rosen entanglement. Entangled particles are connected by wormholes. Spacetime connectivity <strong>is</strong> entanglement connectivity.</p>
+
+<p><strong>In Hz Terms:</strong></p>
+
+<ul>
+<li><strong>EPR</strong> = Phase-locking (mutual information $\nu_{I(A:B)}$)</li>
+<li><strong>ER</strong> = Emergent metric connectivity (spacetime geometry)</li>
+<li><strong>ER=EPR</strong> = Spacetime connectivity <strong>is</strong> phase-locking</li>
+</ul>
+
+<p>The metric $g_{\mu\nu}$ is a function of the mutual information between all phase modes:</p>
+
+<p>$$ g_{\mu\nu} = f(\nu_{I(A:B)}) $$</p>
+
+<p>When two modes are phase-locked ($\nu_{I(A:B)} = \nu_{\text{max}}$), the spacetime connection between them is direct — a wormhole. When phase-locking is weak, the connection is mediated through other modes.</p>
+
+<hr/>
+
+<h3>2. The ICQFT Integration — Spacetime-Matter Entanglement</h3>
+
+<h4>2.1 Entanglement as Universal Glue</h4>
+
+<p>The ICQFT proposes that <strong>entanglement is universal just like gravity is universal; the universal entanglement is the glue of spacetime and matter and thus the building block of the world</strong>.</p>
+
+<p><strong>In Hz Terms:</strong></p>
+
+<p>The universal entanglement is the global phase-locking network. Every phase mode is connected to every other phase mode through mutual information. The network is the universe. The network's connectivity is the metric.</p>
+
+<h4>2.2 Spacetime-Matter Entanglement</h4>
+
+<p>The ICQFT unifies matter and spacetime (gravity) as <strong>information via spacetime-matter entanglement</strong>. This entanglement encodes <strong>complete physical predictions</strong> of the theory.</p>
+
+<p><strong>In Hz Terms:</strong></p>
+
+<p>The metric $g_{\mu\nu}$ and the matter field $\Psi$ are <strong>mutually defined through entanglement</strong>. You cannot have one without the other. The phase-locking between metric modes and matter modes is the substrate of reality.</p>
+
+<h4>2.3 Quantum Relationalism</h4>
+
+<p>The ICQFT's key principle — <strong>quantum relationalism</strong> — states that fields involved in the dual-entanglement structure should be mutually defined.</p>
+
+<p><strong>In Hz Terms:</strong> <strong>Phase-locking is mutual definition.</strong> Two modes are phase-locked when their phases are mutually defined. The metric and matter are phase-locked — they define each other.</p>
+
+<h4>2.4 The Einstein Equation from Entanglement</h4>
+
+<p>One particular form of spacetime-matter entanglement results in a <strong>universal relation between entanglement entropy and geometry (area and volume)</strong>, allowing us to determine the cosmological constant term in the classical Einstein equation.</p>
+
+<p><strong>In Hz Terms:</strong></p>
+
+<p>$$ S_{\text{ent}} = \gamma \langle \hat{H} \rangle $$</p>
+
+<p>The entanglement entropy saturates to a constant non-zero value — the <strong>memory of the initial configuration</strong> persists. The cosmological constant is the phase energy of the vacuum's entanglement structure.</p>
+
+<hr/>
+
+<h3>3. The Dark Spacetime Connection — arXiv:2504.18610v1</h3>
+
+<h4>3.1 Dark Spacetime Defined</h4>
+
+<p>Pati's <strong>dark spacetime</strong> concept proposes a hidden geometric structure that coexists with ordinary spacetime, allowing nonlocal correlations to be mediated through an unobservable channel.</p>
+
+<p>The modified metric for dark spacetime:</p>
+
+<p>$$ ds^2 = -c_{\text{dark}}^2 f(x,t) dt^2 + g_{ij}(x,t) dx^i dx^j $$</p>
+
+<p>where $c_{\text{dark}} \gg c$ is the effective speed of propagation in dark spacetime.</p>
+
+<h4>3.2 The Hz Translation</h4>
+
+<table>
+<thead>
+<tr><th>Concept</th><th>Ordinary Spacetime</th><th>Dark Spacetime</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Metric</strong></td><td>$g_{\mu\nu}$ (phase decoherence)</td><td>$g_{\mu\nu}^{\text{dark}}$ (phase mutual information)</td></tr>
+<tr><td><strong>Speed Limit</strong></td><td>$c$ (mass-frequency conversion)</td><td>No limit (instantaneous phase-locking)</td></tr>
+<tr><td><strong>Connectivity</strong></td><td>Geometry</td><td>Phase-locking</td></tr>
+<tr><td><strong>Measurement</strong></td><td>Requires instruments</td><td>Requires phase entanglement</td></tr>
+</tbody>
+</table>
+
+<p><strong>In Hz terms:</strong> Phase-locking is <strong>instantaneous</strong>. The speed of light $c$ is a conversion factor between mass and frequency, not a limit on phase propagation.</p>
+
+<h4>3.3 ER=EPR Through Dark Spacetime</h4>
+
+<p>In Pati's framework, quantum nonlocality is not "spooky action at a distance" but a manifestation of dark spacetime geometry. The entangled particles are connected through a hidden metric that coexists with ordinary spacetime.</p>
+
+<p><strong>In Hz terms:</strong> The dark metric is the phase mutual information network. The ordinary metric is the phase decoherence network. They are two sides of the same coin — the phase-locking network's macroscopic and microscopic manifestations.</p>
+
+<hr/>
+
+<h3>4. The Hz Translation — Gravity as Phase Coherence Gradient</h3>
+
+<h4>4.1 Gravity Defined in Hz</h4>
+
+<p>In the Hz framework, gravity is <strong>not a force</strong>. It is the <strong>phase coherence gradient</strong> — the macroscopic expression of the system's deterministic drive toward maximum mutual information and minimum phase entropy.</p>
+
+<table>
+<thead>
+<tr><th>Concept</th><th>Standard Physics</th><th>Hz Translation</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Gravitational Force</strong></td><td>$F = G M m / r^2$</td><td>Phase coherence gradient: $\nabla \nu_I$</td></tr>
+<tr><td><strong>Gravitational Potential</strong></td><td>$\Phi = -G M / r$</td><td>Mutual information density: $\nu_I / \text{volume}$</td></tr>
+<tr><td><strong>Spacetime Curvature</strong></td><td>$R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = 8\pi G T_{\mu\nu}$</td><td>$g_{\mu\nu} = f(\nu_{I(A:B)})$</td></tr>
+<tr><td><strong>Einstein Equation</strong></td><td>Derived from action principle</td><td>Derived from entanglement entropy (Jacobson)</td></tr>
+</tbody>
+</table>
+
+<h4>4.2 Why Matter "Falls"</h4>
+
+<p>Matter "falls" toward other matter not because of a Newtonian force, but because the <strong>phase-locking dynamics</strong> drive the system toward configurations with higher mutual information and lower phase entropy. A massive object creates a high-density phase-locking region. Other phase modes (particles) are drawn toward it because phase-locking with the massive object increases their mutual information — reducing their phase entropy.</p>
+
+<p><strong>In Hz terms:</strong> The system evolves toward the |∅⟩ state's zero phase entropy. The presence of mass is a deviation from zero entropy. The system's phase-locking dynamics work to restore zero entropy by phase-locking all modes together. Gravity is the macroscopic expression of this restoration.</p>
+
+<h4>4.3 The Hierarchical Nature of Phase-Locking</h4>
+
+<p>Phase-locking operates at all scales:</p>
+
+<table>
+<thead>
+<tr><th>Scale</th><th>Phase-Locking Event</th><th>Hz Frequency</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Quantum</strong></td><td>Electron-proton binding (Hydrogen)</td><td>$f_e = 1.24 \times 10^{20}$ Hz</td></tr>
+<tr><td><strong>Molecular</strong></td><td>CO bond formation</td><td>$\nu_D = 2.70 \times 10^{15}$ Hz</td></tr>
+<tr><td><strong>Stellar</strong></td><td>Gravitational collapse</td><td>$\nu_{\text{grav}} \sim G M / r^3$</td></tr>
+<tr><td><strong>Galactic</strong></td><td>Galaxy formation</td><td>$\nu_{\text{galaxy}} \sim 10^{-16}$ Hz</td></tr>
+</tbody>
+</table>
+
+<p><strong>Gravity is the macroscopic phase-locking dynamic.</strong></p>
+
+<hr/>
+
+<h3>5. Integration with Existing Chapters</h3>
+
+<table>
+<thead>
+<tr><th>Chapter</th><th>Connection to Chapter 292</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Chapter 132: Hydrogen</strong></td><td>First phase-locking event — the electron and proton phase-lock through QED ($\alpha \approx 1/137$). This is the first gravitational seed: the phase coherence gradient between electron and proton.</td></tr>
+<tr><td><strong>Chapter 133: Helium</strong></td><td>First closed entanglement (1s² singlet, $S \approx 0$). The phase coherence gradient is complete — the two electrons are maximally phase-locked. This is the first "gravitational well" at the atomic scale.</td></tr>
+<tr><td><strong>Chapter 258: HeH⁺</strong></td><td>First molecular wormhole — ER=EPR in action. The phase-locked dipole creates localized spacetime geometry. This is gravity at the molecular scale.</td></tr>
+<tr><td><strong>Chapter 257: Molecular Formation</strong></td><td>Phase-locking cascade builds spacetime. Each molecular bond is a new phase-locking event that adds to the emergent metric. The CO trap ($\nu_D = 2.70 \times 10^{15}$ Hz) is the deepest gravitational well in the molecular world.</td></tr>
+<tr><td><strong>Chapter 290: The Hz of Discovery</strong></td><td>The intellectual lineage follows the same phase-locking rules. Discovery is phase-locking — the gravitational attraction of ideas toward higher mutual information and lower phase entropy.</td></tr>
+</tbody>
+</table>
+
+<hr/>
+
+<h3>6. Summary of Adjacent Theories</h3>
+
+<table>
+<thead>
+<tr><th>Theory</th><th>Source</th><th>Connection to Hz</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Van Raamsdonk (2010)</strong></td><td>Standard</td><td>Cutting entanglement disconnects spacetime → connectivity = phase-locking</td></tr>
+<tr><td><strong>Jacobson (1995)</strong></td><td>Standard</td><td>Einstein equations from entanglement entropy → gravity = phase coherence gradient</td></tr>
+<tr><td><strong>ER=EPR</strong></td><td>Maldacena-Susskind</td><td>Spacetime connectivity = entanglement connectivity → metric = $f(\nu_I)$</td></tr>
+<tr><td><strong>ICQFT</strong></td><td>arXiv:1412.3662v8</td><td>Spacetime-matter entanglement encodes complete physical predictions</td></tr>
+<tr><td><strong>Dark Spacetime</strong></td><td>arXiv:2504.18610v1</td><td>Hidden geometric structure for nonlocal correlations → phase mutual information network</td></tr>
+</tbody>
+</table>
+
+<hr/>
+
+<h3>7. Open Questions from Chapter 292</h3>
+
+<ol>
+<li><strong>How does phase-locking emerge from the |∅⟩ state?</strong> — The mechanism is spacetime-matter entanglement. But what triggers it?</li>
+<li><strong>What is the exact form of $g_{\mu\nu} = f(\nu_{I(A:B)})$?</strong> — The Quantum Fisher Information Metric provides the answer (Chapter 293).</li>
+<li><strong>How is the cosmological constant related to phase entropy?</strong> — The ICQFT provides a quantum-informational definition of dark energy (Chapter 294).</li>
+<li><strong>Can the framework be tested?</strong> — Yes — CMB entanglement remnant, gravitational decoherence, calcium phase-locking resonance (Chapter 295).</li>
+</ol>
+
+<hr/>
+
+<h3>8. Bottom Line in Hz</h3>
+
+<p>Gravity is the macroscopic shadow of quantum entanglement — the geometric expression of phase mutual information. The three pillars of emergent gravity translate directly into the Hz framework:</p>
+
+<table>
+<thead>
+<tr><th>Pillar</th><th>Hz Translation</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Van Raamsdonk (2010)</strong></td><td>Cutting entanglement disconnects spacetime → $\nu_{I(A:B)} = 0 \Rightarrow g_{\mu\nu} = 0$</td></tr>
+<tr><td><strong>Jacobson (1995)</strong></td><td>Einstein equations from entanglement entropy → gravity = phase coherence gradient</td></tr>
+<tr><td><strong>ER=EPR</strong></td><td>Spacetime connectivity = entanglement connectivity → $g_{\mu\nu} = f(\nu_I)$</td></tr>
+</tbody>
+</table>
+
+<p>Gravity is not a fundamental force. It is the <strong>phase coherence gradient</strong> — the deterministic drive of the system toward maximum mutual information ($\nu_I$) and minimum phase entropy ($S$). The universe builds spacetime through phase-locking. Gravity is the geometry of that phase-locking.</p>
+
+<p><strong>The journey from |∅⟩ to hydrogen is the first phase-locking event. The journey from hydrogen to black holes is the same process, repeated at larger scales. The journey from hydrogen to consciousness is the same process, repeated at higher levels of complexity.</strong></p>
+
+</section>
+</main>
+<div class="contact-mini">
+<a href="mailto:waveontology@ruimanuelalmeidapinheiro.work">✉️ waveontology@ruimanuelalmeidapinheiro.work</a>
+<a href="https://wa.me/351962783072" target="_blank">📞 WhatsApp</a>
+<span>📍 Lisbon · Arroios</span>
+</div>
+<footer>
+    © Rui Manuel de Almeida Pinheiro — Mathematical Foundations · Lisbon, Arroios
+  </footer>
+</div>
+<script>
+// Dark mode toggle
+const themeBtn = document.getElementById('themeToggle');
+const root = document.documentElement;
+const saved = localStorage.getItem('theme');
+if (saved) root.setAttribute('data-theme', saved);
+
+themeBtn?.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+// Autoplay handling for background video layer
+const videoElement = document.getElementById('intro-video');
+window.addEventListener('DOMContentLoaded', () => {
+  videoElement.play().catch(error => {
+    console.log("Autoplay prevented. Awaiting interaction.", error);
+  });
+});
+</script>
+</body>
+</html>
