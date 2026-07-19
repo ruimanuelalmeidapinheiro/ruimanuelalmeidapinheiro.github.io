@@ -350,31 +350,54 @@ header a:hover {
     color: #ffffff;
 }
 
-.contact-mini {
-    max-width: 1100px;
-    margin: 0 auto 1.5rem;
-    padding: 0 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.85rem;
-}
+ 
+    /* CONTACT MINI - identical to index.html */
+    .contact-mini {
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: #e0e0e0;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(4px);
+      padding: 0.8rem 1.5rem;
+      border-radius: 2rem;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
 
-.contact-mini a {
-    color: #ffffff;
-    text-decoration: none;
-}
+    .contact-mini a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
 
-.contact-mini a:hover {
-    color: var(--accent);
-}
+    .contact-mini a:hover {
+      color: #f0b86e;
+      text-decoration: underline;
+    }
 
-footer {
-    text-align: center;
-    padding: 2.5rem 1rem;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.85rem;
-    background: rgba(0, 0, 0, 0.2);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
+    .contact-mini span {
+      color: #e0e0e0;
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 1.0rem;
+      color: #cfcdc0;
+      border-top: 1px solid rgba(226, 217, 205, 0.5);
+      padding-top: 2rem;
+      background: transparent;
+      backdrop-filter: none;
+    }
+
 
 /* ===== RESPONSIVENESS ===== */
 @media (max-width: 900px) {
