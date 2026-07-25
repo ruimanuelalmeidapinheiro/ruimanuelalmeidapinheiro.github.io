@@ -413,6 +413,32 @@ FOOTER ELEMENTS
   margin-right: auto;
 }
 
+/* =============================================================================================
+ This targets all <p> tags inside an element with this class   -  A.I. Thinking
+================================================================================================ */
+
+
+.ai-think p {
+  padding-left: 2em;
+  color: #666666;
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+/* Add this to your CSS */
+.ai-think ul {
+  padding-left: 4em; /* Matches the paragraph indentation */
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.ai-think li {
+  color: #666666; /* Optional: matches text color */
+  font-style: italic; /* Optional: matches font style */
+}
+
+
 /* ============================================================
 DARK MODE OVERRIDES
 ============================================================ */

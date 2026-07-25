@@ -568,6 +568,24 @@ hr {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* ===== Domains List ===== */
+/* Ensure smooth transition */
+.domains-list li {
+  margin-bottom: 0.4rem;
+  break-inside: avoid;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* 100% to 150% size increase on hover (1.5x scale) */
+.domains-list li:hover {
+  transform: scale(1.5);
+  transform-origin: left center; /* Keeps expansion predictable in the column layout */
+  position: relative;
+  z-index: 10;
+}
+/* ===== End Domains List ===== */
+
+
 /* ===== CONTACT MINI (bottom section) ===== */
 .contact-mini {
   margin-top: 2rem;
