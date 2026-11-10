@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Women's Emotional Life: The Relational, Affective &amp; Synaesthetic Dimension</title>
+<style>
+:root{
+  --bg:#F2F9F6;
+  --card:#ffffff;
+  --ink:#1D3A34;
+  --muted:#6C8A82;
+  --em:#0E8C74;
+  --em-deep:#0A5F4F;
+  --em-soft:#E1F4EE;
+  --mul:#A2437A;
+  --mul-deep:#7A2C58;
+  --mul-soft:#F9E9F1;
+  --amber:#D99B3F;
+  --amber-soft:#FBF1DE;
+  --line:rgba(14,140,116,.16);
+  --shadow:0 14px 34px rgba(10,95,79,.10);
+  --shadow-sm:0 6px 18px rgba(10,95,79,.08);
+  --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background-color:var(--bg);
+  background-image:
+    radial-gradient(880px 500px at 5% -8%, rgba(14,140,116,.12), transparent 62%),
+    radial-gradient(760px 460px at 98% 2%, rgba(162,67,122,.09), transparent 60%),
+    radial-gradient(720px 440px at 55% 104%, rgba(217,155,63,.11), transparent 62%);
+  background-attachment:fixed;color:var(--ink);
+  font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.68;font-size:17px;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1020px;margin:0 auto;padding:0 20px 72px}
+
+/* hero */
+.hero{position:relative;margin:96px 0 26px;background:var(--card);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow);overflow:hidden}
+.hero-bands{display:flex;height:9px}
+.hero-bands span{flex:1}
+.hero-bands span:nth-child(1){background:var(--em)}
+.hero-bands span:nth-child(2){background:var(--mul)}
+.hero-bands span:nth-child(3){background:var(--amber)}
+.hero-inner{padding:38px 40px 34px;position:relative;z-index:2}
+.hero-weave{
+  position:absolute;right:0;top:0;width:330px;height:100%;z-index:1;opacity:.5;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(14,140,116,.20) 0 5px, transparent 5px 24px),
+    repeating-linear-gradient(-45deg, rgba(162,67,122,.15) 0 5px, transparent 5px 24px);
+  -webkit-mask-image:linear-gradient(90deg, transparent, #000 45%);
+  mask-image:linear-gradient(90deg, transparent, #000 45%);
+}
+.kicker{display:inline-block;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--em);background:var(--em-soft);padding:7px 14px;border-radius:999px;border:1px solid var(--line)}
+h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:2.22rem;line-height:1.24;margin:18px 0 8px;font-weight:700;letter-spacing:-.01em;max-width:26ch}
+h1 em{font-style:normal;color:var(--em)}
+.sub{font-size:1.06rem;color:var(--muted);max-width:64ch;margin:0 0 22px}
+.byline{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;padding-top:18px;border-top:1px dashed var(--line);font-size:.92rem;color:var(--muted)}
+.tag{background:var(--mul-soft);color:var(--mul-deep);border:1px solid rgba(162,67,122,.22);padding:5px 12px;border-radius:999px;font-size:.8rem;font-weight:600}
+.tag.g{background:var(--amber-soft);color:#9A6A1E;border-color:rgba(217,155,63,.3)}
+
+/* glance */
+.glance{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0 0 30px}
+.glance div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow-sm);border-top:4px solid var(--em)}
+.glance div:nth-child(2){border-top-color:var(--mul)}
+.glance div:nth-child(3){border-top-color:var(--amber)}
+.glance b{display:block;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--em-deep);margin-bottom:7px}
+.glance p{margin:0;font-size:.95rem}
+
+/* nav */
+.nav{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:20px 22px 22px;margin:0 0 30px}
+.nav h2{font-family:Georgia,serif;font-size:1.02rem;margin:0 0 14px;color:var(--em-deep)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips a{display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:var(--em-soft);color:var(--em-deep);border:1px solid var(--line);border-radius:999px;padding:9px 16px 9px 10px;font-size:.92rem;font-weight:600;transition:transform .18s ease,background .18s ease}
+.chips a:hover{transform:translateY(-2px)}
+.chips a i{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--em);color:#fff;font-style:normal;font-size:.76rem;font-weight:700}
+.chips a:nth-child(2n) i{background:var(--mul)}
+.chips a:nth-child(3n) i{background:var(--amber)}
+.chips a:hover:nth-child(2n){background:var(--mul-soft)}
+.chips a:hover:nth-child(3n){background:var(--amber-soft)}
+
+/* sections */
+section{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:30px 34px 32px;margin:0 0 26px;scroll-margin-top:20px}
+section>h2{font-family:Georgia,"Iowan Old Style",serif;font-size:1.48rem;line-height:1.3;margin:0 0 6px;display:flex;gap:14px;align-items:flex-start}
+section>h2 span.num{flex:none;width:34px;height:34px;border-radius:11px;background:var(--em);color:#fff;font-family:"Segoe UI",sans-serif;font-size:.95rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-top:3px}
+section:nth-of-type(2n)>h2 span.num{background:var(--mul)}
+section:nth-of-type(3n)>h2 span.num{background:var(--amber)}
+.lede{color:var(--muted);margin:.2rem 0 1.2rem;padding-left:48px}
+h3{font-family:Georgia,serif;font-size:1.08rem;margin:1.6rem 0 .5rem;color:var(--em-deep)}
+h4{font-family:Georgia,serif;font-size:1rem;margin:1.3rem 0 .4rem;color:var(--mul-deep)}
+p{margin:0 0 1rem}
+strong{color:var(--em-deep)}
+.hl{background:linear-gradient(transparent 62%, rgba(217,155,63,.32) 62%);padding:0 2px}
+.hl-m{background:linear-gradient(transparent 62%, rgba(162,67,122,.20) 62%);padding:0 2px}
+.term-word{font-style:italic;color:var(--mul-deep)}
+
+/* quotes */
+blockquote{margin:1.4rem 0;padding:20px 24px 18px;background:var(--em-soft);border-left:5px solid var(--em);border-radius:0 16px 16px 0}
+blockquote p{font-family:Georgia,serif;font-size:1.08rem;line-height:1.62;font-style:italic;margin:0 0 12px;color:#17453B}
+blockquote cite{display:block;font-style:normal;font-size:.86rem;color:var(--em);font-weight:700;letter-spacing:.03em}
+.q-mul{background:var(--mul-soft);border-left-color:var(--mul)}
+.q-mul p{color:#5B2445}
+.q-mul cite{color:var(--mul)}
+
+/* objection */
+.objection{margin:1.3rem 0;padding:16px 20px;border:1px dashed rgba(162,67,122,.42);border-radius:14px;background:var(--mul-soft)}
+.objection b.ob{display:block;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mul-deep);margin-bottom:6px}
+.objection p{margin:0 0 .6rem;font-size:.95rem}
+.objection p:last-child{margin:0}
+.objection p.ans{padding-top:.55rem;border-top:1px solid rgba(162,67,122,.22);color:var(--ink)}
+
+/* SIGNATURE: cycle ring */
+.cycle-wrap{margin:1.5rem 0 .3rem;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,var(--card),var(--em-soft));padding:14px 12px 12px;box-shadow:var(--shadow-sm)}
+.cycle{position:relative;height:404px}
+.cring{position:absolute;left:50%;top:50%;border-radius:50%}
+.cring.outer{width:300px;height:300px;margin:-150px 0 0 -150px;border:2px dashed rgba(14,140,116,.5)}
+.cring.mid{width:238px;height:238px;margin:-119px 0 0 -119px;border:2px solid rgba(162,67,122,.3)}
+.cring.core{width:120px;height:120px;margin:-60px 0 0 -60px;background:var(--card);border:2px solid var(--em);box-shadow:0 8px 22px rgba(14,140,116,.16)}
+.chub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:120px}
+.chub b{display:block;font-family:Georgia,serif;font-size:1.02rem;color:var(--em-deep);line-height:1.25}
+.chub span{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.node{position:absolute;left:50%;top:50%;width:126px;margin:0 -63px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 8px;font-size:.79rem;font-weight:600;color:var(--em-deep);box-shadow:var(--shadow-sm)}
+.n0{transform:translateY(-50%) rotate(0deg) translateY(-150px) rotate(0deg)}
+.n1{transform:translateY(-50%) rotate(60deg) translateY(-150px) rotate(-60deg);color:var(--mul-deep);border-color:rgba(162,67,122,.28)}
+.n2{transform:translateY(-50%) rotate(120deg) translateY(-150px) rotate(-120deg);color:#9A6A1E;border-color:rgba(217,155,63,.34)}
+.n3{transform:translateY(-50%) rotate(180deg) translateY(-150px) rotate(-180deg);color:var(--em-deep)}
+.n4{transform:translateY(-50%) rotate(240deg) translateY(-150px) rotate(-240deg);color:var(--mul-deep);border-color:rgba(162,67,122,.28)}
+.n5{transform:translateY(-50%) rotate(300deg) translateY(-150px) rotate(-300deg);color:#9A6A1E;border-color:rgba(217,155,63,.34)}
+.chv{position:absolute;left:50%;top:50%;color:var(--em);font-size:1.05rem;font-weight:700;line-height:1}
+.c30{transform:translate(-50%,-50%) rotate(30deg) translateY(-150px)}
+.c90{transform:translate(-50%,-50%) rotate(90deg) translateY(-150px)}
+.c150{transform:translate(-50%,-50%) rotate(150deg) translateY(-150px)}
+.c210{transform:translate(-50%,-50%) rotate(210deg) translateY(-150px)}
+.c270{transform:translate(-50%,-50%) rotate(270deg) translateY(-150px)}
+.c330{transform:translate(-50%,-50%) rotate(330deg) translateY(-150px)}
+.cyc-cap{font-size:.9rem;color:var(--muted);font-style:italic;text-align:center;margin:.1rem 0 .3rem}
+
+/* weave + strands */
+.weave{height:12px;border-radius:8px;background:repeating-linear-gradient(90deg,var(--em) 0 14px,var(--amber) 14px 28px,var(--mul) 28px 42px);opacity:.5;margin:1.4rem 0 0}
+.braid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0 .4rem}
+.strand{border-radius:14px;padding:15px 16px;font-size:.93rem}
+.strand b{display:block;font-family:Georgia,serif;font-size:1rem;margin-bottom:5px}
+.strand.a{background:var(--em-soft);border:1px solid rgba(14,140,116,.24)}
+.strand.a b{color:var(--em-deep)}
+.strand.b{background:var(--mul-soft);border:1px solid rgba(162,67,122,.22)}
+.strand.b b{color:var(--mul-deep)}
+.strand.c{background:var(--amber-soft);border:1px solid rgba(217,155,63,.28)}
+.strand.c b{color:#8E6220}
+
+/* pyramid */
+.pyr{display:flex;flex-direction:column;align-items:center;gap:7px;margin:1.3rem 0 .5rem}
+.prow{width:100%;max-width:520px;text-align:center;font-size:.9rem;padding:9px 12px;border-radius:10px;background:var(--em-soft);border:1px solid var(--line);color:#17453B}
+.prow.w1{max-width:230px}
+.prow.w2{max-width:310px}
+.prow.w3{max-width:400px}
+.prow.w5{max-width:560px}
+.prow.mark{background:var(--mul-soft);border-color:rgba(162,67,122,.32);color:var(--mul-deep);font-weight:700}
+.pyr-cap{text-align:center;font-size:.86rem;color:var(--muted);margin:.2rem 0 0}
+
+/* two / three cards */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:1.3rem 0}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:1.3rem 0}
+.card{border:1px solid var(--line);border-radius:16px;padding:18px;background:var(--card);box-shadow:var(--shadow-sm)}
+.card.em{border-top:4px solid var(--em)}
+.card.mul{border-top:4px solid var(--mul)}
+.card.amb{border-top:4px solid var(--amber)}
+.card h4{margin:0 0 6px}
+.card p{font-size:.93rem;margin:0}
+.seal{width:36px;height:36px;border-radius:50%;border:3px solid var(--em);display:grid;place-items:center;margin-bottom:10px}
+.seal i{display:block}
+.seal.dot i{width:14px;height:14px;border-radius:50%;background:var(--em)}
+.seal.square{border-color:var(--mul)}
+.seal.square i{width:13px;height:13px;border-radius:4px;background:var(--mul)}
+.seal.ring{border-color:var(--amber)}
+.seal.ring i{width:16px;height:16px;border-radius:50%;border:3px solid var(--amber)}
+
+/* staircase */
+.stair{display:flex;align-items:flex-end;gap:10px;margin:1.4rem 0 .4rem;height:170px}
+.step{flex:1;border-radius:12px 12px 0 0;display:flex;align-items:flex-end;justify-content:center;padding:10px 8px;font-size:.84rem;text-align:center;color:#fff;font-weight:600}
+.step.s1{height:42%;background:linear-gradient(180deg,#7FC7B7,var(--em))}
+.step.s2{height:60%;background:linear-gradient(180deg,#96C8A9,#2E9E6B)}
+.step.s3{height:78%;background:linear-gradient(180deg,#C79BC0,var(--mul))}
+.step.s4{height:96%;background:linear-gradient(180deg,#E8C486,var(--amber))}
+.stair-cap{font-size:.86rem;color:var(--muted);text-align:center}
+
+/* table */
+.table-wrap{overflow-x:auto;margin:1.4rem 0 .6rem;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+table.tt{border-collapse:collapse;width:100%;min-width:700px;font-size:.92rem}
+table.tt caption{text-align:left;padding:14px 18px 10px;font-family:Georgia,serif;font-size:1rem;color:var(--em-deep)}
+table.tt th{text-align:left;background:var(--em-soft);color:var(--em-deep);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;padding:12px 16px;border-bottom:1px solid var(--line)}
+table.tt td{padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+table.tt tr:last-child td{border-bottom:none}
+table.tt td:first-child{font-weight:600;color:var(--em-deep);background:rgba(225,244,238,.45)}
+table.tt td:last-child{background:rgba(251,241,222,.5)}
+
+/* tiles */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:1.2rem 0}
+.tile{background:var(--em-soft);border:1px solid rgba(14,140,116,.2);border-radius:15px;padding:16px 17px;font-size:.94rem}
+.tile:nth-child(2n){background:var(--mul-soft);border-color:rgba(162,67,122,.2)}
+.tile:nth-child(3n){background:var(--amber-soft);border-color:rgba(217,155,63,.24)}
+.tile:nth-child(4n){background:var(--em-soft);border-color:rgba(14,140,116,.2)}
+.tile b{display:block;font-family:Georgia,serif;font-size:.99rem;margin-bottom:5px;color:var(--em-deep)}
+
+/* glossary */
+.gloss-group{margin:1.4rem 0 0}
+.gloss-group>h4{margin-top:0}
+.defs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.def{border:1px solid var(--line);border-radius:14px;padding:13px 15px;background:var(--card);box-shadow:var(--shadow-sm)}
+.def b{display:block;font-family:Georgia,serif;font-size:.98rem;color:var(--em-deep);margin-bottom:3px}
+.def b em{font-style:italic;font-weight:700;color:var(--em-deep)}
+.def span.d{display:block;font-size:.9rem;color:var(--ink);margin-bottom:6px}
+.def span.x{display:block;font-size:.78rem;color:var(--muted)}
+.def:nth-child(3n+2) b{color:var(--mul-deep)}
+.def:nth-child(3n+3) b{color:#8E6220}
+
+/* names */
+.names{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:14px;margin:1.2rem 0 0}
+.person{border:1px solid var(--line);border-radius:15px;padding:15px 17px;background:var(--card);box-shadow:var(--shadow-sm)}
+.person b{display:block;font-family:Georgia,serif;color:var(--em-deep)}
+.person span{font-size:.88rem;color:var(--muted)}
+
+/* note + footer */
+.note{background:var(--amber-soft);border:1px dashed rgba(217,155,63,.45);border-radius:16px;padding:18px 22px;font-size:.92rem;color:#5A4318;margin:1.4rem 0 0}
+.note b{color:#3F2F0F}
+footer{text-align:center;color:var(--muted);font-size:.86rem;margin-top:34px;padding-top:22px;border-top:1px solid var(--line)}
+footer b{color:var(--em-deep)}
+.up{display:inline-block;margin-top:10px;color:var(--em);text-decoration:none;font-weight:600}
+
+/* author */
+.author{margin:0 0 26px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(135deg,var(--card),var(--em-soft));box-shadow:var(--shadow-sm);padding:28px 32px 26px}
+.author-top{display:flex;flex-wrap:wrap;gap:20px;align-items:center;padding-bottom:20px;border-bottom:1px dashed var(--line);margin-bottom:20px}
+.sigil{flex:none;width:74px;height:74px;border-radius:20px;background:var(--em);color:#fff;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:1.7rem;letter-spacing:1px;box-shadow:0 10px 24px rgba(14,140,116,.22)}
+.author-id b{display:block;font-family:Georgia,"Iowan Old Style",serif;font-size:1.32rem;color:var(--em-deep);line-height:1.25}
+.author-id span{display:block;font-size:.9rem;color:var(--muted);margin-top:4px}
+.author-foot{margin-top:22px;padding-top:20px;border-top:1px dashed var(--line);text-align:center}
+.author-pic{display:block;width:124px;height:124px;margin:0 auto 14px;border-radius:50%;object-fit:cover;border:3px solid var(--card);box-shadow:0 8px 22px rgba(10,95,79,.18),0 0 0 1px var(--line)}
+.author-contact{font-size:.95rem;line-height:1.9;color:var(--muted)}
+.author-contact .lbl{display:inline-block;min-width:74px;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--em-deep);font-weight:700}
+.author-contact .lbl.m{color:var(--mul-deep)}
+.author-contact a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(14,140,116,.4)}
+.author-contact a.m{border-bottom-color:rgba(162,67,122,.4)}
+.author-contact a:hover{border-bottom-color:currentColor}
+.bio{border:1px solid var(--line);border-radius:15px;background:var(--card);box-shadow:var(--shadow-sm);overflow:hidden}
+.bio .row{display:grid;grid-template-columns:158px 1fr;gap:18px;align-items:baseline;padding:16px 20px;border-bottom:1px solid var(--line)}
+.bio .row:last-child{border-bottom:none}
+.bio .row b{font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;color:var(--em-deep);margin:0}
+.bio .row:nth-child(2) b{color:var(--mul-deep)}
+.bio .row:nth-child(3) b{color:#8E6220}
+.bio .row:nth-child(4) b{color:var(--em-deep)}
+.bio .row p{margin:0;font-size:.95rem}
+.bio .row.motto p{font-style:italic}
+@media (max-width:860px){
+  .glance{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .braid,.three,.two{grid-template-columns:1fr}
+  h1{font-size:1.88rem;max-width:none}
+  section{padding:24px 20px 26px}
+  .hero-inner{padding:26px 22px 24px}
+  .lede{padding-left:0}
+  .hero-weave{display:none}
+  .cycle{height:520px}
+  .cring.outer{width:238px;height:238px;margin:-119px 0 0 -119px}
+  .cring.mid{width:190px;height:190px;margin:-95px 0 0 -95px}
+  .node{width:112px;margin:0 -56px;padding:5px 6px;font-size:.75rem}
+  .n0{transform:translateY(-50%) rotate(0deg) translateY(-119px) rotate(0deg)}
+  .n1{transform:translateY(-50%) rotate(60deg) translateY(-119px) rotate(-60deg)}
+  .n2{transform:translateY(-50%) rotate(120deg) translateY(-119px) rotate(-120deg)}
+  .n3{transform:translateY(-50%) rotate(180deg) translateY(-119px) rotate(-180deg)}
+  .n4{transform:translateY(-50%) rotate(240deg) translateY(-119px) rotate(-240deg)}
+  .n5{transform:translateY(-50%) rotate(300deg) translateY(-119px) rotate(-300deg)}
+  .chv{display:none}
+  .stair{height:230px}
+}
+
+@media print{
+  body{background:#fff}
+  section,.hero,.nav,.glance div,.card,.tile,.def{box-shadow:none}
+  section{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap" id="top">
+
+  <!-- Translation -->
+  <div class="gtranslate_wrapper" style="text-align:center;"></div>
+
+  <script>
+  window.gtranslateSettings = {
+    "default_language":"en",
+    "languages":["en","pt","fr","it","de","es","zh-TW","zh-CN","hi"],
+    "wrapper_selector":".gtranslate_wrapper",
+    "flag_size":48,
+    "horizontal_position":"right",
+    "vertical_position":"top",
+    "flag_style":"3d"
+  };
+  </script>
+
+  <script src="https://cdn.gtranslate.net/widgets/latest/flags.js" defer></script>
+  <!-- End Translation -->
+
+  <header class="hero">
+    <div class="hero-bands"><span></span><span></span><span></span></div>
+    <div class="hero-weave" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <span class="kicker">A thesis, in companion form</span>
+      <h1>Women's Emotional Life: <em>the Relational, Affective &amp; Synaesthetic Dimension</em></h1>
+      <p class="sub">Not a list of feelings, but a <em>web</em> &mdash; belonging, intimacy, tenderness, friendship, fellow-feeling, love, gratitude and pride, all pulling on one another. This page follows the thesis section by section, and ends with its own glossary.</p>
+      <div class="byline">
+        <span class="tag">Thesis companion page</span>
+        <span class="tag g">Glossary included</span>
+        <span>Written companion to the document &ldquo;Women's Emotional Life: The Relational, Affective &amp; Synaesthetic Dimension&rdquo; by <strong>Rui Manuel de Almeida Pinheiro</strong>.</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="glance">
+    <div><b>The thesis in one line</b><p>Women's affective encounters are not isolated events but an <strong>interconnected web</strong> shaped by mental, group-based and cultural forces.</p></div>
+    <div><b>What it argues against</b><p>The old lens of pathology. Emotional depth is treated here as <strong>adaptation and intelligence</strong>, not as instability.</p></div>
+    <div><b>How far it reaches</b><p>From the hunger for inclusion all the way to awe, agape &mdash; and then to the honest limits of the research itself.</p></div>
+  </div>
+
+  <nav class="nav" aria-label="Contents">
+    <h2>What's inside</h2>
+    <div class="chips">
+      <a href="#ch1"><i>1</i>Introduction</a>
+      <a href="#ch2"><i>2</i>Belonging &amp; Unity</a>
+      <a href="#ch3"><i>3</i>Communion, Affection, Tenderness</a>
+      <a href="#ch4"><i>4</i>Friendship: Amity &amp; Concord</a>
+      <a href="#ch5"><i>5</i>Empathy &amp; Sympathy</a>
+      <a href="#ch6"><i>6</i>Love: Eros, Storge, Philia</a>
+      <a href="#ch7"><i>7</i>Gratitude &amp; Appreciation</a>
+      <a href="#ch8"><i>8</i>Transcendent Emotions</a>
+      <a href="#ch9"><i>9</i>Self-Love &amp; Kvell</a>
+      <a href="#ch10"><i>10</i>Outlook &amp; Limitations</a>
+      <a href="#ch11"><i>11</i>Glossary</a>
+      <a href="#ch12"><i>12</i>Author</a>
+    </div>
+  </nav>
+
+  <section id="ch1">
+    <h2><span class="num">1</span>Introduction</h2>
+    <p class="lede">The thesis opens by naming the terrain as a <em>frontier</em>: the emotional sphere of women is a gateway to understanding connection, hardiness and identity.</p>
+
+    <p>What is being studied is not a collection of passing feelings but a <strong>structured emotional and cognitive framework</strong> that shapes how a person perceives reality, navigates the web of relationships, and derives meaning. In women, the document argues, that framework carries a high degree of relational complexity: inner states are deeply intertwined with the quality of the bonds around them.</p>
+
+    <p>And there is a historical debt to acknowledge. The study of women's emotions was long <span class="hl-m">marred by the concept of &ldquo;hysteria&rdquo;</span> &mdash; a diagnostic category that dismissed women's emotional expression as inherent instability. That inheritance held back the development of any objective framework for understanding it.</p>
+
+    <p>The late 20th century began to shift the story. Feminist psychology and positive psychology started reframing emotional sensitivity as a <strong>strength rather than a deficit</strong> &mdash; and, in the same move, revalued emotional labour. What had been treated as an invisible natural duty came to be understood as a highly skilled cognitive process that maintains the social fabric of families and workplaces alike.</p>
+
+    <p>From there the thesis states its claim, and the claim is a shape rather than a slogan:</p>
+
+    <blockquote>
+      <p>&ldquo;The affective terrain of women is a complex, interconnected web of feelings and encounters shaped by mental, relational and cultural factors &mdash; and this web is not static. It evolves in response to developmental milestones, cultural shifts, and personal life events.&rdquo;</p>
+      <cite>The thesis statement</cite>
+    </blockquote>
+
+    <div class="cycle-wrap">
+      <div class="cycle" aria-hidden="true">
+        <span class="cring outer"></span>
+        <span class="cring mid"></span>
+        <span class="cring core"></span>
+        <span class="chub"><b>The Interconnected Web</b><span>the thesis's shape</span></span>
+        <span class="node n0">Belonging</span>
+        <span class="node n1">Intimacy</span>
+        <span class="node n2">Tenderness</span>
+        <span class="node n3">Friendship</span>
+        <span class="node n4">Empathy</span>
+        <span class="node n5">Love</span>
+        <span class="chv c30">&#8635;</span>
+        <span class="chv c90">&#8635;</span>
+        <span class="chv c150">&#8635;</span>
+        <span class="chv c210">&#8635;</span>
+        <span class="chv c270">&#8635;</span>
+        <span class="chv c330">&#8635;</span>
+      </div>
+      <p class="cyc-cap">Six of the thesis's dimensions, arranged as a ring rather than a list &mdash; because each one feeds the next.</p>
+    </div>
+
+    <div class="cycle-wrap">
+      <div class="cycle" aria-hidden="true">
+        <span class="cring outer"></span>
+        <span class="cring mid"></span>
+        <span class="cring core"></span>
+        <span class="chub"><b>The Interconnected Web</b><span>the thesis's shape</span></span>
+        <span class="node n0">Belonging</span>
+        <span class="node n1">Intimacy</span>
+        <span class="node n2">Tenderness</span>
+        <span class="node n3">Friendship</span>
+        <span class="node n4">Empathy</span>
+        <span class="node n5">Love</span>
+        <span class="chv c30">&#8635;</span>
+        <span class="chv c90">&#8635;</span>
+        <span class="chv c150">&#8635;</span>
+        <span class="chv c210">&#8635;</span>
+        <span class="chv c270">&#8635;</span>
+        <span class="chv c330">&#8635;</span>
+      </div>
+      <p class="cyc-cap">Six of the thesis's dimensions, arranged as a ring rather than a list &mdash; because each one feeds the next.</p>
+    </div>
+
+    <p>Because it is a web, it can be studied as one. A psychological lens looks at the neurological, cognitive and social processes underneath emotional regulation and expression. Cultural scripts mediate even the most private moments &mdash; the way grief is processed or joy is celebrated follows rules about which displays are acceptable. Working through all of this is what allows the thesis to move past the flat label of &ldquo;emotionality&rdquo; and toward a real account of what women's inner lives actually do.</p>
+
+    <h3>The argument in four movements</h3>
+    <div class="grid">
+      <div class="tile"><b>A web, not a list</b>Feelings are structural, not ornamental: they hold up identity and relationships at the same time.</div>
+      <div class="tile"><b>Sensitivity as intelligence</b>The capacity to process and articulate complex emotion is a kind of intelligence that improves relationships.</div>
+      <div class="tile"><b>Emotional labour, revalued</b>Once invisible as &ldquo;natural duty&rdquo;, now read as skilled cognitive work that keeps groups running.</div>
+      <div class="tile"><b>Hardiness under pressure</b>Women often navigate discrimination, a double burden of work and care, and patriarchal structures &mdash; and the very emotions in this essay act as protection.</div>
+    </div>
+
+    <h3>What the thesis is careful to admit</h3>
+    <p>Before it goes further, the document lists the objections it knows are coming. Treating &ldquo;women's emotional life&rdquo; as a category risks <em>essentialising</em> gender and flattening the enormous differences among women &mdash; and could reinforce the very stereotype that women are &ldquo;more emotional&rdquo;, a claim historically used to exclude them from professional and political life. The thesis accepts the concern, then answers it: emotionality is a human trait, not a gendered one, but gender remains a primary organising principle of social life, so emotional experience is inevitably filtered through it. The claim is not that women differ inherently in emotional capacity, but that their emotional lives are <span class="hl">situated in distinct social and cultural contexts</span>.</p>
+
+    <p>Two further objections get the same treatment. A focus on communal and nurturing emotions can overlook the darker registers &mdash; anger, competition, the desire for power &mdash; and risks romanticising women's emotionality as purely altruistic. In reply: a complete account must include the whole range. Women's anger, for instance, is often suppressed or pathologised, yet it is a powerful signal of injustice and a catalyst for change; competitive drives are as much a part of growth as care is. And the frameworks used here are Western-centric, whereas concepts like self-worth or independence carry different meanings in individualistic and collectivistic cultures. The answer there is cross-cultural psychology: the biological capacity for emotion is universal, but &ldquo;display rules&rdquo; and the inner meanings of emotion vary widely. In some cultures restraint reads as maturity and strength; elsewhere emotional transparency is prized.</p>
+  </section>
+
+  <section id="ch2">
+    <h2><span class="num">2</span>Belonging and Unity</h2>
+    <p class="lede">The first building block is the ground everything else stands on: the sense of being rooted, of being part of a whole.</p>
+
+    <p>Rootedness and wholeness are the cornerstone of emotional flourishing and the primary anchor for identity and stability. The need to belong is a fundamental human motivation &mdash; but for women, the thesis suggests, it carries a particular relational and evolutionary weight tied to maintaining the cohesion of the group.</p>
+
+    <p>That makes its absence expensive. Without a secure sense of inclusion, a person can encounter a kind of emotional <em>homelessness</em> that culminates in anxiety, depression and a fragmented awareness of self. Conversely, when a woman feels deeply integrated into a community &mdash; a family, a professional network, a wider circle &mdash; her capacity to handle stress and pursue her own goals rises significantly. That sense of oneness supplies the <span class="hl">emotional safety net required to venture out and take the risks that growth demands</span>. Connectedness, the thesis insists, is not merely a pleasant feeling. It is a structural necessity.</p>
+
+    <h3>Where belonging sits in the order of needs</h3>
+    <p>The drive for membership can be analysed with Maslow's hierarchy of needs, where belonging sits just above physiological and safety requirements. Until an adult woman has a lived sense of devotion and rootedness, she cannot progress toward higher needs like esteem and self-actualisation &mdash; and for many women, meeting this need becomes the primary driver of behaviour and emotional regulation.</p>
+
+    <div class="pyr" aria-hidden="true">
+      <div class="prow w1">Self-actualisation</div>
+      <div class="prow w2">Esteem</div>
+      <div class="prow w3 mark">Love and belonging</div>
+      <div class="prow w5">Safety</div>
+      <div class="prow">Physiological needs</div>
+    </div>
+    <p class="pyr-cap">The rung this section stands on. Below it, nothing is questioned; above it, nothing is reachable yet.</p>
+
+    <p>You can watch it shape a life. A woman may choose a career path that keeps her close to her family, illustrating how the hunger for acceptance can steer major decisions. The thesis reads that choice not as weakness but as a sophisticated grasp of the fact that <strong>emotional fitness is inseparable from the quality of one's relationships</strong>.</p>
+
+    <h3>The group as a buffer</h3>
+    <p>Relationships do more than comfort; they protect. Research on resilience suggests that the presence of a group to turn to in a crisis &mdash; a <em>social buffer</em> &mdash; is one of the most reliable predictors of constructive outcomes after trauma. For women, these buffers often take the form of informal networks: groups of mothers, professional mentorship circles, religious communities.</p>
+
+    <p>One illustration is quietly vivid. In disaster-stricken areas, women often organise communal kitchens or childcare centres, creating an intuitive sense of wholeness that softens the emotional impact of the disaster. These acts of collective care also deliver a subtle sense of agency and purpose &mdash; both vital to recovery. By fostering oneness, such communities <span class="hl-m">transform personal vulnerability into collective strength</span>.</p>
+
+    <h3>Belonging turned inward</h3>
+    <p>&ldquo;Belongingness&rdquo; also describes an internal state: feeling at one with oneself. It is the integration of one's various roles &mdash; daughter, mother, professional, friend &mdash; into a coherent self-concept. When those roles conflict, the result is internal fragmentation and distress. A woman caught between traditional expectations of domesticity and her ambition for professional leadership may feel she belongs fully in neither world; achieving internal wholeness requires the emotional work of reconciling the parts. That work, importantly, is supported by relationships that validate a multifaceted identity &mdash; showing again how outer inclusion and inner wellbeing are joined.</p>
+
+    <div class="objection">
+      <b class="ob">Objection considered</b>
+      <p>An over-emphasis on connectedness can suppress individuality and breed <em>people-pleasing</em> &mdash; women socialised to value harmony so highly that they lose their own voice, leaving self-worth dependent on external validation.</p>
+      <p class="ans">The reply turns on a distinction: <strong>rootedness is not conformity</strong>. True inclusion means being accepted for who one actually is, rather than for fitting a pre-defined mould. The goal is therefore not to &ldquo;fit in&rdquo; but to find or build communities that value a person's unique contribution &mdash; a healthy form of togetherness that supports, rather than stifles, a strong independent self.</p>
+    </div>
+
+    <h3>An older reason still in the room</h3>
+    <p>Evolutionary psychologists offer a deeper explanation. Because human females historically carried primary responsibility for child-rearing, survival depended heavily on maintaining strong social ties &mdash; producing a biological predisposition toward <em>tend-and-befriend</em> responses to stress rather than the fight-or-flight response more commonly associated with males. During scarcity, women who shared resources and maintained group cohesion were more likely to see their children survive. Modern environments have changed, but the patterns remain; understanding this background helps explain why the threat of social exclusion can be so devastating.</p>
+
+    <p>The history of togetherness has also changed shape. In early communal living the line between self and community was far less pronounced, and in many traditional cultures a woman's emotional life was almost entirely defined by her place in the kinship group. Modern individualism created a new tension &mdash; the pull of personal autonomy against the enduring need for communal connection. The adaptability of that need shows up in digital communities, where women seek to recreate the sense of wholeness that may be missing in their neighbourhoods, using online networks to share experience and find support.</p>
+
+    <p>A third framework, social identity theory, adds its own explanation: a significant portion of a woman's self-concept derives from membership in groups &mdash; from the broad category &ldquo;women&rdquo; to specific professional or hobby-based circles. The emotional benefit of that membership is the subject of the next sections.</p>
+  </section>
+
+  <section id="ch3">
+    <h2><span class="num">3</span>Communion, Affection and Tenderness</h2>
+    <p class="lede">If belonging is the structure, three things supply the substance: shared intimacy, tender regard, and soft-heartedness.</p>
+
+    <p>Interpersonal connection is the core of the human condition, and for women these bonds are often the primary medium through which emotional life is expressed and understood. The thesis names three active processes rather than passive feelings &mdash; each involving an exchange of vulnerability, care and mutual recognition.</p>
+
+    <div class="weave" aria-hidden="true"></div>
+    <div class="braid">
+      <div class="strand a"><b>Shared intimacy</b>The reciprocal sharing of experience and feeling that makes a bond real.</div>
+      <div class="strand b"><b>Tender regard</b>Warmth and fondness expressed physically and verbally &mdash; the trust-builder.</div>
+      <div class="strand c"><b>Soft-heartedness</b>A gentle, sensitive state that acts as a radar for another's needs.</div>
+    </div>
+
+    <p>Understanding these means looking at how women balance their own needs against those of others &mdash; a process that is both a source of great joy and a considerable amount of emotional labour.</p>
+
+    <h3>Affection and the body</h3>
+    <p>Fond attachment &mdash; the warmth felt in close relationships &mdash; is the psychological basis of trust and emotional security. Affectionate touch, such as a hug or a pat on the back, and even warm verbal interaction, triggers the release of <strong>oxytocin</strong>, often called the bonding hormone. The biochemical response lowers cortisol and produces a dawning sense of calm and safety.</p>
+
+    <p>This matters especially for women, who are often the primary providers of care for children and elderly parents: receiving tender regard is a vital way to recharge one's own emotional reserves. Without a steady flow of fond attachment, the emotional landscape can turn dry and prone to burnout. The function in building trust is foundational &mdash; consistent affection signals that a person is valued and safe, and that safety permits greater vulnerability, which in turn deepens intimacy. There is even a de-escalating effect: in a study of marital interactions, couples who maintained physical contact, like holding hands, during a disagreement showed lower physiological stress and were more likely to reach a resolution.</p>
+
+    <h3>Tenderness as sensitivity</h3>
+    <p>Tender-heartedness is defined as a gentle, delicate and sensitive emotional state, characterised by profound concern for another's welfare. Alongside affection it carries a distinctive quality of <em>vulnerability and protection</em>. In women it is often expressed in caregiving and nurturing roles, where it functions as a sensitive radar for the needs of others.</p>
+
+    <p>That sensitivity picks up subtle cues &mdash; a child's quiet sigh, a partner's tense shoulders &mdash; and responds with a gentle, supportive presence. The manner matters as much as the act: a mother soothing a crying child does so through a rhythmic synchronisation of heartbeats, a soft tone and a light touch. This tenderness response is at once biological and psychological, fostering a deep wordless connection. It shows up in professional care too, in nursing and teaching, where a compassionate approach often makes the largest difference to a patient's or student's outcome. Research linking tender-heartedness to flourishing even suggests that being tender toward others increases one's own sense of happiness and calm.</p>
+
+    <div class="objection">
+      <b class="ob">Objection considered</b>
+      <p>Emphasising soft-heartedness can pigeonhole women into &ldquo;soft&rdquo; or subordinate roles, cutting off access to positions that demand toughness &mdash; and the stereotype of the &ldquo;tender woman&rdquo; can be weaponised to suggest she is too fragile for harsh realities.</p>
+      <p class="ans">The counter-claim is that tenderness and strength are not mutually exclusive but often complementary. A leader tender enough to read her team's emotional needs is frequently more effective than one who relies on authority alone; soft-heartedness is a form of emotional intelligence that supplies the nuance complex decisions require.</p>
+    </div>
+
+    <h3>Tenderness aimed inward</h3>
+    <p>Soft-heartedness is also self-care. When a woman can be tender toward herself &mdash; acknowledging fatigue, pain or mistakes with a gentle spirit instead of harsh self-criticism &mdash; her overall wellbeing improves. This internal gentleness buffers against the high expectations placed on women by society and by themselves, and it is exactly what mindfulness practices cultivate when they invite &ldquo;tender curiosity&rdquo; toward one's own thoughts. Treating oneself with the gentleness one would offer a friend reduces anxiety and builds a steadier foundation.</p>
+
+    <p>To consolidate: shared intimacy yields the shared reality, tender regard supplies warmth and trust, and soft-heartedness furnishes the sensitive, protective care that lets connections thrive. Each carries its own risks &mdash; unbounded mutual sharing, gendered stereotypes &mdash; yet each is an essential component of emotional fulfilment, and the capacity for deeply sensitive connection is not merely a personal trait but a <span class="hl">resource that women contribute to families, workplaces and communities</span>.</p>
+  </section>
+
+  <section id="ch4">
+    <h2><span class="num">4</span>Friendship: Amity, Concord and Harmony</h2>
+    <p class="lede">Friendship is the voluntary wing of the emotional landscape &mdash; chosen rather than given, and built on amity, concord and harmony.</p>
+
+    <p>Friendships occupy a space distinct from family obligation and romantic intensity, offering room for growth, validation and stability. They are a primary source of <em>relational capital</em>: a reliable second family that carries a woman through the transitions of her life. The thesis suggests that a woman's emotional and cognitive soundness is often directly correlated with the quality of her friendships, because those bonds are a safe harbour for expressing the self without the pressure of traditional roles.</p>
+
+    <h3>Amity</h3>
+    <p>Amity &mdash; a state of friendly relationship and mutual goodwill &mdash; is the starting point of any lasting friendship. In women's lives it goes beyond pleasantries, carrying abiding respect and a desire for the other's welfare. The research consistently finds that women's friendships are more likely than men's to be built on <strong>face-to-face</strong> interaction &mdash; talking, sharing secrets, providing emotional reinforcement &mdash; rather than side-by-side activity like sport. That focus on amity through shared vulnerability creates a bond shown to reduce the risk of mental health difficulty: a woman facing a serious illness or job loss who has a strong network of friends is significantly less likely to develop clinical depression than one without such a network.</p>
+
+    <p>Friends also act as <strong>identity validators</strong>. Through career shifts and the transition to motherhood, they hold up a consistent mirror that reflects a woman's true self back to her. The lifelong friend who has known her since childhood can remind her of core values and strengths when she feels lost in her current roles &mdash; a longitudinal amity that yields a sense of continuity, and with it emotional stability. By valuing her simply for who she is rather than what she does, friendship provides a kind of nourishment found nowhere else.</p>
+
+    <p>Another aspect is <em>stress buffering</em>: under pressure, the simple act of talking to a friend can trigger oxytocin release and lower blood pressure &mdash; especially valuable in high-stress professions where women face particular challenges. One example is the peer support group for women in competitive industries like law or finance, a safe space where amity allows frustration to be vented and strategies shared for navigating systemic bias.</p>
+
+    <h3>Concord and harmony</h3>
+    <p>Concord &mdash; agreement or peaceful accord between people &mdash; and harmony, the pleasing arrangement of parts, are how friendships and wider groups stay stable over time. Women are often socialised as the peacekeepers of their families and circles, which makes navigating the balance between accord and peace a constant emotional task.</p>
+
+    <p>The distinction is useful: <strong>concord</strong> is the active work of reaching consensus and resolving disputes; <strong>harmony</strong> is the overall atmosphere of the group. A healthy relational life therefore involves not just avoiding conflict but learning to move through it while preserving the underlying peace &mdash; work that requires a high degree of emotional intelligence and the ability to weigh one's own needs against the collective's.</p>
+
+    <div class="objection">
+      <b class="ob">Objection considered</b>
+      <p>The intensity of women's friendship can produce <em>friendship stress</em>: emotional demands of maintaining many close bonds become overwhelming, and high expectations of loyalty and constant communication breed guilt or resentment when someone needs to step back.</p>
+      <p class="ans">The reply is that healthy amity includes an understanding of boundaries and separate needs. A genuinely supportive friend understands when someone needs space, and gives it without judgment. Emotional maturity in friendship means moving from a <em>quantity</em> mindset to a <em>quality</em> one &mdash; a few deep, sustainable bonds rather than as many as possible. Grounded in mutual respect, amity remains a net gain.</p>
+    </div>
+
+    <p>In closing, amity furnishes the foundation of mutual goodwill and trust, while concord and harmony provide the ongoing maintenance that keeps connections stable &mdash; and the capacity for sensitive connection is not only a personal trait but a social resource women bring to their families, workplaces and communities.</p>
+  </section>
+
+  <section id="ch5">
+    <h2><span class="num">5</span>Empathy and Sympathy</h2>
+    <p class="lede">Two closely related words that the thesis insists on keeping apart &mdash; because the difference between them decides who burns out and who keeps helping.</p>
+
+    <p>Empathy and sympathy are thought of as the primary mechanisms by which people connect with another's experience, and they hold a central place in the study of women's emotional life. Though the terms are often used interchangeably, they name distinct processes: <strong>empathy</strong> is &ldquo;feeling with&rdquo; someone &mdash; entering their emotional state; <strong>sympathy</strong> is &ldquo;feeling for&rdquo; someone &mdash; expressing concern for their situation. In women both are often highly developed, serving as the basis for caregiving, communication and social cohesion.</p>
+
+    <div class="two">
+      <div class="card em">
+        <h4>Empathy &mdash; feeling with</h4>
+        <p>A multi-dimensional capacity: cognitive perspective-taking, the ability to understand another's point of view, plus affective empathy, the ability to share their emotional state. Research links the affective tendency to the brain's mirror-neuron system, which lets a person subconsciously mimic the emotions they observe. When a woman sees a friend in distress, her own brain may activate the pathways associated with sadness &mdash; she truly feels what her friend is going through. That resonance is the foundation of the nurturing roles women so often fill.</p>
+      </div>
+      <div class="card mul">
+        <h4>Sympathy &mdash; feeling for</h4>
+        <p>Related, but held at a greater emotional distance &mdash; and that distance is sometimes exactly what is needed. Sympathy lets a woman acknowledge someone's pain and offer comfort without being overwhelmed by it, which is crucial in nursing, social work and counselling, where empathy fatigue and compassion fatigue are real risks. Holding a sympathetic stance allows her to give both practical and emotional support while preserving her own wellbeing. Sympathy is the action-oriented cousin of empathy: emotional understanding translated into helpful behaviour.</p>
+      </div>
+    </div>
+
+    <p>Read together, the two are a pair of tools rather than rivals. Empathy gives the accuracy &mdash; the true reading of what someone is inside. Sympathy gives the stamina &mdash; the ability to stay useful without going under. The thesis's contribution is to point out that the second is not a failure of the first.</p>
+
+    <h3>Recognising the difference in the moment</h3>
+    <div class="table-wrap">
+      <table class="tt">
+        <caption>Two responses to the same suffering</caption>
+        <thead>
+          <tr><th>Dimension</th><th>Empathy &mdash; feeling with</th><th>Sympathy &mdash; feeling for</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>What happens inside</td><td>You share the other person's emotional state; your own brain lights up with it</td><td>You register their state and feel concern, while staying in your own</td></tr>
+          <tr><td>Underlying mechanism</td><td>Cognitive perspective-taking plus affective resonance via mirroring</td><td>Compassionate concern held at a working distance</td></tr>
+          <tr><td>Strength in the moment</td><td>Deep accuracy; the other person feels truly understood</td><td>Durability; you can keep helping for longer</td></tr>
+          <tr><td>Risk if unmanaged</td><td>Empathy or compassion fatigue, emotional flooding</td><td>Being read as remote if used where real presence was needed</td></tr>
+          <tr><td>Where it matters most</td><td>Intimate relationships, close friendships, family</td><td>Care professions, crisis support, prolonged advocacy</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="ch6">
+    <h2><span class="num">6</span>Love and Attachment: Eros, Storge, Philia</h2>
+    <p class="lede">Devotion is the most powerful and many-sided dimension of the terrain &mdash; and the thesis reads it through attachment theory rather than romance alone.</p>
+
+    <p>Love in psychology is usually analysed through attachment theory, which holds that the way we love in adulthood is shaped by our earliest experiences of care. Among women, love is often a central organising principle, supplying a sense of purpose and identity. The thesis breaks it into three classical forms.</p>
+
+    <div class="three">
+      <div class="card mul">
+        <span class="seal dot" aria-hidden="true"><i></i></span>
+        <h4>Eros &mdash; romantic love</h4>
+        <p>Intense desire, idealisation of the partner, and a drive for physical and emotional union. The early stages arrive as a neurochemical storm, high in dopamine and norepinephrine, creating euphoria and focused attention. The complexity lies in the tension between the wish for merger and the need to keep one's own identity &mdash; the moment when a woman's wellbeing becomes closely tied to her partner's actions and feelings.</p>
+      </div>
+      <div class="card em">
+        <span class="seal square" aria-hidden="true"><i></i></span>
+        <h4>Storge &mdash; familial love</h4>
+        <p>The natural, instinctive affection between family members, above all between parents and children. Often the most enduring and unconditional form of love, it provides a deep sense of security and nurture. It is built over time through shared history, repeated acts of care and a sense of belonging to a common lineage &mdash; and its defining quality is stability: where romantic passion waxes and wanes, familial love remains a constant baseline.</p>
+      </div>
+      <div class="card amb">
+        <span class="seal ring" aria-hidden="true"><i></i></span>
+        <h4>Philia &mdash; friendship love</h4>
+        <p>Enduring platonic devotion characterised by shared interests, mutual respect and a quiet sense of equality &mdash; the emotional heart of the friendships described earlier. For many women it is the most stable and reliable form of love, often outlasting romantic partnerships and offering an intimacy different from family. It makes possible a &ldquo;chosen family&rdquo; in which companionship, stimulation and shared fun are met &mdash; and it matters most at moments of transition.</p>
+      </div>
+    </div>
+
+    <p>The role of philia is especially clear during upheaval &mdash; moving cities, starting a new job, going through a breakup &mdash; when friends supply the consistent emotional presence that helps a woman keep her sense of self. The station of &ldquo;kin carer&rdquo;, whether as mother, daughter or sister, is likewise a primary source of identity and meaning for countless women.</p>
+  </section>
+
+  <section id="ch7">
+    <h2><span class="num">7</span>Gratitude and Appreciation</h2>
+    <p class="lede">Two positive states that the thesis refuses to treat as mere good manners: they are described as a kind of moral affect that strengthens bonds and raises wellbeing.</p>
+
+    <p>Gratitude is the feeling of being thankful for something received; <strong>appreciation</strong> is the broader recognition and enjoyment of the good qualities of someone or something. In women these are often woven into both personal and social life, functioning as an affect that strengthens relationships and increases happiness &mdash; and as protective factors against everyday stress.</p>
+
+    <h3>Appreciation as a daily practice</h3>
+    <p>Appreciation is the active recognition of value &mdash; in the beauty of a sunset, the skill of a colleague, the particular traits of one's own personality. Unlike gratitude, which responds to a specific gift or act, appreciation is an orientation toward the world. For women it works as a kind of emotional mindfulness, allowing joy to be found in the mundane, and that capacity to notice small things is a component of emotional resilience: it produces a steady stream of positive micro-experiences that can counterbalance major stressors. Appreciating the quiet of an early morning or the taste of a good cup of coffee can furnish a momentary reset.</p>
+
+    <p>In close relationships, appreciation is the fuel that keeps a bond moving forward. Where gratitude may follow a specific favour, appreciation is the ongoing recognition of another person's essence. A woman who appreciates her friend's particular sense of humour or her partner's steady patience is building a reservoir of warm regard to draw on during difficult times. One extended illustration is the &ldquo;appreciation circle&rdquo; sometimes used in families or teams, where each person shares something they value in another. For the women at the centre of this thesis, such verbalised appreciation supplies the validation and recognition often missing in a culture that overlooks feminine contributions.</p>
+
+    <div class="objection">
+      <b class="ob">Objection considered</b>
+      <p>Can the pressure to be grateful shade into <em>toxic positivity</em> &mdash; a demand to look on the bright side that silences real difficulty?</p>
+      <p class="ans">The thesis's own framing guards against this: appreciation is described as <em>recognition</em> of what is genuinely good, not as a denial of what is not. It is offered as one protective factor among many, in an account that also insists on anger, grief and competition as legitimate parts of the same emotional life.</p>
+    </div>
+  </section>
+
+  <section id="ch8">
+    <h2><span class="num">8</span>Transcendent Emotions: Adoration, Reverence, Agape</h2>
+    <p class="lede">The peaks of the emotional landscape &mdash; states that move past the immediate needs of the self.</p>
+
+    <p>Transcendent emotions carry a sense of awe, sacredness and selfless devotion, and they often produce a profound feeling of meaning and connection to something larger than one individual. Whether reached through spiritual practice, wonder at nature, or deep commitment to others, they lift the psyche and offer a perspective that rises above daily stressors. The thesis surveys how these higher states contribute to emotional maturity and spiritual flourishing.</p>
+
+    <h3>Adoration and reverence</h3>
+    <p>Both involve deep respect and love, often directed toward a person, an ideal or a higher power. <strong>Adoration</strong> is passionate, focused devotion; <strong>reverence</strong> is an inward sense of awe and holy respect. Where the first concentrates attention, the second enlarges it.</p>
+
+    <h3>Agape</h3>
+    <p>Agape is presented as the foremost form of love: selfless, unconditional, seeking nothing in return. It differs from eros, which seeks union, and from philia, which seeks companionship, because it is focused entirely on the flourishing of the other. In women's lives it is often expressed through caregiving, volunteering and social activism &mdash; the love that drives a woman to care for a sick stranger, to advocate for the marginalised, or to keep giving steady support to a difficult family member.</p>
+
+    <p>And it is not one-directional in its effects. Studies of agape, sometimes called altruistic love, describe a <span class="hl">&ldquo;helper's high&rdquo;</span> &mdash; a release of endorphins that increases happiness and reduces physical pain. The thesis's point is quietly subversive: selfless love is also self-serving, and that is not a contradiction.</p>
+  </section>
+
+  <section id="ch9">
+    <h2><span class="num">9</span>Self-Love, Amour-propre and Kvell</h2>
+    <p class="lede">The journey ends where the thesis began &mdash; with the self, but now a self in relationship rather than in opposition to one.</p>
+
+    <p>The emotional life of women culminates in a well-adjusted relationship with oneself, characterised by self-acceptance, pride and the capacity for growth. However much this essay has dwelt on relational and communal emotions, the internal state matters equally. <span class="term-word">Amour-propre</span> &mdash; self-worth, self-respect &mdash; and the Yiddish concept of <span class="term-word">kvell</span>, an intense swelling of pride and joy, are the &ldquo;internal harvest&rdquo; of a well-lived emotional life. The thesis is explicit that neither is vanity or narcissism: they are the recognition of one's own worth and the celebration of one's achievements.</p>
+
+    <h3>Kvell</h3>
+    <p>Kvell captures the feeling of swelling with pride and joy &mdash; often in response to the accomplishments of someone one loves, but also in response to one's own. In the emotional sphere of women it represents the celebratory dimension of the psyche: the moment when the work of intimacy, love and effort pays off in a burst of positive feeling. For countless women, the greatest moments of kvell come from seeing their children succeed or their communities thrive.</p>
+
+    <p>And yet, the thesis adds, it is equally important for women to feel kvell for their <em>own</em> professional and personal milestones. This self-pride is a vital part of the reward system that fuels continued growth and ambition &mdash; a point best seen as a shape that keeps climbing:</p>
+
+    <div class="stair" aria-hidden="true">
+      <div class="step s1">Noticing<br>a good day</div>
+      <div class="step s2">Naming one's<br>own strength</div>
+      <div class="step s3">Pride in those<br>you love</div>
+      <div class="step s4">Kvell for one's<br>own milestone</div>
+    </div>
+    <p class="stair-cap">The last step is the one most often skipped.</p>
+  </section>
+
+  <section id="ch10">
+    <h2><span class="num">10</span>Outlook and Limitations</h2>
+    <p class="lede">The thesis closes by refusing to oversell itself &mdash; and it is more convincing for it.</p>
+
+    <p>Reviewing the whole terrain, the picture is of a sophisticated, interconnected landscape in which inner feelings are embedded in relational and cultural contexts. The journey traced runs from the foundational drive for membership to the dynamics of connection, the resilience found in friendship, the resonance of empathy, the many forms of love, and finally the roles of gratitude, transcendent emotion, self-acceptance and pride. Each dimension contributes to a holistic understanding of women's wellbeing, and together they make the central case: <strong>emotionality is not a sign of weakness but an intricate mode of intelligence and adaptation</strong>.</p>
+
+    <h3>The limits it names</h3>
+    <div class="grid">
+      <div class="tile"><b>A WEIRD sample</b>Much of the literature rests on Western, Educated, Industrialised, Rich and Democratic populations &mdash; which may not reflect women elsewhere.</div>
+      <div class="tile"><b>Binary categories</b>Many studies still work with binary gender categories, leaving the emotional experience of non-binary and trans women largely unexamined.</div>
+      <div class="tile"><b>Emotion in isolation</b>Emotions are often studied one at a time rather than as the interconnected web the thesis describes.</div>
+      <div class="tile"><b>Intersectionality missing</b>Race, class, age and sexual orientation intersect with gender to shape emotional life, and future work must account for that.</div>
+    </div>
+
+    <h3>Where the research should go</h3>
+    <p>Three directions are proposed. First, the <strong>neurology of connection</strong>: oxytocin and mirror neurons are known to figure in empathy and bonding, but the long-term effects of those processes on wellbeing are only beginning to be understood, and longitudinal work is needed to follow how women's emotional needs shift across the lifespan. Second, <strong>digital life</strong>: how social media and virtual communities change the nature of connectedness, friendship and self-worth requires a genuinely multi-disciplinary approach. Third, the <strong>pathologisation of women's emotion</strong>: the intense emotionality of the postpartum period and the mood shifts of perimenopause are still often treated as purely biological problems to be fixed rather than as complex transitions that need emotional and social support. Shifting from a <em>deficit</em> model to a <em>growth</em> model is the recommendation.</p>
+
+    <h3>Practical applications, and a caution</h3>
+    <p>The insights are meant to be usable. Programmes building relational resilience, gratitude and self-compassion can be integrated into schools, workplaces and community centres; a workplace programme encouraging appreciation and shared experience among colleagues can improve women's professional flourishing and reduce burnout; community sisterhood initiatives can supply the rootedness needed in marginalised or high-stress environments.</p>
+
+    <p>But the thesis ends with an ethical line that is worth stating plainly. As understanding of how to support and regulate women's emotions deepens, that knowledge must never be used to control them. The goal of exploring emotion is <span class="hl-m">the empowerment and autonomy of the individual woman</span> &mdash; respecting her right to feel anger, grief and competition as fully as her capacity for empathy, devotion and tenderness. A supportive framework is one that honours the entire range, recognising that the web of emotional life becomes strongest when it is allowed to be its most complex and authentic.</p>
+
+    <blockquote class="q-mul">
+      <p>&ldquo;No single emotion exists in a vacuum. Belonging yields the safety for empathy to bloom; empathy allows the deep connections of love and friendship; those bonds generate gratitude and appreciation; and those positive states fuel the capacity for transcendence and self-actualisation. When one part of the web is damaged, the whole system is affected. Conversely, strengthening one area &mdash; self-regard, for instance &mdash; ripples outward through the rest.&rdquo;</p>
+      <cite>The thesis's summary of its own virtuous cycle</cite>
+    </blockquote>
+
+    <p>Which raises the widest point of all. A society that values competition over sharing, or that punishes feminine pride while demanding feminine sacrifice, creates a hostile environment for this cycle. Supporting women's emotional lives is therefore not only a psychological task but a cultural one: the stereotypes and structures that limit emotional expression have to be challenged before the web can fully flourish. The thesis closes on optimism &mdash; the growth of positive psychology, emotional intelligence and intersectional feminism is building a more supportive environment, and women are increasingly moving from being the <em>objects</em> of study to the <em>authors</em> of their own emotional stories.</p>
+  </section>
+
+  <section id="ch11">
+    <h2><span class="num">11</span>Glossary</h2>
+    <p class="lede">The document ends with its own vocabulary &mdash; alphabetical within each group, and cross-linked. Reproduced here in full.</p>
+
+    <div class="gloss-group">
+      <h4>Core concepts</h4>
+      <div class="defs">
+        <div class="def"><b>Adoration <em>(noun)</em></b><span class="d">Deep love, profound respect, and intellectual admiration directed outward.</span><span class="x">see also: Reverence, Devotion, Agape</span></div>
+        <div class="def"><b>Affection <em>(noun)</em></b><span class="d">A gentle, enduring fondness that brings a consistent, quiet joy to the mind and the heart.</span><span class="x">see also: Fondness, Warmth, Tenderness</span></div>
+        <div class="def"><b>Agape <em>(noun, Gk.)</em></b><span class="d">Universal, unconditional, selfless love that elevates human consciousness to its highest ethical plane.</span><span class="x">see also: Philia, Storge, Eros, Devotion</span></div>
+        <div class="def"><b>Amity <em>(noun)</em></b><span class="d">The peaceful, joyful understanding and mutual respect found in genuine, stimulating friendships.</span><span class="x">see also: Philia, Concord, Harmony</span></div>
+        <div class="def"><b>Amour-propre <em>(noun, Fr.)</em></b><span class="d">A healthy, justified self-love, self-respect and cognitive pride in one's own worth.</span><span class="x">see also: Self-Love, Kvell, Self-Esteem</span></div>
+        <div class="def"><b>Appreciation <em>(noun)</em></b><span class="d">The ability to understand the true worth, quality or importance of something, bringing refined joy.</span><span class="x">see also: Gratitude, Thankfulness</span></div>
+        <div class="def"><b>Attachment <em>(noun)</em></b><span class="d">A secure, healthy emotional bond that provides a baseline of safety for exploration.</span><span class="x">see also: Trust, Emotional Security, Storge</span></div>
+        <div class="def"><b>Belonging <em>(noun)</em></b><span class="d">The deep emotional and cognitive security of being accepted, understood and valued exactly as one is.</span><span class="x">see also: Acceptance, Emotional Security, Unity</span></div>
+        <div class="def"><b>Benevolence <em>(noun)</em></b><span class="d">The joy of wishing goodwill to others and actively participating in their well-being. <em>Not used in this volume.</em></span><span class="x">see also: Compassion, Agape, Nurturance</span></div>
+        <div class="def"><b>Communion <em>(noun)</em></b><span class="d">A profound, wordless sharing of thoughts, feelings and spiritual presence with another.</span><span class="x">see also: Oneness, Intimacy, Connection</span></div>
+        <div class="def"><b>Concord <em>(noun)</em></b><span class="d">A state of perfect agreement, harmony and peace between thoughts, emotions and external reality.</span><span class="x">see also: Amity, Harmony, Unity</span></div>
+        <div class="def"><b>Devotion <em>(noun)</em></b><span class="d">Deep, steady dedication and love that gives a clear, joyful purpose to actions and thoughts.</span><span class="x">see also: Adoration, Agape, Reverence</span></div>
+        <div class="def"><b>Empathy <em>(noun)</em></b><span class="d">The deep cognitive and emotional capacity to share and understand the internal state of another.</span><span class="x">see also: Sympathy, Compassion, Emotional Resonance</span></div>
+        <div class="def"><b>Endearment <em>(noun)</em></b><span class="d">An expression of affection that reinforces emotional security and mutual happiness.</span><span class="x">see also: Affection, Devotion, Trust</span></div>
+        <div class="def"><b>Eros <em>(noun, Gk.)</em></b><span class="d">Passions that integrate the intellect, imagination and physical self into an intense desire for beauty and union.</span><span class="x">see also: Agape, Philia, Intimacy</span></div>
+        <div class="def"><b>Fondness <em>(noun)</em></b><span class="d">A warm, affectionate liking for someone or something that brings consistent joy.</span><span class="x">see also: Affection, Endearment</span></div>
+        <div class="def"><b>Gratitude <em>(noun)</em></b><span class="d">The transformative cognitive state of recognising and appreciating the good within reality.</span><span class="x">see also: Thankfulness, Appreciation</span></div>
+        <div class="def"><b>Harmony <em>(noun)</em></b><span class="d">The orderly, aesthetically pleasing integration of all aspects of life, thought and feeling.</span><span class="x">see also: Concord, Unity, Oneness</span></div>
+        <div class="def"><b>Kvell <em>(verb / noun, Yiddish)</em></b><span class="d">A distinct, expansive feeling of intense pride and joy in the achievements of someone close.</span><span class="x">see also: Amour-propre, Gratitude, Flourishing</span></div>
+        <div class="def"><b>Oneness <em>(noun)</em></b><span class="d">A deep transcendent state of feeling completely connected to all of existence, or to a profound truth.</span><span class="x">see also: Unity, Communion, Transcendence</span></div>
+        <div class="def"><b>Philia <em>(noun, Gk.)</em></b><span class="d">Intimate, authentic, intellectually stimulating friendship based on mutual admiration and shared values.</span><span class="x">see also: Amity, Agape, Storge</span></div>
+        <div class="def"><b>Reverence <em>(noun)</em></b><span class="d">A feeling of profound awe, respect and quiet joy in the presence of beauty, truth or life.</span><span class="x">see also: Adoration, Transcendence, Agape</span></div>
+        <div class="def"><b>Storge <em>(noun, Gk.)</em></b><span class="d">The deep, natural, instinctive affection and emotional security found within family bonds.</span><span class="x">see also: Attachment, Philia, Agape</span></div>
+        <div class="def"><b>Sympathy <em>(noun)</em></b><span class="d">An affinity between minds that allows for mutual understanding and shared emotional relief.</span><span class="x">see also: Empathy, Compassion, Emotional Resonance</span></div>
+        <div class="def"><b>Tenderness <em>(noun)</em></b><span class="d">A soft, warm emotional state that actively calms the nervous system and relaxes the intellect.</span><span class="x">see also: Affection, Warmth, Compassion</span></div>
+        <div class="def"><b>Thankfulness <em>(noun)</em></b><span class="d">The expressive manifestation of gratitude that lightens the heart and clears the mind.</span><span class="x">see also: Gratitude, Appreciation</span></div>
+        <div class="def"><b>Unity <em>(noun)</em></b><span class="d">The feeling of being part of an undivided whole, eliminating feelings of isolation or alienation.</span><span class="x">see also: Oneness, Belonging, Communion</span></div>
+        <div class="def"><b>Warmth <em>(noun)</em></b><span class="d">A gentle, comforting radiance of kindness and emotional accessibility.</span><span class="x">see also: Tenderness, Affection, Compassion</span></div>
+      </div>
+    </div>
+
+    <div class="gloss-group">
+      <h4>Extended terms</h4>
+      <div class="defs">
+        <div class="def"><b>Acceptance <em>(noun)</em></b><span class="d">The fundamental hunger to be received exactly as one is; the base of emotional life.</span><span class="x">see also: Belonging, Validation, Self-Actualization</span></div>
+        <div class="def"><b>Affective <em>(adjective)</em></b><span class="d">Pertaining to emotion, feeling and mood; the thesis reads emotional life through an emotive-cognitive lens.</span><span class="x">see also: Interpersonal, Relational</span></div>
+        <div class="def"><b>Autonomy <em>(noun)</em></b><span class="d">Personal independence, held in productive tension with the enduring need for communal connection.</span><span class="x">see also: Boundaries, Identity, Concord</span></div>
+        <div class="def"><b>Boundaries <em>(noun, pl.)</em></b><span class="d">The limits that let a person belong while staying balanced and sustainable.</span><span class="x">see also: Autonomy, Emotional Security</span></div>
+        <div class="def"><b>Compassion <em>(noun)</em></b><span class="d">A felt concern for another's suffering that moves one to care for their welfare.</span><span class="x">see also: Empathy, Sympathy, Nurturance</span></div>
+        <div class="def"><b>Connection <em>(noun)</em></b><span class="d">The intricate mechanism of shared feeling and relation that links one person to another.</span><span class="x">see also: Communion, Intimacy, Belonging</span></div>
+        <div class="def"><b>Emotional Intelligence <em>(noun)</em></b><span class="d">The capacity to perceive and use emotion with the nuance and sensitivity that complex decisions require.</span><span class="x">see also: Emotional Maturity, Empathy, Mindfulness</span></div>
+        <div class="def"><b>Emotional Maturity <em>(noun)</em></b><span class="d">The well-adjusted balance between wholeness and individuality.</span><span class="x">see also: Emotional Intelligence, Flourishing, Self-Love</span></div>
+        <div class="def"><b>Emotional Resonance <em>(noun)</em></b><span class="d">The felt alignment and echo between people's emotional states.</span><span class="x">see also: Empathy, Sympathy, Connection</span></div>
+        <div class="def"><b>Emotional Security <em>(noun)</em></b><span class="d">A felt baseline of safety that enables perspective-taking, trust and growth.</span><span class="x">see also: Attachment, Trust, Belonging</span></div>
+        <div class="def"><b>Flourishing <em>(noun)</em></b><span class="d">Sustained emotional and cognitive maturity and well-being arising from growth and pride.</span><span class="x">see also: Self-Actualization, Kvell, Well-Being</span></div>
+        <div class="def"><b>Identity <em>(noun)</em></b><span class="d">The sense of self that is shaped through connection, resilience and relation.</span><span class="x">see also: Self-Concept, Belonging, Autonomy</span></div>
+        <div class="def"><b>Interpersonal <em>(adjective)</em></b><span class="d">Relating to interactions and relationships between people, where emotional life is fulfilled.</span><span class="x">see also: Affective, Relational, Connection</span></div>
+        <div class="def"><b>Intimacy <em>(noun)</em></b><span class="d">A close, reciprocal sharing of the self that forms the bedrock of emotional hardiness and stability.</span><span class="x">see also: Communion, Vulnerability, Connection</span></div>
+        <div class="def"><b>Mindfulness <em>(noun)</em></b><span class="d">The practice of approaching one's own thoughts and feelings with tender curiosity.</span><span class="x">see also: Self-Compassion, Acceptance, Emotional Intelligence</span></div>
+        <div class="def"><b>Nurturance <em>(noun)</em></b><span class="d">The active provision of care that supports another's &mdash; or one's own &mdash; well-being.</span><span class="x">see also: Compassion, Devotion, Benevolence</span></div>
+        <div class="def"><b>Relational <em>(adjective)</em></b><span class="d">Concerning the bonds and exchanges between people rather than the isolated self.</span><span class="x">see also: Interpersonal, Affective, Connection</span></div>
+        <div class="def"><b>Self-Actualization <em>(noun)</em></b><span class="d">The fulfilment of one's potential, fuelled by security and gratitude.</span><span class="x">see also: Flourishing, Emotional Maturity, Amour-propre</span></div>
+        <div class="def"><b>Self-Compassion <em>(noun)</em></b><span class="d">The extension of tender, accepting care toward oneself; described in the thesis as the key to sound agape.</span><span class="x">see also: Amour-propre, Self-Love, Tenderness</span></div>
+        <div class="def"><b>Self-Concept <em>(noun)</em></b><span class="d">The mental picture a person holds of who they are.</span><span class="x">see also: Identity, Self-Esteem, Amour-propre</span></div>
+        <div class="def"><b>Self-Esteem <em>(noun)</em></b><span class="d">One's overall appraisal of personal worth.</span><span class="x">see also: Amour-propre, Self-Compassion, Validation</span></div>
+        <div class="def"><b>Self-Love <em>(noun)</em></b><span class="d">Genuine care and regard for oneself, presented in the thesis as a foundation of emotional maturity.</span><span class="x">see also: Amour-propre, Self-Compassion, Kvell</span></div>
+        <div class="def"><b>Transcendence <em>(noun)</em></b><span class="d">The elevation beyond the ordinary self toward values, unity or a profound truth.</span><span class="x">see also: Agape, Oneness, Reverence</span></div>
+        <div class="def"><b>Trust <em>(noun)</em></b><span class="d">A confident reliance on another's reliability and goodwill, built through consistent care.</span><span class="x">see also: Attachment, Emotional Security, Vulnerability</span></div>
+        <div class="def"><b>Validation <em>(noun)</em></b><span class="d">The affirmation of one's worth; when it comes only from outside, it yields a fragile emotional state.</span><span class="x">see also: Acceptance, Self-Esteem, Amour-propre</span></div>
+        <div class="def"><b>Vulnerability <em>(noun)</em></b><span class="d">An openness to emotional exposure that, within secure connection, is transformed from personal risk into collective strength.</span><span class="x">see also: Trust, Intimacy, Acceptance</span></div>
+        <div class="def"><b>Well-Being <em>(noun)</em></b><span class="d">Overall psychological flourishing, encompassing emotional and interpersonal fulfilment.</span><span class="x">see also: Flourishing, Emotional Maturity</span></div>
+      </div>
+    </div>
+
+    <h3>Terms and traditions named in the document</h3>
+    <div class="names">
+      <div class="person"><b>Eros, Storge, Philia, Agape</b><span>The four Greek loves used to organise the section on devotion &mdash; desire, family, friendship, and selfless love.</span></div>
+      <div class="person"><b>Amour-propre</b><span>French, used for a healthy, justified self-love and pride in one's own worth.</span></div>
+      <div class="person"><b>Kvell</b><span>Yiddish, for the swelling of pride and joy &mdash; in one's own achievements as much as in another's.</span></div>
+      <div class="person"><b>Abraham Maslow</b><span>Named for the hierarchy of needs, where belonging sits just above safety.</span></div>
+      <div class="person"><b>Aristotle</b><span>Reached through the document's sources on <em>philia</em> and the <em>Nicomachean Ethics</em>.</span></div>
+      <div class="person"><b>Oxytocin and mirror neurons</b><span>The biochemical and neural threads that recur across the sections on affection and empathy.</span></div>
+    </div>
+
+    <div class="note">
+      <b>About this page.</b> This is a reading companion, not a copy: it follows the document's structure and keeps its vocabulary &mdash; amour-propre, kvell, agape, eros, storge, philia, amity, concord, tenderness &mdash; while the sentences have been re-punctuated and lightly smoothed so the argument reads cleanly. The document's own glossary has been reproduced in full at the end. The work is by <strong>Rui Manuel de Almeida Pinheiro</strong>, credited here at the author's own instruction; the contact details and site link carried at the end of the source file are reproduced in the author panel below rather than in the body of the page.
+    </div>
+  </section>
+
+  <section id="ch12" class="author">
+    <div class="author-top">
+      <div class="sigil">RP</div>
+      <div class="author-id">
+        <b>Rui Manuel de Almeida Pinheiro</b>
+        <span>Author of &ldquo;Women's Emotional Life: The Relational, Affective &amp; Synaesthetic Dimension&rdquo;</span>
+      </div>
+    </div>
+
+    <div class="bio">
+      <div class="row">
+        <b>Born</b>
+        <p>Lisbon, Arroios &mdash; Sunday, August 2, 1953, at 6:00 a.m.</p>
+      </div>
+      <div class="row">
+        <b>The journey</b>
+        <p>A path through medicine, stock-exchange revolutions, IBM mainframes, and the frontier of generative AI.</p>
+      </div>
+      <div class="row">
+        <b>Ethos</b>
+        <p>Always worked in project areas &mdash; &ldquo;I always hated maintenance.&rdquo; A lasting focus on the structural aspects of systems, and a passion for programming that runs from Assembler to modern LLM pipelines.</p>
+      </div>
+      <div class="row motto">
+        <b>Motto</b>
+        <p>&ldquo;Just do what you say. Say what you think. Keep drama outside.&rdquo;</p>
+      </div>
+    </div>
+
+    <div class="author-foot">
+      <img class="author-pic" src="https://storage.googleapis.com/tera-server-manager/ai/agent/upload/image/47f555babe0dff6c4f0004768bdc483f.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=terabox-fe-cloud-storage%40terabox-fe-408007.iam.gserviceaccount.com%2F20261110%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261110T083150Z&X-Goog-Expires=604799&X-Goog-Signature=4401bfe6544d2083a133c729a96e45002849e8d0f6f531b0f1200aad257800d10c805ac94a88d9c58a1fbf15df8369a3f11dd51a292b08905dc61de2481b7bd91091cea5a83d407b046d2e0bf98bbf58d6364574c97c908d0d4c8ae57e2cede92383293171ea69017a1a81b24726598951979ef68c6738a63dabb50b9c4898475005649592189e162a387c40cfb13042293637482dbf6e67f8f0c067d742d2dd60d73de215b3e645de1143fa66b8649f4a273c27ffc664e3d809ad71e689d88cb95b84b7fb438ce7754eabe9a2e4354f50d7da0fc733bb31171b569e482280a62ac5c4db05a8f27802b390da6f30b931d124f392dbe965188d41dd4a766360eb&X-Goog-SignedHeaders=host" alt="Rui Manuel de Almeida Pinheiro" loading="lazy">
+      <p class="author-contact">
+        <span class="lbl">Website</span> <a href="https://ruimanuelalmeidapinheiro.work" rel="noopener">ruimanuelalmeidapinheiro.work</a><br>
+        <span class="lbl m">Email</span> <a class="m" href="mailto:main@ruimanuelalmeidapinheiro.work">main@ruimanuelalmeidapinheiro.work</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p><b>Women's Emotional Life: The Relational, Affective &amp; Synaesthetic Dimension</b><br>
+    by <strong>Rui Manuel de Almeida Pinheiro</strong> &middot; a written companion page to the document &middot; glossary reproduced &middot; terms kept in their original languages: eros, storge, philia, agape, amour-propre, kvell</p>
+    <a class="up" href="#top">Back to the top</a>
+  </footer>
+
+</div>
+</body>
+</html>
