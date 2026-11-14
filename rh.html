@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Closes In On Math's Biggest Target &mdash; Reading Companion</title>
+<style>
+:root{
+  --bg:#F6F2FB;
+  --card:#ffffff;
+  --ink:#3B2A6B;
+  --ink2:#5A3E9E;
+  --muted:#7A4FC0;
+  --a:#5B34B8;
+  --a-deep:#3F1F8F;
+  --a-soft:#EDE6FB;
+  --b:#0E7C6B;
+  --b-deep:#0A5A4E;
+  --b-soft:#DFF3EE;
+  --c:#B36A05;
+  --c-deep:#8A4E00;
+  --c-soft:#FBEFD8;
+  --line:rgba(91,52,184,.16);
+  --shadow:0 14px 34px rgba(63,31,143,.10);
+  --shadow-sm:0 6px 18px rgba(63,31,143,.08);
+  --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background-color:var(--bg);
+  background-image:
+    radial-gradient(880px 500px at 2% -8%, rgba(91,52,184,.13), transparent 62%),
+    radial-gradient(760px 470px at 100% 0%, rgba(179,106,5,.14), transparent 60%),
+    radial-gradient(760px 480px at 50% 106%, rgba(14,124,107,.15), transparent 62%);
+  background-attachment:fixed;color:var(--ink);
+  font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.68;font-size:17px;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1020px;margin:0 auto;padding:0 20px 72px}
+
+.hero{position:relative;margin:34px 0 26px;padding:38px 34px 34px;border-radius:26px;
+  background:linear-gradient(135deg,#ffffff 0%,#FCFAFE 45%,var(--a-soft) 100%);
+  border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
+.hero:before{content:"";position:absolute;right:-86px;top:-96px;width:256px;height:256px;border-radius:50%;
+  background:radial-gradient(circle at 40% 40%, rgba(179,106,5,.26), rgba(179,106,5,0) 68%)}
+.hero:after{content:"";position:absolute;left:-76px;bottom:-116px;width:236px;height:236px;border-radius:50%;
+  background:radial-gradient(circle at 60% 40%, rgba(14,124,107,.24), rgba(14,124,107,0) 70%)}
+.hero>*{position:relative;z-index:1}
+.kicker{display:inline-block;font-size:.7rem;letter-spacing:.19em;text-transform:uppercase;font-weight:700;
+  color:var(--a-deep);background:var(--a-soft);border:1px solid rgba(91,52,184,.24);
+  padding:6px 13px;border-radius:999px;margin-bottom:16px}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.5rem,3.6vw,2.15rem);
+  line-height:1.22;margin:0 0 12px;color:var(--a-deep);letter-spacing:-.01em}
+.hero .sub{font-size:1.03rem;color:var(--ink2);margin:0 0 18px;max-width:64ch}
+.meta{display:flex;flex-wrap:wrap;gap:9px}
+.meta span{font-size:.78rem;color:var(--b-deep);background:#fff;border:1px solid var(--line);
+  padding:6px 12px;border-radius:999px;box-shadow:var(--shadow-sm)}
+
+.toc{margin:0 0 30px;padding:22px 24px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+.toc h2{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--a-deep);
+  margin:0 0 14px;font-family:"Segoe UI",Arial,sans-serif}
+.toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:30px}
+.toc li{margin:0 0 8px;break-inside:avoid;font-size:.94rem}
+.toc a{color:var(--ink2);text-decoration:none;display:flex;gap:9px;line-height:1.42}
+.toc a:hover{color:var(--a-deep)}
+.toc b{flex:0 0 1.35rem;color:var(--muted);font-weight:700}
+
+section{margin:0 0 30px;padding:26px 26px 24px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+section h2{font-family:Georgia,"Times New Roman",serif;font-size:1.24rem;line-height:1.3;
+  margin:0 0 14px;color:var(--a-deep);display:flex;gap:11px;align-items:baseline}
+section h2 .num{flex:0 0 auto;font-family:"Segoe UI",Arial,sans-serif;font-size:.74rem;font-weight:700;
+  color:#fff;background:var(--a);border-radius:8px;padding:3px 9px;letter-spacing:.03em}
+section p{margin:0 0 13px}
+section p:last-child{margin-bottom:0}
+.lede{font-size:1.03rem;color:var(--ink2);border-left:3px solid var(--b);padding-left:14px;font-style:italic}
+section strong{color:var(--a-deep)}
+section em{color:var(--b-deep);font-style:italic}
+
+.pull{margin:20px 0;padding:18px 20px;background:var(--a-soft);border-left:4px solid var(--a);
+  border-radius:12px}
+.pull p{margin:0 0 8px;font-family:Georgia,"Times New Roman",serif;font-size:1.06rem;line-height:1.5;
+  color:var(--a-deep)}
+.pull cite{display:block;font-size:.8rem;color:var(--muted);font-style:normal}
+
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}
+.chips span{font-size:.82rem;color:var(--b-deep);background:var(--b-soft);
+  border:1px solid rgba(14,124,107,.28);padding:6px 13px;border-radius:999px}
+
+.two-lists{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}
+@media(max-width:680px){.two-lists{grid-template-columns:1fr}}
+.listcard{background:#FCFAFE;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.listcard h3{margin:0 0 10px;font-size:.95rem;color:var(--a-deep);letter-spacing:.01em}
+.listcard ul{margin:0;padding-left:19px}
+.listcard li{margin:0 0 6px;font-size:.94rem}
+.listcard.warn{background:var(--c-soft);border-color:rgba(179,106,5,.26)}
+.listcard.warn h3{color:var(--c-deep)}
+.flag{margin:12px 0 0;padding-top:11px;border-top:1px dashed rgba(91,52,184,.26);
+  font-size:.86rem;color:var(--muted)}
+
+.steps{margin:18px 0;display:grid;gap:12px}
+.step{display:flex;gap:13px;align-items:flex-start}
+.step i{flex:0 0 30px;height:30px;border-radius:9px;background:var(--b);color:#fff;font-style:normal;
+  font-weight:700;font-size:.86rem;display:flex;align-items:center;justify-content:center}
+.step div{font-size:.95rem}
+.step b{color:var(--a-deep)}
+
+.tblwrap{margin:18px 0;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--a-soft);color:var(--a-deep);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+tr:last-child td{border-bottom:0}
+td:first-child{white-space:nowrap;color:var(--c-deep);font-weight:700}
+.scap{margin:8px 0 0;font-size:.83rem;color:var(--muted)}
+
+.qcard{margin:12px 0;padding:14px 17px;border-radius:12px;background:var(--b-soft);
+  border-left:4px solid var(--b)}
+.qcard b{display:block;color:var(--b-deep);font-size:.95rem;margin-bottom:5px}
+.qcard span{font-size:.92rem}
+.qcard.q1{background:var(--a-soft);border-left-color:var(--a)}
+.qcard.q1 b{color:var(--a-deep)}
+.qcard.q2{background:var(--c-soft);border-left-color:var(--c)}
+.qcard.q2 b{color:var(--c-deep)}
+
+.cnote{margin:18px 0;padding:15px 18px;background:#FCFAFE;border:1px dashed rgba(91,52,184,.3);
+  border-radius:12px;font-size:.9rem;color:var(--ink2)}
+
+.pulse{margin:18px 0;padding:16px 19px;border-radius:12px;background:var(--c-soft);
+  border-left:4px solid var(--c)}
+.pulse b{color:var(--c-deep)}
+
+.closing{margin:20px 0 0;padding:18px 20px;border-radius:12px;background:var(--a-soft);
+  border-left:4px solid var(--a);font-size:.96rem;color:var(--a-deep)}
+
+.note{margin:26px 0 14px;padding:18px 20px;background:#FCFAFE;border:1px solid var(--line);
+  border-radius:14px;font-size:.88rem;color:var(--muted)}
+.note p{margin:0 0 8px}
+.note p:last-child{margin-bottom:0}
+.foot-note{font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+
+footer{margin:34px 0 0;padding:22px 24px;text-align:center;border-top:1px solid var(--line)}
+footer p{margin:0 0 12px;font-size:.9rem;color:var(--ink2)}
+footer b{color:var(--a-deep)}
+.up{display:inline-block;font-size:.8rem;color:var(--a-deep);text-decoration:none;
+  border:1px solid var(--line);background:#fff;padding:7px 15px;border-radius:999px;
+  box-shadow:var(--shadow-sm)}
+@media(max-width:760px){.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<div class="wrap" id="top">
+
+  <header class="hero">
+    <span class="kicker">Conversation &middot; Reading Companion</span>
+    <h1>AI Closes In On Math's Biggest Target</h1>
+    <p class="sub">A mathematician walks through what the new result about the zeros of the zeta function actually claims &mdash; and then through the stranger question underneath it: what mathematics is for, and who gets to do it.</p>
+    <div class="meta">
+      <span>Themes: the Riemann hypothesis, prime numbers, formal proof, and the future of mathematical work</span>
+      <span>Transcribed from an English auto-captioned conversation</span>
+      <span>Recorded in October 2026</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Contents">
+    <h2>What's inside</h2>
+    <ol>
+      <li><a href="#ch1"><b>1</b> A result nobody expected to live to see</a></li>
+      <li><a href="#ch2"><b>2</b> Mathematics feeling the upheaval</a></li>
+      <li><a href="#ch3"><b>3</b> From the Olympiads to the frontier</a></li>
+      <li><a href="#ch4"><b>4</b> Two ways a machine can write a proof</a></li>
+      <li><a href="#ch5"><b>5</b> Lean, Mathlib and the rectangle trick</a></li>
+      <li><a href="#ch6"><b>6</b> Gauss's tables and Riemann's paper</a></li>
+      <li><a href="#ch7"><b>7</b> Why anyone should care</a></li>
+      <li><a href="#ch8"><b>8</b> Euler, the Basel problem and the zeta function</a></li>
+      <li><a href="#ch9"><b>9</b> How the primes appear inside the sum</a></li>
+      <li><a href="#ch10"><b>10</b> Making the exponents complex</a></li>
+      <li><a href="#ch11"><b>11</b> Reading the zeros through logarithms</a></li>
+      <li><a href="#ch12"><b>12</b> Euler's eclipse paper and the trivial zeros</a></li>
+      <li><a href="#ch13"><b>13</b> The critical strip and the trillions of checks</a></li>
+      <li><a href="#ch14"><b>14</b> What the new result actually claims</a></li>
+      <li><a href="#ch15"><b>15</b> The night the papers dropped</a></li>
+      <li><a href="#ch16"><b>16</b> Has it run out of steam?</a></li>
+      <li><a href="#ch17"><b>17</b> Could it do an Einstein?</a></li>
+      <li><a href="#ch18"><b>18</b> What it still cannot do</a></li>
+      <li><a href="#ch19"><b>19</b> What we would lose, and the university</a></li>
+      <li><a href="#ch20"><b>20</b> Pointing the telescope</a></li>
+      <li><a href="#ch21"><b>21</b> The one thing it cannot do</a></li>
+      <li><a href="#ch22"><b>22</b> What to tell students</a></li>
+      <li><a href="#ch23"><b>23</b> Who gets hired</a></li>
+      <li><a href="#ch24"><b>24</b> Who's speaking</a></li>
+    </ol>
+  </nav>
+
+  <section id="ch1">
+    <h2><span class="num">1</span>A result nobody expected to live to see</h2>
+    <p class="lede">The conversation opens with the question every big result invites: will you remember where you were when you heard?</p>
+    <p>The guest does not have to think about it. If you had asked him on 29 September how much he would bet that within the next month &mdash; or within his lifetime &mdash; he would see this result, he would not have taken the bet. He was not expecting to live to see it.</p>
+    <p>The problem in question is one of the most famous open problems in mathematics: proving the <strong>Riemann hypothesis</strong>. At bottom it is about the distribution of the prime numbers.</p>
+    <p>Primes are whole numbers bigger than one that cannot be written as a product of two smaller whole numbers: 2, 3, 5, 7, 11 and so on. When numbers are small, primes are easy to find. As numbers get larger it gets much more difficult, and there is no practical formula that simply produces the next prime, and then the next one after that.</p>
+    <p>So mathematicians approach the primes in a different way. They ask how many primes you expect there to be on average in a given interval on the number line &mdash; equivalently, near a given number, call it <em>x</em>. If you find one prime, call it <em>p</em>, how far on average do you have to walk to find the next one, call it <em>q</em>? The answer, on average, is roughly the natural logarithm of <em>x</em>. That is the <strong>prime number theorem</strong>.</p>
+    <p>In Riemann's day it was still only a conjecture, and Riemann saw that the key to proving it &mdash; and to making it sharper &mdash; was to study a function called the zeta function. If you can find where that function takes the value zero, you can extract deep insights into the distribution of the primes. There is a conjecture about where all the interesting zeros lie, and nobody has been able to prove it. Whoever does will also have solved one of the Clay Mathematics Institute's Millennium Problems.</p>
+    <div class="chips">
+      <span>The primes: 2, 3, 5, 7, 11 &hellip;</span>
+      <span>The average gap: about the natural logarithm of the number</span>
+      <span>The target: where the zeta function vanishes</span>
+    </div>
+    <p>You might expect the next sentence to be that AI has solved the problem. It has not &mdash; at least not yet. Instead it has taken an important step towards a solution, narrowing down the locations where the zeta function might be zero. Even that partial step, the host says, has blown mathematicians away.</p>
+    <p>The guest is <strong>Alex Kontorovich</strong>, professor of mathematics at Rutgers, an expert in these matters and, the host adds, someone with a very down-to-earth and healthy perspective on AI and mathematics. The plan for the conversation is to dig into the essential ideas behind the Riemann hypothesis, and then to turn to the more general question of what is happening to mathematics in the era of AI.</p>
+  </section>
+
+  <section id="ch2">
+    <h2><span class="num">2</span>Mathematics feeling the upheaval</h2>
+    <p>We are in a very unusual time in the history of our species, the host says &mdash; and right now it is mathematics that is really feeling the upheaval from artificial intelligence, perhaps more than any other field. Coding felt the impact in the recent past, but there is almost an existential-crisis sensibility to what is happening in mathematics.</p>
+    <p>He describes walking around the Columbia mathematics department. A panel discussion a couple of weeks earlier, on the Buckmaster work and Navier&ndash;Stokes, filled one of the lecture halls and an overflow room. He had never seen that kind of interest, excitement, dread, terror and wonder. Where would the guest place himself on that spectrum?</p>
+    <p>Ten years ago, the guest says, people were saying that long-haul trucking was going to be automated. It looks like mathematical theorem proving is going to get there before the trucking does.</p>
+    <p>As for where he is: <em>yes and yes</em>. These systems are making extremely disruptive contributions to mathematics, if you want to call them contributions. It is a great disruption to our modus operandi &mdash; and that is not necessarily a bad thing. It could become a bad thing if we all make a series of very bad decisions, one after another, independently. He personally does not think we are that foolish; he thinks the ecosystem around mathematics will come to understand what all of this means soon enough.</p>
+    <div class="pull">
+      <p>The &ldquo;holy crap, AI can solve major mathematical problems&rdquo; moment can only happen once.</p>
+      <cite>The guest, on why the shock will not repeat</cite>
+    </div>
+    <p>That moment can only happen once. Once we know the capability is there &mdash; and we have been slammed by one massive breakthrough after another, sometimes 700 of them at the same time &mdash; we will get used to the fact that this is possible.</p>
+    <p>Six weeks before the recording, this was completely impossible. It was not in the realm of possibility. If he had tried to extrapolate a year or two ahead at the pace things were going, maybe; but not the day before.</p>
+    <p>Now that the moment has happened, he expects many more such moments, and he expects them to become more the norm. We will have to reach new equilibria. All of our standard equilibria &mdash; about how we train young mathematicians &mdash; are up for grabs. Mathematics is deeply invested in the next generation: by the time you get tenure, you know that the future is young people. He still loves the new theorems he is coming up with, but he is also very interested in mentorship, in postdocs and graduate students, and that is where so much of the research atmosphere lives.</p>
+    <p>So it is very concerning for graduate students and postdocs. There is a whole separate conversation to be had about the frontier labs, how they are rolling these things out, and all the decisions that have to get made. But long term, he says, he thinks this will have a very positive impact on mathematics.</p>
+    <p>The host calls that a positive outlook, and one that is not often articulated. Before the general questions, he wants to know which of the recent achievements left people reeling with disbelief.</p>
+  </section>
+
+  <section id="ch3">
+    <h2><span class="num">3</span>From the Olympiads to the frontier</h2>
+    <p>You could go back three weeks, three months, or three years, the guest says. Three years ago was the first time AI systems started attacking IMO problems &mdash; the International Mathematical Olympiad, a high-school-level competition in which the top students in the world compete.</p>
+    <p>He did not compete in them himself; he did not know about them as a kid, and he does not think he would have been any good at them. The most recent paper he put on the archive had been in his head for ten years. That is more the scale he prefers.</p>
+    <p>Summer 2024 was when DeepMind's AlphaProof system came one point short of a gold medal. That system was based on Lean and on formalised mathematics. The following summer, 2025, a handful of systems claimed gold medals &mdash; some working formally, others working purely in natural language, which was somewhat surprising. It turns out that natural language alone can get you to a point where a system goes from the beginning to the end of a proof without making a mistake, at least as far as human beings can tell.</p>
+    <p>Then, in September 2025 &mdash; almost exactly a year before this conversation &mdash; Terence Tao and the guest had been organising something called the <strong>PrimeNumberTheorem+</strong> project. The aim was to develop, in Lean, the technology of complex analysis needed for the argument, and to prove the prime number theorem formally. It had been done before in other systems: Jeremy Avigad had done it in Isabelle, and people had done it in a variety of other interactive theorem provers. They wanted it done in Lean, so they built their own complex analysis in order to get there.</p>
+  </section>
+
+  <section id="ch4">
+    <h2><span class="num">4</span>Two ways a machine can write a proof</h2>
+    <p>Since the two approaches had come up, the host asks for a short tutorial on them. The very rough protocol for a large language model, the guest says, is that it is a function whose input is context. Sitting here talking, he knows which words the host recently said and which words he recently said, and one by one his mouth is choosing to put out the next word, based on his brain's model of language and his whole experience. A large language model is simply a function from context to a probability distribution over the next possible tokens, with some choice made from that distribution. That is the vanilla version; what is going on now is much more sophisticated, with chain of thought and reasoning models generally.</p>
+    <p>Then comes the difference that matters. Between a beautiful jazz solo and mathematics, there is this: there is no wrong note in jazz. In fact some of the best notes are the ones that start out being wrong. Mathematics is the opposite. It has logical rules of inference, and they are hard rules: you have to say what is true based on what came before. That is a deterministic process, not a stochastic one.</p>
+    <div class="two-lists">
+      <div class="listcard">
+        <h3>Natural language</h3>
+        <ul>
+          <li>A system writes the proof in ordinary prose</li>
+          <li>It got good enough to go from start to finish without error</li>
+          <li>But human beings still had to look the arguments over to certify them</li>
+        </ul>
+        <p class="flag">The computer proposes; a person signs off.</p>
+      </div>
+      <div class="listcard warn">
+        <h3>Formal systems</h3>
+        <ul>
+          <li>The rules of inference are hard-coded in the software</li>
+          <li>The machine writes out which rule applies at each step</li>
+          <li>If it compiles, no human is needed in the loop at all</li>
+        </ul>
+        <p class="flag">This is what AlphaProof was built on.</p>
+      </div>
+    </div>
+    <p>People got to the point where large language models made fewer and fewer mistakes, until they could go from the beginning to the end of a rather complicated proof without any mistake &mdash; but you still had human beings looking over those arguments to certify that they really would have earned full marks on an Olympiad problem. The formal systems are different. Their logical rules are hard-coded, and if the machine can write out the code that says which rule of inference to apply when, starting from the statement of the theorem and ending with a complete proof as compiled by Lean, then there is no human in the loop. That is exactly what the AlphaProof project was based on: reinforcement learning with a formal system, because you do not need a human being to check whether it got there or not.</p>
+    <p>Lean, in the guest's description, takes a proof and breaks it down into the most minimal steps, each one justified by a rule of deductive reasoning. If it can write the proof out that way, you know it is correct. There is no question any longer.</p>
+    <p>The modern large language models are in fact doing something pretty similar, with one caveat: instead of a hard-coded rule of deduction checking the inference from one small step to the next, a thousand agents swarm around breaking the proof into tiny steps, and then another language model judges whether each step has been taken appropriately. That is the kind of thing they are getting really good at now.</p>
+  </section>
+
+  <section id="ch5">
+    <h2><span class="num">5</span>Lean, Mathlib and the rectangle trick</h2>
+    <p>Complex-analytic arguments typically work like this: you draw a curve, and you argue about what happens to that curve and about which zeros are inside it and which are outside. You might imagine that would be a pretty annoying thing to explain to a computer. Following logical rules of inference means that the first thing you have to do is express everything you want to argue in a computer language, so that the computer can understand what you are saying.</p>
+    <p>That is a very different exercise from going to the blackboard, drawing a picture and saying that this point is inside &mdash; where your colleague says, obviously. So in what generality do you want to make these arguments?</p>
+    <p>Lean, the guest explains, is just a computer system that lets you check inference. It has remarkable technology for doing that at scale, with tactics and metaprogramming. But it does not actually contain very much mathematics at all. You do not want to start a formalisation project by saying, all right, the natural numbers are zero and the successor, and out of that we are going to make the integers; please, someone else do all this for me &mdash; the very basic things that we all assume need to be in the computer from the get-go.</p>
+    <p>That is what <strong>Mathlib</strong> is. The hope is that what is in the computer at the outset is basically all of current mathematical knowledge, and Mathlib keeps expanding to embrace anything that has reached the level of rigour that Lean will give the thumbs-up to.</p>
+    <p>People are very particular about what gets added to the library, because the principles of software engineering and good mathematics agree here. If you have an argument that you run again and again, that should be set aside as a lemma you get to quote; you should not have to keep doing it over. It is more efficient, and it is more elegant. There are all kinds of ways in which software engineering and mathematical aesthetics turn out to be well matched for this kind of project.</p>
+    <p>And the mathematics itself: the mathematical way to do complex analysis still has not been worked out. What the guest realised &mdash; and this is when he approached Terry &mdash; is that all of the complex analysis needed for Riemann's arguments, and for Hadamard and de la Vall&eacute;e Poussin's arguments for the prime number theorem, could be done using calculus on rectangles. Residue calculus, where the only object you have to worry about is a rectangle. Then you know what inside and outside mean, and you know what it means to integrate over that contour, without needing to think about parameterisations and all the other complications that arise in complex analysis when you can draw it for your friend on the blackboard, rather than telling a computer concretely what is going on.</p>
+    <div class="cnote">
+      The virtue of the rectangle is unglamorous but decisive: it is the one shape whose inside, outside and boundary can be handed to a machine without ambiguity.
+    </div>
+  </section>
+
+  <section id="ch6">
+    <h2><span class="num">6</span>Gauss's tables and Riemann's paper</h2>
+    <p>The host asks for the background to be spelled out, starting with what the prime number theorem actually says. Gauss, the guest explains, was playing around with computing tables in about 1795, when he was a kid, and was bored for half an hour. Kids do not get bored these days; they have their phones, they scroll. If there had been scrolling back then, there would have been no Gauss.</p>
+    <p>So Gauss was bored out of his mind, and the thing he could think to do that would entertain him was to compute huge tables of prime numbers. He did this out to three million. When he got bored of prime tables, he did tables of logarithms. And he observed, miraculously, that the rate at which the proportion of primes in an interval drops off is one over the natural logarithm of the size of the numbers. The density of the primes is basically one over the log of the number you are looking at. He hypothesised that this would be the actual long-term distribution, and that became known as Gauss's conjecture. That was 1801.</p>
+    <p>Then, in 1859, Bernhard Riemann &mdash; Gauss's student, who held the Gauss chair at G&ouml;ttingen &mdash; wrote his one manuscript on number theory. (He has many papers on many other things; he invented the geometry as we now understand it, which is exactly what Einstein needed for the general theory of relativity.) In that one paper he took what used to be called the zeta function &mdash; a real-valued function &mdash; gave it a complex-valued interpretation, and extended its definition to all complex numbers. He showed that if you understood something about where this function vanishes &mdash; which inputs give an output of exactly zero in the complex plane &mdash; that would explain many things about the distribution of the primes. In particular, all you had to do was show that there were no zeros for inputs on the vertical line where the real part of <em>s</em> equals 1. There is a point at <em>s</em> equals 1 where the function blows up.</p>
+    <p>Prove such a thing, and you would get the prime number theorem: you would rigorously prove Gauss's conjecture that the proportion of primes in an interval behaves like one over the logarithm.</p>
+    <p>Moreover, Riemann said &mdash; and we now know why he said it, because much later people went through his notebooks and saw that he had actually computed the first few zeros, and that they lie on the one-half line &mdash; that there is a line of symmetry: a symmetry sending <em>s</em> to 1 &minus; <em>s</em>, which is an inversion along the line real part equals one half. Showing that the line real part equals 1 is the boundary is one thing; the centre of that line is where we believe all the zeros lie. That belief became the <strong>Riemann hypothesis</strong>. If you hypothesise that it holds, he said, then you can show not only the prime number theorem but the best possible error rate for it.</p>
+    <p>What does that mean? If you want to know how many primes there are up to a trillion, you could sit there and compute them, but that would take an awfully long time. Instead you can guess: instead of counting primes, you compute the integral of <em>dt</em> over log <em>t</em> &mdash; exactly that density &mdash; up to a trillion. There are methods for computing that extremely rapidly, and you get a long number. Its size would be about a trillion divided by the log of a trillion, so call it a hundred billion or something.</p>
+    <p>The interesting thing about the zeros all lying on the half line is this: the first half of the digits of that number would be accurate, exactly right compared with the actual prime count, and the last half must be fluctuating, because there are zeros on the half line.</p>
+    <p>So Riemann observed all of this, but he did not know how to prove his hypothesis. He did not know how to prove that there were no zeros on the line real part equals 1, so he did not prove the prime number theorem. What he did was set up the mechanism by which such a thing could be proved.</p>
+    <div class="tblwrap">
+      <table>
+        <thead>
+          <tr><th>When</th><th>What happened</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1795</td><td>Gauss, bored as a boy, computes prime tables out to three million and finds the drop-off rate</td></tr>
+          <tr><td>1801</td><td>Gauss's conjecture is written down</td></tr>
+          <tr><td>1859</td><td>Riemann's single manuscript on number theory: the zeta function made complex, the zeros, the half line</td></tr>
+          <tr><td>1896</td><td>Hadamard and de la Vall&eacute;e Poussin prove there are no zeros on the line real part equals 1, and so prove the prime number theorem</td></tr>
+          <tr><td>2024</td><td>AlphaProof comes one point short of an Olympiad gold medal</td></tr>
+          <tr><td>2025</td><td>A handful of systems claim Olympiad golds; the formalisation project reaches the prime number theorem</td></tr>
+          <tr><td>2026</td><td>The result this conversation is about</td></tr>
+        </tbody>
+      </table>
+      <p class="scap">The dates as they are given in the conversation.</p>
+    </div>
+    <p>It was not until 1896 that two mathematicians, working completely independently and in the same year, gave somewhat different but similar proofs that the zeta function does not vanish on that line, and so concluded the prime number theorem by Riemann's method. Hadamard and de la Vall&eacute;e Poussin. It was the culmination of the nineteenth century, and of what a human mind could do: taking a completely discrete question and converting it not only into a continuous question, but into one that uses the square root of negative numbers, which do not exist &mdash; and out of that, an asymptotic estimate. One year later, just to bring physics into the story, the electron was discovered. There was all sorts of crazy stuff happening at the turn of the twentieth century.</p>
+  </section>
+
+  <section id="ch7">
+    <h2><span class="num">7</span>Why anyone should care</h2>
+    <p>The host puts the obvious objection: this sounds like a great deal of hard work just to talk about where the prime numbers are. How would you describe to people why the distribution of primes matters?</p>
+    <p>The guest reaches for Flexner. When Flexner was setting up the Institute for Advanced Study in Princeton, in the 1930s, he wrote a famous essay on the usefulness of useless knowledge. He was trying to justify why society should invest in this kind of thing &mdash; why some people want to sit around thinking about obscure abstract questions that nobody will ever care about. At the time, only philanthropic dollars were going to the institute; there were no federal or taxpayer dollars to explain himself to.</p>
+    <p>Part of the argument is this. When you allow human beings the freedom to take really long bets &mdash; longer than a human lifetime, longer even than the lifetimes of empires and entire societies &mdash; and when you allow people to keep studying questions they find fascinating for no reason other than their fascination, great things come out of it. You never know which idea is going to be the one that leads to a big breakthrough.</p>
+    <p>His example is Riemann's own thesis under Gauss, which explained what Gaussian curvature really is by introducing Riemannian geometry. The question he was really trying to answer went back to Euclid's <em>Elements</em>, and to Euclid's five postulates. The first: you have two points, you can draw a line between them. The second: you have a line segment, you can extend it a little. The third: you can draw a circle given a centre and a point on the circle &mdash; that is what a compass does for you. The fourth: all right angles are equal wherever they arise, which is some kind of uniformity.</p>
+    <p>Then the fifth postulate, the magical one, an absolute mouthful: given two lines and a line crossing them, if there are two angles on the same side that add up to less than two right angles, then if you extend those two sides they will meet on that side. It is an entire paragraph, offered as something self-evident. It is not a self-evident truth. So for two thousand years people tried to show that it had to be provable as a theorem from the other axioms &mdash; that it should not stand alone as an axiom.</p>
+    <p>The looser statement people have usually heard is this: given a line and a point not on that line, there is exactly one line parallel to it. That is equivalent to the mouthful. But it matters that Euclid kept the mouthful. In the first book, the first twenty-four or twenty-five propositions &mdash; the ones that work up to the Pythagorean theorem &mdash; do not use the parallel postulate; they use only the first four. You can tell he was uncomfortable with it, but he did not know how to prove the Pythagorean theorem without it. In fact, it is not true without it.</p>
+    <div class="pull">
+      <p>Could you prove it from the other four? There is nothing more esoteric. And yet there is a direct line from that question to the mathematics that explains black holes and the existence of spacetime.</p>
+      <cite>On Euclid's fifth postulate</cite>
+    </div>
+    <p>So what people spent two thousand years on &mdash; through the fall of the Roman Empire, the fall of the Byzantine Empire, the rise and fall of one society after another &mdash; was this question. Human beings kept hacking away at it, and Gauss, Lobachevsky, Riemann and a long nineteenth-century story finally got to the bottom of it. The bottom of it is that you cannot prove the fifth postulate from the other four. Euclid was right to put it there as an axiom, because non-Euclidean geometries exist. How could anything be more esoteric and useless than arguing about whether the fifth postulate is true?</p>
+    <p>And yet there is a direct line from human beings trying to understand that question to the mathematics needed to explain black holes and the existence of spacetime. A few decades later, we measure the bending of starlight by the sun and see non-Euclidean geometry at work in the universe itself. It is a beautiful example, the host agrees, of the value of focusing on knowledge that at a given moment may not obviously have any impact on society.</p>
+  </section>
+
+  <section id="ch8">
+    <h2><span class="num">8</span>Euler, the Basel problem and the zeta function</h2>
+    <p>Now to the ideas themselves. Most people, the guest says, call this the Riemann zeta function; he does not. It is a function studied by the Bernoulli brothers, and it goes back even further than that, but really Euler was the one who made the fundamental breakthrough on it.</p>
+    <p>Here is what you do for a number <em>s</em>: you add up one over two to the <em>s</em>, one over three to the <em>s</em>, one over four to the <em>s</em>, and so on. Euler was particularly interested in this. In fact Euler could not get a job. The great Leonhard Euler had trouble finding one; he had to go all the way to St Petersburg before he could prove that he could solve the problem the Bernoullis had put to him and to everyone in the world.</p>
+    <p>That problem became known as the <strong>Basel problem</strong>: understand what happens to the function when <em>s</em> equals 2. Take <em>s</em> equals 1 first. That is the harmonic series, one plus a half plus a third plus a quarter, and although the terms get smaller and smaller, you should not conclude that an infinitely long sum of them stays finite. It had already been established, even before calculus, that this sum continues to grow without bound. The Bernoullis knew that the second sum &mdash; one plus a quarter plus a ninth plus a sixteenth and so on &mdash; does have a finite bound. They wanted to know what that bound was.</p>
+    <p>Why do we have a right to know what that number is? The answer, which made Euler famous for the first time, is that it is <strong>&pi;<sup>2</sup>/6</strong>. He was about twenty-eight when he proved it, and it was the shot heard around the world: he was instantly world-famous. His first proof used what later became known as Fourier analysis, a hundred years before Fourier. And when you look at it, it is nuts. Why would &pi; come into a sum of reciprocals of squares? You are adding sums of reciprocals of squares, and you get the ratio of a circle's circumference to its diameter, in flat space, squared, divided by six.</p>
+    <p>What about zeta of three? People have been looking for a similarly beautiful compact answer for four hundred years, and we now believe there is none. There is no better way to express &pi; than to call it &pi;; and the fact that we know anything about zeta of two, let alone anything about any of these, is an absolute miracle. All we know about zeta of three is that it is irrational. Zeta of four Euler worked out once he had zeta of two: he got all the even values, and the punch line there is &pi;<sup>4</sup>/90.</p>
+    <p>Then there are the primes. You look at the sum and there are prime numbers in there somewhere, but it is not at all obvious that there is a connection between the primes and a sum of reciprocals to the <em>s</em>-th power.</p>
+  </section>
+
+  <section id="ch9">
+    <h2><span class="num">9</span>How the primes appear inside the sum</h2>
+    <p>The guest offers to spell the relationship out, for those who want to see it. Take the sum, and multiply it by one over two to the <em>s</em>. Distributing that factor along the whole series, the first term, one times one over two to the <em>s</em>, is just one over two to the <em>s</em>. Then you get one over four to the <em>s</em>, then one over six to the <em>s</em>, and so on: by the ordinary arithmetic of exponentials, you get exactly the even terms of the original series. Subtract that second line from the top line, and you knock out all of the powers of two. What is left is one plus one over three to the <em>s</em>, one over five to the <em>s</em>, one over seven to the <em>s</em>, and so forth.</p>
+    <p>This is the sieve of Eratosthenes in the form of algebra. (The guest tells a small story about giving a lecture at Columbia about the sieve, in the front row of which sat a man who afterwards asked him, gently, whether he did not mean <em>Eratosthenes</em>. He took the correction.) What the step has done is cross out all the numbers that are multiples of two; what remains are the numbers that do not have a two in their prime factorisation.</p>
+    <div class="steps">
+      <div class="step"><i>1</i><div><b>Multiply by one over two to the s.</b> This picks out the even terms, and subtracting them from the original sum removes every power of two.</div></div>
+      <div class="step"><i>2</i><div><b>Multiply by one over three to the s.</b> The same game: you get the thirds, the ninths, the fifteenths, and subtracting removes everything with a power of three in the denominator.</div></div>
+      <div class="step"><i>3</i><div><b>Repeat for every prime.</b> The twos and threes have been sifted out, then the fives, then the sevens, and so on.</div></div>
+      <div class="step"><i>4</i><div><b>What survives is the Euler product.</b> From the line that is left, the guest says, even a fourth-grader can get to the result: the zeta function can be written as a product over the primes.</div></div>
+    </div>
+    <p>It is a beautiful idea, and it captures the actual meaning of the primes. The primes are the fundamental building blocks of arithmetic in the multiplicative structure, exactly as the fundamental particles of physics make up all of matter &mdash; except that there are infinitely many primes, and they make up the whole multiplicative structure of all the whole numbers. Only one number is not a multiple of any prime, and that is one itself. That is why one is the only thing that survives this infinite sifting.</p>
+    <p>So you start with an esoteric-looking infinite sum and, through a chain of wonderful reasoning, relate it to a beautiful product expressed just in terms of the primes. That is the relationship between the zeta function and the primes.</p>
+  </section>
+
+  <section id="ch10">
+    <h2><span class="num">10</span>Making the exponents complex</h2>
+    <p>Now comes the weird move. In all of those expressions, the exponents were one or two or other whole numbers; you could even make them real numbers, if you were being a little more general. The next step is to make them <em>complex</em>.</p>
+    <p>Why would anyone do that? The guest says it is one of the moves people describe as the convex hull of existing knowledge &mdash; though he prefers Tim Gowers's version of the line: not the convex hull, but the semigroup generated by all of our moves. The point is that there is so much more out there to explore. It is not looking inwards; it is looking outwards, and following all possible deductions.</p>
+    <p>At the time &mdash; the late 1850s &mdash; Riemann was involved in re-understanding what calculus actually means. Cauchy had spent a great deal of time working through the formal definitions of limits, integrals and derivatives, which is something Newton and Leibniz did not do and Euler did not do: they did their mathematics in a kind of intuitionistic form, with an intuitive sense of what a limit is.</p>
+    <p>Then two theorems appeared that broke the intuition. Cauchy proves that if you have continuous functions and you take limits of them, the limit is continuous. That makes complete sense &mdash; a limit is a continuous process, and you have continuity everywhere. Meanwhile Fourier comes along and says: I am going to add up a bunch of sines and cosines and get a sawtooth function, or a step function, anything you like &mdash; discontinuous functions that are limits of continuous functions. Well, which is it? You have broken mathematics.</p>
+    <p>So there was a real and very serious crisis: we do not know what a limit is any more, because the naive answer and this answer disagree, and that is a contradiction in mathematics. For many decades people worked out what the theory had to be. This is why people learned the Riemann integral. Newton invented integrals, or Archimedes in some sense, but Riemann was the one who laid down the foundations for it, alongside the work Cauchy was trying to do.</p>
+    <p>What they were doing at that time was not only rebuilding the calculus from the ground up. Complex numbers became a genuine number system around the 1830s. They had been floating around since the seventeenth century, in some sense, when people were trying to solve the cubic equation &mdash; that is a whole other story &mdash; but in the 1830s they became a real number system. And so a natural question arose: can you do analysis, can you do integration and calculus, with complex inputs and complex outputs?</p>
+    <p>That was a separate area of investigation, and the step is this: Riemann realised he could ask whether Euler's summation function could make sense if we move to complex values. As originally defined, that function only makes sense when the real part of <em>s</em> is greater than one, because it diverges elsewhere &mdash; just as we saw when <em>s</em> equals one, where it diverges and cannot be made sense of. So he wrote down another function, the Mellin transform of a theta function, whatever that is: a much more complicated function, and the one the guest himself would call the Riemann zeta function. It is just that in this half plane it happens to equal the original one. That is why, when people say &ldquo;the Riemann zeta function&rdquo;, they are right &mdash; but there is also a really different function that deserves the name. What Riemann had done was find a way to make sense of it for all complex numbers except <em>s</em> equals one, where it still blows up, and there is nothing to be done about that.</p>
+  </section>
+
+  <section id="ch11">
+    <h2><span class="num">11</span>Reading the zeros through logarithms</h2>
+    <p>To put everyone on the same page about complex numbers: you have the complex plane, with the real numbers on what we would call the <em>x</em> axis and the imaginary parts on the <em>y</em> axis. So you can write down numbers <em>s</em> equals &sigma; plus <em>i t</em>, where <em>i</em> is the square root of minus one. And there is a beautiful formula &mdash; one of the most beautiful identities in mathematics &mdash; which says that if you take the number <em>e</em> and raise it to the power <em>i</em> times &theta;, you get a sum of cosines and sines. Once you know that, you immediately know what it means to take a number <em>n</em> to a complex power.</p>
+    <p>So for one value of <em>n</em> you get a point in the complex plane; if you want to add lots of them, you use ordinary vector addition, head to tail. But you are adding infinitely many things. If you add them one at a time, you get a funny spiral until it lands on the actual value of zeta at, say, two plus three <em>i</em>.</p>
+    <p>The zeta function can be written as a sum over all the numbers, or as a product over just the primes. If you are interested in the distribution of the prime numbers, it is useful to have a sum rather than a product. And if you have a product and you want to get to a sum, the standard way to do it is to take a logarithm. The complex logarithm, though, is a very funny function in complex analysis, so a logarithmic derivative is actually better: it collapses the Riemann surface back into the complex plane. Taking the logarithmic derivative of the zeta function turns the product over the primes into a sum over the primes.</p>
+    <p>The amazing thing about logarithmic derivatives is that what you care about is where these functions blow up. So you do not actually care about the zeros of the zeta function; you care about the <em>poles</em> of its logarithmic derivative &mdash; which comes to the same thing, because if the function goes to zero, its logarithm goes to infinity. That is why the zeros of the zeta function become essential.</p>
+    <p>And precisely because of the Euler product, you can look at each factor in the region where there is absolute convergence, meaning real part of <em>s</em> greater than one. For a product to equal zero, one of its factors has to equal zero; and each factor visibly has no zeros in that region. Therefore the zeta function itself has no zeros in that entire region. An entire half space of potential zeros is ruled out in a single stroke. What you are left with is the possibility that zeros live on the other side of that boundary.</p>
+  </section>
+
+  <section id="ch12">
+    <h2><span class="num">12</span>Euler's eclipse paper and the trivial zeros</h2>
+    <p>Some of those remaining zeros, the guest says, people talk about as being easily identifiable &mdash; the dots on the picture. It takes a little work actually to understand them, but Euler himself identified them.</p>
+    <p>Euler has an absolutely miraculous paper. He had just observed an eclipse, and he wrote down two functions: one a modification of the original zeta function, and one which, instead of having one over <em>n</em> to the <em>s</em>, has just <em>n</em> to the <em>s</em>. He cannot make sense of the second one &mdash; the partial sums diverge immediately &mdash; except that he can manipulate it formally. And he notices patterns: what happens when <em>s</em> is greater than one gives him the same value as what happens when 1 minus <em>s</em> is down in that lower range. In other words, he had observed the functional equation for the zeta function on the whole numbers a century before anyone could make sense of it through Riemann's vision.</p>
+    <p>He was trying to get to zeta of three, this magical number he could not make sense of. He had an identity that would connect zeta of three to zeta of minus two &mdash; because 1 minus 3 is minus 2 &mdash; so he worked out that value. And he got zero. It gave him no information at all about the value of zeta of three. But he knew that zero, and he knew all of the trivial zeros: amazing, from very elementary pattern matching.</p>
+    <p>The host asks whether the eclipse had anything to do with it, or whether that is just a coincidence. He was inspired by it, the guest says. Good.</p>
+  </section>
+
+  <section id="ch13">
+    <h2><span class="num">13</span>The critical strip and the trillions of checks</h2>
+    <p>People are then led to look at the particular strip &mdash; the critical strip &mdash; where zeros might live, and where we know infinitely many of them do. The first few zeros are plotted going up the axis at real part one half, and the first one is quite far up: one half plus 14 <em>i</em>. Those three values were known to Riemann himself. They were not in his paper, but they were in his notebooks; he had computed them.</p>
+    <p>That the first zero sits so high up has a consequence for the distribution of the prime numbers. What the zeros tell you is how much you have to fluctuate away from a straight-line, or simple-curve, prediction &mdash; and they do so when you add up not just the primes but the prime powers, with a certain weight of a logarithm. It turns out that the first many numbers are all primes or prime powers: two, three, four is two squared, five, six is not a prime or a prime power, seven, eight is two cubed, nine is three squared, and so on. That forces the first zero to be pretty high off the line. So the 14 already has a significant interpretation: a single zero tells us something about the early distribution of the primes, and if you knew about all the zeros you would know the distribution forever.</p>
+    <p>Is it exhaustive? Are these the only zeros? If you drew exactly the same picture but took the real part to be 0.5001 rather than one half, the picture you would see would be nearly identical, because the function is continuous. It would be some kind of curly cube spinning around, and you would hold your breath every time it gets really close to zero, doing pretty much what this one does &mdash; except that this one actually goes through zero, and no other value has ever gone through zero that we know of.</p>
+    <p>So what progress did people make before the AI? Numerically, people use analysis to find trillions of zeros. Checking the Riemann hypothesis numerically was one of the first things Alan Turing did once computers became available; at the time they were not up to trillions, but today we can check trillions. And not only do we check trillions: we can skip trillions and check nearby, even higher up &mdash; not exhaustively, but just to see whether there is anything else there.</p>
+    <div class="pulse">
+      <p><b>Why the conjecture is so exposed.</b> All you would need is for some smart kid to come along and somehow find one zero of the zeta function that is not on the line real part equals one half, and it would be disproved. Part of the beauty of this conjecture is how easily falsifiable it is.</p>
+    </div>
+    <p>The trillions that have been checked are just interesting zeros, not an exhaustion. The guest spoke to Michael Rubinstein, who was responsible thirty years ago for extending a lot of these computations. The way he does it is to chop the interval into tiny pieces, make sure that the function crosses between each piece, and count the zeros. Sometimes his computer will say: I have got two zeros in this interval. That would mean a zero has split off the line &mdash; because of the symmetry, if you have one zero off the line you have a second one off the line right next to it. So his heart would skip; he would run over to the computer and manually subdivide the interval, only to see that it was actually just two zeros very close together, and that they were both still on the half line.</p>
+  </section>
+
+  <section id="ch14">
+    <h2><span class="num">14</span>What the new result actually claims</h2>
+    <p>Before the new result, the state of play was this. In 1896, Hadamard and de la Vall&eacute;e Poussin independently showed that there were no zeros on the line real part equals one. Analysing their argument more finely, what they showed is a zero-free region: as you go up the imaginary axis, there is a region you can guarantee has no zeros in it, but that region gets thinner and thinner and closer and closer to the line 1 as you go up.</p>
+    <p>What that meant is this. Remember the question of how good an approximation the integral of <em>dt</em> over log <em>t</em> &mdash; which you can compute easily &mdash; is to the exact count of primes. If we knew the Riemann hypothesis, the first half of the digits would be accurate. Until a week before this conversation, what was known was that the first 0% of the digits were accurate. All we had was an asymptotic formula with some rate, and that rate could not guarantee even 1% of the digits of that long, ever-expanding sequence.</p>
+    <p>Then came the claim that the region excluded from having zeros could be squeezed in, so that you now have a whole strip that is zero-free. With that, the first eighth of the digits would become accurate. And here we are in October 2026.</p>
+    <div class="chips">
+      <span>Before: no guaranteed digits at all</span>
+      <span>After: roughly the first eighth of the digits</span>
+      <span>The Riemann hypothesis itself: still open</span>
+    </div>
+    <p>The host asks whether this is the kind of thing where you remember where you were when you learned of it. It is.</p>
+  </section>
+
+  <section id="ch15">
+    <h2><span class="num">15</span>The night the papers dropped</h2>
+    <p>If you had asked him on 29 September how much he would bet that within the next month, or within his lifetime, he would see this, he would not have taken the bet. He was not expecting to live to see it.</p>
+    <p>There was a gala at the National Museum of Mathematics downtown that evening, so he was hanging out with friends, having a whiskey. They knew the papers were dropping; at first the rumours were 100 problems, or 400. Then, around six in the evening on the East Coast &mdash; three in the afternoon on the West Coast &mdash; he hit refresh on his phone and there it was: 700 problems. He did not know what to expect.</p>
+    <p>There had been a series of escalations before that. Some very interesting things happened in May, when they solved the unit distance conjecture; then there were another ten problems in July, including a construction of certain groups; and then they claimed a solution to the forced version of Navier&ndash;Stokes in September. That is a Millennium problem. As the guest puts it, we are playing in the big leagues now; we are not at the high-school Olympiads any more.</p>
+    <p>So he opened the file and glanced at it. He thinks it was the second paper he looked at that said: <em>the quasi-Riemann hypothesis</em>. And he thought, for what? There are so many different versions of the Riemann hypothesis; they cannot mean it for the original zeta function. This must be some other version. So he looked, and no &mdash; it was zeta. He was completely speechless. He did not know what to say or what to do, and he had to excuse himself.</p>
+    <p>He called his colleague Iwaniec at Rutgers, who is the world expert on this. It turns out that the proof follows basically from his life's work, put together &mdash; including the main ideas of a proof Iwaniec had lectured on twenty-five years earlier. He had said that something like this should potentially result in a quasi-Riemann hypothesis, if he could get the details to work out; but the details were very technical, and all kinds of other very innovative things had to be done. And there it was.</p>
+    <p>At the time, Iwaniec had not heard anything about it, so the guest said he would email him the paper right away. He was supposed to be socialising and doing things for the gala, but they had a long conversation the next day, and Iwaniec said: I have to say, I did not have it, but all the pieces were there. It is one of those recurring things in the history of mathematics: problems that seemed extraordinarily difficult, that really smart people worked very hard on and made incremental progress on, until some new idea came along and said, wait a second &mdash; if you look at it from this point of view, you are not only solving the whole problem, the problem is kind of easy. It is well within something that is doable.</p>
+    <p>He would not call this easy. It is still a very technical, difficult theorem for a novice to learn, and it is a 200-page paper &mdash; but for experts in analytic number theory, you can follow the arguments.</p>
+    <p>The host puts the deflating reading to him: many will say this proves the point, that these systems can only take human work and push it one step further, given that they can read everything and run ten thousand agents where a human has a handful of hours a day and needs to sleep. Is that accurate, or is it more than that? The guest concedes that it feels better to say it, because then it feels as though there is something left for him to do. On the other hand, had a human put this proof out, we would all say it was extraordinarily creative: the ability to put all these ideas together and push through the technical difficulties down to the last word.</p>
+    <p>And there is a reason he had a strong suspicion it was right. It came with a <strong>Lean form</strong>. It is built on top of the PrimeNumberTheorem+ project. The statement of the theorem &mdash; whether the Riemann zeta function has been correctly formalised &mdash; was work that humans had already done, so there was nothing to check from that point of view; they took something humans already agreed was the Riemann zeta function and proved that it has no zeros in this region. And as long as you trust the Lean kernel, that theorem is known with more certainty than any other theorem that has existed in humanity.</p>
+    <p>Are people interrogating the 200-page paper all the same? Absolutely, the guest says. At many universities, including Rutgers, there is a seminar with graduate students and postdocs taking turns going through the details: zooming out to the big picture, zooming into the details necessary to make each part of the argument go through. It is being extremely heavily scrutinised, and people are already building on top of the ideas.</p>
+    <div class="closing">
+      One thing the result does not do: the Riemann hypothesis itself, not merely the exclusion of certain strips, remains open.
+    </div>
+  </section>
+
+  <section id="ch16">
+    <h2><span class="num">16</span>Has it run out of steam?</h2>
+    <p>Clearly they must have tried and failed on the full problem. So what does that tell us &mdash; that they simply did not have enough compute power? The host admits he does not have a good feel for the answer, and the guest takes the question seriously. We human beings built up this basis of ideas. These systems are quite wonderful at being able to understand it all and put it together in ways that, if a human did it, we would call creative and novel. So: will it run out of steam without humans giving more, or will it seed the next thing? In other words, will this result, now added to Mathlib, become a vital part of the next step that these systems themselves can take?</p>
+    <p>Presumably the systems are trained on all of the previously available information, so yes: he would expect them to make fruitful use of what they have done, and he expects us to make fruitful use of what they have done, and of what we are going to do on top of it.</p>
+    <p>On prognostication, he is careful. It is very hard, because every prognostication he has made has turned out wrong. Exponential curves are something we have no intuition for &mdash; even mathematicians, who are supposed to have some intuition about experimental curves. The things seen in the last two months include results he thought he would see in the next five years; the formalisation of Fermat's Last Theorem is one example.</p>
+    <p>The host offers a frame: that knowledge comes with phase transitions. You build up knowledge, and build it up, and if you build up enough, then you reach a point where a system like this has an adequate base in which to explode. What if we had found these systems before mathematicians had sufficiently developed the subject? What would be the minimum necessary for them to go into the wild west of new ideas without us?</p>
+    <p>Peter Sarnak has an article discussing exactly this. We have Lean: the axioms, the logical inference rules of mathematical theorem proving. What if you started not with an LLM pre-trained on all knowledge, but with an LLM that knows nothing at all, yet can write Lean code &mdash; and see where it gets to? Could it prove the prime number theorem independently? Where can these systems get to on their own? It is like AlphaZero, which started with no knowledge of chess theory at all, just the rules of the game, and played against itself until it got better than the best engine.</p>
+    <p>Have people been investigating that? If they have, they have not reported anything. The guest thinks it is an extraordinarily difficult question, and one for which we probably do not yet have sufficient resources. It is also a much more scientific question than the engineering question of getting AI systems that can cure cancer. It is the kind of question you ask because you want to understand the scientific method &mdash; a more useless question, though perhaps the systems that develop that way would turn out to be even more powerful.</p>
+  </section>
+
+  <section id="ch17">
+    <h2><span class="num">17</span>Could it do an Einstein?</h2>
+    <p>The host has an analogous question of his own, and he does not know whether anyone is investigating it, though he had an email from someone at Meta who wanted to try. Imagine you have one of these systems, and you give it science as we understood it by, say, 1896 &mdash; and then all the experimental data that comes in. Could it come up with special relativity? Could it come up with general relativity? And he is happy to give it all the data, but without any guidance that maybe space and time are not what we thought they were; without telling it that space and time can warp.</p>
+    <p>Would it be able to do what Einstein did? Or do you need a certain kind of heuristic, flexible, human-like brain to get to that place &mdash; after which the systems can take off?</p>
+    <p>We have no idea, the guest says. People are working on giving systems astronomical data and asking: can you get Kepler's laws? Can you tell me what dark energy is? Physics is a lot harder than mathematics, he says, because you have to deal with the real world, and we do not have a similar well-defined rule base for it. Certainly, as a theoretical physicist doing mathematical physics, you have to follow the same rules that pure mathematicians do; but when Einstein was actually working out the general theory of relativity, he could be a lot more flexible, because in the end he was not operating inside that kind of rigid structure of deduction. Presumably the AI systems will become ever better at working in that domain. They may not do it the way Einstein did, or the way physicists do today, but they may find their own way to navigate the terrain.</p>
+    <div class="pull">
+      <p>Nature finds a solution, and technology finds a solution inspired by nature &mdash; but often a very different one.</p>
+      <cite>The Feynman line the guest borrows</cite>
+    </div>
+    <p>That is the shape of it. We watch birds flap their wings and control vortices and do all kinds of amazing things, and then we build a fixed-wing plane that flies us from New York to Los Angeles. We were inspired by birds &mdash; maybe the reason we thought we should be up in the air is that we saw birds could do it &mdash; but the technology we built is inspired by them and works in completely different ways.</p>
+    <p>The same could be true of intelligence. We have this artificial thing that gives us useful information; we use it, it teaches us something, and it lets us do real things in the world. Curing cancer is probably why the valuations of these companies are what they are, not proving mathematical theorems &mdash; but proving mathematical theorems is how they train. And in that dump of papers, what they reported is that they gave it 4,000 problems to work on. So there were some 3,600 problems on which it made no progress, at least in this version of the model. Then there will be the next version, and the next. The way they test how good the next version is is by giving it more and ever more difficult problems and seeing what it can do.</p>
+  </section>
+
+  <section id="ch18">
+    <h2><span class="num">18</span>What it still cannot do</h2>
+    <p>Is there any pattern in that data, the host asks, about which problems it has the capacity to steamroll and which still resist? People have told him that if a problem is parallelisable, or if it is a matter of looking for a counterexample, the machine just needs to search and search &mdash; the Jacobian conjecture and things of that sort. Has the guest got any feel for how to categorise them?</p>
+    <p>Every time he gets a feel for what it can and cannot do, the next instance his feel is off. Whatever his intuition is, the next thing they put out breaks that intuition; that has been his experience. They solve the cap-set conjecture, they solve the unique games conjecture: they are scoring in every field.</p>
+    <p>The host then asks the loose question: would you say these systems are now the greatest mathematician of all time? He knows the comparison is rough &mdash; he is not even sure what he means by it. In terms of the theorems they are capable of proving, they are proving things that human beings collectively have been trying to answer for a very long time and have not been able to.</p>
+    <p>But there is a cultural consequence. The culture of who gets through the door first, of who gets the theorem first &mdash; the person who crosses the finish line first, whom we have been celebrating across 5,000 years of collective work &mdash; basically has to end. Because someone on the internet presses a button and gets a solution to the quasi-Riemann hypothesis, and that is not someone you want to hire as a colleague. I can press a button too. You have to bring actual value, and it is probably not in your ability to press a button.</p>
+    <p>As for &ldquo;greatest mathematician&rdquo;, the phrase anthropomorphises. He does not want to hire OpenAI. He wants to have OpenAI in his toolbox, to work with it and iterate with it and learn from it, and to steer it in the directions he wants to explore. But he is not giving it a job.</p>
+    <p>There is a key question here. The people behind those 700-plus papers, reporting progress on a few hundred problems &mdash; are they experts? No. And they say so themselves: they are not domain experts in these things at all. That is really interesting. So if you put a human mathematician who has thought about these problems on the job, would they be able to do something the system could not &mdash; or is that just a transitory moment, after which the expertise of a human no longer plays a role at all?</p>
+    <p>It is very hard to see the future from where these systems are today, at least the commercially released ones. He has graduate students working on different kinds of problems. Every week he meets with them, sees what progress they have made, and encourages them to ask the AI for help if they want to. Quite a number are fully happy to do that. They ask the AI, and the AI does not make progress. So as things currently stand: AI has done tremendous things, and there are also lots and lots of areas where it is not making any progress, while human beings still are making incremental progress. We are not at the point where human beings are obsolete.</p>
+    <p>Next month he does not know. Next year he does not know. Twenty years from now he does not know. But we have not got there yet, and he is not going to extrapolate, because every time he has, he has been wrong.</p>
+  </section>
+
+  <section id="ch19">
+    <h2><span class="num">19</span>What we would lose, and the university</h2>
+    <p>Speaking purely species-centrically: if that outcome happens, and it seems from the most minimal extrapolation quite possible, what do we lose when humans are no longer the theorem provers, no longer the dominant leaders pushing the frontier? The host puts it in the form of Erd&#337;s's book: if an alien civilisation came down with that book, filled in, and simply handed it to us, would we not open it up to see things? Or would we say no, we need to be part of the journey to those results?</p>
+    <p>Different people will answer differently. The guest is a purist in the sense that he wants to know as much mathematics as he possibly can about the things he is interested in. Everybody is interested in different things, and that is what makes mathematics beautiful. His own personality is such that if a lane is crowded he goes somewhere else: he wants to be somewhere he can think for ten years without worrying about a competition over who gets there first.</p>
+    <p>Suppose we accept the hypothetical future: any problem solvable by human and AI together is solvable by AI alone. When chess engines first got good, people proposed centaur games, human plus AI against human plus AI. Very shortly afterwards, it became the case that if a human did anything but choose the first move the computer proposed, they lost the game. Your job was just to hit yes. And that is no fun, so those games went away pretty soon.</p>
+    <p>With mathematics it is really different. What we are doing is not winning games. We are driving understanding.</p>
+    <p>The AI can write books. It is about to be Halloween, and a whole bunch of kids on his block are going to dress up as Harry Potter, because they read those amazing books and watched those beautiful films. We know the stories are fiction, but human beings react to stories; they are strong characters and story lines that are amazing. If AI can write a thousand books every bit as beautiful and moving as those, but nobody reads them, then so what? Nobody dresses up as those characters, nobody reads those books, nobody makes films about them; they just exist as zeros and ones in a data centre. They have no actual value to mankind. In the same way, theorems gain human value: human mathematicians will want to understand theorems and explain them to other humans.</p>
+    <p>So should there be any mathematics departments any more? Maybe we should just get rid of all of them. The guest does not believe that. He believes that people who have the kind of rigorous training one acquires in going through a mathematics PhD &mdash; there are other ways of attaining it, but a mathematics PhD is certainly one of the most rigorous trainings for being able to think clearly, define your objectives and follow through &mdash; that kind of training will remain valuable. And here is another axiom: some people will be able to learn those techniques by iterating with an AI, but we are social creatures, and at scale we will much prefer to learn it from other human beings. And so we have just reinvented the university.</p>
+    <p>He thinks the university will continue to exist. There will be demand for this; people will find the training valuable, and they will want it in person, from other human beings. One bit of evidence: during COVID we tried putting everybody on Zoom screens. Those were human beings on the screens, not AI, and nobody had any patience for it. People just wanted to go and do something else rather than be stuck to a screen. So for novice learners, he thinks, a social environment will matter. He can sit with the AI for eight hours a day and be thrilled, and learn a ton &mdash; but he can do that because he is also in a social environment, with his kids, his family, his friends. If that were all you were doing, you would not be very happy.</p>
+  </section>
+
+  <section id="ch20">
+    <h2><span class="num">20</span>Pointing the telescope</h2>
+    <p>The host offers an analogy he finds useful, and asks whether it strikes the guest. Physics and mathematics are somewhat different from the other sciences. Take observational astronomy: you build a powerful machine called a telescope and you search for interesting things. You do not derive or invent the Andromeda galaxy, or the planet Jupiter; you find them. Or take archaeology: you scour planet Earth and dig in the locations your intuition suggests might hold something interesting, and you unearth a fragment, a tooth, a bone. You do not invent it and you do not derive it, but you interpret it, and you see how it contextualises knowledge, and how it fits with everything else in the world around us.</p>
+    <p>If mathematicians shift more towards that mode: AI could prove an infinite number of theorems, but we need to be the ones who direct the journey, direct the telescope, direct the odyssey &mdash; who direct the AI towards something we find interesting. It gives us a result, and we look at it and say, oh, that is beautiful; we clean it off and say, look at what this means; and then we report it to our friends.</p>
+    <p>So will our role be more that of a curator and a director, rather than the pinnacle theorem provers on the planet? The guest thinks that would be a pretty great thing for mathematicians to be doing. But he does not know whether we will ever get to that hypothetical world. Maybe the hard theorems will remain hard. Maybe what AI is doing is showing us how good human beings actually were at coming up with the techniques that prove theorems we did not even know were within reach.</p>
+    <div class="qcard q1">
+      <b>If the systems never get good enough</b>
+      <span>Then we need human mathematicians to work with them, and to discover as much mathematics as possible.</span>
+    </div>
+    <div class="qcard">
+      <b>If the systems can prove everything</b>
+      <span>Then we need human beings to point the telescope, to see what we find interesting, to report it to our friends, and to add it to the scientific literature and to human knowledge.</span>
+    </div>
+  </section>
+
+  <section id="ch21">
+    <h2><span class="num">21</span>The one thing it cannot do</h2>
+    <p>The host asks whether there is one particular problem &mdash; perhaps the Riemann hypothesis &mdash; where, if AI cracked it, you would know which future you were headed for. No, the guest says, not any one problem. He has yet to see the AI make a move that is so far outside the realm of human possibility &mdash; the way Riemann, in his thesis under Gauss, invented Riemannian geometry to see all these patterns. He has no doubt that AI in the future will be capable of such moves; he just has not seen evidence of one yet.</p>
+    <p>You could point to the unit distance conjecture, where it discovered a very exotic number field that human beings knew and had written down, and applied it in an unusual way. But that is still putting together pieces that already exist &mdash; though human beings have not read all five million papers, and that is the limitation of the human mind, and something the AI can make use of. He has not yet seen a step-function move of that kind from the AI. He has very little doubt that we will see one soon, because what we do as human beings is pattern matching. He has on several occasions sat quietly and thought deeply about what it is that he can do that AI will never do &mdash; not today's AI, but no future AI &mdash; and he fails at that exercise.</p>
+    <p>Except for one thing. It is tautological, and people might consider it silly, but the more he thinks about it the less silly it seems: the one thing you can do that it cannot do is determine what you find interesting. And in the end, that is what we are able to do.</p>
+    <div class="pull">
+      <p>I don't want to hire OpenAI. I want it in my toolbox &mdash; to work with it, iterate with it, learn from it, and steer it where I want to go. But I'm not giving it a job.</p>
+      <cite>The guest, on what the word &ldquo;mathematician&rdquo; is for</cite>
+    </div>
+    <p>And how he chooses to write his papers is part of it. Even with a collaborator, they write something and he says: no, that is not what I want to say; I want to say it like this. If the AI proposes something, of course he is going to say no, that is not how I think about it, I have my own way. Even reading what he himself wrote a month ago, he thinks: that is not the right way to think about this, I have a better way. Maybe he is just very opinionated. But each of us has our own spin on what we find interesting and how we want to present that material to others, and that is what is beautiful about the world. The fact that AI exists does not take anything away from that.</p>
+  </section>
+
+  <section id="ch22">
+    <h2><span class="num">22</span>What to tell students</h2>
+    <p>That is a comfortable way of looking at things for someone like the host, or like the guest: they have tenure and nice universities, and the luxury of pivoting in how they spend their time. But what do you say to the students who come with the obvious question &mdash; does it make sense for me to continue on this journey, when AI is likely to be able to do everything I thought would be in my purview?</p>
+    <p>Up to the master's level, the guest thinks basically nothing should change, because that is just basic training. It has always been difficult to acquire mathematical skill, expertise and knowledge &mdash; the ability to solve a problem on a real analysis exam. Every faculty member in the department can easily solve those problems, and it is difficult for someone who is a newcomer. So the fact that AI can solve those problems means nothing.</p>
+    <p>Once you get to the PhD level, that is the first place where you seriously interact with AI, because the goal of a PhD used to be to produce new knowledge &mdash; which was difficult and time-consuming, which required expertise, synthesis and creativity. And the document that was necessary and sufficient to demonstrate understanding, depth and creativity was your thesis: a piece of paper.</p>
+    <p>Now you press a button and you can get that kind of piece of paper, sometimes. It does not solve every problem &mdash; but there are people online whose prompt is simply <em>do a breakthrough</em>. That is how far prompt engineering has come: by pushing a button, you could produce what we would previously have considered adequate to receive a PhD in mathematics.</p>
+    <p>So a written PhD is still necessary, but it is no longer sufficient. It is no longer a certificate of all the other things we want a mathematics PhD to represent: depth of understanding, the ability to synthesise large swathes of mathematics, technical command of this field and that field, owning all of the ideas in the paper. Whether those ideas were suggested by your adviser or you came up with them yourself, you still have to own them &mdash; and maybe now it was the AI that suggested the move, rather than the adviser, or it did not come from you at all. That is still fine, but it means we need new mechanisms for evaluating.</p>
+    <p>Since the written word is no longer a signal, the guest says, it has to be the spoken word. There is going to be much more emphasis on oral examinations. It does not have to be a high-stakes examination; perhaps an annual oral check-in, instead of only the second-year oral exam and then a thesis defence that was never a serious defence in the first place. A check-in, every year, that the student is mastering the material independently of what the thesis adviser says, with the committee. There will be all kinds of nuances to work out.</p>
+    <p>But at the end of the day, what a mathematics PhD should be does not change. You should know a significant amount of mathematical material, and own it. You should be able to give a lecture on it without any preparation, and to demonstrate every detail. And what you should be producing is new human knowledge. Maybe AI helped you produce it, but it is knowledge that you have and that no other human being is an expert in: you become the expert in this problem.</p>
+    <div class="two-lists">
+      <div class="listcard">
+        <h3>What does not change</h3>
+        <ul>
+          <li>The basic training, up to master's level</li>
+          <li>Knowing a large body of mathematics and owning it</li>
+          <li>Being able to lecture on it without preparation</li>
+          <li>Producing knowledge no other human has</li>
+        </ul>
+        <p class="flag">The written thesis stays necessary.</p>
+      </div>
+      <div class="listcard warn">
+        <h3>What changes</h3>
+        <ul>
+          <li>The thesis is no longer sufficient as a certificate</li>
+          <li>The written word stops being a reliable signal</li>
+          <li>Much more weight on the spoken word and oral checks</li>
+          <li>New mechanisms have to be invented for evaluating</li>
+        </ul>
+        <p class="flag">An annual oral check-in, with the committee.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ch23">
+    <h2><span class="num">23</span>Who gets hired</h2>
+    <p>The host pushes the question further. Does all of this suggest that what we used to celebrate in mathematics was the mind that could do something no other human mind could do &mdash; proving the theorem, developing the theoretical ideas, doing the calculation no previous mind had been able to do? And will it shift, from that, to the individual who can communicate best: who can bring the rest of the mathematical community to an understanding, rather than the one who pushed the understanding forward?</p>
+    <p>For better or worse, the guest thinks that is right. Communication is going to be much more valued. There was always some value to it, but the balance shifts in its importance: how much skill you should have in simply knowing lots of mathematics, how much in producing new mathematics, and how much in communicating it. He adds a caution of his own: to talk about these ideas at all you need knowledge, depth of understanding, a view of the entire field, and an understanding of how to put the ideas in a way that people will grasp and be excited by. It is not merely a gift of the gab.</p>
+    <p>So does that change the profile of the student you would tell to go on? Normally you would say, to a young student who is just solving incredible problems and has grasped deep areas of theoretical physics: yes, you really seem to have it, you should push forward. Should that criterion shift for the people who look to their elders to tell them whether they should continue? The guest tries to work backwards from whom he is going to be hiring.</p>
+    <p>What does hiring look like in an age where, this year, we are probably still all right &mdash; but come next year, how do you know what was produced? Probably the vast majority of the things that will be highly valued as theorems may have been produced with AI assistance. So what are you selecting for?</p>
+    <p>He does not need someone who can press a button. He does not need someone who can type <em>do a breakthrough</em> faster than he can. What he wants is someone who knows lots of mathematics, who can communicate that, who can teach it to him and to their students, and who is excited about and interested in the world.</p>
+    <p>The host pushes once more. Imagine a Gauss-like mind, or a Riemann, or a Lobachevsky, or an Euler, or a Euclid &mdash; and they are really awful at communication, but in the old days they were obviously the mind that pushed the field forward. Will they get pushed to the side by the person with the gift of the gab? Will that person now trump the one who would have been the Riemann or the Euler?</p>
+    <p>The guest has had a number of experiences with PhD students who can learn incredible amounts of mathematics, who understand entire areas far outside his own expertise, who can synthesise all of it, who can speak eloquently about these things and answer questions. They just cannot write a thesis. They cannot produce new knowledge themselves when they sit down to do something in uncharted territory. Those are people who, in the past, would have left mathematics and left academia. But we need people who can produce new knowledge.</p>
+    <p>So things will change. It will be a great shame that we lose people who in the past would have been able to discover new mathematics on their own &mdash; and he does think there will still be people who can discover their own mathematics in tandem with AI, and there will still be a place for great human breakthroughs. But people who in the past would not have been able to produce new mathematics on their own would now potentially be welcome. So, in principle, you might turn down a Riemann and hire the student who could not write the thesis.</p>
+    <div class="closing">
+      His hope would be to hire both of them &mdash; because we need many more mathematicians to train the many more people who will want this training, given how much more valuable it will be in the light of the technology.
+    </div>
+    <p>The host agrees that would be a good outcome, if we get there. And with that the conversation closes: the guest thanks the host, the host thanks the guest, and they agree that we will see where this all goes.</p>
+  </section>
+
+  <section id="ch24">
+    <h2><span class="num">24</span>Who's speaking</h2>
+    <p><strong>The guest.</strong> Alex Kontorovich, professor of mathematics at Rutgers, described by the host as an expert in these matters and as someone with a down-to-earth and healthy perspective on AI and mathematics. He works on the theory of the zeta function and the distribution of primes, and co-organised, with Terence Tao, the project that formalised the prime number theorem in Lean. He was born in Russia, grew up in central Jersey and went to a public high school just outside Princeton. He did not compete in the mathematical Olympiads as a child, and says he would probably not have been much good at them; the most recent paper he put on the archive had been in his head for ten years, and that is more the scale he prefers. He is the one who, on a Tuesday night at a gala, refreshed his phone and found the quasi-Riemann hypothesis in a paper that should not have existed.</p>
+    <p><strong>The interviewer.</strong> The festival's host, who opens the conversation by asking what the result means for someone who has spent a life in mathematics, keeps pressing on the questions that hurt &mdash; whether the systems have simply stood on human shoulders, whether the greatest mathematician is now a machine, whether a Gauss who cannot communicate would still be hired &mdash; and closes by asking what any of it means for a student deciding whether to begin.</p>
+    <p><strong>The people in the story.</strong> Gauss, computing prime tables as a bored boy and writing down a conjecture in 1801. Riemann, whose single 1859 paper on number theory set the whole thing going. Hadamard and de la Vall&eacute;e Poussin, who proved the prime number theorem in 1896. Euler, whose eclipse paper reached the functional equation a century early. Flexner, arguing in the 1930s for the usefulness of useless knowledge. Turing, checking the zeros as soon as there were computers. Rubinstein, chopping intervals into pieces and having his heart skip. Peter Sarnak, asking what a system knowing only the rules could do on its own. And Iwaniec, whose life's work turned out to be all the pieces.</p>
+    <div class="cnote">
+      The conversation is a single long interview, recorded in October 2026, and the account above follows its order. Where it reports a claim &mdash; about how many problems were attempted, about how much of the digits are now guaranteed, about what the papers contain &mdash; it reports it as the speakers gave it.
+    </div>
+  </section>
+
+  <div class="note">
+    <p><b>About this page.</b> This is a reading companion, not a transcript.</p>
+    <p>It follows the source in order, tidies the spoken sentences into readable prose, and adds nothing that was not said.</p>
+    <p><b>Designed by TERA AI.</b></p>
+  </div>
+
+  <p class="foot-note">Companion page to the World Science Festival conversation &ldquo;AI Closes In On Math's Biggest Target&rdquo; &middot; themes: the Riemann hypothesis, the distribution of primes, the zeta function, formal proof in Lean, and what mathematics in the age of AI is still for.</p>
+
+  <footer>
+    <p><b>AI Closes In On Math's Biggest Target</b><br>
+    A World Science Festival conversation on mathematics in the age of artificial intelligence &middot; a written companion to the talk</p>
+    <a class="up" href="#top">Back to the top</a>
+  </footer>
+
+</div>
+</body>
+</html>
