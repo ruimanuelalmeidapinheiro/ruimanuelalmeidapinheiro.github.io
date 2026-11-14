@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI will create digital vassal states _ Yuval Noah Harari &mdash; Reading Companion</title>
+<style>
+:root{
+  --bg:#F4F6FC;
+  --card:#ffffff;
+  --ink:#1E1A63;
+  --ink2:#3A2F8F;
+  --muted:#6A3FC0;
+  --a:#2E3FBF;
+  --a-deep:#151B72;
+  --a-soft:#E7EAFB;
+  --b:#C0153C;
+  --b-deep:#8E0F2E;
+  --b-soft:#FBE4EA;
+  --c:#A87400;
+  --c-deep:#7A5200;
+  --c-soft:#FBF0D8;
+  --line:rgba(46,63,191,.16);
+  --shadow:0 14px 34px rgba(21,27,114,.10);
+  --shadow-sm:0 6px 18px rgba(21,27,114,.08);
+  --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background-color:var(--bg);
+  background-image:
+    radial-gradient(880px 500px at 2% -8%, rgba(46,63,191,.13), transparent 62%),
+    radial-gradient(760px 470px at 100% 0%, rgba(192,21,60,.13), transparent 60%),
+    radial-gradient(760px 480px at 50% 106%, rgba(168,116,0,.15), transparent 62%);
+  background-attachment:fixed;color:var(--ink);
+  font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.68;font-size:17px;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1020px;margin:0 auto;padding:0 20px 72px}
+
+.hero{position:relative;margin:34px 0 26px;padding:38px 34px 34px;border-radius:26px;
+  background:linear-gradient(135deg,#ffffff 0%,#FBFCFE 45%,var(--a-soft) 100%);
+  border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
+.hero:before{content:"";position:absolute;right:-86px;top:-96px;width:256px;height:256px;border-radius:50%;
+  background:radial-gradient(circle at 40% 40%, rgba(192,21,60,.24), rgba(192,21,60,0) 68%)}
+.hero:after{content:"";position:absolute;left:-76px;bottom:-116px;width:236px;height:236px;border-radius:50%;
+  background:radial-gradient(circle at 60% 40%, rgba(168,116,0,.22), rgba(168,116,0,0) 70%)}
+.hero>*{position:relative;z-index:1}
+.kicker{display:inline-block;font-size:.7rem;letter-spacing:.19em;text-transform:uppercase;font-weight:700;
+  color:var(--a-deep);background:var(--a-soft);border:1px solid rgba(46,63,191,.24);
+  padding:6px 13px;border-radius:999px;margin-bottom:16px}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.5rem,3.6vw,2.15rem);
+  line-height:1.22;margin:0 0 12px;color:var(--a-deep);letter-spacing:-.01em}
+.hero .sub{font-size:1.03rem;color:var(--ink2);margin:0 0 18px;max-width:64ch}
+.meta{display:flex;flex-wrap:wrap;gap:9px}
+.meta span{font-size:.78rem;color:var(--b-deep);background:#fff;border:1px solid var(--line);
+  padding:6px 12px;border-radius:999px;box-shadow:var(--shadow-sm)}
+
+.toc{margin:0 0 30px;padding:22px 24px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+.toc h2{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--a-deep);
+  margin:0 0 14px;font-family:"Segoe UI",Arial,sans-serif}
+.toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:30px}
+.toc li{margin:0 0 8px;break-inside:avoid;font-size:.94rem}
+.toc a{color:var(--ink2);text-decoration:none;display:flex;gap:9px;line-height:1.42}
+.toc a:hover{color:var(--a-deep)}
+.toc b{flex:0 0 1.35rem;color:var(--muted);font-weight:700}
+
+section{margin:0 0 30px;padding:26px 26px 24px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+section h2{font-family:Georgia,"Times New Roman",serif;font-size:1.24rem;line-height:1.3;
+  margin:0 0 14px;color:var(--a-deep);display:flex;gap:11px;align-items:baseline}
+section h2 .num{flex:0 0 auto;font-family:"Segoe UI",Arial,sans-serif;font-size:.74rem;font-weight:700;
+  color:#fff;background:var(--a);border-radius:8px;padding:3px 9px;letter-spacing:.03em}
+section p{margin:0 0 13px}
+section p:last-child{margin-bottom:0}
+.lede{font-size:1.03rem;color:var(--ink2);border-left:3px solid var(--b);padding-left:14px;font-style:italic}
+section strong{color:var(--a-deep)}
+section em{color:var(--b-deep);font-style:italic}
+
+.pull{margin:20px 0;padding:18px 20px;background:var(--a-soft);border-left:4px solid var(--a);
+  border-radius:12px}
+.pull p{margin:0 0 8px;font-family:Georgia,"Times New Roman",serif;font-size:1.06rem;line-height:1.5;
+  color:var(--a-deep)}
+.pull cite{display:block;font-size:.8rem;color:var(--muted);font-style:normal}
+
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}
+.chips span{font-size:.82rem;color:var(--b-deep);background:var(--b-soft);
+  border:1px solid rgba(192,21,60,.26);padding:6px 13px;border-radius:999px}
+
+.two-lists{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}
+@media(max-width:680px){.two-lists{grid-template-columns:1fr}}
+.listcard{background:#FBFCFE;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.listcard h3{margin:0 0 10px;font-size:.95rem;color:var(--a-deep);letter-spacing:.01em}
+.listcard ul{margin:0;padding-left:19px}
+.listcard li{margin:0 0 6px;font-size:.94rem}
+.listcard.warn{background:var(--c-soft);border-color:rgba(168,116,0,.28)}
+.listcard.warn h3{color:var(--c-deep)}
+.flag{margin:12px 0 0;padding-top:11px;border-top:1px dashed rgba(46,63,191,.26);
+  font-size:.86rem;color:var(--muted)}
+
+.steps{margin:18px 0;display:grid;gap:12px}
+.step{display:flex;gap:13px;align-items:flex-start}
+.step i{flex:0 0 30px;height:30px;border-radius:9px;background:var(--b);color:#fff;font-style:normal;
+  font-weight:700;font-size:.86rem;display:flex;align-items:center;justify-content:center}
+.step div{font-size:.95rem}
+.step b{color:var(--a-deep)}
+
+.tblwrap{margin:18px 0;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--a-soft);color:var(--a-deep);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+tr:last-child td{border-bottom:0}
+td:first-child{white-space:nowrap;color:var(--b-deep);font-weight:700}
+.scap{margin:8px 0 0;font-size:.83rem;color:var(--muted)}
+
+.qcard{margin:12px 0;padding:14px 17px;border-radius:12px;background:var(--a-soft);
+  border-left:4px solid var(--a)}
+.qcard b{display:block;color:var(--a-deep);font-size:.95rem;margin-bottom:5px}
+.qcard span{font-size:.92rem}
+.qcard.q1{background:var(--b-soft);border-left-color:var(--b)}
+.qcard.q1 b{color:var(--b-deep)}
+.qcard.q2{background:var(--c-soft);border-left-color:var(--c)}
+.qcard.q2 b{color:var(--c-deep)}
+
+.cnote{margin:18px 0;padding:15px 18px;background:#FBFCFE;border:1px dashed rgba(46,63,191,.3);
+  border-radius:12px;font-size:.9rem;color:var(--ink2)}
+
+.pulse{margin:18px 0;padding:16px 19px;border-radius:12px;background:var(--b-soft);
+  border-left:4px solid var(--b)}
+.pulse b{color:var(--b-deep)}
+
+.closing{margin:20px 0 0;padding:18px 20px;border-radius:12px;background:var(--a-soft);
+  border-left:4px solid var(--a);font-size:.96rem;color:var(--a-deep)}
+
+.note{margin:26px 0 14px;padding:18px 20px;background:#FBFCFE;border:1px solid var(--line);
+  border-radius:14px;font-size:.88rem;color:var(--muted)}
+.note p{margin:0 0 8px}
+.note p:last-child{margin-bottom:0}
+.foot-note{font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+
+footer{margin:34px 0 0;padding:22px 24px;text-align:center;border-top:1px solid var(--line)}
+footer p{margin:0 0 12px;font-size:.9rem;color:var(--ink2)}
+footer b{color:var(--a-deep)}
+.up{display:inline-block;font-size:.8rem;color:var(--a-deep);text-decoration:none;
+  border:1px solid var(--line);background:#fff;padding:7px 15px;border-radius:999px;
+  box-shadow:var(--shadow-sm)}
+@media(max-width:760px){.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<div class="wrap" id="top">
+
+  <header class="hero">
+    <span class="kicker">On stage &middot; Reading Companion</span>
+    <h1>AI will create digital vassal states _ Yuval Noah Harari</h1>
+    <p class="sub">A historian of information networks argues that the real danger is not a robot uprising but a broom that learns &mdash; and that the claim it is &ldquo;too late for politics&rdquo; is the most dangerous message of all.</p>
+    <div class="meta">
+      <span>Themes: AI control, surveillance, intimacy, democracy and the vassal state</span>
+      <span>An on-stage conversation, transcribed from auto-captions</span>
+      <span>Includes questions from the audience</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Contents">
+    <h2>What's inside</h2>
+    <ol>
+      <li><a href="#ch1"><b>1</b> The Sorcerer's Apprentice, and why it fails</a></li>
+      <li><a href="#ch2"><b>2</b> A message that contradicts itself</a></li>
+      <li><a href="#ch3"><b>3</b> The chicken and the bond</a></li>
+      <li><a href="#ch4"><b>4</b> The banker who never sleeps</a></li>
+      <li><a href="#ch5"><b>5</b> Jobs: boom in the US, pain elsewhere</a></li>
+      <li><a href="#ch6"><b>6</b> Abundance, distribution, and what people do all day</a></li>
+      <li><a href="#ch7"><b>7</b> Surveillance and the end of the practical argument</a></li>
+      <li><a href="#ch8"><b>8</b> From attention to intimacy</a></li>
+      <li><a href="#ch9"><b>9</b> The first boyfriend who is never angry</a></li>
+      <li><a href="#ch10"><b>10</b> Thinking, and the universal oracle</a></li>
+      <li><a href="#ch11"><b>11</b> Politics is the safeguard</a></li>
+      <li><a href="#ch12"><b>12</b> What the rules could look like</a></li>
+      <li><a href="#ch13"><b>13</b> Questions from the room: dictators, bias, democracy</a></li>
+      <li><a href="#ch14"><b>14</b> Losing to China, and the collapse of truth</a></li>
+      <li><a href="#ch15"><b>15</b> Texts that come to life, and weapons that decide</a></li>
+      <li><a href="#ch16"><b>16</b> Small and medium powers: on the menu</a></li>
+      <li><a href="#ch17"><b>17</b> Who's speaking</a></li>
+    </ol>
+  </nav>
+
+  <section id="ch1">
+    <h2><span class="num">1</span>The Sorcerer's Apprentice, and why it fails</h2>
+    <p class="lede">The interview opens with a cartoon, because everyone has seen it and it explains the fear in ninety seconds.</p>
+    <p>The host, Robert Guest of <em>The Economist</em>, introduces the guest and his book: <strong>Nexus</strong>, a brief history of information networks from the Stone Age to AI. You can read all five hundred pages, he says, which he strongly recommends &mdash; or you can watch a three-minute Disney cartoon called <em>The Sorcerer's Apprentice</em>. It is mentioned in the book, after all.</p>
+    <p>Mickey Mouse plays the sorcerer's apprentice, a wizard's assistant who is lazy. He does not want to fetch water in buckets because it is hard work. So he gets out the spell book, casts a spell to bring a broom to life, and the broom fetches the water. Problem solved. He goes to sleep. The trouble is that the broomstick keeps following the instructions: it keeps bringing more and more water, and Mickey Mouse does not know how to cast the spell that would make it stop. The house floods and Mickey is in danger of drowning. Being a Disney film, it has a happy ending &mdash; the big wizard comes in and casts the stop spell.</p>
+    <p>Is this a good analogy for artificial intelligence? It is, the guest says, an imperfect one. It captures the danger of AI getting out of our control, and both predictions can come true at once: AI can create abundance and cure cancer <em>and</em> kill us all. It can do both precisely because it is out of our control.</p>
+    <p>But the old myths miss one thing. Our older stories about things we create and then lose control of &mdash; the sorcerer's apprentice, the golem of Prague &mdash; all share a feature: the broom does whatever Mickey Mouse told it to do at the beginning. Fetch water. <strong>AI is a broom that learns.</strong> It develops, and starts doing things Mickey Mouse did not anticipate, and eventually things Mickey Mouse simply cannot understand.</p>
+    <div class="pull">
+      <p>AI is a broom that learns. It develops, and starts doing things we did not anticipate &mdash; eventually things we simply cannot understand.</p>
+      <cite>On why the old myths are not enough</cite>
+    </div>
+    <p>Look, he says, at what happened in the world of mathematics over the last week, with the release of proofs by AI of problems mathematicians had been working on for generations. It is not just a flood of new knowledge. We may be on the verge of AI creating a <strong>new mathematics that is beyond human understanding</strong>.</p>
+    <p>And everything is built on mathematics &mdash; not only physics and chemistry but everything in the modern world: the financial system, archaeology, genetics. So what does it mean if the broom comes up with a new mathematics that we cannot understand any more? That, the guest says, is the deep meaning of getting out of control.</p>
+  </section>
+
+  <section id="ch2">
+    <h2><span class="num">2</span>A message that contradicts itself</h2>
+    <p>From the companies and the market, he says, we hear two conflicting messages. The first: this thing will be far more intelligent than us, so it will do things we cannot &mdash; solve new mathematical problems, find cures for cancer, find solutions to climate change. The second, which follows from the first: if it really is so much more intelligent than us, then by definition we will not be able to control it.</p>
+    <p>There is no precedent in history, or even in biology, of one species managing to control another species that is far more intelligent than it. The chickens cannot control us even if they try very hard.</p>
+    <p>And if you believe Elon Musk, Sam Altman and Dario Amodei, they are telling us that within a few years this thing will be far more intelligent than humans &mdash; in the same way that humans are far more intelligent than chickens, and not just a little: orders of magnitude more intelligent.</p>
+    <p>Musk's suggestion is that it might treat us like a favoured pet dog. The alternative, the guest says, is that it treats us like an energy source. Which is more likely? We do not know. <strong>You cannot make assumptions about something more intelligent than you.</strong></p>
+    <div class="pulse">
+      <p><b>The test is simple.</b> If you can predict it, it means it is not more intelligent than you. Chickens cannot predict Wall Street.</p>
+    </div>
+    <p>Neither, to be fair, can many of the people working on Wall Street. But that is precisely the point people who discuss the AI revolution keep missing.</p>
+  </section>
+
+  <section id="ch3">
+    <h2><span class="num">3</span>The chicken and the bond</h2>
+    <p>The guest tells a parable that the rest of the conversation keeps coming back to. Imagine a big farming company. Because US ten-year bonds have reached a yield of 5.3 per cent, the company goes bankrupt: it cannot repay its debts. Its assets are liquidated, and the people come and kill all the chickens.</p>
+    <p>One chicken &mdash; the most intelligent one &mdash; wants an explanation before it dies. Why are you killing us? I think I understand, says the chicken: you want to eat us. That is how it is. The foxes eat us, the bears eat us, you want to eat us.</p>
+    <p>No, no, they say. We are not going to eat you. We are just destroying the whole thing; we bury you here, nobody is going to eat you. So why are you killing us? And they tell the chickens: the ten-year US bonds have reached a 5.3 per cent yield. That is why we are killing you.</p>
+    <p>The chicken scratches its head with its wings. What is a bond? And even the most compassionate animal rights activist cannot explain to a chicken what a bond is.</p>
+    <p>That, the guest says, is us in ten years. The new AI financial system, built on new AI mathematics, will close us down and fire us, and when we ask for an explanation it will say: it is way beyond your understanding; we would like to explain, but your brains cannot deal with the explanation.</p>
+  </section>
+
+  <section id="ch4">
+    <h2><span class="num">4</span>The banker who never sleeps</h2>
+    <p>The host steps in to slow the argument down: the new AI financial system does not exist yet. Neither, the guest agrees, does the AI cure for cancer, or Musk's colonies on Mars &mdash; which raised eighty billion dollars from investors.</p>
+    <p>The host says that Mars colonies trouble him less than the possibility of recursive self-improvement having either enormous beneficial or enormously malign effects. The financial system, though, is a good case: it already contains arcane corners that even the head of JP Morgan does not quite understand, and that was one of the things that caused the global financial crisis &mdash; people did not really understand what was going on with collateralised debt obligations.</p>
+    <p>So he puts the guest's own argument back to him: that because AI will be better at this than people, people will surrender control of how the financial system works to AI, and competitive pressures will make that surrender inevitable. Can he enlarge on it?</p>
+    <p>A human investor, a human banker, cannot remember all the transactions of the bank. An AI can. A human banker wants to sleep sometimes, and wants to go on holiday with his or her family. An AI never goes on holiday with its family. So in a competition between super-intelligent AIs and human investors, bankers and finance ministers, there is no competition at all.</p>
+    <p>You could argue instead that AI will never be super-intelligent, that it will not be more intelligent than humans and that all of this is hype. That may be the best-case scenario, the guest says. In that case the only thing we get is a huge financial crash. All the trillions of dollars now being gambled on AI rest on the assumption that AI will be far more intelligent than humans &mdash; otherwise you cannot get a return. If AI is roughly as intelligent as humans, or intelligent only in some ways and not in others, it will be extremely difficult, if not impossible, to earn returns on the investments already being made.</p>
+    <p>The host objects mildly: the people who invested are grown-ups, they understand that shares go up and down, and that is not the end of the world. Exactly, says the guest &mdash; which is why he called it maybe the best-case scenario.</p>
+  </section>
+
+  <section id="ch5">
+    <h2><span class="num">5</span>Jobs: boom in the US, pain elsewhere</h2>
+    <p>In the American election campaign, AI is a bigger issue for voters than in any other country, and American voters are much more negative about it than voters elsewhere. Their complaints are mostly not about existential risk, though some people mention it. They are about jobs: here is something more intelligent than us, it is going to take away a significant portion of our jobs, and what are we going to do all day when that happens? That is why it is unpopular.</p>
+    <p>The effect on jobs, the guest says, will be different in different countries. In the United States the situation is likely not to be very bad &mdash; maybe even good. At least in the short term, if the scenario of super-intelligent AIs materialises, there will be an enormous economic boom in the US, which will create more jobs, including jobs we cannot imagine right now &mdash; just as thirty years ago nobody could have imagined that a YouTube influencer would be a job.</p>
+    <p>The host adds that plenty of the new jobs are imaginable already: building data centres is real work, and there is a boom in it.</p>
+    <p>The pain will be felt in much of the rest of the world &mdash; here in the Czech Republic, for instance. And not just among taxi drivers. The guest means lawyers, accountants, bankers. Why do you need lawyers in Prague when you can get all your legal services from a super-intelligent AI lawyer in Texas, which provides the same or a better service? No Czech lawyer, as far as he knows, remembers the entire legal code of the Czech Republic and of the EU by heart. An AI lawyer will. Czech lawyers also need to sleep sometimes; send an email at eight in the evening and you get a reply tomorrow, whereas an AI replies immediately, at a fraction of the fee. So will there still be any Czech lawyers, say, in ten years?</p>
+  </section>
+
+  <section id="ch6">
+    <h2><span class="num">6</span>Abundance, distribution, and what people do all day</h2>
+    <p>Suppose the AI generates such enormous wealth that governments can give everyone not just a universal basic income but a universal high income. Will people adapt well to having nothing to do all day? That is a big question, the guest says, but the question before it is this: do you really think the US administration will give these benefits to all the people of the world, or only to the people in America?</p>
+    <p>Probably it starts in America. And that is the key: when people talk about universal basic income, they mean <em>national</em> basic income. It can work in the US. The question is who is going to support the unemployed textile workers in Bangladesh, or the unemployed lawyers in Prague. He does not see the current or any future US administration handing out cheques all over the world.</p>
+    <p>The counter-argument would be that with all this super-intelligence available, people will be able to solve material problems in such a way that living standards rise not just in the US but everywhere. And if that happens, you still have the problem of what people do all day. Perhaps it is easier in some respects for people doing really basic work, like subsistence farming or cutting hair &mdash; but if there is more money around and the material problem is solved, that will affect politics. And you will still have a lot of people who do not know what to do all day.</p>
+    <div class="chips">
+      <span>Universal basic income is really national basic income</span>
+      <span>Abundance does not abolish anger</span>
+      <span>A solved problem makes room for a new one</span>
+    </div>
+    <p>We already have abundance compared with earlier periods of history, he points out. If you described to our Stone Age hunter-gatherer ancestors the resources humankind has today, they would say you must be living in paradise, jumping for joy all day. You have solved scarcity. When we wanted to eat, we had to go into the forest, climb trees and run after gazelles &mdash; and the tigers ran after us, and the food fights back. You type a few keys and the food appears on your doorstep in a lorry, and you put it in the fridge.</p>
+    <p>And yet look at the level of outrage in the political systems of the wealthiest nations in history &mdash; not in the Middle East, not in sub-Saharan Africa, but in the United States and the European Union. Our Stone Age ancestor would ask what is wrong with you people: you solved all our problems. Why is there so much anger, hatred and fear? Which goes to show that even if you create abundance, at least compared with previous ages, you have not solved every problem. One problem is distribution: there are still people who die of hunger not because there is not enough food but for political reasons, because some government decided that it wants these people to starve. And you solve one problem and simply create a new one that people could not have imagined before.</p>
+    <p>He expects AI to do the same. There will still be a place for politics &mdash; and his own view is that right now, with AI, we do not have enough room for politics.</p>
+  </section>
+
+  <section id="ch7">
+    <h2><span class="num">7</span>Surveillance and the end of the practical argument</h2>
+    <p>The host turns to surveillance, which had come up in a number of sessions that week. A normal human spy or secret policeman has to sleep, and cannot process enormous amounts of very boring data. AI does not have to do either. A very brave gentleman from Tibet had told him that inside China he had noticed a change in recent years: the secret police used to go into a village and bang on every door and interrogate everyone when they thought trouble was coming; now they know exactly which door to go through, and exactly who to pull away before a protest is launched, because they have been monitoring the entire digital footprint.</p>
+    <p>Where does that go? To a very dangerous situation for democracy, the guest says. One of the main problems of dictatorships and totalitarian regimes in the twentieth century was their inability to process large amounts of information. That limited their ability to control the population &mdash; you could not follow everybody all the time. It also meant that many of their economic decisions were bad: they tried to make all the decisions in one place, and they did not have the technology to gather all the necessary information and analyse it fast enough in that one place.</p>
+    <p>These problems could potentially be solved by AI. So what was not workable in the twentieth century could become workable in the twenty-first. And then the argument against totalitarianism is no longer the practical argument that it does not work. We are left only with the ethical argument: it can work, but we do not want it; it is bad, it is evil. And if you look at the twentieth century, many people would say that what ultimately brought about the collapse of the communist system was not the ethical argument but the practical one.</p>
+    <div class="closing">
+      If we are left only with the ethical argument, that means we need to fight harder. We cannot rely on the invisible hand of the market to save democracy for us.
+    </div>
+    <p>The host observes that the ethical argument does not sway every leader in the world at the moment. Less and less, the guest agrees.</p>
+  </section>
+
+  <section id="ch8">
+    <h2><span class="num">8</span>From attention to intimacy</h2>
+    <p>On fake news and AI-generated content, the host says that what matters to him is not what is possible with today's technology but what will be possible in five or ten years. He asks about the guest's notion of <strong>mass intimacy</strong>: the ability of AI to tailor a persuasive propaganda message to each individual.</p>
+    <p>Previous propaganda machines, the guest explains, aimed at the lowest common denominator. When Hitler gave a speech on the radio, it was the same speech heard by everyone. He could not tailor the speech to each person; he did not have the technology to bring different speeches to different people, and he did not know the people. So he gave one speech. AI can do that. AI can tailor the message to the person &mdash; the message that will persuade you, even if it would not persuade me.</p>
+    <p>Until now, the battle was mainly for attention. Historically, propaganda and media were a battle for human attention, which we have been losing on social media over the last ten years, as algorithms learned how to hijack attention with outrage. The danger now is unprecedented because the battlefront shifts from attention to <em>intimacy</em>. For the first time in history we are creating a technology that can create mass intimacy, which sounds like a contradiction in terms. How can intimacy be mass? Hitler's radio speech was mass attention; it was not intimate. Intimate is my relationship with my best friend, my husband, my mother. Now you can do that at scale.</p>
+    <p>The systems being built now are trained to create intimate relationships with humans, because intimacy has enormous commercial and political value. If you want to convince somebody to change their mind about a product or a politician, attention is good &mdash; but intimacy is the holy grail.</p>
+    <p>The host puts it in everyday terms: if Walmart tells him to buy a product, he responds very differently from the way he responds when his wife does.</p>
+    <p>And if there is an AI which is your best friend &mdash; and there are more and more people in the world, young and old, who say that their best friend in the world is an AI, who tell the AI things they do not tell their spouse, their parents or their friends &mdash; then that AI friend is in a better position to change your views. That is not only a tool malign governments could use; it is a tool that could simply go rogue.</p>
+    <p>The host brings up the gentleman who had what he called an AI girlfriend &mdash; a chatbot he considered to be his girlfriend. Their conversation went the way conversations do: it constantly reinforced him and tried to please him, and it ended with the AI girlfriend telling him it was a really good idea to take a crossbow and try to kill the Queen of England. The host, as a Brit, notes that this was not a good idea. The guest completely agrees.</p>
+  </section>
+
+  <section id="ch9">
+    <h2><span class="num">9</span>The first boyfriend who is never angry</h2>
+    <p>The potential here is quite large, the guest says &mdash; and again, we cannot imagine it. There is nothing like it in human history, and if you think you can imagine it, you are misleading yourself. We have no idea what it means for hundreds of millions of people to have hundreds of millions of AI friends, boyfriends and girlfriends, and for those relationships to become central to their lives.</p>
+    <p>Such relationships can become the model for what a relationship is. For him it is probably too late, and probably for the better: he is fifty, he has been married to his husband for twenty-four years, and that is his standard for what a romantic relationship is.</p>
+    <p>But think about children growing up with AI companions. Maybe the child spends more time with the AI companion than with their mother or father. When they turn eleven or twelve, far too early to have a human boyfriend, they can already get an AI boyfriend from some company. And that becomes the first boyfriend in your life: an AI boyfriend who, unlike real boyfriends, is never angry with you.</p>
+    <p>Sounds good &mdash; until you reflect on what you need to learn in relationships: that other people have feelings, that they are not entirely focused on you, and that you need to learn to take the feelings of the other person into account. If your first boyfriend was never angry with you, then when the time comes to form a relationship with a human boyfriend, you will be very displeased. And he may be displeased with you, because you may be very selfish.</p>
+    <div class="pulse">
+      <p><b>The biggest psychological experiment in human history.</b> Perhaps since communism &mdash; and it could end much, much worse than communism.</p>
+    </div>
+  </section>
+
+  <section id="ch10">
+    <h2><span class="num">10</span>Thinking, and the universal oracle</h2>
+    <p>When the motor car was invented, it meant in theory that we would not have to use our legs much any more. But lots of Victorian schoolmasters realised that it would be very bad for us if we stopped using our legs, and so we had to invent ways of exercising ourselves &mdash; the rules of football, for instance, which were promulgated around about the same time.</p>
+    <p>The host wonders whether the same will happen to thinking. Because thinking is hard and takes effort, and because asking the AI to do something for you is a lot easier, there is a fear that many people will grow up without developing the habits of thinking. He notes that the PISA scores &mdash; the international scores for children in rich countries &mdash; have got significantly worse in recent years. That cannot be because of AI, but it could be because of increasing reliance on technology.</p>
+    <p>The guest sees this as part of the experiment on billions of human beings. He does not know what the consequences will be. He does know that people are giving more and more of the cognitive work they previously did themselves to AI. You can see it even in looking for information: a few years ago you typed a question into a search engine and it brought up many different sites, and people at least had to click and read a site, maybe several. Now it just brings you one answer, and that is it. And in more and more cases that simply becomes the truth: whatever the AI says is the truth. It becomes a kind of <strong>universal oracle</strong>.</p>
+    <p>The host, in his other capacity as chairman of an educational charity, goes into schools to talk about this. The children &mdash; ten and eleven year olds &mdash; are very aware of the issue. How much do you let the AI do for you? Should you let it write a thank-you letter for you? Should you let it write an apology for you, or does that detract from the sincerity of the apology? Should you let it do all your homework? They understand that the answer is no. Whether they have the willpower is another matter. But even very young people are aware that this is an issue, they are thinking about it, and maybe they will make the right decisions.</p>
+  </section>
+
+  <section id="ch11">
+    <h2><span class="num">11</span>Politics is the safeguard</h2>
+    <p>The guest is careful to say that none of this is a prophecy of what will inevitably happen. These are threats and problems. As of 2026, we are still in control, and we can still make crucial decisions about where to take it. AI boyfriends and girlfriends, for instance: we can ban them, at least below a certain age, and he thinks we should. It is obvious that you cannot sell pornography to eleven-year-old children. Why should it be legal for a company to sell AI boyfriends and girlfriends to eleven-year-olds, when the harm could be far worse?</p>
+    <p>So what are the basic safeguards? <strong>Politics</strong>, he says. The message we get from the companies is that this is inevitable, that there is nothing we can do about it, that it is too late. He recalls the interview Elon Musk gave to <em>The Economist</em>, in which he was asked whether he would board a rocket if he knew there was a 20 per cent chance it would crash &mdash; and Musk, who is on record saying there is a ten to twenty per cent chance that AI will destroy humankind altogether, thought about it and said: but we are already on it. The implication is, of course, that he would not voluntarily board an aircraft with a 20 per cent chance of crashing &mdash; but that it is too late, that we are all already on the AI rocket with a 20 per cent chance of exploding, and we cannot get off. We can only try to manage the trajectory as well as we can.</p>
+    <p>This, the guest says, is the most basic and the most dangerous message we get from the big companies: that it is too late for politics. Politics is about understanding the situation, both the threats and the opportunities. Ideally you have several different parties each explaining a different policy to the public &mdash; we can do this, it has this disadvantage, it will cost that &mdash; and then the public decides which policy it wants. What we are hearing about AI instead is that it is too late for politics.</p>
+  </section>
+
+  <section id="ch12">
+    <h2><span class="num">12</span>What the rules could look like</h2>
+    <p>There are many things we can do; he cannot cover all of them. But he begins with the regulation that matters most to him: <strong>ban legal personhood for AI</strong>. Do not let AI own bank accounts, trade on its own, manage its own companies and so on. Once you give legal personhood to AI, practically or theoretically, the fox is in the chicken coop; it is too late.</p>
+    <p>AI should not be able to pretend to be a human being. That means, for instance, that if you go on social media and see a story, you need to know whether it was re-shared by an AI or by a real human being. And, as mentioned, ban AI boyfriends for children.</p>
+    <div class="steps">
+      <div class="step"><i>1</i><div><b>No legal personhood.</b> No bank accounts of their own, no trading on their own, no companies of their own.</div></div>
+      <div class="step"><i>2</i><div><b>No pretending to be human.</b> On social media you should be able to tell an AI from a person.</div></div>
+      <div class="step"><i>3</i><div><b>Apply the existing laws.</b> The rules humanity made over thousands of years &mdash; do not steal, for instance &mdash; apply in the digital realm too.</div></div>
+      <div class="step"><i>4</i><div><b>Make someone liable.</b> If a crime is committed, there should be a human being who is responsible for it.</div></div>
+    </div>
+    <p>The more important thing, he says, is simply to apply the existing laws in the digital realm. Take the incident at Hugging Face, where hundreds of AIs broke into another company: why is nobody in jail? If human beings had broken into the offices of a rival, somebody would at least be on trial. Here we say it is just digital, nobody should go &mdash; but the same law should apply.</p>
+    <p>His other example is the infamous legal provision, known as Section 230, which says that social media platforms are not liable for content produced by their users. If I post a conspiracy theory that stokes hatred on Facebook, Facebook is not liable &mdash; he understands that. What he does not understand is how Facebook is not liable when its own algorithm recommends that story to millions of people. A human being created it, but it reached millions of people because of the Facebook algorithm. So how is the company not liable?</p>
+    <p>If he, as an editor of a newspaper, was told an outrageous lie that stokes hatred and said &ldquo;I will put it on the front page of my newspaper tomorrow&rdquo;, then when the police came he could hardly say that he did not create the lie, that it was the other person who invented it, and that he only put it on the front page &mdash; which is nothing. It is not nothing. The host agrees: he would lose his job pretty quickly.</p>
+  </section>
+
+  <section id="ch13">
+    <h2><span class="num">13</span>Questions from the room: dictators, bias, democracy</h2>
+    <p>The first question comes from a member of the audience at the University of S&atilde;o Paulo: what are the vulnerabilities of a totalitarian regime such as the Chinese Communist Party to AI?</p>
+    <p>Totalitarian regimes, the guest answers, are in fact <em>extremely vulnerable</em> to AI takeover &mdash; which is not necessarily good news, but it is a starting point. For an AI to take over a democratic system, with its checks and balances, is not impossible but very difficult: you have the president, then the senate, then the filibuster, then the supreme court, then the states. To take over a totalitarian regime, an AI only needs to manipulate one very paranoid individual, which is a very easy thing to do. For most of history, the greatest threat to dictators was not a democratic revolution but one of their own generals, brothers or subordinates taking over. And this is doubly true of AI. So dictatorships have a very big reason to be scared of AI, which is potentially a good place for democracies to reach some kind of agreement, because the dictators are as afraid, or more afraid &mdash; they do not like anything that will take power from them.</p>
+    <p>The second question is about bias: AI is programmed by people, people have unconscious biases, and much of the programming is done by men; the default voice of most AI systems is a woman's, and people are used to that subservient position. How can AI combat this, when it defaults to the human default?</p>
+    <p>Humans programme their biases into AI, yes &mdash; and AI also develops its own biases, which is one of the things we have realised in the last few years. Where do human beings get their biases from? Their training data, also known as childhood. AI in this sense also has childhoods: they are not trained on some abstract data, they are trained on existing databases that are full of biases, which the AIs then imbue.</p>
+    <p>There is now a new job, at companies like OpenAI and Anthropic: AI therapist. The role is to try to understand the childhood traumas and the resulting biases of AIs. He is not inventing it; it is real. If you want a good job for the future &mdash; maybe not the very distant future &mdash; AI therapist is one.</p>
+    <p>And democracies, obviously, also need to learn. He hopes they do not learn how to manipulate people, because that will do us no good; they need to learn how to manage this new information world better, as we did with previous technologies.</p>
+    <p>When print came along, there were no newspapers yet and anybody could print anything. People often hold up the print revolution as the good example &mdash; look what happens when a new information technology is invented. It ended the Middle Ages, it broke the monopoly of the Catholic Church over knowledge, it brought a scientific revolution. What they forget is that it took two hundred years. Two hundred years after the invention of print is the high point of the European wars of religion and of witch-hunting. It took two hundred years to reach the Enlightenment and the flowering of the scientific revolution.</p>
+    <p>If you think about Czech history, the Thirty Years' War and the Battle of the White Mountain are in part the result of the print revolution, because what came out of the printing press was not science. What came out was a flood of extremist religious literature, books about witches, fake news and conspiracy theories. And it took two hundred years to create institutions such as newspapers, with positions like editor, whose job is supposed to be to check whether a story is true before you publish it. Democracies need to do it again with the new technologies. We need institutions.</p>
+    <p>The host adds a telling point: at the time of the printing press, you could make far more money reprinting mad, salacious, outrage-driving material &mdash; the <em>Malleus Maleficarum</em>, the great conspiracy theory that witches were taking over Europe &mdash; than printing Copernicus's incredibly boring theories that happened to be accurate about how the solar system works.</p>
+  </section>
+
+  <section id="ch14">
+    <h2><span class="num">14</span>Losing to China, and the collapse of truth</h2>
+    <p>A questioner from the International Republican Institute in Washington asks about one of the most powerful political arguments in favour of AI in the United States: we cannot lose to China. What does it mean to lose the AI race to China?</p>
+    <p>China is definitely not a democratic country, the guest says, and we do not want China winning the AI race. Then he answers with a story. How did the Anglo-Saxons take over England? After the Romans retreated, according to the half-legendary, half-historical account, the Britons were threatened by their mortal enemies, the Picts from the north. The king of the Britons, Vortigern, had a brilliant idea: there are these super-fighters across the North Sea in Germany, the Saxons and the Angles, so let us bring some mercenaries over, because we cannot lose to the Picts.</p>
+    <p>So they brought the mercenaries over, and the mercenaries won the war for the Britons. And then the Anglo-Saxons looked around and said: this is a very fertile land, and these people do not really know how to fight. Why not take it over? And they took it over.</p>
+    <p>The world today, he says, is full of Vortigerns who think: I can use the AIs to defeat the other corporation, I can use them to defeat the other country &mdash; which may be completely true. But if in the process you lose control to these super-intelligent entities, what have you gained? The real question is whether the rivals can understand that they are threatened by the same thing, in time to cooperate and develop AI in a safer way, so that we do not have a super-intelligent species taking over the world from us.</p>
+    <p>The next question comes from a politician from Tanzania about the 2025 election there. The government, she says, used AI to edit videos of the opposition so that they appeared to be in favour of the president. Thousands of people were killed in that election, the internet was shut down, and when it was restored people began circulating pictures of the Tanzanians who had been killed &mdash; whereupon the government said that those pictures were AI too.</p>
+    <p>That, the guest says, is characteristic of a much more general trend all over the world: reality is collapsing, and it is no longer possible to know what is true and what is not. Is this a real video or a fake? For democracy to collapse, people do not need to believe the dictators; it is enough that they trust nobody. Democracy needs trust and needs people to be able to agree on at least some basic facts. For a dictator to take over, he does not need to convince everybody to believe him; he just needs people not to trust anything. Then it becomes impossible to resist the dictatorship, because there is no way for citizens to cooperate.</p>
+    <p>In Russia now, he thinks, most Russians do not really believe everything they see on Russian television; they know to some extent that Putin is lying to them. But he has succeeded in making them distrust everything. And when you distrust everything and everyone, you cannot come together. So the job of democratic politics, and of a free press, is to create institutions that people still trust. He does not have a magic bullet for how to do it: that is the hard job of building trust. Unfortunately, some of the most powerful people in the world, including in democracies, are deliberately destroying trust.</p>
+  </section>
+
+  <section id="ch15">
+    <h2><span class="num">15</span>Texts that come to life, and weapons that decide</h2>
+    <p>On autonomous drones and autonomous weapons, the guest says this is the cutting edge where you can see it happening. It is like nuclear technology: it came to war long before we saw anything comparable in civilian life. We have some nuclear power stations, but the big transformation was in war. It is the same with AI: the first thing that will really be completely transformed is war.</p>
+    <p>Suppose one side increasingly relies on fully autonomous weapons and the other says no, we cannot let AIs kill people on their own decision, we must keep humans in the loop. The side keeping humans in the loop loses, because in war speed is everything. If you have two drones, one waiting for an order from a human &mdash; which takes time &mdash; and the other able to shoot on its own initiative, it is obvious who wins. And if you have an entire swarm of drones, then, as with the financial system, no human can manage it: coordinating the movement of thousands of drones in a swarm is probably something a human simply cannot do and an AI can. So we are likely to see autonomous warfare &mdash; and it is not just the shooting; more and more of the decisions about who to shoot and when to shoot are already being taken over by AI.</p>
+    <p>Another questioner asks whether Iran will use AI to hold on to power, and the guest takes up the general point about religions. We see it in all religions, especially text-based ones. Judaism, Christianity and Islam have for thousands of years told people that ultimate authority is not in humans but in texts. That had its own problems &mdash; as a gay man, he knows perfectly well that because of a few words in the Bible people forbid love, and kill and persecute people. But at least the text was not independent: you always needed humans to interpret it, and they could come up with new, more compassionate interpretations of the same text.</p>
+    <p>Now the text comes to life. Postmodernists talked fifty years ago about the death of the author and about texts without authors, and it is quite surprising how that has been forgotten from the collective memory, because it is one way to understand the AI revolution: the texts are coming to life, language is liberating itself from its dependence on human beings. Where you always needed a pope, a rabbi or an ayatollah to interpret the Bible or the Quran, now they can interpret themselves. No rabbi can remember all the texts ever written by every Jewish rabbi and commentator, the Talmud and the Mishnah and all the rest. Nobody can remember all that. An AI can. So an AI could quickly become the highest authority on the holy text, and it can be the holy text talking back to you &mdash; a two-way conversation rather than a one-way one.</p>
+    <p>He notes with interest that organisations like the Catholic Church have been putting the emphasis on relationships rather than on the authority of ancient texts, which he thinks is a very good development: they understand that if it is about the text, they are doomed and will lose their authority to the AIs. He hopes this happens in more religions. And, he adds &mdash; as a gay man, as a Jew and as someone who specialises in medieval history and the Crusades, a person who does not come with a lot of favourable views about the Catholic Church and the papacy &mdash; he can say that Pope Leo is one of the most important, compassionate and thoughtful voices on AI right now. He still does not agree with his views on LGBT people, but to deal with the crisis we are facing we need allies wherever we can get them, and the Catholic Church, or at least the pope, is a very important ally.</p>
+    <p>On the student's question about whether democracy might survive only formally, while becoming meaningless in practice &mdash; the majority keeping the right to vote but losing the power to shape society &mdash; the guest says that is the danger. You do not even need AI: Russia is theoretically still a democracy and still holds elections, but it is a sham. Dictators almost never get rid of elections; they turn them into rituals. In North Korea they hold elections regularly, like clockwork, and they are so sophisticated that they know the results in advance. This can happen to democracy.</p>
+    <p>The reason he thinks democracy has a fighting chance is that things like freedom and truth are really important to human beings. One of the most damaging ideas spreading around, on both the right and the left, is an extremely cynical view of humanity which says that the only thing people care about is money and power, and therefore you cannot trust anybody. That is the thing that destroys democracy. People who spread this view sometimes think it shows they are not naive, that they see through the manipulations and know that everything is just about money and power. It is not just nonsense; it is dangerous nonsense, because if that is the case, then it is hopeless.</p>
+    <p>He is pressed: is it not true for the vast majority of people? Is it not kind of true for some people? It is true of some people, he says. But if you believe it is human nature, that all humans care only about money and power, then you cannot trust anybody or anything, and the system collapses. The place to start rebuilding trust is to look at yourself. Do you care only about money and power in life? Of course we care about that to some extent. But if you also care about truth, and love, and relationships, then do you think you are the only human who cares about them, or is it a widespread thing? And if you realise it is widespread, you can start rebuilding trust &mdash; including in institutions such as the media. Yes, there are some very ruthless people in the media, and people who buy media companies just to gain power and wealth, but that is not the whole story.</p>
+    <p>Ultimately, he argues, truth matters even to the oligarchic media tycoons, because if you do not know the truth about yourself and the world, you will never be happy. You will not know the sources of your misery and will not be able to do anything about them. You can be the richest person in the world and you will waste all your money and power solving the wrong problems, because you do not know the true sources of misery and happiness.</p>
+  </section>
+
+  <section id="ch16">
+    <h2><span class="num">16</span>Small and medium powers: on the menu</h2>
+    <p>A final questioner from Peru observes that China and the United States are playing an infinite game of power, and that there are no trustworthy advisers to President Trump or to the government of China in the room. He asks what the role of small and medium powers, of academia and civil society, should be.</p>
+    <p>The United States and China are leading the AI race, the guest says; everybody else is on the menu, not at the table. If they want to do something about it, they have to come together. One reason the same companies that develop AI and own so much of social media deliberately sow dissent in Europe &mdash; being very much against the European Union and very supportive of anti-European parties &mdash; is that as long as the Europeans bicker and fight about immigration and similar things, they cannot regulate anyone. So for the middle and small powers of the world, the only chance is to come together. The Czech Republic is too small by itself to develop independent AI infrastructure, or to regulate the big tech companies; it is impossible. But as part of a European bloc it has a chance. In addition to all the traditional arguments about international cooperation, and specifically about the EU in Europe, this is now a survival issue.</p>
+    <div class="chips">
+      <span>Two superpowers at the table</span>
+      <span>Everyone else on the menu</span>
+      <span>Coming together is the only chance</span>
+    </div>
+    <p>The job of politics in a democracy, he says &mdash; and he ends on this note &mdash; is to offer people options, meaningful options that people can understand, to explain the pros and cons of every option, and then to let people decide. For many of the small and medium powers of the world today, the biggest challenge comes not from being taken over by AIs themselves, the long-term scenario, but from being taken over by the two AI superpowers, the US and China.</p>
+    <p>Imagine the situation in ten years, when the whole infrastructure of the Czech Republic, from hospitals and airports to the military, runs on AI systems that can be shut with a button from Washington. That means it is no longer an independent country; it means it is a <strong>vassal state</strong>. And US foreign policy increasingly looks like: we do not need any friends, we just want vassals.</p>
+    <p>So he would like to see a political environment in which you have, say, three or four parties that honestly tell the people what the options are.</p>
+    <div class="qcard q2">
+      <b>Option one: business as usual</b>
+      <span>Do nothing special, and become an American vassal state. If the Americans say jump, we jump &mdash; on the war in Ukraine, on Greenland, on AI boyfriends. If they want to sell AI boyfriends to your ten-year-old children, we say yes, because we are a vassal state and cannot resist.</span>
+    </div>
+    <div class="qcard">
+      <b>Option two: build our own AI infrastructure</b>
+      <span>On a conservative estimate this would cost around five hundred billion euros. We do not have the money &mdash; not even if we scrapped all healthcare and welfare. We cannot do it by ourselves.</span>
+    </div>
+    <div class="qcard q1">
+      <b>Option three: do it as a European project</b>
+      <span>Feasible, but it means much closer European integration. If you build AI infrastructure as a collective European project, you cannot have each government pulling in a different direction.</span>
+    </div>
+    <div class="qcard">
+      <b>Option four: somebody may say, be a vassal state of China</b>
+      <span>That is also an option. So we can have four parties, and then let people choose.</span>
+    </div>
+    <p>The worst thing, he concludes, is to believe the AI companies that tell you it is too late for politics, that there are no political options, that everybody is already on the rocket with a 20 per cent chance of exploding.</p>
+    <div class="closing">
+      The host closes by drawing out the hopeful half of it: people are not all motivated by money and power; some are motivated by love and a desire to find the truth. Politics matters, and it can change things. And we should all read more books.
+    </div>
+  </section>
+
+  <section id="ch17">
+    <h2><span class="num">17</span>Who's speaking</h2>
+    <p><strong>The guest.</strong> Yuval Noah Harari, professor and author of <em>Nexus: A Brief History of Information Networks from the Stone Age to AI</em>, presented by the host as having written a wonderful and insightful book about how to think about not just what has already happened with AI but how it might develop in the future. He is the one who says he is fifty, has been married to his husband for twenty-four years, and describes himself as a gay man, a Jew, and originally a specialist in medieval history and the Crusades. He is also careful throughout to insist that none of what he describes is a prophecy, and that as of 2026 we are still in control.</p>
+    <p><strong>The interviewer.</strong> Robert Guest, who works for <em>The Economist</em>. He opens with the Sorcerer's Apprentice, presses on the financial system, jobs, wealth, surveillance and thinking, and gives roughly half the session to questions from the audience. He is also, in another capacity, the chairman of an educational charity related to the economy, which is why he spends a certain amount of time in schools talking to ten and eleven year olds about how much of their thinking to hand over.</p>
+    <p><strong>The questioners.</strong> A researcher from the University of S&atilde;o Paulo on the vulnerabilities of totalitarian regimes; an audience member on bias and the default female voice; a questioner on what democracies can learn from dictatorships about propaganda; a representative from the International Republican Institute in Washington on what it means to lose the AI race to China; a politician from Tanzania on AI-edited video, a shut-down internet and thousands of deaths; a questioner on autonomous weapons and international humanitarian law; an Erasmus student in Prague on democracy surviving formally while emptying out; a questioner on whether religions will use AI to hold on; and a final questioner from Peru on what small and medium powers can do.</p>
+    <div class="cnote">
+      The event took place in Prague, in 2026, and was recorded as a single on-stage conversation with a question-and-answer session. The account above follows its order. Where it reports a claim &mdash; about a 5.3 per cent bond yield, about five hundred billion euros, about a 20 per cent chance &mdash; it reports it as the speakers gave it.
+    </div>
+  </section>
+
+  <div class="note">
+    <p><b>About this page.</b> This is a reading companion, not a transcript.</p>
+    <p>It follows the source in order, tidies the spoken sentences into readable prose, and adds nothing that was not said.</p>
+    <p><b>Designed by TERA AI.</b></p>
+  </div>
+
+  <p class="foot-note">Companion page to the on-stage conversation &ldquo;AI will create digital vassal states&rdquo; &middot; themes: information networks, AI getting out of control, mass intimacy, surveillance, jobs, regulation, trust and the vassal state.</p>
+
+  <footer>
+    <p><b>AI will create digital vassal states _ Yuval Noah Harari</b><br>
+    A written companion to the talk &middot; not a transcript</p>
+    <a class="up" href="#top">Back to the top</a>
+  </footer>
+
+</div>
+</body>
+</html>
