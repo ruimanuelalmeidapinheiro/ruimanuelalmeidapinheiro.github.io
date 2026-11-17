@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Does Bacteria Know Its Alive &mdash; Reading Companion</title>
+<style>
+:root{
+  --bg:#F4F6FC;
+  --card:#ffffff;
+  --ink:#1E1A63;
+  --ink2:#3A2F8F;
+  --muted:#6A3FC0;
+  --a:#2E3FBF;
+  --a-deep:#151B72;
+  --a-soft:#E7EAFB;
+  --b:#C0153C;
+  --b-deep:#8E0F2E;
+  --b-soft:#FBE4EA;
+  --c:#A87400;
+  --c-deep:#7A5200;
+  --c-soft:#FBF0D8;
+  --line:rgba(46,63,191,.16);
+  --shadow:0 14px 34px rgba(21,27,114,.10);
+  --shadow-sm:0 6px 18px rgba(21,27,114,.08);
+  --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background-color:var(--bg);
+  background-image:
+    radial-gradient(880px 500px at 2% -8%, rgba(46,63,191,.13), transparent 62%),
+    radial-gradient(760px 470px at 100% 0%, rgba(192,21,60,.13), transparent 60%),
+    radial-gradient(760px 480px at 50% 106%, rgba(168,116,0,.15), transparent 62%);
+  background-attachment:fixed;color:var(--ink);
+  font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.68;font-size:17px;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1020px;margin:0 auto;padding:0 20px 72px}
+.hero{position:relative;margin:34px 0 26px;padding:38px 34px 34px;border-radius:26px;
+  background:linear-gradient(135deg,#ffffff 0%,#FBFCFE 45%,var(--a-soft) 100%);
+  border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
+.hero:before{content:"";position:absolute;right:-86px;top:-96px;width:256px;height:256px;border-radius:50%;
+  background:radial-gradient(circle at 40% 40%, rgba(192,21,60,.24), rgba(192,21,60,0) 68%)}
+.hero:after{content:"";position:absolute;left:-76px;bottom:-116px;width:236px;height:236px;border-radius:50%;
+  background:radial-gradient(circle at 60% 40%, rgba(168,116,0,.22), rgba(168,116,0,0) 70%)}
+.hero>*{position:relative;z-index:1}
+.kicker{display:inline-block;font-size:.7rem;letter-spacing:.19em;text-transform:uppercase;font-weight:700;
+  color:var(--a-deep);background:var(--a-soft);border:1px solid rgba(46,63,191,.24);
+  padding:6px 13px;border-radius:999px;margin-bottom:16px}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.5rem,3.6vw,2.15rem);
+  line-height:1.22;margin:0 0 12px;color:var(--a-deep);letter-spacing:-.01em}
+.hero .sub{font-size:1.03rem;color:var(--ink2);margin:0 0 18px;max-width:64ch}
+.meta{display:flex;flex-wrap:wrap;gap:9px}
+.meta span{font-size:.78rem;color:var(--b-deep);background:#fff;border:1px solid var(--line);
+  padding:6px 12px;border-radius:999px;box-shadow:var(--shadow-sm)}
+.toc{margin:0 0 30px;padding:22px 24px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+.toc h2{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--a-deep);
+  margin:0 0 14px;font-family:"Segoe UI",Arial,sans-serif}
+.toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:30px}
+.toc li{margin:0 0 8px;break-inside:avoid;font-size:.94rem}
+.toc a{color:var(--ink2);text-decoration:none;display:flex;gap:9px;line-height:1.42}
+.toc a:hover{color:var(--a-deep)}
+.toc b{flex:0 0 1.35rem;color:var(--muted);font-weight:700}
+section{margin:0 0 30px;padding:26px 26px 24px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+section h2{font-family:Georgia,"Times New Roman",serif;font-size:1.24rem;line-height:1.3;
+  margin:0 0 14px;color:var(--a-deep);display:flex;gap:11px;align-items:baseline}
+section h2 .num{flex:0 0 auto;font-family:"Segoe UI",Arial,sans-serif;font-size:.74rem;font-weight:700;
+  color:#fff;background:var(--a);border-radius:8px;padding:3px 9px;letter-spacing:.03em}
+section p{margin:0 0 13px}
+section p:last-child{margin-bottom:0}
+.lede{font-size:1.03rem;color:var(--ink2);border-left:3px solid var(--b);padding-left:14px;font-style:italic}
+section strong{color:var(--a-deep)}
+section em{color:var(--b-deep);font-style:italic}
+.pull{margin:20px 0;padding:18px 20px;background:var(--a-soft);border-left:4px solid var(--a);
+  border-radius:12px}
+.pull p{margin:0 0 8px;font-family:Georgia,"Times New Roman",serif;font-size:1.06rem;line-height:1.5;
+  color:var(--a-deep)}
+.pull cite{display:block;font-size:.8rem;color:var(--muted);font-style:normal}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}
+.chips span{font-size:.82rem;color:var(--b-deep);background:var(--b-soft);
+  border:1px solid rgba(192,21,60,.26);padding:6px 13px;border-radius:999px}
+.two-lists{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}
+@media(max-width:680px){.two-lists{grid-template-columns:1fr}}
+.listcard{background:#FBFCFE;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.listcard h3{margin:0 0 10px;font-size:.95rem;color:var(--a-deep);letter-spacing:.01em}
+.listcard ul{margin:0;padding-left:19px}
+.listcard li{margin:0 0 6px;font-size:.94rem}
+.listcard.warn{background:var(--c-soft);border-color:rgba(168,116,0,.28)}
+.listcard.warn h3{color:var(--c-deep)}
+.flag{margin:12px 0 0;padding-top:11px;border-top:1px dashed rgba(46,63,191,.26);
+  font-size:.86rem;color:var(--muted)}
+.steps{margin:18px 0;display:grid;gap:12px}
+.step{display:flex;gap:13px;align-items:flex-start}
+.step i{flex:0 0 30px;height:30px;border-radius:9px;background:var(--b);color:#fff;font-style:normal;
+  font-weight:700;font-size:.86rem;display:flex;align-items:center;justify-content:center}
+.step div{font-size:.95rem}
+.step b{color:var(--a-deep)}
+.tblwrap{margin:18px 0;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--a-soft);color:var(--a-deep);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+tr:last-child td{border-bottom:0}
+td:first-child{white-space:nowrap;color:var(--b-deep);font-weight:700}
+.scap{margin:8px 0 0;font-size:.83rem;color:var(--muted)}
+.qcard{margin:12px 0;padding:14px 17px;border-radius:12px;background:var(--a-soft);
+  border-left:4px solid var(--a)}
+.qcard b{display:block;color:var(--a-deep);font-size:.95rem;margin-bottom:5px}
+.qcard span{font-size:.92rem}
+.qcard.q1{background:var(--b-soft);border-left-color:var(--b)}
+.qcard.q1 b{color:var(--b-deep)}
+.qcard.q2{background:var(--c-soft);border-left-color:var(--c)}
+.qcard.q2 b{color:var(--c-deep)}
+.cnote{margin:18px 0;padding:15px 18px;background:#FBFCFE;border:1px dashed rgba(46,63,191,.3);
+  border-radius:12px;font-size:.9rem;color:var(--ink2)}
+.pulse{margin:18px 0;padding:16px 19px;border-radius:12px;background:var(--b-soft);
+  border-left:4px solid var(--b)}
+.pulse b{color:var(--b-deep)}
+.closing{margin:20px 0 0;padding:18px 20px;border-radius:12px;background:var(--a-soft);
+  border-left:4px solid var(--a);font-size:.96rem;color:var(--a-deep)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:13px;margin:22px 0 6px}
+.stat{padding:17px 16px 15px;border-radius:15px;background:linear-gradient(180deg,#fff,var(--a-soft));
+  border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.stat b{display:block;font-family:Georgia,"Times New Roman",serif;font-size:1.65rem;line-height:1.05;
+  color:var(--a-deep);margin-bottom:6px}
+.stat span{font-size:.84rem;color:var(--ink2);display:block}
+.stat.two{background:linear-gradient(180deg,#fff,var(--b-soft));border-color:rgba(192,21,60,.24)}
+.stat.two b{color:var(--b-deep)}
+.stat.three{background:linear-gradient(180deg,#fff,var(--c-soft));border-color:rgba(168,116,0,.3)}
+.stat.three b{color:var(--c-deep)}
+.stat sup{font-size:.6em}
+.note{margin:26px 0 14px;padding:18px 20px;background:#FBFCFE;border:1px solid var(--line);
+  border-radius:14px;font-size:.88rem;color:var(--muted)}
+.note p{margin:0 0 8px}
+.note p:last-child{margin-bottom:0}
+.foot-note{font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+footer{margin:34px 0 0;padding:22px 24px;text-align:center;border-top:1px solid var(--line)}
+footer p{margin:0 0 12px;font-size:.9rem;color:var(--ink2)}
+footer b{color:var(--a-deep)}
+.up{display:inline-block;font-size:.8rem;color:var(--a-deep);text-decoration:none;
+  border:1px solid var(--line);background:#fff;padding:7px 15px;border-radius:999px;
+  box-shadow:var(--shadow-sm)}
+@media(max-width:760px){.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<div class="wrap" id="top">
+  <header class="hero">
+    <span class="kicker">Reading Companion</span>
+    <h1>Does Bacteria Know Its Alive</h1>
+    <p class="sub">A long look at the oldest question in biology: if sensing, remembering, integrating and deciding are what cognition is made of, then thinking began with single cells &mdash; roughly three billion years before there was anything with a brain.</p>
+    <div class="meta">
+      <span>Bacteria &middot; cognition &middot; biofilms &middot; memory</span>
+      <span>Scripted science narration, first person plural</span>
+      <span>No audience questions</span>
+    </div>
+  </header>
+  <nav class="toc">
+    <h2>What&rsquo;s inside</h2>
+    <ol>
+      <li><a href="#ch1"><b>1</b> A decision you are not making</a></li>
+      <li><a href="#ch2"><b>2</b> Life at low Reynolds number</a></li>
+      <li><a href="#ch3"><b>3</b> The only motor that works</a></li>
+      <li><a href="#ch4"><b>4</b> Why it cannot sniff front from back</a></li>
+      <li><a href="#ch5"><b>5</b> Run, tumble, run</a></li>
+      <li><a href="#ch6"><b>6</b> Four seconds of memory</a></li>
+      <li><a href="#ch7"><b>7</b> Perfect adaptation</a></li>
+      <li><a href="#ch8"><b>8</b> As sensitive as physics allows</a></li>
+      <li><a href="#ch9"><b>9</b> Preparing for an oxygen drop that has not happened</a></li>
+      <li><a href="#ch10"><b>10</b> Shorter memories, and an argument still open</a></li>
+      <li><a href="#ch11"><b>11</b> The flask that hid the truth</a></li>
+      <li><a href="#ch12"><b>12</b> A squid, a bacterium, and a threshold</a></li>
+      <li><a href="#ch13"><b>13</b> Timing the strike</a></li>
+      <li><a href="#ch14"><b>14</b> Two questions at once</a></li>
+      <li><a href="#ch15"><b>15</b> A city with plumbing</a></li>
+      <li><a href="#ch16"><b>16</b> The pulse that is an action potential</a></li>
+      <li><a href="#ch17"><b>17</b> Two biofilms take turns</a></li>
+      <li><a href="#ch18"><b>18</b> Is this cognition?</a></li>
+      <li><a href="#ch19"><b>19</b> The thermostat objection</a></li>
+      <li><a href="#ch20"><b>20</b> The neurons inherited the parts</a></li>
+      <li><a href="#ch21"><b>21</b> The cells that stop growing</a></li>
+      <li><a href="#ch22"><b>22</b> The cell that hesitates</a></li>
+      <li><a href="#ch23"><b>23</b> The hunters that build a body</a></li>
+      <li><a href="#ch24"><b>24</b> A compass, an eye, and a tally of touch</a></li>
+      <li><a href="#ch25"><b>25</b> Reading the dead</a></li>
+      <li><a href="#ch26"><b>26</b> Made of former bacteria</a></li>
+      <li><a href="#ch27"><b>27</b> Does a bacterium know it is alive?</a></li>
+      <li><a href="#ch28"><b>28</b> Still making up their minds</a></li>
+    </ol>
+  </nav>
+
+<section id="ch1">
+  <h2><span class="num">1</span>A decision you are not making</h2>
+  <p class="lede">The source opens inside your own gut, with a decision being made by something that has no brain.</p>
+  <p>There is a decision being made inside your body right now, and you are not the one making it. In the warm dark of your gut, a bacterium roughly two microns long is swimming through a chemical gradient. It has no eyes, no nerves, no brain &mdash; nothing that any biologist would have called a mind at any point in the last three centuries. And yet it is comparing the world it is in now to the world it was in four seconds ago. It is holding a memory, running that memory against the present, and on the basis of that comparison choosing whether to keep going or to scramble its orientation and try a completely different direction. That is not a metaphor. That is the measured, published mechanism.</p>
+  <p>For most of the history of biology we drew a line. On one side we put the things that think; on the other side the things that simply react. Brains on one side, chemistry on the other. The line felt obvious &mdash; the kind of thing that would never need to be revisited. It has been moving for 40 years, and it has moved in one direction: downward, toward the simple, the small, toward organisms with no nervous system at all.</p>
+  <p>Bacteria sense. Bacteria remember. They count their own population and change their behaviour when they reach a threshold. They speak to each other in chemical vocabularies, some private to a single species and some shared across the entire microbial world like a trade language. They build cities with plumbing and structural architecture. They send electrical signals through those cities using the same ions, the same channels, and something close to the same rhythm your neurons use. They ration food between the inside of a colony and the outside. They gamble deliberately, sacrificing part of their own population as insurance against a future they cannot predict. None of that requires a brain, and all of it is happening in organisms that predate brains by roughly three billion years.</p>
+  <div class="chips">
+    <span>Senses chemical gradients</span>
+    <span>Remembers</span>
+    <span>Counts its population</span>
+    <span>Talks in chemicals</span>
+    <span>Builds cities</span>
+    <span>Sends electrical signals</span>
+    <span>Rations food</span>
+    <span>Gambles on the future</span>
+  </div>
+  <p>So the question is not whether bacteria do sophisticated things. That argument is over. The question is what we are supposed to call it. Because if sensing, remembering, integrating and deciding are the ingredients of cognition, then cognition did not begin with animals. It began with the first cell that needed to find food in a world where food was not evenly distributed.</p>
+  <p>The source follows that thread all the way down: past the nervous system, past the neuron, into a single cell 4,000 times smaller than a grain of rice. By the end, the word <em>thinking</em> may have stopped meaning what you assumed it meant &mdash; not because bacteria turn out to be smarter than you thought, but because thinking turns out to be older than you thought.</p>
+  <div class="pull">
+    <p>&ldquo;The line has been moving for 40 years, and it has been moving in one direction: downward, toward the simple, toward the small, toward organisms with no nervous system at all.&rdquo;</p>
+    <cite>From the opening of the source</cite>
+  </div>
+</section>
+
+<section id="ch2">
+  <h2><span class="num">2</span>Life at low Reynolds number</h2>
+  <p class="lede">Before asking what a bacterium is doing, you have to let go of everything your body has taught you about how the physical world behaves.</p>
+  <p>You live in a world governed by inertia. When you swim, you push water backward and you glide forward; when you stop pushing, you keep moving for a while. Every physical intuition you have about motion is built on that coasting, and it is so fundamental that we rarely notice it as an assumption. A bacterium has no such world.</p>
+  <p>In 1977 the physicist <strong>Edward Purcell</strong> delivered a lecture to the American Physical Society that has been quoted in nearly every serious paper on microbial motion published since. It was called <em>Life at low Reynolds number</em>, and its central point was that at the scale of a single cell, water does not behave like water. It behaves like tar.</p>
+  <p>The relevant number is the ratio between inertial forces and viscous forces. For a swimming bacterium that ratio is roughly one hundred-thousandth. For you in a swimming pool it is around 10,000. Purcell calculated what that means in practice: if a bacterium swimming at full speed switched off its motor, it would coast for approximately one-tenth of the width of a single hydrogen atom before coming to a complete stop, and the time it takes to stop is on the order of a microsecond. There is no gliding, no momentum, no drifting. If the engine is not running, the cell is motionless instantly and absolutely.</p>
+  <div class="tblwrap">
+    <table>
+      <tr><th>At this scale</th><th>Ratio of inertial to viscous forces</th><th>What happens when the motor stops</th></tr>
+      <tr><td>You, in a pool</td><td>around 10,000</td><td>You glide on</td></tr>
+      <tr><td>A bacterium</td><td>about one hundred-thousandth</td><td>Stops in about a millionth of a second</td></tr>
+    </table>
+    <p class="scap">The coasting distance for a bacterium is about one-tenth of the width of a hydrogen atom. Inertia is simply not part of its world.</p>
+  </div>
+  <p>That single fact reshapes everything else in this piece. It means the solutions a bacterium reaches for cannot be the ones that work at our scale, and it means that almost every intuition we bring to the question of how a small organism gets around has to be rebuilt from scratch.</p>
+</section>
+
+<section id="ch3">
+  <h2><span class="num">3</span>The only motor that works</h2>
+  <p class="lede">In a world of tar, the obvious way to swim does nothing at all.</p>
+  <p>A bacterium cannot use the swimming strategies that work at our scale. Reciprocal motion &mdash; the back and forth of an oar &mdash; produces exactly zero net displacement in that regime, because whatever the forward stroke gains, the backward stroke gives back. Purcell called this the <strong>scallop theorem</strong>: a scallop opening and closing would sit in place forever.</p>
+  <p>So the bacterium does something else. It rotates. The bacterial flagellum is one of the few true rotary motors in biology. It is not a whip that lashes; it is a rigid helical filament roughly 10 microns long, attached to a rotating shaft driven by a molecular engine embedded in the cell membrane. That engine is powered not by chemical fuel directly but by protons flowing down an electrochemical gradient across the membrane, in essentially the same way that water falling through a turbine generates power. Each proton that crosses turns the rotor slightly. The whole assembly spins at somewhere between 100 and 300 revolutions per second, and it can reverse direction in under a millisecond.</p>
+  <div class="pulse"><b>An organism two microns long has built a reversible electric motor with a rotating drive shaft &mdash; and it did so somewhere in the neighbourhood of three billion years before we did.</b></div>
+  <p>Now consider the problem this motor was built to solve. Food in the world of a bacterium is a gradient: sugar leaking from a dying cell, amino acids diffusing from a scrap of decaying tissue, oxygen dissolving down from a surface. The concentration is higher over here and lower over there &mdash; and the difference across the length of a single bacterium is astonishingly small.</p>
+</section>
+
+<section id="ch4">
+  <h2><span class="num">4</span>Why it cannot sniff front from back</h2>
+  <p class="lede">The signal the cell needs is real, but it is buried in thermal noise.</p>
+  <p>Across the two-micron body of an <em>E. coli</em> cell, the difference in concentration between the front end and the back end might be one part in 10,000 &mdash; and that difference is buried in the noise of individual molecules randomly bumping into the cell surface. The cell cannot simply measure the front and the back and compare them. The signal is too weak and the noise is too loud. Brownian motion, the ceaseless thermal jostling of molecules, would drown the difference completely.</p>
+  <p>So it does something more sophisticated, and the whole of the next several sections follows from it: it swims, and it compares the present to the past.</p>
+  <div class="cnote">This is the pivot the source returns to repeatedly. The bacterium is not measuring a difference in space, which its own smallness makes impossible. It is measuring a difference in time, which is something it can hold.</div>
+</section>
+
+<section id="ch5">
+  <h2><span class="num">5</span>Run, tumble, run</h2>
+  <p>This behaviour is called <strong>chemotaxis</strong>, and it has been studied in more detail than almost any other behaviour in biology, largely because of the work of <strong>Howard Berg</strong> at Harvard, who spent decades building instruments capable of tracking a single swimming bacterium in three dimensions.</p>
+  <p>What Berg and his colleagues found is that <em>E. coli</em> swims in a pattern with two modes. In the first mode, called a <strong>run</strong>, all the flagella rotate counterclockwise. Because of the handedness of the helix, counterclockwise rotation causes the separate filaments to bundle together into a single rope, and that rope drives the cell forward in a relatively straight line at around 20 to 30 microns per second. That is roughly 10 body lengths per second &mdash; scaled up to human size, the equivalent of swimming at about 40 metres an hour. A run lasts about a second.</p>
+  <p>Then, without warning, one or more of the motors reverses. The bundle flies apart. The cell stops moving forward and instead spins chaotically in place. This is the <strong>tumble</strong>, and it lasts about a tenth of a second. When the motors switch back to counterclockwise, the filaments rebundle and the cell takes off again, but now pointed in a new and essentially random direction. Run, tumble, run, tumble: it is a random walk. Left alone in a uniform environment, the bacterium goes nowhere in particular.</p>
+  <p>The intelligence is in what happens to the timing. If the cell is swimming up a gradient toward higher concentrations of something it wants, the tumbles become less frequent and the runs get longer. If it is swimming down a gradient away from food, the tumbles come at the normal rate. The cell never steers. It has no rudder and it cannot turn toward anything. All it can do is extend the runs that happen to be going the right way and let the wrong ones end on schedule.</p>
+  <div class="pull">
+    <p>&ldquo;It is navigation without steering. It is finding your way by nothing more than deciding when to stop.&rdquo;</p>
+    <cite>On the biased random walk</cite>
+  </div>
+  <p>Played out over thousands of cycles, the result is a biased random walk that carries the population reliably up the gradient. But to lengthen a run, the cell has to know that things are getting better &mdash; and to know that things are getting better, it has to know what things were like before.</p>
+</section>
+
+<section id="ch6">
+  <h2><span class="num">6</span>Four seconds of memory</h2>
+  <p class="lede">The memory is real, it is physical, and its duration has been measured.</p>
+  <p>It is somewhere between one and four seconds, depending on conditions and on how you define the end point. That is roughly how long the cell's internal chemistry retains a record of the concentration it was experiencing a moment ago, held as a comparison point against what it is experiencing now. Here is how it works, and the elegance of it is worth slowing down for.</p>
+  <p>On the surface of an <em>E. coli</em> cell, clustered almost entirely at one pole, sits an array of receptor proteins &mdash; usually several thousand of them packed into a hexagonal lattice with remarkable regularity. These receptors bind the molecules the cell cares about, including aspartate, serine, ribose, maltose and dipeptides, along with receptors for oxygen and for temperature. When a receptor binds its target molecule it changes shape slightly, and that shape change is transmitted to a protein on the inside of the membrane called <strong>CheA</strong>, which is a kinase: its job is to attach phosphate groups to other proteins. When the receptor is unoccupied, CheA is active and busy phosphorylating; when the receptor binds an attractant, CheA's activity drops. The phosphate groups CheA hands out go to a small messenger protein called <strong>CheY</strong>. Phosphorylated CheY diffuses across the cell &mdash; a matter of milliseconds at this scale &mdash; and binds to the base of the flagellar motor. When it binds, the motor is much more likely to switch to clockwise rotation, which means the bundle flies apart and the cell tumbles.</p>
+  <p>So the logic runs like this. Attractant present: CheA quiet, less phosphorylated CheY, motor stays counterclockwise, the run continues. Attractant absent: CheA active, more phosphorylated CheY, the motor flips and the cell tumbles. That alone would give you a cell that runs when food is around and tumbles when it is not &mdash; useful, but not navigation. A cell built that way would run forever once it found a decent patch, and would have no way to tell the difference between a decent patch and an improving one.</p>
+  <p>What turns this into a comparison across time is a second, slower system layered on top. Two more proteins, <strong>CheR</strong> and <strong>CheB</strong>, continuously add and remove methyl groups from the receptors. CheR attaches methyl groups at a slow, steady rate; CheB removes them, and CheB is itself activated by phosphate from CheA. The methylation level of a receptor changes how sensitive it is: more methyl groups mean the receptor behaves as though there is less attractant present than there actually is. The effect is a feedback loop that always drags the system back to baseline &mdash; but slowly.</p>
+  <p>Suppose the cell swims into a region with more aspartate. The receptors bind more of it, CheA goes quiet, CheY loses its phosphate and the tumbling stops. The run extends. But now, over the next several seconds, CheR keeps adding methyl groups, and because CheB has been deactivated along with CheA, nothing is removing them. The receptors gradually become less sensitive, until they are methylated enough to behave as though this new, higher concentration is the normal one. CheA activity returns to exactly where it started, and tumbling resumes at the baseline rate. The cell has adapted. It has reset its own zero point.</p>
+  <div class="pulse"><b>That adaptation, and specifically the lag before it completes, is the memory.</b> For those few seconds, the methylation state of the receptor array is a physical record of the concentration the cell was experiencing before.</div>
+  <p>The cell is not comparing front to back. It is comparing now to then. It is running a derivative, measuring not the concentration but the rate of change of concentration over time &mdash; and that is a fundamentally different and far more powerful kind of measurement.</p>
+</section>
+
+<section id="ch7">
+  <h2><span class="num">7</span>Perfect adaptation</h2>
+  <p>There is a term for what this system achieves, and it comes from control engineering rather than biology. It is called <strong>perfect adaptation</strong>, and it means the steady-state output returns exactly to baseline regardless of the size of the input step.</p>
+  <p>In 1997, <strong>Naama Barkai</strong> and <strong>Stanislas Leibler</strong> published a paper in <em>Nature</em> demonstrating that this precision is robust &mdash; that it does not depend on the exact concentrations of the proteins involved. Vary the amount of CheR or CheB across a wide range and the system still returns to exactly the same baseline. The precision is built into the architecture of the network, not tuned into the parts. That is a design principle engineers spent the 20th century discovering. A single cell has been running it since the Archaean.</p>
+</section>
+
+<section id="ch8">
+  <h2><span class="num">8</span>As sensitive as physics allows</h2>
+  <p class="lede">The front end is, if anything, more remarkable than the logic behind it.</p>
+  <p>The chemoreceptor array is not just a collection of independent sensors. The receptors are physically coupled: when one binds a molecule and changes shape, its neighbours in the lattice feel it and shift their own activity in response. The result is cooperative amplification, in which a small fractional change in the number of occupied receptors produces a much larger change in CheA output. Measurements from Berg's lab, and from <strong>Victor Sourjik</strong> and others, have established that <em>E. coli</em> can respond to a change in receptor occupancy of well under 1%. In practical terms, the cell can detect the binding of a handful of additional molecules against a background of thousands.</p>
+  <p>Some estimates put the threshold near the theoretical physical limit set by the random arrival of molecules at the cell surface. Which is to say the cell is roughly as sensitive as anything of its size could possibly be without violating statistics.</p>
+  <p>Then there is the dynamic range. <em>E. coli</em> tracks gradients across five orders of magnitude of background concentration. It can find food in a nearly sterile environment, and it can still detect improvements in a solution thick with the same molecule. Your eye, one of the more impressive detectors in the animal kingdom, manages something comparable across the full range from starlight to noon sun &mdash; but it takes minutes to adapt between the extremes, and it requires roughly 100 million photoreceptors and a dedicated section of your brain to do it. The bacterium does it with a few thousand proteins, no brain at all, and it does it in seconds.</p>
+  <p>So we have a cell that senses its environment with something close to physical perfection, holds a short-term record of what it just experienced, compares that record against the present, and uses the comparison to modulate its behaviour in a way that reliably improves its situation. At what point in that description does the word <em>decision</em> become appropriate? That is not a rhetorical flourish. It is the actual open question, and researchers disagree about it in print. Before we get to the disagreement, the behaviour gets considerably stranger.</p>
+</section>
+
+<section id="ch9">
+  <h2><span class="num">9</span>Preparing for an oxygen drop that has not happened</h2>
+  <p class="lede">A bacterium does not only remember the last four seconds.</p>
+  <p>Under the right conditions it appears to remember something much older than that, and to act on an expectation about the future. In 2009, a team led by <strong>Saeed Tavazoie</strong> at Princeton published a study in <em>Science</em> that asked a question nobody had thought to ask about <em>E. coli</em>, because it seemed too advanced to be worth asking: can a bacterium learn to anticipate?</p>
+  <p>The reasoning behind the experiment came from the environment <em>E. coli</em> actually evolved in, which is not a laboratory flask. It is the gut of a mammal, and specifically the journey from the outside world into that gut. A bacterium entering a mouth and travelling down toward the intestine encounters a highly predictable sequence of conditions. Temperature rises to body temperature. Then, further along, oxygen levels fall as the environment becomes anaerobic. Then specific sugars appear in a characteristic order. The sequence is reliable: it happens the same way, in the same order, every time, and it has happened that way for as long as there have been mammals with guts.</p>
+  <p>Tavazoie's group reasoned that if that sequence is reliable enough for long enough, natural selection should build the expectation into the organism. A cell that starts preparing for low oxygen the moment it detects a temperature rise would be ahead of a cell that waits for the oxygen to actually drop. That is what they found.</p>
+  <p>When <em>E. coli</em> is shifted from ambient temperature to 37&deg;C, it begins downregulating the genes for aerobic respiration before there is any change in oxygen at all. The temperature signal alone triggers preparation for a condition that has not yet arrived. The team went further, and demonstrated the same principle in reverse and in a second organism. They took yeast, which in the wild goes through fermentation in a predictable order &mdash; encountering glucose, then maltose, then rising ethanol and heat &mdash; and showed that exposing yeast to a heat shock triggers preparation for oxidative stress, which is what actually arrives next in the natural sequence.</p>
+  <p>Then they did something clever. They cultured yeast for hundreds of generations under a decoupled regime, in which the usual sequence was deliberately broken, so that the early cue no longer predicted the later condition. The anticipatory response decayed. The cells stopped preparing for something that no longer followed.</p>
+  <div class="two-lists">
+    <div class="listcard">
+      <h3>What the sequence looks like in the gut</h3>
+      <ul>
+        <li>Temperature rises to body temperature</li>
+        <li>Oxygen levels fall as the environment becomes anaerobic</li>
+        <li>Specific sugars appear in a characteristic order</li>
+      </ul>
+    </div>
+    <div class="listcard warn">
+      <h3>What broke it</h3>
+      <ul>
+        <li>Hundreds of generations with the sequence deliberately decoupled</li>
+        <li>The early cue stopped predicting the later condition</li>
+        <li>The anticipatory response decayed</li>
+      </ul>
+      <p class="flag">The expectation behaves like something learned and unlearned, at the level of the lineage rather than the cell.</p>
+    </div>
+  </div>
+  <p>This is associative learning at the population level, encoded in the genome rather than in a nervous system, and operating on a time scale of generations rather than seconds. The individual cell is not learning; the lineage is. But the resulting behaviour in the individual cell is genuinely predictive. It responds to a cue that carries no direct benefit, purely because that cue has historically forecast something that does.</p>
+  <p>Whether you want to call that learning depends on where you think learning lives. But the functional description &mdash; a system that uses a present signal to prepare for a future state on the basis of a past correlation &mdash; is exactly what we mean when we use the word in any other context.</p>
+</section>
+
+<section id="ch10">
+  <h2><span class="num">10</span>Shorter memories, and an argument still open</h2>
+  <p>Individual bacteria also show something closer to learning on much shorter time scales, and here there is an ongoing and genuinely unresolved argument in the literature about whether bacteria display <strong>habituation</strong> &mdash; one of the simplest and most universal forms of learning in the animal kingdom.</p>
+  <p>Habituation means a decreasing response to a repeated stimulus that carries no consequence, and it has a specific technical signature, including spontaneous recovery after a rest period and a stronger response to a novel stimulus after habituation to another. Researchers including <strong>Jeremy Gunawardena</strong> at Harvard have argued that some single-celled behaviour, including in the ciliate <em>Stentor</em> and in bacterial systems, meets several of those criteria. Others argue the criteria are being applied too loosely.</p>
+  <div class="cnote">The source is explicit that this one is not settled. The argument is live, and it is reported here as live.</div>
+  <p>What is settled is that individual bacteria carry memory in forms that outlast a single chemotactic decision by orders of magnitude. One example is the flagellar motor itself. Work from Berg's lab and from others has shown that the number of stator units &mdash; the force-generating components docked around the motor &mdash; changes in response to the mechanical load the motor experiences. Put a cell on a surface where swimming is harder and it recruits more stators, increasing torque; remove the load and the extra stators drift away. The motor is tuning itself to its environment and holding that tuning for minutes. That is a mechanical memory written into the structure of a machine.</p>
+  <p>Another example is the persistence of methylation states across cell division. When a bacterium divides, the daughter cells inherit the methylation pattern of the parent's receptor array, which means they inherit the parent's calibration to its most recent environment. A bacterium is born already tuned to the world its mother was living in.</p>
+  <p>And then there is a form of memory that operates at a level that has nothing to do with the individual at all. To see it we have to stop thinking about single cells &mdash; because the assumption that a bacterium is a solitary organism turns out to be one of the largest and most consequential errors in the history of microbiology.</p>
+</section>
+
+<section id="ch11">
+  <h2><span class="num">11</span>The flask that hid the truth</h2>
+  <p class="lede">It was an error that came directly from the way bacteria were studied.</p>
+  <p>For most of the 20th century, the standard method for working with bacteria was the <strong>pure culture</strong>. You isolate a single cell, grow its descendants in a flask of sterile broth, and study the resulting uniform population. <strong>Robert Koch</strong> built the technique in the late 19th century, and it made modern microbiology possible: it let us identify pathogens, develop antibiotics, and establish causation in infectious disease. It also quietly removed the thing we most needed to see.</p>
+  <p>A bacterium in a shaken flask of rich broth is a bacterium with no neighbours it can attach to, no surface to build on, no gradient to navigate, and no reason to coordinate with anything. We spent a century studying an organism in an environment that essentially never occurs in nature. And we concluded from that environment that bacteria are simple, independent and asocial. They are none of those things.</p>
+  <p>In nature, the overwhelming majority of bacteria &mdash; by most estimates well over 90% &mdash; do not live as free-swimming individuals at all. They live in <strong>biofilms</strong>: dense, structured, surface-attached communities embedded in a matrix they build themselves. And inside those communities they behave in ways a single cell in a flask never will.</p>
+</section>
+
+<section id="ch12">
+  <h2><span class="num">12</span>A squid, a bacterium, and a threshold</h2>
+  <p class="lede">The road to understanding that began, as several of the most important stories in microbiology do, with a squid.</p>
+  <p>The Hawaiian bobtail squid, <em>Euprymna scolopes</em>, is about the size of a thumb and hunts at night in shallow water over sand. That combination creates a problem. On a moonlit night, a small animal swimming above a pale sandy bottom casts a shadow that is visible from below &mdash; and the things that eat bobtail squid hunt from below. The squid solves this with counter-illumination. It has a specialised light organ on its underside and it uses that organ to emit light downward, matching the intensity of the moonlight above so precisely that it erases its own shadow. It even adjusts the output as clouds pass and as the moon moves.</p>
+  <p>The squid does not make the light. It cannot: it has no biochemical machinery for bioluminescence anywhere in its body. The light is made by bacteria, specifically <em>Vibrio fischeri</em>, a marine bacterium that the squid recruits from open seawater within hours of hatching, cultivates in the light organ, feeds with a dedicated supply of sugars and amino acids, and then expels &mdash; 90% of every dawn &mdash; keeping just enough to repopulate the organ during the day.</p>
+  <p><em>Vibrio fischeri</em> is common in the ocean, and it is also out there in open water completely dark. This is the observation that opened the field. The bacterium has the genes for light production; it carries them everywhere it goes. But in the open ocean, at typical densities of a few cells per millilitre, it does not use them. Inside the squid's light organ, at densities above 10 billion cells per millilitre, every cell in the population produces light at once. The obvious question is how a single bacterium &mdash; which cannot see, cannot count, and has no way of surveying its surroundings &mdash; knows whether it is alone in the Pacific or packed into a squid.</p>
+  <p>The answer was worked out beginning in the 1970s by <strong>Kenneth Nealson</strong> and <strong>John Woodland Hastings</strong>, and then developed into a general principle across the whole bacterial world, largely through the work of <strong>Bonnie Bassler</strong> at Princeton, whose lab has spent three decades on it. Each <em>Vibrio fischeri</em> cell continuously produces and releases a small signalling molecule called an <strong>autoinducer</strong> &mdash; in this species an acyl-homoserine lactone, a compact molecule that crosses the cell membrane freely in both directions. The cell also produces a receptor protein that binds that molecule.</p>
+  <p>In open water, the autoinducer a cell releases diffuses away almost instantly. The concentration outside stays effectively at zero, which means the concentration inside stays low, which means the receptor stays mostly unbound, which means the light genes stay off. In a confined space packed with cells, every cell is releasing the same molecule and none of it is going anywhere. The concentration climbs. Once it crosses a threshold, the receptors bind, and binding activates a transcription factor that switches on the luciferase operon. And because the autoinducer's own synthesis gene is part of what gets switched on, the system is self-reinforcing: once it starts, it accelerates, and the whole population flips on together within minutes.</p>
+  <p>Bassler named the phenomenon <strong>quorum sensing</strong>, borrowing the word from parliamentary procedure. A quorum is the minimum number of members required before a body can take a binding action. That is exactly what the bacteria are doing: refusing to act until enough of them are present for the action to be worth taking.</p>
+  <p>The logic is sound, and it is economic. Producing light is metabolically expensive. A single bacterium producing light in the open ocean accomplishes nothing except wasting its own energy. Ten billion of them producing light together conceal a squid &mdash; and the squid, in exchange, feeds them a diet richer than anything they would find on their own. The behaviour only pays off above a certain population size, so the bacteria have evolved a mechanism to detect that size before committing.</p>
+  <div class="pull">
+    <p>&ldquo;A quorum is the minimum number of members required before a body can take a binding action. That is exactly what the bacteria are doing.&rdquo;</p>
+    <cite>On the borrowing of a parliamentary word</cite>
+  </div>
+</section>
+
+<section id="ch13">
+  <h2><span class="num">13</span>Timing the strike</h2>
+  <p class="lede">Light turned out to be the exception rather than the rule.</p>
+  <p>Quorum sensing is not a quirk of one bioluminescent marine species. It is close to universal, and most of what it controls is not light. It controls virulence. <em>Pseudomonas aeruginosa</em>, one of the more dangerous opportunistic pathogens in hospitals, uses quorum sensing to time the release of its toxins.</p>
+  <p>When a small number of cells first colonise a wound or a lung, they stay quiet. They produce no toxins and they do not trigger an immune response. They simply grow. Only when the population is large enough that the coordinated release of toxins can overwhelm local defences do the virulence genes switch on, all at once. It is a strategy of concealment followed by a coordinated strike, and it is the reason certain infections seem to sit dormant and then turn severe with very little warning. Nothing new arrived. The population crossed a threshold and the existing population changed what it was doing.</p>
+  <p>Quorum sensing also controls biofilm formation, competence for taking up foreign DNA, sporulation, antibiotic production, and the swarming behaviour that lets whole colonies migrate across a surface as a coordinated front. And it controls whether a cell participates at all &mdash; which is where the system starts to look less like a switch and more like a negotiation.</p>
+</section>
+
+<section id="ch14">
+  <h2><span class="num">14</span>Two questions at once</h2>
+  <p>Bassler's lab established that most bacteria run several quorum sensing systems in parallel, and that the signals fall into two broad categories. Acyl-homoserine lactones, and the equivalent peptide signals used by Gram-positive species, are <strong>species specific</strong>: the exact chemistry differs between species, and each species produces and detects only its own variant. That is a private channel, and it answers the question, how many of <em>me</em> are here?</p>
+  <p>But there is a second molecule, called <strong>autoinducer-2</strong>, that is produced and detected by an enormous range of bacterial species across both major branches of the domain. Its synthesis enzyme, LuxS, is one of the more widely distributed enzymes in bacteria. Autoinducer-2 answers a different question: how many bacteria of <em>any</em> kind are here?</p>
+  <div class="two-lists">
+    <div class="listcard">
+      <h3>The private channel</h3>
+      <ul>
+        <li>Species-specific chemistry</li>
+        <li>Each species makes and detects only its own variant</li>
+        <li>Asks: how many of me are here?</li>
+      </ul>
+    </div>
+    <div class="listcard">
+      <h3>The shared channel</h3>
+      <ul>
+        <li>Autoinducer-2, made and detected across both major branches of the domain</li>
+        <li>Its enzyme, LuxS, is among the most widely distributed in bacteria</li>
+        <li>Asks: how many bacteria of any kind are here?</li>
+      </ul>
+    </div>
+  </div>
+  <p>A cell in a mixed community is therefore reading at least two numbers simultaneously. It knows its own species density, and it knows total density. From the ratio, it can infer something about its relative position. Am I the dominant organism in this environment, or am I a minority in someone else's neighbourhood? That distinction matters enormously for what a cell should do. Launching a coordinated attack makes sense if most of the cells around you are your own kin and will attack alongside you. It is suicidal if you are outnumbered by species that will simply consume the resources your toxins liberate.</p>
+  <p>There is a genuine debate in the field about what this system fundamentally is. Some researchers, including <strong>Steven Diggle</strong> and <strong>Kevin Foster</strong>, have argued persuasively that the term quorum sensing oversells it, and that the more accurate framing is <strong>diffusion sensing</strong> or <strong>efficiency sensing</strong>. In this reading, a cell is not really counting neighbours. It is testing whether the local environment retains secreted molecules or disperses them. A cell in a tight pore with no neighbours at all would experience a high autoinducer concentration simply because nothing is diffusing away, and would switch on its group behaviours as though surrounded.</p>
+  <p>That criticism is fair, and it sharpens the picture rather than dismantling it. What the cell is actually measuring is whether secretion pays. It is asking whether a molecule released into this particular environment will accumulate and do work, or vanish. That is arguably a more sophisticated calculation than counting, not a less sophisticated one. It is a cell assessing the physics of its own surroundings before deciding whether to invest.</p>
+  <p>Either way, the outcome is the same. Individual cells suppress behaviours that are only viable collectively until conditions indicate that collective action will succeed. Then they act in unison. And once they act in unison, they start building.</p>
+</section>
+
+<section id="ch15">
+  <h2><span class="num">15</span>A city with plumbing</h2>
+  <p class="lede">Take a dental scraper to your own teeth, and what comes off is a biofilm.</p>
+  <p>Look at the slick brown film inside a flower vase after a week. The slime on river stones. The material clogging a drain. The coating on a catheter that will not respond to antibiotics. All biofilms. It is the default state of bacterial life on this planet, and it is not an accumulation of cells. It is a construction.</p>
+  <p>A mature biofilm is built out of a self-produced <strong>extracellular matrix</strong>: a mixture of polysaccharides, proteins, lipids, and importantly extracellular DNA that the cells deliberately release to serve as structural material. The matrix typically accounts for the large majority of the biofilm's total volume. The cells are a minority component of their own city.</p>
+  <div class="chips">
+    <span>Glues the community to a surface and to itself</span>
+    <span>Holds water against drying</span>
+    <span>Sequesters and concentrates nutrients</span>
+    <span>Excludes many antimicrobial compounds</span>
+    <span>Slows the diffusion of the ones that get through</span>
+    <span>Deforms under shear flow instead of tearing away</span>
+  </div>
+  <p>Biofilms are not uniform blobs. Under confocal microscopy they resolve into structures with genuine architecture. Many form mushroom-shaped or tower-shaped columns separated by open channels. Those channels carry bulk fluid flow, delivering nutrients into the depths of the structure and carrying waste out. They are functionally a circulatory system built by an organism with no circulatory system of its own &mdash; and no blueprint anywhere in any individual cell.</p>
+  <p>Inside that architecture, the cells are not identical. And this is the part that starts to break the framing of a biofilm as a collection of individuals. Cells in the interior experience a completely different environment from cells at the edge. Oxygen and nutrients are consumed as they diffuse inward, so the deep interior is nutrient-poor and often anaerobic, and cells there grow slowly or not at all. Cells at the periphery, with direct access to the surrounding fluid, grow fast. That difference alone would create two populations. What the research has shown is that the two populations are not merely different. They are functionally interdependent, and they regulate each other.</p>
+</section>
+
+<section id="ch16">
+  <h2><span class="num">16</span>The pulse that is an action potential</h2>
+  <p class="lede">The most direct demonstration came from a lab in California, and it is one of the genuinely startling results in modern microbiology.</p>
+  <p>The laboratory belonged to <strong>Gürol Süel</strong> at the University of California, San Diego, working with biofilms of <em>Bacillus subtilis</em>. Süel's group noticed that growing biofilms did not expand smoothly. They pulsed. The colony would expand, then pause, then expand again in a regular oscillation with a period of a couple of hours. That pattern did not fit a simple model of cells growing as fast as their food allows.</p>
+  <p>Working it out took several years, and the answer &mdash; published in <em>Nature</em> in 2015 with <strong>Jin Liu</strong> as lead author &mdash; involved a conflict over a specific resource. The cells at the edge of the biofilm have the best access to nutrients. If they simply grew as fast as they could, they would consume the incoming glutamate before it reached the interior, and the interior cells would starve. Interior cells matter because they are the ones protected from external threats, and they are the community's reserve.</p>
+  <p>What actually happens is that when the interior cells begin to run short of glutamate, they undergo metabolic stress. That stress opens potassium channels in their membranes, releasing potassium ions into the surrounding space. The elevated potassium outside a neighbouring cell depolarises that neighbour's membrane, which causes it to open its own potassium channels, releasing more potassium. The result is a wave: a pulse of depolarisation propagating outward from the stressed interior of the biofilm to the growing edge, cell to cell, carried by potassium ions crossing membranes through ion channels.</p>
+  <div class="pulse"><b>That is in mechanism the same thing an action potential is.</b> The ions are the same. The channels belong to the same ancient family. And the propagation is regenerative, meaning each cell actively amplifies the signal rather than passively passing it along.</div>
+  <p>The wave travels considerably more slowly than a nerve impulse &mdash; on the order of millimetres rather than metres per second &mdash; but the principle is not merely analogous to neural signalling. It is the same physics, running in an organism that diverged from our lineage before neurons existed.</p>
+  <p>When the wave reaches the periphery, the depolarisation interferes with the edge cells' ability to take up glutamate, because that uptake depends on membrane potential. Deprived of the ability to import their preferred nutrient, the edge cells slow their growth. Glutamate flows past them into the interior. The interior cells recover, stop signalling, and the edge resumes growing. Then, as the interior depletes again, the cycle repeats. The pulsing is a negotiated settlement. The interior of the colony is signalling to the periphery, and the message, translated into plain terms, is a demand to stop consuming everything. The periphery complies, because compliance is enforced by the physics of the signal itself.</p>
+</section>
+
+<section id="ch17">
+  <h2><span class="num">17</span>Two biofilms take turns</h2>
+  <p>Süel's group then did an experiment that pushed the findings somewhere genuinely unexpected. They grew two separate biofilms near each other, sharing a nutrient supply. If both oscillated in phase, they would compete for glutamate at exactly the same moments, and both would suffer. So the two biofilms synchronised out of phase. They took turns. One grew while the other paused, then they swapped.</p>
+  <p>Two physically separate communities of single-celled organisms, using electrical signals, arrived at a time-sharing arrangement for a contested resource. Nobody designed it. There is no central controller anywhere in the system. It emerges from local rules about ion channels and metabolic stress, and the outcome is a solution that a committee of humans might take a while to negotiate.</p>
+  <p>There is a further result from the same lab, published in 2017 with <strong>Jacqueline Humphries</strong> as lead author, that is stranger still. They found that the potassium waves emanating from a biofilm attract distant free-swimming bacteria. Motile cells outside the biofilm detect the potassium gradient and swim toward it. And crucially, this worked across species: biofilms of <em>Bacillus subtilis</em> attracted <em>Pseudomonas aeruginosa</em>, an entirely different organism.</p>
+  <p>The chemical vocabularies of quorum sensing are largely species specific. Electrical signalling is not. Membrane potential is universal, because every cell on earth maintains one. Potassium is potassium regardless of who released it. So an electrical signal is a broadcast in a language every living cell already speaks.</p>
+</section>
+
+<section id="ch18">
+  <h2><span class="num">18</span>Is this cognition?</h2>
+  <p class="lede">It is worth asking directly what all of this adds up to, because the temptation to overclaim is real and the field is not unanimous.</p>
+  <p>Nobody serious is arguing that a bacterium is conscious. Nobody is claiming there is something it is like to be an <em>E. coli</em> cell swimming up a gradient. That question, the question of subjective experience, is a genuinely hard problem, and there is no experiment currently conceivable that would settle it for an organism that cannot report anything.</p>
+  <p>The argument being made by a growing number of researchers is different, and considerably more careful. It is that cognition, defined as a set of functional capacities rather than as an inner experience, is present in organisms without nervous systems &mdash; and that the presence of those capacities in bacteria tells us something important about what nervous systems actually are.</p>
+  <p><strong>Pamela Lyon</strong>, a philosopher of biology at the University of Adelaide, has made this argument in more detail than almost anyone, in a 2015 paper titled <em>The cognitive cell</em>, published in <em>Frontiers in Microbiology</em>, and in a series of subsequent papers on what she and others call <strong>basal cognition</strong>. Her starting point is that the definitions of cognition used in psychology and neuroscience were built by studying animals with brains, and were then used to conclude that cognition requires a brain. That is circular. If you want to know whether cognition requires a nervous system, you cannot begin with a definition that presupposes one.</p>
+  <p>So she proposes working from function instead. What does a cognitive system do? At minimum, it acquires information about its environment, evaluates that information against its own needs, integrates multiple streams of information, retains information over time, and modifies its behaviour on that basis in ways that serve its continued existence. Every one of those capacities is demonstrable in bacteria, with measurements attached.</p>
+  <p>Sensing is not in dispute. A single <em>E. coli</em> cell carries receptors for chemical attractants and repellents, oxygen, temperature, osmotic pressure, light in some species, pH, and mechanical contact with surfaces. Some species detect magnetic fields using chains of magnetite crystals they synthesise themselves, to align with Earth's field and find the oxygen gradient in sediment. The sensory suite of a bacterium is broader than most people would guess, and in several channels it operates at the physical detection limit.</p>
+  <p>Integration is where it gets more interesting. A cell is not responding to one input at a time. All those signals converge on shared internal machinery. The chemotaxis network integrates dozens of receptor types onto a single output: the rotational bias of the motor. Conflicting information has to be reconciled &mdash; attractant on one side, repellent on the other, low oxygen everywhere &mdash; and the cell produces one behaviour. That is not a reflex arc. It is a computation with multiple weighted inputs and a single decision variable.</p>
+  <p>Valuation is the capacity that gets overlooked, and it is arguably the most important. A bacterium does not treat all molecules equally. It has preferences, and those preferences are ordered. The classic demonstration is <strong>diauxic growth</strong>, first described by <strong>Jacques Monod</strong> in the 1940s, which became one of the foundational observations of molecular biology. Give <em>E. coli</em> both glucose and lactose and it does not consume them simultaneously. It consumes all the glucose first, then pauses, then reorganises its gene expression to build the machinery for lactose, then consumes the lactose. It ranks its options and pursues them in order of value.</p>
+  <p>Memory we have covered at multiple time scales, from the seconds-long methylation record to the generational anticipation Tavazoie's group demonstrated. And behavioural flexibility is everywhere. The same cell in different conditions swims or attaches, grows or sporulates, stays silent or produces toxins, remains an individual or joins a collective. It is not running one program. It is selecting among programs on the basis of what it has detected.</p>
+</section>
+
+<section id="ch19">
+  <h2><span class="num">19</span>The thermostat objection</h2>
+  <p class="lede">The counterargument is straightforward, and it deserves to be stated as strongly as it can be.</p>
+  <p>It is that all of this is chemistry. Molecules bind, conformations change, cascades fire, and behaviour results. There is no agent anywhere in the system. Calling it decision-making imports a psychological vocabulary that adds nothing explanatory and risks confusing everyone. A thermostat also senses, compares against a set point and acts. We do not say the thermostat wants the room warm.</p>
+  <p>The thermostat comparison is the strongest form of the objection, and it is worth taking seriously rather than waving away. The response that basal cognition researchers offer runs roughly as follows.</p>
+  <div class="qcard">
+    <b>First: the comparison undersells the bacterium.</b>
+    <span>By several orders of magnitude, in every dimension that matters. A thermostat has one sensor, one variable, one output, and a set point installed by an engineer. A bacterium has hundreds of sensor types feeding into overlapping networks, sets its own reference points dynamically through adaptation, learns from its recent history, ranks competing goals, and can restructure its entire behavioural repertoire by changing which genes it expresses. Complexity alone does not create a difference in kind, but at some point a difference in degree becomes worth naming separately.</span>
+  </div>
+  <div class="qcard q1">
+    <b>Second: the thermostat has no stake.</b>
+    <span>The reason we hesitate to say a thermostat wants anything is not really about its simplicity. It is that nothing happens to the thermostat if it fails. It has no interests of its own, because it does not maintain itself. A bacterium is a self-maintaining system that is continuously working against its own dissolution, and every one of its behaviours is oriented toward that. When a bacterium moves toward food, the food matters to the bacterium in a way that nothing matters to a thermostat. The philosopher Evan Thompson and the biologist Francisco Varela built much of their work on this distinction, arguing that intrinsic purpose emerges the moment a system is responsible for producing and maintaining itself.</span>
+  </div>
+  <div class="qcard q2">
+    <b>Third: the same objection applies with equal force to you.</b>
+    <span>Your neurons are chemistry. Voltage-gated sodium channels open, ions flow, membrane potential propagates, neurotransmitters cross a synapse and bind receptors, and downstream conformational changes result. There is no point in that chain where anything other than physics is happening. If chemistry disqualifies bacteria from cognition, the same standard disqualifies you. And since we know it does not, the fact that a process is chemical cannot be the deciding criterion.</span>
+  </div>
+  <p>The distinction people usually reach for at this point is complexity. Your brain has roughly 86 billion neurons and something on the order of 100 trillion synapses. A bacterium has one cell. But complexity is a spectrum, not a boundary, and it makes the difference between bacterial and human cognition quantitative rather than categorical.</p>
+  <p>That may be the honest answer. It is also a much less comfortable answer than the one we started with, because it means there is no line. There is only a gradient, running from a single cell tracking a sugar molecule all the way up to whatever is happening in your head as you follow this sentence, with no natural place to draw a border.</p>
+</section>
+
+<section id="ch20">
+  <h2><span class="num">20</span>The neurons inherited the parts</h2>
+  <p class="lede">The deeper implication reframes the whole question.</p>
+  <p>It comes from the work of <strong>Michael Levin</strong> at Tufts University, whose career has been spent on <strong>bioelectricity</strong> in multicellular organisms, particularly in development and regeneration. He and his colleagues have shown that patterns of membrane voltage across tissues carry instructional information about anatomy. By manipulating those voltage patterns in planarian flatworms, his lab has produced worms that regenerate two heads and no tail, and worms that regenerate the head shape of a different species entirely, without any alteration to the genome. The voltage pattern is functioning as a stored target morphology: a memory of what the body is supposed to look like, held outside the DNA.</p>
+  <p>The framework Levin argues for is that bioelectric signalling is not a nervous system invention. It is a general-purpose mechanism that cells have used to coordinate and store information since long before nervous systems existed, and neurons are a specialised, accelerated version of something universal.</p>
+  <p>Consider what a neuron actually is. It is a cell that maintains a membrane potential, uses ion channels to generate propagating voltage changes, and releases chemical signals to influence its neighbours. Every one of those capacities exists in bacteria. Membrane potential is maintained by every living cell as a fundamental requirement of energy metabolism. Ion channels are present in bacteria, and they are in fact structurally ancestral to the channels in your neurons: the potassium channel structure that <strong>Roderick MacKinnon</strong> solved and won a Nobel Prize for in 2003 was a bacterial channel, chosen precisely because it was simple enough to crystallise, and the reason that work illuminated human neurobiology is that the architecture is conserved. Chemical signalling between cells is what quorum sensing is.</p>
+  <div class="pulse"><b>The neuron did not invent electrical excitability.</b> It inherited it, then optimised it for speed by adding myelin, elongating processes and increasing channel density. What neurons added was velocity and specificity of connection, not the underlying principle.</div>
+  <p>Which suggests a way of framing the whole question that is more useful than asking whether bacteria think. The nervous system may not be the origin of cognition. It may be an accelerator bolted onto a much older capacity that was already distributed through every cell. Brains did not create the ability to sense, evaluate, remember and decide. Brains made it fast, made it centralised, and made it capable of modelling things that are not physically present. Those are enormous additions. They are not the foundation. The foundation is roughly three and a half billion years old, and it is still running right now in a volume of space you would need a microscope to see.</p>
+</section>
+<section id="ch21">
+  <h2><span class="num">21</span>The cells that stop growing</h2>
+  <p class="lede">There is a behaviour in bacteria that is harder to explain away as simple chemistry than anything else in the source, because it involves a population deliberately sacrificing part of itself against a future it cannot detect.</p>
+  <p>Take a genetically identical population of bacteria growing happily in a flask. Every cell has the same DNA. The environment is uniform. By any reasonable expectation the cells should all be doing the same thing. They are not. A small fraction of them, typically somewhere between one in a thousand and one in a million, have stopped. They are not dead. They are not damaged. They have shut down most of their metabolic activity and entered a dormant state in which they grow slowly or not at all.</p>
+  <p>These are <strong>persister cells</strong>, first described by <strong>Joseph Bigger</strong> in 1944 while working with penicillin and staphylococcus, and then largely ignored for half a century. Bigger noticed something that should have been alarming. When he treated a culture with penicillin, the population crashed as expected &mdash; but it never went to zero. A tiny fraction survived. And when he took those survivors and grew them into a new culture, that new culture was not resistant to penicillin. It was just as susceptible as the original. Treated again and again, a tiny fraction would survive each time.</p>
+  <p>This is not resistance in the genetic sense. There is no mutation. The survivors are genetically identical to the cells that died. What saved them was that they were not doing anything at the time. Most antibiotics work by disrupting active processes. Penicillin and its relatives interfere with cell wall construction, which only matters if the cell is building a wall. Fluoroquinolones target DNA replication. Aminoglycosides and tetracyclines attack protein synthesis. A cell that has stopped building, stopped replicating and largely stopped translating presents no target. The drug arrives, finds nothing to break, and eventually washes out. Then the persister wakes up and repopulates.</p>
+  <p>This is the primary reason chronic infections recur after apparently successful treatment, and it is a major factor in tuberculosis, in the <em>Pseudomonas</em> infections that persist in the lungs of people with cystic fibrosis, and in biofilm infections on implanted medical hardware. It is a distinct problem from antibiotic resistance, and in some ways a harder one, because there is no gene to target.</p>
+  <p>The question that matters here is why any cell would do this voluntarily. A dormant cell is not growing. In a competitive environment where the currency is reproduction, dormancy is a straightforward loss. Every hour a persister spends shut down, its metabolically active siblings are doubling. Over even a modest span of time that is an enormous fitness penalty.</p>
+  <p>The answer is that the population is buying insurance, and the strategy has a formal name borrowed from finance and evolutionary theory. It is called <strong>bet hedging</strong>. The mathematics is well established: in an environment that fluctuates unpredictably between good conditions and catastrophic ones, the strategy that maximises long-term lineage survival is not the one that maximises growth in the current conditions. It is the one that maximises the geometric mean of growth across all conditions. And because a single catastrophic event multiplies everything by zero, any strategy that leaves the lineage with no survivors is fatal, regardless of how well it performed beforehand. A population that puts all of its cells into rapid growth wins every round until the round it loses, and then it is gone permanently. A population that holds a small fraction in reserve grows slightly more slowly and survives indefinitely.</p>
+  <p>Now the crucial detail: how does an individual cell decide whether to become a persister? It does not appear to be responding to a signal, because there is no signal. The environment is uniform and the population is clonal. What generates the difference is <strong>noise</strong>. Gene expression is a stochastic process. Transcription happens in bursts, and the number of molecules of a given protein in a small cell is often low enough that random fluctuation produces meaningful variation between cells that are otherwise identical. Work from <strong>Nathalie Balaban</strong>'s group at the Hebrew University of Jerusalem, published in <em>Science</em> in 2004, tracked individual cells in microfluidic devices and showed directly that persisters arise stochastically and switch back to normal growth stochastically, with characteristic rates.</p>
+  <div class="pulse"><b>The population is not making a decision in any centralised sense. It is exploiting randomness.</b> Evolution has tuned the switching rates so that the fraction of dormant cells at any moment approximates the optimal hedge for the frequency of catastrophes this lineage has historically encountered.</div>
+  <p>That last point is what makes this remarkable rather than merely clever. The switching rate is itself an evolved parameter, tuned to the statistical structure of the environment over evolutionary time. The population is carrying, in the rate constants of a molecular switch, a compressed model of how often the world tries to kill it. That is a form of knowledge. It is not held by any cell. It is held by the population, encoded in a probability.</p>
+</section>
+
+<section id="ch22">
+  <h2><span class="num">22</span>The cell that hesitates</h2>
+  <p class="lede">A bacterial population does something even more explicit when conditions genuinely deteriorate, and it brings us to the most irreversible decision a single cell can make.</p>
+  <p>When <em>Bacillus subtilis</em> begins to starve, it does not immediately do the thing that seems obvious, which is to form a spore. Sporulation is the ultimate survival strategy. A bacterial endospore is one of the most durable structures biology has produced, capable of surviving boiling, desiccation, radiation and vacuum, and of remaining viable for periods measured in thousands of years. There are credible reports of spores revived from far older material, though the oldest claims remain contested.</p>
+  <p>Given that, the puzzle is why the cell waits. Sporulation is expensive, and it is a commitment. The process takes about eight hours, and it is effectively irreversible past a certain checkpoint. Once the cell has divided asymmetrically and begun engulfing the smaller compartment, it cannot change its mind. And the outcome is that the mother cell lyses and dies: the mother builds the spore, wraps it in layers of protective coat protein, and then destroys itself to release it. That is a cell committing suicide to produce one dormant descendant, and it only makes sense if the alternative is worse.</p>
+  <p>So the cell delays. Before sporulating, a starving <em>B. subtilis</em> population runs through a sequence of increasingly desperate alternatives, and the order is consistent. First it becomes motile, swimming away in search of somewhere better. If that fails, it secretes enzymes that break down whatever complex material is nearby, trying to liberate nutrients. If that fails, it can become competent, opening pores in its own membrane to import DNA from the environment &mdash; including from the corpses of dead neighbours &mdash; which may supply both raw nucleotides and useful genes. If that fails, some cells produce antibiotics and toxins that kill their non-sporulating siblings, harvesting their contents. This is called cannibalism in the literature, and the term is technically accurate. Only when all of that fails does the cell commit to the spore.</p>
+  <div class="steps">
+    <div class="step"><i>1</i><div><b>Become motile.</b> Swim away in search of somewhere better.</div></div>
+    <div class="step"><i>2</i><div><b>Secrete enzymes.</b> Break down whatever complex material is nearby to liberate nutrients.</div></div>
+    <div class="step"><i>3</i><div><b>Become competent.</b> Open pores and import DNA from the environment, including from dead neighbours.</div></div>
+    <div class="step"><i>4</i><div><b>Kill and harvest.</b> Produce antibiotics and toxins that kill non-sporulating siblings.</div></div>
+    <div class="step"><i>5</i><div><b>Sporulate, and die.</b> Build the spore, then destroy itself to release it. The commitment to die comes last.</div></div>
+  </div>
+  <p>The decision itself is governed by a regulatory network centred on a protein called <strong>Spo0A</strong>, which accumulates in phosphorylated form as stress signals arrive. Spo0A functions as an integrator. Multiple kinases feed phosphate into it in response to different stress inputs, and phosphatases pull phosphate off. The concentration of active Spo0A rises and falls as a running tally of how bad things are. Crucially, different genes respond at different thresholds: low levels of active Spo0A switch on cannibalism and biofilm genes; high levels switch on sporulation. The cell is not running a binary switch. It is running a graded response with an ordered sequence of escalating commitments.</p>
+  <p>The mechanism was worked out in detail by researchers including <strong>Richard Losick</strong> at Harvard and <strong>Jonathan Dworkin</strong>. And what emerges is a decision architecture with a striking property: it hesitates. Work from Süel's lab, published while he was in <strong>Michael Elowitz</strong>'s group at Caltech, showed that the network can enter an excitable state in which cells transiently activate the sporulation program and then back out of it &mdash; sampling the decision without committing. Some cells run right up to the edge, look at the situation, and return to normal growth.</p>
+  <p>Read that as a mechanism, and it is a set of coupled feedback loops with a slow positive arm and a fast negative arm, producing pulses of transcription factor activity. Read it as a behaviour, and it is a cell deliberating. Both readings are accurate descriptions of the same molecules.</p>
+  <div class="cnote">That is the recurring problem with this entire subject, and it is worth sitting with rather than resolving too quickly. The mechanistic language and the cognitive language are not competing hypotheses. They are descriptions at different levels of the same events, and each one captures something the other misses. The mechanistic description tells you how. The cognitive description tells you why the how is shaped that way &mdash; and it makes predictions. If you think of the cell as solving a problem under uncertainty with an irreversible and costly option available, you predict hesitation, escalating commitment, and a strong bias against premature action. All three are observed. A purely mechanistic framing describes the same thing after the fact, but does not particularly lead you to expect it.</div>
+</section>
+
+<section id="ch23">
+  <h2><span class="num">23</span>The hunters that build a body</h2>
+  <p class="lede">Everything so far has been about individual cells and loose communities. But there are bacteria that have gone considerably further, into something that looks a great deal like multicellular development &mdash; complete with a body plan and programmed cell death.</p>
+  <p><em>Myxococcus xanthus</em> lives in soil, and it hunts. That word is not being used loosely. Myxobacteria are predatory. They move across surfaces by gliding, and they do it in coordinated groups sometimes called wolfpacks in the literature, though the more common technical term is swarming. A swarm advances as a front, and as it moves it secretes a battery of digestive enzymes and antibiotics into the surrounding soil. Those compounds lyse other bacteria and break down the released material into fragments the myxobacteria can absorb.</p>
+  <p>The group hunting is not incidental. It is necessary. Secreted enzymes diffuse away and become useless below a threshold concentration &mdash; exactly the diffusion problem that quorum sensing addresses. A single <em>Myxococcus</em> cell secreting enzymes into soil accomplishes nothing. Ten thousand of them advancing together as a front maintain a concentration high enough to digest prey. The swarm is functioning as a shared external stomach.</p>
+  <p>They also communicate by direct contact, using a system that is unusual in bacteria. A protein called C-signal sits on the cell surface and is only transmitted when two cells physically touch and align end to end. This means the signal carries information about local cell density and alignment simultaneously, which is exactly the information needed to coordinate a moving front.</p>
+  <p>When the prey runs out, <em>Myxococcus</em> does something that no one expected the first time it was observed. Tens of thousands of individual cells converge on a common point. They pile up. They build a raised structure, a <strong>fruiting body</strong>, that is visible to the naked eye as a small coloured mound. Different myxobacterial species build different shapes &mdash; some simple mounds, some branched trees &mdash; and the shape is species specific and reproducible, which is to say it is a genuine body plan.</p>
+  <p>Inside the fruiting body, roughly one cell in ten differentiates into a <strong>myxospore</strong>, a dormant, resistant form that can survive until conditions improve and can be dispersed by wind, water or passing animals. The other 90% die. Some of them lyse to provide material for the structure. Some undergo what appears to be genuinely programmed cell death, activating their own destruction. They build the tower, they hold it up, and they do not survive it.</p>
+  <div class="pulse"><b>This is a bacterial species that has invented altruistic self-sacrifice in service of a multicellular structure</b> &mdash; and it has done so on a completely separate branch of the tree of life from animals, plants and fungi. It is an independent invention of the same solution.</div>
+  <p>The evolutionary logic runs through relatedness. Cells in a fruiting body are close kin, typically clone mates. So a gene that causes a cell to die while helping its identical siblings survive is quietly copying itself. This is Hamilton's inclusive fitness, worked out for social insects in the 1960s, operating in bacteria. And exactly as the theory predicts, the system is vulnerable to cheating, which has been demonstrated experimentally. <strong>Gregory Velicer</strong> and colleagues showed that laboratory populations of <em>Myxococcus</em> evolve cheater strains that contribute little to the fruiting body but are disproportionately represented among the spores. Left unchecked, cheaters can rise in frequency until the population loses the ability to form fruiting bodies at all, at which point everyone dies. The same work also documented the emergence of strains that suppress cheaters.</p>
+  <p>There is a social contract here, with defectors and enforcement, playing out in an organism a few microns long.</p>
+  <p>The point of walking through all of this is not to argue that <em>Myxococcus</em> is smart. It is to establish that the boundary we drew between simple and complex life, between reacting and behaving, between chemistry and cognition, does not have a clean location. Every place we have tried to draw it, we have found the supposedly advanced capacity already present on the wrong side.</p>
+  <div class="chips">
+    <span>Sensing at physical limits</span>
+    <span>Short-term memory</span>
+    <span>Prediction</span>
+    <span>Ranking of preferences</span>
+    <span>Communication, private and universal</span>
+    <span>Collective decision-making with thresholds</span>
+    <span>Electrical signalling with ion channels</span>
+    <span>Division of labour</span>
+    <span>Architecture</span>
+    <span>Programmed altruistic death</span>
+    <span>Cheating and enforcement</span>
+  </div>
+  <p>That is most of the list we would have offered a century ago as evidence that an animal has a mind.</p>
+</section>
+
+<section id="ch24">
+  <h2><span class="num">24</span>A compass, an eye, and a tally of touch</h2>
+  <p class="lede">Before closing the loop, it is worth widening the sensory picture, because chemistry is only one of the channels a bacterium reads and some of the others are genuinely surprising.</p>
+  <p>Start with magnetism. In 1975 a microbiologist named <strong>Richard Blakemore</strong> was working with sediment samples from a salt marsh in Massachusetts when he noticed that a subset of the bacteria on his slides consistently swam to one edge of the drop. Not toward light, not toward air, not toward anything he had introduced. They gathered on the north side. When he moved a magnet, they followed.</p>
+  <p>What he had found were <strong>magnetotactic bacteria</strong>, and the mechanism turned out to be as literal as it sounds. Inside each cell is a chain of crystals, individually around 50 nanometres across, made of either magnetite or greigite. The cell synthesises these crystals inside dedicated membrane compartments called magnetosomes, controls their size and shape with a precision that materials scientists have studied enviously, and arranges them in a linear chain along the long axis of the cell.</p>
+  <p>The chain functions as a compass needle. It is strong enough that the cell is physically torqued into alignment with Earth's magnetic field, which means the bacterium does not need to sense the field and respond to it. It is simply pointed by it, continuously, the way a compass needle is.</p>
+  <p>The reason this is useful comes from the geometry of the field. Away from the equator, magnetic field lines are not horizontal; they dip toward the ground steeply at high latitudes. So a bacterium aligned with the field and swimming forward is not just heading north. It is heading downward at a predictable angle. These organisms live in sediment at a boundary layer where oxygen concentration is exactly right for them: low but not absent. Above that layer there is too much oxygen; below it there is none. Finding a thin horizontal band in three dimensions by random search is slow. Finding it by reducing the problem to one dimension &mdash; up or down &mdash; is fast.</p>
+  <div class="pull">
+    <p>&ldquo;The cell has offloaded a computation onto physics. It is not solving the navigation problem internally. It has built a body that solves it automatically.&rdquo;</p>
+    <cite>On the magnetosome chain</cite>
+  </div>
+  <p>Then there is light, and here the mechanism is stranger still. In 2016, a team including <strong>Conrad Mullineaux</strong> at Queen Mary University of London published work in <em>eLife</em> on the cyanobacterium <em>Synechocystis</em>, showing that the entire cell functions as a lens. Because the cell is a sphere with a refractive index higher than the surrounding water, incoming light is focused to a bright spot on the far side of the cell from the source. The cell detects that focal point on its inner membrane and extends its motility appendages away from it, which drives it toward the light. That is an eye. It is a single-celled eye three microns across, with no dedicated optical structure at all, using the cell body itself as the optic. The imaging is crude, resolving essentially one bright direction, but the physical principle is identical to the one operating in your own eye &mdash; at a scale roughly 3,000 times larger.</p>
+  <p>Bacteria also sense touch, and they respond to it with a change in identity. When a free-swimming <em>Pseudomonas aeruginosa</em> cell contacts a surface, the mechanical load on its flagellum and on its type IV pili changes. That mechanical change is detected and converted into a chemical signal, which raises the intracellular concentration of a small messenger molecule called <strong>cyclic di-GMP</strong>. High cyclic di-GMP switches off the genes for swimming and switches on the genes for attachment and matrix production. The cell feels the wall and becomes a different kind of organism.</p>
+  <p>Work from <strong>Gerard Wong</strong> and colleagues has shown that this transition involves something like a running tally, in which cells that have touched a surface remain primed for a period afterward and commit faster on subsequent contact &mdash; and that this priming is inherited by descendants for several generations. A cell can be born already predisposed to attach, because its grandmother touched something.</p>
+</section>
+
+<section id="ch25">
+  <h2><span class="num">25</span>Reading the dead</h2>
+  <p class="lede">And then there is the strangest information channel of all, which is the acquisition of information directly from the dead.</p>
+  <p>Bacteria practise <strong>horizontal gene transfer</strong>, meaning they acquire DNA from sources other than their parent. There are three main routes. Conjugation, in which one cell builds a physical bridge to another and transfers a plasmid through it. Transduction, in which a virus carries genetic material between hosts. And transformation, in which a cell takes up naked DNA directly from its environment.</p>
+  <p>Transformation is the one that matters here, because it is deliberate. Certain species, including <em>Bacillus subtilis</em>, <em>Streptococcus pneumoniae</em> and <em>Vibrio cholerae</em>, can enter a physiological state called <strong>competence</strong>. A competent cell builds a specialised machine in its own membrane, binds free DNA fragments from outside, threads them through a pore, and integrates useful sequences into its own genome by recombination.</p>
+  <p>Competence is regulated. It is costly, and it is triggered by specific conditions &mdash; generally stress and high population density &mdash; which is to say the cell decides to become receptive to outside information at the moment when local conditions are bad and there are likely to be dead neighbours nearby whose DNA is worth reading. Some species go further. <em>Vibrio cholerae</em> becomes competent when it detects chitin, the material of crustacean shells and its natural surface in the ocean, and it pairs competence with a contact-dependent killing system &mdash; a molecular spear that punctures neighbouring cells and lyses them. It kills the cells around it, then takes up the DNA that spills out. That is an organism actively generating the information source it then reads.</p>
+  <div class="two-lists">
+    <div class="listcard">
+      <h3>The three routes in</h3>
+      <ul>
+        <li>Conjugation: a physical bridge, and a plasmid travels through it</li>
+        <li>Transduction: a virus carries genetic material between hosts</li>
+        <li>Transformation: a cell takes up naked DNA from its environment</li>
+      </ul>
+    </div>
+    <div class="listcard">
+      <h3>Why transformation is different</h3>
+      <ul>
+        <li>It is deliberate, and it is regulated</li>
+        <li>It is triggered by stress and high population density</li>
+        <li>Some species kill their neighbours to create the DNA they then read</li>
+      </ul>
+    </div>
+  </div>
+  <p>The functional result of all of this is that a bacterial lineage does not learn only through mutation and selection, which is slow, but through direct acquisition, which is fast. A resistance gene that arises once in one species can spread across the entire microbial community, including across enormous evolutionary distances. This is the primary reason antibiotic resistance propagates faster than a simple mutation model predicts.</p>
+  <div class="pulse"><b>The bacterial world is not a set of separate lineages. It is a shared, continuously updated library, and any cell in it can borrow.</b></div>
+  <p>Consider what that means as an information architecture. There is a global pool of solutions, accumulated over billions of years by 10 to the 30th organisms, and any individual can query it, take what it needs and pass it on. No single cell holds the knowledge. The system holds it, and the system has been running without interruption since before there was oxygen in the atmosphere.</p>
+</section>
+
+<section id="ch26">
+  <h2><span class="num">26</span>Made of former bacteria</h2>
+  <p class="lede">There is a further turn to this, and it comes from asking where your own cells came from.</p>
+  <p>Inside nearly every cell in your body there are <strong>mitochondria</strong>, the organelles that carry out oxidative phosphorylation and supply the great majority of your usable energy. Mitochondria have their own DNA, a small circular genome that is separate from the DNA in your nucleus. They have their own ribosomes, and those ribosomes are bacterial in type rather than the type found in the rest of your cell. They are surrounded by a double membrane. They divide by splitting on their own schedule, and they cannot be built from scratch by the cell that houses them.</p>
+  <p>They were free-living bacteria. The <strong>endosymbiotic theory</strong>, argued into acceptance by <strong>Lynn Margulis</strong> over the course of the 1960s and 1970s against sustained resistance, holds that a single ancient event brought an alphaproteobacterium inside another cell, and that instead of being digested it stayed &mdash; and that everything with a nucleus and complex cellular architecture descends from that merger. The evidence is now overwhelming, from genome sequences to ribosome structure to the antibiotics that target bacterial protein synthesis and as a side effect damage mitochondria. The same story applies to chloroplasts in plants and algae, which descend from an engulfed cyanobacterium.</p>
+  <div class="pull">
+    <p>&ldquo;Your body is a negotiated arrangement between lineages that used to be independent, and the negotiation has been running for something on the order of a billion and a half years.&rdquo;</p>
+    <cite>On the cells you are made of</cite>
+  </div>
+  <p>Add to that the population of bacteria currently living on and inside you, which is on the order of 30 to 40 trillion cells by the most careful estimates &mdash; comparable in number to your own cells. Those organisms are not passengers. They train your immune system, synthesise vitamins you cannot make, break down compounds you cannot digest, and produce neurotransmitters and metabolites that reach your brain and measurably influence behaviour in animal models.</p>
+  <p>The gut microbiome communicates with the nervous system through the vagus nerve, through immune signalling, and through circulating metabolites. Germ-free mice raised without any microbiome at all show altered anxiety behaviour, altered stress hormone responses, and differences in brain development. Transferring a microbiome from one strain of mouse to another can transfer aspects of behaviour along with it.</p>
+  <p>The human evidence is far more tentative, and the source is careful not to overstate it, because the field has a serious problem with premature claims. But the mechanistic link is real and the animal work is solid. Which means the thinking you are doing right now is not happening in isolation from the bacterial world. It is happening in a body built from former bacteria, colonised by current bacteria, using electrical machinery inherited from bacteria &mdash; and it is being influenced at the margins by chemistry produced by organisms that are not you.</p>
+</section>
+
+<section id="ch27">
+  <h2><span class="num">27</span>Does a bacterium know it is alive?</h2>
+  <p class="lede">The source does not think that question has an answer, and it is direct about why rather than leaving it hanging.</p>
+  <p>Knowing that you are alive, as opposed to simply being alive and behaving accordingly, requires a model of yourself. It requires representing your own existence as an object of thought. There is no evidence bacteria do that, and there is no obvious mechanism by which they could.</p>
+  <p>But that was never the interesting question. It was the door into a better one. The better question is what cognition is for, and what it is made of. The bacterial evidence suggests a fairly specific answer to both.</p>
+  <p>Cognition is <em>for</em> staying alive in a world that is not uniform and does not hold still. Any self-maintaining system in a variable environment faces the same problem. It must detect what is out there, evaluate whether it is good or bad, remember what just happened, integrate conflicting information, and act. That problem does not require a brain. It requires a boundary, a metabolism, and something to lose.</p>
+  <p>And cognition is <em>made of</em> whatever will carry information reliably. In your head, that is voltage across neuronal membranes and neurotransmitters across synapses. In a biofilm, it is potassium ions across bacterial membranes and autoinducers across the extracellular space. The substrates are more similar than they are different, and the reason is that they are related by descent.</p>
+  <div class="qcard">
+    <b>The picture that emerges is not that bacteria are secretly like us.</b>
+    <span>It is close to the reverse. We are a late, elaborate, spectacularly accelerated version of something that has been running continuously since the Archaean, in an unbroken chain, and that is still running everywhere at a scale below our notice in numbers we cannot really conceive of.</span>
+  </div>
+</section>
+
+<section id="ch28">
+  <h2><span class="num">28</span>Still making up their minds</h2>
+  <p class="lede">Somewhere in the range of 10 to the 30th bacterial cells live on this planet. That is a one followed by thirty zeros.</p>
+  <p>Their combined biomass exceeds that of all animals by a wide margin. They have been doing this for around three and a half billion years, which is roughly seven-eighths of the history of the Earth. Animals with nervous systems have been here for something like 600 million years, which is the last 13%.</p>
+  <div class="stats">
+    <div class="stat"><b>10<sup>30</sup></b><span>Bacterial cells on the planet</span></div>
+    <div class="stat two"><b>~3.5bn</b><span>Years they have been running</span></div>
+    <div class="stat three"><b>~7/8</b><span>Of the history of the Earth</span></div>
+  </div>
+  <p>For the great majority of the time life has existed on this planet, all of the sensing, all of the remembering, all of the deciding and all of the acting was being done by single cells. Whatever mind is, it did not start with us. And we did not invent the parts.</p>
+  <p>The next time you consider what it means to be a thinking thing, it is worth remembering that the machinery doing the thinking was field tested for three billion years in organisms too small to see, in the mud and the seawater and the dark, by things that had no idea they were building anything at all. They are still out there, still running in numbers past counting. And they are still, by every functional measure we know how to apply, making up their minds.</p>
+  <div class="closing">That is the argument of the source, followed in order: the line between reacting and thinking has no clean location, and the parts were in place long before there was anything to put them in.</div>
+</section>
+
+  <div class="note">
+    <p><b>About this page.</b> This is a reading companion, not a transcript.</p>
+    <p>It follows the source in order, tidies the spoken sentences into readable prose, and adds nothing that was not said.</p>
+    <p><b>Designed by TERA AI.</b></p>
+  </div>
+  <p class="foot-note">Reading companion &middot; built from the source, in order, with nothing added.</p>
+  <footer>
+    <p><b>Does Bacteria Know Its Alive</b></p>
+    <p>A long walk down from the neuron to the single cell, and back up again.</p>
+    <a class="up" href="#top">Back to the top</a>
+  </footer>
+</div>
+</body>
+</html>
