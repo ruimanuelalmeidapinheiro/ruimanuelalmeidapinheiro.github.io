@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>148-The Neuroscience of Abstraction &mdash; Reading Companion</title>
+<style>
+:root{
+  --bg:#F4F6FC;
+  --card:#ffffff;
+  --ink:#1E1A63;
+  --ink2:#3A2F8F;
+  --muted:#6A3FC0;
+  --a:#2E3FBF;
+  --a-deep:#151B72;
+  --a-soft:#E7EAFB;
+  --b:#C0153C;
+  --b-deep:#8E0F2E;
+  --b-soft:#FBE4EA;
+  --c:#A87400;
+  --c-deep:#7A5200;
+  --c-soft:#FBF0D8;
+  --line:rgba(46,63,191,.16);
+  --shadow:0 14px 34px rgba(21,27,114,.10);
+  --shadow-sm:0 6px 18px rgba(21,27,114,.08);
+  --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background-color:var(--bg);
+  background-image:
+    radial-gradient(880px 500px at 2% -8%, rgba(46,63,191,.13), transparent 62%),
+    radial-gradient(760px 470px at 100% 0%, rgba(192,21,60,.13), transparent 60%),
+    radial-gradient(760px 480px at 50% 106%, rgba(168,116,0,.15), transparent 62%);
+  background-attachment:fixed;color:var(--ink);
+  font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.68;font-size:17px;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1020px;margin:0 auto;padding:0 20px 72px}
+.hero{position:relative;margin:34px 0 26px;padding:38px 34px 34px;border-radius:26px;
+  background:linear-gradient(135deg,#ffffff 0%,#FBFCFE 45%,var(--a-soft) 100%);
+  border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
+.hero:before{content:"";position:absolute;right:-86px;top:-96px;width:256px;height:256px;border-radius:50%;
+  background:radial-gradient(circle at 40% 40%, rgba(192,21,60,.24), rgba(192,21,60,0) 68%)}
+.hero:after{content:"";position:absolute;left:-76px;bottom:-116px;width:236px;height:236px;border-radius:50%;
+  background:radial-gradient(circle at 60% 40%, rgba(168,116,0,.22), rgba(168,116,0,0) 70%)}
+.hero>*{position:relative;z-index:1}
+.kicker{display:inline-block;font-size:.7rem;letter-spacing:.19em;text-transform:uppercase;font-weight:700;
+  color:var(--a-deep);background:var(--a-soft);border:1px solid rgba(46,63,191,.24);
+  padding:6px 13px;border-radius:999px;margin-bottom:16px}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.5rem,3.6vw,2.15rem);
+  line-height:1.22;margin:0 0 12px;color:var(--a-deep);letter-spacing:-.01em}
+.hero .sub{font-size:1.03rem;color:var(--ink2);margin:0 0 18px;max-width:64ch}
+.meta{display:flex;flex-wrap:wrap;gap:9px}
+.meta span{font-size:.78rem;color:var(--b-deep);background:#fff;border:1px solid var(--line);
+  padding:6px 12px;border-radius:999px;box-shadow:var(--shadow-sm)}
+.toc{margin:0 0 30px;padding:22px 24px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+.toc h2{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--a-deep);
+  margin:0 0 14px;font-family:"Segoe UI",Arial,sans-serif}
+.toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:30px}
+.toc li{margin:0 0 8px;break-inside:avoid;font-size:.94rem}
+.toc a{color:var(--ink2);text-decoration:none;display:flex;gap:9px;line-height:1.42}
+.toc a:hover{color:var(--a-deep)}
+.toc b{flex:0 0 1.35rem;color:var(--muted);font-weight:700}
+section{margin:0 0 30px;padding:26px 26px 24px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+section h2{font-family:Georgia,"Times New Roman",serif;font-size:1.24rem;line-height:1.3;
+  margin:0 0 14px;color:var(--a-deep);display:flex;gap:11px;align-items:baseline}
+section h2 .num{flex:0 0 auto;font-family:"Segoe UI",Arial,sans-serif;font-size:.74rem;font-weight:700;
+  color:#fff;background:var(--a);border-radius:8px;padding:3px 9px;letter-spacing:.03em}
+section p{margin:0 0 13px}
+section p:last-child{margin-bottom:0}
+.lede{font-size:1.03rem;color:var(--ink2);border-left:3px solid var(--b);padding-left:14px;font-style:italic}
+section strong{color:var(--a-deep)}
+section em{color:var(--b-deep);font-style:italic}
+.pull{margin:20px 0;padding:18px 20px;background:var(--a-soft);border-left:4px solid var(--a);
+  border-radius:12px}
+.pull p{margin:0 0 8px;font-family:Georgia,"Times New Roman",serif;font-size:1.06rem;line-height:1.5;
+  color:var(--a-deep)}
+.pull cite{display:block;font-size:.8rem;color:var(--muted);font-style:normal}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}
+.chips span{font-size:.82rem;color:var(--b-deep);background:var(--b-soft);
+  border:1px solid rgba(192,21,60,.26);padding:6px 13px;border-radius:999px}
+.two-lists{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}
+@media(max-width:680px){.two-lists{grid-template-columns:1fr}}
+.listcard{background:#FBFCFE;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.listcard h3{margin:0 0 10px;font-size:.95rem;color:var(--a-deep);letter-spacing:.01em}
+.listcard ul{margin:0;padding-left:19px}
+.listcard li{margin:0 0 6px;font-size:.94rem}
+.listcard.warn{background:var(--c-soft);border-color:rgba(168,116,0,.28)}
+.listcard.warn h3{color:var(--c-deep)}
+.flag{margin:12px 0 0;padding-top:11px;border-top:1px dashed rgba(46,63,191,.26);
+  font-size:.86rem;color:var(--muted)}
+.steps{margin:18px 0;display:grid;gap:12px}
+.step{display:flex;gap:13px;align-items:flex-start}
+.step i{flex:0 0 30px;height:30px;border-radius:9px;background:var(--b);color:#fff;font-style:normal;
+  font-weight:700;font-size:.86rem;display:flex;align-items:center;justify-content:center}
+.step div{font-size:.95rem}
+.step b{color:var(--a-deep)}
+.tblwrap{margin:18px 0;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--a-soft);color:var(--a-deep);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+tr:last-child td{border-bottom:0}
+td:first-child{white-space:nowrap;color:var(--b-deep);font-weight:700}
+.scap{margin:8px 0 0;font-size:.83rem;color:var(--muted)}
+.qcard{margin:12px 0;padding:14px 17px;border-radius:12px;background:var(--a-soft);
+  border-left:4px solid var(--a)}
+.qcard b{display:block;color:var(--a-deep);font-size:.95rem;margin-bottom:5px}
+.qcard span{font-size:.92rem}
+.qcard.q1{background:var(--b-soft);border-left-color:var(--b)}
+.qcard.q1 b{color:var(--b-deep)}
+.qcard.q2{background:var(--c-soft);border-left-color:var(--c)}
+.qcard.q2 b{color:var(--c-deep)}
+.cnote{margin:18px 0;padding:15px 18px;background:#FBFCFE;border:1px dashed rgba(46,63,191,.3);
+  border-radius:12px;font-size:.9rem;color:var(--ink2)}
+.pulse{margin:18px 0;padding:16px 19px;border-radius:12px;background:var(--b-soft);
+  border-left:4px solid var(--b)}
+.pulse b{color:var(--b-deep)}
+.closing{margin:20px 0 0;padding:18px 20px;border-radius:12px;background:var(--a-soft);
+  border-left:4px solid var(--a);font-size:.96rem;color:var(--a-deep)}
+.note{margin:26px 0 14px;padding:18px 20px;background:#FBFCFE;border:1px solid var(--line);
+  border-radius:14px;font-size:.88rem;color:var(--muted)}
+.note p{margin:0 0 8px}
+.note p:last-child{margin-bottom:0}
+.foot-note{font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+footer{margin:34px 0 0;padding:22px 24px;text-align:center;border-top:1px solid var(--line)}
+footer p{margin:0 0 12px;font-size:.9rem;color:var(--ink2)}
+footer b{color:var(--a-deep)}
+.up{display:inline-block;font-size:.8rem;color:var(--a-deep);text-decoration:none;
+  border:1px solid var(--line);background:#fff;padding:7px 15px;border-radius:999px;
+  box-shadow:var(--shadow-sm)}
+@media(max-width:760px){.toc ol{columns:1}}
+.diagram{margin:20px 0 0;padding:16px 18px 8px;background:#FBFCFE;border:1px solid var(--line);
+  border-radius:14px;box-shadow:var(--shadow-sm)}
+.dg{display:block;width:100%;height:auto}
+.dg text{font-family:"Segoe UI",Arial,sans-serif;font-size:12.5px;fill:var(--ink2)}
+.dg .t{font-family:Georgia,"Times New Roman",serif;font-size:15px;fill:var(--a-deep)}
+.dg .s{font-size:11.5px;fill:var(--muted)}
+.dg .box{fill:#FBFCFE;stroke:rgba(46,63,191,.30);stroke-width:1.2}
+.dg .boxa{fill:#E7EAFB;stroke:rgba(46,63,191,.36);stroke-width:1.2}
+.dg .boxb{fill:#FBE4EA;stroke:#C0153C;stroke-width:1.3}
+.dg .dashbox{stroke-dasharray:5 4}
+.dg .ln{stroke:rgba(46,63,191,.42);stroke-width:1.4}
+.dg .ln.dash{stroke-dasharray:5 5}
+.dg .lna{stroke:#2E3FBF;stroke-width:1.6}
+.dg .lnb{stroke:#C0153C;stroke-width:1.6}
+.dg .lnb.dash{stroke-dasharray:5 5}
+.dg .acc{fill:#2E3FBF}
+.dg .accc{fill:#C0153C}
+.diagram figcaption{margin:9px 0 2px;font-size:.83rem;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:13px;margin:22px 0 6px}
+.stat{padding:17px 16px 15px;border-radius:15px;background:linear-gradient(180deg,#fff,var(--a-soft));
+  border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.stat b{display:block;font-family:Georgia,"Times New Roman",serif;font-size:1.65rem;line-height:1.05;
+  color:var(--a-deep);margin-bottom:6px}
+.stat span{font-size:.84rem;color:var(--ink2);display:block}
+.stat.two{background:linear-gradient(180deg,#fff,var(--b-soft));border-color:rgba(192,21,60,.24)}
+.stat.two b{color:var(--b-deep)}
+.stat.three{background:linear-gradient(180deg,#fff,var(--c-soft));border-color:rgba(168,116,0,.3)}
+.stat.three b{color:var(--c-deep)}
+</style>
+</head>
+<body>
+<div class="wrap" id="top">
+  <header class="hero">
+    <span class="kicker">Reading Companion</span>
+    <h1>148-The Neuroscience of Abstraction</h1>
+    <p class="sub">One short passage, followed all the way down: how a feeling on the skin becomes a concept like climate change &mdash; and why, when you go looking for the place in the brain where that concept lives, there is no place to point at.</p>
+    <div class="meta">
+      <span>Abstraction &middot; concepts &middot; neurons &middot; climate change</span>
+      <span>Interview excerpt, first person</span>
+      <span>No audience questions</span>
+    </div>
+  </header>
+  <nav class="toc">
+    <h2>What&rsquo;s inside</h2>
+    <ol>
+      <li><a href="#ch1"><b>1</b> Where abstraction is grounded</a></li>
+      <li><a href="#ch2"><b>2</b> You cannot think it without the words</a></li>
+      <li><a href="#ch3"><b>3</b> What you can actually experience</a></li>
+      <li><a href="#ch4"><b>4</b> Detaching, really far away</a></li>
+      <li><a href="#ch5"><b>5</b> Compressed into units of language</a></li>
+      <li><a href="#ch6"><b>6</b> Walking the route backwards</a></li>
+      <li><a href="#ch7"><b>7</b> Neurons that pattern the information</a></li>
+      <li><a href="#ch8"><b>8</b> So far away it is hard to say what it boils down to</a></li>
+      <li><a href="#ch9"><b>9</b> Why sea slugs are easier to read</a></li>
+      <li><a href="#ch10"><b>10</b> What danger means to a sea slug</a></li>
+      <li><a href="#ch11"><b>11</b> One neuron collects the signals</a></li>
+      <li><a href="#ch12"><b>12</b> When it fires, that is the idea of danger</a></li>
+      <li><a href="#ch13"><b>13</b> There is no further switch</a></li>
+      <li><a href="#ch14"><b>14</b> The brain does this in a more complicated way</a></li>
+      <li><a href="#ch15"><b>15</b> No special climate-change unit</a></li>
+      <li><a href="#ch16"><b>16</b> One neuron for heat, one for cold</a></li>
+      <li><a href="#ch17"><b>17</b> Patterns of patterns</a></li>
+      <li><a href="#ch18"><b>18</b> Where does it sit? Nowhere</a></li>
+      <li><a href="#ch19"><b>19</b> All of it at once, influencing each other</a></li>
+      <li><a href="#ch20"><b>20</b> The argument at a glance</a></li>
+      <li><a href="#ch21"><b>21</b> The schemes, and the drafts they replaced</a></li>
+      <li><a href="#ch22"><b>22</b> How I think about it</a></li>
+    </ol>
+  </nav>
+<section id="ch1">
+  <h2><span class="num">1</span>Where abstraction is grounded</h2>
+  <p class="lede">The excerpt opens with an admission about the way we think.</p><p>We humans operate on such a high degree of abstraction most of the time that it is very hard for us to wrap our mind around <strong>where it is grounded</strong>.</p><p>That is the question the passage sets out to work on. What are the actual physical experiences that have led to our highly abstract understanding of the world?</p>
+</section>
+<section id="ch2">
+  <h2><span class="num">2</span>You cannot think it without the words</h2>
+  <p class="lede">The example chosen is climate change.</p><p>You cannot think of climate change without having <strong>the words for climate and change</strong>. The language is not decoration laid over an experience; it is part of what makes the thought available at all.</p><figure class="diagram"><svg class="dg" viewBox="0 0 900 280" role="img" aria-label="Skin experiences passing through a word gate into the concept of climate change"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E3FBF"/></marker><marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0153C"/></marker><marker id="arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A87400"/></marker></defs><text class="t" x="30" y="30">The words stand at the door</text><text class="s" x="30" y="52">What the skin delivers on the left is not yet the concept on the right. Something has to let it through.</text><rect class="boxa" x="30" y="92" width="210" height="132" rx="14"/><text x="46" y="118">you can experience</text><text class="s" x="46" y="142">temperature</text><text class="s" x="46" y="162">humidity</text><text class="s" x="46" y="182">today different</text><text class="s" x="46" y="202">from yesterday</text><path class="lna" fill="none" d="M244,158 L352,158" marker-end="url(#ar)"/><rect class="box" x="358" y="112" width="180" height="92" rx="14"/><text x="374" y="146">the words for</text><text x="374" y="166">climate and change</text><text class="s" x="374" y="188">part of what makes</text><text class="s" x="374" y="202">the thought available</text><path class="lna" fill="none" d="M542,158 L646,158" marker-end="url(#ar)"/><rect class="boxb" x="652" y="112" width="218" height="92" rx="14"/><text x="668" y="146">the concept of climate</text><text x="668" y="166">changing over hundreds</text><text x="668" y="186">of years</text><text class="s" x="30" y="252">Take the words away, the source says, and this thought cannot be made at all.</text></svg><figcaption>Scheme 6 &mdash; experience on one side, the concept on the other, language in between.</figcaption></figure>
+</section>
+<section id="ch3">
+  <h2><span class="num">3</span>What you can actually experience</h2>
+  <p>Against that, the passage sets the things you can feel for yourself. You can experience temperature. You can experience humidity. You can experience that today is different from yesterday.</p><div class="chips"><span>temperature</span><span>humidity</span><span>today different from yesterday</span></div><p>These are the raw materials. Everything abstract is said to be built out of them, at a distance.</p>
+</section>
+<section id="ch4">
+  <h2><span class="num">4</span>Detaching, really far away</h2>
+  <p>Then comes the turn. To understand the concept of climate changing over hundreds of years, you need to <strong>detach yourself from those experiences</strong> &mdash; not a little, but really, really, really far away.</p><div class="pull"><p>&ldquo;You need to detach yourself from those experiences really, really, really far away and to compress them into these highly abstract units of language.&rdquo;</p><cite>From the middle of the source</cite></div><p>The distance is the point. The concept of climate is not a bigger version of the feeling of warmth; it is the feeling of warmth with almost all of its particularity stripped off.</p>
+</section>
+<section id="ch5">
+  <h2><span class="num">5</span>Compressed into units of language</h2>
+  <p>Two operations are named in that one line. The first is detachment: stepping back from the sensation. The second is <strong>compression</strong>: packing what is left into highly abstract units of language, so that a whole history of weather fits inside two words.</p><figure class="diagram"><svg class="dg" viewBox="0 0 900 340" role="img" aria-label="A staircase of five labelled steps rising from skin sensations to climate change"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E3FBF"/></marker><marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0153C"/></marker><marker id="arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A87400"/></marker></defs><text class="t" x="30" y="30">From skin to climate change: five steps of compression</text><text class="s" x="30" y="52">Each step keeps the pattern and lets go of the sensation.</text><line class="ln" x1="30" y1="316" x2="870" y2="316"/><text class="s" x="30" y="334">direct experience</text><text class="s" x="770" y="334">most abstract</text><rect class="boxa" x="30" y="252" width="152" height="50" rx="12"/><text x="44" y="270">skin: warmth</text><text x="44" y="288">and coldness</text><rect class="box" x="202" y="202" width="152" height="50" rx="12"/><text x="216" y="220">concepts of cold</text><text x="216" y="238">and hot</text><path class="lna" fill="none" d="M183,277 C196,277 188,227 200,227" marker-end="url(#ar)"/><rect class="boxa" x="374" y="152" width="152" height="50" rx="12"/><text x="388" y="170">cold weather,</text><text x="388" y="188">hot weather</text><path class="lna" fill="none" d="M355,227 C368,227 360,177 372,177" marker-end="url(#ar)"/><rect class="box" x="546" y="102" width="152" height="50" rx="12"/><text x="560" y="120">changes in</text><text x="560" y="138">that weather</text><path class="lna" fill="none" d="M527,177 C540,177 532,127 544,127" marker-end="url(#ar)"/><rect class="boxb" x="718" y="52" width="152" height="50" rx="12"/><text x="732" y="80">climate change</text><path class="lna" fill="none" d="M699,127 C712,127 704,77 716,77" marker-end="url(#ar)"/></svg><figcaption>Scheme 1 &mdash; the ladder the source describes: detach, then compress.</figcaption></figure><p class="scap">Drawn from the source: each rung keeps the pattern and drops the sensation it came from.</p>
+</section>
+<section id="ch6">
+  <h2><span class="num">6</span>Walking the route backwards</h2>
+  <p>So it can be really difficult to go back and say, well, okay: where did this come from? The passage then does exactly that, in public, tracing the route from the concept back to the skin.</p><figure class="diagram"><svg class="dg" viewBox="0 0 900 420" role="img" aria-label="A vertical chain of five stages running from the skin down to abstract units of language"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E3FBF"/></marker><marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0153C"/></marker><marker id="arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A87400"/></marker></defs><text class="t" x="30" y="30">The long way back to the skin</text><text class="s" x="30" y="52">The source lists the route in one breath; drawn out, the distance becomes visible.</text><rect class="boxa" x="30" y="78" width="330" height="52" rx="12"/><text x="44" y="106">Skin experiences warmth and coldness</text><rect class="box" x="30" y="144" width="330" height="52" rx="12"/><text x="44" y="172">Neurons pattern that information</text><line class="lna" x1="195" y1="133" x2="195" y2="140" marker-end="url(#ar)"/><rect class="boxa" x="30" y="210" width="330" height="52" rx="12"/><text x="44" y="238">Concepts of cold, and then hot</text><line class="lna" x1="195" y1="199" x2="195" y2="206" marker-end="url(#ar)"/><rect class="box" x="30" y="276" width="330" height="52" rx="12"/><text x="44" y="304">Connected to the idea of ambient air</text><line class="lna" x1="195" y1="265" x2="195" y2="272" marker-end="url(#ar)"/><rect class="boxb" x="30" y="342" width="330" height="52" rx="12"/><text x="44" y="370">Compressed into abstract units of language</text><line class="lna" x1="195" y1="331" x2="195" y2="338" marker-end="url(#ar)"/><line class="ln dash" x1="390" y1="104" x2="390" y2="390"/><line class="ln" x1="380" y1="104" x2="400" y2="104"/><line class="ln" x1="380" y1="390" x2="400" y2="390"/><text class="s" x="416" y="200">the whole of this vertical span</text><text class="s" x="416" y="220">is what the source calls</text><text class="s" x="416" y="240">really, really, really far away</text><text class="s" x="416" y="260">from direct experience</text></svg><figcaption>Scheme 2 &mdash; the route the source traces, with the gap marked on the right.</figcaption></figure><p class="scap">The route, in the order the source lists it.</p>
+</section>
+<section id="ch7">
+  <h2><span class="num">7</span>Neurons that pattern the information</h2>
+  <p>The sequence named is this. The idea of climate comes from our skin experiencing warmth and our skin experiencing coldness. Then <strong>neurons pattern that information</strong> into concepts of cold, and then of hot. Then that is connected to the idea of ambient air.</p><p>Notice what is doing the compressing. It is not a word and not a person; it is a population of cells responding to a pattern in what just happened.</p>
+</section>
+<section id="ch8">
+  <h2><span class="num">8</span>So far away it is hard to say what it boils down to</h2>
+  <p>Having traced the whole route, the passage lands on the difficulty rather than resolving it. It is just so far away from direct experience that it is really hard to say what it boils down to.</p><div class="cnote">The question the source keeps returning to is not whether abstraction is real, but whether the thing it boils down to can still be named as a physical experience.</div>
+</section>
+<section id="ch9">
+  <h2><span class="num">9</span>Why sea slugs are easier to read</h2>
+  <p>At this point the passage changes scale on purpose. Working with sea slugs was <strong>really revelatory</strong>, because sea slugs are a lot simpler &mdash; and it is easier to understand how they process their patterns of experience.</p><div class="two-lists"><div class="listcard"><h3>What a simpler animal gives you</h3><ul><li>A smaller set of parts to watch</li><li>Patterns of experience that can be followed directly</li><li>One clear example: what danger is to them</li></ul></div><div class="listcard warn"><h3>What the passage asks next</h3><ul><li>Not what danger feels like</li><li>What danger <em>is</em>, in the wiring</li><li>And whether the same answer scales up</li></ul></div></div>
+</section>
+<section id="ch10">
+  <h2><span class="num">10</span>What danger means to a sea slug</h2>
+  <p>Danger, to them, is any signal coming from <strong>any pain receptor anywhere in the body</strong>. No location is privileged and no single receptor is special. Any of them, anywhere, contributes the same kind of message.</p>
+</section>
+<section id="ch11">
+  <h2><span class="num">11</span>One neuron collects the signals</h2>
+  <p>There is a neuron that collects all those signals from those different parts of the body. In the diagram, the many sources on the left are the many places the body can be hurt; the single cell on the right is where they meet.</p><figure class="diagram"><svg class="dg" viewBox="0 0 900 290" role="img" aria-label="Pain signals from a sea slug converging on a single neuron whose firing stands for danger"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E3FBF"/></marker><marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0153C"/></marker><marker id="arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A87400"/></marker></defs><text class="t" x="30" y="30">What danger is, in a sea slug</text><text class="s" x="30" y="52">Any pain signal, from anywhere in the body, is the same message.</text><rect class="boxa" x="30" y="126" width="210" height="120" rx="56"/><text x="78" y="172">sea slug body</text><text class="s" x="70" y="192">a lot simpler to read</text><circle class="accc" cx="95" cy="126" r="6"/><circle class="accc" cx="140" cy="126" r="6"/><circle class="accc" cx="185" cy="126" r="6"/><text class="s" x="30" y="272">pain receptors, anywhere in the body</text><path class="lnb" fill="none" d="M95,132 C135,96 300,104 424,150" marker-end="url(#arb)"/><path class="lnb" fill="none" d="M140,132 C180,96 300,104 424,150" marker-end="url(#arb)"/><path class="lnb" fill="none" d="M185,132 C225,96 300,104 424,150" marker-end="url(#arb)"/><circle class="boxb" cx="452" cy="160" r="42"/><text x="422" y="156">one</text><text x="414" y="176">neuron</text><text class="s" x="330" y="234">it collects all of those signals</text><line class="lnb" x1="496" y1="160" x2="576" y2="160" marker-end="url(#arb)"/><circle class="boxa" cx="616" cy="160" r="34"/><text x="596" y="166">fires</text><line class="lnb" x1="652" y1="160" x2="724" y2="160" marker-end="url(#arb)"/><rect class="boxb" x="730" y="132" width="140" height="56" rx="12"/><text x="744" y="154">the idea of</text><text x="744" y="172">danger</text><text class="s" x="560" y="250">there is no further switch after that</text></svg><figcaption>Scheme 3 &mdash; convergence, not a lookup: the firing <em>is</em> the idea of danger.</figcaption></figure><p class="scap">Convergence, in the source&rsquo;s own sequence.</p>
+</section>
+<section id="ch12">
+  <h2><span class="num">12</span>When it fires, that is the idea of danger</h2>
+  <p>And when that neuron fires, <strong>the firing of that neuron represents the idea of danger</strong>. It is as simple as that.</p><div class="pulse"><b>The firing is not a label attached to the idea. On this account, the firing is the idea &mdash; the state of one cell standing for danger, because everything that matters has already been gathered into it.</b></div>
+</section>
+<section id="ch13">
+  <h2><span class="num">13</span>There is no further switch</h2>
+  <p>One clarification follows immediately, because it blocks the obvious objection. There is <strong>no further switch</strong> somewhere that says: danger. Danger is just the fact that all of those different pain signals have converged in one point.</p><div class="qcard q1"><b>The temptation, and the correction</b><span>It feels as though something must read the convergence and then announce it. The source says the convergence is already the whole event.</span></div>
+</section>
+<section id="ch14">
+  <h2><span class="num">14</span>The brain does this in a more complicated way</h2>
+  <p>From the sea slug the passage turns back to us. The brain does it, the source says, in a more complicated way &mdash; but <strong>that is also true for how we process, understand and access these abstract features of reality</strong>.</p><p>So the simple case is offered not as a curiosity but as a template: the same shape of explanation, at a larger scale.</p>
+</section>
+<section id="ch15">
+  <h2><span class="num">15</span>No special climate-change unit</h2>
+  <p>The negative claim comes next, and it is the heart of the passage. It is not that there is some special climate change in us, a thing that clicks in our brain when we perceive this concept.</p><p>What makes the concept available is <strong>the organization of the brain</strong>: it is a consequence of having our brain arranged in hierarchical levels, and of those levels processing our everyday experience.</p>
+</section>
+<section id="ch16">
+  <h2><span class="num">16</span>One neuron for heat, one for cold</h2>
+  <p>The arrangement is spelled out in terms of who responds to what. One neuron responds to a pattern of heat. One neuron responds to a pattern of cold.</p><div class="steps"><div class="step"><i>1</i><div><b>A pattern of heat, a pattern of cold.</b> Separate cells answer separate patterns in what just happened.</div></div><div class="step"><i>2</i><div><b>Those cells join larger patterns.</b> They form part of a greater pattern of cold weather and hot weather.</div></div><div class="step"><i>3</i><div><b>Then a greater pattern still.</b> They form part of an even greater pattern of changes in cold weather and changes in hot weather.</div></div><div class="step"><i>4</i><div><b>And eventually the immense concept.</b> By virtue of that hierarchical organization, we get to concepts like climate change.</div></div></div>
+</section>
+<section id="ch17">
+  <h2><span class="num">17</span>Patterns of patterns</h2>
+  <p>Read one level at a time, nothing exotic is required at any step. A cell answers a pattern. The cells together form a pattern. Those patterns form a pattern of their own.</p><figure class="diagram"><svg class="dg" viewBox="0 0 900 340" role="img" aria-label="Four tiers of neurons, weather patterns and one abstract concept joined by upward arrows"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E3FBF"/></marker><marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0153C"/></marker><marker id="arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A87400"/></marker></defs><text class="t" x="30" y="30">The same trick, repeated up the levels</text><text class="s" x="30" y="52">One neuron answers a pattern of heat, one answers a pattern of cold. Nothing above them is a detector.</text><rect class="boxa" x="40" y="250" width="210" height="48" rx="12"/><text x="54" y="276">neuron: pattern of cold</text><rect class="boxa" x="286" y="250" width="210" height="48" rx="12"/><text x="300" y="276">neuron: pattern of heat</text><rect class="box" x="40" y="186" width="456" height="46" rx="12"/><text x="54" y="211">a greater pattern: cold weather and hot weather</text><rect class="box" x="40" y="122" width="456" height="46" rx="12"/><text x="54" y="147">an even greater pattern: changes in that weather</text><rect class="boxb" x="40" y="58" width="456" height="46" rx="12"/><text x="54" y="84">the immense concept: climate change</text><line class="lna" x1="145" y1="250" x2="145" y2="238" marker-end="url(#ar)"/><line class="lna" x1="391" y1="250" x2="391" y2="238" marker-end="url(#ar)"/><line class="lna" x1="268" y1="186" x2="268" y2="174" marker-end="url(#ar)"/><line class="lna" x1="268" y1="122" x2="268" y2="110" marker-end="url(#ar)"/><line class="ln dash" x1="520" y1="72" x2="520" y2="290"/><text class="s" x="540" y="112">by virtue of the brain</text><text class="s" x="540" y="132">being organized in these</text><text class="s" x="540" y="152">hierarchical levels, we get</text><text class="s" x="540" y="172">to the immensely abstract</text><text class="s" x="540" y="192">concepts &mdash; which is why</text><text class="s" x="540" y="212">they are so hard to wrap</text><text class="s" x="540" y="232">your mind around</text><text class="s" x="40" y="322">everyday experience, processed one level at a time</text></svg><figcaption>Scheme 4 &mdash; hierarchical levels, each one a pattern made of the level below.</figcaption></figure><p class="scap">The hierarchy as the source describes it, bottom tier upward.</p>
+</section>
+<section id="ch18">
+  <h2><span class="num">18</span>Where does it sit? Nowhere</h2>
+  <p>This is why the whole matter is hard to wrap your mind around. The question we want to ask is: okay, where in the brain is this? Where does this concept of climate change sit?</p><p>Point to that place in the brain and say, this is climate change &mdash; <strong>but you cannot. There is no place.</strong></p><figure class="diagram"><svg class="dg" viewBox="0 0 900 340" role="img" aria-label="A brain outline with no landmark beside a mesh of mutually influencing nodes"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E3FBF"/></marker><marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0153C"/></marker><marker id="arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A87400"/></marker></defs><text class="t" x="30" y="30">Where does it sit? Nowhere</text><text class="s" x="30" y="52">The question assumes a location. The source answers that there is no place to point at.</text><path class="boxb" fill="#FBE4EA" stroke="#C0153C" stroke-width="1.6" d="M60,180 C48,116 118,70 196,74 C276,78 330,124 320,186 C311,240 244,262 186,254 C130,246 70,238 60,180 z"/><text x="128" y="168">we want to point</text><text x="140" y="188">somewhere in here</text><path class="lnb dash" fill="none" d="M140,214 L250,268" marker-end="url(#arb)"/><text class="s" x="60" y="300">and say: this is climate change</text><text class="s" x="60" y="320">but there is no such place</text><line class="lna" x1="620.0" y1="86.0" x2="685.1" y2="111.2"/><line class="lna" x1="620.0" y1="86.0" x2="712.0" y2="172.0"/><line class="lna" x1="620.0" y1="86.0" x2="620.0" y2="258.0"/><line class="lna" x1="620.0" y1="86.0" x2="528.0" y2="172.0"/><line class="lna" x1="620.0" y1="86.0" x2="554.9" y2="111.2"/><line class="lna" x1="685.1" y1="111.2" x2="712.0" y2="172.0"/><line class="lna" x1="685.1" y1="111.2" x2="685.1" y2="232.8"/><line class="lna" x1="685.1" y1="111.2" x2="554.9" y2="232.8"/><line class="lna" x1="685.1" y1="111.2" x2="554.9" y2="111.2"/><line class="lna" x1="712.0" y1="172.0" x2="685.1" y2="232.8"/><line class="lna" x1="712.0" y1="172.0" x2="620.0" y2="258.0"/><line class="lna" x1="712.0" y1="172.0" x2="528.0" y2="172.0"/><line class="lna" x1="685.1" y1="232.8" x2="620.0" y2="258.0"/><line class="lna" x1="685.1" y1="232.8" x2="554.9" y2="232.8"/><line class="lna" x1="685.1" y1="232.8" x2="554.9" y2="111.2"/><line class="lna" x1="620.0" y1="258.0" x2="554.9" y2="232.8"/><line class="lna" x1="620.0" y1="258.0" x2="528.0" y2="172.0"/><line class="lna" x1="554.9" y1="232.8" x2="528.0" y2="172.0"/><line class="lna" x1="554.9" y1="232.8" x2="554.9" y2="111.2"/><line class="lna" x1="528.0" y1="172.0" x2="554.9" y2="111.2"/><circle class="acc" cx="620.0" cy="86.0" r="7"/><circle class="acc" cx="685.1" cy="111.2" r="7"/><circle class="acc" cx="712.0" cy="172.0" r="7"/><circle class="acc" cx="685.1" cy="232.8" r="7"/><circle class="acc" cx="620.0" cy="258.0" r="7"/><circle class="acc" cx="554.9" cy="232.8" r="7"/><circle class="acc" cx="528.0" cy="172.0" r="7"/><circle class="acc" cx="554.9" cy="111.2" r="7"/><text class="s" x="508" y="300">all the related things, activated and</text><text class="s" x="508" y="320">influencing each other at the same time</text></svg><figcaption>Scheme 5 &mdash; the concept as a combination, active all at once.</figcaption></figure><p class="scap">A concept with no address: what is left is a combination, not a location.</p>
+</section>
+<section id="ch19">
+  <h2><span class="num">19</span>All of it at once, influencing each other</h2>
+  <p>The alternative is stated plainly. It is all the combination of all of the things that are related to climate change, <strong>activated and influencing each other at the same time</strong>, that forms this concept in our brain.</p><div class="cnote">Combination is doing the work in that sentence twice over: the concept is the combination, and it is only there while the parts are active together.</div>
+</section>
+<section id="ch20">
+  <h2><span class="num">20</span>The argument at a glance</h2>
+  <p>Laid out in order, the passage makes four moves: an abstract thought is hard to trace back; it is built from direct experience by detachment and compression; a simple animal shows the mechanism in one cell; and the same mechanism, at many levels, is why the concept has no single address.</p><div class="tblwrap"><table><tr><th>Step in the source</th><th>What it says</th></tr><tr><td>The puzzle</td><td>We work in abstraction constantly and cannot easily see where it is grounded.</td></tr><tr><td>The example</td><td>Climate change cannot be thought without the words for climate and change.</td></tr><tr><td>The raw material</td><td>Temperature, humidity, and the difference between today and yesterday.</td></tr><tr><td>The operators</td><td>Detach from experience, really far away; compress into abstract units of language.</td></tr><tr><td>The simple case</td><td>A sea slug: any pain receptor, one collecting neuron, firing means danger.</td></tr><tr><td>The general case</td><td>Hierarchical levels up from heat and cold to changes in weather.</td></tr><tr><td>The conclusion</td><td>No place holds the concept; the combination active at once does.</td></tr></table></div><div class="stats"><div class="stat"><b>2</b><span>operations named: detach, then compress</span></div><div class="stat two"><b>1</b><span>neuron that collects every pain signal</span></div><div class="stat three"><b>0</b><span>places in the brain to point at</span></div><div class="stat"><b>4</b><span>levels, from heat and cold up to climate</span></div></div>
+</section>
+<section id="ch21">
+  <h2><span class="num">21</span>The schemes, and the drafts they replaced</h2>
+  <p class="lede">Every figure on this page was drawn more than once.</p><p>Five of the six kept versions went through discarded drafts first, and the drafts are kept here rather than deleted, because in every case they failed for the same reason: <strong>they put the concept somewhere</strong>, or flattened a distance the source is at pains to keep.</p><div class="two-lists"><div class="listcard"><h3>Kept, and why</h3><ul><li>A climb, because distance is the source&rsquo;s own word</li><li>One convergence, because one neuron is named</li><li>A gate in the middle, because the words are made load-bearing</li><li>Levels stacked upward, because hierarchy is the explanation given</li><li>A mesh with no centre, because combination at the same time is the claim</li></ul></div><div class="listcard warn"><h3>Discarded, and why</h3><ul><li>Bands: read as a list of topics, not as a climb</li><li>A single flat arrow: erased the sense of distance</li><li>A hub with spokes: implied one central place</li><li>A table: turned one convergence into many separate cases</li><li>Words drawn on the line: hid that they are what lets the step happen</li></ul></div></div><figure class="diagram"><svg class="dg" viewBox="0 0 600 292" role="img" aria-label="Draft schematic of the abstraction ladder drawn as stacked bands"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E3FBF"/></marker><marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0153C"/></marker><marker id="arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A87400"/></marker></defs><text class="t" x="30" y="28">Draft 1 &mdash; bands of abstraction</text><rect class="box dashbox" x="30" y="52" width="540" height="30" rx="8"/><text x="44" y="72">skin sensations</text><rect class="box dashbox" x="30" y="90" width="444" height="30" rx="8"/><text x="44" y="110">cold and hot</text><rect class="box dashbox" x="30" y="128" width="348" height="30" rx="8"/><text x="44" y="148">weather</text><rect class="box dashbox" x="30" y="166" width="252" height="30" rx="8"/><text x="44" y="186">changes in weather</text><rect class="box dashbox" x="30" y="204" width="156" height="30" rx="8"/><text x="44" y="224">climate change</text><text class="s" x="30" y="272">Dropped: a stack of bands reads as a list of topics, not as a climb.</text></svg><figcaption>Draft 1, discarded.</figcaption></figure><figure class="diagram"><svg class="dg" viewBox="0 0 600 190" role="img" aria-label="Draft schematic of the chain drawn as four boxes in a row"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E3FBF"/></marker><marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0153C"/></marker><marker id="arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A87400"/></marker></defs><text class="t" x="30" y="28">Draft 2 &mdash; one arrow, left to right</text><rect class="box" x="30" y="66" width="112" height="54" rx="10"/><text x="48" y="99">skin</text><rect class="box" x="170" y="66" width="112" height="54" rx="10"/><text x="188" y="99">neurons</text><line class="lna" x1="146" y1="93" x2="166" y2="93" marker-end="url(#ar)"/><rect class="box" x="310" y="66" width="112" height="54" rx="10"/><text x="328" y="99">concepts</text><line class="lna" x1="286" y1="93" x2="306" y2="93" marker-end="url(#ar)"/><rect class="box" x="450" y="66" width="112" height="54" rx="10"/><text x="468" y="99">words</text><line class="lna" x1="426" y1="93" x2="446" y2="93" marker-end="url(#ar)"/><text class="s" x="30" y="164">Dropped: one flat arrow flattens the distance the source keeps stressing.</text></svg><figcaption>Draft 2, discarded.</figcaption></figure><figure class="diagram"><svg class="dg" viewBox="0 0 600 316" role="img" aria-label="Draft schematic of the concept drawn as a central hub with spokes"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E3FBF"/></marker><marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0153C"/></marker><marker id="arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A87400"/></marker></defs><text class="t" x="30" y="28">Draft 3 &mdash; one hub, radiating spokes</text><circle class="boxb" cx="300" cy="152" r="32"/><text x="274" y="157">centre</text><line class="lna" x1="300.0" y1="118.0" x2="300.0" y2="40.0"/><circle class="acc" cx="300.0" cy="40.0" r="7"/><line class="lna" x1="326.6" y1="130.8" x2="417.3" y2="82.2"/><circle class="acc" cx="417.3" cy="82.2" r="7"/><line class="lna" x1="333.1" y1="159.6" x2="446.2" y2="176.9"/><circle class="acc" cx="446.2" cy="176.9" r="7"/><line class="lna" x1="314.8" y1="182.6" x2="365.1" y2="252.9"/><circle class="acc" cx="365.1" cy="252.9" r="7"/><line class="lna" x1="285.2" y1="182.6" x2="234.9" y2="252.9"/><circle class="acc" cx="234.9" cy="252.9" r="7"/><line class="lna" x1="266.9" y1="159.6" x2="153.8" y2="176.9"/><circle class="acc" cx="153.8" cy="176.9" r="7"/><line class="lna" x1="273.4" y1="130.8" x2="182.7" y2="82.2"/><circle class="acc" cx="182.7" cy="82.2" r="7"/><text class="s" x="30" y="300">Dropped: a hub would claim the concept lives in one spot &mdash; the opposite of the point.</text></svg><figcaption>Draft 3, discarded.</figcaption></figure><figure class="diagram"><svg class="dg" viewBox="0 0 600 258" role="img" aria-label="Draft schematic of the convergence drawn as a two-column table"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E3FBF"/></marker><marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0153C"/></marker><marker id="arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A87400"/></marker></defs><text class="t" x="30" y="28">Draft 4 &mdash; a two-column table</text><text class="s" x="30" y="50">every pain receptor</text><text class="s" x="320" y="50">the same message</text><line class="ln" x1="30" y1="60" x2="560" y2="60"/><text class="s" x="30" y="84">receptor 1</text><text class="s" x="320" y="84">acts on one collecting neuron</text><line class="ln dash" x1="30" y1="92" x2="560" y2="92"/><text class="s" x="30" y="114">receptor 2</text><text class="s" x="320" y="114">acts on one collecting neuron</text><line class="ln dash" x1="30" y1="122" x2="560" y2="122"/><text class="s" x="30" y="144">receptor 3</text><text class="s" x="320" y="144">acts on one collecting neuron</text><line class="ln dash" x1="30" y1="152" x2="560" y2="152"/><text class="s" x="30" y="174">receptor 4</text><text class="s" x="320" y="174">acts on one collecting neuron</text><line class="ln dash" x1="30" y1="182" x2="560" y2="182"/><text class="s" x="30" y="238">Dropped: a table reads as a lookup of many separate cases, not one convergence.</text></svg><figcaption>Draft 4, discarded.</figcaption></figure><figure class="diagram"><svg class="dg" viewBox="0 0 600 192" role="img" aria-label="Draft schematic of the word gate drawn as a single straight line"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E3FBF"/></marker><marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C0153C"/></marker><marker id="arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A87400"/></marker></defs><text class="t" x="30" y="28">Draft 5 &mdash; one flat line, with words in the middle</text><line class="lna" x1="40" y1="110" x2="560" y2="110" marker-end="url(#ar)"/><circle class="acc" cx="40" cy="110" r="7"/><text class="s" x="24" y="92">sensation</text><circle class="acc" cx="300" cy="110" r="7"/><text class="s" x="284" y="92">words</text><circle class="acc" cx="560" cy="110" r="7"/><text class="s" x="544" y="92">concept</text><text class="s" x="30" y="168">Dropped: putting the words on the line hides that they are what lets the step happen.</text></svg><figcaption>Draft 5, discarded.</figcaption></figure><p class="scap">The five drafts, shown as they were drawn, with the reason each was set aside.</p>
+</section>
+<section id="ch22">
+  <h2><span class="num">22</span>How I think about it</h2>
+  <p>The passage closes without a flourish. So that is how I think about it &mdash; an offered account rather than a settled one, arrived at by working downwards from a large abstract idea until something small enough to inspect appears.</p><div class="closing">That is the whole of the excerpt, followed in order: the concept of climate change is not stored in one spot but formed by many parts active together, and the same trick explains danger in a sea slug and abstraction in us.</div>
+</section>
+  <div class="note">
+    <p><b>About this page.</b> This is a reading companion, not a transcript.</p>
+    <p>It follows the source in order, tidies the spoken sentences into readable prose, and adds nothing that was not said.</p>
+    <p><b>Designed by TERA AI.</b></p>
+  </div>
+  <p class="foot-note">Reading companion 148 &middot; built from the source interview, in order, with nothing added.</p>
+  <footer>
+    <p><b>148-The Neuroscience of Abstraction</b></p>
+    <p>How a feeling on the skin becomes a concept with no address in the brain.</p>
+    <a class="up" href="#top">Back to the top</a>
+  </footer>
+</div>
+</body>
+</html>
