@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seeing Biology at Sub-Wavelength Scale — W.E. Moerner on Super-Resolution Microscopy — Reading Companion</title>
+<style>
+:root{--ink:#16324f;--ink2:#2e5f9e;--muted:#5b6b7d;--line:#cdd9e8;--line2:#e2eaf4;--paper:#f6f8fb;--card:#fff;--teal:#0e7c86;--teal-t:#e0f1f3;--violet:#6b3fd4;--violet-t:#efe9fc;--amber:#b45309;--amber-t:#fdf0dd;--green:#1f7a54;--green-t:#e3f4ec;--crimson:#b3261e;--crimson-t:#fbe6e4;--serif:Georgia,'Iowan Old Style',Palatino,'Times New Roman',serif;--sans:'Helvetica Neue',Helvetica,Arial,sans-serif;--mono:Menlo,Consolas,monospace}
+*{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17.5px;line-height:1.78}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}.col{max-width:760px;margin:0 auto}
+a{color:var(--ink2);text-decoration:none;border-bottom:1px solid var(--line)} a:hover{color:var(--teal)}
+.hero{background:linear-gradient(168deg,#eaf2fb 0%,#f7fbfd 46%,#f6f8fb 100%);border-bottom:1px solid var(--line2);padding:52px 0 40px}
+.eyebrow{font-family:var(--sans);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink2);font-weight:700;margin:0 0 16px}
+.hero h1{font-size:clamp(30px,4.4vw,50px);line-height:1.1;margin:0 0 10px;letter-spacing:-.01em}
+.hero .sub{font-size:19px;line-height:1.55;color:var(--ink2);max-width:62ch;margin:0 0 18px}
+.meta{font-family:var(--sans);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 18px}
+.meta span{border-left:3px solid var(--line);padding-left:10px}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:28px 0;padding:22px 26px}
+.toc h2{font-family:var(--sans);font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin:0 0 14px;color:var(--ink2)}
+.toc ol{columns:2;column-gap:28px;margin:0;padding:0 0 0 18px} .toc li{margin:0 0 8px;font-size:15.5px;line-height:1.45}
+.toc li a{border:0} .toc .n{font-family:var(--sans);font-weight:700;color:var(--teal);margin-right:8px}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:30px 32px;margin:0 0 22px}
+.snum{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:700}
+h2{font-size:28px;line-height:1.25;margin:6px 0 8px} .kicker{font-style:italic;color:var(--muted);margin:0 0 16px;font-size:17px}
+p{margin:0 0 14px} .first::first-letter{font-size:2.2em;float:left;line-height:.85;padding:6px 8px 0 0;color:var(--ink2);font-weight:700}
+.term{font-weight:700;color:var(--ink)} blockquote{margin:20px 0;padding:16px 20px 16px 22px;border-left:4px solid var(--amber);background:var(--amber-t);font-style:italic} blockquote cite{display:block;font-style:normal;font-family:var(--sans);font-size:13px;color:var(--muted);margin-top:8px}
+figure{margin:20px 0 8px} figcaption{font-family:var(--sans);font-size:13.5px;line-height:1.55;color:var(--muted);margin-top:10px;border-top:1px solid var(--line2);padding-top:10px}
+.flab{font-weight:700;color:var(--ink2);margin-right:8px;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+.note{border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0;background:#eef4fb} .note h3{font-family:var(--sans);font-size:14px;margin:0 0 6px} .note p{margin:0;font-size:16px}
+.key{background:var(--teal-t);border-color:#bfe0e3} .warn{background:var(--amber-t)} .violet{background:var(--violet-t)} .green{background:var(--green-t)} .crimson{background:var(--crimson-t)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0} .grid>div{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:#fbfdff} .grid h4{font-family:var(--sans);font-size:14px;margin:0 0 6px} .grid p{font-size:15.5px;margin:0}
+.draft{opacity:.92} .draft svg{border:1px dashed #a9bcd8;border-radius:10px}
+.stats{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0} .stat{flex:1 1 140px;border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center;background:#fbfdff} .stat b{display:block;font-family:var(--sans);font-size:28px;color:var(--ink2)} .stat span{font-family:var(--sans);font-size:12.5px;color:var(--muted)}
+footer{padding:28px 0 44px;text-align:center;font-family:var(--sans);font-size:13px;color:var(--muted)}
+@media(max-width:760px){section{padding:22px 18px}.toc ol{columns:1}.grid{grid-template-columns:1fr}.hero{padding:36px 0 28px}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap"><p class="eyebrow">Reading Companion &middot; One File &middot; No Dependencies</p>
+<h1>Seeing Biology at Sub-Wavelength Scale<br><span style="font-size:.58em;font-weight:400;color:var(--ink2)">W. E. Moerner on Super-Resolution Microscopy</span></h1>
+<p class="sub">How a whisper of absorption in a crystal became a way to watch single molecules inside living cells — told in order, with nothing added that was not said.</p>
+<div class="meta"><span>Source: long interview, transcribed from auto-captions</span><span>Follows the conversation in order</span><span>All sketches inline SVG — works offline</span></div>
+<figure><svg viewBox="0 0 900 280" width="100%" role="img" aria-label="Three ways past the same blur"><rect width="900" height="280" fill="#f7f9fc"/><text x="30" y="28" font-size="11" font-family="Helvetica,Arial" fill="#2e5f9e" font-weight="700" letter-spacing="1">THE WHOLE STORY IN ONE FIGURE</text>
+<g><text x="30" y="60" font-size="13" font-weight="700" fill="#16324f" font-family="Helvetica,Arial">1. Ordinary optics</text><circle cx="150" cy="150" r="58" fill="#cdd9e8" opacity=".7"/><circle cx="150" cy="150" r="28" fill="#16324f" opacity=".25"/><text x="30" y="232" font-size="12" fill="#5b6b7d" font-family="Helvetica,Arial">One molecule → a blur</text><text x="30" y="250" font-size="12" fill="#5b6b7d" font-family="Helvetica,Arial">≈ 250–300 nm wide</text></g>
+<g><text x="330" y="60" font-size="13" font-weight="700" fill="#b3261e" font-family="Helvetica,Arial">2. STED — switch off</text><circle cx="450" cy="150" r="58" fill="none" stroke="#b3261e" stroke-width="14" opacity=".35"/><circle cx="450" cy="150" r="10" fill="#b3261e"/><text x="330" y="232" font-size="12" fill="#5b6b7d" font-family="Helvetica,Arial">Donut: bright ring, dark core</text><text x="330" y="250" font-size="12" fill="#5b6b7d" font-family="Helvetica,Arial">Only the centre can still glow</text></g>
+<g><text x="630" y="60" font-size="13" font-weight="700" fill="#0e7c86" font-family="Helvetica,Arial">3. Localisation — one at a time</text><circle cx="700" cy="130" r="6" fill="#0e7c86"/><circle cx="760" cy="165" r="6" fill="#6b3fd4"/><line x1="700" y1="130" x2="760" y2="165" stroke="#5b6b7d" stroke-dasharray="3 4"/><text x="630" y="232" font-size="12" fill="#5b6b7d" font-family="Helvetica,Arial">Blink → locate → repeat</text><text x="630" y="250" font-size="12" fill="#5b6b7d" font-family="Helvetica,Arial">Two objects 46 nm apart, resolved</text></g>
+</svg><figcaption><span class="flab">Figure 0</span>Three answers to the same blur. The rest of this page is how Moerner got from the first panel to the other two.</figcaption></figure>
+</div></header>
+
+<nav class="toc"><div class="wrap"><h2>Contents</h2><ol>
+<li><a href="#s1"><span class="n">01</span>The square-root shortcut</a></li>
+<li><a href="#s2"><span class="n">02</span>A horse race beneath the diffraction limit</a></li>
+<li><a href="#s3"><span class="n">03</span>The donut that switches molecules off</a></li>
+<li><a href="#s4"><span class="n">04</span>How to make a donut</a></li>
+<li><a href="#s5"><span class="n">05</span>From crystals to cells</a></li>
+<li><a href="#s6"><span class="n">06</span>Frequency as a dimension</a></li>
+<li><a href="#s7"><span class="n">07</span>Why fluorescence wins</a></li>
+<li><a href="#s8"><span class="n">08</span>First single molecule</a></li>
+<li><a href="#s9"><span class="n">09</span>Saturation and the narrowest line</a></li>
+<li><a href="#s10"><span class="n">10</span>The triplet — nuisance, then tool</a></li>
+<li><a href="#s11"><span class="n">11</span>Blinking, 1997</a></li>
+<li><a href="#s12"><span class="n">12</span>Controlling the blink</a></li>
+<li><a href="#s13"><span class="n">13</span>Localisation is not resolution</a></li>
+<li><a href="#s14"><span class="n">14</span>Where precision comes from</a></li>
+<li><a href="#s15"><span class="n">15</span>What was actually new</a></li>
+<li><a href="#s16"><span class="n">16</span>One virus, a thousand copies</a></li>
+<li><a href="#s17"><span class="n">17</span>The label problem</a></li>
+<li><a href="#s18"><span class="n">18</span>Two microscopes, one sample</a></li>
+<li><a href="#s19"><span class="n">19</span>Making the emitter say more</a></li>
+<li><a href="#s20"><span class="n">20</span>The whole cell at once</a></li>
+<li><a href="#s21"><span class="n">21</span>Is fluorescence the future?</a></li>
+<li><a href="#s22"><span class="n">22</span>The third dimension</a></li>
+<li><a href="#s23"><span class="n">23</span>Spins and the second life of the triplet</a></li>
+<li><a href="#s24"><span class="n">24</span>How far can it go?</a></li>
+<li><a href="#s25"><span class="n">25</span>What he tells people starting out</a></li>
+<li><a href="#s26"><span class="n">26</span>Sputnik kid</a></li>
+<li><a href="#s27"><span class="n">27</span>Sketches that did not survive</a></li>
+</ol></div></nav>
+
+<main><div class="wrap"><div class="col">
+
+<section id="s1"><span class="snum">Section 01</span><h2>The square-root shortcut</h2><p class="kicker">The recording opens in the middle of an argument — and the argument is what made single molecules seem possible at all.</p>
+<p class="first">A lot of people thought it was not possible to see single molecules. Moerner’s managers had told him: don’t get too focused on the application, just do the most exciting science you can think of. So he asked: why not try to see a single molecule?</p>
+<p>The encouragement was arithmetic. Suppose you have a thousand molecules in resonance. The size of the feature is the square root of a thousand — about 30. Once you have measured something 30 big, you realise it is only the square root of n harder to get to n = 1. A 30-times-better experiment is easier than a 1,000-times-better one.</p>
+<blockquote><p>That’s what encouraged us to try to go to the single molecule limit.</p><cite>Moerner, on the square-root argument</cite></blockquote>
+<figure><svg viewBox="0 0 740 260" width="100%"><rect width="740" height="260" fill="#f7f9fc"/><text x="30" y="30" font-size="11" font-family="Helvetica,Arial" fill="#2e5f9e" font-weight="700">1000 MOLECULES → 1 MOLECULE</text><g><circle cx="180" cy="140" r="70" fill="#eef2f8" stroke="#2e5f9e"/><text x="180" y="135" font-size="22" font-weight="700" fill="#16324f" text-anchor="middle" font-family="Helvetica,Arial">√1000 ≈ 30</text><text x="180" y="160" font-size="11" fill="#5b6b7d" text-anchor="middle" font-family="Helvetica,Arial">one broad feature</text></g><text x="300" y="145" font-size="28" fill="#0e7c86" font-family="Helvetica,Arial">→</text><g><circle cx="480" cy="140" r="18" fill="#0e7c86"/><text x="480" y="190" font-size="12" fill="#16324f" text-anchor="middle" font-family="Helvetica,Arial">n = 1</text><text x="480" y="208" font-size="11" fill="#5b6b7d" text-anchor="middle" font-family="Helvetica,Arial">only √n harder</text></g><rect x="30" y="225" width="680" height="22" rx="6" fill="#fff" stroke="#c9d6e8"/><text x="42" y="240" font-size="11" font-family="Helvetica,Arial" fill="#16324f">Not 1000× harder. 30× harder. That changes what feels worth trying.</text></svg><figcaption><span class="flab">Figure 1</span>The square-root shortcut. Ensemble averaging hides the single molecule; the statistics said the step was smaller than it looked.</figcaption></figure>
+<div class="note key"><h3>One law, two appearances</h3><p>The square root returns later: the more photons you collect from one blinking molecule, the better you know where it is — improving as 1/√N. The same statistics that made the first experiment seem possible also set the precision of every super-resolution image.</p></div>
+</section>
+
+<section id="s2"><span class="snum">Section 02</span><h2>A horse race beneath the diffraction limit</h2><p class="kicker">Asked for an overview, Moerner starts with the physics everyone was fighting.</p>
+<p class="first">Light does not focus to a point. Every spot blurs to roughly half a wavelength — λ/2, a few hundred nanometres in the visible. Nothing in the image is smaller than that, whatever the sample contains.</p>
+<p>One way around it is to make the source smaller rather than the lens better. That was <span class="term">near-field optics</span>: a fibre drawn to a sharp tip, coated in aluminium, light leaking from a tiny hole, scanned across the surface. Eric Betzig worked on it, as did groups in Switzerland. Moerner calls it “very nice” — and notes it works right on the surface.</p>
+<figure><svg viewBox="0 0 740 300" width="100%"><rect width="740" height="300" fill="#f7f9fc"/><rect x="40" y="230" width="660" height="40" fill="#e8eef7" stroke="#a9bcd8"/><text x="52" y="255" font-size="11" font-family="Helvetica,Arial" fill="#5b6b7d">sample surface</text><polygon points="300,30 392,30 360,150 351,205 341,205 332,150" fill="#eef2f8" stroke="#2e5f9e" stroke-width="1.6"/><rect x="300" y="22" width="92" height="10" rx="3" fill="#16324f"/><text x="410" y="60" font-size="12" fill="#16324f" font-family="Helvetica,Arial" font-weight="700">tapered fibre, aluminium-coated</text><text x="410" y="78" font-size="11" fill="#5b6b7d" font-family="Helvetica,Arial">tiny aperture at the tip</text><circle cx="346" cy="205" r="8" fill="#0e7c86" opacity=".3"/><text x="410" y="110" font-size="12" fill="#0e7c86" font-family="Helvetica,Arial" font-weight="700">evanescent glow</text><text x="410" y="128" font-size="11" fill="#5b6b7d" font-family="Helvetica,Arial">only nanometres from the tip</text></svg><figcaption><span class="flab">Figure 2</span>Near-field: shrink the source. Powerful at the surface, limited away from it.</figcaption></figure>
+<div class="grid"><div><h4>Near-field</h4><p>Shrink the source. Works on the surface.</p></div><div><h4>Structured illumination (SIM)</h4><p>Change the illumination. Pattern + computation.</p></div><div><h4>STED</h4><p>Switch molecules off everywhere except a point.</p></div><div><h4>Localisation (PALM / STORM)</h4><p>Let molecules light up one at a time, locate each.</p></div></div>
+<blockquote><p>Almost all methods have some positives and some negatives. They have advantages and disadvantages. It is always important to make sure people tell you what the advantages and disadvantages of their technique are.</p><cite>Moerner, on method-talk</cite></blockquote>
+</section>
+
+<section id="s3"><span class="snum">Section 03</span><h2>The donut that switches molecules off</h2><p class="kicker">STED, rebuilt from the ground up — including the part that sounds impossible: throwing photons away.</p>
+<p class="first">The donut approach is Stefan Hell’s stimulated emission depletion microscopy. Start with an ordinary confocal microscope and add one ingredient: a ring-shaped beam, bright all around and dark in the middle, laid over the same focus. Molecules in the bright ring are forced to emit immediately and are therefore never available to fluoresce for the camera. What is left is the narrow region at the centre where the ring is dark.</p>
+<p>How do you remove the fluorescence photons? The depletion light drives stimulated emission at a different wavelength from spontaneous fluorescence, so a filter can remove the depletion light, while the depletion itself has already silenced the molecules in the ring.</p>
+<blockquote><p>You are depleting their fluorescence because you are forcing them to emit … and you are throwing those photons away. Filters. You filter out the stimulated light.</p><cite>The exchange over STED, condensed</cite></blockquote>
+<p>Then the sharpest question: is resolution not simply limited by the size of the hole in the donut? Diffraction does apply to the donut — the ring itself is diffraction-limited. But the very centre can be essentially zero intensity. Turn the total power up, and the ring gets brighter while the centre stays dark. The region that is not depleted narrows. Nothing about the lens changed; the geometry of the light did the work. His interviewers call it using diffraction against itself.</p>
+<figure><svg viewBox="0 0 740 280" width="100%"><rect width="740" height="280" fill="#f7f9fc"/><circle cx="180" cy="130" r="80" fill="none" stroke="#b3261e" stroke-width="18" opacity=".35"/><circle cx="180" cy="130" r="10" fill="#b3261e"/><text x="180" y="240" font-size="12" fill="#16324f" text-anchor="middle" font-family="Helvetica,Arial" font-weight="700">donut beam</text><text x="180" y="258" font-size="11" fill="#5b6b7d" text-anchor="middle" font-family="Helvetica,Arial">bright ring, dark core</text><text x="340" y="80" font-size="12" fill="#16324f" font-family="Helvetica,Arial" font-weight="700">More power →</text><circle cx="480" cy="130" r="80" fill="none" stroke="#b3261e" stroke-width="26" opacity=".5"/><circle cx="480" cy="130" r="5" fill="#b3261e"/><text x="480" y="240" font-size="12" fill="#16324f" text-anchor="middle" font-family="Helvetica,Arial" font-weight="700">narrower dark core</text><text x="480" y="258" font-size="11" fill="#5b6b7d" text-anchor="middle" font-family="Helvetica,Arial">same lens, smaller spot</text></svg><figcaption><span class="flab">Figure 3</span>STED: squeeze the dark spot by making the bright parts brighter.</figcaption></figure>
+<p>It was not instant. Getting a factor of two below the limit was exciting. Getting better and better took better donuts, a darker centre, less aberration. If light leaks into the centre, it kills the effect. Improvement after improvement of every optical component around the idea.</p>
+<blockquote><p>Remember, I am not a STED expert. We built our own STED microscope and used it for a certain number of experiments, but the real experts are those who worked in that field for twenty, thirty, forty years.</p><cite>Moerner, on borrowing a technique</cite></blockquote>
+</section>
+
+<section id="s4"><span class="snum">Section 04</span><h2>How to make a donut</h2><p class="kicker">A spiral of phase, a corkscrew of light, and a mode of the electromagnetic field.</p>
+<p class="first">How do you make a donut? Several ways to think about it. One is to have light pass through a spiral of phase — an optical component whose thickness changes steadily around a full turn. Send light through that and it twists like a corkscrew. You cannot have electric field at the centre of it. So it makes a donut.</p>
+<p>Another way: it is one of the solutions of the electromagnetic field. TEM00 is a Gaussian. TEM11 will be a donut. Just another mode, which you want to use.</p>
+<figure><svg viewBox="0 0 740 260" width="100%"><rect width="740" height="260" fill="#f7f9fc"/><text x="30" y="30" font-size="11" font-family="Helvetica,Arial" fill="#2e5f9e" font-weight="700">SPIRAL PHASE PLATE</text><path d="M 180 140 L 260 80 L 260 200 Z" fill="#eef2f8" stroke="#2e5f9e"/><text x="90" y="230" font-size="12" fill="#16324f" font-family="Helvetica,Arial">thickness rises around a full turn</text><path d="M 430 140 C 430 90 530 90 530 140 C 530 190 430 190 430 140" fill="none" stroke="#0e7c86" stroke-width="2.5"/><circle cx="480" cy="140" r="6" fill="#b3261e"/><text x="480" y="230" font-size="12" fill="#16324f" text-anchor="middle" font-family="Helvetica,Arial">twisted wavefront → no field on axis</text></svg><figcaption><span class="flab">Figure 4</span>A spiral phase plate. Thickness rises steadily, twisting the wavefront into a screw; a beam with no axis to sit on has no choice but to come out as a ring.</figcaption></figure>
+<p>Moerner mentions several ways rather than a single recipe, and moves on quickly — the donut is not his instrument. The point he keeps returning to is that precision here comes from light intensity, which can be tuned continuously, rather than from any machined feature, which cannot.</p>
+</section>
+
+<section id="s5"><span class="snum">Section 05</span><h2>From crystals to cells</h2><p class="kicker">The same person, the same question, a different sample.</p>
+<p class="first">Moerner began not in biology but in optical data storage and spectroscopy in crystals and polymers. The question was always signal and noise: how do you see something very small against a background?</p>
+<p>When the single-molecule idea moved into cells, the stakes changed. A crystal is tidy. A cell is crowded, moving, autofluorescent, and full of things you did not label. The physics did not change, but the sample did. That is why the later sections keep returning to labels, background, and whether a picture can be believed.</p>
+<div class="stats"><div class="stat"><b>~250 nm</b><span>ordinary spot, visible light</span></div><div class="stat"><b>~10 nm</b><span>super-resolution, in good cases</span></div><div class="stat"><b>5–50×</b><span>better than diffraction-limited</span></div></div>
+</section>
+
+<section id="s6"><span class="snum">Section 06</span><h2>Frequency as a dimension</h2><p class="kicker">Before single molecules, there was spectral hole-burning.</p>
+<p class="first">In a crystal or glass at low temperature, absorption is inhomogeneously broadened — not one line but a dense pile of very narrow peaks, one for each molecule or defect, each at a slightly different frequency because each sits in a slightly different local environment.</p>
+<p>That spread makes frequency usable as a dimension. Instead of one bit per spot, you could write hundreds to a thousand bits in the same spot, choosing the colour at which each is written and reading them back by tuning the laser. One host offers the analogy of a disc written and read with light. Moerner takes it further: same idea, far smaller scale, many more bits per spot.</p>
+<p>The idea dates from the mid-1970s, pursued at IBM by spectroscopists trying it in every host they could think of. Moerner worked mostly on the molecular side. His slice was not the writing mechanism but the signal-to-noise: how deep a mark can you burn, how strong is the signal, what does the background look like?</p>
+</section>
+
+<section id="s7"><span class="snum">Section 07</span><h2>Why fluorescence wins</h2><p class="kicker">Absorption is a whisper. Fluorescence is a shout on a dark background.</p>
+<p class="first">Early work measured absorption — a tiny dip in a bright beam. Hard. Fluorescence changed the game: if you can get rid of background, if you can have very low background everywhere, then fluorescence is on a dark background.</p>
+<blockquote><p>If you can get rid of background, if you can have very low background everywhere, then fluorescence is on a dark background.</p><cite>Moerner, on the decisive change</cite></blockquote>
+<p>That is why a single molecule, which absorbs almost nothing, can still be seen: it can emit many photons, one after another, against darkness. The rest of the story is about collecting those photons efficiently and not being fooled by them.</p>
+</section>
+
+<section id="s8"><span class="snum">Section 08</span><h2>First single molecule</h2><p class="kicker">1989, in a crystal, at low temperature — and then the long road to room temperature and cells.</p>
+<p class="first">The first single-molecule optical detection used absorption in a crystal, with frequency selection to pick one molecule out of the pile. It proved the square-root argument was not just arithmetic.</p>
+<p>Then came fluorescence, then room temperature, then single molecules in polymers, then in cells. Each step added background, motion, and chemistry. Each step also made the result more biological — and more worth believing only if the controls were right.</p>
+<figure><svg viewBox="0 0 740 200" width="100%"><rect width="740" height="200" fill="#f7f9fc"/><text x="30" y="30" font-size="11" font-family="Helvetica,Arial" fill="#2e5f9e" font-weight="700">TIMELINE</text><line x1="40" y1="110" x2="700" y2="110" stroke="#a9bcd8" stroke-width="2"/><circle cx="120" cy="110" r="7" fill="#0e7c86" stroke="#fff" stroke-width="2"/><text x="120" y="140" font-size="11" fill="#0e7c86" text-anchor="middle" font-family="Helvetica,Arial" font-weight="700">1989 — first</text><text x="120" y="156" font-size="11" fill="#16324f" text-anchor="middle" font-family="Helvetica,Arial">single molecule</text><circle cx="360" cy="110" r="7" fill="#6b3fd4" stroke="#fff" stroke-width="2"/><text x="360" y="140" font-size="11" fill="#6b3fd4" text-anchor="middle" font-family="Helvetica,Arial" font-weight="700">1997 — blinking GFP</text><circle cx="580" cy="110" r="7" fill="#b45309" stroke="#fff" stroke-width="2"/><text x="580" y="140" font-size="11" fill="#b45309" text-anchor="middle" font-family="Helvetica,Arial" font-weight="700">2006 — PALM / STORM</text><text x="580" y="156" font-size="11" fill="#16324f" text-anchor="middle" font-family="Helvetica,Arial">2014 — Nobel Prize</text></svg><figcaption><span class="flab">Figure 5</span>From a whisper in a crystal to single molecules inside living cells.</figcaption></figure>
+</section>
+
+<section id="s9"><span class="snum">Section 09</span><h2>Saturation and the narrowest line</h2><p class="kicker">Sitting on one molecule, turning the power up, and finding a width limited by nothing but lifetime.</p>
+<p class="first">One thing you can do with a single molecule, never with an ensemble, is follow it as a function of power. Sit on the molecule, tune across it to measure its line width, then sit on the peak and increase laser power, watching signal climb and then stop climbing — saturate. Standard three-level models let you calculate the shape of that curve and the intensity at which the knee occurs. Moerner calls the exercise fascinating, partly because it worked so well.</p>
+<figure><svg viewBox="0 0 740 260" width="100%"><rect width="740" height="260" fill="#f7f9fc"/><text x="30" y="30" font-size="11" font-family="Helvetica,Arial" fill="#2e5f9e" font-weight="700">SATURATION</text><path d="M 60 200 C 120 120 200 90 320 85" fill="none" stroke="#0e7c86" stroke-width="2.5"/><text x="60" y="230" font-size="11" fill="#5b6b7d" font-family="Helvetica,Arial">brightness stops climbing — the knee</text><text x="420" y="30" font-size="11" font-family="Helvetica,Arial" fill="#6b3fd4" font-weight="700">LINE BROADENS WITH POWER</text><path d="M 420 200 C 480 160 560 120 660 80" fill="none" stroke="#6b3fd4" stroke-width="2.5"/><text x="420" y="230" font-size="11" fill="#5b6b7d" font-family="Helvetica,Arial">more light only broadens the line</text></svg><figcaption><span class="flab">Figure 6</span>Left: emission saturates. Right: the line broadens as power rises. Both are single-molecule facts — invisible in an ensemble.</figcaption></figure>
+</section>
+
+<section id="s10"><span class="snum">Section 10</span><h2>The triplet — nuisance, then tool</h2><p class="kicker">A dark state that ruins an experiment, then returns as a measurement.</p>
+<p class="first">Molecules occasionally make an intersystem crossing into a long-lived triplet state, where they go dark and stay dark. For early experiments you deliberately chose molecules with a weak triplet yield — molecules that would not disappear on you, but would come back and absorb again and again.</p>
+<p>He flags, without developing it yet, that the triplet will return later for entirely different reasons: those spin levels turn out to be usable. The nuisance becomes a probe. Keep that in mind for Section 23.</p>
+</section>
+
+<section id="s11"><span class="snum">Section 11</span><h2>Blinking, 1997</h2><p class="kicker">A green fluorescent protein that blinks — and blinking becomes the method.</p>
+<p class="first">In 1997, a green fluorescent protein was found to blink: on, off, on again, without being told to. At first that looks like a problem. Then it looks like the method. If molecules blink, you can separate them in time even when you cannot separate them in space.</p>
+<p>That is the key turn from “see one molecule” to “image many molecules at super-resolution”: do not try to see them all at once. See them one at a time.</p>
+</section>
+
+<section id="s12"><span class="snum">Section 12</span><h2>Controlling the blink</h2><p class="kicker">From accidental blinking to photoactivation, photoswitching, and DNA-PAINT.</p>
+<p class="first">Once blinking is the idea, you want control. Photoactivatable proteins that turn on with one colour and are read with another. Photoswitchable dyes that can be pushed on and off. And later, DNA-PAINT: a target strand anchored to the structure, a short imager strand with a light on it that docks, glows, and lets go — blinking by binding, not by chemistry inside the dye.</p>
+<figure><svg viewBox="0 0 740 220" width="100%"><rect width="740" height="220" fill="#f7f9fc"/><line x1="80" y1="130" x2="260" y2="130" stroke="#2e5f9e" stroke-width="3"/><text x="80" y="110" font-size="11" fill="#5b6b7d" font-family="Helvetica,Arial">target strand, anchored</text><line x1="160" y1="130" x2="160" y2="80" stroke="#1f7a54" stroke-width="2.5"/><circle cx="160" cy="72" r="8" fill="#1f7a54" stroke="#fff"/><text x="180" y="76" font-size="11" fill="#1f7a54" font-family="Helvetica,Arial">imager docks → glows → lets go</text><text x="380" y="80" font-size="12" fill="#16324f" font-family="Helvetica,Arial" font-weight="700">Blink pattern</text><rect x="380" y="100" width="40" height="18" fill="#0e7c86"/><rect x="430" y="100" width="12" height="18" fill="#e2eaf4"/><rect x="452" y="100" width="40" height="18" fill="#0e7c86"/><text x="380" y="145" font-size="11" fill="#5b6b7d" font-family="Helvetica,Arial">on — off — on: time separates what space cannot</text></svg><figcaption><span class="flab">Figure 7</span>DNA-PAINT: blinking by docking and undocking.</figcaption></figure>
+<blockquote><p>Even if they are at different random positions, you can measure all their positions. That is the key idea for super resolution with single molecules.</p><cite>Moerner, on photoactivation</cite></blockquote>
+</section>
+
+<section id="s13"><span class="snum">Section 13</span><h2>Localisation is not resolution</h2><p class="kicker">A precise position is not the same as a resolved image.</p>
+<p class="first">Moerner is careful here. Super-localisation — knowing where one isolated emitter is, very precisely — is not by itself super-resolution. Resolution is about two objects, close together, that you can tell apart. Localisation is the tool. The image is built by repeating it thousands of times and drawing all the positions.</p>
+<div class="note violet"><h3>Distinction to keep</h3><p>Localisation: where is this one molecule? Resolution: can I tell these two apart? The second needs the first, plus density, labelling, and controls.</p></div>
+</section>
+
+<section id="s14"><span class="snum">Section 14</span><h2>Where precision comes from</h2><p class="kicker">Photons are the currency.</p>
+<p class="first">How precisely can you locate one molecule? Roughly, the width of its blur divided by the square root of the number of photons you collect — plus background, pixel size, and drift. More photons, better precision. That is why brightness, low background, and not bleaching too fast matter so much.</p>
+<p>There is also a newer family of ideas: put a donut beam right on top of the molecule, so it emits nothing at all. Move a tiny distance and you suddenly get good information. Position becomes something you infer from a null. Moerner calls the whole scheme a way to determine position more precisely with fewer photons — which, since photons are the currency, is the only kind of improvement that matters.</p>
+<p>And a caution: through all of this you are sensing the average position of an electric dipole — the emitter announcing itself by its oscillating dipole field. Nothing here tells you about individual atoms inside the molecule. He returns to this later, when someone asks what 0.1 nm precision really signifies. The answer — the average position of the whole object — is set up here.</p>
+</section>
+
+<section id="s15"><span class="snum">Section 15</span><h2>What was actually new</h2><p class="kicker">Five, ten, fifty times better is not incremental — it is a different dataset.</p>
+<p class="first">Was there a hero experiment, something that startled people outside the single-molecule community? Moerner gives both halves. First, quantitative: if you can measure with resolution five, ten or fifty times better than diffraction-limited — down to ~10 nm rather than 100–200 nm — then you have dramatically more information.</p>
+<p>Second, qualitative: sometimes that reveals a different phenomenon. Examples: a cross-section of an axon with a labelled protein forming rings spaced ~100 nm apart — invisible to ordinary optics. A molecular motor walking along its track, each step measurable, because a single emitter can be followed as it moves. Work with Lucy Shapiro on proteins inside bacteria: bacteria are not simply bags of enzymes; they contain internal structures that matter for how they divide, and those structures had been invisible.</p>
+<figure><svg viewBox="0 0 740 240" width="100%"><rect width="740" height="240" fill="#f7f9fc"/><text x="30" y="30" font-size="11" font-family="Helvetica,Arial" fill="#2e5f9e" font-weight="700">AXON RINGS</text><circle cx="150" cy="130" r="55" fill="none" stroke="#6b3fd4" stroke-width="3" stroke-dasharray="6 5"/><circle cx="150" cy="130" r="35" fill="none" stroke="#6b3fd4" stroke-width="3" stroke-dasharray="6 5"/><text x="150" y="210" font-size="11" fill="#5b6b7d" text-anchor="middle" font-family="Helvetica,Arial">rings ~100 nm apart</text><text x="380" y="30" font-size="11" font-family="Helvetica,Arial" fill="#0e7c86" font-weight="700">MOTOR WALKS IN STEPS</text><line x1="380" y1="150" x2="660" y2="150" stroke="#a9bcd8" stroke-width="2"/><rect x="400" y="135" width="26" height="14" fill="#0e7c86"/><rect x="440" y="135" width="26" height="14" fill="#0e7c86"/><rect x="480" y="135" width="26" height="14" fill="#0e7c86"/><text x="380" y="190" font-size="11" fill="#5b6b7d" font-family="Helvetica,Arial">a staircase, not a slope — each tread is one step</text></svg><figcaption><span class="flab">Figure 8</span>Left: rings in an axon. Right: a motor walking in steps. Both needed single molecules.</figcaption></figure>
+<p>Then the class of results that is not about resolution at all. If you want to watch something really fast, conventional super-resolution can be the wrong tool, because building up locations takes time and you do not want molecules moving while you build. So you drop to the single-molecule limit and follow one thing, fast.</p>
+</section>
+
+<section id="s16"><span class="snum">Section 16</span><h2>One virus, a thousand copies</h2><p class="kicker">Super-resolution applied to something that is very much not a toy sample.</p>
+<p class="first">A cell infected by SARS-CoV-2, mapped with the blinking method. Replication organelles cluster into little clusters around a dark nucleus — no label gets in there. The image was made with the ordinary super-resolution workflow, applied to a real infection.</p>
+<figure><svg viewBox="0 0 740 260" width="100%"><rect width="740" height="260" fill="#f7f9fc"/><circle cx="280" cy="130" r="100" fill="#f2f6fb" stroke="#2e5f9e" stroke-width="1.5"/><circle cx="280" cy="130" r="42" fill="#1d3c63"/><text x="280" y="133" font-size="11" fill="#fff" text-anchor="middle" font-family="Helvetica,Arial">nucleus</text><text x="280" y="149" font-size="10" fill="#c8d2de" text-anchor="middle" font-family="Helvetica,Arial">no label gets in</text><g fill="#b3261e"><circle cx="400" cy="90" r="3"/><circle cx="415" cy="100" r="3"/><circle cx="405" cy="115" r="3"/><circle cx="430" cy="95" r="3"/><circle cx="395" cy="160" r="3"/><circle cx="410" cy="170" r="3"/><circle cx="425" cy="160" r="3"/><circle cx="440" cy="175" r="3"/></g><text x="480" y="100" font-size="12" fill="#16324f" font-family="Helvetica,Arial" font-weight="700">clustered replication</text><text x="480" y="118" font-size="12" fill="#16324f" font-family="Helvetica,Arial" font-weight="700">organelles</text><text x="480" y="140" font-size="11" fill="#5b6b7d" font-family="Helvetica,Arial">each dot: one located molecule</text></svg><figcaption><span class="flab">Figure 9</span>A SARS-CoV-2 infected cell. The method is ordinary; the sample is not.</figcaption></figure>
+</section>
+
+<section id="s17"><span class="snum">Section 17</span><h2>The label problem</h2><p class="kicker">You never see the protein. You see the label.</p>
+<p class="first">Every fluorescence image is an image of labels, not of the thing itself. If the label is big, if it binds in the wrong place, if it does not get in, if it blinks badly — the picture lies, politely. That is why controls, labelling density, and knowing what your label does matter more than the microscope.</p>
+<div class="note warn"><h3>Rule</h3><p>Ask of every super-resolution picture: what is labelled, how densely, and what is missing? If the answer is not in the paper, the picture is not yet believable.</p></div>
+</section>
+
+<section id="s18"><span class="snum">Section 18</span><h2>Two microscopes, one sample</h2><p class="kicker">Correlative imaging: light tells you where, electrons tell you what.</p>
+<p class="first">One way to check a fluorescence picture is to look at the same sample with another microscope — for example electron microscopy — and ask whether the structures agree. Light gives you identity (this protein, labelled). Electrons give you context (membranes, organelles, ultrastructure). Together they are more believable than either alone.</p>
+<p>It is slow, fiddly, and worth it when the claim is strong.</p>
+</section>
+
+<section id="s19"><span class="snum">Section 19</span><h2>Making the emitter say more</h2><p class="kicker">Position is not the only thing a photon can tell you.</p>
+<p class="first">A single emitter can report more than where it is: its orientation (dipole direction), its spectrum, its lifetime, whether it is moving, whether it is bound. Moerner’s group has pushed this — measuring orientation and other properties in parallel with position, so one molecule says more per photon.</p>
+<p>That matters because photons are scarce. If each one can carry two kinds of information instead of one, you win twice.</p>
+</section>
+
+<section id="s20"><span class="snum">Section 20</span><h2>The whole cell at once</h2><p class="kicker">From a thin slice to a volume.</p>
+<p class="first">Cells are three-dimensional. Imaging a thin plane is not enough if the biology lives in volume. Whole-cell approaches — light-sheet, clever illumination, and 3D localisation — try to get the whole cell at once, without bleaching it to death on the way.</p>
+<p>The trade-off is always the same: speed vs. precision vs. photodamage. You cannot maximise all three.</p>
+</section>
+
+<section id="s21"><span class="snum">Section 21</span><h2>Is fluorescence the future?</h2><p class="kicker">A direct question, a careful answer.</p>
+<p class="first">Is fluorescence the future? Moerner does not claim it is the only future. Fluorescence is powerful because it is specific — you label what you want — and because it works in living cells. But it is not the only way to beat the diffraction limit, and it is not the only way to see small things. Electron microscopy, label-free methods, and new physics all have their place.</p>
+<p>The future, in his telling, is not one technique winning. It is many techniques, each honest about its pros and cons, used where they fit.</p>
+</section>
+
+<section id="s22"><span class="snum">Section 22</span><h2>The third dimension</h2><p class="kicker">Depth encoded in an angle.</p>
+<p class="first">How do you get z? One elegant trick: make the spot into two spots that rotate around each other as the sample moves up and down. Depth is encoded in an angle. Look at the rotation, read the depth.</p>
+<figure><svg viewBox="0 0 740 220" width="100%"><rect width="740" height="220" fill="#f7f9fc"/><circle cx="180" cy="110" r="10" fill="#6b3fd4"/><circle cx="230" cy="110" r="10" fill="#6b3fd4"/><text x="180" y="180" font-size="12" fill="#16324f" text-anchor="middle" font-family="Helvetica,Arial">z = low → spots side by side</text><circle cx="480" cy="80" r="10" fill="#6b3fd4"/><circle cx="530" cy="140" r="10" fill="#6b3fd4"/><text x="505" y="180" font-size="12" fill="#16324f" text-anchor="middle" font-family="Helvetica,Arial">z = high → spots rotated</text></svg><figcaption><span class="flab">Figure 10</span>Double-helix PSF: two spots rotate as you go up and down. Angle = depth.</figcaption></figure>
+</section>
+
+<section id="s23"><span class="snum">Section 23</span><h2>Spins and the second life of the triplet</h2><p class="kicker">The nuisance from Section 10 returns — as a quantum sensor.</p>
+<p class="first">Those triplet spin levels, once a nuisance that made molecules go dark, turn out to be usable. Optically detected magnetic resonance (ODMR) and related ideas use light to read spin, and spin to sense magnetic fields, temperature, and local environment at the nanoscale.</p>
+<p>It is a different kind of single-molecule measurement: not where is it, but what is the field where it sits? The same molecule, a new question.</p>
+</section>
+
+<section id="s24"><span class="snum">Section 24</span><h2>How far can it go?</h2><p class="kicker">0.1 nm precision — of what?</p>
+<p class="first">Someone asks what a precision of a tenth of a nanometre really signifies. Moerner’s answer returns to Section 14: you are sensing the average position of a dipole, of the whole object. Not individual atoms inside the molecule. Precision is not the same as seeing atoms.</p>
+<div class="note crimson"><h3>Do not over-read precision</h3><p>0.1 nm is a statement about the average position of an emitter, under good conditions, with many photons. It is not a photograph of atoms.</p></div>
+</section>
+
+<section id="s25"><span class="snum">Section 25</span><h2>What he tells people starting out</h2><p class="kicker">Advice, not technique.</p>
+<p class="first">Work on something you care about. Learn the fundamentals deeply enough that you can tell when an instrument is lying to you. Be honest about pros and cons — yours and others’. And remember that progress is often improvement after improvement of every component around a good idea, not one magic breakthrough.</p>
+</section>
+
+<section id="s26"><span class="snum">Section 26</span><h2>Sputnik kid</h2><p class="kicker">The interview ends where his curiosity began.</p>
+<p class="first">Moerner grew up in San Antonio, in the Sputnik era. He studied Russian for four years in high school — because at the time it seemed a good language to learn. Others were learning German and Italian for the same reason, and of course Spanish, growing up in San Antonio, was essential.</p>
+<p>The closing thought is a worry, and it is the one place where the interview turns wistful. The essential thing, he says, is caring about how things work — and he is concerned that we have less of that now. We all carry around remarkable computers and many people have no idea what is inside them, even though there is an enormous amount of science in there. It is not too complex; you can learn about every part of it.</p>
+<p>The obstacle is practical: components have become very small, you can no longer see the wires, and unsoldering something to see how it works has got harder. He allows that you can now buy a quite good little USB microscope, but points out that even that will not let you get inside a chip. You can still go to school and learn about every one of those components, he adds, and that is a pretty exciting thing.</p>
+</section>
+
+<section id="s27"><span class="snum">Section 27</span><h2>Sketches that did not survive</h2><p class="kicker">Five abandoned diagrams, kept as a record of the rule this page was made under: follow the source, and add nothing that was not said.</p>
+<p class="first">Every diagram here was made to follow the argument, not to decorate it. Early along, a handful of sketches were drawn and then thrown away. They are reproduced here for two reasons: they are interesting failures, and their absence is part of the promise.</p>
+
+<figure class="draft"><svg viewBox="0 0 340 190" width="100%"><rect width="340" height="190" fill="#f7f9fc"/><text x="20" y="30" font-size="11" font-family="Helvetica,Arial" fill="#2e5f9e" font-weight="700">REJECTED 1 — PHOTON ABACUS</text><circle cx="80" cy="90" r="10" fill="#0e7c86"/><circle cx="130" cy="90" r="10" fill="#0e7c86"/><circle cx="180" cy="90" r="10" fill="#e2eaf4" stroke="#0e7c86"/><text x="170" y="160" font-size="10" fill="#5b6b7d" text-anchor="middle" font-family="Helvetica,Arial">count photons, call each a bit</text></svg><figcaption><span class="flab">Rejected sketch</span>An abacus of photons as a storage scheme. Invented, not reported. Storage in the interview is about spectral holes, frequency channels and noise — not photon-counting addressing.</figcaption></figure>
+
+<figure class="draft"><svg viewBox="0 0 340 190" width="100%"><rect width="340" height="190" fill="#f7f9fc"/><text x="20" y="30" font-size="11" font-family="Helvetica,Arial" fill="#2e5f9e" font-weight="700">REJECTED 2 — TWO-LENS DONUT</text><circle cx="90" cy="100" r="20" fill="none" stroke="#b3261e" stroke-width="8" opacity=".35"/><ellipse cx="180" cy="100" rx="34" ry="24" fill="none" stroke="#2e5f9e"/><text x="170" y="165" font-size="10" fill="#5b6b7d" text-anchor="middle" font-family="Helvetica,Arial">relay the ring with two lenses</text></svg><figcaption><span class="flab">Rejected sketch</span>Building the donut with a two-lens relay. Moerner describes the phase plate briefly and does not commit to that layout; drawing it would replace his account with someone else’s.</figcaption></figure>
+
+<figure class="draft"><svg viewBox="0 0 340 190" width="100%"><rect width="340" height="190" fill="#f7f9fc"/><text x="20" y="30" font-size="11" font-family="Helvetica,Arial" fill="#2e5f9e" font-weight="700">REJECTED 3 — BLINKING SCOREBOARD</text><rect x="40" y="50" width="260" height="22" rx="5" fill="#fff" stroke="#c9d6e8"/><text x="50" y="66" font-size="10" fill="#2e5f9e" font-family="Helvetica,Arial" font-weight="700">1993</text><rect x="40" y="90" width="260" height="22" rx="5" fill="#fff" stroke="#c9d6e8"/><text x="50" y="106" font-size="10" fill="#2e5f9e" font-family="Helvetica,Arial" font-weight="700">1997</text><text x="170" y="165" font-size="10" fill="#5b6b7d" text-anchor="middle" font-family="Helvetica,Arial">who blinked what first is a contest</text></svg><figcaption><span class="flab">Rejected sketch</span>A scoreboard of first blinking experiments. The interview names places and people in passing but gives no complete list and no dates for a scoreboard; a table would imply a ranking of priority the source does not provide.</figcaption></figure>
+
+<figure class="draft"><svg viewBox="0 0 340 190" width="100%"><rect width="340" height="190" fill="#f7f9fc"/><text x="20" y="30" font-size="11" font-family="Helvetica,Arial" fill="#2e5f9e" font-weight="700">REJECTED 4 — THREE TIMELINES</text><line x1="84" y1="60" x2="316" y2="60" stroke="#c9d6e8"/><line x1="84" y1="100" x2="316" y2="100" stroke="#c9d6e8"/><line x1="84" y1="140" x2="316" y2="140" stroke="#c9d6e8"/><text x="170" y="170" font-size="10" fill="#5b6b7d" text-anchor="middle" font-family="Helvetica,Arial">three timelines, one page, no room</text></svg><figcaption><span class="flab">Rejected sketch</span>Three parallel timelines for optics, chemistry and biology. Tidy, and wrong. The whole point is that the tracks keep crossing.</figcaption></figure>
+
+<figure class="draft"><svg viewBox="0 0 340 190" width="100%"><rect width="340" height="190" fill="#f7f9fc"/><text x="20" y="30" font-size="11" font-family="Helvetica,Arial" fill="#2e5f9e" font-weight="700">REJECTED 5 — CELLULAR RULER</text><line x1="40" y1="120" x2="300" y2="120" stroke="#2e5f9e" stroke-width="3"/><text x="170" y="65" font-size="10" fill="#b3261e" text-anchor="middle" font-family="Helvetica,Arial">use periodic bands as a ruler</text><text x="170" y="165" font-size="10" fill="#5b6b7d" text-anchor="middle" font-family="Helvetica,Arial">the biology is not that obliging</text></svg><figcaption><span class="flab">Rejected sketch</span>Using periodic structures inside a cell as a built-in ruler. The transcript never proposes cellular periodicity as a calibration standard; a diagram would imply that it did.</figcaption></figure>
+
+<div class="note"><h3>About this page</h3><p>This is a reading companion, not a transcript. It follows the source in order, tidies spoken sentences into readable prose, and adds nothing that was not said. One file. No external images, fonts, scripts, or dependencies. Save it, forward it, open it offline — it will still work.</p></div>
+</section>
+
+</div></div></main>
+<footer>Seeing Biology at Sub-Wavelength Scale — W. E. Moerner — Single-file reading companion &middot; Built from the source interview, in order, with nothing added.</footer>
+</body>
+</html>
